@@ -1,0 +1,123 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+  
+    <h1 class="govuk-heading-xl">
+      
+      
+     Eligibility results
+    </h1>
+
+
+    <div class="govuk-grid-row">
+
+            
+      <div class="govuk-grid-column-one-half">
+        <h2 class="govuk-heading-m">We have determined that there is eligibility for:</h2>
+<ul class="govuk-list govuk-list--bullet">
+  <li class="govuk-list-item">30 hours free childcare</li>
+<li>Free school meals</li></ul>
+
+<p>You will now need to upload the following supporting documents in order for us to complete your application.</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li class="govuk-list-item">Universal credit document</li>
+<li>Passport</li></ul>
+
+{%- from "govuk/components/file-upload/macro.njk" import govukFileUpload -%}
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/error-summary/macro.njk" import govukErrorSummary -%}
+{%- from "moj/components/multi-file-upload/macro.njk" import mojMultiFileUpload -%}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% if errorSummary.items.length %}
+      {{ govukErrorSummary({
+        titleText: 'There is a problem',
+        errorList: errorSummary.items
+      }) }}
+    {% endif %}
+
+  
+
+
+    
+
+    
+      {% set uploadHtml %}
+        {{ govukFileUpload({
+          id: "documents",
+          name: "documents",
+          classes: 'moj-multi-file-upload__input',
+          label: {
+            text: "Upload a file",
+            classes: 'govuk-label--m'
+          },
+          attributes: { multiple: '' },
+          errorMessage: errorMessage
+        }) }}
+
+        {{govukButton({
+          text: 'Upload file',
+          classes: 'govuk-button--secondary moj-multi-file-upload__button'
+        })}}
+      {% endset %}
+
+      {{ mojMultiFileUpload({
+        uploadedFiles: {
+          heading: { text: 'Files added' },
+          items: uploadedFiles
+        },
+        uploadHtml: uploadHtml
+      }) }}
+
+      
+<form action="check-answers" method="post" value="eligibility-yes" novalidate>
+  <input type="hidden" name="submit-application" id="submit-application" value="success">
+
+
+  {{ govukButton({
+    text: "Save and continue",
+    classes:'govuk-!-margin-top-5'
+  }) }}
+</form>
+  
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+        
+      </div>  
+    
+    </div>
+
+  
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}

@@ -1,0 +1,249 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <div class="gem-c-title govuk-!-margin-top-0 govuk-!-margin-bottom-8">
+
+      <h1 class="gem-c-title__text govuk-heading-xl">
+        Apply for free school meals
+      </h1>
+    </div>
+  </div>
+  <div class="article-container group govuk-grid-column-two-thirds">
+    <div class="content-block">
+      <div class="inner">
+
+
+        <section class="intro">
+          <div class="get-started-intro">
+
+            <div class="gem-c-govspeak">
+
+              <p>Check if your child can get free school meals in England and find out how to apply on your local
+                authority’s website.</p>
+
+              <p>There’s a different process to apply for <a rel="external"
+                  href="https://www.nidirect.gov.uk/articles/nutrition-and-school-lunches">free school meals in Northern
+                  Ireland</a>, <a rel="external" href="https://www.mygov.scot/school-meals/">free school meals in
+                  Scotland</a>, or <a rel="external" href="https://www.gov.wales/find-out-about-free-school-meals">free
+                  school meals in Wales</a>.</p>
+
+              <div role="note" aria-label="Information" class="application-notice info-notice">
+                <p>If your child is eligible for free school meals, they’ll also qualify for the <a rel="external"
+                    href="https://educationhub.blog.gov.uk/2022/04/06/what-you-need-to-know-about-the-holiday-activities-and-food-haf-programme-2/">Holiday
+                    Activity and Food Programme</a>. Food vouchers may also be available through the <a
+                    href="/cost-living-help-local-council">Household Support Fund</a>. Find out more by <a
+                    href="/find-local-council">contacting your local council</a>.</p>
+              </div>
+
+
+            </div>
+          </div>
+        </section>
+
+
+        <div class="postcode-search-form govuk-!-margin-top-0" data-module="track-submit"
+          data-track-category="postcodeSearch:local_transaction" data-track-action="postcodeSearchStarted"
+          data-track-submit-module-started="true">
+
+        </div>
+
+        <section class="more">
+
+          <div class="more">
+
+            <div class="gem-c-govspeak govuk-govspeak" data-module="govspeak" data-govspeak-module-started="true">
+
+              <p>Your child may be able to get free school meals if you get any of the following:</p>
+
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Income Support</li>
+                <li>income-based Jobseeker’s Allowance</li>
+                <li>income-related Employment and Support Allowance</li>
+                <li>support under Part VI of the Immigration and Asylum Act 1999</li>
+                <li>the guaranteed element of Pension Credit</li>
+                <li>Child Tax Credit (provided you’re not also entitled to Working Tax Credit and have an annual gross
+                  income of no more than £16,190)</li>
+                <li>Working Tax Credit run-on - paid for 4 weeks after you stop qualifying for Working Tax Credit</li>
+                <li>Universal Credit - if you apply on or after 1 April 2018 your household income must be less than
+                  £7,400 a year (after tax and not including any benefits you get)</li>
+              </ul>
+
+              <p>Children who get paid these benefits directly, instead of through a parent or guardian, can also get
+                free school meals.</p>
+
+              <p>Your child may also get free school meals if you get any of these benefits and your child is both:</p>
+
+              <ul>
+                <li>younger than the <a href="/school-attendance-absence">compulsory age for starting school</a>
+                </li>
+                <li>in full-time education</li>
+              </ul>
+
+              <div role="note" aria-label="Information" class="application-notice info-notice">
+                <p>If you do not qualify for most benefits (also known as having ‘no recourse to public funds’), your
+                  child may still be eligible for free school meals. Ask their school or local authority whether they’re
+                  eligible.</p>
+              </div>
+
+              <h2 id="infant-free-school-meals-in-england">Infant free school meals in England</h2>
+
+              <p>Your child will be able to get free school meals if they’re in a <a
+                  href="/types-of-school">government-funded school</a> and in:</p>
+
+                  <ul class="govuk-list govuk-list--bullet">
+                <li>reception class</li>
+                <li>year 1</li>
+                <li>year 2</li>
+              </ul>
+
+              <p>Tell your local authority if you also get any of the qualifying benefits. Your child’s school can get
+                extra funding if you do.</p>
+
+              <h2>Before you apply</h2>
+
+              <p>You will need:</p>
+
+              <ul class="govuk-list govuk-list--bullet">
+                <li>To create or sign in to a <a target="_blank" href="https://signin.account.gov.uk/sign-in-or-create">OneGov account</a></li>
+                <li>Your National Insurance number</li>
+                <li>bank or building society details</li>
+                <li>employment details and latest payslip if working</li>
+              
+
+              </ul>
+              <p>You'll also need details of the child you care for. You need their:</p>
+
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Full name</li>
+                <li>Date of birth</li>
+
+
+              </ul>
+
+
+
+ 
+
+{{ govukButton({
+  text: "Start now",
+  href: "../checker/fsm-step-1",
+  isStartButton: true
+}) }}
+
+
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+    <div class="gem-c-contextual-sidebar">
+
+      <div class="gem-c-related-navigation" data-module="gem-track-click ga4-link-tracker"
+        data-gem-track-click-module-started="true" data-ga4-link-tracker-module-started="true">
+        <h2 id="related-nav-related_items-9a349ff3" class="gem-c-related-navigation__main-heading"
+          data-track-count="sidebarRelatedItemSection">
+          Related content
+        </h2>
+
+
+
+        <nav role="navigation" class="gem-c-related-navigation__nav-section"
+          aria-labelledby="related-nav-related_items-9a349ff3" data-module="gem-toggle"
+          data-gem-toggle-module-started="true">
+
+
+          <ul class="gem-c-related-navigation__link-list">
+            <li class="gem-c-related-navigation__link"><a
+                class="govuk-link govuk-link gem-c-related-navigation__section-link govuk-link gem-c-related-navigation__section-link--sidebar  govuk-link gem-c-related-navigation__section-link--other"
+                data-track-category="relatedLinkClicked" data-track-action="1.1 Related content"
+                data-track-label="/help-home-school-transport"
+                data-track-options="{&quot;dimension28&quot;:&quot;2&quot;,&quot;dimension29&quot;:&quot;Help with home to school transport &quot;}"
+                data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;related content&quot;,&quot;index&quot;:{&quot;index_section&quot;:&quot;1&quot;,&quot;index_link&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;1&quot;},&quot;index_total&quot;:&quot;2&quot;,&quot;section&quot;:&quot;Related content&quot;}"
+                href="/help-home-school-transport">Help with home to school transport </a></li>
+            <li class="gem-c-related-navigation__link"><a
+                class="govuk-link govuk-link gem-c-related-navigation__section-link govuk-link gem-c-related-navigation__section-link--sidebar  govuk-link gem-c-related-navigation__section-link--other"
+                data-track-category="relatedLinkClicked" data-track-action="1.2 Related content"
+                data-track-label="/school-meals-food-standards"
+                data-track-options="{&quot;dimension28&quot;:&quot;2&quot;,&quot;dimension29&quot;:&quot;School meals - food standards&quot;}"
+                data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;related content&quot;,&quot;index&quot;:{&quot;index_section&quot;:&quot;1&quot;,&quot;index_link&quot;:&quot;2&quot;,&quot;index_section_count&quot;:&quot;1&quot;},&quot;index_total&quot;:&quot;2&quot;,&quot;section&quot;:&quot;Related content&quot;}"
+                href="/school-meals-food-standards">School meals - food standards</a></li>
+
+          </ul>
+        </nav>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="gem-c-contextual-footer">
+      <div class="gem-c-related-navigation" data-module="gem-track-click ga4-link-tracker"
+        data-gem-track-click-module-started="true" data-ga4-link-tracker-module-started="true">
+
+
+
+        <nav role="navigation" class="gem-c-related-navigation__nav-section"
+          aria-labelledby="related-nav-topics-2d3cdd66" data-module="gem-toggle" data-gem-toggle-module-started="true">
+
+          <h2 id="related-nav-topics-2d3cdd66"
+            class="gem-c-related-navigation__sub-heading gem-c-related-navigation__sub-heading--footer"
+            data-track-count="footerRelatedItemSection">Explore the topic</h2>
+
+          <ul class="gem-c-related-navigation__link-list">
+            <li class="gem-c-related-navigation__link"><a
+                class="govuk-link govuk-link gem-c-related-navigation__section-link govuk-link gem-c-related-navigation__section-link--footer"
+                data-track-category="relatedLinkClicked" data-track-action="1.1 Explore the topic"
+                data-track-label="/browse/benefits/families"
+                data-track-options="{&quot;dimension28&quot;:&quot;4&quot;,&quot;dimension29&quot;:&quot;Benefits and financial support for families&quot;}"
+                data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;contextual footer&quot;,&quot;index&quot;:{&quot;index_section&quot;:&quot;1&quot;,&quot;index_link&quot;:&quot;1&quot;,&quot;index_section_count&quot;:&quot;1&quot;},&quot;index_total&quot;:&quot;4&quot;,&quot;section&quot;:&quot;Explore the topic&quot;}"
+                href="/browse/benefits/families">Benefits and financial support for families</a></li>
+            <li class="gem-c-related-navigation__link"><a
+                class="govuk-link govuk-link gem-c-related-navigation__section-link govuk-link gem-c-related-navigation__section-link--footer"
+                data-track-category="relatedLinkClicked" data-track-action="1.2 Explore the topic"
+                data-track-label="/browse/childcare-parenting/financial-help-children"
+                data-track-options="{&quot;dimension28&quot;:&quot;4&quot;,&quot;dimension29&quot;:&quot;Financial help if you have children&quot;}"
+                data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;contextual footer&quot;,&quot;index&quot;:{&quot;index_section&quot;:&quot;1&quot;,&quot;index_link&quot;:&quot;2&quot;,&quot;index_section_count&quot;:&quot;1&quot;},&quot;index_total&quot;:&quot;4&quot;,&quot;section&quot;:&quot;Explore the topic&quot;}"
+                href="/browse/childcare-parenting/financial-help-children">Financial help if you have children</a></li>
+            <li class="gem-c-related-navigation__link"><a
+                class="govuk-link govuk-link gem-c-related-navigation__section-link govuk-link gem-c-related-navigation__section-link--footer"
+                data-track-category="relatedLinkClicked" data-track-action="1.3 Explore the topic"
+                data-track-label="/browse/childcare-parenting/schools-education"
+                data-track-options="{&quot;dimension28&quot;:&quot;4&quot;,&quot;dimension29&quot;:&quot;Schools and education&quot;}"
+                data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;contextual footer&quot;,&quot;index&quot;:{&quot;index_section&quot;:&quot;1&quot;,&quot;index_link&quot;:&quot;3&quot;,&quot;index_section_count&quot;:&quot;1&quot;},&quot;index_total&quot;:&quot;4&quot;,&quot;section&quot;:&quot;Explore the topic&quot;}"
+                href="/browse/childcare-parenting/schools-education">Schools and education</a></li>
+            <li class="gem-c-related-navigation__link"><a
+                class="govuk-link govuk-link gem-c-related-navigation__section-link govuk-link gem-c-related-navigation__section-link--footer"
+                data-track-category="relatedLinkClicked" data-track-action="1.4 Explore the topic"
+                data-track-label="/browse/education/school-life"
+                data-track-options="{&quot;dimension28&quot;:&quot;4&quot;,&quot;dimension29&quot;:&quot;Schools and curriculum&quot;}"
+                data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;contextual footer&quot;,&quot;index&quot;:{&quot;index_section&quot;:&quot;1&quot;,&quot;index_link&quot;:&quot;4&quot;,&quot;index_section_count&quot;:&quot;1&quot;},&quot;index_total&quot;:&quot;4&quot;,&quot;section&quot;:&quot;Explore the topic&quot;}"
+                href="/browse/education/school-life">Schools and curriculum</a></li>
+
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

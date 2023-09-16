@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Home" %}
+{% set pageName="Eligibility checker" %}
 
 {% block content %}
 
@@ -15,11 +15,16 @@
       {{ serviceName }}
     </h1>
 
+    <h2 class="govuk-heading-m">Sep - current 2023</h2>
+
     <ul class="govuk-list">
-      <li><a href="school-meals">Free school meals</a></li>
-      <li><a href="2-yr-old-childcare">2 year old childcare</a></li>
-      <li><a href="30-hr-childcare">30 hour childcare</a></li>
-      <li><a href="early-years-premium/">Early years pupil premium</a></li>
+      <li><a href="current/account/">Check eligibility (Schools)</a></li>
+
+      <li><a href="current/account/signin-or-create?who=council">Check eligibility (Local authorities)</a></li>
+      <li><a href="current/account/onegov-sso?council=batch">Upload batch eligibility check (Local authorities)</a></li>
+      <li><a href="current/account/start-now">Check free school meals eligibility (parents)</a></li>
+      <li><a href="current/account/signin-or-create?who=parent">Check in progress application (parents)</a></li>
+      
     </ul>
 
   

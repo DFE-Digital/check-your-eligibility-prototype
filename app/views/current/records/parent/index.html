@@ -1,0 +1,213 @@
+{% extends "layouts/layout-dfe.html" %}
+
+
+
+
+
+
+
+
+
+{% block backLink %}
+{{ govukBackLink({
+text: "Back",
+href: "/"
+}) }}
+{% endblock %}
+
+
+<!-- The content between the heading 1 and the buttons -->
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+  <div class="govuk-grid-column-full">
+
+
+    <span class="govuk-hint">Eden Tesfay</span>
+ 
+
+
+    <h1 class="govuk-heading-xl">Application history 
+       <span class="govuk-!-margin-left-5"> {{govukTag({
+      text: "In progress",
+      classes: "govuk-tag--turquoise"
+    })}}</span></h1> 
+   
+
+  
+
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-5">Reference number: 44455453
+      
+    </h2>
+
+  
+
+  </div>
+
+</div>
+
+
+
+
+<h2 class="govuk-heading-l govuk-!-margin-bottom govuk-!-font-size-36">Overview</h2>
+
+<div class="govuk-grid-row govuk-!-margin-top-3">
+  <div class="govuk-grid-column-full">
+
+    <h2 class="govuk-heading-m">Person details</h2>
+    
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Eden Tesfay
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          18 Oct 1988 (36)
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Nationality
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Eritrean
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          NASS reference
+        </dt>
+        <dd class="govuk-summary-list__value">
+          BB4433D4332
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+      Telephone number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          07790 242 009
+        </dd>
+      </div>
+
+    </dl>
+
+
+  </div>
+</div>
+
+<h2 class="govuk-heading-l govuk-!-margin-bottom govuk-!-font-size-36">Applications</h2>
+
+
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "30 hours childcare"
+    },
+    actions: {
+      items: [
+       
+        {
+          href: "#",
+          text: "Withdraw",
+          visuallyHiddenText: "from application"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Date applied"
+      },
+      value: {
+        html: "5th August 2023"
+      }
+    },
+    {
+      key: {
+        text: "Status"
+      },
+      value: {
+        html: "Under review"
+      }
+    }
+  ]
+}) }}
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Free school meals"
+    },
+    actions: {
+      items: [
+        
+        {
+          href: "#",
+          text: "Withdraw",
+          visuallyHiddenText: "from application"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Date of application"
+      },
+      value: {
+        html: "5 August 2023"
+      }
+    },
+    {
+      key: {
+        text: "Status"
+      },
+      value: {
+        html: "Under review"
+      }
+    }
+  ]
+}) }}
+
+
+{% endblock %}
+
+{% block buttons %}
+{% endblock %}
+
+{% block pageScripts %}
+<!-- Add any javascript files here. Include javascript files only on the pages
+that need them. Excessive javascript files loaded on other pages may slow down
+the response times of the prototype. -->
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+<script>
+  new MOJFrontend.ButtonMenu({
+    container: $(".moj-button-menu"),
+    mq: "(min-width: 200em)",
+    buttonText: "Task actions",
+    buttonClasses:
+      "",
+  });
+</script>
+
+{% endblock %}

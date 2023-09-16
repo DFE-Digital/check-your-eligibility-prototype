@@ -1,0 +1,214 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+
+
+      
+      {% block content %}
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds-from-desktop">
+      
+            <h1 class="govuk-heading-l">Check your answers before sending your application</h1>
+      
+            <h2 class="govuk-heading-m">Personal details</h2>
+      
+            {{ govukSummaryList({
+              classes: "govuk-!-margin-bottom-9",
+              rows: [
+                {
+                  key: {
+                    text: "Name"
+                  },
+                  value: {
+                    text: "Eden Tesfay"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "name"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Date of birth"
+                  },
+                  value: {
+                    text: ""
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "date of birth"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "National insurance number"
+                  },
+                  value: {
+                    text: "Not provided"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "customer reference"
+                      }
+                    ]
+                  }
+                },
+
+                {
+                  key: {
+                    text: "NASS number"
+                  },
+                  value: {
+                    text: "8768736863756"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "nass"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Address"
+                  },
+                  value: {
+                    html: "14 Guild Street<br>Holbeck <br>Leeds<br>LS23 6FH"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "address"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Contact details"
+                  },
+                  value: {
+                    html: '<p class="govuk-body">07700 900457</p>'
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "contact details"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }) }}
+      
+            <h2 class="govuk-heading-m">Application details</h2>
+      
+            {{ govukSummaryList({
+              classes: "govuk-!-margin-bottom-9",
+              rows: [
+                {
+                  key: {
+                    text: "Application type"
+                  },
+                  value: {
+                    text: "Free school meals"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "previous application number"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Supporting evidence"
+                  },
+                  value: {
+                    text: "Universal Credit document"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "document"
+                      }
+                    ]
+                  }
+                }
+
+            
+              ]
+            }) }}
+      
+            <h2 class="govuk-heading-m">Now send this application</h2>
+      
+            <p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+      
+            <form action="../index" method="post" novalidate>
+      
+              <input type="hidden" name="answers-checked" value="true">
+      
+              {{ govukButton({
+                text: "Accept and send",
+                classes:'govuk-!-margin-top-5'
+              }) }}
+      
+            </form>
+      
+          </div>
+        </div>
+    
+      
+      
+      
+      
+      
+   
+
+      
+  
+
+
+
+
+        
+
+
+
+
+        
+      </div>  
+    
+    </div>
+
+  
+  </div>
+</div>
+
+{% endblock %}

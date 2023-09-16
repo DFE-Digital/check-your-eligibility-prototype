@@ -1,23 +1,31 @@
-{#
-For guidance on how to use layouts see:
-https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
-#}
+{# 1 #} 
+{% from 'node_modules/dfe-frontend-alpha/packages/components/header/macro.njk' import header %}
 
-
-
-
-
-
+{# 2 #}
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 
 {# 3 #}
 {% block header %}
-{% from "govuk/components/header/macro.njk" import govukHeader %}
-
-{{ govukHeader({
-  homepageUrl: "#"
-}) }}
-
+  {{ header({
+    "showNav": "true",
+    "showSearch": "true",
+    "showUserName": "true",
+    "userName": "",
+    "userNameURL": "",
+    "selectedNav": pageNav,
+    "logoPath": "public/images",
+    "homeHref": "/",
+    "service": {
+      "name": "Eligibility checker hub"
+    },
+    "primaryLinks": [
+      {
+        "url"  : "",
+        "label" : ""
+      }
+    ]
+  })
+}}
 
 <div class="app-phase-banner__wrapper">
 

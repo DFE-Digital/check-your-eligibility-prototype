@@ -1,0 +1,131 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+  
+    <h1 class="govuk-heading-l">
+      
+     Check if you are entitled to free school meals
+    </h1>
+
+
+    <div class="govuk-grid-row">
+
+            
+      <div class="govuk-grid-column-one-half">
+
+    <form action="../checker/childs-age" method="post" novalidate>
+
+      {% call govukFieldset({
+        legend: {
+          text: "Enter family details",
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+      
+        {{ govukInput({
+          label: {
+            text: "Full name"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "surname",
+          name: "surname",
+          autocomplete: ""
+        }) }}
+
+
+      
+
+{{ govukInput({
+  label: {
+    text: "National Insurance number"
+  },
+  hint: {
+    text: "It's on your National Insurance card, benefit letter, payslip or P60. For example, 'QQ 12 34 56 C'."
+  },
+  classes: "govuk-input--width-10 govuk-input--extra-letter-spacing",
+  id: "national-insurance-number",
+  name: "nationalInsuranceNumber",
+  spellcheck: false
+}) }}
+ 
+      
+
+        <p class="govuk-body">Or</p>
+
+        {{ govukInput({
+          label: {
+            text: "National asylum support number (NASS)"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "nass-number",
+          name: "nass-number",
+          autocomplete: "nass-number",
+          hint: {
+            text: "For example, 012345678"
+          }
+        }) }}
+      
+   
+        {{ govukDateInput({
+          
+          id: "dob",
+          namePrefix: "dob",
+          
+          fieldset: {
+            legend: {
+              text: "Applicant date of birth",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          }
+        }) }}
+     
+      
+      
+      
+        
+      
+       
+      
+      {% endcall %}
+      
+      
+      
+      
+      {{ govukButton({
+        text: "Save and continue",
+        classes:'govuk-!-margin-top-5'
+      }) }}
+
+      
+    </form>
+
+
+
+
+        
+
+
+
+
+        
+      </div>  
+    
+    </div>
+
+  
+  </div>
+</div>
+
+{% endblock %}

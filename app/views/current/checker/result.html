@@ -1,0 +1,84 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+  
+    <h1 class="govuk-heading-xl">
+     You can get free school meals
+    </h1>
+
+
+    <div class="govuk-grid-row">
+
+            
+      <div class="govuk-grid-column-one-half">
+        <h2 class="govuk-heading-m">Still to check:</h2>
+        <p>By giving us more information, you can check if you can get help for:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li class="govuk-list-item">Early years pupil premium</li>
+  <li>Free education and childcare for 2-year-olds</li>
+  <li>30 hours free childcare</li>
+  </ul>
+
+
+
+    {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+{{ govukInsetText({
+  text: "You will need to apply for any additional eligibilities seperately."
+}) }}
+
+
+
+<p>Before applying for free schools, you will need:</p>
+
+
+
+      
+<form action="live-with-partner" method="post" value="eligibility-yes" novalidate>
+  <input type="hidden" name="submit-application" id="submit-application" value="success">
+
+
+  {{ govukButton({
+    text: "Start application",
+    classes:'govuk-!-margin-top-5'
+  }) }}
+</form>
+  
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+        
+      </div>  
+    
+    </div>
+
+  
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}

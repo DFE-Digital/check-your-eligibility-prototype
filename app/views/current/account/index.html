@@ -1,0 +1,80 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+    
+    <h1 class="govuk-heading-xl">
+      
+    Department for education sign-in
+    </h1>
+<p>Sign in to access DfE online services</p>
+
+    <div class="govuk-grid-row">
+
+            
+      <div class="govuk-grid-column-one-half">
+
+
+       
+
+
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-visually-hidden">Sign-in</legend>
+  
+            <div class="govuk-form-group ">
+                
+                    <label class="govuk-label govuk-label--s" for="username">Email address</label>
+                
+                
+                <input class="govuk-input govuk-!-width-three-quarters" id="username" name="username" type="text" value="">
+            </div>
+  
+            <div class="govuk-form-group ">
+                <label class="govuk-label govuk-label--s" for="password">Password</label>
+                
+                <input class="password-input govuk-input govuk-!-width-three-quarters govuk-!-margin-right-1" id="password" name="password" type="password"><button type="button" class="show-password govuk-button govuk-button--secondary govuk-!-margin-bottom-1" aria-label="Show password">Show</button>
+                
+                <p class="govuk-body">
+                    <a class="govuk-link govuk-!-font-weight-bold" href="/d48caaf6-4460-4414-8331-58e0993469a0/resetpassword/request?clientid=services&amp;redirect_uri=https://services.signin.education.gov.uk:443/auth/cb">
+                        Forgotten your password?
+                    </a>    
+                </p>
+            </div>
+  
+            <div class="govuk-inset-text">
+                <p class="govuk-body">By signing in you accept <a class="govuk-link govuk-!-font-weight-bold" href="/terms">DfE Sign-in terms and conditions</a>.</p>
+            </div>
+  
+        </fieldset>
+
+        <form action="../" method="post" novalidate>
+
+          {{ govukButton({
+            text: "Sign in",
+            classes:'govuk-!-margin-top-5'
+          }) }}
+        </form>
+
+
+    
+        
+
+
+
+
+        
+      </div>  
+    
+    </div>
+
+  
+  </div>
+</div>
+
+{% endblock %}
