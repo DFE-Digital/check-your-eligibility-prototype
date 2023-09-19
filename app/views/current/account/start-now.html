@@ -129,13 +129,18 @@
 
 
 
- 
+ <form action="signin-or-create" method="post">
+<input type="hidden" id="who" name="who" value="parent" novalidate>
+  {{ govukButton({
+    text: "Start now",
+    href:'signin-or-create?who=parent',
+    
+    isStartButton: true
+  }) }}
 
-{{ govukButton({
-  text: "Start now",
-  href: "../checker/fsm-step-1",
-  isStartButton: true
-}) }}
+ </form>
+
+
 
 
             </div>

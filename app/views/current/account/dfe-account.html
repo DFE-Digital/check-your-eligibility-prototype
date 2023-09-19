@@ -1,4 +1,4 @@
-{% extends "layouts/layout-dfe.html" %}
+{% extends "layouts/main.html" %}
 
 {% set pageName="Home" %}
 
@@ -11,15 +11,19 @@
     
     <h1 class="govuk-heading-xl">
       
-Sign in using OneGov sign in
+Department for Education Sign-in
     </h1>
+
+ 
 
 
     <div class="govuk-grid-row">
+      
 
             
-      <div class="govuk-grid-column-one-half">
+      <div class="govuk-grid-column-two-thirds">
 
+        <p>Sign-in to access DfE online services.</p>
 
        
 
@@ -53,13 +57,164 @@ Sign in using OneGov sign in
   
         </fieldset>
 
-        <form action="../records/parent/" method="post" novalidate>
 
-          {{ govukButton({
-            text: "Sign in",
-            classes:'govuk-!-margin-top-5'
-          }) }}
+        <form action="../checker/">
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Sign in"
+            }) }}
+          
+            {{ govukButton({
+              text: "Create an account",
+              classes: "govuk-button--secondary"
+            }) }}
+          </div>
+
+
         </form>
+
+     
+        
+
+      <details class="govuk-details" data-module="govuk-details" role="group">
+        <summary class="govuk-details__summary" role="button" aria-controls="details-content-0" aria-expanded="false">
+            <span class="govuk-details__summary-text">
+                Services accessed using DfE Sign-in
+            </span>
+        </summary>
+        <div class="govuk-details__text" id="details-content-0" aria-hidden="true">
+            <p class="govuk-body">
+                These DfE services are now accessed using your DfE Sign-in account.
+            </p>
+            <ol class="govuk-list govuk-list--bullet">
+                
+                    <li>Analyse school performance</li>
+                
+                
+                    <li>Apply To Become An Academy</li>
+                
+                
+                
+                    <li>Assessment Service</li>
+                
+                
+                    <li>Assessment Service - Develop an assessment</li>
+                
+                
+                    <li>Assessment Service - Manage your school assessments</li>
+                
+                
+                    <li>Assessment Service - Start an assessment</li>
+                
+                
+                    <li>Child Safeguarding Incident Notification System</li>
+                
+                
+                    <li>Claim additional payments for teaching</li>
+                
+                
+                    <li>Collect</li>
+                
+                
+                
+                
+                
+                
+                    <li>Document exchange</li>
+                
+                
+                    <li>ESFA Digital Forms Service</li>
+                
+                
+                    <li>Get Information About Schools</li>
+                
+                
+                    <li>Get help buying for schools</li>
+                
+                
+                    <li>Get information about pupils</li>
+                
+                
+                    <li>Get my Ofsted Inspection Data Summary Report</li>
+                
+                
+                    <li>Hiring Supply Teachers and Agency Workers</li>
+                
+                
+                
+                
+                
+                    <li>Manage your education and skills funding (MYESF)</li>
+                
+                
+                    <li>Multiplication tables check</li>
+                
+                
+                    <li>National non-domestic rates (NNDR) claims</li>
+                
+                
+                    <li>Online Collections Service - including Risk Protection Arrangements</li>
+                
+                
+                
+                    <li>Publish to the course directory</li>
+                
+                
+                    <li>Register Trainee Teachers</li>
+                
+                
+                    <li>School Experience</li>
+                
+                
+                    <li>School to School</li>
+                
+                
+                    <li>Submit DBV SEND Progress Report (LAs)</li>
+                
+                
+                    <li>Submit Learner Data</li>
+                
+                
+                    <li>Submit Learner Data Operations</li>
+                
+                
+                    <li>T Level Results and Certification</li>
+                
+                
+                    <li>T Levels - Connect with Employers</li>
+                
+                
+                
+                
+                    <li>Teacher Services - Appropriate Body</li>
+                
+                
+                    <li>Teacher Services - Employer Access - Agent</li>
+                
+                
+                    <li>Teacher Services - Employer Access - Schools</li>
+                
+                
+                    <li>Teaching Vacancies</li>
+                
+                
+                    <li>View Your Education Data (VYED)</li>
+                
+                
+                
+                
+            </ol>
+        </div>
+    </details>
+
+    <p class="govuk-body" id="inactivity-message">If you are inactive for 20 minutes, your session will timeout.</p>
+
+       
+
+         
+
+
+
 
 
     

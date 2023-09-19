@@ -1,0 +1,62 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds ">
+    
+
+
+
+
+
+
+<input type="hidden" name="_csrf" value="NwbSEw2n-Gna8N8BwZSNt77jGcnGYDP8tfjs">
+
+
+
+<div class="govuk-form-group">
+<h1 class="govuk-label-wrapper">
+<label class="govuk-label govuk-label--l" for="email">
+Enter your email address to sign in to your GOV.UK One Login
+</label>
+</h1>
+
+<input class="govuk-input" id="email" name="email" type="email" spellcheck="false" autocomplete="email">
+
+</div>
+
+{% if data['who'] =="council" %}
+
+<form action="../applications/" method="post" novalidate>
+
+  {{ govukButton({
+    text: "Continue",
+    classes:'govuk-!-margin-top-5'
+  }) }}
+</form>
+
+
+{% elif data['who'] =="parent" %}
+
+<form action="../checker-parent/" method="post" novalidate>
+
+{{ govukButton({
+text: "Continue",
+classes:'govuk-!-margin-top-5'
+}) }}
+</form>
+
+
+
+
+{% endif %}
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}

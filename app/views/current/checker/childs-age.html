@@ -10,74 +10,131 @@
 
   
 
+
+
     <div class="govuk-grid-row">
 
             
       <div class="govuk-grid-column-one-half">
 
-    <form action="../checker/result" method="post" novalidate>
+    <form action="check-answers" method="post" novalidate>
 
-      {% call govukFieldset({
-        legend: {
-          text: "How old is the child?",
-          classes: "govuk-fieldset__legend--xl",
-          isPageHeading: true
-        }
-      }) %}
+
+      {%- from "govuk/components/button/macro.njk" import govukButton -%}
+      {%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+      {%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+      {%- from "govuk/components/input/macro.njk" import govukInput -%}
+      {%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
       
-        
- 
-
-        
-
-        {{ govukInput({
-          label: {
-            text: "Age"
-          },
-          classes: "govuk-!-width-one-quarter",
-          id: "age",
-          name: "age",
-          autocomplete: "age",
-          hint: {
-            text: "For example, 9"
-          }
-        }) }}
+      <div data-module="moj-add-another">
       
-   
-        {{ govukDateInput({
-          
-          id: "dob",
-          namePrefix: "dob",
-          
-          fieldset: {
+        <h1 class="govuk-heading-l" tabindex="-1">Provide details of your children</h1>
+      
+        <form method="post">
+      
+          {% call govukFieldset({
+            classes: 'moj-add-another__item',
             legend: {
-              text: "Date of birth",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--s"
+              text: 'Child',
+              classes: 'moj-add-another__title govuk-fieldset__legend--m',
+              isPageHeading: false
             }
-          },
-          hint: {
-            text: "For example, 27 3 2014"
-          }
-        }) }}
-     
+          }) %}
       
+          {{ govukInput({
+            id: 'person[0][first_name]',
+            name: 'person[0][first_name]',
+            label: {
+              html: 'First name',
+              classes: 'govuk-!-font-weight-bold'
+            },
+            attributes: {
+              'data-name': 'person[%index%][first_name]',
+              'data-id': 'person[%index%][first_name]'
+            }
+          }) }}
       
+          {{ govukInput({
+            id: 'person[0][last_name]',
+            name: 'person[0][last_name]',
+            label: {
+              html: 'Last name',
+              classes: 'govuk-!-font-weight-bold'
+            },
+            attributes: {
+              'data-name': 'person[%index%][last_name]',
+              'data-id': 'person[%index%][last_name]'
+            }
+          }) }}
       
-        
+          {{ govukDateInput({
+            id: "date-of-birth",
+            fieldset: {
+              legend: {
+                text: "Date of birth",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            hint: {
+              text: "For example, 31 3 1980"
+            },
+            items: [
+              {
+                id: "person[0][dob][day]",
+                name: "person[0][dob][day]",
+                label: "Day",
+                classes: "govuk-input--width-2",
+                attributes: {
+                  'data-name': 'person[%index%][dob][day]',
+                  'data-id': 'person[%index%][dob][day]'
+                }
+              },
+              {
+                id: "person[0][dob][month]",
+                name: "person[0][dob][month]",
+                label: "Month",
+                classes: "govuk-input--width-2",
+                attributes: {
+                  'data-name': 'person[%index%][dob][month]',
+                  'data-id': 'person[%index%][dob][month]'
+                }
+              },
+              {
+                id: "person[0][dob][year]",
+                name: "person[0][dob][year]",
+                label: "Year",
+                classes: "govuk-input--width-2",
+                attributes: {
+                  'data-name': 'person[%index%][dob][year]',
+                  'data-id': 'person[%index%][dob][year]'
+                }
+              }
+            ]
+          }) }}
       
-       
+          {% endcall %}
       
-      {% endcall %}
-   
+          <div class="moj-button-action">
+            {{ govukButton({
+              text: 'Add another child',
+              classes: 'govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4'
+            }) }}
+          </div>
       
+          <div class="moj-button-action">
+            {{ govukButton({
+              text: 'Save and continue'
+            }) }}
+          </div>
       
-      {{ govukButton({
-        text: "Save and continue",
-        classes:'govuk-!-margin-top-5'
-      }) }}
+        </form>
+      
+      </div>
+      
 
-      <p><a href="">Add another child</a></p>
+
+
+
       
     </form>
 

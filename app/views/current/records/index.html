@@ -4,6 +4,7 @@
 
 
 
+{% set parentName = "Eden Tesfay" %}
 
 
 
@@ -28,7 +29,7 @@ href: "/"
  
 
 
-    <h1 class="govuk-heading-xl">Mohammed Iqbal 
+    <h1 class="govuk-heading-xl">   {{ parentName }}
        <span class="govuk-!-margin-left-5"> {{govukTag({
       text: "In progress",
       classes: "govuk-tag--turquoise"
@@ -84,16 +85,16 @@ href: 'notes'
 <div class="govuk-grid-row govuk-!-margin-top-3">
   <div class="govuk-grid-column-full">
 
-    <h2 class="govuk-heading-m">Person details</h2>
+    <h2 class="govuk-heading-m">Parent details</h2>
     
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Name
+          Parent or carer name
         </dt>
         <dd class="govuk-summary-list__value">
-          Mohammed Iqbal
+          {{ parentName }}
         </dd>
       </div>
 

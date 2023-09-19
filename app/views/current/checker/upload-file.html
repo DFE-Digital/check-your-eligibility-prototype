@@ -20,78 +20,61 @@
             
       <div class="govuk-grid-column-one-half">
 
-
-
-
-<!-- FILE UPLOAD -->
-
-
-{% from "govuk/components/details/macro.njk" import govukDetails %}
-{{ govukDetails({
-  summaryText: "File types accepted",
-  text: "You can upload an AVI, BMP, CSV, DOC, DOCX, DOT, EML, EPS, FLV, GIF, GPG, HEIC, HEIF, HTM, HTML, JPG, JPEG, M4V, MOV, MP3, MSG, ODP, ODT, OGA, OGG, OGV, PDF, PGP, PNG, PPS, PPT, PPTX, RTF, TIF, XLS or XLSX",
-  classes:"govuk-!-margin-bottom-0"
-}) }}
-
-{%- from "govuk/components/file-upload/macro.njk" import govukFileUpload -%}
-{%- from "govuk/components/button/macro.njk" import govukButton -%}
-{%- from "govuk/components/error-summary/macro.njk" import govukErrorSummary -%}
-{%- from "moj/components/multi-file-upload/macro.njk" import mojMultiFileUpload -%}
-
-
-
-    {% if errorSummary.items.length %}
-      {{ govukErrorSummary({
-        titleText: 'There is a problem',
-        errorList: errorSummary.items
-      }) }}
-    {% endif %}
-
-
-
-  
-
-    
-      
-      {% set uploadHtml %}
-        {{ govukFileUpload({
-          id: "documents",
-          name: "documents",
-          classes: 'moj-multi-file-upload__input',
-          label: {
-            text: "Upload a file",
-            
-            classes: 'govuk-label--s'
-          },
-          hint: {
-            text: "Each file must be less than 25MB"
-          },
-          attributes: { multiple: '' },
-          errorMessage: errorMessage
-        }) }}
-
-
-        {{govukButton({
-          text: 'Upload file',
-          classes: 'govuk-button--secondary moj-multi-file-upload__button'
-        })}}
-      {% endset %}
-
-      
-
-      {{ mojMultiFileUpload({
-        uploadedFiles: {
-          heading: {
-             text: '' },
-             id:'attachment',
-             name:'attachment',
-          items: uploadedFiles
-        },
-        uploadHtml: uploadHtml
-      }) }}
-
     <form action="../checker/result" method="post" novalidate>
 
+      {% call govukFieldset({
+        legend: {
+          text: "How old is the child?",
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+      
+        
+ 
+
+        
+
+        {{ govukInput({
+          label: {
+            text: "Age"
+          },
+          classes: "govuk-!-width-one-quarter",
+          id: "age",
+          name: "age",
+          autocomplete: "age",
+          hint: {
+            text: "For example, 9"
+          }
+        }) }}
+      
+   
+        {{ govukDateInput({
+          
+          id: "dob",
+          namePrefix: "dob",
+          
+          fieldset: {
+            legend: {
+              text: "Date of birth",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2014"
+          }
+        }) }}
+     
+      
+      
+      
+        
+      
+       
+      
+      {% endcall %}
+      
       
       
       
@@ -120,19 +103,4 @@
   </div>
 </div>
 
-
-
 {% endblock %}
-
-{% block pageScripts %}
-<script type="text/javascript">
-  if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
-  new MOJFrontend.MultiFileUpload({
-    container: $(".moj-multi-file-upload"),
-    uploadUrl: "/ajax-upload",
-    deleteUrl: "/ajax-delete",
-  });
-}
-</script>
-
-{% endblock%}

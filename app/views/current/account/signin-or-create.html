@@ -59,19 +59,19 @@ use GOV.UK One Login in Welsh
 
 {% elif data['who'] =="parent" %}
 
-<form action="../records/parent/" method="post" novalidate>
+<form action="onegov-signin" method="post" novalidate>
 
     {{ govukButton({
         text: "Create a GOV.UK One Login",
-        classes: "govuk-button govuk-!-margin-right-3",
-        url:""
+        classes: "govuk-button govuk-!-margin-right-3"
+        
       }) }}
     
     
     {{ govukButton({
       text: "Sign in",
-      classes: "govuk-button--secondary",
-      url:""
+      classes: "govuk-button--secondary"
+    
     }) }}
 </form>
 

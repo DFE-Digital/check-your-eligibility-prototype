@@ -1,0 +1,64 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+
+    <div class="govuk-grid-row">
+
+            
+      <div class="govuk-grid-column-two-thirds">
+
+    <form action="check-answers" method="post" novalidate>
+
+      
+
+      {{ govukInput({
+        label: {
+          text: "Have the Home Office provided you with a NASS number?",
+          classes:'govuk-heading-l',
+          isPageHeading:yes
+        },
+        hint: {
+          text: "It’s on your asylum paperwork"
+        },
+        classes: "govuk-input--width-10 govuk-input--extra-letter-spacing",
+        id: "nass-number",
+        name: "nassNumber",
+        spellcheck: false
+      }) }}
+
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Save and continue"
+}) }}
+
+      
+    </form>
+
+
+
+
+        
+
+
+
+
+        
+      </div>  
+    
+    </div>
+
+  
+  </div>
+</div>
+
+{% endblock %}
