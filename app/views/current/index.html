@@ -47,7 +47,7 @@
 
       <div class="def-card">
         <h2 class="govuk-heading-m">
-            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="checker/">Check eligibility</a>
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="checker/forms">Check eligibility</a>
         </h2>
         <p>See what a child at your school or authority is eligible for.</p>
     </div>
@@ -57,7 +57,9 @@
 
       <div class="def-card">
         <h2 class="govuk-heading-m">
-            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="checker/">Upload applications</a>
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="checker/">Upload applications</a> 
+
+            
         </h2>
         <p>Upload a forecast of children needed ing free school meals.</p>
     </div>
@@ -67,7 +69,11 @@
 
       <div class="def-card">
         <h2 class="govuk-heading-m">
-            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="applications/?">View applications</a>
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="applications/?">View applications</a>   {%- from "moj/components/notification-badge/macro.njk" import mojNotificationBadge -%}
+            
+            {{ mojNotificationBadge({
+              text: "10"
+            }) }}
         </h2>
         <p>Check or update status of an application.</p>
     </div>

@@ -1,11 +1,10 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/layout-dfe.html" %}
 
 {% set pageName="Home" %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+
 
 
 
@@ -24,24 +23,16 @@
           
           fieldset: {
             legend: {
-              text: "Applicant date of birth",
+              text: "What is the parent's date of birth?",
               isPageHeading: false,
-              classes: "govuk-fieldset__legend--s"
+              classes: "govuk-fieldset__legend--xl"
             }
           },
           hint: {
             text: "For example, 27 3 2007"
           }
         }) }}
-     
-      
-      
-      
-        
-      
-       
-      
-      {% endcall %}
+
       
       
       
@@ -68,7 +59,6 @@
     </div>
 
   
-  </div>
-</div>
+
 
 {% endblock %}

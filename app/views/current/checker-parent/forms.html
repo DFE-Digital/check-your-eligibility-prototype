@@ -1,0 +1,74 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+
+
+
+{% block beforeContent %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "#"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+
+
+    <div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+            
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        name: "whereDoYouLive",
+        fieldset: {
+          legend: {
+            text: "What do you need to check eligibility for?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          
+          {
+            value: "free-childcare",
+            text: "Free childcare"
+          },
+          {
+            value: "eypp",
+            text: "Early years pupil premium"
+          }
+         
+        ]
+      }) }}
+
+
+      <form action="name">
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Save and continue"
+}) }}
+      </form>
+
+
+        
+      </div>  
+    
+    </div>
+
+  
+  </div>
+
+{% endblock %}

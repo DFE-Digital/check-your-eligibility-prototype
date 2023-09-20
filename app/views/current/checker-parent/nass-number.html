@@ -1,11 +1,10 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/layout-dfe.html" %}
 
 {% set pageName="Home" %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+
 
 
 
@@ -22,11 +21,11 @@
       {{ govukInput({
         label: {
           text: "Have the Home Office provided you with a NASS number?",
-          classes:'govuk-heading-l',
+          classes:'govuk-heading-xl',
           isPageHeading:yes
         },
         hint: {
-          text: "It’s on your asylum paperwork"
+          text: "It’s on your asylum paperwork, from entering the country"
         },
         classes: "govuk-input--width-10 govuk-input--extra-letter-spacing",
         id: "nass-number",
@@ -57,8 +56,6 @@
     
     </div>
 
-  
-  </div>
-</div>
+
 
 {% endblock %}

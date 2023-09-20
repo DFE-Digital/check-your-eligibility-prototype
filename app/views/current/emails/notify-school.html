@@ -1,17 +1,12 @@
 {% extends "layouts/layout-email.html" %}
 {% set subject = "Notification email" %}
 {% set from = "GOV.UK <example@gov.uk>" %}
-{% set to = "Eden Tesfay <eden.tesfay@gmail.com>" %}
+{% set to = "West Kirby Primary School <west-kirby-primary.edu.org>" %}
   
 {% block content %}
-  <p>Dear parent,</p>
-  <p>You have a new message from DfE about your recent application.</p>
-  <p>To view it, sign in to your xxx account</p>
-  <p>For security we did not include a link in this email</p>
-
-  <h2>Why you got this email</h2>
-  <p>You chose to get notifications by email instead of letters by post.</p>
-  <p>This means we send you an email to let you know you have a new message in your account.</p>
+  <p>Dear school administrator,</p>
+  <p>There is a new application which needs to be reviewed.</p>
+  <p>To review the application, please <a href="../account/dfe-account">sign in to the parent portal.</a></p>
   
   <p>From Department for Education</p>
 {% endblock %}

@@ -11,7 +11,7 @@
       
             <h1 class="govuk-heading-l">Check your answers before sending your application</h1>
       
-            <h2 class="govuk-heading-m">Personal details</h2>
+            <h2 class="govuk-heading-m">Parent details</h2>
       
             {{ govukSummaryList({
               classes: "govuk-!-margin-bottom-9",
@@ -85,29 +85,15 @@
                     ]
                   }
                 },
+
+
+               
                 {
                   key: {
-                    text: "Address"
+                    text: "Email address"
                   },
                   value: {
-                    html: "14 Guild Street<br>Holbeck <br>Leeds<br>LS23 6FH"
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "#",
-                        text: "Change",
-                        visuallyHiddenText: "address"
-                      }
-                    ]
-                  }
-                },
-                {
-                  key: {
-                    text: "Contact details"
-                  },
-                  value: {
-                    html: '<p class="govuk-body">07700 900457</p>'
+                    html: '<p class="govuk-body">edent.tesfay@icloud.com</p>'
                   },
                   actions: {
                     items: [
@@ -122,17 +108,17 @@
               ]
             }) }}
       
-            <h2 class="govuk-heading-m">Application details</h2>
+            <h2 class="govuk-heading-m">Child 1</h2>
       
             {{ govukSummaryList({
               classes: "govuk-!-margin-bottom-9",
               rows: [
                 {
                   key: {
-                    text: "Application type"
+                    text: "Child's name"
                   },
                   value: {
-                    text: "Free school meals"
+                    text: ""
                   },
                   actions: {
                     items: [
@@ -146,10 +132,10 @@
                 },
                 {
                   key: {
-                    text: "Supporting evidence"
+                    text: "Child's DOB"
                   },
                   value: {
-                    text: "Universal Credit document"
+                    text: ""
                   },
                   actions: {
                     items: [
@@ -170,7 +156,7 @@
       
             <p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
       
-            <form action="parent-hub-dashboard" method="post" novalidate>
+            <form action="result" method="post" novalidate>
       
               <input type="hidden" name="answers-checked" value="true">
       

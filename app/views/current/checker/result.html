@@ -2,96 +2,49 @@
 
 {% set pageName="Home" %}
 
+{% set applicationSent %}
+<h3 class="govuk-notification-banner__heading">
+  Application sent
+  </h3>
+  <p class="govuk-body">
+    You have sent your application for free school meals. It may take upto 1 week to process.
+  </p>
+  <p>Your reference is 1234567</p>
+{% endset %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
+    {% if data['answers-checked'] =="true" %}
+    {{ govukNotificationBanner({
+      html: applicationSent,
+      type: 'success'
+    }) }}
+    
+    {% endif %}
 
-  
-    <h1 class="govuk-heading-xl">
-      
-      
-     Eligibility results
-    </h1>
 
 
     <div class="govuk-grid-row">
 
             
       <div class="govuk-grid-column-one-half">
-        <h2 class="govuk-heading-m">We have determined that there is eligibility for:</h2>
+        <h2 class="govuk-heading-l">We have also determined that there is eligibility for:</h2>
 <ul class="govuk-list govuk-list--bullet">
   <li class="govuk-list-item">30 hours free childcare</li>
-<li>Free school meals</li></ul>
+<li>Early years pupil premium</li></ul>
 
-<p>You will now need to upload the following supporting documents in order for us to complete your application.</p>
+<h2 class="govuk-heading-m">What to do now</h2>
 
-<ul class="govuk-list govuk-list--bullet">
-  <li class="govuk-list-item">Universal credit document</li>
-<li>Passport</li></ul>
-
-{%- from "govuk/components/file-upload/macro.njk" import govukFileUpload -%}
-{%- from "govuk/components/button/macro.njk" import govukButton -%}
-{%- from "govuk/components/error-summary/macro.njk" import govukErrorSummary -%}
-{%- from "moj/components/multi-file-upload/macro.njk" import mojMultiFileUpload -%}
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-
-    {% if errorSummary.items.length %}
-      {{ govukErrorSummary({
-        titleText: 'There is a problem',
-        errorList: errorSummary.items
-      }) }}
-    {% endif %}
-
-  
+<p>You can either <a href="">view GOVUK guidance</a> on childcare provision, or start a new application for the benefit you may be entitled to.</p>
 
 
-    
-
-    
-      {% set uploadHtml %}
-        {{ govukFileUpload({
-          id: "documents",
-          name: "documents",
-          classes: 'moj-multi-file-upload__input',
-          label: {
-            text: "Upload a file",
-            classes: 'govuk-label--m'
-          },
-          attributes: { multiple: '' },
-          errorMessage: errorMessage
-        }) }}
-
-        {{govukButton({
-          text: 'Upload file',
-          classes: 'govuk-button--secondary moj-multi-file-upload__button'
-        })}}
-      {% endset %}
-
-      {{ mojMultiFileUpload({
-        uploadedFiles: {
-          heading: { text: 'Files added' },
-          items: uploadedFiles
-        },
-        uploadHtml: uploadHtml
-      }) }}
-
-      
-<form action="check-answers" method="post" value="eligibility-yes" novalidate>
-  <input type="hidden" name="submit-application" id="submit-application" value="success">
 
 
-  {{ govukButton({
-    text: "Save and continue",
-    classes:'govuk-!-margin-top-5'
-  }) }}
-</form>
-  
-  </div>
-</div>
+
+
 
 
 
