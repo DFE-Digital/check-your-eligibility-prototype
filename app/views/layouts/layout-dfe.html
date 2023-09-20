@@ -6,25 +6,41 @@
 
 {# 3 #}
 {% block header %}
-  {{ header({
-    "showNav": "true",
-    "showSearch": "true",
-    "showUserName": "true",
-    "userName": "",
-    "userNameURL": "",
-    "selectedNav": pageNav,
-    "logoPath": "public/images",
-    "homeHref": "/",
-    "service": {
-      "name": "Eligibility checker hub"
+
+
+{{ header({
+  "showNav": "true",
+  "showSearch": "true",
+  "showHeaderActionLinks": "true",
+  "logoPath": "public/images",
+  "searchAction": "/search/",
+  "searchInputName": "q",
+  "service": {
+    "name": "Check a family's eligibility"
+  },
+  "headerActionLinks": [
+    {
+      "url"  : "/",
+      "label" : "My account"
     },
-    "primaryLinks": [
+    {
+      "url"  : "/",
+      "label" : "Sign out"
+    }
+  ],
+  "primaryLinks": [
       {
-        "url"  : "",
-        "label" : ""
-      }
-    ]
-  })
+      "url"  : "#",
+      "label" : "Navigation link 1"
+    }, {
+      "url"  : "#",
+      "label" : "Navigation link 2"
+    }, {
+      "url"  : "#",
+      "label" : "Navigation link 3"
+    }
+  ]
+})
 }}
 
 <div class="app-phase-banner__wrapper">
@@ -41,6 +57,18 @@
   </div>
 
 </div>
+
+{% endblock %}
+
+{% block beforeContent %}
+  
+
+  {% block backLink %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+    }) }}
+  {% endblock %}
 
 {% endblock %}
 

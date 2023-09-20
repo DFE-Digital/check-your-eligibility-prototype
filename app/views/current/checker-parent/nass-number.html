@@ -14,25 +14,59 @@
             
       <div class="govuk-grid-column-two-thirds">
 
-    <form action="check-answers" method="post" novalidate>
+    <form action="/nass-number-answer" method="post" novalidate>
 
       
 
-      {{ govukInput({
-        label: {
-          text: "Have the Home Office provided you with a NASS number?",
-          classes:'govuk-heading-xl',
-          isPageHeading:yes
-        },
-        hint: {
-          text: "It’s on your asylum paperwork, from entering the country"
-        },
-        classes: "govuk-input--width-10 govuk-input--extra-letter-spacing",
-        id: "nass-number",
-        name: "nassNumber",
-        spellcheck: false
-      }) }}
+  
 
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% set yesHtml %}
+{{ govukInput({
+  id: "nass-number",
+  name: "nass-number",
+  type: "text",
+  autocomplete: "text",
+  spellcheck: false,
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Enter your NASS number"
+  }
+}) }}
+{% endset -%}
+
+
+{{ govukRadios({
+  name: "nass-number",
+  fieldset: {
+    legend: {
+      text: "Do you have a national asylum seeker support number?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "Select one option."
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: yesHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No, I dont have one"
+      
+    }
+    
+  ]
+}) }}
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
 

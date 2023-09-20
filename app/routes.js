@@ -76,3 +76,22 @@ router.post('/checker-nationality-answer', function (req, res) {
     }
   
   })
+
+
+
+  // NASS number CHECKER
+  router.post('/nass-number-answer', function (req, res) {
+
+    // Make a variable 
+    var nassNumber = req.session.data['nass-number']
+  
+    // Check whether the variable matches a condition
+    if (nassNumber == "yes"){
+      // Send user to next page
+      res.redirect('/current/parent-checker/check-answers')
+    } else {
+      // Send user to other page
+      res.redirect('/current/parent-checker/ineligible')
+    }
+  
+  })

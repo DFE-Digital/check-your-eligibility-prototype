@@ -154,9 +154,26 @@
       
             <h2 class="govuk-heading-m">Now send this application</h2>
       
-            <p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+            <p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct. You also confirm you have permission to submit This
+              application on behalf of the parent or carer.
+            </p>
+
+            {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+{{ govukCheckboxes({
+  name: "waste",
+  
+  
+  items: [
+    {
+      value: "info-correct",
+      text: "Yes, all information on this application is correct"
+    }
+    
+  ]
+}) }}
       
-            <form action="parent-hub-dashboard" method="post" novalidate>
+            <form action="result" method="post" novalidate>
       
               <input type="hidden" name="answers-checked" value="true">
       
