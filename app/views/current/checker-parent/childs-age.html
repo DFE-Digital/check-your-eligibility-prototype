@@ -65,6 +65,19 @@
               'data-id': 'person[%index%][last_name]'
             }
           }) }}
+
+          {{ govukInput({
+            id: 'person[0][first_name]',
+            name: 'person[0][first_name]',
+            label: {
+              html: 'School',
+              classes: 'govuk-!-font-weight-bold'
+            },
+            attributes: {
+              'data-name': 'person[%index%][first_name]',
+              'data-id': 'person[%index%][first_name]'
+            }
+          }) }}
       
           {{ govukDateInput({
             id: "date-of-birth",
@@ -112,6 +125,8 @@
           }) }}
       
           {% endcall %}
+
+         
       
           <div class="moj-button-action">
             {{ govukButton({

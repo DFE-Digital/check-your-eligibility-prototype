@@ -1,0 +1,57 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+
+
+
+  
+
+
+
+    <div class="govuk-grid-row">
+
+            
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl" tabindex="-1">Who is your local council?</h1>
+
+        <form action="this-la" method="post" novalidate>
+          {{ govukInput({
+            label: {
+              text: "Enter your postcode"
+            },
+            classes: "govuk-input--width-10",
+            id: "address-postcode",
+            name: "addressPostcode",
+            autocomplete: "postal-code",
+            hint: {
+              text: "For example SW1A 2AA "
+            }
+          }) }}
+
+
+          {{ govukButton({
+            text: "Find your council",
+            classes:'govuk-!-margin-top-5'
+          }) }}
+
+        </form>
+
+
+        
+
+
+
+
+        
+      </div>  
+    
+    </div>
+
+  
+
+
+{% endblock %}

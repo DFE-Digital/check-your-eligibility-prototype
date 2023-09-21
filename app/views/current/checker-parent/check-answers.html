@@ -9,13 +9,31 @@
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds-from-desktop">
       
-            <h1 class="govuk-heading-l">Check your answers before sending your application</h1>
+            <h1 class="govuk-heading-l">Check your answers before submitting</h1>
       
             <h2 class="govuk-heading-m">Parent details</h2>
       
             {{ govukSummaryList({
               classes: "govuk-!-margin-bottom-9",
               rows: [
+
+              {
+                key: {
+                  text: "Local council"
+                },
+                value: {
+                  text: ""
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "council"
+                    }
+                  ]
+                }
+              },
                 {
                   key: {
                     text: "Name"
@@ -33,6 +51,8 @@
                     ]
                   }
                 },
+
+
                 {
                   key: {
                     text: "Date of birth"
@@ -50,6 +70,8 @@
                     ]
                   }
                 },
+
+
                 {
                   key: {
                     text: "National insurance number"
@@ -132,6 +154,23 @@
                 },
                 {
                   key: {
+                    text: "School"
+                  },
+                  value: {
+                    text: ""
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "school"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
                     text: "Child's DOB"
                   },
                   value: {
@@ -152,16 +191,16 @@
               ]
             }) }}
       
-            <h2 class="govuk-heading-m">Now send this application</h2>
+            <h2 class="govuk-heading-m">Submit for eligibility</h2>
       
-            <p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+            <p class="govuk-body">By submitting your information you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
       
             <form action="result" method="post" novalidate>
       
               <input type="hidden" name="answers-checked" value="true">
       
               {{ govukButton({
-                text: "Accept and send",
+                text: "Check my eligibility",
                 classes:'govuk-!-margin-top-5'
               }) }}
       

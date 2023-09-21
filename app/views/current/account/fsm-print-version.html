@@ -14,7 +14,7 @@
         Form
       </span>
 
-      <h1 class="gem-c-title__text govuk-heading-l">
+      <h1 class="govuk-heading-l">
         Apply for free school meals if you cannot apply online
       </h1>
     </div>
@@ -22,31 +22,72 @@
     <h2 class="govuk-heading-m">Documents</h2>
 
     <section>
-      <div>
-          <a target="_self" tabindex="-1" aria-hidden="true" href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1154589/CH2_Child_Benefit_Claim_Form_English.pdf"><img alt=""></a>
+      <div class="govuk-grid-column-one-quarter">
+        <a target="_self" tabindex="-1" aria-hidden="true" href="">
+          <img alt="" class="gem-c-attachment__thumbnail-image gem-c-attachment__thumbnail-image--custom"
+            src="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1154589/thumbnail_CH2_Child_Benefit_Claim_Form_English.pdf.png">
+        </a>
       </div>
-      <div>
-          <h2 class="govuk-!-font-size-22">
-              <a target="_self" href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1154589/CH2_Child_Benefit_Claim_Form_English.pdf">Child Benefit claim form</a>
-          </h2>
-          <p>Ref: CH2</p>
-          <p><span><abbr title="Portable Document Format">PDF</abbr></span>, <span>430 KB</span>, <span>9 pages</span></p>
-          <p>This file may not be suitable for users of assistive technology.</p>
-          <details>
-              <summary>
-                  <span>
-                      Request an accessible format.
-                  </span>
-              </summary>
-              <div>
-                  If you use assistive technology (such as a screen reader) and need a version of this document in a more accessible format, please email <a href="mailto:different.format@hmrc.gov.uk" target="_blank">different.format@hmrc.gov.uk</a>. Please tell us what format you need. It will help us if you say what assistive technology you use.
-              </div>
-          </details>
-      </div>
-  </section>
-  
+      <div class="govuk-grid-column-three-quarters">
+        <h2 class="govuk-heading-m">
+          <a target="_self" href=".">Free School Meals
+            claim form</a>
+        </h2>
+        <p>Ref: CH2</p>
+        <p><span><abbr title="Portable Document Format">PDF</abbr></span>, <span>430 KB</span>, <span>9 pages</span></p>
+        <p>This file may not be suitable for users of assistive technology.</p>
 
-  
+
+    {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+    {{ govukDetails({
+    summaryText: "Request an accessible version",
+    text: "If you use assistive technology (such as a screen reader) and need a version of this document in a more
+    accessible format, please email different.format@hmrc.gov.uk. Please tell us what format you need. It will help us
+    if you say what assistive technology you use"
+    }) }}
+
+
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+    <section id="details">
+      <h2 class="govuk-heading-m">
+        Details
+      </h2>
+
+
+      <div class="gem-c-govspeak govuk-govspeak direction-ltr" data-module="govspeak"
+        data-govspeak-module-started="true">
+
+        <div class="govspeak">
+          <div role="note" aria-label="Information" class="application-notice info-notice">
+            <p>Use these forms if you cannot <a href="" class="govuk-link">claim Free School Meals online</a></p>
+          </div>
+
+          <p>Fill in the Free School Meals for and hand it into your local school. Aschool administraor will process the
+            form
+            on your behalf.
+          </p>
+
+
+
+
+
+          <p>If you cannot claim online or by using these forms, you can <a href="." class="govuk-link">contact DfE</a>
+            to claim by phone.</p>
+        </div>
+
+      </div>
+    </section>
+
 
 
   </div>

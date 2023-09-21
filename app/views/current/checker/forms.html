@@ -15,12 +15,6 @@
 
 
 {% block content %}
-{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-
-{{ govukBackLink({
-  text: "Back",
-  href: "#"
-}) }}
 
 
 <div class="govuk-grid-row">
@@ -35,8 +29,6 @@
 {% endif %}
 
 
-
-    <div class="govuk-grid-row">
 
             
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
@@ -78,7 +70,7 @@
 
 
         
-      </div>  
+    
     
     </div>
 

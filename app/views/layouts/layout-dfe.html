@@ -27,19 +27,8 @@
       "url"  : "/",
       "label" : "Sign out"
     }
-  ],
-  "primaryLinks": [
-      {
-      "url"  : "#",
-      "label" : "Navigation link 1"
-    }, {
-      "url"  : "#",
-      "label" : "Navigation link 2"
-    }, {
-      "url"  : "#",
-      "label" : "Navigation link 3"
-    }
   ]
+  
 })
 }}
 
@@ -76,4 +65,6 @@
 {% block scripts %}
   {{ super() }}
   <script src="/public/javascripts/dfefrontend.js"></script>
+  <script type="text/javascript" src="assets/javascripts/autocomplete.js"></script>
+  <link rel="stylesheet" href="assets/css/accessible-autocomplete.min.css" />
 {% endblock %}

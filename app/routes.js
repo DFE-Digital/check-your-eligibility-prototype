@@ -88,10 +88,10 @@ router.post('/checker-nationality-answer', function (req, res) {
     // Check whether the variable matches a condition
     if (nassNumber == "yes"){
       // Send user to next page
-      res.redirect('/current/parent-checker/check-answers')
+      res.redirect('/current/checker-parent/childs-age')
     } else {
       // Send user to other page
-      res.redirect('/current/parent-checker/ineligible')
+      res.redirect('/current/checker-parent/ineligible')
     }
   
   })
