@@ -1,0 +1,17 @@
+{% extends "layouts/layout-email.html" %}
+{% set subject = "Notification email" %}
+{% set from = "GOV.UK <example@gov.uk>" %}
+{% set to = "Eden Tesfay <eden.tesfay@gmail.com>" %}
+  
+{% block content %}
+  <p>Dear parent,</p>
+  <p>Your application for free school meals has been sent to:.</p>
+
+  <p class="govuk-!-font-weight-bold">Bramhope Primary School</p>
+
+
+  <p>You will be notified once your application has been processed.</p>
+
+  
+  <p>From Department for Education</p>
+{% endblock %}

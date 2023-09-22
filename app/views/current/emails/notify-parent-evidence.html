@@ -1,0 +1,18 @@
+{% extends "layouts/layout-email.html" %}
+{% set subject = "Notification email" %}
+{% set from = "GOV.UK <example@gov.uk>" %}
+{% set to = "Eden Tesfay <eden.tesfay@gmail.com>" %}
+  
+{% block content %}
+  <p>Dear parent,</p>
+  <p>In order for your application for free school meals to be processed we require further supporting evidence.</p>
+
+  <p>Please provide:</p>
+
+  <ul><li>Passport</li></ul>
+
+  <p>Once supporting evicence has been received, we shall update our records and provide an update on the status of your application.</p>
+
+  
+  <p>From Department for Education</p>
+{% endblock %}

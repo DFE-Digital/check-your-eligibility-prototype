@@ -5,6 +5,7 @@
 {% set parentName="Eden Tesfay" %}
 
 
+
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -15,7 +16,7 @@
 
     <span class="govuk-hint">John Spencer</span>
     <h1 class="govuk-heading-xl">
-    Barnsley Council 
+    Bramhope Primary School Portal
     </h1>
 
 
@@ -43,6 +44,11 @@
       <div class="def-card">
         <h2 class="govuk-heading-m">
             <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="applications">Check applications</a>
+            {%- from "moj/components/notification-badge/macro.njk" import mojNotificationBadge -%}
+            
+            {{ mojNotificationBadge({
+              text: "10"
+            }) }}
         </h2>
         <p>Check applications by school.</p>
     </div>
