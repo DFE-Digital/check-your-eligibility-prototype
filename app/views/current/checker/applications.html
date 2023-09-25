@@ -2,10 +2,29 @@
 
 {% set pageName="Home" %}
 
+{% set applicationSent %}
+<h3 class="govuk-notification-banner__heading">
+  Your application has been sent
+  </h3>
+  <p class="govuk-body">
+    We have sent your application to be processed by your local school. It may take upto 1 week to process.
+  </p>
+  <p>Your reference is 1234567</p>
+{% endset %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
+
+    {% if data['application-approved'] =="yes" %}
+    {{ govukNotificationBanner({
+      html: applicationSent,
+      type: 'success'
+    }) }}
+    
+    {% endif %}
+
 
     <span class="govuk-hint">Bramhope Primary School</span>
 
@@ -117,112 +136,112 @@
           {html: 'Eden Tesfay'},
           {text: 'Yorkshire'},
           {html: 'New application'},
-          {text: '25 Jan 2023'}
+          {text: '25 Sep 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">12323212</a>'},
           {html: 'Warren Sutton'},
           {text: 'Yorkshire'},
           {html: 'New application'},
-          {text: '25 Jan 2023'}
+          {text: '25 Sep 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">45678765</a>'},
           {html: 'Alan Jones'},
           {text: 'Yorkshire'},
           {html: 'New application'},
-          {text: '9 May 2023'}
+          {text: '9 Sep 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">12345678</a>'},
           {html: 'Jennifer Langley'},
           {text: 'Yorkshire'},
           {html: 'New application'},
-          {text: '9 May 2023'}
+          {text: '9 Sep 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">89009800</a>'},
           {html: 'Susan Francis'},
           {text: 'Humber'},
           {html: 'Incomplete'},
-          {text: '9 May 2023'}
+          {text: '9 Sep 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">44455453</a>'},
           {html: 'John Smith'},
           {text: 'Yorkshire'},
           {html: 'Complete'},
-          {text: '25 Jan 2023'}
+          {text: '25 Sep 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">12323212</a>'},
           {html: 'Warren Sutton'},
           {text: 'Yorkshire'},
           {html: 'New application'},
-          {text: '25 Jan 2023'}
+          {text: '25 Sep 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">45678765</a>'},
           {html: 'Alan Jones'},
           {text: 'Yorkshire'},
           {html: 'New application'},
-          {text: '9 May 2023'}
+          {text: '9 Sep 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">12345678</a>'},
           {html: 'Jennifer Langley'},
           {text: 'Yorkshire'},
           {html: 'New application'},
-          {text: '9 May 2023'}
+          {text: '9 Sep 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">89009800</a>'},
           {html: 'Susan Francis'},
           {text: 'Humber'},
           {html: 'Incomplete'},
-          {text: '9 May 2023'}
+          {text: '9 Sep 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">45456765</a>'},
           {html: 'John Smith'},
           {text: 'Humber'},
           {html: 'Incomplete'},
-          {text: '9 May 2023'}
+          {text: '9 Sep 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">88675411</a>'},
           {html: 'Margaret Blake'},
           {text: 'Humber'},
           {html: 'Incomplete'},
-          {text: '9 May 2023'}
+          {text: '9 Sep 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">44455453</a>'},
           {html: 'John Smith'},
           {text: 'Yorkshire'},
           {html: 'Complete'},
-          {text: '25 Jan 2023'}
+          {text: '25 Sep 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">12323212</a>'},
           {html: 'Warren Sutton'},
           {text: 'Yorkshire'},
           {html: 'New application'},
-          {text: '25 Jan 2023'}
+          {text: '25 Sep 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">45678765</a>'},
           {html: 'Alan Jones'},
           {text: 'Yorkshire'},
           {html: 'New application'},
-          {text: '9 May 2023'}
+          {text: '9 Sep 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">12345678</a>'},
           {html: 'Jennifer Langley'},
           {text: 'Yorkshire'},
           {html: 'New application'},
-          {text: '9 May 2023'}
+          {text: '9 Sep 2023'}
         ]
       ]
     }) }}

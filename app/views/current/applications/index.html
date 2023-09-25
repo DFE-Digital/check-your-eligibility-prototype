@@ -2,10 +2,29 @@
 
 {% set pageName="Home" %}
 
+{% set applicationApproved %}
+<h3 class="govuk-notification-banner__heading">
+  Application 44455453 has been approved
+  </h3>
+  <p class="govuk-body">
+    Confirmation will be sent to both the family and local authority
+    
+  </p>
+  
+{% endset %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
+
+    {% if data['approve-application'] =="yes" %}
+    {{ govukNotificationBanner({
+      html: applicationApproved,
+      type: 'success'
+    }) }}
+    
+    {% endif %}
 
     <span class="govuk-hint">Bramhope Primary School</span>
 
