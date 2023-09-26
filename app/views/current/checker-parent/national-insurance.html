@@ -4,61 +4,92 @@
 
 {% block content %}
 
+
+
+
+
+
 <div class="govuk-grid-row">
+
+
   <div class="govuk-grid-column-two-thirds">
 
+    <form action="/ni-number-answer" method="post" novalidate>
 
 
 
-    <div class="govuk-grid-row">
 
-            
-      <div class="govuk-grid-column-two-thirds">
 
-    <form action="childs-age" method="post" novalidate>
 
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
+      {% set yesHtml %}
       {{ govukInput({
-        label: {
-          text: "What is your National Insurance number?",
-          classes:'govuk-heading-xl',
-          isPageHeading:yes
-        },
-        hint: {
-          text: "It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’."
-        },
-        classes: "govuk-input--width-10 govuk-input--extra-letter-spacing",
-        id: "national-insurance-number",
-        name: "nationalInsuranceNumber",
-        spellcheck: false
+      id: "ni-number-entered",
+      name: "ni-number-entered",
+      type: "text",
+      autocomplete: "text",
+      spellcheck: false,
+      classes: "govuk-!-width-one-third",
+      label: {
+      text: "Enter your NI number"
+      }
       }) }}
+      {% endset -%}
 
+
+      {{ govukRadios({
+      name: "ni-number",
+      fieldset: {
+      legend: {
+      text: "Do you have a national insurance number?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+      }
+      },
+      hint: {
+      text: " It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’."
+      },
+      items: [
+      {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+      html: yesHtml
+      }
+      },
+      {
+      value: "no",
+      text: "No, I dont have one"
+
+      }
+
+      ]
+      }) }}
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
-{{ govukButton({
-  text: "Save and continue"
-}) }}
+      {{ govukButton({
+      text: "Save and continue"
+      }) }}
 
-      
+
     </form>
 
 
 
 
-        
 
 
 
 
-        
-      </div>  
-    
-    </div>
 
-  
+
   </div>
+
 </div>
+
+
 
 {% endblock %}

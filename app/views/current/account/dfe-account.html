@@ -58,20 +58,45 @@ Department for Education Sign-in
         </fieldset>
 
 
-        <form action="../../current/checker/dashboard">
+       
+        {% if data['who'] =="school" %}
+          
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Sign in",
+            href:'../../current/checker/dashboard'
+          }) }}
+      
+          {{ govukButton({
+            text: "Create an account",
+            classes: "govuk-button--secondary"
+           
+          }) }}
+        
+        </div>
+
+       
+
+          {% elif data['who'] =="council" %}
+          
           <div class="govuk-button-group">
             {{ govukButton({
-              text: "Sign in"
+              text: "Sign in",
+              href:'../../current/checker-la/dashboard'
             }) }}
-          
+       
             {{ govukButton({
               text: "Create an account",
               classes: "govuk-button--secondary"
+            
             }) }}
+          
           </div>
 
+          {% endif %}
 
-        </form>
+
+       
 
      
         

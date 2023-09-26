@@ -26,8 +26,8 @@
 
 {% set yesHtml %}
 {{ govukInput({
-  id: "number-entered",
-  name: "number-entered",
+  id: "nass-number-entered",
+  name: "nass-number-entered",
   type: "",
   autocomplete: "text",
   spellcheck: false,
@@ -48,9 +48,7 @@
       classes: "govuk-fieldset__legend--l"
     }
   },
-  hint: {
-    text: "Select one option."
-  },
+ 
   items: [
     {
       value: "yes",

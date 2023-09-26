@@ -4,236 +4,283 @@
 
 
 
-      
-      {% block content %}
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds-from-desktop">
-      
-            <h1 class="govuk-heading-l">Check your answers before submitting</h1>
-      
-            <h2 class="govuk-heading-m">Parent details</h2>
-      
-            {{ govukSummaryList({
-              classes: "govuk-!-margin-bottom-9",
-              rows: [
 
-              {
-                key: {
-                  text: "Local council"
-                },
-                value: {
-                  text: ""
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "#",
-                      text: "Change",
-                      visuallyHiddenText: "council"
-                    }
-                  ]
-                }
-              },
-                {
-                  key: {
-                    text: "Name"
-                  },
-                  value: {
-                    text: "Eden Tesfay"
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "#",
-                        text: "Change",
-                        visuallyHiddenText: "name"
-                      }
-                    ]
-                  }
-                },
+{% block content %}
 
 
-                {
-                  key: {
-                    text: "Date of birth"
-                  },
-                  value: {
-                    text: ""
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "#",
-                        text: "Change",
-                        visuallyHiddenText: "date of birth"
-                      }
-                    ]
-                  }
-                },
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <h1 class="govuk-heading-l">Check your answers before submitting</h1>
+
+    <h2 class="govuk-heading-m">Parent details</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
 
-                {
-                  key: {
-                    text: "National insurance number"
-                  },
-                  value: {
-                    text: "Not provided"
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "#",
-                        text: "Change",
-                        visuallyHiddenText: "customer reference"
-                      }
-                    ]
-                  }
-                },
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Local council
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Leeds City Council
+        </dd>
 
-                {
-                  key: {
-                    text: "NASS number"
-                  },
-                  value: {
-                    text: "8768736863756"
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "#",
-                        text: "Change",
-                        visuallyHiddenText: "nass"
-                      }
-                    ]
-                  }
-                },
+        <dd class="govuk-summary-list__actions">
 
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> council</span>
+          </a>
 
-               
-                {
-                  key: {
-                    text: "Email address"
-                  },
-                  value: {
-                    html: '<p class="govuk-body">edent.tesfay@icloud.com</p>'
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "#",
-                        text: "Change",
-                        visuallyHiddenText: "contact details"
-                      }
-                    ]
-                  }
-                }
-              ]
-            }) }}
-      
-            <h2 class="govuk-heading-m">Child 1</h2>
-      
-            {{ govukSummaryList({
-              classes: "govuk-!-margin-bottom-9",
-              rows: [
-                {
-                  key: {
-                    text: "Child's name"
-                  },
-                  value: {
-                    text: ""
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "#",
-                        text: "Change",
-                        visuallyHiddenText: "previous application number"
-                      }
-                    ]
-                  }
-                },
-                {
-                  key: {
-                    text: "School"
-                  },
-                  value: {
-                    text: ""
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "#",
-                        text: "Change",
-                        visuallyHiddenText: "school"
-                      }
-                    ]
-                  }
-                },
-                {
-                  key: {
-                    text: "Child's DOB"
-                  },
-                  value: {
-                    text: ""
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "#",
-                        text: "Change",
-                        visuallyHiddenText: "document"
-                      }
-                    ]
-                  }
-                }
+        </dd>
 
-            
-              ]
-            }) }}
-      
-            <h2 class="govuk-heading-m">Submit for eligibility</h2>
-      
-            <p class="govuk-body">By submitting your information you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
-      
-            <form action="eligible" method="post" novalidate>
-      
-              <input type="hidden" name="answers-checked" value="true">
-      
-              {{ govukButton({
-                text: "Check my eligibility",
-                classes:'govuk-!-margin-top-5'
-              }) }}
-      
-            </form>
-      
-          </div>
-        </div>
-    
-      
-      
-      
-      
-      
-   
-
-      
-  
+      </div>
 
 
 
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Parent or carer name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["first-name"] }}   {{ data["surname"] }}
+        </dd>
 
-        
+        <dd class="govuk-summary-list__actions">
+
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+
+        </dd>
+
+      </div>
+
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["dob-day"] }} {{ data["dob-month"] }} {{ data["dob-year"] }} 
+
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+
+        </dd>
+
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          nationality
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["what-nationality"] }}
+
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+
+        </dd>
+
+      </div>
+
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          National insurance number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["ni-number-entered"] }} 
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> customer reference</span>
+          </a>
+
+        </dd>
+
+      </div>
+
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          NASS number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["nass-number-entered"] }} 
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> nass</span>
+          </a>
+
+        </dd>
+
+      </div>
+
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["email"] }}
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> contact details</span>
+          </a>
+
+        </dd>
+
+      </div>
+
+
+    </dl>
+
+
+    <h2 class="govuk-heading-m">Child 1</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Child's name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["ch1-first-name"] }} {{ data["ch2-surname"] }} 
+
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> previous application number</span>
+          </a>
+
+        </dd>
+
+      </div>
+
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          School
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["school"] }} 
+
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> school</span>
+          </a>
+
+        </dd>
+
+      </div>
+
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Child's DOB
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> document</span>
+          </a>
+
+        </dd>
+
+      </div>
+
+
+    </dl>
+
+
+    <h2 class="govuk-heading-m">Submit for eligibility</h2>
+
+    <p class="govuk-body">By submitting your information you are confirming that, to the best of your knowledge, the
+      details you are providing are correct.</p>
+
+    <form action="eligible" method="post" novalidate="">
+
+      <input type="hidden" name="answers-checked" value="true">
 
 
 
 
-        
-      </div>  
-    
-    </div>
 
-  
+
+
+
+
+      <button class="govuk-button govuk-!-margin-top-5" data-module="govuk-button">
+        Check my eligibility
+      </button>
+
+
+    </form>
+
   </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+
+</div>
 </div>
 
 {% endblock %}

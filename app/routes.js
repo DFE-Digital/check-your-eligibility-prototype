@@ -8,6 +8,9 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 // Add your routes here
 
+
+// PARENTS JOURNEYS
+
 // Nationality
 router.post('/nationality-answer', function (req, res) {
 
@@ -42,8 +45,13 @@ router.post('/asylum-answer', function (req, res) {
   
   })
 
-  // Nationality / CHECK /
-router.post('/checker-nationality-answer', function (req, res) {
+
+  // SCHOOLS AND COUNCIL JOURNEYS
+  //
+
+
+  // Nationality / CHECKER /
+router.post('/council-checker-nationality-answer', function (req, res) {
 
   // Make a variable 
   var whatNationality = req.session.data['what-nationality']
@@ -61,7 +69,7 @@ router.post('/checker-nationality-answer', function (req, res) {
 
 
   // Asylum number CHECKER
-  router.post('/checker-asylum-answer', function (req, res) {
+  router.post('/council-checker-asylum-answer', function (req, res) {
 
     // Make a variable 
     var seekingAsylum = req.session.data['seeking-asylum']
@@ -80,7 +88,7 @@ router.post('/checker-nationality-answer', function (req, res) {
 
 
   // NASS number CHECKER
-  router.post('/nass-number-answer', function (req, res) {
+  router.post('/council-nass-number-answer', function (req, res) {
 
     // Make a variable 
     var nassNumber = req.session.data['nass-number']
@@ -88,10 +96,28 @@ router.post('/checker-nationality-answer', function (req, res) {
     // Check whether the variable matches a condition
     if (nassNumber == "yes"){
       // Send user to next page
-      res.redirect('/current/checker-parent/childs-age')
+      res.redirect('/current/checker/childs-age')
     } else {
       // Send user to other page
-      res.redirect('/current/checker-parent/ineligible')
+      res.redirect('/current/checker/ineligible')
+    }
+  
+  })
+
+
+   // NI number CHECKER
+   router.post('/council-ni-number-answer', function (req, res) {
+
+    // Make a variable 
+    var nassNumber = req.session.data['ni-number']
+  
+    // Check whether the variable matches a condition
+    if (nassNumber == "yes"){
+      // Send user to next page
+      res.redirect('/current/checker/childs-age')
+    } else {
+      // Send user to other page
+      res.redirect('/current/checker/ineligible')
     }
   
   })
