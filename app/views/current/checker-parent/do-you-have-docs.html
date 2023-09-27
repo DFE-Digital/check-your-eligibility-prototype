@@ -9,16 +9,8 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">You are not eligible for free school meals</h1>
 
 
-<h2 class="govuk-heading-m">Get help with checking your eligibility</h2>
-<p>If you believe this check to be incorrect, you can appeal, by providing one of the following:</p>
-
-<ul><li>Universal credit number</li>
-<li>National asylum support number</li>
-<li>Jobseekers allowance support number</li>
-</ul>
 
 
 
@@ -27,13 +19,13 @@
   name: "changedName",
   fieldset: {
     legend: {
-      text: "Do you want to proceed to the appeals process?",
+      text: "Do you have one of the required supporting documents?",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--s"
+      classes: "govuk-fieldset__legend--xl"
     }
   },
   hint: {
-    text: "You may need to upload one of the supporting documents as evidence"
+    text: "You will need to upload the supporting document"
   },
   items: [
     {
@@ -51,7 +43,7 @@
 
 {{ govukButton({
   text: "Continue",
-  href:'do-you-have-docs'
+  href:'upload-file'
 }) }}
 
 

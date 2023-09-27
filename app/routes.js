@@ -40,10 +40,44 @@ router.post('/asylum-answer', function (req, res) {
       res.redirect('/current/checker-parent/nass-number')
     } else {
       // Send user to other page
-      res.redirect('/current/checker-parent/check-answers')
+      res.redirect('/current/checker-parent/more-info-required')
     }
   
   })
+
+    // NASS number
+    router.post('/nass-number-answer', function (req, res) {
+
+      // Make a variable 
+      var nassNumber = req.session.data['nass-number']
+    
+      // Check whether the variable matches a condition
+      if (nassNumber == "yes"){
+        // Send user to next page
+        res.redirect('/current/checker-parent/childs-age')
+      } else {
+        // Send user to other page
+        res.redirect('/current/checker-parent/more-info-required')
+      }
+    
+    })
+
+     // NI number
+     router.post('/ni-number-answer', function (req, res) {
+
+      // Make a variable 
+      var nassNumber = req.session.data['ni-number']
+    
+      // Check whether the variable matches a condition
+      if (nassNumber == "yes"){
+        // Send user to next page
+        res.redirect('/current/checker-parent/childs-age')
+      } else {
+        // Send user to other page
+        res.redirect('/current/checker-parent/more-info-required')
+      }
+    
+    })
 
 
   // SCHOOLS AND COUNCIL JOURNEYS

@@ -26,7 +26,7 @@ href: "/"
   <div class="govuk-grid-column-full">
 
 
-    <span class="govuk-hint">Eden Tesfay</span>
+    <span class="govuk-hint">{data['first-name']} {data['surname']}</span>
 
 
 
@@ -38,28 +38,34 @@ href: "/"
     </h1>
 
 
-    <form action="../applications/" method="post" novalidate>
-
-      <input type="hidden" name="approve-application" value="yes">
+  
 
       {%- from "moj/components/ticket-panel/macro.njk" import mojTicketPanel -%}
 
       {{ mojTicketPanel({
       attributes: {
-      'aria-label': 'Sub navigation 1'
+      'aria-label': 'Decision panel'
       },
       items: [
       {
-      html: ' <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Reference number: 44455453</h2>
+      html: '
+      
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Reference number: 44455453</h2>
       <p class="govuk-body">Ensure all supporting evidence has been reviewed prior to making a decision.</p>
+
+      <form action="supporting-evidence" method="post" novalidate>
+
+        <input type="hidden" name="approve-application" value="yes">
 
 
       <button class="govuk-button" data-module="govuk-button">
         Approve application
       </button>
 
+    
 
-      <a class="govuk-button govuk-button--secondary govuk-!-margin-bottom-1 govuk-!-margin-left-5"
+
+      <a href="./" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-1 govuk-!-margin-left-5"
         data-module="govuk-button">
         Query application
       </a>',
@@ -71,8 +77,8 @@ href: "/"
       }) }}
 
 
+   
     </form>
-
 
 
 

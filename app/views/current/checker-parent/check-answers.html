@@ -169,7 +169,7 @@
           Child's name
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["ch1-first-name"] }} {{ data["ch2-surname"] }} 
+          {{ data["ch1-first-name"] }} {{ data["ch1-surname"] }} 
 
         </dd>
 
@@ -190,7 +190,7 @@
           School
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["school"] }} 
+          {{ data["ch1-school"] }} 
 
         </dd>
 
@@ -211,6 +211,7 @@
           Child's DOB
         </dt>
         <dd class="govuk-summary-list__value">
+          {{ data["ch1-day"] }}  {{ data["ch1-month"] }}  {{ data["ch1-year"] }} 
 
 
         </dd>
@@ -234,16 +235,26 @@
     <p class="govuk-body">By submitting your information you are confirming that, to the best of your knowledge, the
       details you are providing are correct.</p>
 
-    <form action="eligible" method="post" novalidate="">
+      {% if data['nass-number'] == 'yes' %}
+
+      <form action="ineligible" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+  
+  
+        <button class="govuk-button govuk-!-margin-top-5" data-module="govuk-button">
+          Check my eligibility
+        </button>
+  
+  
+      </form>
+
+      {% else %}
+
+
+    <form action="eligible" method="post" novalidate>
 
       <input type="hidden" name="answers-checked" value="true">
-
-
-
-
-
-
-
 
 
       <button class="govuk-button govuk-!-margin-top-5" data-module="govuk-button">
@@ -252,6 +263,8 @@
 
 
     </form>
+
+    {% endif %}
 
   </div>
 </div>

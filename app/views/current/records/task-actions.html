@@ -1,24 +1,17 @@
-{% extends "orange/task-management/current/base-form.html" %}
+{% extends "layouts/layout-dfe.html" %}
 
 
 
-{
-{% block pageStyle %}
-.record-item-input-box {
-width: 40%;
-}
-.govuk-heading-m {
-color: red;
-}
 
-{% endblock %}
+
+
 
 
 
 {% block backLink %}
 {{ govukBackLink({
 text: "Back",
-href: "/orange/task-management/current/tasks/index"
+href: "/"
 }) }}
 {% endblock %}
 

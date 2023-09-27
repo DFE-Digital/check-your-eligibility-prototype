@@ -67,4 +67,15 @@
   <script src="/public/javascripts/dfefrontend.js"></script>
   <script type="text/javascript" src="assets/javascripts/autocomplete.js"></script>
   <link rel="stylesheet" href="assets/css/accessible-autocomplete.min.css" />
+  <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+<script type="text/javascript">
+  if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
+  new MOJFrontend.MultiFileUpload({
+    container: $(".moj-multi-file-upload"),
+    uploadUrl: "/ajax-upload",
+    deleteUrl: "/ajax-delete",
+  });
+}
+
+</script>
 {% endblock %}

@@ -37,27 +37,10 @@ use GOV.UK One Login in Welsh
 
 
 
-{% if data['who'] =="council" %}
-
-<form action="../checker-la/dashboard" method="post" novalidate>
-
- 
-    {{ govukButton({
-        text: "Create a GOV.UK One Login",
-        classes: "govuk-button govuk-!-margin-right-3",
-        url:""
-      }) }}
-    
-    
-    {{ govukButton({
-      text: "Sign in",
-      classes: "govuk-button--secondary",
-      url:""
-    }) }}
-</form>
 
 
-{% elif data['who'] =="parent" %}
+
+
 
 <form action="onegov-signin" method="post" novalidate>
 
@@ -76,7 +59,6 @@ use GOV.UK One Login in Welsh
 </form>
 
 
-{% endif%}
 
 
 
