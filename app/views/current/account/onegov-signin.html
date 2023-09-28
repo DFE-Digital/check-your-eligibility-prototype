@@ -27,20 +27,8 @@ Enter your email address to sign in to your GOV.UK One Login
 
 </div>
 
-{% if data['who'] =="council" %}
 
-<form action="../applications/" method="post" novalidate>
-
-  {{ govukButton({
-    text: "Continue",
-    classes:'govuk-!-margin-top-5'
-  }) }}
-</form>
-
-
-{% elif data['who'] =="parent" %}
-
-<form action="../checker-parent/which-la" method="post" novalidate>
+<form action="enter-password" method="post" novalidate>
 
 {{ govukButton({
 text: "Continue",
@@ -49,9 +37,6 @@ classes:'govuk-!-margin-top-5'
 </form>
 
 
-
-
-{% endif %}
 
 
   </div>

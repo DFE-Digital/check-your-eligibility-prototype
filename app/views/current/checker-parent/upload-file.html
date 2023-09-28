@@ -5,11 +5,6 @@
 {% block content %}
 
 
-{%- from "govuk/components/file-upload/macro.njk" import govukFileUpload -%}
-{%- from "govuk/components/button/macro.njk" import govukButton -%}
-{%- from "govuk/components/error-summary/macro.njk" import govukErrorSummary -%}
-{%- from "moj/components/multi-file-upload/macro.njk" import mojMultiFileUpload -%}
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -20,42 +15,48 @@
       }) }}
     {% endif %}
 
-    <h1 class="govuk-heading-xl">Upload files</h1>
+ 
 
-    <form action="/components/multi-file-upload/examples/default" method="post" enctype="multipart/form-data">
-      {% set uploadHtml %}
-        {{ govukFileUpload({
-          id: "documents",
-          name: "documents",
-          classes: 'moj-multi-file-upload__input',
-          label: {
-            text: "Upload a file",
-            classes: 'govuk-label--m'
-          },
-          attributes: { multiple: '' },
-          errorMessage: errorMessage
-        }) }}
+    <form action="check-upload" method="post" enctype="multipart/form-data">
 
-        {{govukButton({
-          text: 'Upload file',
-          classes: 'govuk-button--secondary moj-multi-file-upload__button'
-        })}}
-      {% endset %}
+      
+{% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
 
-      {{ mojMultiFileUpload({
-        uploadedFiles: {
-          heading: { text: 'Files added' },
-          items: uploadedFiles
-        },
-        uploadHtml: uploadHtml
-      }) }}
+{{ govukFileUpload({
+  id: "file-upload-1",
+  name: "file-upload-1",
+  isPageHeading: true,
+  label: {
+    text: "Upload your document",
+    classes: 'govuk-label--xl'
+  },
+  hint: {
+    text: 'You can upload your document as a scanned copy or photo of the original'
+  }
+}) }}
 
-      {{govukButton({
-        text: 'Continue'
-      })}}
+{{ govukButton({ text: 'Continue' }) }}
+
     </form>
   </div>
 </div>
 
 
+{% endblock %}
+{% block pageScripts %}
+<!-- Add any javascript files here. Include javascript files only on the pages
+that need them. Excessive javascript files loaded on other pages may slow down
+the response times of the prototype. -->
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+
+<script type="text/javascript">
+  if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
+  new MOJFrontend.MultiFileUpload({
+    container: $(".moj-multi-file-upload"),
+    uploadUrl: "/ajax-upload",
+    deleteUrl: "/ajax-delete",
+  });
+}
+</script>
 {% endblock %}
