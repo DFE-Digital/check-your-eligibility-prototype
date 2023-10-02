@@ -4,8 +4,6 @@
 
 {% set parentName="Eden Tesfay" %}
 
-
-
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -127,7 +125,8 @@ items: [
       {html: 'Free school meals'},
       {text: 'Yorkshire'},
       {html: 'New application'},
-      {text: '25 Sep 2023'}
+      {text: date() }
+      
     ]
   ]
 }) }}
@@ -140,5 +139,10 @@ items: [
 
 
 </div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script src="https://unpkg.com/nunjucks/browser/nunjucks-slim.min.js"></script>
 
 {% endblock %}

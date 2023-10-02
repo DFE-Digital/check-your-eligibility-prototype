@@ -43,16 +43,32 @@
 
       <div class="def-card">
         <h2 class="govuk-heading-m">
-            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="applications">Check applications</a>
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="applications">Eligible families</a>
             {%- from "moj/components/notification-badge/macro.njk" import mojNotificationBadge -%}
             
             {{ mojNotificationBadge({
               text: "10"
             }) }}
         </h2>
-        <p>Check applications by school.</p>
+        <p>Check which children can recieve free school meals at your school.</p>
     </div>
     </div>
+
+    <div class="dfe-card-container">
+
+      <div class="def-card">
+        <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="appeals">Appeals</a>
+            {%- from "moj/components/notification-badge/macro.njk" import mojNotificationBadge -%}
+            
+            {{ mojNotificationBadge({
+              text: "3"
+            }) }}
+        </h2>
+        <p>New appeals which need to be checked and approved or submitted for guidance from your local authority.</p>
+    </div>
+    </div>
+
 
 
 
@@ -60,9 +76,9 @@
 
       <div class="def-card">
         <h2 class="govuk-heading-m">
-            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="support/">Guidance and support</a>
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="resources">Resources</a>
         </h2>
-        <p>Guidance and support for getting the help you and your family need.</p>
+        <p>Guidance and documenation for making decisions on applications.</p>
     </div>
     </div>
 

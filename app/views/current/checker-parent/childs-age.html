@@ -2,6 +2,16 @@
 
 {% set pageName="Home" %}
 
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/autocomplete.js"></script>
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    selectElement: document.querySelector('#school-picker')
+  })
+</script>
+{% endblock %}
+
 {% block content %}
 
 
@@ -66,18 +76,10 @@
             }
           }) }}
 
-          {{ govukInput({
-            id: 'ch1-school',
-            name: 'ch1-school',
-            label: {
-              html: 'School',
-              classes: 'govuk-!-font-weight-bold'
-            },
-            attributes: {
-              'data-name': 'child[%index%][first_name]',
-              'data-id': 'child[%index%][first_name]'
-            }
-          }) }}
+
+          {% include "../includes/schools.html" %}
+
+          
       
           {{ govukDateInput({
             id: "ch1-date-of-birth",

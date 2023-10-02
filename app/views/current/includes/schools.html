@@ -1,0 +1,454 @@
+
+{# <!-- Where this file is includes, set nunjucks variables for countryID, countryName and countryLabelText to change the defaults 
+    {% set countryID = "departure-country" %}
+    {% set countryName = "departure-country-name" %}
+    {% set countryLabelText = "Which country did they depart from" %}
+    
+    To remove the hint, set countryHint to an empty string
+    {% set countryHint = ""}
+    
+    To change the hint, set countryHint to the hint text
+    {% set countryHint = "Type to search for a country" %}
+    --> #}
+
+     
+    
+    <div class="govuk-form-group">
+      {{ govukSelect({
+        id: "school-picker",
+        name: "school-picker",
+        classes:"govuk-input--width-20",
+        label: {
+          text: "School",
+          name:"school-picker"
+        },
+        hint: {
+          text: countryHint | default("Type to search", false)
+        },
+        value: countryValue or data[countryName or countryID or "country"] or "",
+        items: [
+      {
+          value: "",
+          text: ""
+      },
+
+      {
+        value: "Admiral Long CE Primary School, Burnt Yates",
+        text: "Admiral Long CE Primary School, Burnt Yates"
+      },
+      {
+        value: "Ainderby Steeple CE Primary School, Morton-on-Swale",
+        text: "Ainderby Steeple CE Primary School, Morton-on-Swale"
+      },
+      {
+        value: "Airy Hill Primary School, Whitby",
+        text: "Airy Hill Primary School, Whitby"
+      },
+      {
+        value: "Aiskew, Leeming Bar CE Primary School, Leeming Bar",
+        text: "Aiskew, Leeming Bar CE Primary School, Leeming Bar"
+      },
+      {
+        value: "Alanbrooke Academy, Topcliffe",
+        text: "Alanbrooke Academy, Topcliffe"
+      },
+      {
+        value: "All Saints RC Primary School, Thirsk",
+        text: "All Saints RC Primary School, Thirsk"
+      },
+      {
+        value: "All Saints CE School, Kirkby Overblow",
+        text: "All Saints CE School, Kirkby Overblow"
+      },
+      {
+        value: "Alverton Primary School, Northallerton",
+        text: "Alverton Primary School, Northallerton"
+      },
+      {
+        value: "Amotherby Community Primary School, Amotherby",
+        text: "Amotherby Community Primary School, Amotherby"
+      },
+      {
+        value: "Applegarth Primary School, Northallerton",
+        text: "Applegarth Primary School, Northallerton"
+      },
+      {
+        value: "Appleton Roebuck Primary School, Appleton Roebuck",
+        text: "Appleton Roebuck Primary School, Appleton Roebuck"
+      },
+      {
+        value: "Appleton Wiske Community Primary School, Appleton Wiske",
+        text: "Appleton Wiske Community Primary School, Appleton Wiske"
+      },
+      {
+        value: "Askrigg Primary School, Askrigg",
+        text: "Askrigg Primary School, Askrigg"
+      },
+      {
+        value: "Askwith Community Primary School, Askwith",
+        text: "Askwith Community Primary School, Askwith"
+      },
+      {
+        value: "Aspin Park Academy, Knaresborough",
+        text: "Aspin Park Academy, Knaresborough"
+      },
+      {
+        value: "Athelstan Community Primary School, Sherburn-in-Elmet",
+        text: "Athelstan Community Primary School, Sherburn-in-Elmet"
+      },
+      {
+        value: "Austwick CE Primary School, Austwick",
+        text: "Austwick CE Primary School, Austwick"
+      },
+      {
+        value: "Bainbridge CE Primary School, Bainbridge",
+        text: "Bainbridge CE Primary School, Bainbridge"
+      },
+      {
+        value: "Barkston Ash RC Primary School, Barkston Ash",
+        text: "Barkston Ash RC Primary School, Barkston Ash"
+      },
+      {
+        value: "Barlby Bridge Community Primary School, Barlby",
+        text: "Barlby Bridge Community Primary School, Barlby"
+      },
+      {
+        value: "Barlby Community Primary School, Barlby",
+        text: "Barlby Community Primary School, Barlby"
+      },
+      {
+        value: "Barlow CE Primary School, Barlow",
+        text: "Barlow CE Primary School, Barlow"
+      },
+      {
+        value: "Barrowcliff School, Scarborough",
+        text: "Barrowcliff School, Scarborough"
+      },
+      {
+        value: "Barton CE Primary School, Barton",
+        text: "Barton CE Primary School, Barton"
+      },
+      {
+        value: "Barwic Parade Community Primary School, Selby",
+        text: "Barwic Parade Community Primary School, Selby"
+      },
+      {
+        value: "Beckwithshaw Community Primary School, Beckwithshaw",
+        text: "Beckwithshaw Community Primary School, Beckwithshaw"
+      },
+      {
+        value: "Bedale CE Primary School, Bedale",
+        text: "Bedale CE Primary School, Bedale"
+      },
+      {
+        value: "Bentham Community Primary School, Bentham",
+        text: "Bentham Community Primary School, Bentham"
+      },
+      {
+        value: "Bilsdale Midcable Chop Gate CE Primary School, Chop Gate",
+        text: "Bilsdale Midcable Chop Gate CE Primary School, Chop Gate"
+      },
+      {
+        value: "Bilton Grange Primary School, Harrogate",
+        text: "Bilton Grange Primary School, Harrogate"
+      },
+      {
+        value: "Birstwith CE Primary School, Birstwith",
+        text: "Birstwith CE Primary School, Birstwith"
+      },
+      {
+        value: "Bishop Monkton CE Primary School, Bishop Monkton",
+        text: "Bishop Monkton CE Primary School, Bishop Monkton"
+      },
+      {
+        value: "Bolton-on-Swale St Mary's CE Primary School, Bolton-on-Swale",
+        text: "Bolton-on-Swale St Mary's CE Primary School, Bolton-on-Swale"
+      },
+      {
+        value: "Boroughbridge Primary School, Boroughbridge",
+        text: "Boroughbridge Primary School, Boroughbridge"
+      },
+      {
+        value: "The Boyle and Petyt Primary School, Beamsley",
+        text: "The Boyle and Petyt Primary School, Beamsley"
+      },
+      {
+        value: "Bradleys Both Community Primary School, Bradley",
+        text: "Bradleys Both Community Primary School, Bradley"
+      },
+      {
+        value: "Braeburn Primary Academy, Eastfield",
+        text: "Braeburn Primary Academy, Eastfield"
+      },
+      {
+        value: "Brayton CE Primary School, Brayton",
+        text: "Brayton CE Primary School, Brayton"
+      },
+      {
+        value: "Brompton and Sawdon Community Primary School, Brompton-by-Sawdon",
+        text: "Brompton and Sawdon Community Primary School, Brompton-by-Sawdon"
+      },
+      {
+        value: "Brompton Community Primary School, Brompton",
+        text: "Brompton Community Primary School, Brompton"
+      },
+      {
+        value: "Brompton-on-Swale CE Primary School, Brompton-on-Swale",
+        text: "Brompton-on-Swale CE Primary School, Brompton-on-Swale"
+      },
+      {
+        value: "Broomfield School, Northallerton",
+        text: "Broomfield School, Northallerton"
+      },
+      {
+        value: "Brotherton and Byram Community Primary Academy, Brotherton",
+        text: "Brotherton and Byram Community Primary Academy, Brotherton"
+      },
+      {
+        value: "Burneston CE Primary School, Burneston",
+        text: "Burneston CE Primary School, Burneston"
+      },
+      {
+        value: "Burnsall Primary School, Burnsall",
+        text: "Burnsall Primary School, Burnsall"
+      },
+      {
+        value: "Burton Leonard CE Primary School, Burton Leonard",
+        text: "Burton Leonard CE Primary School, Burton Leonard"
+      },
+      {
+        value: "Burton Salmon Community Primary School, Burton Salmon",
+        text: "Burton Salmon Community Primary School, Burton Salmon"
+      },
+      {
+        value: "Camblesforth Community Primary Academy, Camblesforth",
+        text: "Camblesforth Community Primary Academy, Camblesforth"
+      },
+      {
+        value: "Cambrai Primary School, Catterick Garrison",
+        text: "Cambrai Primary School, Catterick Garrison"
+      },
+      {
+        value: "Carleton Endowed CE Primary School, Carleton-in-Craven",
+        text: "Carleton Endowed CE Primary School, Carleton-in-Craven"
+      },
+      {
+        value: "Carlton and Faceby CE Primary School, Carlton in Cleveland",
+        text: "Carlton and Faceby CE Primary School, Carlton in Cleveland"
+      },
+      {
+        value: "Carlton Miniott Primary Academy, Carlton Miniott",
+        text: "Carlton Miniott Primary Academy, Carlton Miniott"
+      },
+      {
+        value: "Carlton Primary School, Carlton",
+        text: "Carlton Primary School, Carlton"
+      },
+      {
+        value: "Carnagill Community Primary School, Catterick Garrison",
+        text: "Carnagill Community Primary School, Catterick Garrison"
+      },
+      {
+        value: "Castleton Primary School, Castleton",
+        text: "Castleton Primary School, Castleton"
+      },
+      {
+        value: "Cawood CE Primary School, Cawood",
+        text: "Cawood CE Primary School, Cawood"
+      },
+      {
+        value: "Cayton Community Primary School, Cayton",
+        text: "Cayton Community Primary School, Cayton"
+      },
+      {
+        value: "Chapel Haddlesey CE Primary School, Chapel Haddlesey",
+        text: "Chapel Haddlesey CE Primary School, Chapel Haddlesey"
+      },
+      {
+        value: "Christ Church CE Primary School, Skipton",
+        text: "Christ Church CE Primary School, Skipton"
+      },
+      {
+        value: "Cliffe Primary School, Cliffe",
+        text: "Cliffe Primary School, Cliffe"
+      },
+      {
+        value: "Colburn Community Primary School, Colburn",
+        text: "Colburn Community Primary School, Colburn"
+      },
+      {
+        value: "Cononley Community Primary School, Cononley",
+        text: "Cononley Community Primary School, Cononley"
+      },
+      {
+        value: "Coppice Valley Primary School, Harrogate",
+        text: "Coppice Valley Primary School, Harrogate"
+      },
+      {
+        value: "Cowling Community Primary School, Cowling",
+        text: "Cowling Community Primary School, Cowling"
+      },
+      {
+        value: "Cracoe and Rylstone CE Primary School, Cracoe",
+        text: "Cracoe and Rylstone CE Primary School, Cracoe"
+      },
+      {
+        value: "Crakehall CE Primary School, Crakehall",
+        text: "Crakehall CE Primary School, Crakehall"
+      },
+      {
+        value: "Crayke CE Primary School, Crayke",
+        text: "Crayke CE Primary School, Crayke"
+      },
+      {
+        value: "Croft CE Primary School, Croft-on-Tees",
+        text: "Croft CE Primary School, Croft-on-Tees"
+      },
+      {
+        value: "Dacre Braithwaite CE Primary School, Braithwaite",
+        text: "Dacre Braithwaite CE Primary School, Braithwaite"
+      },
+      {
+        value: "Danby CE School, Danby",
+        text: "Danby CE School, Danby"
+      },
+      {
+        value: "Darley Primary School, Darley",
+        text: "Darley Primary School, Darley"
+      },
+      {
+        value: "Dishforth Airfield Community Primary School, Dishforth Airfield",
+        text: "Dishforth Airfield Community Primary School, Dishforth Airfield"
+      },
+      {
+        value: "Dishforth CE Primary School, Dishforth",
+        text: "Dishforth CE Primary School, Dishforth"
+      },
+      {
+        value: "Easingwold Community Primary School, Easingwold",
+        text: "Easingwold Community Primary School, Easingwold"
+      },
+      {
+        value: "East Ayton Community Primary School, East Ayton",
+        text: "East Ayton Community Primary School, East Ayton"
+      },
+      {
+        value: "East Cowton CE Primary School, East Cowton",
+        text: "East Cowton CE Primary School, East Cowton"
+      },
+      {
+        value: "East Whitby Primary Academy, Whitby",
+        text: "East Whitby Primary Academy, Whitby"
+      },
+      {
+        value: "Egton CE Primary School, Egton",
+        text: "Egton CE Primary School, Egton"
+      },
+      {
+        value: "Embsay CE Primary School, Embsay",
+        text: "Embsay CE Primary School, Embsay"
+      },
+      {
+        value: "Escrick CE Primary School, Escrick",
+        text: "Escrick CE Primary School, Escrick"
+      },
+      {
+        value: "Fairburn Community Primary School, Fairburn",
+        text: "Fairburn Community Primary School, Fairburn"
+      },
+      {
+        value: "Filey CE Infants Academy, Filey",
+        text: "Filey CE Infants Academy, Filey"
+      },
+      {
+        value: "Filey Junior School, Filey",
+        text: "Filey Junior School, Filey"
+      },
+      {
+        value: "Follifoot CE Primary School, Follifoot",
+        text: "Follifoot CE Primary School, Follifoot"
+      },
+      {
+        value: "Forest of Galtres Anglican-Methodist Primary School, Shipton",
+        text: "Forest of Galtres Anglican-Methodist Primary School, Shipton"
+      },
+      {
+        value: "Foston CE Primary School, Foston",
+        text: "Foston CE Primary School, Foston"
+      },
+      {
+        value: "Fountains CE Primary School, Grantley",
+        text: "Fountains CE Primary School, Grantley"
+      },
+      {
+        value: "Fountains Earth CE Primary School, Lofthouse",
+        text: "Fountains Earth CE Primary School, Lofthouse"
+      },
+      {
+        value: "Friarage Community Primary School, Scarborough",
+        text: "Friarage Community Primary School, Scarborough"
+      },
+      {
+        value: "Fylingdales CE VC Primary School, Fylingthorpe",
+        text: "Fylingdales CE VC Primary School, Fylingthorpe"
+      },
+      {
+        value: "Gargrave CE Primary School, Gargrave",
+        text: "Gargrave CE Primary School, Gargrave"
+      },
+      {
+        value: "Giggleswick Primary School, Giggleswick",
+        text: "Giggleswick Primary School, Giggleswick"
+      },
+      {
+        value: "Gillamoor CE Primary School, Gillamoor",
+        text: "Gillamoor CE Primary School, Gillamoor"
+      },
+      {
+        value: "Gladstone Road Primary School, Scarborough",
+        text: "Gladstone Road Primary School, Scarborough"
+      },
+      {
+        value: "Glaisdale Primary School, Glaisdale",
+        text: "Glaisdale Primary School, Glaisdale"
+      },
+      {
+        value: "Glasshouses Community Primary School, Glasshouses",
+        text: "Glasshouses Community Primary School, Glasshouses"
+      },
+      {
+        value: "Glusburn Community Primary School, Glusburn",
+        text: "Glusburn Community Primary School, Glusburn"
+      },
+      {
+        value: "Goathland Primary School, Goathland",
+        text: "Goathland Primary School, Goathland"
+      },
+      {
+        value: "Goldsborough CE Primary School, Goldsborough",
+        text: "Goldsborough CE Primary School, Goldsborough"
+      },
+      {
+        value: "Grassington CE Primary School, Grassington",
+        text: "Grassington CE Primary School, Grassington"
+      },
+      {
+        value: "Great Ouseburn Community Primary School, Great Ouseburn",
+        text: "Great Ouseburn Community Primary School, Great Ouseburn"
+      },
+      {
+        value: "Great Smeaton School, Great Smeaton",
+        text: "Great Smeaton School, Great Smeaton"
+      },
+      {
+        value: "Greatwood Community Primary School, Skipton",
+        text: "Greatwood Community Primary School, Skipton"
+      },
+      {
+        value: "Green Hammerton CE Primary School, Green Hammerton",
+        text: "Green Hammerton CE Primary School, Green Hammerton"
+      }
+      
+        ]
+      }) }}
+    </div>
