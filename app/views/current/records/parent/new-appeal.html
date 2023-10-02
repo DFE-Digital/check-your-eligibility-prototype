@@ -26,57 +26,55 @@ href: "/"
   <div class="govuk-grid-column-full">
 
 
-    <span class="govuk-hint">Application history</span>
+    <span class="govuk-hint">Eden Tesfay</span>
 
 
 
-    <h1 class="govuk-heading-xl">Eden Tesfay
+    <h1 class="govuk-heading-xl">Application history
       <span class="govuk-!-margin-left-5"> {{govukTag({
-        text: "In progress",
-        classes: "govuk-tag--turquoise"
+        text: "New appeal",
+        classes: "govuk-tag--pink"
         })}}</span>
     </h1>
 
-    {%- from "moj/components/ticket-panel/macro.njk" import mojTicketPanel -%}
 
-    {{ mojTicketPanel({
-    attributes: {
-    'aria-label': 'Decision panel'
-    },
-    items: [
-    {
-    html: '
-    
-    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Reference number: 44455453</h2>
-    <p class="govuk-body">Ensure all supporting evidence has been provided prior to submitting.</p>
+  
 
-    <form action="supporting-evidence" method="post" novalidate>
+      {%- from "moj/components/ticket-panel/macro.njk" import mojTicketPanel -%}
 
-      <input type="hidden" name="approve-application" value="yes">
+      {{ mojTicketPanel({
+      attributes: {
+      'aria-label': 'Decision panel'
+      },
+      items: [
+      {
+      html: '
+      
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Reference number: 44455453</h2>
+      <p class="govuk-body">Ensure all supporting evidence has been reviewed prior to making a decision.</p>
 
+      <form action="supporting-evidence" method="post" novalidate>
 
-    <button class="govuk-button" data-module="govuk-button">
-      Upload evidence
-    </button>',
-    attributes: {
-    'aria-label': 'Section 1'
-    },
-    classes: 'moj-ticket-panel__content--blue'
-    }]
-    }) }}
+        <input type="hidden" name="approve-application" value="yes">
 
 
- 
-  </form>
-    
-
-
-
-     
-     
+      <button class="govuk-button" data-module="govuk-button">
+        Approve application
+      </button>
 
     
 
+
+      <a href="./" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-1 govuk-!-margin-left-5"
+        data-module="govuk-button">
+        Query application
+      </a>',
+      attributes: {
+      'aria-label': 'Section 1'
+      },
+      classes: 'moj-ticket-panel__content--blue'
+      }]
+      }) }}
 
 
    
@@ -103,10 +101,10 @@ href: "/"
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-         Local authority
+          Name
         </dt>
         <dd class="govuk-summary-list__value">
-      Leeds City Council
+          Eden Tesfay
         </dd>
       </div>
 
@@ -124,13 +122,13 @@ href: "/"
           Nationality
         </dt>
         <dd class="govuk-summary-list__value">
-         British
+          Eritrean
         </dd>
       </div>
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          National insurance number
+          NASS reference
         </dt>
         <dd class="govuk-summary-list__value">
           BB4433D4332
@@ -171,15 +169,6 @@ href: "/"
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Date of birth
-        </dt>
-        <dd class="govuk-summary-list__value">
-
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          School
         </dt>
         <dd class="govuk-summary-list__value">
 

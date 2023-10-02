@@ -15,7 +15,16 @@
 
     <p class="govuk-body">It might take a few minutes to arrive. The code will expire after 15 minutes.</p>
 
+    {% if data['parent-portal'] == 'evidence-required' %}
+
     <form action="../checker-parent/which-la" method="post">
+
+      {% else %}
+
+
+    <form action="../checker-parent/dashboard" method="post">
+
+      {% endif %}
       <div class="govuk-form-group">
         <label class="govuk-label" for="code">
           Enter the 6 digit security code
