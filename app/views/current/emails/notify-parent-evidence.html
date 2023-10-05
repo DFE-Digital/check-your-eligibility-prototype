@@ -1,19 +1,34 @@
 {% extends "layouts/layout-email.html" %}
-{% set subject = "Notification email" %}
-{% set from = "GOV.UK <example@gov.uk>" %}
+{% set subject = "Free school meals – application successful – reference [reference]" %}
+{% set from = "DfE <dfe@gov.uk>" %}
 {% set to = "Eden Tesfay <eden.tesfay@gmail.com>" %}
   
 {% block content %}
-  <p>Dear parent,</p>
-  <p>In order for your application for free school meals to be processed we require further supporting evidence.</p>
+<p>Dear parent or guardian, </p>
+<p>
+  We received your application for free school meals. </p> 
+<p>
+  For us to assess your application, we need you to submit further supporting evidence.</p> 
 
-  <p>Please provide:</p>
+<p>What supporting evidence you need to upload: </p>
 
-  <ul><li>Passport</li></ul>
-  <p>To submit supporting evicence, please <a href="../account/signin-or-create?parent-portal=provide-evidence">sign in to the parent portal.</a></p>
+    <ul><li>Universal credit document</li></ul>
 
-  <p>Once supporting evicence has been received, we shall update our records and provide an update on the status of your application.</p>
+<p>You must upload this as a scanned copy or a photo of the original – say format here? </p>
 
-  
+<p>How to provide your supporting evidence </p>
+
+<p>Sign in to your parent portal: <a href="../account/onegov-signin">www.parent-portal.education.gov.uk</a> </p>
+
+<p>Select the reference number for your child, then upload and submit your further supporting evidence. </p>
+
+<h2 class="govuk-heading-m">What happens next </h2>
+
+<p>When we receive your supporting evidence, we will update our records.  </p>
+
+<p>We will email you when your application has been assessed and a decision is made.</p> 
+
+<p>It should take about 1 week for us to make a decision. </p>
+
   <p>From Department for Education</p>
 {% endblock %}

@@ -32,42 +32,12 @@ href: "/"
 
     <h1 class="govuk-heading-xl">Eden Tesfay
       <span class="govuk-!-margin-left-5"> {{govukTag({
-        text: "In progress",
+        text: "Application approved",
         classes: "govuk-tag--turquoise"
         })}}</span>
     </h1>
 
-    {%- from "moj/components/ticket-panel/macro.njk" import mojTicketPanel -%}
 
-    {{ mojTicketPanel({
-    attributes: {
-    'aria-label': 'Decision panel'
-    },
-    items: [
-    {
-    html: '
-    
-    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Reference number: 44455453</h2>
-    <p class="govuk-body">Ensure all supporting evidence has been provided prior to submitting.</p>
-
-    <form action="supporting-evidence" method="post" novalidate>
-
-      <input type="hidden" name="approve-application" value="yes">
-
-
-    <button class="govuk-button" data-module="govuk-button">
-      Upload evidence
-    </button>',
-    attributes: {
-    'aria-label': 'Section 1'
-    },
-    classes: 'moj-ticket-panel__content--blue'
-    }]
-    }) }}
-
-
- 
-  </form>
     
 
 
@@ -106,7 +76,7 @@ href: "/"
          Local authority
         </dt>
         <dd class="govuk-summary-list__value">
-      Leeds City Council
+Manchester City Council
         </dd>
       </div>
 

@@ -5,11 +5,11 @@
 {% set applicationSent %}
 <h3 class="govuk-notification-banner__heading">
   Your application has been sent
-  </h3>
-  <p class="govuk-body">
-    We have sent your application to be processed by your local school. It may take upto 1 week to process.
-  </p>
-  <p>Your reference is 1234567</p>
+</h3>
+<p class="govuk-body">
+  We have sent your application to be viewed by your local school.
+</p>
+<p>Your reference is 1234567</p>
 {% endset %}
 
 {% block content %}
@@ -19,29 +19,27 @@
 
     {% if data['answers-checked'] =="true" %}
     {{ govukNotificationBanner({
-      html: applicationSent,
-      type: 'success'
+    html: applicationSent,
+    type: 'success'
     }) }}
-    
+
     {% endif %}
 
 
 
     <div class="govuk-grid-row">
 
-            
+
       <div class="govuk-grid-column-one-half">
-      
-
-<h2 class="govuk-heading-l">What to do now</h2>
-
-<p>Check with your local school on the progress of your application</p>
-
-<p><a href="dashboard">Go to your parent portal homepage</a></p>
-<p><a href="../account/signin-or-create">Sign out of parent portal</a></p>
 
 
+        <h2 class="govuk-heading-l">What happens now</h2>
 
+        <p>Your local school will be notified of your eligibility</p>
+        <p>You will also receive an email or letter depending on the preferences you have chosen</p>
+
+        <p><a href="dashboard">Go to your parent portal homepage</a></p>
+        <p><a href="../account/signin-or-create">Sign out of parent portal</a></p>
 
 
 
@@ -54,17 +52,20 @@
 
 
 
-        
 
 
 
 
-        
-      </div>  
-    
+
+
+
+
+
+      </div>
+
     </div>
 
-  
+
   </div>
 </div>
 

@@ -1,76 +1,99 @@
 {% extends "layouts/layout-dfe.html" %}
 
-{% set pageName="Home" %}
 
 
+
+
+
+
+
+
+{% block backLink %}
+{{ govukBackLink({
+text: "Back",
+href: "/"
+}) }}
+{% endblock %}
+
+
+<!-- The content between the heading 1 and the buttons -->
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
 
 
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+  <div class="govuk-grid-column-full">
 
-
-
+    
 
 {{ govukRadios({
-  classes: "govuk-radios--inline",
-  name: "changedName",
+  name: "evidence",
   fieldset: {
     legend: {
-      text: "Do you have one of the required supporting documents?",
+      text: "Which supporting evidence do you have?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
     }
   },
   hint: {
-    text: "You will need to upload the supporting document"
+    text: "You will need to upload this document"
   },
   items: [
     {
-      value: "yes",
-      text: "Yes"
+      value: "universal-credit",
+      text: "Universal credit"
     },
     {
-      value: "no",
-      text: "No"
+      value: "nass",
+      text: "Nation asylum support number"
+    },
+    {
+      value: "income-support",
+      text: "Income support"
+    },
+    {
+      value: "income-based-jsa",
+      text: "Income based jobseeker's allowance"
+    },
+    {
+      value: "pension-credit",
+      text: "Pension credit"
+    },
+    {
+      value: "child-tax-credit",
+      text: "child-tax-credit"
+    },
+    {
+      value: "working-tax-credit",
+      text: "Working tax credit"
     }
+   
   ]
 }) }}
 
-{% from "govuk/components/button/macro.njk" import govukButton %}
+
+
 
 {{ govukButton({
-  text: "Continue",
+  text: "Save and continue",
   href:'upload-file'
 }) }}
+    </div>
+    </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-        
-
-
-
-
- 
-
-  
-  </div>
-</div>
 
 {% endblock %}
 
+{% block buttons %}
+{% endblock %}
+
 {% block pageScripts %}
+<!-- Add any javascript files here. Include javascript files only on the pages
+that need them. Excessive javascript files loaded on other pages may slow down
+the response times of the prototype. -->
 <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+
+
 {% endblock %}

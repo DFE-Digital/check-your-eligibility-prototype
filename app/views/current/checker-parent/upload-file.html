@@ -15,6 +15,7 @@
       }) }}
     {% endif %}
 
+    <h1 class="govuk-heading-l">Upload your document</h1>
  
 
     <form action="check-upload" method="post" enctype="multipart/form-data">
@@ -23,13 +24,21 @@
 {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
+
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+
+{{ govukDetails({
+  summaryText: "What you can upload",
+  text: "Accepted file types are: jpg, png, tiff, pdf."
+}) }}
+
 {{ govukFileUpload({
   id: "file-upload-1",
   name: "file-upload-1",
   isPageHeading: true,
   label: {
-    text: "Upload your document",
-    classes: 'govuk-label--l'
+    text: "File upload",
+    classes: 'govuk-label--s'
   },
   hint: {
     text: 'You can upload your document as a scanned copy or photo of the original'

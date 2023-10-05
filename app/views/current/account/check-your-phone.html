@@ -17,12 +17,12 @@
 
     {% if data['parent-portal'] == 'evidence-required' %}
 
-    <form action="../checker-parent/which-la" method="post">
+    <form action="../checker-parent/dashboard?=la" method="post">
 
       {% else %}
 
 
-    <form action="../checker-parent/dashboard" method="post">
+    <form action="../checker-parent/which-la" method="post">
 
       {% endif %}
       <div class="govuk-form-group">

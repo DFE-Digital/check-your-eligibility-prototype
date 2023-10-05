@@ -1,0 +1,77 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+
+
+
+
+
+
+    <div class="govuk-grid-row">
+
+            
+      <div class="govuk-grid-column-two-thirds">
+
+    <form action="dob" method="post" novalidate>
+
+      {% call govukFieldset({
+        legend: {
+          text: "What is the eligibility code?",
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+      
+        {{ govukInput({
+          label: {
+            text: "Enter a code"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "code",
+          name: "code",
+          autocomplete: ""
+        }) }}
+
+      
+
+
+     
+      
+      
+      
+        
+      
+       
+      
+      {% endcall %}
+      
+      
+      
+      
+      {{ govukButton({
+        text: "Save and continue",
+        classes:'govuk-!-margin-top-5'
+      }) }}
+
+      
+    </form>
+
+
+
+
+        
+
+
+
+
+        
+      </div>  
+    
+    </div>
+
+
+
+{% endblock %}

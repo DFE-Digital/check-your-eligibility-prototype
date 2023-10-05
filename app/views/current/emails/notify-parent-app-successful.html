@@ -1,14 +1,17 @@
 {% extends "layouts/layout-email.html" %}
-{% set subject = "Notification email" %}
-{% set from = "GOV.UK <example@gov.uk>" %}
+{% set subject = "Free school meals – application successful – reference [reference]" %}
+{% set from = "DfE <dfe@gov.uk>" %}
 {% set to = "Eden Tesfay <eden.tesfay@gmail.com>" %}
   
 {% block content %}
-  <p>Dear parent,</p>
-  <p>We are pleased to confirm your recent application for free school meals was successful.</p>
+<p>Dear parent or guardian, </p>
 
-  <p>You shall receive a letter confirming this shortly.</p>
+<p>We are pleased to confirm your recent application for free school meals was successful. </p>
 
-  
-  <p>From Department for Education</p>
+<h2>What happens next </h2>
+
+<p>We will send you a letter confirming this shortly. - will the letter say what to do, etc? </p>
+
+<p>From Department for Education</p>
+
 {% endblock %}

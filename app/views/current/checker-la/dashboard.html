@@ -5,6 +5,7 @@
 {% set parentName="Eden Tesfay" %}
 
 
+
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -14,8 +15,8 @@
 
 
     <span class="govuk-hint">John Spencer</span>
-    <h1 class="govuk-heading-xl">
-    Barnsley Council 
+    <h1 class="govuk-heading-l">
+    Manchester City Council
     </h1>
 
 
@@ -28,66 +29,58 @@
 <div class="dfe-grid-container">
 
 
-    
-  <div class="dfe-card-container">
+    <div class="dfe-card-container">
 
-    <div class="def-card">
-      
-      <a class="govuk-link--no-underline" href="medium-risk">
+      <div class="def-card">
+        <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="application-types">Check eligibility</a>
+        </h2>
+        <p>See what a child in your local authority may be eligible for.</p>
+    </div>
+    </div>
 
+    <div class="dfe-card-container">
 
+      <div class="def-card">
+        <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="applications">Eligible families</a>
+            {%- from "moj/components/notification-badge/macro.njk" import mojNotificationBadge -%}
+            
+            {{ mojNotificationBadge({
+              text: "10"
+            }) }}
+        </h2>
+        <p>Check which children can recieve free school meals at your school.</p>
+    </div>
+    </div>
 
-        <div class="govuk-tag--red govuk-!-padding-3">
+    <div class="dfe-card-container">
 
-          <h2 class="govuk-heading-xl govuk-tag--red">200</h2>
-          <div class="hods-card__body">
-            <p class="govuk-body-m govuk-tag--red">Applications pending approval</p>
-          </div>
-        </div>
-      </a>
-  </div>
-  </div>
-  <div class="dfe-card-container">
+      <div class="def-card">
+        <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="appeals">Appeals</a>
+            {%- from "moj/components/notification-badge/macro.njk" import mojNotificationBadge -%}
+            
+            {{ mojNotificationBadge({
+              text: "3"
+            }) }}
+        </h2>
+        <p>New appeals which need to be checked and approved or submitted for guidance from your local authority.</p>
+    </div>
+    </div>
 
-    <div class="def-card">
-      
-      <a class="govuk-link--no-underline" href="medium-risk">
-
-
-
-        <div class="govuk-tag--orange govuk-!-padding-3">
-
-          <h2 class="govuk-heading-xl govuk-tag--orange">122</h2>
-          <div class="hods-card__body">
-            <p class="govuk-body-m govuk-tag--orange">Applications applications being queried</p>
-          </div>
-        </div>
-      </a>
-  </div>
-  </div>
 
 
 
     <div class="dfe-card-container">
 
       <div class="def-card">
-        
-        <a class="govuk-link--no-underline" href="medium-risk">
-
-
-
-          <div class="govuk-tag--green govuk-!-padding-3">
-  
-            <h2 class="govuk-heading-xl govuk-tag--green">153</h2>
-            <div class="hods-card__body">
-              <p class="govuk-body-m govuk-tag--green">Applications approved by schools</p>
-            </div>
-          </div>
-        </a>
+        <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="resources">Resources</a>
+        </h2>
+        <p>Guidance and documenation for making decisions on applications.</p>
     </div>
     </div>
-
-  
 
 
 
