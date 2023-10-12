@@ -37,16 +37,14 @@ href: "/"
         })}}</span>
     </h1>
 
+    {%- from "moj/components/banner/macro.njk" import mojBanner -%}
 
-    
-
-
-
-     
-     
-
-    
-
+    {{ mojBanner({
+      type: 'information',
+      text: 'You can start recieving free school meals from your school.',
+      iconFallbackText: 'information'
+    }) }}
+  
 
 
    

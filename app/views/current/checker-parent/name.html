@@ -17,6 +17,13 @@
 
     <form action="dob" method="post" novalidate>
 
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+
+
+
+
       {% call govukFieldset({
         legend: {
           text: "What is your name?",
@@ -25,28 +32,18 @@
         }
       }) %}
       
-        {{ govukInput({
-          label: {
-            text: "First name"
-          },
-          classes: "govuk-!-width-two-thirds",
-          id: "first-name",
-          name: "first-name",
-          autocomplete: ""
-        }) }}
-
-        {{ govukInput({
-          label: {
-            text: "Surname"
-          },
-          classes: "govuk-!-width-two-thirds",
-          id: "surname",
-          name: "surname",
-          autocomplete: ""
-        }) }}
+        
 
 
-     
+      {{ govukInput({
+        label: {
+          text: "Full name"
+        },
+        id: "full-name",
+        name: "fullName",
+        autocomplete: "name",
+        spellcheck: false
+      }) }}
       
       
       
