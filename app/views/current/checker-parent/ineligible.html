@@ -10,58 +10,73 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">You are not eligible for free school meals</h1>
-
-
-<h2 class="govuk-heading-m">Get help with checking your eligibility</h2>
-<p>If you believe this check to be incorrect, you can appeal, by providing one of the following:</p>
-
-
-<ul class="govuk-!-margin-bottom-10">
-  <li>Income Support</li>
-  <li>income-based Jobseeker’s Allowance</li>
-  <li>income-related Employment and Support Allowance</li>
-  <li>support under Part VI of the Immigration and Asylum Act 1999</li>
-  <li>the guaranteed element of Pension Credit</li>
-  <li>Child Tax Credit (provided you’re not also entitled to Working Tax Credit and have an annual gross income of no more than £16,190)</li>
-  <li>Working Tax Credit run-on - paid for 4 weeks after you stop qualifying for Working Tax Credit</li>
-  <li>Universal Credit - if you apply on or after 1 April 2018 your household income must be less than £7,400 a year (after tax and not including any benefits you get)</li>
-</ul>
+    <p> If you think this is wrong and you should be able to get free school meals for your child, you can make an
+      appeal against the decision. </p>
 
 
 
-{{ govukRadios({
-  classes: "",
-  name: "changedName",
-  fieldset: {
+    <p>You can make an appeal by uploading a document showing you have 1 of the following: </p>
+
+
+
+
+    <ul class="govuk-!-margin-bottom-10">
+
+      <li>
+        Universal Credit number </li>
+      <li>
+        National asylum support number </li>
+
+      <li> National asylum support number </li>
+
+      <li> Jobseeker’s Allowance support number </li>
+
+      <li> Universal credit </li>
+
+      <li> Nation asylum support number </li>
+
+      <li> Income support </li>
+
+      <li>Income based jobseeker's allowance </li>
+
+      <li>Pension credit </li>
+      <li> Child Tax Credit </li>
+
+      <li>Working Tax Credit </li>
+
+    </ul>
+
+
+
+    {{ govukRadios({
+    classes: "",
+    name: "changedName",
+    fieldset: {
     legend: {
-      text: "Do you want to proceed to the appeals process?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m govuk-!-margin-top-5"
+    text: "Do you want make an appeal against the decision?",
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--m govuk-!-margin-top-5"
     }
-  },
-  hint: {
-    text: "You will need to upload one of the supporting documents as evidence"
-  },
-  items: [
+    },
+
+    items: [
     {
-      value: "yes",
-      text: "Yes"
+    value: "yes",
+    text: "Yes"
     },
     {
-      value: "no",
-      text: "No"
+    value: "no",
+    text: "No"
     }
-  ]
-}) }}
+    ]
+    }) }}
 
-{% from "govuk/components/button/macro.njk" import govukButton %}
+    {% from "govuk/components/button/macro.njk" import govukButton %}
 
-{{ govukButton({
-  text: "Continue",
-  href:'do-you-have-docs'
-}) }}
-
-
+    {{ govukButton({
+    text: "Continue",
+    href:'do-you-have-docs'
+    }) }}
 
 
 
@@ -73,14 +88,16 @@
 
 
 
-        
 
 
 
 
- 
 
-  
+
+
+
+
+
   </div>
 </div>
 

@@ -25,28 +25,32 @@ href: "/"
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
   <div class="govuk-grid-column-full">
 
+
+
+
+ 
     
 
 {{ govukRadios({
   name: "evidence",
   fieldset: {
     legend: {
-      text: "Which supporting evidence do you have?",
+      text: "Which document do you have?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
     }
   },
   hint: {
-    text: "You will need to upload this document"
+    text: "You will need to upload this document as a jpg, png, tiff, or pdf"
   },
   items: [
     {
       value: "universal-credit",
-      text: "Universal credit"
+      text: "Universal Credit number"
     },
     {
       value: "nass",
-      text: "Nation asylum support number"
+      text: "National asylum support number "
     },
     {
       value: "income-support",

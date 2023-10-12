@@ -8,23 +8,27 @@
   <div class="govuk-grid-column-two-thirds">
 
 
+ 
+
+
+ 
+
+
     <div class="gem-c-title govuk-!-margin-top-0 govuk-!-margin-bottom-8">
 
-      <span class="govuk-caption-l gem-c-title__context">
-        Form
-      </span>
+    
 
       <h1 class="govuk-heading-l">
-        Apply for free school meals if you cannot apply online
+        Apply for free school meals if you cannot apply online 
       </h1>
     </div>
 
-    <h2 class="govuk-heading-m">Documents</h2>
+    
 
     <section>
       <div class="govuk-grid-column-one-quarter">
         <a target="_self" tabindex="-1" aria-hidden="true" href="">
-          <img alt="" class="gem-c-attachment__thumbnail-image gem-c-attachment__thumbnail-image--custom"
+          <img alt="" class=""
             src="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1154589/thumbnail_CH2_Child_Benefit_Claim_Form_English.pdf.png">
         </a>
       </div>
@@ -41,7 +45,7 @@
     {% from "govuk/components/details/macro.njk" import govukDetails %}
 
     {{ govukDetails({
-    summaryText: "Request an accessible version",
+    summaryText: "Request an accessible form",
     text: "If you use assistive technology (such as a screen reader) and need a version of this document in a more
     accessible format, please email different.format@hmrc.gov.uk. Please tell us what format you need. It will help us
     if you say what assistive technology you use"
@@ -60,32 +64,25 @@
 
     <section id="details">
       <h2 class="govuk-heading-m">
-        Details
+        What you need to do
       </h2>
 
+      <p>Use this form if you cannot apply for Free School Meals online </p>
+      <p>Print and then fill in the Free School Meals application form, and hand it into your child’s school. A school administrator will process the form on your behalf. 
+      </p>
+     
 
-      <div class="gem-c-govspeak govuk-govspeak direction-ltr" data-module="govspeak"
-        data-govspeak-module-started="true">
-
-        <div class="govspeak">
-          <div role="note" aria-label="Information" class="application-notice info-notice">
-            <p>Use these forms if you cannot <a href="" class="govuk-link">claim Free School Meals online</a></p>
-          </div>
-
-          <p>Fill in the Free School Meals for and hand it into your local school. Aschool administraor will process the
-            form
-            on your behalf.
-          </p>
-
-
+      <p>If you cannot apply online or by using this form, you can apply by phone on the DfE helpline. </p>
+<ul class="govuk-list">
+  <li>Telephone: 0370 000 2288</li>
+  <li>Monday to Friday, 9:30am to 5pm</li>
+</ul>
+<p class="govuk-body">
+  <a class="govuk-link" href="#">Find out about call charges</a>
+</p>
 
 
-
-          <p>If you cannot claim online or by using these forms, you can <a href="." class="govuk-link">contact DfE</a>
-            to claim by phone.</p>
-        </div>
-
-      </div>
+    
     </section>
 
 

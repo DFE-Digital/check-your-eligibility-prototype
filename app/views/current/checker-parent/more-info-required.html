@@ -9,17 +9,19 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l">More information is required to check your eligibility</h1>
+    <h1 class="govuk-heading-l">We were unable to check your eligibility </h1>
+
+
+    <p>You need a national asylum support number for us to be able to check if you can get free school meals for your child. </p>
 
 
 
-        <h2 class="govuk-heading-m">What to do now:</h2>
 
 
         {% if data['ni-number'] == 'no' %}
     <p>If you don't have a national insurance number, find out how to <a href="https://www.gov.uk/apply-national-insurance-number">apply for one.</a></p>
 {% elif data['nass-number'] == 'no' %}
-    <p>If you don't have a national asylum support number, find out what <a href="https://www.gov.uk/asylum-support">help you might be entitled to</a></p>
+    <p>You can <a href="https://www.gov.uk/asylum-support">check to see what support you can et</a></p>
 {% endif %}
 
     
