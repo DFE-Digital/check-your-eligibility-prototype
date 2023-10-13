@@ -49,46 +49,25 @@
     items: [
       {
         value: '1',
-        text: 'Yorkshire (18)',
+        text: 'Free school meals (22)',
         checked: true
       },
     
       {
         value: '2',
-        text: 'Humber (12)',
+        text: 'Early years pupil premium ',
+        checked: true
+      },
+
+      {
+        value: '2',
+        text: 'Free childcare 2yr olds',
         checked: true
       }
+
     ]
   }) }}
 
-  {{ govukCheckboxes({
-    idPrefix: 'status',
-    name: 'status',
-    classes: "govuk-checkboxes--small",
-    fieldset: {
-      legend: {
-        text: 'Status',
-        classes: 'govuk-fieldset__legend--m'
-      }
-    },
-    items: [
-      {
-        value: '1',
-        text: 'New appeal (5)',
-        checked: true
-      },
-      {
-        value: '2',
-        text: 'New appeal (3)',
-        checked: true
-      },
-      {
-        value: '3',
-        text: 'New appeal (13)',
-        checked: true
-      }
-    ]
-  }) }}
 
 {% endset %}
 
@@ -119,25 +98,28 @@
           items: [{
             href: '#',
             text: 'Free school meals'
-          }, {
-            href: '#',
-            text: 'Humber'
-          }]
+          }
+          ]
         },
+
+
         {
+
           heading: {
             text: 'Status'
           },
-          items: [{
-            href: '#',
-            text: 'New appeal'
-          },
 
+          items: [
+          
           {
             href: '#',
             text: 'New appeal'
+          }
+
         
-          }]
+          
+          ]
+          
         }
       ]
     },
@@ -148,7 +130,7 @@
 
   <div class="moj-filter-layout__content">
 
-  
+
 
   <div class="moj-scrollable-pane">
     {{ govukTable({
@@ -156,120 +138,120 @@
       head: [
         {text: 'Reference'},
         {text: 'Person'},
-        {text: 'Area'},
+        {text: 'Type'},
         {text: 'Status'},
         {text: 'Date of last event'}
       ],
       rows: [
         [
-          {html: '<a href="../records/" class="govuk-link">44455453</a>'},
+          {html: '<a href="../../records/new-appeal" class="govuk-link">44455453</a>'},
           {html: 'Eden Tesfay'},
-          {text: 'Yorkshire'},
+          {text: 'Free school meals'},
           {html: 'New appeal'},
           {text: '25 October 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">12323212</a>'},
           {html: 'Warren Sutton'},
-          {text: 'Yorkshire'},
+          {text: 'Free school meals'},
           {html: 'New appeal'},
           {text: '25 October 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">45678765</a>'},
           {html: 'Alan Jones'},
-          {text: 'Yorkshire'},
+          {text: 'Free school meals'},
           {html: 'New appeal'},
           {text: '9 October 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">12345678</a>'},
           {html: 'Jennifer Langley'},
-          {text: 'Yorkshire'},
+          {text: 'Free school meals'},
           {html: 'New appeal'},
           {text: '9 October 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">89009800</a>'},
           {html: 'Susan Francis'},
-          {text: 'Humber'},
+          {text: 'Free school meals'},
           {html: 'New appeal'},
           {text: '9 October 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">44455453</a>'},
           {html: 'John Smith'},
-          {text: 'Yorkshire'},
+          {text: 'Free school meals'},
           {html: 'New appeal'},
           {text: '25 October 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">12323212</a>'},
           {html: 'Warren Sutton'},
-          {text: 'Yorkshire'},
+          {text: 'Free school meals'},
           {html: 'New appeal'},
           {text: '25 October 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">45678765</a>'},
           {html: 'Alan Jones'},
-          {text: 'Yorkshire'},
+          {text: 'Free school meals'},
           {html: 'New appeal'},
           {text: '9 October 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">12345678</a>'},
           {html: 'Jennifer Langley'},
-          {text: 'Yorkshire'},
+          {text: 'Free school meals'},
           {html: 'New appeal'},
           {text: '9 October 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">89009800</a>'},
           {html: 'Susan Francis'},
-          {text: 'Humber'},
+          {text: 'Free school meals'},
           {html: 'New appeal'},
           {text: '9 October 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">45456765</a>'},
           {html: 'John Smith'},
-          {text: 'Humber'},
+          {text: 'Free school meals'},
           {html: 'New appeal'},
           {text: '9 October 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">88675411</a>'},
           {html: 'Margaret Blake'},
-          {text: 'Humber'},
+          {text: 'Free school meals'},
           {html: 'New appeal'},
           {text: '9 October 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">44455453</a>'},
           {html: 'John Smith'},
-          {text: 'Yorkshire'},
+          {text: 'Free school meals'},
           {html: 'New appeal'},
           {text: '25 October 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">12323212</a>'},
           {html: 'Warren Sutton'},
-          {text: 'Yorkshire'},
+          {text: 'Free school meals'},
           {html: 'New appeal'},
           {text: '25 October 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">45678765</a>'},
           {html: 'Alan Jones'},
-          {text: 'Yorkshire'},
+          {text: 'Free school meals'},
           {html: 'New appeal'},
           {text: '9 October 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">12345678</a>'},
           {html: 'Jennifer Langley'},
-          {text: 'Yorkshire'},
+          {text: 'Free school meals'},
           {html: 'New appeal'},
           {text: '9 October 2023'}
         ]
@@ -279,8 +261,12 @@
 </div>
 
       </div>
+
+      
     
     </div>
+
+    
 
   
   </div>

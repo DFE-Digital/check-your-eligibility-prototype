@@ -29,10 +29,12 @@ href: "/"
 
 
  
-    
+ <form action="upload-file" method="post" novalidate>
+
 
 {{ govukRadios({
   name: "evidence",
+  id:'evidence',
   fieldset: {
     legend: {
       text: "Which document do you have?",
@@ -45,19 +47,19 @@ href: "/"
   },
   items: [
     {
-      value: "universal-credit",
+      value: "Universal Credit number",
       text: "Universal Credit number"
     },
     {
-      value: "nass",
-      text: "National asylum support number "
+      value: "National asylum support number ",
+      text: "National asylum support number"
     },
     {
-      value: "income-support",
+      value: "Income support",
       text: "Income support"
     },
     {
-      value: "income-based-jsa",
+      value: "Income based jobseeker's allowance",
       text: "Income based jobseeker's allowance"
     },
     {
@@ -65,11 +67,11 @@ href: "/"
       text: "Pension credit"
     },
     {
-      value: "child-tax-credit",
+      value: "Pension credit",
       text: "Child tax credit"
     },
     {
-      value: "working-tax-credit",
+      value: "Working tax credit",
       text: "Working tax credit"
     }
    
@@ -80,9 +82,13 @@ href: "/"
 
 
 {{ govukButton({
-  text: "Save and continue",
-  href:'upload-file'
+  text: "Save and continue"
+  
 }) }}
+
+
+ </form>   
+
     </div>
     </div>
 

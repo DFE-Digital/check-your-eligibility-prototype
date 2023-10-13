@@ -109,7 +109,35 @@ items: [
 
 
 
+
 <div class="moj-scrollable-pane">
+
+
+  {% if data['application'] == 'sent' %}
+
+{{ govukTable({
+  firstCellIsHeader: true,
+  head: [
+    {text: 'Reference'},
+    {text: 'Application'},
+    {text: 'Area'},
+    {text: 'Status'},
+    {text: 'Date submitted'}
+  ],
+  rows: [
+    [
+      {html: '<a href="../records/parent/" class="govuk-link">44455453</a>'},
+      {html: 'Free school meals'},
+      {text: 'Yorkshire'},
+      {html: 'Application approved'},
+      {text: date() }
+      
+    ]
+  ]
+}) }}
+
+{% else %}
+
 {{ govukTable({
   firstCellIsHeader: true,
   head: [
@@ -130,6 +158,9 @@ items: [
     ]
   ]
 }) }}
+
+{% endif %}
+
 </div>
 </div>
 
