@@ -138,7 +138,7 @@ router.post('/asylum-answer', function (req, res) {
       res.redirect('/current/checker-parent/childs-age')
     } else {
       // Send user to other page
-      res.redirect('/current/checker-parent/more-info-required')
+      res.redirect('/current/checker-parent/nass-number')
     }
   
   })
@@ -215,7 +215,7 @@ router.post('/council-nass-number-answer', function (req, res) {
     res.redirect('/current/checker/childs-age')
   } else {
     // Send user to other page
-    res.redirect('/current/checker/ineligible')
+    res.redirect('/current/checker/nass-number')
   }
 
 })

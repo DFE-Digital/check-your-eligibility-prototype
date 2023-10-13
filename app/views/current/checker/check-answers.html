@@ -77,26 +77,11 @@
 
       </div>
 
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          nationality
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data["what-nationality"] }}
-
-        </dd>
-
-        <dd class="govuk-summary-list__actions">
-
-          <a class="govuk-link" href="#">
-            Change<span class="govuk-visually-hidden"> date of birth</span>
-          </a>
-
-        </dd>
-
-      </div>
+      
 
 
+
+      {% if data['ni-number'] == 'yes' %}
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -116,7 +101,7 @@
 
       </div>
 
-
+{% else %}
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -135,6 +120,7 @@
         </dd>
 
       </div>
+{% endif %}
 
 
 
@@ -143,7 +129,7 @@
           Email address
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["email"] }}
+          {{ data["email"] or 'edamcheese@hotmail.com' }}
         </dd>
 
         <dd class="govuk-summary-list__actions">
