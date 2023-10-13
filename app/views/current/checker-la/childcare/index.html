@@ -4,8 +4,7 @@
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+
 
 
 
@@ -16,36 +15,76 @@
             
       <div class="govuk-grid-column-two-thirds">
 
-    <form action="nationality" method="post" novalidate>
+
+    <form action="name" method="post" novalidate>
 
       {% call govukFieldset({
         legend: {
-          text: "Apply for free school meals",
-          classes: "govuk-fieldset__legend--xl",
+          text: "Check eligibility for childcare",
+          classes: "govuk-fieldset__legend--l",
           isPageHeading: true
         }
       }) %}
       
         {{ govukInput({
           label: {
-            text: "First name"
+            text: "Enter a code"
           },
           classes: "govuk-!-width-two-thirds",
-          id: "first-name",
-          name: "first-name",
+          id: "code",
+          name: "code",
           autocomplete: ""
         }) }}
+
+      
+        {% from "govuk/components/input/macro.njk" import govukInput %}
 
         {{ govukInput({
           label: {
-            text: "Surname"
+            text: "Full name"
           },
-          classes: "govuk-!-width-two-thirds",
-          id: "surname",
-          name: "surname",
-          autocomplete: ""
+          id: "full-name",
+          name: "fullName",
+          autocomplete: "name",
+          classes: "govuk-input--width-20",
+          spellcheck: false
         }) }}
 
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          label: {
+            text: "National Insurance number"
+          },
+          id: "full-name",
+          name: "fullName",
+          autocomplete: "name",
+          classes: "govuk-input--width-20",
+          spellcheck: false
+        }) }}
+
+     
+          {{ govukDateInput({
+            
+            id: "dob",
+            namePrefix: "dob",
+            
+            fieldset: {
+              legend: {
+                text: "Child's date of birth",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            hint: {
+              text: "For example, 27 3 2007"
+            }
+          }) }}
+  
+        
+        
+        
+        
 
      
       
@@ -81,8 +120,6 @@
     
     </div>
 
-  
-  </div>
-</div>
+
 
 {% endblock %}

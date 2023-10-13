@@ -60,14 +60,18 @@
 
 <p>Tell your local authority if you also get any of the qualifying benefits. Your child’s school can get extra funding if you do.</p> 
 
- 
-{% from "govuk/components/button/macro.njk" import govukButton %}
 
-{{ govukButton({
-  text: "Start now",
-  href: "#",
-  isStartButton: true
-}) }}
+
+<form action="signin-or-create" method="post">
+
+  {{ govukButton({
+    text: "Start now",
+    href:'signin-or-create',
+    
+    isStartButton: true
+  }) }}
+
+ </form>
 
  
 
