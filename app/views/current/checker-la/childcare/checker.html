@@ -16,23 +16,53 @@
       <div class="govuk-grid-column-two-thirds">
 
 
-    <form action="name" method="post" novalidate>
+    <form action="eligible" method="post" novalidate>
 
       {% call govukFieldset({
         legend: {
-          text: "Check eligibility for childcare",
+          text: "Check eligibility for a parent or carer",
           classes: "govuk-fieldset__legend--l",
           isPageHeading: true
         }
       }) %}
+
+{{ govukSelect({
+  id: "offer",
+  name: "offer",
+  label: {
+    text: "Choose an offer"
+  },
+  items: [
+    {
+      value: "Early years pupil premium",
+      text: "Early years pupil premium"
+    },
+    {
+      value: "Childcare for 2 yr olds",
+      text: "Childcare for 2 yr olds",
+      selected: true
+    },
+    {
+      value: "Free school meals",
+      text: "Free school meals"
+    },
+    {
+      value: "comments",
+      text: "Most comments"
+    }
+  ]
+}) }}
+
+     
       
         {{ govukInput({
           label: {
             text: "Enter a code"
           },
-          classes: "govuk-!-width-two-thirds",
+          
           id: "code",
           name: "code",
+          classes: "govuk-input--width-20",
           autocomplete: ""
         }) }}
 
@@ -58,6 +88,17 @@
           },
           id: "full-name",
           name: "fullName",
+          autocomplete: "name",
+          classes: "govuk-input--width-20",
+          spellcheck: false
+        }) }}
+<p>Or</p>
+        {{ govukInput({
+          label: {
+            text: "National asylum support number"
+          },
+          id: "nass",
+          name: "nass",
           autocomplete: "name",
           classes: "govuk-input--width-20",
           spellcheck: false
