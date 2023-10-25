@@ -23,7 +23,7 @@ href: "/"
 
 
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
-  <div class="govuk-grid-column-full">
+  <div class="govuk-grid-column-two-thirds">
 
 
 
@@ -32,7 +32,9 @@ href: "/"
  <form action="upload-file" method="post" novalidate>
 
 
-{{ govukRadios({
+{{ govukRadios(
+  
+  {
   name: "evidence",
   id:'evidence',
   fieldset: {
@@ -43,39 +45,52 @@ href: "/"
     }
   },
   hint: {
-    text: "You will need to upload this document as a jpg, png, tiff, or pdf"
+    text: "You will need to scan or use a photo and upload this document as a jpg, png, tiff, or pdf. "
   },
   items: [
-    {
-      value: "Universal Credit number",
-      text: "Universal Credit number"
-    },
-    {
-      value: "National asylum support number ",
-      text: "National asylum support number"
-    },
-    {
-      value: "Income support",
-      text: "Income support"
-    },
-    {
-      value: "Income based jobseeker's allowance",
-      text: "Income based jobseeker's allowance"
-    },
-    {
-      value: "pension-credit",
-      text: "Pension credit"
-    },
-    {
-      value: "Pension credit",
-      text: "Child tax credit"
-    },
-    {
-      value: "Working tax credit",
-      text: "Working tax credit"
+  {
+    value: "Income support",
+    text: "Income support"
+  },
+
+  {
+    value: "Income based Jobseeker's Allowance",
+    text: "Income based Jobseeker's Allowance"
+  },
+
+  {
+    value:"Income-related Employment and Support Allowance",
+    text:"Income-related Employment and Support Allowance"
+  },
+  {
+    value:"Support under Part 6 of the Immigration and Asylum Act 1999",
+    text:"support under Part 6 of the Immigration and Asylum Act 1999",
+    hint: {
+      text: "For example, National asylum support number (NASS), Application Registration Card (ARC), Port reference number."
     }
+  },
    
-  ]
+  
+   {
+    value:"Child Tax Credit",
+    text:"Child Tax Credit"
+   },
+ 
+    {
+      value: "The guaranteed element of Pension Credit",
+      text: "The guaranteed element of Pension Credit "
+    },
+   
+    {
+      value: "Working Tax Credit run-on",
+      text: "Working Tax Credit run-on"
+    },
+    {
+      value: "Universal Credit",
+      text: "Universal Credit"
+
+   
+  ]}
 }) }}
 
 

@@ -10,65 +10,64 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">You are not eligible for free school meals</h1>
-    <p> If you think this is wrong and you should be able to get free school meals for your child, you can make an
-      appeal against the decision. </p>
+    <p>If you think this is wrong and you should be able to get free school meals for your child, you can make an appeal against the decision.</p>
 
 
+    {{ govukRadios({
+      classes: "",
+      name: "appeal",
+      id:"appeal",
+      fieldset: {
+      legend: {
+      text: "Do you want make an appeal against the decision?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m govuk-!-margin-top-5"
+      }
+      },
+  
+      items: [
+      {
+      value: "yes",
+      text: "Yes"
+      },
+      {
+      value: "no",
+      text: "No"
+      }
+      ]
+      }) }}
 
-    <p>You can make an appeal by uploading a document showing you have 1 of the following: </p>
+    <p>You will need to upload a document showing you have one of the following: </p>
 
 
 
 
     <ul class="govuk-!-margin-bottom-10">
 
-      <li>
-        Universal Credit number </li>
-      <li>
-        National asylum support number </li>
 
+     <li> Income Support </li> 
 
-      <li> Jobseeker's Allowance support number </li>
+    <li>Income-based Jobseeker's Allowance </li>
+  
+      <li>Income-related Employment and Support Allowance</li>  
+  
+      <li>S§upport under Part 6 of the Immigration and Asylum Act 1999. For example, National asylum support number (NASS), Application Registration Card (ARC), Port reference number</li> 
+  
+     <li> Child Tax Credit</li>
+  
+      <li>The guaranteed element of Pension Credit</li>  
+  
+     <li> Working Tax Credit run-on</li>
+  
+     <li> Universal Credit</li>
 
-      <li> Universal credit </li>
-
-   
-
-      <li> Income support </li>
-
-      <li>Income based jobseeker's allowance </li>
-
-      <li>Pension credit </li>
-      <li> Child Tax Credit </li>
-
-      <li>Working Tax Credit </li>
+      
 
     </ul>
 
 
 
-    {{ govukRadios({
-    classes: "",
-    name: "changedName",
-    fieldset: {
-    legend: {
-    text: "Do you want make an appeal against the decision?",
-    isPageHeading: true,
-    classes: "govuk-fieldset__legend--m govuk-!-margin-top-5"
-    }
-    },
-
-    items: [
-    {
-    value: "yes",
-    text: "Yes"
-    },
-    {
-    value: "no",
-    text: "No"
-    }
-    ]
-    }) }}
+   
 
     {% from "govuk/components/button/macro.njk" import govukButton %}
 

@@ -33,8 +33,12 @@
       spellcheck: false,
       classes: "govuk-!-width-one-third",
       label: {
-      text: "National insurance number"
-      }
+      text:"National Insurance number"
+      },
+  hint: {
+    text: "For example, ‘QQ 12 34 56 C’"
+  }
+     
       }) }}
       {% endset -%}
 
@@ -44,13 +48,13 @@
       id:'ni-number',
       fieldset: {
       legend: {
-      text: "Do you have a national insurance number?",
+      text: "Do you have a National Insurance (NI) number?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
       }
       },
       hint: {
-      text: " It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’."
+      text: "It’s on your National Insurance card, benefit letter, payslip or P60."
       },
       items: [
       {

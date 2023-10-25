@@ -26,15 +26,18 @@
 
 {% set yesHtml %}
 {{ govukInput({
-  id: "nass-number-entered",
-  name: "nass-number-entered",
-  type: "",
-  autocomplete: "text",
-  spellcheck: false,
-  classes: "govuk-!-width-one-third",
-  label: {
-    text: "NASS number"
-  }
+id: "nass-number-entered",
+name: "nass-number-entered",
+type: "text",
+autocomplete: "text",
+spellcheck: false,
+classes: "govuk-!-width-one-third",
+label: {
+text:"Nass number"
+},
+hint: {
+text: "For example, ‘YY/MM/12345’. This may be followed by /001, /002, /003"
+}
 }) }}
 {% endset -%}
 
@@ -43,10 +46,14 @@
   name: "nass-number",
   fieldset: {
     legend: {
-      text: "Do you have a national asylum seeker support number?",
+      text: "Do you have a national asylum support service number?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
     }
+  
+  },
+  hint: {
+    text: "You may know this as a support reference number. It’s on any letters from the Home Office."
   },
  
   items: [
