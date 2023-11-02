@@ -142,9 +142,29 @@
 
     </dl>
 
+    <!-- CHILD 1 -->
 
     <h2 class="govuk-heading-m">Child 1</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Relationship
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["relationship"] }}
+
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden">this</span>
+          </a>
+
+        </dd>
+
+      </div>
 
 
       <div class="govuk-summary-list__row">
@@ -212,8 +232,102 @@
 
     </dl>
 
+       <!-- CHILD 2 -->
 
-    <h2 class="govuk-heading-m">Submit for eligibility</h2>
+       {% if data['child-2'] == 'Yes' %}
+
+       <h2 class="govuk-heading-m">Child 2</h2>
+       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+   
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+            Relationship
+           </dt>
+           <dd class="govuk-summary-list__value">
+             {{ data["relationship"] }}
+   
+           </dd>
+   
+           <dd class="govuk-summary-list__actions">
+   
+             <a class="govuk-link" href="#">
+               Change<span class="govuk-visually-hidden">this</span>
+             </a>
+   
+           </dd>
+   
+         </div>
+   
+   
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Child's name
+           </dt>
+           <dd class="govuk-summary-list__value">
+             {{ data["ch2-first-name"] }} {{ data["ch2-surname"] }} 
+   
+           </dd>
+   
+           <dd class="govuk-summary-list__actions">
+   
+             <a class="govuk-link" href="#">
+               Change<span class="govuk-visually-hidden"> previous application number</span>
+             </a>
+   
+           </dd>
+   
+         </div>
+   
+   
+   
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             School
+           </dt>
+           <dd class="govuk-summary-list__value">
+             {{ data["school-picker"] }} 
+   
+           </dd>
+   
+           <dd class="govuk-summary-list__actions">
+   
+             <a class="govuk-link" href="#">
+               Change<span class="govuk-visually-hidden"> school</span>
+             </a>
+   
+           </dd>
+   
+         </div>
+   
+   
+   
+         <div class="govuk-summary-list__row">
+           <dt class="govuk-summary-list__key">
+             Child's date of birth
+           </dt>
+           <dd class="govuk-summary-list__value">
+             {{ data["ch2-day"] }}  {{ data["ch2-month"] }}  {{ data["ch2-year"] }} 
+   
+   
+           </dd>
+   
+           <dd class="govuk-summary-list__actions">
+   
+             <a class="govuk-link" href="#">
+               Change<span class="govuk-visually-hidden"> document</span>
+             </a>
+   
+           </dd>
+   
+         </div>
+   
+   
+       </dl>
+
+       {% endif %}
+
+
+    <h2 class="govuk-heading-m">Submit for eligibility check</h2>
 
     <p class="govuk-body">By submitting your information you are confirming that, to the best of your knowledge, the
       details you are providing are correct.</p>
@@ -226,7 +340,7 @@
   
   
         <button class="govuk-button govuk-!-margin-top-5" data-module="govuk-button">
-          Check my eligibility
+          Submit
         </button>
   
   
@@ -241,7 +355,7 @@
 
 
       <button class="govuk-button govuk-!-margin-top-5" data-module="govuk-button">
-        Check my eligibility
+       Submit
       </button>
 
 
