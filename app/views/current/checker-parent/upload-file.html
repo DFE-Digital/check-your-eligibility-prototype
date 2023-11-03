@@ -16,7 +16,7 @@
     {% endif %}
 
     <h1 class="govuk-heading-l">Upload your document</h1>
- 
+ <P>The school will review this document. It will only be used for review purposes and will not be stored.</P>
 
     <form action="check-upload" method="post" enctype="multipart/form-data">
 
@@ -27,10 +27,7 @@
 
 {% from "govuk/components/details/macro.njk" import govukDetails %}
 
-{{ govukDetails({
-  summaryText: "What you can upload",
-  text: "Accepted file types are: jpg, png, tiff, pdf."
-}) }}
+
 
 {{ govukFileUpload({
   id: "file-upload-1",
@@ -41,7 +38,7 @@
     classes: 'govuk-label--s'
   },
   hint: {
-    text: 'You can upload your document as a scanned copy or photo of the original'
+    text: 'You can upload a scanned copy or photo of the original as a jpg, png, tiff, or pdf'
   }
 }) }}
 

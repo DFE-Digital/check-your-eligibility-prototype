@@ -9,10 +9,9 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <h1 class="govuk-heading-l">You are eligible for free school meals</h1>
+    <h1 class="govuk-heading-l">Your child may be eligible for free school meals</h1>
 
-    <p>This means you can use the details you have confirmed and submit your application. </p>
-
+    <p>The school needs to review your details before your child can get free school meals.</p>
 
 
     <div class="govuk-grid-row">
@@ -26,20 +25,25 @@
           name: "changedName",
           fieldset: {
             legend: {
-              text: "Do you want apply now?",
+              text: "Do you want submit your details now?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
-          },
+          
+        },
+   
+        hint: {
+          text: "Your details will only be used for review purposes and will not be stored."
+        },
         
           items: [
             {
               value: "yes",
-              text: "Yes, submit my application now"
+              text: "Yes, submit my details for review"
             },
             {
               value: "no",
-              text: "    No, I do not want to apply right now"
+              text: "    No, I understand my child will not get free school meals"
             }
           ]
         }) }}
