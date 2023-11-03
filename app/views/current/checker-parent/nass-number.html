@@ -33,10 +33,10 @@ autocomplete: "text",
 spellcheck: false,
 classes: "govuk-!-width-one-third",
 label: {
-text:"Nass number"
+text:"NASS number"
 },
 hint: {
-text: "For example, ‘YY/MM/12345’. This may be followed by /001, /002, /003"
+text: "This will be 9 digits"
 }
 }) }}
 {% endset -%}
@@ -46,14 +46,14 @@ text: "For example, ‘YY/MM/12345’. This may be followed by /001, /002, /003"
   name: "nass-number",
   fieldset: {
     legend: {
-      text: "Do you have a national asylum support service number?",
+      text: "Do you have a national asylum support service (NASS) number?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
     }
   
   },
   hint: {
-    text: "You may know this as a support reference number. It’s on any letters from the Home Office."
+    text: "It’s on any letters from the Home Office"
   },
  
   items: [
