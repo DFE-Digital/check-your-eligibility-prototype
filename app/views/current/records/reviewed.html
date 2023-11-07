@@ -2,6 +2,15 @@
 
 {% set pageName="Home" %}
 
+{%- from "moj/components/banner/macro.njk" import mojBanner -%}
+
+{{ mojBanner({
+  type: 'success',
+  text: 'You have successfully added 1 question.',
+  iconFallbackText: 'Success'
+}) }}
+
+
 {% set applicationSent %}
 <h3 class="govuk-notification-banner__heading">
   Free school meal record has been reviewed and approved
@@ -18,10 +27,21 @@
   <div class="govuk-grid-column-full">
 
 
-    {{ govukNotificationBanner({
-    html: applicationSent,
-    type: 'success'
+    {%- from "moj/components/banner/macro.njk" import mojBanner -%}
+
+    {{ mojBanner({
+      type: 'success',
+      html:'<h3 class="govuk-notification-banner__heading">
+        Free school meal record has been reviewed and approved
+      </h3>
+      <p class="govuk-body">
+        Both the parent or carer and the school have been notified.
+       
+      </p>',
+      text: 'Free school meal record has been reviewed and approved',
+      iconFallbackText: 'Success'
     }) }}
+    
 
 
 
