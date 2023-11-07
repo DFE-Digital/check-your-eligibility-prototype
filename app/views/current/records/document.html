@@ -1,4 +1,4 @@
-{% extends "layouts/layout-dfe.html" %}
+{% extends "orange/task-management/current/base-form.html" %}
 
 
 <!-- {#
@@ -18,13 +18,13 @@
 {% block backLink %}
 {{ govukBackLink({
   text: "Back",
-  href: "/"
+  href: "/orange/task-management/current/tasks/index"
 }) }}
 {% endblock %}
 
 <!-- The content between the heading 1 and the buttons -->
 
-{% block content %}
+{% block pageContent %}
 <style>
   .hods-status-message p {
     display: flex;
@@ -37,18 +37,26 @@
 </style>
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
   <div class="govuk-grid-column-full">
-    
-    <h1 class="govuk-heading-xl">Mohammed Iqbal 
-      <span class="govuk-!-margin-left-5"> {{govukTag({
-     text: "In progress",
-     classes: "govuk-tag--turquoise"
-   })}}</span></h1> 
 
-    <h2 class="govuk-heading-s govuk-!-margin-bottom-5">Reference number:
-    
+
+
+
+
+
+
+
+
+  
+    <h1 class="govuk-heading-xl">Control breach</h1>
+
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Misdirected passenger </h2>
+
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-5">COP reference number:
+      <span class="govuk-!-font-weight-regular"> COP-{{date({year: 'numeric'}) + date({month: '2-digit'}) + date({day:
+        '2-digit'})}}-2232</span>
     </h2>
-
-
+    {% include "orange/includes/task-view-inset.html" %}
+    {% include "orange/includes/status.html" %}
 
 
 
@@ -80,22 +88,27 @@ items: [
 
 {
 text: 'Overview',
-href: './'
+href: 'task-overview'
 
 },
 {
 text: 'Timeline',
-href: 'timeline'
+href: 'task-timeline'
 },
 {
 text: 'Documents',
-href: 'documents',
+href: 'task-viewer',
 active: true
 
 },
+{
+  text: 'Linked tasks',
+  href: 'linked-tasks'
+  
+  },
   {
     text: 'Notes',
-    href: 'notes'
+    href: 'task-notes'
     
     }
 ]
@@ -114,7 +127,7 @@ active: true
 
     
           <h2 class="govuk-heading-l">Documents</h2>
-      <p class="govuk-body-l govuk-hint">No documents are attached to this application yet</p>
+      <p class="govuk-body-l govuk-hint">No documents are attached to this task yet</p>
 
 
 

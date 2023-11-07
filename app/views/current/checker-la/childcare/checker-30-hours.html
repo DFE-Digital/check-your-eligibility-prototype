@@ -34,7 +34,16 @@
 
       
         {% from "govuk/components/input/macro.njk" import govukInput %}
-
+        {{ govukInput({
+          label: {
+            text: "Eligibility code"
+          },
+          id: "code",
+          name: "code",
+          autocomplete: "code",
+          classes: "govuk-input--width-10",
+          spellcheck: false
+        }) }}
      
 
         {{ govukInput({
