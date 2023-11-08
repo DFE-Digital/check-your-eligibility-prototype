@@ -34,7 +34,7 @@ href: "/"
       <div class="moj-page-header-actions__title">
         <h1 class="govuk-heading-xl">Application history
           <span class="govuk-!-margin-left-5"> {{govukTag({
-            text: "Eligible",
+            text: "New application",
             classes: "govuk-tag--green"
             })}}</span>
         </h1>
@@ -58,52 +58,11 @@ href: "/"
       </div>
     
     </div>
+
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Reference number: 44455453</h2>
     
     
 
-
-
-
-
-
-  
-
-      {%- from "moj/components/ticket-panel/macro.njk" import mojTicketPanel -%}
-
-      {{ mojTicketPanel({
-      attributes: {
-      'aria-label': 'Decision panel'
-      },
-      items: [
-      {
-      html: '
-      
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Reference number: 44455453</h2>
-      <p class="govuk-body">Ensure all supporting evidence has been reviewed prior to making a decision.</p>
-
-      <form action="supporting-evidence" method="post" novalidate>
-
-        <input type="hidden" name="approve-application" value="yes">
-
-
-      <button class="govuk-button" data-module="govuk-button">
-        Review application
-      </button>
-
-    
-
-
-     ',
-      attributes: {
-      'aria-label': 'Section 1'
-      },
-      classes: 'moj-ticket-panel__content--blue'
-      }]
-      }) }}
-
-
-   
-    </form>
 
 
 
@@ -128,7 +87,8 @@ href: "/"
     active: true
   }, {
     text: 'Documentation',
-    href: 'new-appeal-docs'
+    href: 'documents'
+    
   }
   ]
 }) }}
@@ -200,6 +160,15 @@ href: "/"
       },
       value: {
         html: "00116367367"
+      }
+    },
+
+    {
+      key: {
+        text: "Eligibility"
+      },
+      value: {
+        html: "Free school meals"
       }
     },
      
