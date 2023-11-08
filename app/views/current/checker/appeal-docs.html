@@ -115,156 +115,137 @@ href: "/"
 <h2 class="govuk-heading-l govuk-!-margin-bottom govuk-!-font-size-36">Overview</h2>
 
 
+
+
+
+
 {%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
 
 {{ mojSubNavigation({
-  label: 'Sub navigation',
-  items: [{
-    text: 'Overview',
-    href: '#',
-    active: true
-  }, {
-    text: 'Documentation',
-    href: 'appeal-docs'
-  }
-  ]
-}) }}
-
-<!-- PERSON -->
-
-
-{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
-
-{{ govukSummaryList({
-  card: {
-    title: {
-      text: "Person"
-    },
-    actions: {
-      items: [
-        {
-          href: "#",
-          text: "Edit details",
-          visuallyHiddenText: "of University of Gloucestershire"
-        }
-       
-      ]
-    }
-  },
-  rows: [
+label: 'Sub navigation',
+items: [
 
 
 
-    {
-      key: {
-        text: "Name"
-      },
-      value: {
-        html: "Eden Tesfay"
-      }
-    },
-     
-    {
-      key: {
-        text: "Relationship"
-      },
-      value: {
-        html: "Parent"
-      }
-    },
+{
+text: 'Overview',
+href: 'eligible'
 
-    {
-      key: {
-        text: "Nationality"
-      },
-      value: {
-        html: "Eritrean"
-      }
-    },
-     
-    {
-      key: {
-        text: "Date of birth"
-      },
-      value: {
-        html: "01 September 1988"
-      }
-    },
-     
-    {
-      key: {
-        text: "NASS number"
-      },
-      value: {
-        html: "00116367367"
-      }
-    },
-     
-    {
-      key: {
-        text: "Supporting evidence"
-      },
-      value: {
-        html: "Universal credit (3 months)"
-      }
-    }
-  ]
+},
+{
+text: 'Documents',
+href: 'documents',
+active: true
+
+}
+
+]
 }) }}
 
 
 
 
-{{ govukSummaryList({
-  card: {
-  title: {
-  text: "Child 1"
-  },
-  actions: {
-  items: [
-  
-  {
-  href: "#",
-  text: "Edit details",
-  visuallyHiddenText: "from application"
-  }
-  ]
-  }
-  },
-  rows: [
-  
- 
-     
-    {
-      key: {
-        text: "Name"
-      },
-      value: {
-        html: "Sam Tesfay"
-      }
-    },
-     
-    {
-      key: {
-        text: "Date of birth"
-      },
-      value: {
-        html: "18 November 2018"
-      }
-    },
-     
-    {
-      key: {
-        text: "School"
-      },
-      value: {
-        html: "St Mary's Manchester"
-      }
-    }
 
 
-  
-  ]
-  }) }}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <form id="cop-form" action="tasklist-1" method="post" novalidate>
+
+
+      <h2 class="govuk-heading-l">Documents</h2>
+      <p class="govuk-body-l govuk-hint">No documents are attached to this application yet</p>
+
+
+
+      <!-- FILE UPLOAD -->
+
+
+      {% from "govuk/components/details/macro.njk" import govukDetails %}
+      {{ govukDetails({
+      summaryText: "File types accepted",
+      text: "You can upload an AVI, BMP, CSV, DOC, DOCX, DOT, EML, EPS, FLV, GIF, GPG, HEIC, HEIF, HTM, HTML, JPG, JPEG,
+      M4V, MOV, MP3, MSG, ODP, ODT, OGA, OGG, OGV, PDF, PGP, PNG, PPS, PPT, PPTX, RTF, TIF, XLS or XLSX",
+      classes:"govuk-!-margin-bottom-0"
+      }) }}
+
+      {%- from "govuk/components/file-upload/macro.njk" import govukFileUpload -%}
+      {%- from "govuk/components/button/macro.njk" import govukButton -%}
+      {%- from "govuk/components/error-summary/macro.njk" import govukErrorSummary -%}
+      {%- from "moj/components/multi-file-upload/macro.njk" import mojMultiFileUpload -%}
+
+
+
+      {% if errorSummary.items.length %}
+      {{ govukErrorSummary({
+      titleText: 'There is a problem',
+      errorList: errorSummary.items
+      }) }}
+      {% endif %}
+
+
+
+
+
+
+
+      {% set uploadHtml %}
+      {{ govukFileUpload({
+      id: "documents",
+      name: "documents",
+      classes: 'moj-multi-file-upload__input',
+      label: {
+      text: "Upload a file",
+
+      classes: 'govuk-label--s'
+      },
+      hint: {
+      text: "Each file must be less than 25MB"
+      },
+      attributes: { multiple: '' },
+      errorMessage: errorMessage
+      }) }}
+
+
+      {{govukButton({
+      text: 'Upload file',
+      classes: 'govuk-button--secondary moj-multi-file-upload__button'
+      })}}
+      {% endset %}
+
+
+
+      {{ mojMultiFileUpload({
+      uploadedFiles: {
+      heading: {
+      text: '' },
+      id:'attachment',
+      name:'attachment',
+      items: uploadedFiles
+      },
+      uploadHtml: uploadHtml
+      }) }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </form>
+  </div>
+</div>
 
 
 
@@ -272,9 +253,12 @@ href: "/"
 
 
 {% endblock %}
+
 
 {% block buttons %}
+
 {% endblock %}
+
 
 {% block pageScripts %}
 <!-- Add any javascript files here. Include javascript files only on the pages
@@ -291,4 +275,14 @@ the response times of the prototype. -->
   });
 </script>
 
+<script type="text/javascript">
+  if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
+    new MOJFrontend.MultiFileUpload({
+      container: $(".moj-multi-file-upload"),
+      uploadUrl: "/ajax-upload",
+      deleteUrl: "/ajax-delete",
+    });
+  }
+
+</script>
 {% endblock %}
