@@ -2,15 +2,7 @@
 
 {% set pageName="Home" %}
 
-{% set applicationSent %}
-<h3 class="govuk-notification-banner__heading">
-  The document has been sent to the local authority
-  </h3>
-  <p class="govuk-body">
-    You will be 
-  </p>
-  <p>Your reference is 2727262535</p>
-{% endset %}
+
 
 {% block content %}
 
@@ -30,12 +22,23 @@
     <div class="govuk-grid-row">
 
             
-      <div class="govuk-grid-column-one-half">
+      <div class="govuk-grid-column-two-thirds">
+
+
+{{ mojBanner({
+  type: 'success',
+  html:'<h3 class="govuk-notification-banner__heading">
+    Free school meal record has been reviewed and approved
+    </h3> <p>The parent or carer and the LA have been notified</p>',
+  
+  iconFallbackText: 'Success'
+}) }}
+
       
 
-<h2 class="govuk-heading-m">What happens now</h2>
+<p>The local authority will be notified of the new free school meals provision.</p>
 
-<p>Both the parent and local authority will be notified of the update.</p>
+<p>The parent or carer will recieve either a letter or an email.</p>
 
 
 <p><a href="dashboard">Go to your portal homepage</a></p>
