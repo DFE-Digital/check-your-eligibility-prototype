@@ -1,0 +1,194 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <span class="govuk-hint">Manchester City Council</span>
+
+
+
+
+
+{% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
+
+{{ mojPageHeaderActions({
+  heading: {
+    text: '   All recorded children in foster care (64)',
+    classes:'govuk-heading-l'
+  },
+  items: [{
+    text: 'Add new family',
+    classes: 'govuk-button',
+    href:'checker-foster-family'
+  }, {
+    text: 'Run report',
+    classes: 'govuk-button--secondary'
+  }]
+}) }}
+
+
+
+    <div class="govuk-grid-row">
+
+            
+      
+
+      <div class="govuk-grid-column-full">
+
+
+
+
+
+<div class="moj-filter-layout">
+
+
+
+  <div class="moj-filter-layout__content">
+
+  
+
+  <div class="moj-scrollable-pane">
+    {{ govukTable({
+      firstCellIsHeader: true,
+      head: [
+        {text: 'Eligibility code'},
+        {text: 'Child'},
+        {text: 'DOB'},
+        {text: 'Status'},
+        {text: 'Date last confirmed'}
+      ],
+      rows: [
+        [
+          {html: '<a href="../../records/Reconfirm" class="govuk-link">44455453</a>'},
+          {html: 'Prisha Bakshi'},
+          {text: '01-09-2019'},
+          {html: 'Reconfirm'},
+          {text: '25 October 2023'}
+        ],
+        [
+          {html: '<a href="#" class="govuk-link">12323212</a>'},
+          {html: 'Warren Sutton'},
+          {text: '01-09-2019'},
+          {html: 'Reconfirm'},
+          {text: '25 October 2023'}
+        ],
+        [
+          {html: '<a href="#" class="govuk-link">45678765</a>'},
+          {html: 'Alan Jones'},
+          {text: '01-09-2019'},
+          {html: 'Reconfirm'},
+          {text: '9 October 2023'}
+        ],
+        [
+          {html: '<a href="#" class="govuk-link">12345678</a>'},
+          {html: 'Jennifer Langley'},
+          {text: '01-09-2019'},
+          {html: 'Reconfirm'},
+          {text: '9 October 2023'}
+        ],
+        [
+          {html: '<a href="#" class="govuk-link">89009800</a>'},
+          {html: 'Susan Francis'},
+          {text: '01-09-2019'},
+          {html: 'Reconfirm'},
+          {text: '9 October 2023'}
+        ],
+        [
+          {html: '<a href="#" class="govuk-link">44455453</a>'},
+          {html: 'John Smith'},
+          {text: '01-09-2019'},
+          {html: 'Reconfirm'},
+          {text: '25 October 2023'}
+        ],
+        [
+          {html: '<a href="#" class="govuk-link">12323212</a>'},
+          {html: 'Warren Sutton'},
+          {text: '01-09-2019'},
+          {html: 'Reconfirm'},
+          {text: '25 October 2023'}
+        ],
+        [
+          {html: '<a href="#" class="govuk-link">45678765</a>'},
+          {html: 'Alan Jones'},
+          {text: '01-09-2019'},
+          {html: 'Reconfirm'},
+          {text: '9 October 2023'}
+        ],
+        [
+          {html: '<a href="#" class="govuk-link">12345678</a>'},
+          {html: 'Jennifer Langley'},
+          {text: '01-09-2019'},
+          {html: 'Reconfirm'},
+          {text: '9 October 2023'}
+        ],
+        [
+          {html: '<a href="#" class="govuk-link">89009800</a>'},
+          {html: 'Susan Francis'},
+          {text: '01-09-2019'},
+          {html: 'Reconfirm'},
+          {text: '9 October 2023'}
+        ],
+        [
+          {html: '<a href="#" class="govuk-link">45456765</a>'},
+          {html: 'John Smith'},
+          {text: '01-09-2019'},
+          {html: 'Reconfirm'},
+          {text: '9 October 2023'}
+        ],
+        [
+          {html: '<a href="#" class="govuk-link">88675411</a>'},
+          {html: 'Margaret Blake'},
+          {text: '01-09-2019'},
+          {html: 'Reconfirm'},
+          {text: '9 October 2023'}
+        ],
+        [
+          {html: '<a href="#" class="govuk-link">44455453</a>'},
+          {html: 'John Smith'},
+          {text: '01-09-2019'},
+          {html: 'Reconfirm'},
+          {text: '25 October 2023'}
+        ],
+        [
+          {html: '<a href="#" class="govuk-link">12323212</a>'},
+          {html: 'Warren Sutton'},
+          {text: '01-09-2019'},
+          {html: 'Reconfirm'},
+          {text: '25 October 2023'}
+        ],
+        [
+          {html: '<a href="#" class="govuk-link">45678765</a>'},
+          {html: 'Alan Jones'},
+          {text: '01-09-2019'},
+          {html: 'Reconfirm'},
+          {text: '9 October 2023'}
+        ],
+        [
+          {html: '<a href="#" class="govuk-link">12345678</a>'},
+          {html: 'Jennifer Langley'},
+          {text: '01-09-2019'},
+          {html: 'Reconfirm'},
+          {text: '9 October 2023'}
+        ]
+      ]
+    }) }}
+  </div>
+</div>
+
+      </div>
+
+      
+    
+    </div>
+
+    
+
+  
+  </div>
+</div>
+
+{% endblock %}
