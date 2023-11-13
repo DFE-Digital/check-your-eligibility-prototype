@@ -1,0 +1,62 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% if errorSummary.items.length %}
+      {{ govukErrorSummary({
+        titleText: 'There is a problem',
+        errorList: errorSummary.items
+      }) }}
+    {% endif %}
+
+ 
+
+    <form action="check-upload" method="post" enctype="multipart/form-data">
+
+      
+{% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukFileUpload({
+  id: "file-upload-1",
+  name: "file-upload-1",
+  isPageHeading: true,
+  label: {
+    text: "Upload the document",
+    classes: 'govuk-label--l'
+  },
+  hint: {
+    text: 'Upload a CSV or .xls document'
+  }
+}) }}
+
+{{ govukButton({ text: 'Continue' }) }}
+
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}
+{% block pageScripts %}
+<!-- Add any javascript files here. Include javascript files only on the pages
+that need them. Excessive javascript files loaded on other pages may slow down
+the response times of the prototype. -->
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+
+<script type="text/javascript">
+  if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
+  new MOJFrontend.MultiFileUpload({
+    container: $(".moj-multi-file-upload"),
+    uploadUrl: "/ajax-upload",
+    deleteUrl: "/ajax-delete",
+  });
+}
+</script>
+{% endblock %}
