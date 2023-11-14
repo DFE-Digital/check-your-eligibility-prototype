@@ -2,15 +2,7 @@
 
 {% set pageName="Home" %}
 
-{% set applicationSent %}
-<h3 class="govuk-notification-banner__heading">
-  Your document has been sent
-  </h3>
-  <p class="govuk-body">
-    We have sent your document to be processed by your local authority. It may take upto 1 week to process.
-  </p>
-  <p>Your reference is 1234567</p>
-{% endset %}
+
 
 {% block content %}
 
@@ -30,17 +22,27 @@
     <div class="govuk-grid-row">
 
             
-      <div class="govuk-grid-column-one-half">
+      <div class="govuk-grid-column-two-thirds">
+
+
+{{ mojBanner({
+  type: 'success',
+  html:'<h3 class="govuk-notification-banner__heading">
+    Free school meal record has been reviewed and approved
+    </h3> <p>The parent or carer and the LA have been notified</p>',
+  
+  iconFallbackText: 'Success'
+}) }}
+
       
 
-<h2 class="govuk-heading-l">What to do now</h2>
+<p>The local authority will be notified of the new free school meals provision.</p>
 
-<p>Check with your local school on the progress of your application</p>
+<p>The parent or carer will recieve either a letter or an email.</p>
 
 
-
-<p><a href="dashboard">Go to your parent portal homepage</a></p>
-<p><a href="../account/signin-or-create">Sign out of the parent portal</a></p>
+<p><a href="dashboard">Go to your portal homepage</a></p>
+<p><a href="../account/dfe-account">Sign out of the  portal</a></p>
 
 
 

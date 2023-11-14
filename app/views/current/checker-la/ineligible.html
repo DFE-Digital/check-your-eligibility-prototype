@@ -10,52 +10,73 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">The parent or carer is not eligible for free school meals</h1>
-
-
-<h2 class="govuk-heading-m">Get help with checking your eligibility</h2>
-<p>If you believe this check to be incorrect, you can appeal, by providing one of the following:</p>
-
-<ul class="govuk-!-margin-bottom-10">
-  <li>Universal credit number</li>
-<li>National asylum support number</li>
-<li>Jobseekers allowance support number</li>
-</ul>
+    <p> If you think this is wrong and you should be able to get free school meals for your child, you can make an
+      appeal against the decision. </p>
 
 
 
-{{ govukRadios({
-  classes: "govuk-radios--inline",
-  name: "changedName",
-  fieldset: {
+    <p>You can make an appeal by uploading a document showing you have 1 of the following: </p>
+
+
+
+
+    <ul class="govuk-!-margin-bottom-10">
+
+      <li>
+        Universal Credit number </li>
+      <li>
+        National asylum support number </li>
+
+      <li> National asylum support number </li>
+
+      <li> Jobseeker’s Allowance support number </li>
+
+      <li> Universal credit </li>
+
+      <li> Nation asylum support number </li>
+
+      <li> Income support </li>
+
+      <li>Income based jobseeker's allowance </li>
+
+      <li>Pension credit </li>
+      <li> Child Tax Credit </li>
+
+      <li>Working Tax Credit </li>
+
+    </ul>
+
+
+
+    {{ govukRadios({
+    classes: "",
+    name: "changedName",
+    fieldset: {
     legend: {
-      text: "Do you want to proceed to the appeals process?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m govuk-!-margin-top-5"
+    text: "Do you want make an appeal against the decision?",
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--m govuk-!-margin-top-5"
     }
-  },
-  hint: {
-    text: "You will need to upload one of the supporting documents as evidence"
-  },
-  items: [
+    },
+
+    items: [
     {
-      value: "yes",
-      text: "Yes"
+    value: "yes",
+    text: "Yes"
     },
     {
-      value: "no",
-      text: "No"
+    value: "no",
+    text: "No"
     }
-  ]
-}) }}
+    ]
+    }) }}
 
-{% from "govuk/components/button/macro.njk" import govukButton %}
+    {% from "govuk/components/button/macro.njk" import govukButton %}
 
-{{ govukButton({
-  text: "Continue",
-  href:'do-you-have-docs'
-}) }}
-
-
+    {{ govukButton({
+    text: "Continue",
+    href:'do-you-have-docs'
+    }) }}
 
 
 
@@ -67,14 +88,16 @@
 
 
 
-        
 
 
 
 
- 
 
-  
+
+
+
+
+
   </div>
 </div>
 
