@@ -1,0 +1,65 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Eligibility checker" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <span class="govuk-hint">All prototypes for version 1</span>
+    <h1 class="govuk-heading-l">
+      
+      
+      {{ serviceName }} 
+    </h1>
+
+    
+
+    <h2 class="govuk-heading-m">Free school meals journey Oct  - v2 2023</h2>
+
+
+    <ul class="govuk-list">
+      <li><a href="v1/account/start-now">Parent checks their eligibility for free school meals</a></li>
+      <li><a href="v1/checker-parent/dashboard">Parent checks status of appeal</a></li>
+      <li><a href="v1/account/dfe-account?who=school">School approves appeal</a></li>
+      <li><a href="v1/account/dfe-account?who=school">School checks eligibility for parent / carer</a></li>
+      <li><a href="v1/checker-la/childcare/dashboard">Council dashboard</a></li>
+
+  
+   
+      
+      
+    </ul>
+
+    <h3 class="govuk-heading-s">Email notifications</h3>
+
+    <ul class="govuk-list">
+      <li><a href="v1/emails/notify-parent-new-application">Parent - new application submitted</a></li>
+      <li><a href="v1/emails/notify-parent-app-successful">Parent - successful application</a></li>
+    <li><a href="v1/emails/notify-parent-evidence-rcvd">Parent - evidence received</a></li>
+
+      <li><a href="v1/emails/notify-parent-evidence">Parent - more evidence required</a></li>
+      <li><a href="v1/emails/notify-school-new">School - new application received</a></li>
+      <li><a href="v1/emails/notify-school-approved">School - application approved</a></li>
+      <li><a href="v1/emails/notify-la">Council - new query</a></li>
+   
+      
+      
+    </ul>
+
+    <h2 class="govuk-heading-m">Early years pupil premium journey Oct - </h2>
+
+
+    <ul class="govuk-list">
+      <li><a href="v1/account/dfe-account?who=council">LA checks eligibility - all offers</a></li>
+      <li><a href="v1/account/dfe-account?who=school">School checks eligibility - all offers</a></li>
+      
+
+  
+  
+  </div>
+</div>
+
+{% endblock %}

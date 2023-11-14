@@ -1,0 +1,173 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/autocomplete.js"></script>
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    selectElement: document.querySelector('#school-picker')
+  })
+</script>
+{% endblock %}
+
+{% block content %}
+
+
+
+
+  
+
+
+
+    <div class="govuk-grid-row">
+
+            
+      <div class="govuk-grid-column-two-thirds">
+
+    <form action="check-answers" method="post" novalidate>
+
+
+      {%- from "govuk/components/button/macro.njk" import govukButton -%}
+      {%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+      {%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+      {%- from "govuk/components/input/macro.njk" import govukInput -%}
+      {%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+      
+      <div data-module="moj-add-another">
+      
+        <h1 class="govuk-heading-l" tabindex="-1">Provide details of all children</h1>
+      
+        <form method="post">
+      
+          {% call govukFieldset({
+            classes: 'moj-add-another__item',
+            legend: {
+              text: 'Child',
+              classes: 'moj-add-another__title govuk-fieldset__legend--m',
+              isPageHeading: false
+            }
+          }) %}
+      
+          {{ govukInput({
+            id: 'ch1-first-name',
+            name: 'ch1-first-name',
+            label: {
+              html: 'First name',
+              classes: 'govuk-!-font-weight-bold'
+            },
+            attributes: {
+              'data-name': 'child[%index%][first_name]',
+              'data-id': 'child[%index%][first_name]'
+            }
+          }) }}
+      
+          {{ govukInput({
+            id: 'ch1-surname',
+            name: 'ch1-surname',
+            label: {
+              html: 'Last name',
+              classes: 'govuk-!-font-weight-bold'
+            },
+            attributes: {
+              'data-name': 'child[%index%][last_name]',
+              'data-id': 'child[%index%][last_name]'
+            }
+          }) }}
+
+
+    
+
+          
+      
+          {{ govukDateInput({
+            id: "ch1-date-of-birth",
+            fieldset: {
+              legend: {
+                text: "Date of birth",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            hint: {
+              text: "For example, 31 3 1980"
+            },
+            items: [
+              {
+                id: "ch1-day",
+                name: "ch1-day",
+                label: "Day",
+                classes: "govuk-input--width-2",
+                attributes: {
+                  'data-name': 'child[%index%][dob][day]',
+                  'data-id': 'child[%index%][dob][day]'
+                }
+              },
+              {
+                id: "ch1-month",
+                name: "ch1-month",
+                label: "Month",
+                classes: "govuk-input--width-2",
+                attributes: {
+                  'data-name': 'child[%index%][dob][month]',
+                  'data-id': 'child[%index%][dob][month]'
+                }
+              },
+              {
+                id: "ch1-year",
+                name: "ch1-year",
+                label: "Year",
+                classes: "govuk-input--width-2",
+                attributes: {
+                  'data-name': 'child[%index%][dob][year]',
+                  'data-id': 'child[%index%][dob][year]'
+                }
+              }
+            ]
+          }) }}
+      
+          {% endcall %}
+
+         
+      
+          <div class="moj-button-action">
+            {{ govukButton({
+              text: 'Add another child',
+              classes: 'govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4'
+            }) }}
+          </div>
+      
+          <div class="moj-button-action">
+            {{ govukButton({
+              text: 'Save and continue'
+            }) }}
+          </div>
+      
+        </form>
+      
+      </div>
+      
+
+
+
+
+      
+    </form>
+
+
+
+
+        
+
+
+
+
+        
+      </div>  
+    
+    </div>
+
+  
+
+
+{% endblock %}
