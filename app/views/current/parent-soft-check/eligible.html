@@ -1,0 +1,95 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">You are eligible for free school meals</h1>
+
+    <p>This means you can use the details you have confirmed and submit your application. </p>
+
+
+
+    <div class="govuk-grid-row">
+
+            
+      <div class="govuk-grid-column-one-half">
+      
+
+        {{ govukRadios({
+        
+          name: "changedName",
+          fieldset: {
+            legend: {
+              text: "Do you want apply now?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+        
+          items: [
+            {
+              value: "yes",
+              text: "Yes, submit my application now"
+            },
+            {
+              value: "no",
+              text: "    No, I do not want to apply right now"
+            }
+          ]
+        }) }}
+
+
+
+        <form action="application-sent" method="post" novalidate>
+      
+          <input type="hidden" name="answers-checked" value="true">
+  
+          {{ govukButton({
+            text: "Continue",
+            classes:'govuk-!-margin-top-5'
+          }) }}
+
+          <p><a href="">Save details for later</a></p>
+  
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+        
+      </div>  
+    
+    </div>
+
+  
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+
+{% endblock %}
