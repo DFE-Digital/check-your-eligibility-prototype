@@ -7,13 +7,24 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
+    <span class="govuk-hint">Your local authority</span>
+    {% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
+    
+    {{ mojPageHeaderActions({
+      heading: {
+        text: 'Evidence submissions',
+        classes:'govuk-heading-l'
+      },
+      items: [{
+        text: 'Export as csv',
+        classes: 'govuk-button--secondary'
+      }
+      ]
+    }) }}
+
   
 
-    <h1 class="govuk-heading-l">
-      
-      
-    All appeals (85)
-    </h1>
+    
 
 
     <div class="govuk-grid-row">
@@ -54,6 +65,10 @@
     }
   ]
 }) }}
+
+
+{% include "../includes/schools.html" %}
+
 
   {{ govukCheckboxes({
     idPrefix: 'type',
@@ -161,7 +176,7 @@
 
         {text: 'Appeal type'},
         {text: 'Status'},
-        {text: 'Date submitted'}
+        {text: 'School'}
       ],
       rows: [
         [
@@ -171,7 +186,7 @@
 
           {text: 'Free school meals'},
           {html: 'Evidence submitted'},
-          {text: '25 October 2023'}
+          {text: 'St Marys CofE'}
         ],
         [
           {html: '<a href="#" class="govuk-link">12323212</a>'},
@@ -179,7 +194,7 @@
           {html: 'Alfie Sutton'},
           {text: 'Free school meals'},
           {html: 'Evidence submitted'},
-          {text: '25 October 2023'}
+          {text: 'St Marys CofE'}
         ],
         [
           {html: '<a href="#" class="govuk-link">45678765</a>'},
@@ -187,7 +202,7 @@
           {html: 'Alan Jones'},
           {text: 'Free school meals'},
           {html: 'Evidence submitted'},
-          {text: '9 October 2023'}
+          {text: 'St Marys CofE'}
         ],
         [
           {html: '<a href="#" class="govuk-link">12345678</a>'},
@@ -195,7 +210,7 @@
           {html: 'Jennifer Langley'},
           {text: 'Free school meals'},
           {html: 'Evidence submitted'},
-          {text: '9 October 2023'}
+          {text: 'St Marys CofE'}
         ],
         [
           {html: '<a href="#" class="govuk-link">89009800</a>'},
@@ -203,7 +218,7 @@
           {html: 'Susan Francis'},
           {text: 'Free school meals'},
           {html: 'Evidence submitted'},
-          {text: '9 October 2023'}
+          {text: 'St Marys CofE'}
         ],
         [
           {html: '<a href="#" class="govuk-link">44455453</a>'},
@@ -211,7 +226,7 @@
           {html: 'John Smith'},
           {text: 'Free school meals'},
           {html: 'Evidence submitted'},
-          {text: '25 October 2023'}
+          {text: 'St Marys CofE'}
         ],
         [
           {html: '<a href="#" class="govuk-link">12323212</a>'},
@@ -219,7 +234,7 @@
           {html: 'Warren Sutton'},
           {text: 'Free school meals'},
           {html: 'Evidence submitted'},
-          {text: '25 October 2023'}
+          {text: 'St Marys CofE'}
         ],
         [
           {html: '<a href="#" class="govuk-link">45678765</a>'},
@@ -227,7 +242,7 @@
           {html: 'Alan Jones'},
           {text: 'Free school meals'},
           {html: 'Evidence submitted'},
-          {text: '9 October 2023'}
+          {text: 'St Marys CofE'}
         ],
         [
           {html: '<a href="#" class="govuk-link">12345678</a>'},
@@ -236,7 +251,7 @@
 
           {text: 'Free school meals'},
           {html: 'Evidence submitted'},
-          {text: '9 October 2023'}
+          {text: 'St Marys CofE'}
         ],
         [
           {html: '<a href="#" class="govuk-link">89009800</a>'},
@@ -244,7 +259,7 @@
           {html: 'Susan Francis'},
           {text: 'Free school meals'},
           {html: 'Evidence submitted'},
-          {text: '9 October 2023'}
+          {text: 'St Marys CofE'}
         ],
         [
           {html: '<a href="#" class="govuk-link">45456765</a>'},
@@ -252,7 +267,7 @@
           {html: 'John Smith'},
           {text: 'Free school meals'},
           {html: 'Evidence submitted'},
-          {text: '9 October 2023'}
+          {text: 'St Marys CofE'}
         ],
         [
           {html: '<a href="#" class="govuk-link">88675411</a>'},
@@ -260,7 +275,7 @@
           {html: 'Margaret Blake'},
           {text: 'Free school meals'},
           {html: 'Evidence submitted'},
-          {text: '9 October 2023'}
+          {text: 'St Marys CofE'}
         ],
         [
           {html: '<a href="#" class="govuk-link">44455453</a>'},
@@ -268,7 +283,7 @@
           {html: 'John Smith'},
           {text: 'Free school meals'},
           {html: 'Evidence submitted'},
-          {text: '25 October 2023'}
+          {text: 'St Marys CofE'}
         ],
         [
           {html: '<a href="#" class="govuk-link">12323212</a>'},
@@ -276,7 +291,7 @@
           {html: 'Warren Sutton'},
           {text: 'Free school meals'},
           {html: 'Evidence submitted'},
-          {text: '25 October 2023'}
+          {text: 'St Marys CofE'}
         ],
         [
           {html: '<a href="#" class="govuk-link">45678765</a>'},
@@ -284,7 +299,7 @@
           {html: 'Alan Jones'},
           {text: 'Free school meals'},
           {html: 'Evidence submitted'},
-          {text: '9 October 2023'}
+          {text: 'St Marys CofE'}
         ],
         [
           {html: '<a href="#" class="govuk-link">12345678</a>'},
@@ -292,7 +307,7 @@
           {html: 'Jennifer Langley'},
           {text: 'Free school meals'},
           {html: 'Evidence submitted'},
-          {text: '9 October 2023'}
+          {text: 'St Marys CofE'}
         ]
       ]
     }) }}
@@ -311,4 +326,14 @@
   </div>
 </div>
 
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/autocomplete.js"></script>
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    selectElement: document.querySelector('#school-picker')
+  })
+</script>
 {% endblock %}
