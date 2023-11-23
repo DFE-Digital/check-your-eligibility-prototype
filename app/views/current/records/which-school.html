@@ -1,0 +1,56 @@
+{% extends "layouts/layout-dfe.html" %}
+
+
+
+
+
+
+
+
+
+{% block backLink %}
+{{ govukBackLink({
+text: "Back",
+href: "/"
+}) }}
+{% endblock %}
+
+
+<!-- The content between the heading 1 and the buttons -->
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+  <div class="govuk-grid-column-two-thirds">
+
+    
+<h1 class="govuk-heading-l">Which school is the child transferring to?</h1>
+
+{% include "../includes/schools.html" %}
+
+
+{{ govukButton({
+  text: "Continue",
+  href:'check-school'
+}) }}
+    </div>
+    </div>
+
+
+
+{% endblock %}
+
+{% block buttons %}
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/autocomplete.js"></script>
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    selectElement: document.querySelector('#school-picker')
+  })
+</script>
+{% endblock %}

@@ -14,47 +14,32 @@
 
             
       <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-hint">Check eligibility for</span>
+
+        {% if data['type'] == 'fsm' %}
+
+      
+
+        <h1 class="govuk-heading-l">Free school meals</h1>
+        {% elif data['type'] == 'eypp' %}
+        <h1 class="govuk-heading-l">Early years pupil premium</h1>
+        {% elif data['type'] == 'fc2yo' %}
+        <h1 class="govuk-heading-l">Free childcare for 2 year olds</h1>
+
+
+        {% endif %}
 
 
     <form action="eligible" method="post" novalidate>
 
-      {% call govukFieldset({
-        legend: {
-          text: "Check eligibility for a parent or carer",
-          classes: "govuk-fieldset__legend--l",
-          isPageHeading: true
-        }
-      }) %}
+    
 
-{{ govukSelect({
-  id: "offer",
-  name: "offer",
-  label: {
-    text: "Choose an offer"
-  },
-  items: [
-    {
-      value: "Early years pupil premium",
-      text: "Early years pupil premium"
-    },
-    {
-      value: "Childcare for 2 yr olds",
-      text: "Childcare for 2 yr olds",
-      selected: true
-    },
-    {
-      value: "Free school meals",
-      text: "Free school meals"
-    }
-  ]
-}) }}
 
      
       
       
 
-      
-        {% from "govuk/components/input/macro.njk" import govukInput %}
+    
 
         {{ govukInput({
           label: {
@@ -125,7 +110,6 @@
       
        
       
-      {% endcall %}
       
       
       

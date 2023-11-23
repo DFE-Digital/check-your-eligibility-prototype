@@ -2,16 +2,6 @@
 
 {% set pageName="Home" %}
 
-{% set applicationSent %}
-<h3 class="govuk-notification-banner__heading">
-  Your application has been sent
-  </h3>
-  <p class="govuk-body">
-    We have sent your application to be processed by your local school. It may take upto 1 week to process.
-  </p>
-  <p>Your reference is 1234567</p>
-{% endset %}
-
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -26,13 +16,24 @@
     {% endif %}
 
 
-    <span class="govuk-hint">families eligible for</span>
+    <span class="govuk-hint">Your local authority</span>
+{% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
 
-    <h1 class="govuk-heading-l">
-      
-      
-      Free school meals (218)
-    </h1>
+{{ mojPageHeaderActions({
+  heading: {
+    text: 'Eligible parents and carers',
+    classes:'govuk-heading-l'
+  },
+  items: [{
+    text: 'Export as csv',
+    classes: 'govuk-button--secondary'
+  }
+  ]
+}) }}
+
+
+
+   
 
 
     <div class="govuk-grid-row">
