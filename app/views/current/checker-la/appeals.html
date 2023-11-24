@@ -125,13 +125,26 @@
       },
 
       categories: [
-        {
+
+       {
           heading: {
-            text: 'Type'
+            text: 'Date range'
           },
           items: [{
             href: '#',
-            text: 'Free school meals'
+            text: 'Current period'
+          }
+          ]
+        },
+
+
+        {
+          heading: {
+            text: 'School'
+          },
+          items: [{
+            href: '#',
+            text: 'St Marys'
           }
           ]
         },
@@ -140,14 +153,14 @@
         {
 
           heading: {
-            text: 'Status'
+            text: 'Type'
           },
 
           items: [
           
           {
             href: '#',
-            text: 'New appeal'
+            text: 'Free school meals'
           }
 
         
@@ -167,147 +180,166 @@
   
 
   <div class="moj-scrollable-pane">
+
     {{ govukTable({
-      firstCellIsHeader: true,
+      firstCellIsHeader: false,
       head: [
-        {text: 'Pupil URN'},
+        {text: 'School'},
         {text: 'Carer'},
         {text: 'Child'},
-
-        {text: 'Appeal type'},
-        {text: 'Status'},
-        {text: 'School'}
+        {text: 'Type'},
+        {text: 'Date submitted'},
+        {text: ''}
       ],
       rows: [
         [
-          {html: '<a href="../records/new-appeal" class="govuk-link">44455453</a>'},
-          {html: 'Eden Tesfay'},
-          {html: 'Samuel Tesfay'},
-
+         {text:'St Marys CofE'},
+          {text: 'Eden Tesfay'},
+          {text: 'Samual Tesfay'},
           {text: 'Free school meals'},
-          {html: 'Evidence submitted'},
-          {text: 'St Marys CofE'}
+          {text: '25 Sep 2023'},
+          {html: '<a href="../records/new-appeal">View</a>'}
         ],
+
+
+
+
+
         [
-          {html: '<a href="#" class="govuk-link">12323212</a>'},
+          {html: 'St Marys CofE'},
           {html: 'Warren Sutton'},
           {html: 'Alfie Sutton'},
           {text: 'Free school meals'},
-          {html: 'Evidence submitted'},
-          {text: 'St Marys CofE'}
+          {text: '25 Sep 2023'},
+           {html: '<a href="../records/new-appeal">View</a>'}
+        
         ],
         [
-          {html: '<a href="#" class="govuk-link">45678765</a>'},
+          {html: 'St Marys CofE'},
           {html: 'Alan Jones'},
           {html: 'Alan Jones'},
           {text: 'Free school meals'},
-          {html: 'Evidence submitted'},
-          {text: 'St Marys CofE'}
+          {text: '25 Sep 2023'},
+          
+           {html: '<a href="../records/new-appeal">View</a>'}
         ],
         [
-          {html: '<a href="#" class="govuk-link">12345678</a>'},
+          {html: 'St Marys CofE'},
           {html: 'Jennifer Langley'},
           {html: 'Jennifer Langley'},
           {text: 'Free school meals'},
-          {html: 'Evidence submitted'},
-          {text: 'St Marys CofE'}
+          {text: '25 Sep 2023'},
+            {html: '<a href="../records/new-appeal">View</a>'}
+          
         ],
         [
-          {html: '<a href="#" class="govuk-link">89009800</a>'},
+          {html: 'St Marys CofE'},
           {html: 'Susan Francis'},
           {html: 'Susan Francis'},
           {text: 'Free school meals'},
-          {html: 'Evidence submitted'},
-          {text: 'St Marys CofE'}
+          {text: '25 Sep 2023'},
+          
+           {html: '<a href="../records/new-appeal">View</a>'}
         ],
         [
-          {html: '<a href="#" class="govuk-link">44455453</a>'},
+          {html: 'St Marys CofE'},
           {html: 'John Smith'},
           {html: 'John Smith'},
           {text: 'Free school meals'},
-          {html: 'Evidence submitted'},
-          {text: 'St Marys CofE'}
+          {text: '25 Sep 2023'},
+            {html: '<a href="../records/new-appeal">View</a>'}
+        
         ],
         [
-          {html: '<a href="#" class="govuk-link">12323212</a>'},
+        {html: 'St Marys CofE'},
           {html: 'Warren Sutton'},
           {html: 'Warren Sutton'},
           {text: 'Free school meals'},
-          {html: 'Evidence submitted'},
-          {text: 'St Marys CofE'}
+          {text: '25 Sep 2023'},
+            {html: '<a href="../records/new-appeal">View</a>'}
+         
         ],
         [
-          {html: '<a href="#" class="govuk-link">45678765</a>'},
+        {html: 'St Marys CofE'},
           {html: 'Alan Jones'},
           {html: 'Alan Jones'},
           {text: 'Free school meals'},
-          {html: 'Evidence submitted'},
-          {text: 'St Marys CofE'}
+          {text: '25 Sep 2023'},
+            {html: '<a href="../records/new-appeal">View</a>'}
+         
         ],
         [
-          {html: '<a href="#" class="govuk-link">12345678</a>'},
+        {html: 'St Marys CofE'},
           {html: 'Jennifer Langley'},
           {html: 'Jennifer Langley'},
 
           {text: 'Free school meals'},
-          {html: 'Evidence submitted'},
-          {text: 'St Marys CofE'}
+          {text: '25 Sep 2023'},
+            {html: '<a href="../records/new-appeal">View</a>'}
+          
         ],
         [
-          {html: '<a href="#" class="govuk-link">89009800</a>'},
+        {html: 'St Marys CofE'},
           {html: 'Susan Francis'},
           {html: 'Susan Francis'},
           {text: 'Free school meals'},
-          {html: 'Evidence submitted'},
-          {text: 'St Marys CofE'}
+          {text: '25 Sep 2023'},
+            {html: '<a href="../records/new-appeal">View</a>'}
+          
         ],
         [
-          {html: '<a href="#" class="govuk-link">45456765</a>'},
+        {html: 'St Marys CofE'},
           {html: 'John Smith'},
           {html: 'John Smith'},
           {text: 'Free school meals'},
-          {html: 'Evidence submitted'},
-          {text: 'St Marys CofE'}
+          {text: '25 Sep 2023'},
+            {html: '<a href="../records/new-appeal">View</a>'}
+        
         ],
         [
-          {html: '<a href="#" class="govuk-link">88675411</a>'},
+        {html: 'St Marys CofE'},
           {html: 'Margaret Blake'},
           {html: 'Margaret Blake'},
           {text: 'Free school meals'},
-          {html: 'Evidence submitted'},
-          {text: 'St Marys CofE'}
+          {text: '25 Sep 2023'},
+            {html: '<a href="../records/new-appeal">View</a>'}
+        
         ],
         [
-          {html: '<a href="#" class="govuk-link">44455453</a>'},
+        {html: 'St Marys CofE'},
           {html: 'John Smith'},
           {html: 'John Smith'},
           {text: 'Free school meals'},
-          {html: 'Evidence submitted'},
-          {text: 'St Marys CofE'}
+          {text: '25 Sep 2023'},
+            {html: '<a href="../records/new-appeal">View</a>'}
+          
         ],
         [
-          {html: '<a href="#" class="govuk-link">12323212</a>'},
+        {html: 'St Marys CofE'},
           {html: 'Warren Sutton'},
           {html: 'Warren Sutton'},
           {text: 'Free school meals'},
-          {html: 'Evidence submitted'},
-          {text: 'St Marys CofE'}
+          {text: '25 Sep 2023'},
+            {html: '<a href="../records/new-appeal">View</a>'}
+          
         ],
         [
-          {html: '<a href="#" class="govuk-link">45678765</a>'},
+        {html: 'St Marys CofE'},
           {html: 'Alan Jones'},
           {html: 'Alan Jones'},
           {text: 'Free school meals'},
-          {html: 'Evidence submitted'},
-          {text: 'St Marys CofE'}
+          {text: '25 Sep 2023'},
+            {html: '<a href="../records/new-appeal">View</a>'}
+          
         ],
         [
-          {html: '<a href="#" class="govuk-link">12345678</a>'},
+        {html: 'St Marys CofE'},
           {html: 'Jennifer Langley'},
           {html: 'Jennifer Langley'},
           {text: 'Free school meals'},
-          {html: 'Evidence submitted'},
-          {text: 'St Marys CofE'}
+          {text: '25 Sep 2023'},
+            {html: '<a href="../records/new-appeal">View</a>'}
+        
         ]
       ]
     }) }}
