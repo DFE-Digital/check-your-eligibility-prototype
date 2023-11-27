@@ -2,28 +2,25 @@
 
 {% set pageName="Home" %}
 
-{% set applicationSent %}
-<h3 class="govuk-notification-banner__heading">
-  Your document has been submitted
-  </h3>
-  <p class="govuk-body">
-    We have sent your document to be processed by your local school. This may take upto 1 week.
-  </p>
-  <p>Your reference is 1234567</p>
-{% endset %}
+
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    {% if data['answers-checked'] =="true" %}
-    {{ govukNotificationBanner({
-      html: applicationSent,
-      type: 'success'
-    }) }}
+    <div class="moj-banner moj-banner--success" role="region" aria-label="Success">
+
+      <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+        <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
+      </svg>
     
-    {% endif %}
+      <div class="moj-banner__message"><h2>We have sent your supporting evidence to Bramhope Primary School</h2>
+      <p>Your reference number is 1234567</p></div>
+    
+    </div>
+    
+    
 
 
 
@@ -31,17 +28,21 @@
 
             
       <div class="govuk-grid-column-one-half">
-      
+      <p>We have sent you a confirmation email</p>
 
-<h2 class="govuk-heading-m">What happens now</h2>
+<h2 class="govuk-heading-m">What happens next</h2>
 
-<p>Check with your local school on the progress of your application.</p>
-<p>You will also be sent either an email or letter of confirmation.</p>
+<p>The school will email you when they have reviewed your document.</p>
+<p>If you do not receive an update within 5 working days:</p>
+<ul>
+  <li>Check for updates in your parent portal</li>
+  <li>Talk to the school administrator</li>
+</ul>
 
 
 
 <p><a href="dashboard">Go to your parent portal homepage</a></p>
-<p><a href="../account/signin-or-create">Sign out of the parent portal</a></p>
+<p><a href="/account/signin-or-create">Sign out of the parent portal</a></p>
 
 
 

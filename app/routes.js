@@ -264,7 +264,7 @@ router.post('/soft-check-ni-answer', function (req, res) {
     // Check whether the variable matches a condition
     if (nassNumber == "yes"){
       // Send user to next page
-      res.redirect('/current/parent-soft-check/eligible')
+      res.redirect('/current/parent-soft-check/more-info-required-asylum')
     } else {
       // Send user to other page
       res.redirect('/current/parent-soft-check/ineligible')
