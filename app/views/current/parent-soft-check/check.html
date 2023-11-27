@@ -1,0 +1,177 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+
+
+
+
+
+
+    <div class="govuk-grid-row">
+
+            
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1>Enter your details</h1>
+
+    <form action="/soft-check-ni-answer" method="post" novalidate>
+
+ 
+
+
+
+
+
+
+      {% call govukFieldset({
+        legend: {
+          text: "What is your name?",
+          classes: "govuk-fieldset__legend--m",
+          isPageHeading: false
+        }
+      }) %}
+      
+        
+
+
+      {{ govukInput({
+        label: {
+          text: "First name"
+        },
+        classes: "govuk-!-width-two-thirds",
+        id: "first-name",
+        name: "first-name",
+        autocomplete: ""
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Surname"
+        },
+        classes: "govuk-!-width-two-thirds",
+        id: "surname",
+        name: "surname",
+        autocomplete: ""
+      }) }}
+      
+      
+      
+        
+      
+       
+      
+      {% endcall %}
+
+      
+        {{ govukDateInput({
+          
+          id: "dob",
+          namePrefix: "dob",
+          
+          fieldset: {
+            legend: {
+              text: "What is your date of birth?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          }
+        }) }}
+
+      
+
+
+
+
+
+
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {% set yesHtml %}
+      {{ govukInput({
+      id: "ni-number-entered",
+      name: "ni-number-entered",
+      type: "text",
+      autocomplete: "text",
+      spellcheck: false,
+      classes: "govuk-!-width-one-third",
+      label: {
+      text:"National Insurance number"
+      },
+  hint: {
+    text: "For example, ‘QQ 12 34 56 C’"
+  }
+     
+      }) }}
+      {% endset -%}
+
+
+      {{ govukRadios({
+      name: "ni-number",
+      id:'ni-number',
+      fieldset: {
+      legend: {
+      text: "Do you have a National Insurance (NI) number?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+      }
+      },
+      hint: {
+      text: "It’s on your National Insurance card, benefit letter, payslip or P60."
+      },
+      items: [
+      {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+      html: yesHtml
+      }
+      },
+      {
+      value: "no",
+      text: "No, I do not have one"
+
+      }
+
+      ]
+      }) }}
+
+  
+
+
+  
+      
+      
+      
+      
+      {{ govukButton({
+        text: "Save and continue",
+        classes:'govuk-!-margin-top-5'
+      }) }}
+
+      
+    </form>
+
+
+
+
+        
+
+
+
+
+        
+      </div>  
+    
+    </div>
+
+
+
+{% endblock %}

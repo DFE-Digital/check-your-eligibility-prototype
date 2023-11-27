@@ -70,8 +70,7 @@ router.get('*', function (req, res, next) {
 /////////
 
 // CURRENT 
-require('./views/current/_routes.js')
-
+require('./views/current/_routes')
 
 
 
@@ -219,3 +218,56 @@ router.post('/council-nass-number-answer', function (req, res) {
   }
 
 })
+
+//
+  // NI number
+  router.post('/ni-number-check', function (req, res) {
+
+    // Make a variable 
+    var nassNumber = req.session.data['ni-number']
+  
+    // Check whether the variable matches a condition
+    if (nassNumber == "yes"){
+      // Send user to next page
+      res.redirect('/current/parent-soft-check/eligible')
+    } else {
+      // Send user to other page
+      res.redirect('/current/parent-soft-check/nass-number')
+    }
+  
+  })
+
+
+   // Soft CHECKER
+router.post('/soft-check-ni-answer', function (req, res) {
+
+  // Make a variable 
+  var nassNumber = req.session.data['ni-number']
+
+  // Check whether the variable matches a condition
+  if (nassNumber == "yes"){
+    // Send user to next page
+    res.redirect('/current/parent-soft-check/eligible')
+  } else {
+    // Send user to other page
+    res.redirect('/current/parent-soft-check/nass-number')
+  }
+
+})
+
+   // Soft CHECKER
+   router.post('/soft-check-nass-answer', function (req, res) {
+
+    // Make a variable 
+    var nassNumber = req.session.data['nass-number']
+  
+    // Check whether the variable matches a condition
+    if (nassNumber == "yes"){
+      // Send user to next page
+      res.redirect('/current/parent-soft-check/eligible')
+    } else {
+      // Send user to other page
+      res.redirect('/current/parent-soft-check/ineligible')
+    }
+  
+  })
