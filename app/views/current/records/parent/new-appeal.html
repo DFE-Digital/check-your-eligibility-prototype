@@ -16,7 +16,7 @@ href: "/"
 {% endblock %}
 
 
-<!-- The content between the heading 1 and the buttons -->
+
 
 {% block content %}
 
@@ -26,18 +26,49 @@ href: "/"
   <div class="govuk-grid-column-full">
 
 
-    <span class="govuk-hint">Application history</span>
+    <span class="govuk-hint">Eden Tesfay</span>
 
 
+    <div class="moj-page-header-actions">
 
-    <h1 class="govuk-heading-xl">Eden Tesfay
-      <span class="govuk-!-margin-left-5"> {{govukTag({
-        text: "New appeal",
-        classes: "govuk-tag--pink"
-        })}}</span>
-    </h1>
+      <div class="moj-page-header-actions__title">
+        <h1 class="govuk-heading-xl">Application history
+          <span class="govuk-!-margin-left-5"> {{govukTag({
+            text: "Evidence submitted",
+            classes: "govuk-tag--pink"
+            })}}</span>
+        </h1>
 
+      </div>
     
+      <div class="moj-page-header-actions__actions">
+    
+        <div class="moj-button-menu">
+          <div class="moj-button-menu__wrapper">
+
+            <form action="which-school">
+              <button class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button">
+                Transfer school
+              </button>
+            </form>
+    
+          
+    
+          
+    
+          </div>
+        </div>
+    
+      </div>
+    
+    </div>
+    
+    
+
+
+
+
+
 
   
 
@@ -52,7 +83,7 @@ href: "/"
       html: '
       
       <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Reference number: 44455453</h2>
-      <p class="govuk-body">Ensure all supporting evidence has been uploaded.</p>
+      <p class="govuk-body">Ensure all supporting evidence has been reviewed prior to making a decision.</p>
 
       <form action="supporting-evidence" method="post" novalidate>
 
@@ -60,13 +91,10 @@ href: "/"
 
 
       <button class="govuk-button" data-module="govuk-button">
-        Submit evidence
+        Review application
       </button>
 
-    
-
-
-      ',
+  ',
       attributes: {
       'aria-label': 'Section 1'
       },
@@ -88,164 +116,163 @@ href: "/"
 
 
 
+
+
+
+{%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
+
+{{ mojSubNavigation({
+  label: 'Sub navigation',
+  items: [{
+    text: 'Overview',
+    href: '#',
+    active: true
+  }, {
+    text: 'Supporting evidence',
+    href: 'appeal-docs'
+  }
+  ]
+}) }}
+
+<!-- PERSON -->
 <h2 class="govuk-heading-l govuk-!-margin-bottom govuk-!-font-size-36">Overview</h2>
-
-<div class="govuk-grid-row govuk-!-margin-top-3">
-  <div class="govuk-grid-column-full">
-
-    <h2 class="govuk-heading-m">Person details</h2>
-
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Name
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Eden Tesfay
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Date of birth
-        </dt>
-        <dd class="govuk-summary-list__value">
-          18 Oct 1988 (36)
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Nationality
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Eritrean
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          NASS reference
-        </dt>
-        <dd class="govuk-summary-list__value">
-          BB4433D4332
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Telephone number
-        </dt>
-        <dd class="govuk-summary-list__value">
-          07790 242 009
-        </dd>
-      </div>
-
-    </dl>
-
-
-  </div>
-</div>
-
-<div class="govuk-grid-row govuk-!-margin-top-3">
-  <div class="govuk-grid-column-full">
-
-    <h2 class="govuk-heading-m">Child 1</h2>
-
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Name
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Samuel Tesfay
-
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Date of birth
-        </dt>
-        <dd class="govuk-summary-list__value">
-          12 September 2017
-
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          School
-        </dt>
-        <dd class="govuk-summary-list__value">
-          St Mary's CofE Primary
-
-        </dd>
-      </div>
-
-
-
-
-    </dl>
-
-
-  </div>
-</div>
-
-<h2 class="govuk-heading-l govuk-!-margin-bottom govuk-!-font-size-36">Applications</h2>
-
 
 {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Person"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Edit details",
+          visuallyHiddenText: "of University of Gloucestershire"
+        }
+       
+      ]
+    }
+  },
+  rows: [
+
+
+
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        html: "Eden Tesfay"
+      }
+    },
+     
+    {
+      key: {
+        text: "Relationship"
+      },
+      value: {
+        html: "Parent"
+      }
+    },
+
+    {
+      key: {
+        text: "Nationality"
+      },
+      value: {
+        html: "Eritrean"
+      }
+    },
+     
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        html: "01 September 1988"
+      }
+    },
+     
+    {
+      key: {
+        text: "NASS number"
+      },
+      value: {
+        html: "00116367367"
+      }
+    },
+     
+    {
+      key: {
+        text: "Supporting evidence"
+      },
+      value: {
+        html: "Universal credit (3 months)"
+      }
+    }
+  ]
+}) }}
+
+
+
 
 {{ govukSummaryList({
-card: {
-title: {
-text: "Free school meals"
-},
-actions: {
-items: [
-
-{
-href: "#",
-text: "Withdraw",
-visuallyHiddenText: "from application"
-}
-]
-}
-},
-rows: [
-{
-key: {
-text: "Date of application"
-},
-value: {
-html: "5 August 2023"
-}
-},
-
-{
-key: {
-text: "Status"
-},
-value: {
-html: "New appeal"
-}
-},
-{
-  key: {
-  text: "Evidence"
+  card: {
+  title: {
+  text: "Child 1"
   },
-  value: {
-  html: "Universal credit document"
+  actions: {
+  items: [
+  
+  {
+  href: "#",
+  text: "Edit details",
+  visuallyHiddenText: "from application"
   }
+  ]
   }
+  },
+  rows: [
+  
+ 
+     
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        html: "Sam Tesfay"
+      }
+    },
+     
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        html: "18 November 2018"
+      }
+    },
+     
+    {
+      key: {
+        text: "School"
+      },
+      value: {
+        html: "St Mary's Manchester"
+      }
+    }
 
 
-]
-}) }}
+  
+  ]
+  }) }}
+
+
+
+
 
 
 {% endblock %}
