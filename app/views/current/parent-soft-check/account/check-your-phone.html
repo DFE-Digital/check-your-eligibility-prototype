@@ -16,7 +16,7 @@
     <p class="govuk-body">It might take a few minutes to arrive. The code will expire after 15 minutes.</p>
 
 
-    <form action="../childs-age" method="post">
+    
 
     
       <div class="govuk-form-group">
@@ -29,9 +29,43 @@
 
       </div>
 
-      <button type="Submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
-        Continue
-      </button>
+      
+
+
+<!-- -->
+
+{% if data['flow'] =="submit-evidence" %}
+
+<form action="../../parent-soft-check/do-you-have-docs" method="post" novalidate>
+
+    {{ govukButton({
+        text: "Continue",
+        classes: "govuk-button govuk-!-margin-right-3"
+        
+      }) }}
+    
+    
+  
+</form>
+
+{% else %}
+
+<form action="../../parent-soft-check/childs-age" method="post" novalidate>
+
+  {{ govukButton({
+      text: "Continue",
+      classes: "govuk-button govuk-!-margin-right-3"
+      
+    }) }}
+  
+  
+</form>
+
+{% endif %}
+
+
+
+
 
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
@@ -58,7 +92,7 @@
         </div>
       </details>
 
-    </form>
+    
 
   </div>
 </div>
