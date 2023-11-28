@@ -2,17 +2,26 @@
 
 {% set pageName="Home" %}
 
+{% set applicationSent %}
+<h3 class="govuk-notification-banner__heading">
+  Based on your details, your children are eligible
+</h3>
+<p class="govuk-body-m">You need to register with the school so that your children can get free school meals.</p>
 
+{% endset %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <h1 class="govuk-heading-l">You are eligible for free school meals</h1>
+    {% if data['answers-checked'] =="true" %}
+    {{ govukNotificationBanner({
+    html: applicationSent,
+    type: 'success'
+    }) }}
 
-    <p>This means you can use the details you have confirmed and submit your application. </p>
-
+    {% endif %}
 
 
     <div class="govuk-grid-row">
@@ -20,26 +29,32 @@
             
       <div class="govuk-grid-column-one-half">
       
+      
 
         {{ govukRadios({
         
           name: "changedName",
           fieldset: {
             legend: {
-              text: "Do you want apply now?",
+              text: "Do you want to register now?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
-          },
+          
+        },
+   
+        hint: {
+          text: "Your details are only used to register and will not be stored"
+        },
         
           items: [
             {
               value: "yes",
-              text: "Yes, submit my application now"
+              text: "Yes, send my details to the school"
             },
             {
               value: "no",
-              text: "    No, I do not want to apply right now"
+              text: "    No, I understand my children will not get free school meals"
             }
           ]
         }) }}
