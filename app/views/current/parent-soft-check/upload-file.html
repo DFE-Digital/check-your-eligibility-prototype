@@ -17,7 +17,9 @@
 
     <h1 class="govuk-heading-l">Upload your document</h1>
  
-
+    <p>If you cannot find the document you need, you can download it if you -sign in to your Universal Credit account (opens in new tab)-.</p><p>
+      <p>If you have not received a UC statement, we will not be able to check your child's eligibility.</p>
+    </p>
     <form action="check-upload" method="post" enctype="multipart/form-data">
 
       
@@ -27,10 +29,7 @@
 
 {% from "govuk/components/details/macro.njk" import govukDetails %}
 
-{{ govukDetails({
-  summaryText: "What you can upload",
-  text: "Accepted file types are: jpg, png, tiff, pdf."
-}) }}
+
 
 {{ govukFileUpload({
   id: "file-upload-1",
@@ -41,7 +40,7 @@
     classes: 'govuk-label--s'
   },
   hint: {
-    text: 'You can upload your document as a scanned copy or photo of the original'
+    text: 'You can upload your document as a scanned copy or photo of the original as a JPG, BMP, PNG, TIF or PDF'
   }
 }) }}
 
