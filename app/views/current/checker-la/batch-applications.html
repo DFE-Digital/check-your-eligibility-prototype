@@ -46,132 +46,109 @@
 
 
 
-  <div class="moj-scrollable-pane">
-    {{ govukTable({
-      firstCellIsHeader: true,
-      head: [
-        {text: 'Reference'},
-        {text: 'Parent'},
-        {text: 'Type'},
-        {text: 'Status'},
-        {text: 'Date of last event'}
-      ],
-      rows: [
-        [
-          {html: '<a href="../../records/new-appeal" class="govuk-link">44455453</a>'},
-          {html: 'Eden Tesfay'},
-          {text: 'Free school meals'},
-          {html: 'Eligible'},
-          {text: '25 October 2023'}
+    <div class="moj-scrollable-pane">
+      {{ govukTable({
+        firstCellIsHeader: true,
+        head: [
+          {text: 'School'},
+          {text: 'Parent'},
+          {text: 'Type'},
+          {text: 'Status'},
+          {text: 'Date of last event'}
         ],
-        [
-          {html: '<a href="#" class="govuk-link">12323212</a>'},
-          {html: 'Warren Sutton'},
-          {text: 'Free school meals'},
-          {html: 'Eligible'},
-          {text: '25 October 2023'}
-        ],
-        [
-          {html: '<a href="#" class="govuk-link">45678765</a>'},
-          {html: 'Alan Jones'},
-          {text: 'Free school meals'},
-          {html: 'Not found'},
-          {text: '9 October 2023'}
-        ],
-        [
-          {html: '<a href="#" class="govuk-link">12345678</a>'},
-          {html: 'Jennifer Langley'},
-          {text: 'Free school meals'},
-          {html: 'Eligible'},
-          {text: '9 October 2023'}
-        ],
-        [
-          {html: '<a href="#" class="govuk-link">89009800</a>'},
-          {html: 'Susan Francis'},
-          {text: 'Free school meals'},
-          {html: 'Eligible'},
-          {text: '9 October 2023'}
-        ],
-        [
-          {html: '<a href="#" class="govuk-link">44455453</a>'},
-          {html: 'John Smith'},
-          {text: 'Free school meals'},
-          {html: 'Eligible'},
-          {text: '25 October 2023'}
-        ],
-        [
-          {html: '<a href="#" class="govuk-link">12323212</a>'},
-          {html: 'Warren Sutton'},
-          {text: 'Free school meals'},
-          {html: 'Eligible'},
-          {text: '25 October 2023'}
-        ],
-        [
-          {html: '<a href="#" class="govuk-link">45678765</a>'},
-          {html: 'Alan Jones'},
-          {text: 'Free school meals'},
-          {html: 'Not found'},
-          {text: '9 October 2023'}
-        ],
-        [
-          {html: '<a href="#" class="govuk-link">12345678</a>'},
-          {html: 'Jennifer Langley'},
-          {text: 'Free school meals'},
-          {html: 'Not eligible'},
-          {text: '9 October 2023'}
-        ],
-        [
-          {html: '<a href="#" class="govuk-link">89009800</a>'},
-          {html: 'Susan Francis'},
-          {text: 'Free school meals'},
-          {html: 'Eligible'},
-          {text: '9 October 2023'}
-        ],
-        [
-          {html: '<a href="#" class="govuk-link">45456765</a>'},
-          {html: 'John Smith'},
-          {text: 'Free school meals'},
-          {html: 'Eligible'},
-          {text: '9 October 2023'}
-        ],
-        [
-          {html: '<a href="#" class="govuk-link">88675411</a>'},
-          {html: 'Margaret Blake'},
-          {text: 'Free school meals'},
-          {html: 'Eligible'},
-          {text: '9 October 2023'}
-        ],
-        [
-          {html: '<a href="#" class="govuk-link">44455453</a>'},
-          {html: 'John Smith'},
-          {text: 'Free school meals'},
-          {html: 'Not eligible'},
-          {text: '25 October 2023'}
-        ],
-        [
-          {html: '<a href="#" class="govuk-link">12323212</a>'},
-          {html: 'Warren Sutton'},
-          {text: 'Free school meals'},
-          {html: 'Eligible'},
-          {text: '25 October 2023'}
-        ],
-        [
-          {html: '<a href="#" class="govuk-link">45678765</a>'},
-          {html: 'Alan Jones'},
-          {text: 'Free school meals'},
-          {html: 'Eligible'},
-          {text: '9 October 2023'}
-        ],
-        [
-          {html: '<a href="#" class="govuk-link">12345678</a>'},
-          {html: 'Jennifer Langley'},
-          {text: 'Free school meals'},
-          {html: 'Not found'},
-          {text: '9 October 2023'}
+        rows: [
+
+
+          [
+            {html: 'St Marys'},
+            {html: 'Eden Tesfay'},
+            {text: 'Free school meals'},
+            {html: 'Eligible'},
+            {text: '25 October 2023'}
+          ],
+          [
+            {html: 'St Marys'},
+            {html: 'Warren Sutton'},
+            {text: 'Free school meals'},
+            {html: 'Eligible'},
+            {text: '25 October 2023'}
+          ],
+          [
+            {html: 'St Marys'},
+            {html: 'Alan Jones'},
+            {text: 'Free school meals'},
+            {html: 'Not found'},
+            {text: '9 October 2023'}
+          ],
+          [
+            {html: 'St Marys'},
+            {html: 'Jennifer Langley'},
+            {text: 'Free school meals'},
+            {html: 'Eligible'},
+            {text: '9 October 2023'}
+          ],
+          [
+            {html: 'St Marys'},
+            {html: 'Susan Francis'},
+            {text: 'Free school meals'},
+            {html: 'Eligible'},
+            {text: '9 October 2023'}
+          ],
+          [
+            {html: 'St Marys'},
+            {html: 'John Smith'},
+            {text: 'Free school meals'},
+            {html: 'Eligible'},
+            {text: '25 October 2023'}
+          ],
+
+          [
+            {html: 'St Marys'},
+            {html: 'Eden Tesfay'},
+            {text: 'Free school meals'},
+            {html: 'Eligible'},
+            {text: '25 October 2023'}
+          ],
+          [
+            {html: 'St Marys'},
+            {html: 'Warren Sutton'},
+            {text: 'Free school meals'},
+            {html: 'Eligible'},
+            {text: '25 October 2023'}
+          ],
+          [
+            {html: 'St Marys'},
+            {html: 'Alan Jones'},
+            {text: 'Free school meals'},
+            {html: 'Not found'},
+            {text: '9 October 2023'}
+          ],
+          [
+            {html: 'St Marys'},
+            {html: 'Jennifer Langley'},
+            {text: 'Free school meals'},
+            {html: 'Eligible'},
+            {text: '9 October 2023'}
+          ],
+          [
+            {html: 'St Marys'},
+            {html: 'Susan Francis'},
+            {text: 'Free school meals'},
+            {html: 'Eligible'},
+            {text: '9 October 2023'}
+          ],
+          [
+            {html: 'St Marys'},
+            {html: 'John Smith'},
+            {text: 'Free school meals'},
+            {html: 'Eligible'},
+            {text: '25 October 2023'}
+          ]
+        
         ]
-      ]
-    }) }}
-  </div>
+      }) }}
+    </div>
+    
 </div>
 
       </div>
