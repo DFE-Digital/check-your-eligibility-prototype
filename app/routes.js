@@ -69,8 +69,18 @@ router.get('*', function (req, res, next) {
 // LOCAL FOLDER ROUTES
 /////////
 
+const radioButtonRedirect = require('radio-button-redirect')
+router.use(radioButtonRedirect)
+
 // CURRENT 
-require('./views/current/_routes')
+require('./views/current/_routes');
+
+// V1 
+// Include version 1 routes
+
+require('./views/v1/_routes');
+
+module.exports = router;
 
 
 
