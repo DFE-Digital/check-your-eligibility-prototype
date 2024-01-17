@@ -1,0 +1,73 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <div class="moj-banner moj-banner--success" role="region" aria-label="Success">
+
+      <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+        <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
+      </svg>
+    
+      <div class="moj-banner__message"><h3>The parent or carer is eligible for {{ data["type"] }} </h3>
+        <p>This information can be passed on to the parent, carer or school.</p></div>
+    
+    </div>
+    
+  
+<form action="childs-age">
+  <button class="govuk-button">Continue</button>
+</form>
+
+    <p><a href="application-types">Do another check</a></p>
+    <p><a href="homepage">Go to your homepage</a></p>
+
+
+
+    <div class="govuk-grid-row">
+
+            
+      <div class="govuk-grid-column-one-half">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+        
+      </div>  
+    
+    </div>
+
+  
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+
+{% endblock %}

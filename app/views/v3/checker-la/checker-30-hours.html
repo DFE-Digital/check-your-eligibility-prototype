@@ -1,0 +1,147 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+
+
+
+
+
+
+    <div class="govuk-grid-row">
+
+            
+      <div class="govuk-grid-column-two-thirds">
+
+        <span class="govuk-hint">Check eligibility for </span>
+
+
+    <form action="eligible" method="post" novalidate>
+
+      {% call govukFieldset({
+        legend: {
+          text: "30 hours free childcare",
+          classes: "govuk-fieldset__legend--m",
+          isPageHeading: true
+        }
+      }) %}
+
+
+
+     
+      
+      
+
+      
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Eligibility code"
+          },
+          id: "code",
+          name: "code",
+          autocomplete: "name",
+          classes: "govuk-input--width-10",
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "First 3 letters of surname"
+          },
+          id: "surName",
+          name: "surName",
+          autocomplete: "name",
+          classes: "govuk-input--width-10",
+          spellcheck: false
+        }) }}
+
+       
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          label: {
+            text: "National Insurance number"
+          },
+          
+          id: "full-name",
+          name: "fullName",
+          autocomplete: "name",
+          classes: "govuk-input--width-20",
+          spellcheck: false
+        }) }}
+<p>Or</p>
+        {{ govukInput({
+          label: {
+            text: "National asylum support number"
+          },
+          id: "nass",
+          name: "nass",
+          autocomplete: "name",
+          classes: "govuk-input--width-20",
+          spellcheck: false
+        }) }}
+
+     
+          {{ govukDateInput({
+            
+            id: "dob",
+            namePrefix: "dob",
+            
+            fieldset: {
+              legend: {
+                text: "Date of birth",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            hint: {
+              text: "For example, 27 3 2007"
+            }
+          }) }}
+  
+        
+        
+        
+        
+
+     
+      
+      
+      
+        
+      
+       
+      
+      {% endcall %}
+      
+      
+      
+      
+      {{ govukButton({
+        text: "Save and continue",
+        classes:'govuk-!-margin-top-5'
+      }) }}
+
+      
+    </form>
+
+
+
+
+        
+
+
+
+
+        
+      </div>  
+    
+    </div>
+
+
+
+{% endblock %}

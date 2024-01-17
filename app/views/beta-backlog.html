@@ -1,0 +1,174 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Eligibility checker" %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "/"
+}) }}
+{% endblock %}
+
+
+
+
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+  
+    <h1 class="govuk-heading-l">
+      
+      
+    All prototypes for
+    </h1>
+
+    
+
+  
+
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--l">
+        Beta - MVP
+      
+      </caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Prototype / epic</th>
+          
+          <th scope="col" class="govuk-table__header">Version</th>
+          <th scope="col" class="govuk-table__header">Sprint</th>
+          <th scope="col" class="govuk-table__header">Status</th>
+          <th scope="col" class="govuk-table__header">What's been done</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+
+       
+
+
+        <tr class="govuk-table__row">
+          <td scope="row" class="govuk-table__cell">
+
+            <a href="https://dfe-gov-uk.visualstudio.com.mcas.ms/Solutions%20Development/_workitems/edit/150415" target="_blank">Footer content</a>
+          </td>
+          <td class="govuk-table__cell">
+            v 1.0
+          </td>
+          <td class="govuk-table__cell">
+            Sprint 0
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--blue">
+              Current
+            </strong>
+          </td>
+
+          <td class="govuk-table__cell">
+            <ol>
+              <li><a href="./current/accessibility">Accessibility statement</a></li>
+              <li><a href="./current/cookies">Cookies page</a></li>
+              <li><a href="./current/privacy">Privacy statement</a></li>
+              <li><a href="./current/terms-and-conditions">Terms and conditions</a></li>
+
+            </ol>
+          </td>
+        </tr>
+
+        
+
+        <tr class="govuk-table__row">
+          <td scope="row" class="govuk-table__cell">
+
+            <a href="">Registration and access</a>
+          </td>
+          <td class="govuk-table__cell">
+            v 1.0
+          </td>
+          <td class="govuk-table__cell">
+            Sprint 0
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--blue">
+             In progress
+            </strong>
+          </td>
+
+          <td class="govuk-table__cell">
+            <ol>
+              <li><a href="./current/account/start-now">Iterated start now page</a></li>
+
+
+            </ol>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td scope="row" class="govuk-table__cell">
+
+            <a href="mfa/scenarios">Standard eligibility checks</a>
+          </td>
+          <td class="govuk-table__cell">
+            v 1.0
+          </td>
+          <td class="govuk-table__cell">
+            Sprint 0
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--blue">
+              Current
+            </strong>
+          </td>
+
+          <td class="govuk-table__cell">
+            <ol>
+              <li><a href="">Iterated start now page</a></li>
+
+            </ol>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td scope="row" class="govuk-table__cell">
+
+            <a href="mfa/scenarios">Error messages</a>
+          </td>
+          <td class="govuk-table__cell">
+            v 1.0
+          </td>
+          <td class="govuk-table__cell">
+            Sprint 0
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--blue">
+              Current
+            </strong>
+          </td>
+
+          <td class="govuk-table__cell">
+            <ol>
+              <li></li>
+
+            </ol>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  
+  
+
+
+  
+  
+  </div>
+</div>
+
+{% endblock %}

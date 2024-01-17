@@ -1,0 +1,97 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Eligibility checker" %}
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "/"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-full">
+
+
+  
+    <h1 class="govuk-heading-l">
+      
+All prototypes for
+    </h1>
+    
+
+
+
+  
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--l">
+      Beta - Discovery
+      </caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Assumption</th>
+          <th scope="col" class="govuk-table__header">Sprint</th>
+          <th scope="col" class="govuk-table__header">Confidence</th>
+          <th scope="col" class="govuk-table__header">What were doing</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+
+       
+
+
+    
+
+        
+
+        <tr class="govuk-table__row">
+          <td scope="row" class="govuk-table__cell">
+
+            <a href="back-office-journeys/sign-in">Registration and access</a> - we believe that giving users a choice to create an once they have 
+            checked their eligibility, will mean a higher rate of conversion to gaining free school meals.
+          </td>
+          <td class="govuk-table__cell">
+          Sprint 0
+          </td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--blue">
+              medium
+             </strong>
+            
+          </td>
+          <td class="govuk-table__cell">
+            Further research needed
+           
+          </td>
+
+        
+        </tr>
+
+      
+      </tbody>
+    </table>
+
+
+
+ 
+
+
+
+
+      
+
+  
+
+
+
+    
+  </div>
+  
+</div>
+
+{% endblock %}

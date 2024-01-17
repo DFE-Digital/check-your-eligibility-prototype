@@ -1,0 +1,100 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+ 
+
+
+ 
+
+
+    <div class="gem-c-title govuk-!-margin-top-0 govuk-!-margin-bottom-8">
+
+    
+
+      <h1 class="govuk-heading-l">
+        Apply for free school meals if you cannot apply online 
+      </h1>
+    </div>
+
+    
+
+    <section>
+      <div class="govuk-grid-column-one-quarter">
+        <a target="_self" tabindex="-1" aria-hidden="true" href="/public/pdf/fsm-application.pdf">
+          <img alt="" class=""
+            src="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1154589/thumbnail_CH2_Child_Benefit_Claim_Form_English.pdf.png">
+        </a>
+      </div>
+      <div class="govuk-grid-column-three-quarters">
+        <h2 class="govuk-heading-m">
+          <a target="_self" href="/public/pdf/fsm-application.pdf">Free School Meals
+            claim form</a>
+        </h2>
+        <p>Ref: CH2</p>
+        <p><span><abbr title="Portable Document Format">PDF</abbr></span>, <span>430 KB</span>, <span>9 pages</span></p>
+        <p>This file may not be suitable for users of assistive technology.</p>
+
+
+    {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+    {{ govukDetails({
+    summaryText: "Request an accessible form",
+    text: "If you use assistive technology (such as a screen reader) and need a version of this document in a more
+    accessible format, please email different.format@hmrc.gov.uk. Please tell us what format you need. It will help us
+    if you say what assistive technology you use"
+    }) }}
+
+
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+    <section id="details">
+      <h2 class="govuk-heading-m">
+        What you need to do
+      </h2>
+
+      <p>Use this form if you cannot apply for Free School Meals online </p>
+      <p>Print and then fill in the Free School Meals application form, and hand it into your child’s school. A school administrator will process the form on your behalf. 
+      </p>
+     
+
+      <p>If you cannot apply online or by using this form, you can apply by phone on the DfE helpline. </p>
+<ul class="govuk-list">
+  <li>Telephone: 0370 000 2288</li>
+  <li>Monday to Friday, 9:30am to 5pm</li>
+</ul>
+<p class="govuk-body">
+  <a class="govuk-link" href="#">Find out about call charges</a>
+</p>
+
+
+    
+    </section>
+
+
+
+  </div>
+
+
+
+
+
+
+
+</div>
+
+{% endblock %}
