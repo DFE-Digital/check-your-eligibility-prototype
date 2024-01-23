@@ -98,11 +98,16 @@
 </ul>
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
-{{ govukButton({
-  text: "Start now",
-  href: "#",
-  isStartButton: true
-}) }}
+<form action="../parent-soft-check/check" method="post">
+
+  {{ govukButton({
+    text: "Start nows",
+    href:'../parent-soft-check/check',
+    
+    isStartButton: true
+  }) }}
+
+ </form>
 
 <h2 class="govuk-heading-l">Other ways to apply</h2>
 <p>If you cannot apply online, you can fill in <a href="fsm-print-version">the Free school meals form</a>. </p>

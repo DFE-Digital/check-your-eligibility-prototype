@@ -14,9 +14,9 @@
 
 
 
-    <span class="govuk-hint">John Spencer</span>
+
     <h1 class="govuk-heading-l">
-    Bramhope Primary School Portal
+   Bramhope Primary School Portal
     </h1>
 
 
@@ -33,9 +33,19 @@
 
       <div class="def-card">
         <h2 class="govuk-heading-m">
-            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="application-types">Check eligibility</a>
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="application-types">Eligibility checkers</a>
         </h2>
-        <p>See what a child at your school or authority is eligible for.</p>
+        <p>Check a child's eligibility for free school meals.</p>
+    </div>
+    </div>
+
+    <div class="dfe-card-container">
+
+      <div class="def-card">
+        <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="upload">Batch check eligibility</a>
+        </h2>
+        <p>Upload and check on multiple families.</p>
     </div>
     </div>
 
@@ -44,43 +54,28 @@
       <div class="def-card">
         <h2 class="govuk-heading-m">
             <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="applications">Eligible families</a>
-            {%- from "moj/components/notification-badge/macro.njk" import mojNotificationBadge -%}
             
-            {{ mojNotificationBadge({
-              text: "10"
-            }) }}
         </h2>
-        <p>Check which children are eligible in your area</p>
+        <p>Check which children are eligible for benefits in your school.</p>
     </div>
     </div>
+    
 
-    <div class="dfe-card-container">
+    <!--<div class="dfe-card-container">
 
       <div class="def-card">
         <h2 class="govuk-heading-m">
-            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="appeals">Appeals</a>
-            {%- from "moj/components/notification-badge/macro.njk" import mojNotificationBadge -%}
-            
-            {{ mojNotificationBadge({
-              text: "3"
-            }) }}
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="appeals">Evidence submissions</a>
+          
         </h2>
-        <p>New appeals which need to be checked and approved or submitted for guidance from your local authority.</p>
+        <p>New evidence submissions which need to be checked.</p>
     </div>
-    </div>
+    </div>-->
 
 
 
 
-    <div class="dfe-card-container">
-
-      <div class="def-card">
-        <h2 class="govuk-heading-m">
-            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="resources">Resources</a>
-        </h2>
-        <p>Guidance and documenation for making decisions on applications.</p>
-    </div>
-    </div>
+    
 
 
 
