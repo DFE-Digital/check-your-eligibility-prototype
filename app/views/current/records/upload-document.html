@@ -1,14 +1,24 @@
-{% extends "orange/task-management/current/base-form.html" %}
+{% extends "layouts/layout-dfe.html" %}
 
-<!-- This makes a H1 with the pageHeading text. It also sets the title of the
-page. -->
-{% set title = "Upload a document" %}
 
-<!-- Sets where the save and continue button goes -->
-{% set nextPage = "task" %}
 
-<!-- The content between the heading 1 and the buttons -->
-{% block pageContent %}
+
+
+
+
+
+
+{% block backLink %}
+{{ govukBackLink({
+text: "Back",
+href: "/"
+}) }}
+{% endblock %}
+
+
+
+
+{% block content %}
 
 <h1 class="govuk-heading govuk-heading--l">{{title}}</h1>
 

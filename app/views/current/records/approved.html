@@ -26,40 +26,32 @@ href: "/"
   <div class="govuk-grid-column-full">
 
 
-    <span class="govuk-hint">Eden Tesfay</span>
+    <span class="govuk-hint">Reference: 44455453</span>
 
 
-    <div class="moj-page-header-actions">
+{% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
 
-      <div class="moj-page-header-actions__title">
-        <h1 class="govuk-heading-xl">Application history
-          <span class="govuk-!-margin-left-5"> {{govukTag({
-            text: "Eligible",
-            classes: "govuk-tag--green"
-            })}}</span>
-        </h1>
+{{ mojPageHeaderActions({
+  heading: {
+    text: 'Eden Tesfay'
+  },
+  items: [{
+    text: 'Add sibling',
+    href:'add-sibling',
+    classes: 'govuk-button--secondary'
+  }, {
+    text: 'Transfer school',
+    href:'transfer-school',
+    classes: 'govuk-button--secondary'
+  }]
+}) }}
 
-      </div>
-    
-      <div class="moj-page-header-actions__actions">
-    
-        <div class="moj-button-menu">
-          <div class="moj-button-menu__wrapper">
-    
-            <button class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button">
-              Transfer school
-            </button>
-    
-          
-    
-          </div>
-        </div>
-    
-      </div>
-    
-    </div>
 
-    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Reference number: 44455453</h2>
+
+
+
+
+    
     
     
 
@@ -77,21 +69,67 @@ href: "/"
 <h2 class="govuk-heading-l govuk-!-margin-bottom govuk-!-font-size-36">Overview</h2>
 
 
-{%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
 
-{{ mojSubNavigation({
-  label: 'Sub navigation',
-  items: [{
-    text: 'Overview',
-    href: '#',
-    active: true
-  }, {
-    text: 'Documentation',
-    href: 'documents'
-    
+{{ govukSummaryList({
+  card: {
+  title: {
+  text: "Child 1"
+  },
+  actions: {
+  items: [
+  
+  
+  {
+  href: "#",
+  text: "Edit details",
+  visuallyHiddenText: "from application"
   }
   ]
-}) }}
+  }
+  },
+  rows: [
+  
+ 
+     
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        html: "Sam Tesfay"
+      }
+    },
+     
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        html: "18 November 2018"
+      }
+    },
+    {
+      key: {
+        text: "Address"
+      },
+      value: {
+        html: "26 Cherry Tree Lane, Chorlton, Manchester, M33 8HG "
+      }
+    },
+     
+    {
+      key: {
+        text: "School"
+      },
+      value: {
+        html: "St Mary's Manchester"
+      }
+    }
+
+
+  
+  ]
+  }) }}
 
 <!-- PERSON -->
 
@@ -101,7 +139,7 @@ href: "/"
 {{ govukSummaryList({
   card: {
     title: {
-      text: "Person"
+      text: "Parent / carer"
     },
     actions: {
       items: [
@@ -152,84 +190,16 @@ href: "/"
       value: {
         html: "01 September 1988"
       }
-    },
+    }
      
     
 
-    {
-      key: {
-        text: "Eligibility"
-      },
-      value: {
-        html: "Free school meals"
-      }
-    },
-     
-    {
-      key: {
-        text: "Supporting evidence"
-      },
-      value: {
-        html: "Universal credit (3 months)"
-      }
-    }
   ]
 }) }}
 
 
 
 
-{{ govukSummaryList({
-  card: {
-  title: {
-  text: "Child 1"
-  },
-  actions: {
-  items: [
-  
-  {
-  href: "#",
-  text: "Edit details",
-  visuallyHiddenText: "from application"
-  }
-  ]
-  }
-  },
-  rows: [
-  
- 
-     
-    {
-      key: {
-        text: "Name"
-      },
-      value: {
-        html: "Sam Tesfay"
-      }
-    },
-     
-    {
-      key: {
-        text: "Date of birth"
-      },
-      value: {
-        html: "18 November 2018"
-      }
-    },
-     
-    {
-      key: {
-        text: "School"
-      },
-      value: {
-        html: "St Mary's Manchester"
-      }
-    }
-
-
-  
-  ]
-  }) }}
 
 
 

@@ -26,42 +26,23 @@ href: "/"
   <div class="govuk-grid-column-full">
 
 
-    <span class="govuk-hint">Eden Tesfay</span>
+    <span class="govuk-hint">Reference 44455453</span>
 
 
-    <div class="moj-page-header-actions">
-
-      <div class="moj-page-header-actions__title">
-        <h1 class="govuk-heading-xl">Application history
-          <span class="govuk-!-margin-left-5"> {{govukTag({
-            text: "Evidence submitted",
-            classes: "govuk-tag--pink"
-            })}}</span>
-        </h1>
-
-      </div>
-    
-      <div class="moj-page-header-actions__actions">
-    
-        <div class="moj-button-menu">
-          <div class="moj-button-menu__wrapper">
-
-            <form action="which-school">
-              <button class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button">
-                Transfer school
-              </button>
-            </form>
-    
-          
-    
-          
-    
-          </div>
-        </div>
-    
-      </div>
-    
-    </div>
+    {{ mojPageHeaderActions({
+      heading: {
+        text: 'Eden Tesfay'
+      },
+      items: [{
+        text: 'Add sibling',
+        href:'add-sibling',
+        classes: 'govuk-button--secondary'
+      }, {
+        text: 'Transfer school',
+        href:'transfer-school',
+        classes: 'govuk-button--secondary'
+      }]
+    }) }}
     
     
 
@@ -76,13 +57,13 @@ href: "/"
 
       {{ mojTicketPanel({
       attributes: {
-      'aria-label': 'Decision panel'
+      'aria-label': 'Review evidence'
       },
       items: [
       {
       html: '
       
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Reference number: 44455453</h2>
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Make sure to review all supporting evidence before making a decision.</h2>
       <p class="govuk-body">Make sure to review all supporting evidence before making a decision.</p>
 
       <form action="supporting-evidence" method="post" novalidate>
@@ -91,7 +72,7 @@ href: "/"
 
 
       <button class="govuk-button" data-module="govuk-button">
-        Review application
+        Review evidence
       </button>
 
   ',
@@ -119,23 +100,70 @@ href: "/"
 
 
 
-{%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
-
-{{ mojSubNavigation({
-  label: 'Sub navigation',
-  items: [{
-    text: 'Overview',
-    href: '#',
-    active: true
-  }, {
-    text: 'Supporting evidence',
-    href: 'appeal-docs'
-  }
-  ]
-}) }}
-
 <!-- PERSON -->
 <h2 class="govuk-heading-l govuk-!-margin-bottom govuk-!-font-size-36">Overview</h2>
+
+
+
+{{ govukSummaryList({
+  card: {
+  title: {
+  text: "Child 1"
+  },
+  actions: {
+  items: [
+  
+  {
+  href: "#",
+  text: "Edit details",
+  visuallyHiddenText: "from application"
+  }
+  ]
+  }
+  },
+  rows: [
+  
+ 
+     
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        html: "Sam Tesfay"
+      }
+    },
+     
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        html: "18 November 2018"
+      }
+    },
+    {
+      key: {
+        text: "Address"
+      },
+      value: {
+        html: "26 Cherry Tree Lane, Chorlton, Manchester, M33 8HG "
+      }
+    },
+     
+    {
+      key: {
+        text: "School"
+      },
+      value: {
+        html: "St Mary's Manchester"
+      }
+    }
+
+
+  
+  ]
+  }) }}
 
 {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
@@ -195,14 +223,7 @@ href: "/"
       }
     },
      
-    {
-      key: {
-        text: "NASS number"
-      },
-      value: {
-        html: "00116367367"
-      }
-    },
+  
      
     {
       key: {
@@ -218,57 +239,6 @@ href: "/"
 
 
 
-{{ govukSummaryList({
-  card: {
-  title: {
-  text: "Child 1"
-  },
-  actions: {
-  items: [
-  
-  {
-  href: "#",
-  text: "Edit details",
-  visuallyHiddenText: "from application"
-  }
-  ]
-  }
-  },
-  rows: [
-  
- 
-     
-    {
-      key: {
-        text: "Name"
-      },
-      value: {
-        html: "Sam Tesfay"
-      }
-    },
-     
-    {
-      key: {
-        text: "Date of birth"
-      },
-      value: {
-        html: "18 November 2018"
-      }
-    },
-     
-    {
-      key: {
-        text: "School"
-      },
-      value: {
-        html: "St Mary's Manchester"
-      }
-    }
-
-
-  
-  ]
-  }) }}
 
 
 
