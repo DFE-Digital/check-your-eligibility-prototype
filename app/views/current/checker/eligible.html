@@ -13,13 +13,19 @@
 
 {{ mojBanner({
   type: 'success',
-  html:' <h3 class="govuk-heading-mß">The parent or carer is eligible for </h3>
+  html:' <h3 class="govuk-heading-mß">The parent or carer is eligible for free school meals</h3>
 
   <p>This information can be passed on to the parent, carer or school.</p>',
   iconFallbackText: 'Success'
 }) }}
 
 
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Continue",
+  href:'childs-age'
+}) }}
    
 
 
