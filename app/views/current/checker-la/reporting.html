@@ -1,0 +1,312 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+
+
+
+<div class="govuk-grid-row HO-uk-margin-top-5">
+  
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">
+    Run a report
+    </h1>
+    <p class="govuk-body-m HO-uk-margin-bottom-5">
+      Search and run reports for eligible children
+    </p>
+  </div>
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <form action="applications" method="post" class="form">
+
+
+    <!-- SEARCH BAR -->
+    <div class="cardDesign">
+    
+
+    
+
+    
+    
+      <div id="PersonName">
+    
+      <div class="govuk-grid-row">
+       
+
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group HO-uk-margin-bottom-3">
+          <h6 class="govuk-heading-xxs HO-uk-margin-bottom-1">
+        School
+          </h6>
+          
+            <input id="Name" class="govuk-input" type="text" name="Name" value="{{ data['Name'] }}" placeholder="School">
+          
+          </div>
+          </div>
+          <!--COL 1-->
+
+
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-form-group HO-uk-margin-bottom-3">
+              <h6 class="govuk-heading-xxs HO-uk-margin-bottom-1">
+              Status
+              </h6>
+              <div class="autocomplete">
+                <input id="deptCountry" class="countryAutocomplete govuk-input" type="text" name="deptCountry" value="{{ data['deptCountry'] }}" placeholder="Status">
+              </div>
+              
+              </div>
+              </div>
+               <!--COL 2-->
+
+
+              
+                   <!--COL 3-->
+                   </div>
+
+
+                   <div class="govuk-grid-row">
+
+                    <div class="govuk-grid-column-one-quarter">
+
+                      <form action="eligible" method="post" novalidate>
+
+                      
+                  
+                  {{ govukSelect({
+                    id: "offer",
+                    name: "offer",
+                    label: {
+                      text: "Offer type",
+                      classes: "govuk-body-m"
+                    },
+                    items: [
+                      {
+                        value: "Early years pupil premium",
+                        text: "Early years pupil premium"
+                      },
+                      {
+                        value: "Childcare for 2 yr olds",
+                        text: "Childcare for 2 yr olds",
+                        selected: true
+                      },
+                      {
+                        value: "Free school meals",
+                        text: "Free school meals"
+                      }
+                    ]
+                  }) }}
+                  
+                       
+                        
+                        
+                  
+                        
+                        
+                  
+                         
+                  
+                    
+                          
+                          
+                          
+                          
+                  
+                       
+                        
+                        
+                        
+                          
+                        
+                         
+                        
+                      
+                        
+                        
+                  
+                  
+                        
+                      </form>
+                    </div>
+                   </div>
+
+              
+                  
+                
+
+                  
+          
+<!-- DOB -->
+          <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-one-quarter">
+                    
+
+              <div class="govuk-form-group HO-uk-margin-bottom-3">
+                <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                    Date from
+                  </legend>
+                  <!--<div id="passport-issued-hint" class="govuk-hint">
+                    For example, 12 11 2007
+                  </div> -->
+                  <div class="govuk-date-input" id="dob">
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="dob-day">
+                          Day
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                        
+           
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="dob-month">
+                          Month
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                          Year
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                        
+                    </div>
+                  </div>
+              
+                </fieldset>
+              </div>
+              </div>
+ <!--COL 1-->
+
+              <div class="govuk-grid-column-one-quarter">
+                    
+
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      Date to
+                    </legend>
+                    <!--<div id="passport-issued-hint" class="govuk-hint">
+                      For example, 12 11 2007
+                    </div> -->
+                    <div class="govuk-date-input" id="passport-issued">
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                            Day
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                           
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                            Month
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                            Year
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                      </div>
+                    </div>
+                
+                  </fieldset>
+                </div>
+                </div>
+
+            
+          </div>
+          <!-- SEX -->
+          <div class="govuk-grid-row HO-uk-margin-top-4">
+    
+            <div class="govuk-grid-column-full">
+      
+            <form action="applications">
+              <button class="govuk-button govuk-button HO-button-white moj-button-menu__item govuk-!-margin-top-6" data-module="govuk-button">
+                Generate results
+              </button>
+
+            </form>
+            
+              
+              
+            </div>
+      
+      
+          </div>
+
+      
+      <!-- EXPLANATIONS REMOVED FOR V2 -->
+      
+      
+
+     
+    
+    </div>
+    <!--END SHOW/HIDE -->
+
+  
+
+    </div>
+    
+      <!-- END CARD // SEARCH BAR -->
+      
+
+
+
+</form>
+
+
+        </div>
+      </div>
+
+<!--FOOTER -->
+
+
+<!-- MODAL -->
+
+
+{% endblock %}
+{% block pageScripts %}
+<!-- Add any javascript files here. Include javascript files only on the pages
+that need them. Excessive javascript files loaded on other pages may slow down
+the response times of the prototype. -->
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+
+<script type="text/javascript">
+  if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
+  new MOJFrontend.MultiFileUpload({
+    container: $(".moj-multi-file-upload"),
+    uploadUrl: "/ajax-upload",
+    deleteUrl: "/ajax-delete",
+  });
+}
+</script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

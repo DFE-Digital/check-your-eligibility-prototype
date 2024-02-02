@@ -26,13 +26,40 @@
     {% endif %}
 
 
-    <span class="govuk-hint">Bramhope Primary School</span>
+  
 
-    <h1 class="govuk-heading-l">
+    <div class="moj-page-header-actions">
+
+      <div class="moj-page-header-actions__title">
+        <h1 class="govuk-heading-l">New applications (22)</h1>
+      </div>
+    
       
+        <div class="moj-page-header-actions__actions">
+          
+    
+    <div class="moj-button-menu">
+      <div class="moj-button-menu__wrapper">
+          
       
-      Eligible for free school meals (18)
-    </h1>
+    
+    
+      
+        
+      
+    
+    <button class="govuk-button moj-button-menu__item moj-page-header-actions__action" data-module="govuk-button">
+    Confirm eligibility
+    </button>
+    
+        </div>
+    </div>
+    
+    
+        </div>
+      
+    
+    </div>
 
 
     <div class="govuk-grid-row">
@@ -111,180 +138,149 @@
 
 {% endset %}
 
-
-<div class="moj-filter-layout">
-
- 
-
-  <div class="moj-filter-layout__content">
-
-  
-
-  <div class="moj-scrollable-pane">
-    {{ govukTable({
-      firstCellIsHeader: true,
-      head: [
-        {text: 'Reference'},
-        {text: 'Parent / guardian'},
-        {text: 'Child'},
-        {text: 'DOB'},
-        {text: 'Eligible from'},
-        {text: 'Eligible to'},
-        
-        
-        {text: 'Date submitted'}
-      ],
-      rows: [
-        [
-          {html: '<a href="../records/approved" class="govuk-link">44455453</a>'},
-          {html: 'Eden Tesfay'},
-          {html: 'Samual Tesfay'},
-          {html: '18 Sep 2017'},
-          {html: '01 Sep 2023'},
-          {html: '01 Jul 2024'},
-         
-          
-          {text: '25 Sep 2023'}
-        ],
-        [
-          {html: '<a href="../records/eligible.html" class="govuk-link">12323212</a>'},
-          {html: 'Warren Sutton'},
-          {html: 'Lisa Sutton'},
-          {html: '18 Sep 2017'},
-          {html: '01 Sep 2023'},
-          {html: '01 Jul 2024'},
-         
-        
-          {text: '25 Sep 2023'}
-        ],
-        [
-          {html: '<a href="#" class="govuk-link">45678765</a>'},
-          {html: 'Alan Jones'},
-          {html: 'Jack Jones'},
-          {html: '18 Sep 2017'},
-          {html: '01 Sep 2023'},
-          {html: '01 Jul 2024'},
-         
-        
-          {text: '25 Sep 2023'}
-        ],
-        [
-          {html: '<a href="#" class="govuk-link">12345678</a>'},
-          {html: 'Jennifer Langley'},
-          {html: 'Tilly Langley'},
-          {html: '18 Sep 2017'},
-          {html: '01 Sep 2023'},
-          {html: '01 Jul 2024'},
-         
-        
-          {text: '25 Sep 2023'}
-        ],
-        [
-          {html: '<a href="#" class="govuk-link">89009800</a>'},
-          {html: 'Susan Francis'},
-          {html: 'Noah Francis'},
-          {html: '18 Sep 2017'},
-          {html: '01 Sep 2023'},
-          {html: '01 Jul 2024'},
-         
-          {text: '25 Sep 2023'}
-        ],
-        [
-          {html: '<a href="#" class="govuk-link">44455453</a>'},
-          {html: 'John Smith'},
-          {html: 'Jo Smith'},
-          {html: '18 Sep 2017'},
-          {html: '01 Sep 2023'},
-          {html: '01 Jul 2024'},
-         
-        
-          {text: '25 Sep 2023'}
-        ],
-        [
-          {html: '<a href="#" class="govuk-link">12323212</a>'},
-          {html: 'Warren Sutton'},
-          {html: 'Harry Sutton'},
-          {html: '18 Sep 2017'},
-          {html: '01 Sep 2023'},
-          {html: '01 Jul 2024'},
-         
-          
-          {text: '25 Sep 2023'}
-          
-        ],
-        [
-          {html: '<a href="#" class="govuk-link">45678765</a>'},
-          {html: 'Alan Jones'},
-          {html: 'Scarlette Jones'},
-          {html: '18 Sep 2017'},
-          {html: '01 Sep 2023'},
-          {html: '01 Jul 2024'},
-         
-          
-          {text: '25 Sep 2023'}
-        ],
-        [
-          {html: '<a href="#" class="govuk-link">12345678</a>'},
-          {html: 'Jennifer Langley'},
-          {html: 'Hilda Langley'},
-          {html: '18 Sep 2017'},
-          {html: '01 Sep 2023'},
-          {html: '01 Jul 2024'},
-         
-        
-          {text: '25 Sep 2023'}
-        ],
-        [
-          {html: '<a href="#" class="govuk-link">89009800</a>'},
-          {html: 'Susan Francis'},
-          {html: 'Ada Francis'},
-          {html: '18 Sep 2017'},
-          {html: '01 Sep 2023'},
-          {html: '01 Jul 2024'},
-         
-        
-          {text: '25 Sep 2023'}
-        ],
-        [
-          {html: '<a href="#" class="govuk-link">45456765</a>'},
-          {html: 'John Smith'},
-          {html: 'Simon Smith'},
-          {html: '18 Sep 2017'},
-          {html: '01 Sep 2023'},
-          {html: '01 Jul 2024'},
-         
-        
-          {text: '25 Sep 2023'}
-        ],
-        [
-          {html: '<a href="#" class="govuk-link">88675411</a>'},
-          {html: 'Margaret Blake'},
-          {html: 'Margo Blake'},
-          {html: '18 Sep 2017'},
-          {html: '01 Sep 2023'},
-          {html: '01 Jul 2024'},
-         
-        
-          {text: '25 Sep 2023'}
-        ],
-        
-        [
-          {html: '<a href="#" class="govuk-link">44455453</a>'},
-          {html: 'John Smith'},
-          {html: 'Jona Smith'},
-          {html: '18 Sep 2017'},
-          {html: '01 Sep 2023'},
-          {html: '01 Jul 2024'},
-         
+<table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+     
+      <th class="govuk-table__header" scope="col" id="select-all"></th>
+      <th class="govuk-table__header" scope="col">Reference</th>
+      <th class="govuk-table__header" scope="col">Parent / guardian</th>
+      <th class="govuk-table__header" scope="col">Child</th>
+      <th class="govuk-table__header govuk-table__header--numeric" scope="col">DOB</th>
+      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Eligible from</th>
+      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Eligible to</th>
+      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Date submitted</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row govuk-table__row--selected">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
+          <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
+            <span class="govuk-visually-hidden">Select</span>
+          </label>
+        </div>
+      </td>
       
-          {text: '25 Sep 2023'}
-        ]
-      ]
-    }) }}
-  </div>
-</div>
+      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
+      <td class="govuk-table__cell">Eden Tesfay</td>
+      <td class="govuk-table__cell">Samual Tesfay</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">01 Jul 2024</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-denali" value="denali">
+          <label class="govuk-label govuk-checkboxes__label" for="mountain-denali">
+            <span class="govuk-visually-hidden">Select</span>
+          </label>
+        </div>
+      </td>
+      </td>
+      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
+      <td class="govuk-table__cell">Warren Sutton</td>
+      <td class="govuk-table__cell">Lisa Sutton</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">01 Jul 2024</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-elbrus" value="elbrus">
+          <label class="govuk-label govuk-checkboxes__label" for="mountain-elbrus">
+            <span class="govuk-visually-hidden">Select Elbrus</span>
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
+      <td class="govuk-table__cell">Alan Jones</td>
+      <td class="govuk-table__cell">Jack Jones</td>
+      
+      <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">01 Jul 2024</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-everest" value="everest">
+          <label class="govuk-label govuk-checkboxes__label" for="mountain-everest">
+            <span class="govuk-visually-hidden">Select Everest</span>
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
+      <td class="govuk-table__cell">Eden Tesfay</td>
+      <td class="govuk-table__cell">Samual Tesfay</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">01 Jul 2024</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-kilimanjaro" value="kilimanjaro">
+          <label class="govuk-label govuk-checkboxes__label" for="mountain-kilimanjaro">
+            <span class="govuk-visually-hidden">Select</span>
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
+      <td class="govuk-table__cell">Jennifer Langley</td>
+      <td class="govuk-table__cell">Tilly Langley</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">01 Jul 2024</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-puncak-jaya" value="puncak-jaya">
+          <label class="govuk-label govuk-checkboxes__label" for="mountain-puncak-jaya">
+            <span class="govuk-visually-hidden">Select</span>
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
+      <td class="govuk-table__cell">Susan Francis</td>
+      <td class="govuk-table__cell">Noah Francis</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">01 Jul 2024</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-vinson" value="vinson">
+          <label class="govuk-label govuk-checkboxes__label" for="mountain-vinson">
+            <span class="govuk-visually-hidden">Select</span>
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
+      <td class="govuk-table__cell">John Smith</td>
+      <td class="govuk-table__cell">Jo Smith</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">01 Jul 2024</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
+    </tr>
+  </tbody>
+</table>
 
-      </div>
+
+
+
     
     </div>
 
