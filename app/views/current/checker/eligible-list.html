@@ -2,16 +2,6 @@
 
 {% set pageName="Home" %}
 
-{% set applicationSent %}
-<h3 class="govuk-notification-banner__heading">
-  Your application has been sent
-  </h3>
-  <p class="govuk-body">
-    We have sent your application to be processed by your local school. It may take upto 1 week to process.
-  </p>
-  <p>Your reference is 1234567</p>
-{% endset %}
-
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -26,13 +16,25 @@
     {% endif %}
 
 
-    <span class="govuk-hint">Bramhope Primary School</span>
+    <span class="govuk-hint">All applications for</span>
+{% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
 
-    <h1 class="govuk-heading-l">
-      
-      
-      Eligible for free school meals (18)
-    </h1>
+{{ mojPageHeaderActions({
+  heading: {
+    text: name,
+    
+    classes:'govuk-heading-l'
+  },
+  items: [{
+    text: 'Export as csv',
+    classes: 'govuk-button--secondary'
+  }
+  ]
+}) }}
+
+<p><a href="">Generate another list</a></p>
+
+   
 
 
     <div class="govuk-grid-row">
@@ -103,7 +105,7 @@
       },
       {
         value: '3',
-        text: 'New application (13)',
+        text: 'Eligible (13)',
         checked: true
       }
     ]
@@ -124,14 +126,14 @@
     {{ govukTable({
       firstCellIsHeader: true,
       head: [
-        {text: 'Reference'},
-        {text: 'Parent / guardian'},
+        {text: 'Pupil URN'},
+        {text: 'Carer'},
         {text: 'Child'},
         {text: 'DOB'},
+
         {text: 'Eligible from'},
-        {text: 'Eligible to'},
-        
-        
+      
+        {text: 'Status'},
         {text: 'Date submitted'}
       ],
       rows: [
@@ -139,144 +141,132 @@
           {html: '<a href="../records/approved" class="govuk-link">44455453</a>'},
           {html: 'Eden Tesfay'},
           {html: 'Samual Tesfay'},
-          {html: '18 Sep 2017'},
+          {html: '12 Jan 2017'},
           {html: '01 Sep 2023'},
-          {html: '01 Jul 2024'},
-         
-          
+        
+          {html: 'Eligible'},
           {text: '25 Sep 2023'}
         ],
         [
           {html: '<a href="../records/eligible.html" class="govuk-link">12323212</a>'},
           {html: 'Warren Sutton'},
           {html: 'Lisa Sutton'},
-          {html: '18 Sep 2017'},
+          {html: '10 Jan 2017'},
           {html: '01 Sep 2023'},
-          {html: '01 Jul 2024'},
-         
-        
+      
+          {html: 'Eligible'},
           {text: '25 Sep 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">45678765</a>'},
           {html: 'Alan Jones'},
           {html: 'Jack Jones'},
-          {html: '18 Sep 2017'},
+          {html: '10 Jan 2018'},
           {html: '01 Sep 2023'},
-          {html: '01 Jul 2024'},
-         
         
-          {text: '25 Sep 2023'}
+          {html: 'Eligible'},
+          {text: '9 Sep 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">12345678</a>'},
           {html: 'Jennifer Langley'},
           {html: 'Tilly Langley'},
-          {html: '18 Sep 2017'},
+          {html: '03 Dec 2017'},
           {html: '01 Sep 2023'},
-          {html: '01 Jul 2024'},
-         
         
-          {text: '25 Sep 2023'}
+          {html: 'Eligible'},
+          {text: '9 Sep 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">89009800</a>'},
           {html: 'Susan Francis'},
           {html: 'Noah Francis'},
-          {html: '18 Sep 2017'},
+          {html: '13 Dec 2017'},
           {html: '01 Sep 2023'},
-          {html: '01 Jul 2024'},
-         
-          {text: '25 Sep 2023'}
+        
+          {html: 'Receiving'},
+          {text: '9 Sep 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">44455453</a>'},
           {html: 'John Smith'},
           {html: 'Jo Smith'},
-          {html: '18 Sep 2017'},
+          {html: '11 Dec 2017'},
           {html: '01 Sep 2023'},
-          {html: '01 Jul 2024'},
-         
         
+          {html: 'Receiving'},
           {text: '25 Sep 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">12323212</a>'},
           {html: 'Warren Sutton'},
           {html: 'Harry Sutton'},
-          {html: '18 Sep 2017'},
+          {html: '09 Dec 2017'},
           {html: '01 Sep 2023'},
-          {html: '01 Jul 2024'},
-         
-          
+        
+          {html: 'Eligible'},
           {text: '25 Sep 2023'}
-          
         ],
         [
           {html: '<a href="#" class="govuk-link">45678765</a>'},
           {html: 'Alan Jones'},
           {html: 'Scarlette Jones'},
-          {html: '18 Sep 2017'},
+          {html: '10 Nov 2017'},
           {html: '01 Sep 2023'},
-          {html: '01 Jul 2024'},
-         
-          
-          {text: '25 Sep 2023'}
+      
+          {html: 'Eligible'},
+          {text: '9 Sep 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">12345678</a>'},
           {html: 'Jennifer Langley'},
           {html: 'Hilda Langley'},
-          {html: '18 Sep 2017'},
+          {html: '22 Nov 2017'},
           {html: '01 Sep 2023'},
-          {html: '01 Jul 2024'},
-         
-        
-          {text: '25 Sep 2023'}
+ 
+          {html: 'Eligible'},
+          {text: '9 Sep 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">89009800</a>'},
           {html: 'Susan Francis'},
           {html: 'Ada Francis'},
-          {html: '18 Sep 2017'},
+          {html: '26 Oct 2017'},
           {html: '01 Sep 2023'},
-          {html: '01 Jul 2024'},
-         
-        
-          {text: '25 Sep 2023'}
+    
+          {html: 'Receiving'},
+          {text: '9 Sep 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">45456765</a>'},
           {html: 'John Smith'},
           {html: 'Simon Smith'},
-          {html: '18 Sep 2017'},
+          {html: '22 Oct 2017'},
           {html: '01 Sep 2023'},
-          {html: '01 Jul 2024'},
-         
-        
-          {text: '25 Sep 2023'}
+
+          {html: 'Not found'},
+          {text: '9 Sep 2023'}
         ],
         [
           {html: '<a href="#" class="govuk-link">88675411</a>'},
           {html: 'Margaret Blake'},
           {html: 'Margo Blake'},
-          {html: '18 Sep 2017'},
+          {html: '12 Oct 2017'},
           {html: '01 Sep 2023'},
-          {html: '01 Jul 2024'},
-         
-        
-          {text: '25 Sep 2023'}
+          
+   
+          {html: 'Not found'},
+          {text: '9 Sep 2023'}
         ],
         
         [
           {html: '<a href="#" class="govuk-link">44455453</a>'},
           {html: 'John Smith'},
           {html: 'Jona Smith'},
-          {html: '18 Sep 2017'},
+          {html: '11 Oct 2017'},
           {html: '01 Sep 2023'},
-          {html: '01 Jul 2024'},
-         
-      
+   
+          {html: 'Receiving'},
           {text: '25 Sep 2023'}
         ]
       ]

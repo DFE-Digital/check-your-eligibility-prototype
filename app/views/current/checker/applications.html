@@ -17,7 +17,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    {% if data['application-approved'] =="yes" %}
+    {% if data['eligibility-confirmed'] =="yes" %}
     {{ govukNotificationBanner({
       html: applicationSent,
       type: 'success'
@@ -46,11 +46,14 @@
     
       
         
-      
+      <form action="eligibility-confirmed" name="eligibility-confirmed" aria-checked="true">
+        <button class="govuk-button moj-button-menu__item moj-page-header-actions__action" data-module="govuk-button">
+          Confirm eligibility
+          </button>
+
+      </form>
     
-    <button class="govuk-button moj-button-menu__item moj-page-header-actions__action" data-module="govuk-button">
-    Confirm eligibility
-    </button>
+   
     
         </div>
     </div>

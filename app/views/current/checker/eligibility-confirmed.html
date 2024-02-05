@@ -2,29 +2,32 @@
 
 {% set pageName="Home" %}
 
-
+{% set applicationSent %}
+<h3 class="govuk-notification-banner__heading">
+  Eligibility confirmed
+  </h3>
+  <p class="govuk-body">
+   This record has now been moved to all applications
+  </p>
+  
+{% endset %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    {%- from "moj/components/banner/macro.njk" import mojBanner -%}
-
+   
+  
 {{ mojBanner({
   type: 'success',
-  html:' <h3 class="govuk-heading-mß">The parent or carer is eligible for   {{ data["offer"] }}</h3>
+  html:' <h3 class="govuk-heading-l">Eligibility confirmed</h3>
 
-  <p>This information can be passed on to the parent, carer or school.</p>',
+  <p> This application has now been moved to <a href="">all applications</a></p>',
   iconFallbackText: 'Success'
 }) }}
+    
 
-
-   
-
-
-    <p><a href="application-types">Do another check</a></p>
-    <p><a href="homepage">Go to your homepage</a></p>
 
 
 
@@ -32,9 +35,9 @@
 
             
       <div class="govuk-grid-column-one-half">
-        
-
-
+      
+        <p><a href="applications">Confirm another application</a></p>
+        <p><a href="dashboard">Go to your homepage</a></p>
 
 
 
@@ -67,5 +70,4 @@
 
 {% block pageScripts %}
 <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
-
 {% endblock %}
