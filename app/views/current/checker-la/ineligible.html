@@ -48,35 +48,7 @@
 
 
 
-    {{ govukRadios({
-    classes: "",
-    name: "changedName",
-    fieldset: {
-    legend: {
-    text: "Do you want make an appeal against the decision?",
-    isPageHeading: true,
-    classes: "govuk-fieldset__legend--m govuk-!-margin-top-5"
-    }
-    },
-
-    items: [
-    {
-    value: "yes",
-    text: "Yes"
-    },
-    {
-    value: "no",
-    text: "No"
-    }
-    ]
-    }) }}
-
-    {% from "govuk/components/button/macro.njk" import govukButton %}
-
-    {{ govukButton({
-    text: "Continue",
-    href:'do-you-have-docs'
-    }) }}
+  
 
 
 

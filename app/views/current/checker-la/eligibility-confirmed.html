@@ -1,0 +1,73 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% set applicationSent %}
+<h3 class="govuk-notification-banner__heading">
+  Eligibility confirmed
+  </h3>
+  <p class="govuk-body">
+   This record has now been moved to all applications
+  </p>
+  
+{% endset %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+   
+  
+{{ mojBanner({
+  type: 'success',
+  html:' <h3 class="govuk-heading-l">Eligibility confirmed</h3>
+
+  <p> This application has now been moved to <a href="">all applications</a></p>',
+  iconFallbackText: 'Success'
+}) }}
+    
+
+
+
+
+    <div class="govuk-grid-row">
+
+            
+      <div class="govuk-grid-column-one-half">
+      
+        <p><a href="applications">Confirm another application</a></p>
+        <p><a href="dashboard">Go to your homepage</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+        
+      </div>  
+    
+    </div>
+
+  
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}
