@@ -11,7 +11,7 @@
 {% block backLink %}
 {{ govukBackLink({
 text: "Back",
-href: "/"
+href: "javascript:window.history.back()"
 }) }}
 {% endblock %}
 
@@ -29,6 +29,9 @@ href: "/"
     <span class="govuk-hint">Reference: 44455453</span>
 
 
+
+
+
 {% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
 
 {{ mojPageHeaderActions({
@@ -40,7 +43,10 @@ href: "/"
     href:'add-sibling',
     classes: 'govuk-button--secondary'
   }
+  
+  ]
 }) }}
+
 
 
 

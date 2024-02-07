@@ -11,12 +11,12 @@
 {% block backLink %}
 {{ govukBackLink({
 text: "Back",
-href: "/"
+href: "javascript:window.history.back()"
 }) }}
 {% endblock %}
 
 
-
+<!-- The content between the heading 1 and the buttons -->
 
 {% block content %}
 
@@ -26,66 +26,37 @@ href: "/"
   <div class="govuk-grid-column-full">
 
 
-    <span class="govuk-hint">Reference 44455453</span>
-
-
-    {{ mojPageHeaderActions({
-      heading: {
-        text: 'Eden Tesfay'
-      },
-      items: [{
-        text: 'Add sibling',
-        href:'add-sibling',
-        classes: 'govuk-button--secondary'
-      }, {
-        text: 'Transfer school',
-        href:'transfer-school',
-        classes: 'govuk-button--secondary'
-      }]
-    }) }}
-    
-    
+    <span class="govuk-hint">Reference: 44455453</span>
 
 
 
 
 
+{% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
 
+{{ mojPageHeaderActions({
+  heading: {
+    text: 'Eden Tesfay'
+  },
+  items: [{
+    text: 'Add sibling',
+    href:'add-sibling',
+    classes: 'govuk-button--secondary'
+  }
   
-
-      {%- from "moj/components/ticket-panel/macro.njk" import mojTicketPanel -%}
-
-      {{ mojTicketPanel({
-      attributes: {
-      'aria-label': 'Review evidence'
-      },
-      items: [
-      {
-      html: '
-      
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Make sure to review all supporting evidence before making a decision.</h2>
-      <p class="govuk-body">Make sure to review all supporting evidence before making a decision.</p>
-
-      <form action="supporting-evidence" method="post" novalidate>
-
-        <input type="hidden" name="approve-application" value="yes">
+  ]
+}) }}
 
 
-      <button class="govuk-button" data-module="govuk-button">
-        Review evidence
-      </button>
-
-  ',
-      attributes: {
-      'aria-label': 'Section 1'
-      },
-      classes: 'moj-ticket-panel__content--blue'
-      }]
-      }) }}
 
 
-   
-    </form>
+
+
+
+    
+    
+    
+
 
 
 
@@ -97,10 +68,6 @@ href: "/"
 
 
 
-
-
-
-<!-- PERSON -->
 <h2 class="govuk-heading-l govuk-!-margin-bottom govuk-!-font-size-36">Overview</h2>
 
 
@@ -112,6 +79,7 @@ href: "/"
   },
   actions: {
   items: [
+  
   
   {
   href: "#",
@@ -149,28 +117,23 @@ href: "/"
       value: {
         html: "26 Cherry Tree Lane, Chorlton, Manchester, M33 8HG "
       }
-    },
-     
-    {
-      key: {
-        text: "School"
-      },
-      value: {
-        html: "St Mary's Manchester"
-      }
     }
+    
 
 
   
   ]
   }) }}
 
+<!-- PERSON -->
+
+
 {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
 {{ govukSummaryList({
   card: {
     title: {
-      text: "Person"
+      text: "Parent / carer"
     },
     actions: {
       items: [
@@ -222,17 +185,17 @@ href: "/"
         html: "01 September 1988"
       }
     },
-     
-  
-     
     {
       key: {
-        text: "Supporting evidence"
+        text: "National Insurance / NASS"
       },
       value: {
-        html: "Universal credit (3 months)"
+        html: "098765432211"
       }
     }
+     
+    
+
   ]
 }) }}
 
