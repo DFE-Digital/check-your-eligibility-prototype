@@ -6,16 +6,9 @@
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
 
-    {% if data['answers-checked'] =="true" %}
-    {{ govukNotificationBanner({
-      html: applicationSent,
-      type: 'success'
-    }) }}
-    
-    {% endif %}
+
+  
 
 
 
@@ -28,8 +21,8 @@
 {{ mojBanner({
   type: 'success',
   html:'<h3 class="govuk-notification-banner__heading">
-    Free school meal record has been reviewed and approved
-    </h3> <p>The parent or carer and the LA have been notified</p>',
+    The free school meal application has been approved
+    </h3>',
   
   iconFallbackText: 'Success'
 }) }}
@@ -62,10 +55,7 @@
 
 
 
-        
-      </div>  
-    
-    </div>
+   
 
   
   </div>
