@@ -43,13 +43,15 @@
 
         {{ govukInput({
           label: {
-            text: "First 3 letters of surname"
+            text: "First 3 letters of parent or guardian’s surname."
           },
           id: "surName",
           name: "surName",
           autocomplete: "name",
           classes: "govuk-input--width-10",
           spellcheck: false
+
+          
         }) }}
 
        
@@ -70,7 +72,7 @@
 <p>Or</p>
         {{ govukInput({
           label: {
-            text: "National asylum support number"
+            text: "National asylum support number (parent or guardian)"
           },
           id: "nass",
           name: "nass",
@@ -87,7 +89,7 @@
             
             fieldset: {
               legend: {
-                text: "Date of birth",
+                text: "Date of birth (parent or guardian)",
                 isPageHeading: false,
                 classes: "govuk-fieldset__legend--s"
               }
