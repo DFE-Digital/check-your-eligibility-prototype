@@ -81,6 +81,35 @@
     color:#0b0c0c
   }
  
+// PAGE LOADER
+.container {
+    
+  text-align: center;
+}
 
+// Spinner
+.spinner {
+  color: rgb(229, 231, 235);
+  height: 100px;
+  width: 100px;
+  fill: #1d70b8;
+}
+
+// Animation Spin
+.animation-spin {
+  -webkit-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+  
+}
+@keyframes spin {
+  0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+  }
+  100% {
+      -webkit-transform: rotate(359deg);
+      transform: rotate(359deg);
+  }
+}
 
 
