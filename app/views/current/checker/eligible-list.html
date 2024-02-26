@@ -7,21 +7,15 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    {% if data['application-approved'] =="yes" %}
-    {{ govukNotificationBanner({
-      html: applicationSent,
-      type: 'success'
-    }) }}
-    
-    {% endif %}
+  
 
 
-    <span class="govuk-hint">All applications for</span>
+  
 {% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
 
 {{ mojPageHeaderActions({
   heading: {
-    text: '',
+    text: 'Search results (203)',
     
     classes:'govuk-heading-l'
   },
@@ -32,7 +26,7 @@
   ]
 }) }}
 
-<p><a href="">Generate another list</a></p>
+<p><a href="search">Search again</a></p>
 
    
 
@@ -46,72 +40,6 @@
 
 
 
-{% set filterOptionsHtml %}
-
-  {{ govukInput({
-    id: 'keywords',
-    name: 'keywords',
-    label: {
-      text: 'Keywords',
-      classes: 'govuk-label--m'
-    }
-  }) }}
-
-  {{ govukCheckboxes({
-    idPrefix: 'type',
-    name: 'type',
-    classes: "govuk-checkboxes--small",
-    fieldset: {
-      legend: {
-        text: 'Area',
-        classes: 'govuk-fieldset__legend--m'
-      }
-    },
-    items: [
-      {
-        value: '1',
-        text: 'Yorkshire (18)',
-        checked: true
-      },
-    
-      {
-        value: '2',
-        text: 'Humber (12)',
-        checked: true
-      }
-    ]
-  }) }}
-
-  {{ govukCheckboxes({
-    idPrefix: 'status',
-    name: 'status',
-    classes: "govuk-checkboxes--small",
-    fieldset: {
-      legend: {
-        text: 'Status',
-        classes: 'govuk-fieldset__legend--m'
-      }
-    },
-    items: [
-      {
-        value: '1',
-        text: 'Complete (5)',
-        checked: true
-      },
-      {
-        value: '2',
-        text: 'Incomplete (3)',
-        checked: true
-      },
-      {
-        value: '3',
-        text: 'Eligible (13)',
-        checked: true
-      }
-    ]
-  }) }}
-
-{% endset %}
 
 
 <div class="moj-filter-layout">
@@ -126,9 +54,10 @@
     {{ govukTable({
       firstCellIsHeader: true,
       head: [
-        {text: 'Pupil URN'},
-        {text: 'Carer'},
+        {text: 'Reference'},
+        {text: 'Parent / guardian'},
         {text: 'Child'},
+        {text:'School'},
         {text: 'DOB'},
 
         {text: 'Eligible from'},
@@ -141,8 +70,10 @@
           {html: '<a href="../records/approved" class="govuk-link">44455453</a>'},
           {html: 'Eden Tesfay'},
           {html: 'Samual Tesfay'},
+          {html:'St Marys'},
           {html: '12 Jan 2017'},
           {html: '01 Sep 2023'},
+      
         
           {html: 'Eligible'},
           {text: '25 Sep 2023'}
@@ -151,8 +82,10 @@
           {html: '<a href="../records/eligible.html" class="govuk-link">12323212</a>'},
           {html: 'Warren Sutton'},
           {html: 'Lisa Sutton'},
+          {html:'St Marys'},
           {html: '10 Jan 2017'},
           {html: '01 Sep 2023'},
+        
       
           {html: 'Eligible'},
           {text: '25 Sep 2023'}
@@ -161,8 +94,10 @@
           {html: '<a href="#" class="govuk-link">45678765</a>'},
           {html: 'Alan Jones'},
           {html: 'Jack Jones'},
+          {html:'St Marys'},
           {html: '10 Jan 2018'},
           {html: '01 Sep 2023'},
+        
         
           {html: 'Eligible'},
           {text: '9 Sep 2023'}
@@ -171,8 +106,10 @@
           {html: '<a href="#" class="govuk-link">12345678</a>'},
           {html: 'Jennifer Langley'},
           {html: 'Tilly Langley'},
+          {html:'St Marys'},
           {html: '03 Dec 2017'},
           {html: '01 Sep 2023'},
+        
         
           {html: 'Eligible'},
           {text: '9 Sep 2023'}
@@ -181,8 +118,10 @@
           {html: '<a href="#" class="govuk-link">89009800</a>'},
           {html: 'Susan Francis'},
           {html: 'Noah Francis'},
+          {html:'St Marys'},
           {html: '13 Dec 2017'},
           {html: '01 Sep 2023'},
+        
         
           {html: 'Receiving'},
           {text: '9 Sep 2023'}
@@ -191,8 +130,10 @@
           {html: '<a href="#" class="govuk-link">44455453</a>'},
           {html: 'John Smith'},
           {html: 'Jo Smith'},
+          {html:'St Marys'},
           {html: '11 Dec 2017'},
           {html: '01 Sep 2023'},
+         
         
           {html: 'Receiving'},
           {text: '25 Sep 2023'}
@@ -201,8 +142,10 @@
           {html: '<a href="#" class="govuk-link">12323212</a>'},
           {html: 'Warren Sutton'},
           {html: 'Harry Sutton'},
+          {html:'St Marys'},
           {html: '09 Dec 2017'},
           {html: '01 Sep 2023'},
+        
         
           {html: 'Eligible'},
           {text: '25 Sep 2023'}
@@ -211,8 +154,10 @@
           {html: '<a href="#" class="govuk-link">45678765</a>'},
           {html: 'Alan Jones'},
           {html: 'Scarlette Jones'},
+          {html:'St Marys'},
           {html: '10 Nov 2017'},
           {html: '01 Sep 2023'},
+      
       
           {html: 'Eligible'},
           {text: '9 Sep 2023'}
@@ -222,7 +167,9 @@
           {html: 'Jennifer Langley'},
           {html: 'Hilda Langley'},
           {html: '22 Nov 2017'},
+          {html:'St Marys'},
           {html: '01 Sep 2023'},
+       
  
           {html: 'Eligible'},
           {text: '9 Sep 2023'}
@@ -231,8 +178,10 @@
           {html: '<a href="#" class="govuk-link">89009800</a>'},
           {html: 'Susan Francis'},
           {html: 'Ada Francis'},
+          {html:'St Marys'},
           {html: '26 Oct 2017'},
           {html: '01 Sep 2023'},
+      
     
           {html: 'Receiving'},
           {text: '9 Sep 2023'}
@@ -241,8 +190,10 @@
           {html: '<a href="#" class="govuk-link">45456765</a>'},
           {html: 'John Smith'},
           {html: 'Simon Smith'},
+          {html:'St Marys'},
           {html: '22 Oct 2017'},
           {html: '01 Sep 2023'},
+       
 
           {html: 'Not found'},
           {text: '9 Sep 2023'}
@@ -251,8 +202,10 @@
           {html: '<a href="#" class="govuk-link">88675411</a>'},
           {html: 'Margaret Blake'},
           {html: 'Margo Blake'},
+          {html:'St Marys'},
           {html: '12 Oct 2017'},
           {html: '01 Sep 2023'},
+      
           
    
           {html: 'Not found'},
@@ -263,8 +216,10 @@
           {html: '<a href="#" class="govuk-link">44455453</a>'},
           {html: 'John Smith'},
           {html: 'Jona Smith'},
+          {html:'St Marys'},
           {html: '11 Oct 2017'},
           {html: '01 Sep 2023'},
+         
    
           {html: 'Receiving'},
           {text: '25 Sep 2023'}
@@ -275,6 +230,41 @@
 </div>
 
       </div>
+      {%- from "moj/components/pagination/macro.njk" import mojPagination -%}
+
+{{ mojPagination({
+  items: [{
+    text: '1',
+    href: '/page=1'
+  }, {
+    text: '2',
+    href: '/page=2',
+    selected: true
+  }, {
+    text: '3',
+    href: '/page=3'
+  }, {
+    type: 'dots'
+  }, {
+    text: '5',
+    href: '/page=5'
+  }],
+  results: {
+    count: 30,
+    from: 10,
+    to: 20,
+    text: 'pages'
+  },
+  previous: {
+    text: 'Previous',
+    href: ''
+  },
+  next: {
+    text: 'Next',
+    href: ''
+  }
+}) }}
+
     
     </div>
 
