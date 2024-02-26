@@ -1,36 +1,53 @@
 {% extends "layouts/layout-dfe.html" %}
 
-{% set pageName="Home" %}
+{% set pageName="File exported" %}
+
+
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
+    {%- from "moj/components/banner/macro.njk" import mojBanner -%}
+
+{{ mojBanner({
+  type: 'success',
+  html:' <h3 class="govuk-heading-l">The list has been exported</h3>',
+  iconFallbackText: 'Success'
+}) }}
+
   
 
-
-
-
-
-   
-
-
-    <div class="govuk-grid-row">
-
-            
       
+        
 
-      <div class="govuk-grid-column-full">
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Exported file
+    </dt>
+    <dd class="govuk-summary-list__value">
+      DownloadedEligibleList
+      {{ date() }}.csv
+      
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      {{ govukButton({
+        text: "Download",
+        classes:'govuk-!-margin-bottom-0'
+      }) }}
+    </dd>
+  </div>
 
 
 
-
-    
-    </div>
-
-  
   </div>
 </div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
 
 {% endblock %}
