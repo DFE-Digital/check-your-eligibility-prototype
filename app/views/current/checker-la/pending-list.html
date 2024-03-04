@@ -1,0 +1,261 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% set applicationSent %}
+<h3 class="govuk-notification-banner__heading">
+  Your application has been sent
+  </h3>
+  <p class="govuk-body">
+    We have sent your application to be processed by your local school. It may take upto 1 week to process.
+  </p>
+  <p>Your reference is 1234567</p>
+{% endset %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+<h1 class="govuk-heading-l">Pending applications (19)</h1>
+
+
+
+  
+
+    {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+    {{ govukDetails({
+      summaryText: "Help with this page",
+      text: "This page contains applications for free school meals that couldn't be found in the system. Review any supporting evidence parents/guardians have provided, then approve or decline to process their applications."
+    }) }}
+
+
+
+    <div class="govuk-grid-row">
+
+            
+      
+
+      <div class="govuk-grid-column-full">
+
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+     
+      
+      <th class="govuk-table__header" scope="col">Reference</th>
+      <th class="govuk-table__header" scope="col">Parent / guardian</th>
+      <th class="govuk-table__header" scope="col">Child</th>
+      <th class="govuk-table__header">School</th>
+      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Date of birth</th>
+    
+      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Date submitted</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+
+
+
+    <tr class="govuk-table__row">
+    
+      
+      <td class="govuk-table__cell"><a href="../records/new-appeal" class="govuk-link">44455453</a></td>
+      <td class="govuk-table__cell">Eden Tesfay</td>
+      <td class="govuk-table__cell">Samual Tesfay</td>
+      <td class="govuk-table__cell">St Mary's</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+      
+      <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
+    </tr>
+    <tr class="govuk-table__row">
+      
+    
+      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
+      <td class="govuk-table__cell">Warren Sutton</td>
+      <td class="govuk-table__cell">Lisa Sutton</td>
+      <td class="govuk-table__cell">St Mary's</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+      
+      <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
+    </tr>
+    <tr class="govuk-table__row">
+      
+      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
+      <td class="govuk-table__cell">Alan Jones</td>
+      <td class="govuk-table__cell">Jack Jones</td>
+      <td class="govuk-table__cell">St Mary's</td>
+      
+      <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+      
+      <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
+    </tr>
+    <tr class="govuk-table__row">
+    
+      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
+      <td class="govuk-table__cell">Eden Tesfay</td>
+      <td class="govuk-table__cell">Samual Tesfay</td>
+      <td class="govuk-table__cell">St Mary's</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+      
+      <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
+    </tr>
+    <tr class="govuk-table__row">
+      
+      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
+      <td class="govuk-table__cell">Jennifer Langley</td>
+      <td class="govuk-table__cell">Tilly Langley</td>
+      <td class="govuk-table__cell">St Mary's</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+    
+      <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
+    </tr>
+    <tr class="govuk-table__row">
+    
+      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
+      <td class="govuk-table__cell">Susan Francis</td>
+      <td class="govuk-table__cell">Noah Francis</td>
+      <td class="govuk-table__cell">St Mary's</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+    
+      <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
+    </tr>
+    <tr class="govuk-table__row">
+      
+      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
+      <td class="govuk-table__cell">John Smith</td>
+      <td class="govuk-table__cell">Jo Smith</td>
+      <td class="govuk-table__cell">St Mary's</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+      
+      <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
+    </tr>
+
+
+
+
+    <tr class="govuk-table__row">
+    
+      
+      <td class="govuk-table__cell"><a href="../records/new-appeal" class="govuk-link">44455453</a></td>
+      <td class="govuk-table__cell">Eden Tesfay</td>
+      <td class="govuk-table__cell">Samual Tesfay</td>
+      <td class="govuk-table__cell">St Mary's</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+      
+      <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
+    </tr>
+    <tr class="govuk-table__row">
+      
+    
+      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
+      <td class="govuk-table__cell">Warren Sutton</td>
+      <td class="govuk-table__cell">Lisa Sutton</td>
+      <td class="govuk-table__cell">St Mary's</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+      
+      <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
+    </tr>
+    <tr class="govuk-table__row">
+      
+      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
+      <td class="govuk-table__cell">Alan Jones</td>
+      <td class="govuk-table__cell">Jack Jones</td>
+      <td class="govuk-table__cell">St Mary's</td>
+      
+      <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+      
+      <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
+    </tr>
+    <tr class="govuk-table__row">
+    
+      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
+      <td class="govuk-table__cell">Eden Tesfay</td>
+      <td class="govuk-table__cell">Samual Tesfay</td>
+      <td class="govuk-table__cell">St Mary's</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+      
+      <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
+    </tr>
+    <tr class="govuk-table__row">
+      
+      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
+      <td class="govuk-table__cell">Jennifer Langley</td>
+      <td class="govuk-table__cell">Tilly Langley</td>
+      <td class="govuk-table__cell">St Mary's</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+    
+      <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
+    </tr>
+    <tr class="govuk-table__row">
+    
+      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
+      <td class="govuk-table__cell">Susan Francis</td>
+      <td class="govuk-table__cell">Noah Francis</td>
+      <td class="govuk-table__cell">St Mary's</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+    
+      <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
+    </tr>
+    <tr class="govuk-table__row">
+      
+      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
+      <td class="govuk-table__cell">John Smith</td>
+      <td class="govuk-table__cell">Jo Smith</td>
+      <td class="govuk-table__cell">St Mary's</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+      
+      <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
+    </tr>
+  </tbody>
+</table>
+
+{%- from "moj/components/pagination/macro.njk" import mojPagination -%}
+
+{{ mojPagination({
+  items: [{
+    text: '1',
+    href: '/page=1'
+  }, {
+    text: '2',
+    href: '/page=2',
+    selected: true
+  }, {
+    text: '3',
+    href: '/page=3'
+  }, {
+    type: 'dots'
+  }, {
+    text: '5',
+    href: '/page=5'
+  }],
+  results: {
+    count: 30,
+    from: 10,
+    to: 20,
+    text: 'pages'
+  },
+  previous: {
+    text: 'Previous',
+    href: ''
+  },
+  next: {
+    text: 'Next',
+    href: ''
+  }
+}) }}
+
+
+
+
+
+    
+    </div>
+
+  
+  </div>
+</div>
+
+{% endblock %}
