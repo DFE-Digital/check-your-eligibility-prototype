@@ -82,9 +82,17 @@
   }
  
 // PAGE LOADER
+
+.flex-container{
+  display: flex;
+  justify-content: center;
+}
 .container {
     
   text-align: center;
+  width: 50%;
+  padding: 0 2em;
+  
 }
 
 // Spinner
