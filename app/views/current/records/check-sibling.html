@@ -23,14 +23,14 @@
       text: "Child"
     },
     value: {
-      text: "Name"
+      text: "Tim Tesfay"
     },
     actions: {
       items: [
         {
           href: "#",
           text: "Change",
-          visuallyHiddenText: "name"
+          visuallyHiddenText: "child"
         }
       ]
     }
@@ -38,17 +38,35 @@
 
     {
       key: {
-        text: "School"
+        text: "Date of birth"
       },
       value: {
-        text: "School name here"
+        text: "07 Sep 2019"
       },
       actions: {
         items: [
           {
             href: "#",
             text: "Change",
-            visuallyHiddenText: "name"
+            visuallyHiddenText: "dob"
+          }
+        ]
+      }
+    },
+
+    {
+      key: {
+        text: "Previous School"
+      },
+      value: {
+        html: "St Mary's"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "school"
           }
         ]
       }
@@ -59,7 +77,7 @@
         text: "Address"
       },
       value: {
-        html: "72 Guild Street<br>London<br>SE23 6FH"
+        html: "26 Cherry Tree Lane, Chorlton, Manchester, M33 8HG "
       },
       actions: {
         items: [
@@ -76,7 +94,7 @@
         text: "Contact details"
       },
       value: {
-        html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.phillips@example.com</p>'
+        html: '07709654999'
       },
       actions: {
         items: [
@@ -104,7 +122,7 @@
     
 
 
-    <form action="new-appeal?sibling=added" method="post" novalidate>
+    <form action="approved?sibling=added" method="post" novalidate>
 
       <input type="hidden" name="sibling-added" value="true">
 
