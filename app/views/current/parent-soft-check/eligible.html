@@ -41,6 +41,9 @@
 
             
       <div class="govuk-grid-column-one-half">
+
+
+        <form method="post" novalidate>
       
 
         {{ govukRadios({
@@ -61,19 +64,19 @@
         
           items: [
             {
-              value: "yes",
+
+              value: "yes~account/signin-or-create",
               text: "Yes, I'll register now"
             },
             {
-              value: "no",
-              text: "    No, I understand my children will not get free school meals"
+              value: "no~not-proceeding",
+              text: "No, I understand my children will not get free school meals"
             }
           ]
         }) }}
 
 
 
-        <form action="account/signin-or-create" method="post" novalidate>
       
           <input type="hidden" name="answers-checked" value="true">
   
