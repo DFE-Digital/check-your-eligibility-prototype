@@ -81,7 +81,25 @@
           }) }}
 
 
-          {% include "../includes/schools.html" %}
+    
+
+{{ govukDateInput({
+  id: "dob",
+  namePrefix: "dob",
+  fieldset: {
+    legend: {
+      text: "Date of birth",
+      isPageHeading:false,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "For example, 27 3 2007"
+  }
+}) }}
+
+
+          {% include "../includes/prev-school.html" %}
 
           
       
