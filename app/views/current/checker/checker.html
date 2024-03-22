@@ -37,7 +37,18 @@
 
         {{ govukInput({
           label: {
-            text: "First 3 letters of surname"
+            text: "First name"
+          },
+          id: "Firstname",
+          name: "Firstname",
+          autocomplete: "name",
+          classes: "govuk-input--width-10",
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Surname"
           },
           id: "surName",
           name: "surName",
@@ -46,9 +57,16 @@
           spellcheck: false
         }) }}
 
-       
-
-        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Email address"
+          },
+          id: "email",
+          name: "email",
+          autocomplete: "name",
+          classes: "govuk-input--width-20",
+          spellcheck: false
+        }) }}
 
         {{ govukInput({
           label: {
