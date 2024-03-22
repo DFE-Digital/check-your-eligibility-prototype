@@ -1,0 +1,66 @@
+{% extends "layouts/layout-dfe-signed-out.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+
+
+
+
+
+    <div class="govuk-grid-row">
+
+            
+      <div class="govuk-grid-column-two-thirds">
+
+    <form action="approved" method="post" novalidate>
+
+      
+
+      {% call govukFieldset({
+        legend: {
+          text: "Enter the asylum support reference number",
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+      
+        {{ govukInput({
+          label: {
+            text: "Enter the first 9 numbers"
+          },
+          id: "nass-number",
+          classes:"govuk-input--width-20",
+          name: "nass-number",
+          autocomplete: "nass-number"
+        }) }}
+
+        {% endcall %}
+
+
+<input type="hidden" name="nass-number-entered" value="yes">
+{{ govukButton({
+  text: "Save and continue"
+  
+}) }}
+
+      
+    </form>
+
+
+
+
+        
+
+
+
+
+        
+      </div>  
+    
+    </div>
+
+
+
+{% endblock %}
