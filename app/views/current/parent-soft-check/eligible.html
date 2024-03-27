@@ -9,81 +9,27 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-        <h2 class="govuk-heading-l">Your children are eligible for free school meals</h2>
+        <h2 class="govuk-heading-l">Your children are entitled to free school meals</h2>
       
     
     <h3 class="govuk-heading-m">What to do next</h3>
 
-    <p>To get free school meals for your children, you will need to:</p>
+    <p>To get free school meals for your children, follow these steps online. This typically takes just a few minutes.</p>
       
     <ol>
       <li>Create or sign into your OneGov account.</li>
-      <li>Register with your children's school.</li>
+      <li>Enter the details of your children and their school.</li>
+      <li>These will be sent on to the school, which will arrange free school meals.</li>
       </ol>
 
   
-
- 
-
-    <ul class="govuk-list">
-      <li>Create or sign into your OneGov account.</li>
-    <li>Register with your children’s school.</li>
-  </ul>
-
-    <div class="govuk-grid-row">
-
-            
-      <div class="govuk-grid-column-one-half">
-
-        
-
-
-        <form method="post" novalidate>
-      
-
-        {{ govukRadios({
-        
-          name: "changedName",
-          fieldset: {
-            legend: {
-              text: "Register now?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          
-          },
-
-          hint: {
-
-            text: "You'll be taken to the OneGov Login page.
-            Your details will only be used to register and will not be stored"
-
-          },
-        
-          items: [
-            {
-
-              value: "yes~account/signin-or-create",
-              text: "Yes, I'll register or sign in now"
-            },
-            {
-              value: "no~not-proceeding",
-              text: "No, I understand my children will not get free school meals"
-            }
-          ]
-        }) }}
-
-
-
-      
-          <input type="hidden" name="answers-checked" value="true">
   
           {{ govukButton({
-            text: "Continue",
+            text: "Go to OneGov",
             classes:'govuk-!-margin-top-5'
           }) }}
 
-          <p><a href="">Save details for later</a></p>
+          <p><a href="">Return to homepage</a></p>
   
         </form>
 
