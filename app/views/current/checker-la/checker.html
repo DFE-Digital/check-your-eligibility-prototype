@@ -1,4 +1,4 @@
-{% extends "../../current/checker-la/layouts/layout-dfe.html" %}
+{% extends "../../current/checker/layouts/layout-dfe.html" %}
 
 {% set pageName="Home" %}
 
@@ -14,49 +14,59 @@
 
             
       <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-hint">Check eligibility for</span>
-
-        {% if data['type'] == 'free school meals' %}
-
-      
-
-        <h1 class="govuk-heading-l">Free school meals</h1>
-        {% elif data['type'] == 'early years pupil premium' %}
-        <h1 class="govuk-heading-l">Early years pupil premium</h1>
-        {% elif data['type'] == 'free childcare for 2 yr olds' %}
-        <h1 class="govuk-heading-l">Free childcare for 2 year olds</h1>
-
-
-        {% endif %}
 
 
     <form action="eligible" method="post" novalidate>
 
-    
+      {% call govukFieldset({
+        legend: {
+          text: "Check a student's eligibility",
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
 
 
      
       
       
 
-    
+      
+        {% from "govuk/components/input/macro.njk" import govukInput %}
 
         {{ govukInput({
           label: {
-            text: "First 3 letters of parent or guardian’s surname."
+            text: "First name"
+          },
+          id: "Firstname",
+          name: "Firstname",
+          autocomplete: "name",
+          classes: "govuk-input--width-20",
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Surname"
           },
           id: "surName",
           name: "surName",
           autocomplete: "name",
-          classes: "govuk-input--width-10",
+          classes: "govuk-input--width-20",
           spellcheck: false
-
-          
         }) }}
 
-       
-
-        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Email address"
+          },
+          id: "email",
+          name: "email",
+          autocomplete: "name",
+          classes: "govuk-input--width-20",
+          spellcheck: false
+        }) }}
 
         {{ govukInput({
           label: {
@@ -72,7 +82,7 @@
 <p>Or</p>
         {{ govukInput({
           label: {
-            text: "National asylum support number (parent or guardian)"
+            text: "National asylum support number"
           },
           id: "nass",
           name: "nass",
@@ -89,7 +99,7 @@
             
             fieldset: {
               legend: {
-                text: "Date of birth (parent or guardian)",
+                text: "Date of birth",
                 isPageHeading: false,
                 classes: "govuk-fieldset__legend--s"
               }
@@ -112,6 +122,7 @@
       
        
       
+      {% endcall %}
       
       
       
