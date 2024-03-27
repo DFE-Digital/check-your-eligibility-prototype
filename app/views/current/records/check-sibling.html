@@ -13,106 +13,65 @@
 
     <h1 class="govuk-heading-l">Check sibling details before submitting</h1>
 
-    {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
-
 {{ govukSummaryList({
-  rows: [
-
-  {
-    key: {
+  card: {
+    title: {
       text: "Child"
-    },
-    value: {
-      text: "Tim Tesfay"
     },
     actions: {
       items: [
         {
           href: "#",
           text: "Change",
-          visuallyHiddenText: "child"
+          visuallyHiddenText: "child",
+          href:'add-sibling'
         }
       ]
     }
   },
+
+
+  rows: [
+
+  {
+    key: {
+      text: "Name"
+    },
+    value: {
+      html: "Tim Tesfay"
+    }
+  },
+
 
     {
       key: {
         text: "Date of birth"
       },
       value: {
-        text: "07 Sep 2019"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "dob"
-          }
-        ]
+        html: "07 Sep 2019"
       }
     },
+
 
     {
       key: {
-        text: "Previous School"
+        text: "Previous school"
       },
       value: {
-        html: "St Mary's"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "school"
-          }
-        ]
+        html: "St Mary's, Manchester"
       }
     },
-
     {
       key: {
         text: "Address"
       },
       value: {
-        html: "26 Cherry Tree Lane, Chorlton, Manchester, M33 8HG "
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "address"
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Contact details"
-      },
-      value: {
-        html: '07709654999'
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Add",
-            visuallyHiddenText: "contact details"
-          },
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "contact details"
-          }
-        ]
+        html: "30 Cherry Tree Drive, Manchester"
       }
     }
   ]
 }) }}
+
 
     
 
