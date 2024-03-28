@@ -51,7 +51,10 @@ jobs:
 
       - name: Unzip artifact for deployment
         run: unzip release.zip
-      
+        
+      - name: Reinstall app
+        run: rm -R node_modules && npm install
+
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
