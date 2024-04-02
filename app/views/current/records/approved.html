@@ -84,22 +84,19 @@ href: "javascript:window.history.back()"
 
 
 
-
-{% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
-
-{{ mojPageHeaderActions({
-  heading: {
-    text: 'Eden Tesfay'
-  },
-  items: [
-
-    {
-      text: 'Add sibling',
-      href:'add-sibling'
+    {{ mojPageHeaderActions({
+      heading: {
+        text: 'Eden Tesfay'
+      },
+      items: [
+      {
+        text: 'Add sibling',
+        classes: 'govuk-button--secondary',
+        href:'add-sibling'
+      }
       
-    }
-  ]
-}) }}
+      ]
+    }) }}
 
 
 
@@ -161,14 +158,6 @@ href: "javascript:window.history.back()"
       },
       value: {
         html: "18 November 2018"
-      }
-    },
-    {
-      key: {
-        text: "Address"
-      },
-      value: {
-        html: "26 Cherry Tree Lane, Chorlton, Manchester, M33 8HG "
       }
     }
     
@@ -257,6 +246,16 @@ href: "javascript:window.history.back()"
       value: {
         html: "<a class='govuk-link' href='nass-number'>Should only be 9 numbers long</a>"
       }
+    },
+    {
+      key: {
+        text: "Email address"
+      },
+
+      
+      value: {
+        html: "edamcheese@hotmail.com"
+      }
     }
 
      
@@ -282,15 +281,7 @@ the response times of the prototype. -->
 <script src=
 "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
-<script>
-  new MOJFrontend.ButtonMenu({
-    container: $(".moj-button-menu"),
-    mq: "(min-width: 200em)",
-    buttonText: "Task actions",
-    buttonClasses:
-      "",
-  });
-</script>
+
 <script>
   $(document).ready(function () {
             $(".hide").click(function () {

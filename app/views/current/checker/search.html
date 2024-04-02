@@ -1,13 +1,13 @@
-{% extends "../../current/checker/layouts/layout-dfe.html" %}
+{% extends "../../current/checker-la/layouts/layout-dfe.html" %}
 
-{% set pageName="Home" %}
+{% set pageName="Search" %}
 
 {% block content %}
 
 
 
 
-<div class="govuk-grid-row HO-uk-margin-top-5">
+<div class="govuk-grid-row">
   
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-l">
@@ -98,6 +98,10 @@
                               name: "sort",
                               
                               items: [
+                              {
+                                value: "all",
+                                text: "All statuses"
+                              },
                                 {
                                   value: "eligible",
                                   text: "Eligible"
@@ -183,7 +187,7 @@
 
                   
           
-<!-- DOB -->
+<!-- CHILD -->
           <div class="govuk-grid-row">
 
             <div class="govuk-grid-column-one-quarter">
@@ -192,7 +196,7 @@
               <div class="govuk-form-group HO-uk-margin-bottom-3">
                 <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                    Date from
+                  Child date of birth
                   </legend>
                   <!--<div id="passport-issued-hint" class="govuk-hint">
                     For example, 12 11 2007
@@ -227,52 +231,58 @@
                 </fieldset>
               </div>
               </div>
- <!--COL 1-->
+ 
 
-              <div class="govuk-grid-column-one-quarter">
-                    
-
-                <div class="govuk-form-group">
-                  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                      Date to
-                    </legend>
-                    <!--<div id="passport-issued-hint" class="govuk-hint">
-                      For example, 12 11 2007
-                    </div> -->
-                    <div class="govuk-date-input" id="passport-issued">
-                      <div class="govuk-date-input__item">
-                        <div class="govuk-form-group">
-                          <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                            Day
-                          </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                           
-                      </div>
-                      <div class="govuk-date-input__item">
-                        <div class="govuk-form-group">
-                          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                            Month
-                          </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                      </div>
-                      <div class="govuk-date-input__item">
-                        <div class="govuk-form-group">
-                          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                            Year
-                          </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                      </div>
-                    </div>
-                
-                  </fieldset>
-                </div>
-                </div>
+             
 
             
           </div>
+
+          <!-- PARENT -->
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-quarter">
+                    
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                    Parent date of birth
+                  </legend>
+                  <!--<div id="passport-issued-hint" class="govuk-hint">
+                    For example, 12 11 2007
+                  </div> -->
+                  <div class="govuk-date-input" id="passport-issued">
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                          Day
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                         
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                          Month
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                          Year
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                  </div>
+              
+                </fieldset>
+              </div>
+              </div>
+          </div>
           <!-- SEX -->
-          <div class="govuk-grid-row HO-uk-margin-top-4">
+          <div class="govuk-grid-row">
     
             <div class="govuk-grid-column-full">
       
