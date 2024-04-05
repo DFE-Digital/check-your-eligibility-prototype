@@ -1,4 +1,4 @@
-{% extends "../../current/checker/layouts/layout-dfe.html" %}
+{% extends "../../current/parent-soft-check/layouts/layout-dfe.html" %}
 
 {% set pageName="Home" %}
 
@@ -26,31 +26,17 @@
             
       <div class="govuk-grid-column-two-thirds">
 
-    <form action="check-answers" method="post" novalidate>
+    <form action="childs-age-2" method="post" novalidate>
 
 
-      {%- from "govuk/components/button/macro.njk" import govukButton -%}
-      {%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
-      {%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
-      {%- from "govuk/components/input/macro.njk" import govukInput -%}
-      {%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
       
-      <div data-module="moj-add-another">
+      <div>
       
-        <h1 class="govuk-heading-l" tabindex="-1">Provide details of all your children</h1>
+        <h1 class="govuk-heading-l" tabindex="-1">Provide details of your children</h1>
       
         <form method="post">
-      
-          {% call govukFieldset({
-            classes: 'moj-add-another__item',
-            legend: {
-              text: 'Child',
-              classes: 'moj-add-another__title govuk-fieldset__legend--m',
-              isPageHeading: false
-            }
-          }) %}
 
-                  
+          
 
 {{ govukSelect({
   id: "relationship",
@@ -78,16 +64,21 @@
   ]
 }) }}
       
+          {% call govukFieldset({
+            classes: 'moj-add-another__item',
+            legend: {
+              text: 'Child 1 details',
+              classes: 'moj-add-another__title govuk-fieldset__legend--m',
+              isPageHeading: false
+            }
+          }) %}
+      
           {{ govukInput({
             id: 'ch1-first-name',
             name: 'ch1-first-name',
             label: {
               html: 'First name',
               classes: 'govuk-!-font-weight-bold'
-            },
-            attributes: {
-              'data-name': 'child[%index%][first_name]',
-              'data-id': 'child[%index%][first_name]'
             }
           }) }}
       
@@ -97,10 +88,6 @@
             label: {
               html: 'Last name',
               classes: 'govuk-!-font-weight-bold'
-            },
-            attributes: {
-              'data-name': 'child[%index%][last_name]',
-              'data-id': 'child[%index%][last_name]'
             }
           }) }}
 
@@ -118,38 +105,29 @@
               }
             },
             hint: {
-              text: "For example, 31 3 1980"
+              text: "For example, 27 3 2007"
             },
             items: [
               {
                 id: "ch1-day",
                 name: "ch1-day",
                 label: "Day",
-                classes: "govuk-input--width-2",
-                attributes: {
-                  'data-name': 'child[%index%][dob][day]',
-                  'data-id': 'child[%index%][dob][day]'
-                }
+                classes: "govuk-input--width-2"
+                
               },
               {
                 id: "ch1-month",
                 name: "ch1-month",
                 label: "Month",
-                classes: "govuk-input--width-2",
-                attributes: {
-                  'data-name': 'child[%index%][dob][month]',
-                  'data-id': 'child[%index%][dob][month]'
-                }
+                classes: "govuk-input--width-2"
+                
               },
               {
                 id: "ch1-year",
                 name: "ch1-year",
                 label: "Year",
-                classes: "govuk-input--width-2",
-                attributes: {
-                  'data-name': 'child[%index%][dob][year]',
-                  'data-id': 'child[%index%][dob][year]'
-                }
+                classes: "govuk-input--width-4"
+              
               }
             ]
           }) }}
