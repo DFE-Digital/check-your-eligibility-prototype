@@ -4,10 +4,10 @@
 
 {% set applicationSent %}
 <h3 class="govuk-notification-banner__heading">
-  Eligibility confirmed
+  Applications finalised
   </h3>
   <p class="govuk-body">
-   These applications have now been moved to all applications
+   Finalised applications can be found by searching in 'Search all records'.
   </p>
   
 {% endset %}
@@ -21,9 +21,9 @@
   
 {{ mojBanner({
   type: 'success',
-  html:' <h3 class="govuk-heading-l">Eligibility confirmed</h3>
+  html:' <h3 class="govuk-heading-l">Applications finalised</h3>
 
-  <p> This application has now been moved to <a href="">all applications</a></p>',
+  <p> Finalised applications can be found by searching in 'Search all records'. <a href="">all applications</a></p>',
   iconFallbackText: 'Success'
 }) }}
     
@@ -36,7 +36,8 @@
             
       <div class="govuk-grid-column-one-half">
       
-        <p><a href="applications">Confirm another application</a></p>
+        <p><a href="applications">Finalise more applications</a></p>
+        <p><a href="search">Go to 'Search all records'</a></p>
         <p><a href="dashboard">Go to your homepage</a></p>
 
 

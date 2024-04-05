@@ -20,9 +20,12 @@
 
       {% call govukFieldset({
         legend: {
-          text: "Check a student's eligibility",
+          text: "Enter parent or guardian details",
           classes: "govuk-fieldset__legend--l",
           isPageHeading: true
+        },
+        hint: {
+          text: 'To check a student's entitlement to free school meals, enter the details of their parent or guardian.'
         }
       }) %}
 
@@ -37,7 +40,7 @@
 
         {{ govukInput({
           label: {
-            text: "First name"
+            text: "Parent or guardian first name"
           },
           id: "Firstname",
           name: "Firstname",
@@ -48,7 +51,7 @@
 
         {{ govukInput({
           label: {
-            text: "Surname"
+            text: "Parent or guardian last name"
           },
           id: "surName",
           name: "surName",
@@ -70,7 +73,7 @@
 
         {{ govukInput({
           label: {
-            text: "National Insurance number"
+            text: "Parent or guardian National Insurance number"
           },
           
           id: "full-name",
@@ -82,7 +85,7 @@
 <p>Or</p>
         {{ govukInput({
           label: {
-            text: "National asylum support number"
+            text: "Parent or guardian asylum support reference number"
           },
           id: "nass",
           name: "nass",
@@ -99,13 +102,13 @@
             
             fieldset: {
               legend: {
-                text: "Date of birth",
+                text: "Parent or guardian date of birth",
                 isPageHeading: false,
                 classes: "govuk-fieldset__legend--s"
               }
             },
             hint: {
-              text: "For example, 27 3 2007"
+              text: "For example, 27 3 1980"
             }
           }) }}
   
@@ -128,7 +131,7 @@
       
       
       {{ govukButton({
-        text: "Save and continue",
+        text: "Perform check",
         classes:'govuk-!-margin-top-5'
       }) }}
 
