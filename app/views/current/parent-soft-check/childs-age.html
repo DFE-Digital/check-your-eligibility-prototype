@@ -36,6 +36,7 @@
       
         <form method="post">
 
+
           
 
 {{ govukSelect({
@@ -63,6 +64,17 @@
     }
   ]
 }) }}
+=======
+      
+          {% call govukFieldset({
+            classes: 'moj-add-another__item',
+            legend: {
+              text: 'Child',
+              classes: 'moj-add-another__title govuk-fieldset__legend--m',
+              isPageHeading: false
+            }
+          }) %}
+
       
           {% call govukFieldset({
             classes: 'moj-add-another__item',
@@ -105,7 +117,11 @@
               }
             },
             hint: {
+
               text: "For example, 27 3 2007"
+=======
+           
+
             },
             items: [
               {
