@@ -49,34 +49,6 @@
               isPageHeading: false
             }
           }) %}
-
-                  
-
-{{ govukSelect({
-  id: "relationship",
-  name: "relationship",
-  label: {
-    text: "Relationship to child"
-  },
-  items: [
-    {
-      value: "Parent",
-      text: "Parent"
-    },
-    {
-      value: "Guardian",
-      text: "Guardian"
-    },
-    {
-      value: "Foster parent",
-      text: "Foster parent"
-    },
-    {
-      value: "Step parent",
-      text: "Step parent"
-    }
-  ]
-}) }}
       
           {{ govukInput({
             id: 'ch1-first-name',
@@ -118,7 +90,7 @@
               }
             },
             hint: {
-              text: "For example, 31 3 1980"
+              text: "For example, 31 3 2007"
             },
             items: [
               {
