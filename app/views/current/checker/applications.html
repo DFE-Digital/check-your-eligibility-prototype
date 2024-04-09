@@ -33,15 +33,23 @@
 
 {{ mojPageHeaderActions({
   heading: {
-    text: 'New applications (22)',
+    text: 'Finalise applications (22)',
     classes:'govuk-heading-l'
   },
+  hint: All the children in the table on this page are entitled to free school meals. Not you should finalise their applications.
+
+  <strong>How to finalise</strong>
+  <ol>
+    <li>If you haven't already, add the details of each application to your own system.</li>
+    <li>Select the records you've added using the tick boxes.</li>
+    <li>Click 'Finalise applications'.</li>
+  </ol>
   items: [{
-    text: 'Confirm eligibility',
+    text: 'Finalise applications',
     classes: 'govuk-button--secondary',
     href:'eligibility-confirmed'
   }, {
-    text: 'Export as CSV',
+    text: 'Download CSV file',
     classes: 'govuk-button--secondary'
   }]
 }) }}
@@ -130,10 +138,10 @@
      
       <th class="govuk-table__header" scope="col" id="select-all"></th>
       <th class="govuk-table__header" scope="col">Reference</th>
-      <th class="govuk-table__header" scope="col">Parent / guardian</th>
+      <th class="govuk-table__header" scope="col">Parent or guardian</th>
       <th class="govuk-table__header" scope="col">Child</th>
-      <th class="govuk-table__header govuk-table__header--numeric" scope="col">DOB</th>
-      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Eligible from</th>
+      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Date of birth</th>
+      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Entitled from</th>
       
       <th class="govuk-table__header govuk-table__header--numeric" scope="col">Date submitted</th>
     </tr>

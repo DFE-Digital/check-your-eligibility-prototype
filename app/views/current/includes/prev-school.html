@@ -24,7 +24,7 @@
           name:"school-picker"
         },
         hint: {
-          text: countryHint | default("Only add this information if the child is moving from another school", false)
+          text: countryHint | default("Only add this information if the child is moving from another school.", false)
         },
         value: countryValue or data[countryName or countryID or "country"] or "",
         items: [
