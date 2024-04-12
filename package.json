@@ -5,11 +5,12 @@
     "start": "./node_modules/govuk-prototype-kit/bin/cli start"
   },
   "dependencies": {
-    "@govuk-prototype-kit/common-templates": "1.2.2",
-    "@ministryofjustice/frontend": "^1.8.1",
+    "@govuk-prototype-kit/common-templates": "2.0.1",
+    "@govuk-prototype-kit/step-by-step": "2.2.2",
+    "@ministryofjustice/frontend": "^2.1.2",
     "dfe-frontend-alpha": "^1.0.1",
-    "govuk-frontend": "4.7.0",
-    "govuk-prototype-kit": "^13.13.1",
+    "govuk-frontend": "5.3.0",
+    "govuk-prototype-kit": "13.16.2",
     "radio-button-redirect": "^1.2.0"
   }
 }
