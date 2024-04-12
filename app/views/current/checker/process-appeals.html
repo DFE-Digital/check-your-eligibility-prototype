@@ -1,4 +1,4 @@
-{% extends "../../current/checker/layouts/layout-dfe.html" %}
+{% extends "layouts/layout-dfenoback.html" %}
 
 {% set pageName="Home" %}
 
@@ -11,6 +11,18 @@
   </p>
   <p>Your reference is 1234567</p>
 {% endset %}
+
+{% block beforeContent %}
+  
+
+  {% block backLink %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "../checker/dashboard"
+    }) }}
+  {% endblock %}
+
+{% endblock %}
 
 {% block content %}
 
@@ -25,8 +37,6 @@
     
     {% endif %}
 
-
-  
 
 
     {% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
@@ -162,7 +172,10 @@
       <td class="govuk-table__cell">Eden Tesfay</td>
       <td class="govuk-table__cell">Samual Tesfay</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
-      <td class="govuk-table__cell">Document needed</td>
+      <td class="govuk-table__cell"> {{ govukTag({
+        text: "Document needed",
+        classes: "govuk-tag--light-blue"
+      }) }}</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
     </tr>
@@ -180,7 +193,10 @@
       <td class="govuk-table__cell">Warren Sutton</td>
       <td class="govuk-table__cell">Lisa Sutton</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
-      <td class="govuk-table__cell">Document needed</td>
+      <td class="govuk-table__cell">{{ govukTag({
+        text: "Document needed",
+        classes: "govuk-tag--light-blue"
+      }) }}</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
     </tr>
@@ -198,7 +214,10 @@
       <td class="govuk-table__cell">Jack Jones</td>
       
       <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
-      <td class="govuk-table__cell">Document needed</td>
+      <td class="govuk-table__cell">{{ govukTag({
+        text: "Document needed",
+        classes: "govuk-tag--light-blue"
+      }) }}</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
     </tr>
@@ -215,7 +234,10 @@
       <td class="govuk-table__cell">Eden Tesfay</td>
       <td class="govuk-table__cell">Samual Tesfay</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
-      <td class="govuk-table__cell">Document needed</td>
+      <td class="govuk-table__cell">{{ govukTag({
+        text: "Document needed",
+        classes: "govuk-tag--light-blue"
+      }) }}</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
     </tr>
