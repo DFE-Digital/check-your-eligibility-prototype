@@ -33,33 +33,27 @@
 
 {{ mojPageHeaderActions({
   heading: {
-    text: 'Finalise applications (22)',
+    text: 'Process appeals (22)',
     classes:'govuk-heading-l'
   },
   hint: 'All the children in the table on this page are entitled to free school meals. Now you should finalise their applications.'
 })}}
 
-  <h2 class="govuk-heading-m">How to finalise</h2>
+<h2 class="govuk-heading-m">How to process appeals</h2>
 
-  <ol>
-    <li>If you haven't already, add the details of each application to your own system.</li>
-    <li>Select the records you've added using the tick boxes.</li>
-    <li>Click 'Finalise applications'.</li>
-  </ol>
+<ol class="govuk-list govuk-list--number">
+  <li>Instruction one.</li>
+  <li>Instruction two.</li>
+  <li>Instruction three.</li>
+</ol>
   
-  <div class="moj-button-action">
-    {{ govukButton({
-      text: 'Finalise applications',
-      href: "eligibility-confirmed"
-    }) }}
+
     {% from "govuk/components/button/macro.njk" import govukButton %}
 
     {{ govukButton({
       text: "Download CSV file",
       classes: "govuk-button--secondary"
     }) }}
-  </div>
-
 
 
     <div class="govuk-grid-row">
@@ -147,7 +141,9 @@
       <th class="govuk-table__header" scope="col">Parent or guardian</th>
       <th class="govuk-table__header" scope="col">Child</th>
       <th class="govuk-table__header govuk-table__header--numeric" scope="col">Date of birth</th>
+      <th class="govuk-table__header" scope="col">Status</th>
       <th class="govuk-table__header govuk-table__header--numeric" scope="col">Entitled from</th>
+      
       <th class="govuk-table__header govuk-table__header--numeric" scope="col">Date submitted</th>
     </tr>
   </thead>
@@ -166,6 +162,7 @@
       <td class="govuk-table__cell">Eden Tesfay</td>
       <td class="govuk-table__cell">Samual Tesfay</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+      <td class="govuk-table__cell">Document needed</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
     </tr>
@@ -183,6 +180,7 @@
       <td class="govuk-table__cell">Warren Sutton</td>
       <td class="govuk-table__cell">Lisa Sutton</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+      <td class="govuk-table__cell">Document needed</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
     </tr>
@@ -200,6 +198,7 @@
       <td class="govuk-table__cell">Jack Jones</td>
       
       <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+      <td class="govuk-table__cell">Document needed</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
     </tr>
@@ -216,6 +215,7 @@
       <td class="govuk-table__cell">Eden Tesfay</td>
       <td class="govuk-table__cell">Samual Tesfay</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+      <td class="govuk-table__cell">Document needed</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
     </tr>
@@ -232,6 +232,7 @@
       <td class="govuk-table__cell">Jennifer Langley</td>
       <td class="govuk-table__cell">Tilly Langley</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+      <td class="govuk-table__cell">Awaiting LA review</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
     </tr>
@@ -248,6 +249,7 @@
       <td class="govuk-table__cell">Susan Francis</td>
       <td class="govuk-table__cell">Noah Francis</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+      <td class="govuk-table__cell">Awaiting LA review</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
     </tr>
@@ -264,6 +266,7 @@
       <td class="govuk-table__cell">John Smith</td>
       <td class="govuk-table__cell">Jo Smith</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+      <td class="govuk-table__cell">Awaiting LA review</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
     </tr>
