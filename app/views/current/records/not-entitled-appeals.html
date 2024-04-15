@@ -91,12 +91,16 @@ href: "javascript:window.history.back()"
         text: 'Send to LA for review',
         classes: 'govuk-button--primary',
         href:'../checker/process-appeals-2'
+      },
+      {
+        text: 'Download CSV file',
+        classes: 'govuk-button--secondary',
+        href: ''
       }
-      
       ]
     }) }}
 
-    {% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
 
 
   </div>
@@ -154,12 +158,12 @@ href: "javascript:window.history.back()"
         text: "Status of application"
       },
       value: {
-        html: "Documents needed"
-      }
+        html: govukTag({
+                text: "Document needed",
+                classes: "govuk-tag--light-blue"
+              })
+        }
     }
-    
-
-
   
   ]
   }) }}
@@ -172,7 +176,7 @@ href: "javascript:window.history.back()"
 {{ govukSummaryList({
   card: {
     title: {
-      text: "Parent / carer"
+      text: "Parent / Guardian"
     },
     actions: {
       items: [
@@ -197,15 +201,6 @@ href: "javascript:window.history.back()"
         html: "Eden Tesfay"
       }
     },
-     
-    {
-      key: {
-        text: "Relationship"
-      },
-      value: {
-        html: "Parent"
-      }
-    },
 
     {
       key: {
@@ -222,15 +217,6 @@ href: "javascript:window.history.back()"
       },
       value: {
         html: "01 September 1988"
-      }
-    },
-
-    {
-      key: {
-        text: "National Insurance number"
-      },
-      value: {
-        html: "n/a"
       }
     },
 
