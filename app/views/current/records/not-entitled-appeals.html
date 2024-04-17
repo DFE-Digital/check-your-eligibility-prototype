@@ -88,7 +88,7 @@ href: "javascript:window.history.back()"
       },
       items: [
       {
-        text: 'Send to LA for review',
+        text: 'Send for review',
         classes: 'govuk-button--primary',
         href:'../checker/process-appeals-two'
       },
@@ -101,6 +101,18 @@ href: "javascript:window.history.back()"
     }) }}
 
 {% from "govuk/components/button/macro.njk" import govukButton %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+      <p class="govuk-heading-s">Once you've received evidence from this parent:</p>
+      <ol class="govuk-list govuk-list--number">
+        <li>Send it to your local authority contact along with the application reference number. Typically this would happen via email.</li>
+        <li>Select ‘Send for review’ on this page. This will notify the local authority that the free school meals application is ready for their attention.</li>
+      </ol>
+    </div>
+  </div>
+</div>
 
 
   </div>
