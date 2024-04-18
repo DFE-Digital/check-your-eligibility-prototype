@@ -10,28 +10,20 @@
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-l">The children of this parent or guardian are entitled to free school meals</h1>
 
-  
-        <p style="max-width: 100%;">To confirm, you'll need to send their supporting evidence to your local authority for review.</p>
 
-        <strong>What to do next</strong>
-        <ol>
-          <li>Select 'Add children's details' on this page and provide the information requested.</li>
-          <li>Then go to the 'Finalise applications' section on your dashboard and follow the instructions there.</li>
-          <li>Pass the confirmation on to the parent or guardian.</li>
+    <h2 class="govuk-heading-m">What to do next</h2>
 
-        </ol>
-        
-        <p><a href="childs-age">Add children's details</a></p>
-        <p><a href="dashboard">Return to dashboard</a></p>
-        <p><a href="">Sign out</a></p>
+        <p>Select 'Add children's details' on this page and provide the information requested.</p>
 
-        {% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
 
         {{ govukButton({
-          text: "Add child details",
+          text: "Add children's details",
           href:'childs-age'
         }) }}
 
+        <p><a href="dashboard">Return to dashboard</a></p>
+        <p><a href="">Sign out</a></p>
 
 
   </div>
