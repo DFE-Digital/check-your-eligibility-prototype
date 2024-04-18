@@ -1,0 +1,54 @@
+{% extends "../../current/checker/layouts/layout-dfe.html" %}
+
+{% set pageName="Outcome not entitled" %}
+
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-heading-l">Are you sure?</p>
+      <p class="govuk-body">Sending this record on to the local authority for review will also prompt them to check the evidence you send them separately. </p>
+    </div>
+  </div>
+</div>
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Yes, send now",
+  href: '../checker/application-sent-to-la'
+}) }}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "No, don't send now",
+  classes: "govuk-button--secondary",
+  href: '../records/not-entitled-appeals'
+}) }}
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+<p><a href="../checker/dashboard">Return to dashboard</a></p>
+
+<p><a href="">Sign out</a></p>
+
+
+
+
+
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}
