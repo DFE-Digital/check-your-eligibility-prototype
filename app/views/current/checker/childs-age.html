@@ -44,7 +44,7 @@
           {% call govukFieldset({
             classes: 'moj-add-another__item',
             legend: {
-              text: 'Child',
+              text: 'Child 1',
               classes: 'moj-add-another__title govuk-fieldset__legend--m',
               isPageHeading: false
             }
@@ -128,6 +128,20 @@
                 }
               }
             ]
+          }) }}
+
+          {{ govukInput({
+            id: 'ch1-previous-school',
+            name: 'ch1-previous-school',
+            classes:'govuk-input--width-20',
+            label: {
+              html: 'Previous school',
+              classes: 'govuk-!-font-weight-bold'
+            },
+            attributes: {
+              'data-name': 'child[%index%][first_name]',
+              'data-id': 'child[%index%][first_name]'
+            }
           }) }}
       
           {% endcall %}
