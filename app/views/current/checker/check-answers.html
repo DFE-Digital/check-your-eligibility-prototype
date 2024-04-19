@@ -13,6 +13,8 @@
 
     <h1 class="govuk-heading-l">Check your answers before submitting</h1>
 
+    <div class="govuk-!-padding-bottom-2"></div>
+
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title">
@@ -138,7 +140,7 @@
 
 
 
-    <h2 class="govuk-heading-m">Confirm and add children details</h2>
+    <h2 class="govuk-heading-l">Confirm and add children details</h2>
 
     <p class="govuk-body">By submitting this information, you confirm that, to the best of your knowledge, the details are correct.</p>
 
@@ -149,10 +151,16 @@
 
       <input type="hidden" name="answers-checked" value="true">
 
+      <div class="govuk-!-padding-bottom-2"></div>
 
-      <button class="govuk-button govuk-!-margin-top-5" data-module="govuk-button">
-       Add details
-      </button>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Submit & add details",
+        classes: "govuk-button--primary",
+        href: '../checker/confirmation-may-not-be-entitled'
+      }) }}
 
 
     </form>
