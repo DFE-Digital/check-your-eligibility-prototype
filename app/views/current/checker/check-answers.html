@@ -116,7 +116,17 @@
             </dd>
             
           </div>
-  
+
+          
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                 Previous school
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data["previous-school-entered"] }} 
+                </dd>
       
            
         </dl>
@@ -157,7 +167,7 @@
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
-        text: "Submit & add details",
+        text: "Add details",
         classes: "govuk-button--primary",
         href: '../checker/confirmation-may-not-be-entitled'
       }) }}
