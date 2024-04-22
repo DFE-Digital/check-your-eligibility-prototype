@@ -81,52 +81,34 @@
       </div>
     </div>
 
-
-    <div class="govuk-summary-card">
-      <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">
-          Child 1
-        </h2>
-        <ul class="govuk-summary-card__actions">
-          <li class="govuk-summary-card__action">
-            <a class="govuk-link" href="childs-age">Change<span class="govuk-visually-hidden"> Child details</span></a>
-          </li>
+    <div class="govuk-summary-card__content">
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Child's name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["first-name"] }}  {{ data["surname"] }} 
+          </dd>
         
-        </ul>
-      </div>
-      <div class="govuk-summary-card__content">
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Child's name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data["ch1-first-name"] }} {{ data["ch1-surname"] }} 
-            </dd>
-          
-          </div>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Child's date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["ch1-day"] }}  {{ data["ch1-month"] }} 
+          </dd>
         
-        
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Child's date of birth
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data["ch1-day"] }}  {{ data["ch1-month"] }}  {{ data["ch1-year"] }} 
-            </dd>
-            
-          </div>
-
-          
-          <div class="govuk-summary-card__content">
-            <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                 Previous school
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data["previous-school-entered"] }} 
-                </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Previous school
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["previous-school"] }}
+          </dd>
+ 
                 {% if data['child-2'] == 'Yes' %}
 
                 {% endif %}
@@ -135,14 +117,6 @@
         </dl>
       </div>
     </div>
-
-
-
-   
-
-   
-
-
 
     <h2 class="govuk-heading-l">Confirm and add children details</h2>
 
