@@ -28,7 +28,7 @@ jobs:
           npm run test --if-present
 
       - name: Zip artifact for deployment
-        run: zip -r --symlinks release.zip .
+        run: zip release.zip ./* -r
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
@@ -49,11 +49,14 @@ jobs:
         with:
           name: node-app
 
+      - name: Unzip artifact for deployment
+        run: unzip release.zip
+      
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'check-your-eligibility-prototype'
           slot-name: 'Production'
-          package: release.zip
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5C6D5C422CB8448485CC2E8EDAF3202D }}
+          package: .
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_CF49669BD5094D0FB16F31A4FFC1F2EF }}
