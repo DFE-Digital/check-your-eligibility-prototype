@@ -10,7 +10,6 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
-
     <h1 class="govuk-heading-l">Check your answers before submitting</h1>
 
     <div class="govuk-!-padding-bottom-2"></div>
@@ -24,7 +23,6 @@
           <li class="govuk-summary-card__action">
             <a class="govuk-link" href="checker">Change<span class="govuk-visually-hidden"> Parent or guardian details</span></a>
           </li>
-        
         </ul>
       </div>
       <div class="govuk-summary-card__content">
@@ -94,44 +92,43 @@
         </ul>
       </div>
 
-    <div class="govuk-summary-card__content">
-      <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Child's name
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data["first-name"] }}  {{ data["surname"] }} 
-          </dd>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Child's name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["first-name"] }}  {{ data["surname"] }} 
+            </dd>
+          
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Child's date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["ch1-day"] }}  {{ data["ch1-month"] }} 
+            </dd>
+          
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Previous school
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["previous-school"] }}
+            </dd>
+          </div>
+   
+                  {% if data['child-2'] == 'Yes' %}
+  
+                  {% endif %}
         
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-           Child's date of birth
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data["ch1-day"] }}  {{ data["ch1-month"] }} 
-          </dd>
-        
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-           Previous school
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data["previous-school"] }}
-          </dd>
-        </div>
- 
-                {% if data['child-2'] == 'Yes' %}
-
-                {% endif %}
-      
-      </dl>         
-  </div>      
-      </dl>
+        </dl>         
+      </div>
     </div>
-</div>
+    
     <h2 class="govuk-heading-l">Confirm and add children details</h2>
 
     <p class="govuk-body">By submitting this information, you confirm that, to the best of your knowledge, the details are correct.</p>
@@ -139,54 +136,25 @@
     
 
 
-    <form action="eligible" method="post" novalidate>
+  <form action="eligible" method="post" novalidate>
 
-      <input type="hidden" name="answers-checked" value="true">
+    <input type="hidden" name="answers-checked" value="true">
 
-      <div class="govuk-!-padding-bottom-2"></div>
-
-
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-
-      {{ govukButton({
-        text: "Add details",
-        classes: "govuk-button--primary",
-        href: '../checker/confirmation-may-not-be-entitled'
-      }) }}
+    <div class="govuk-!-padding-bottom-2"></div>
 
 
-    </form>
+    {% from "govuk/components/button/macro.njk" import govukButton %}
 
-  
+    {{ govukButton({
+      text: "Add details",
+      classes: "govuk-button--primary",
+      href: '../checker/confirmation-may-not-be-entitled'
+    }) }}
+
+
+  </form>
 
   </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
-</div>
-
-
-</div>
 </div>
 
 {% endblock %}
