@@ -1,0 +1,43 @@
+{% extends "../../current/checker/layouts/layout-dfe.html" %}
+{% set pageName="eligible" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Children details added</h1>
+        <p>You have successfully added children’s details to [Eden Tesfay’s] free school meals application record.</p>
+    </div>
+</div>
+</div>
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m">What to do next</h2>
+        <p>As these children are entitled to free school meals, you’ll now need to add details of their application to your own system before finalising.</p>
+        <p> Go to <a href="../checker/applications" class="govuk-link">Finalise applications</a> and follow the instructions there. </p>
+    </div>
+</div>
+</div>
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+<p><a href="../checker/dashboard">Return to dashboard</a></p>
+
+<p><a href="">Sign out</a></p>
+
+
+
+
+</div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}
