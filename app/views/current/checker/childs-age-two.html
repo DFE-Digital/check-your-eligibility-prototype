@@ -110,7 +110,7 @@
 
   {% endcall %}
 
-        {% include "../includes/schools.html" %}
+        {% include "../includes/schools-two.html" %}
 
         <div class="moj-add-another__item">
             <legend class="moj-add-another__title govuk-fieldset__legend--m">
@@ -190,11 +190,11 @@
             ]
           }) }}
         
-        {% include "../includes/schools.html" %}
+        {% include "../includes/schools-two.html" %}
 
         {% from "govuk/components/button/macro.njk" import govukButton %}
         {{ govukButton({
-          text: "Remove child 2",
+          text: "Remove",
           classes: "govuk-button--secondary",
           href: "../checker/childs-age"
         }) }}
