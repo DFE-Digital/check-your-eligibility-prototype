@@ -19,7 +19,7 @@
     <div class="govuk-grid-row">
 
             
-      <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-column-one-half">
 
     <form action="childs-age-2" method="post" novalidate>
 
@@ -30,9 +30,6 @@
         <h1 class="govuk-heading-l" tabindex="-1">Provide details of your children</h1>
       
         <form method="post">
-
-
-          
 
 
       
@@ -46,15 +43,6 @@
           }) %}
           {% endcall %}
 
-      
-          {% call govukFieldset({
-            classes: 'moj-add-another__item',
-            legend: {
-              text: 'Child 1 details',
-              classes: 'moj-add-another__title govuk-fieldset__legend--m',
-              isPageHeading: false
-            }
-          }) %}
       
           {{ govukInput({
             id: 'ch1-first-name',
@@ -118,7 +106,6 @@
             ]
           }) }}
       
-          {% endcall %}
 
          
       
