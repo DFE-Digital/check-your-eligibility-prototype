@@ -112,11 +112,14 @@
 
         {% include "../includes/schools-two.html" %}
 
-        <div class="moj-add-another__item">
-            <legend class="moj-add-another__title govuk-fieldset__legend--m">
-              Child 2
-              </div>
-            </legend>
+        {% call govukFieldset({
+          classes: 'moj-add-another__item',
+          legend: {
+            text: 'Child 2',
+            classes: 'moj-add-another__title govuk-fieldset__legend--m',
+            isPageHeading: false
+          }
+        }) %}
 
           {{ govukInput({
             id: 'ch2-first-name',
@@ -189,8 +192,10 @@
               }
             ]
           }) }}
+
+          {% endcall %}
         
-        {% include "../includes/schools-two.html" %}
+        {% include "../includes/schools-three.html" %}
 
         {% from "govuk/components/button/macro.njk" import govukButton %}
         {{ govukButton({
