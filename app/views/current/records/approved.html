@@ -228,14 +228,7 @@ href: "javascript:window.history.back()"
       }
     },
 
-    {
-      key: {
-        text: "National Insurance number"
-      },
-      value: {
-        html: "n/a"
-      }
-    },
+ 
 
     {
       key: {
@@ -247,6 +240,19 @@ href: "javascript:window.history.back()"
         html: "Should only be 9 numbers long"
       }
     },
+
+    {
+      key: {
+        text: "Status"
+      },
+      value: {
+        html: govukTag({
+                text: "Entitled",
+                classes: "govuk-tag--green"
+              })
+      }
+    },
+
     {
       key: {
         text: "Email address"
