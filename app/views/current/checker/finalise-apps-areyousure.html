@@ -10,7 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <p class="govuk-heading-l">Are you sure?</p>
-      <p class="govuk-body">Copy content needed here.</p>
+      <p class="govuk-body">Applications should only be finalised after you've added the details to your own system.</p>
     </div>
   </div>
 </div>
@@ -21,26 +21,19 @@
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
 {{ govukButton({
-  text: "Yes, send now",
+  text: "Yes, finalise now",
   href: '../checker/eligibility-confirmed'
 }) }}
 
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
 {{ govukButton({
-  text: "No, return to applications",
+  text: "No, return to table",
   classes: "govuk-button--secondary",
   href: '../checker/applications'
 }) }}
 
 <div class="govuk-!-padding-bottom-3"></div>
-
-<p><a href="../checker/dashboard">Return to dashboard</a></p>
-
-<p><a href="">Sign out</a></p>
-
-
-
 
 
 
