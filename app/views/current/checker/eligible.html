@@ -7,7 +7,7 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
+  <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">The children of this parent or guardian are entitled to free school meals</h1>
 
 
@@ -15,15 +15,17 @@
 
         <p>Select 'Add children's details' on this page and provide the information requested.</p>
 
-{% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
 
         {{ govukButton({
           text: "Add children's details",
-          href:'childs-age'
+          href: '../checker/outcome-eligible-childs-age'
         }) }}
 
-        <p><a href="dashboard">Return to dashboard</a></p>
-        <p><a href="">Sign out</a></p>
+
+<p><a href="dashboard">Return to dashboard</a></p>
+<p><a href="">Sign out</a></p>
 
 
   </div>
