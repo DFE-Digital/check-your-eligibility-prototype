@@ -7,9 +7,6 @@
 
 
 
-
-
-
     <div class="govuk-grid-row">
 
             
@@ -29,11 +26,6 @@
         }
       }) %}
 
-
-
-     
-      
-      
 
       
         {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -112,40 +104,19 @@
             }
           }) }}
   
-        
-        
-        
-        
-
-     
-      
-      
-      
-        
-      
-       
       
       {% endcall %}
       
-      
-      
-      
-      {{ govukButton({
-        text: "Perform check",
-        classes:'govuk-!-margin-top-5'
-      }) }}
 
       
     </form>
 
+    {% from "govuk/components/button/macro.njk" import govukButton %}
 
-
-
-        
-
-
-
-
+    {{ govukButton({
+      text: "Perform check",
+      href: '../parent-soft-check/school-checking-loader'
+    }) }}
         
       </div>  
     
