@@ -4,6 +4,9 @@
 
 {% block content %}
 
+{%- from "govuk/components/tag/macro.njk" import govukTag -%}
+
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
@@ -41,8 +44,6 @@
 
 
 
-
-
 <div class="moj-filter-layout">
 
  
@@ -66,17 +67,21 @@
         {text: 'Submission date'}
       ],
       rows: [
-        [
-          {html: '<a href="../records/approved" class="govuk-link">44455453</a>'},
-          {html: 'Eden Tesfay'},
-          {html: 'Samual Tesfay'},
-          {html: '12 Jan 2017'},
-          {html: '01 Sep 2023'},
+
+      [
+      {html: '<a href="../records/approved" class="govuk-link">44455453</a>'},
+      {html: 'Eden Tesfay'},
+      {html: 'Samual Tesfay'},
+      {html: '12 Jan 2017'},
+      {html: '01 Sep 2023'},
       
-        
-          {html: 'Eligible'},
-          {text: '25 Sep 2023'}
-        ],
+      {html: govukTag({
+        text: "Eligible",
+        classes: "govuk-tag--green"
+      })},
+      {text: '25 Sep 2023'}
+      ],
+
         [
           {html: '<a href="../records/eligible.html" class="govuk-link">12323212</a>'},
           {html: 'Warren Sutton'},
@@ -85,9 +90,13 @@
           {html: '01 Sep 2023'},
         
       
-          {html: 'Eligible'},
+          {html: govukTag({
+            text: "Not entitled",
+            classes: "govuk-tag--red"
+          })},
           {text: '25 Sep 2023'}
-        ],
+          ],
+
         [
           {html: '<a href="#" class="govuk-link">45678765</a>'},
           {html: 'Alan Jones'},
@@ -96,9 +105,13 @@
           {html: '01 Sep 2023'},
         
         
-          {html: 'Eligible'},
-          {text: '9 Sep 2023'}
-        ],
+          {html: govukTag({
+            text: "Evidence needed",
+            classes: "govuk-tag--light-blue"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+
         [
           {html: '<a href="#" class="govuk-link">12345678</a>'},
           {html: 'Jennifer Langley'},
@@ -107,9 +120,13 @@
           {html: '01 Sep 2023'},
         
         
-          {html: 'Eligible'},
-          {text: '9 Sep 2023'}
-        ],
+          {html: govukTag({
+            text: "Sent for review",
+            classes: "govuk-tag--blue"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+
         [
           {html: '<a href="#" class="govuk-link">89009800</a>'},
           {html: 'Susan Francis'},
@@ -118,9 +135,13 @@
           {html: '01 Sep 2023'},
         
         
-          {html: 'Eligible'},
-          {text: '9 Sep 2023'}
-        ],
+          {html: govukTag({
+            text: "Reviewed entitled",
+            classes: "govuk-tag--turqoise"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+
         [
           {html: '<a href="#" class="govuk-link">44455453</a>'},
           {html: 'John Smith'},
@@ -129,9 +150,13 @@
           {html: '01 Sep 2023'},
          
         
-          {html: 'Eligible'},
-          {text: '25 Sep 2023'}
-        ],
+             {html: govukTag({
+        text: "Reviewed not entitled",
+        classes: "govuk-tag--orange"
+      })},
+      {text: '25 Sep 2023'}
+      ],
+
         [
           {html: '<a href="#" class="govuk-link">12323212</a>'},
           {html: 'Warren Sutton'},
@@ -140,9 +165,13 @@
           {html: '01 Sep 2023'},
         
         
-          {html: 'Eligible'},
+          {html: govukTag({
+            text: "Receiving entitlement",
+            classes: "govuk-tag--pink"
+          })},
           {text: '25 Sep 2023'}
-        ],
+          ],
+
         [
           {html: '<a href="#" class="govuk-link">45678765</a>'},
           {html: 'Alan Jones'},
@@ -151,9 +180,13 @@
           {html: '01 Sep 2023'},
       
       
-          {html: 'Eligible'},
-          {text: '9 Sep 2023'}
-        ],
+          {html: govukTag({
+            text: "Eligible",
+            classes: "govuk-tag--green"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+
         [
           {html: '<a href="#" class="govuk-link">12345678</a>'},
           {html: 'Jennifer Langley'},
@@ -163,9 +196,13 @@
           {html: '01 Sep 2023'},
        
  
-          {html: 'Eligible'},
-          {text: '9 Sep 2023'}
-        ],
+          {html: govukTag({
+            text: "Eligible",
+            classes: "govuk-tag--green"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+
         [
           {html: '<a href="#" class="govuk-link">89009800</a>'},
           {html: 'Susan Francis'},
@@ -174,21 +211,29 @@
           {html: '01 Sep 2023'},
       
     
-          {html: 'Eligible'},
-          {text: '9 Sep 2023'}
-        ],
+          {html: govukTag({
+            text: "Not entitled",
+            classes: "govuk-tag--red"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+
         [
           {html: '<a href="#" class="govuk-link">45456765</a>'},
           {html: 'John Smith'},
           {html: 'Simon Smith'},
-          {html:' {{ date() }} '},
+          {html: '11 Oct 2017'},
         
           {html: '01 Sep 2023'},
        
 
-          {html: 'Not found'},
-          {text: '9 Sep 2023'}
-        ],
+          {html: govukTag({
+            text: "Not entitled",
+            classes: "govuk-tag--red"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+
         [
           {html: '<a href="#" class="govuk-link">88675411</a>'},
           {html: 'Margaret Blake'},
@@ -198,9 +243,12 @@
       
           
    
-          {html: 'Not found'},
-          {text: '9 Sep 2023'}
-        ],
+          {html: govukTag({
+            text: "Eligible",
+            classes: "govuk-tag--green"
+          })},
+          {text: '25 Sep 2023'}
+          ],
         
         [
           {html: '<a href="#" class="govuk-link">44455453</a>'},
@@ -210,9 +258,12 @@
           {html: '01 Sep 2023'},
          
    
-          {html: 'Eligible'},
+          {html: govukTag({
+            text: "Eligible",
+            classes: "govuk-tag--green"
+          })},
           {text: '25 Sep 2023'}
-        ]
+          ]
       ]
     }) }}
   </div>
