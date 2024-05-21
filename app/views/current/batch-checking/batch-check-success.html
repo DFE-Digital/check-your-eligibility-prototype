@@ -1,0 +1,34 @@
+{% extends "../../current/checker/layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Upload successful</h1>
+
+    <p>Now download the checked file to see which students are entitled to free school meals. </p>
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+          text: "Download",
+          href: '../checker/outcome-eligible-childs-age'
+        }) }}
+
+
+<p><a href="dashboard">Return to dashboard</a></p>
+
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+
+{% endblock %}
