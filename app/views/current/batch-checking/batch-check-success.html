@@ -6,25 +6,31 @@
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l">Upload successful</h1>
+{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
-    <p>Now download the checked file to see which students are entitled to free school meals. </p>
+{% set html %}
+  <h1 class="govuk-notification-banner__heading">
+    Upload successful
+  </h1>
+  <p class="govuk-body">Now download the checked file to see which students are entitled to free school meals.</p>
 
-        {% from "govuk/components/button/macro.njk" import govukButton %}
+  {% from "govuk/components/button/macro.njk" import govukButton %}
 
-        {{ govukButton({
-          text: "Download",
-          href: '../checker/outcome-eligible-childs-age'
-        }) }}
+  {{ govukButton({
+    text: "Download",
+    href: ''
+  }) }}
+
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: "success"
+}) }}
 
 
 <p><a href="dashboard">Return to dashboard</a></p>
 
-
-  </div>
-</div>
 
 {% endblock %}
 
