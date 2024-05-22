@@ -1,0 +1,47 @@
+{% extends "layouts/layout-dfenoback.html" %}
+
+{% set pageName="Home" %}
+
+
+
+{% block content %}
+
+{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+{{ govukErrorSummary({
+  titleText: "Error – File not accepted ",
+  errorList: [
+    {
+      text: "There’s an issue with the file you uploaded.  
+
+      Please make sure that it exactly mirrors the layout of the batch check template you downloaded, with no extra or missing columns. ",
+      href: ""
+    }
+  ]
+}) }}
+
+{% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+{{ govukFileUpload({
+  id: "file-upload-1",
+  name: "fileUpload1",
+  label: {
+    text: "Upload file again"
+  }
+}) }}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Download new template"
+}) }}
+
+<p><a href="../checker/dashboard">Return to dashboard</a></p>
+
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+
+{% endblock %}

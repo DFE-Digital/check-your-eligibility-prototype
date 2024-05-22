@@ -1,0 +1,66 @@
+{% extends "layouts/layout-dfenoback.html" %}
+
+{% set pageName="Home" %}
+
+
+
+{% block content %}
+
+{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+{{ govukErrorSummary({
+  titleText: "Error – Student data issue ",
+  errorList: [
+    {
+        html: "<strong>There are issues with the student data on the following lines:</strong>",      href: ""
+    },
+    {
+        text: "Line 8: Issue with National Insurance number ",
+        href: ""
+      },
+      {
+        text: "Line 9: Issue with date of birth ",
+        href: ""
+      },
+      {
+        text: "Line 10: Issue with middle name ",
+        href: ""
+      },
+      {
+        text: "Line 11: Issue with National Insurance number ",
+        href: ""
+      },
+      {
+        text: "Line 12: Issue with date of birth ",
+        href: ""
+      },
+    {
+        text: "Line 13: Issue with middle name ",
+        href: ""
+    }
+  ]
+}) }}
+
+<h2 class="govuk-heading-m">Please make sure you’ve corrected the issues on these lines and upload the file again. </h2>
+
+
+{% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+{{ govukFileUpload({
+  id: "file-upload-1",
+  name: "fileUpload1",
+  label: {
+    text: "Upload file again"
+  }
+}) }}
+
+
+<p><a href="../checker/dashboard">Return to dashboard</a></p>
+
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+
+{% endblock %}
