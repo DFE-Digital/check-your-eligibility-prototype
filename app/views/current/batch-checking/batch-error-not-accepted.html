@@ -12,12 +12,18 @@
   titleText: "Error – File not accepted ",
   errorList: [
     {
-      text: "There’s an issue with the file you uploaded.  
+      text: "There’s an issue with the file you uploaded.
 
       Please make sure that it exactly mirrors the layout of the batch check template you downloaded, with no extra or missing columns. ",
       href: ""
     }
   ]
+}) }}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Download new template"
 }) }}
 
 {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
@@ -30,11 +36,6 @@
   }
 }) }}
 
-{% from "govuk/components/button/macro.njk" import govukButton %}
-
-{{ govukButton({
-  text: "Download new template"
-}) }}
 
 <p><a href="../checker/dashboard">Return to dashboard</a></p>
 
