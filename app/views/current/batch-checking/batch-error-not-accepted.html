@@ -23,7 +23,8 @@
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
 {{ govukButton({
-  text: "Download new template"
+  text: "Download new template",
+  classes: "govuk-button--secondary"
 }) }}
 
 {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
@@ -34,6 +35,11 @@
   label: {
     text: "Upload file again"
   }
+}) }}
+
+{{ govukButton({
+  text: "Upload",
+  classes: "govuk-button--primary"
 }) }}
 
 
