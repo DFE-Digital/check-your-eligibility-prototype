@@ -9,10 +9,10 @@
 {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
 
 {{ govukErrorSummary({
-  titleText: "Error – Student data issue ",
+  titleText: "Error – Parent data issue ",
   errorList: [
     {
-        html: "<strong>There are issues with the student data on the following lines:</strong>",      href: ""
+        html: "<strong>There are issues with the parent data on the following lines:</strong>",      href: ""
     },
     {
         text: "Line 8: Issue with National Insurance number ",
@@ -48,6 +48,10 @@
       },
     {
         text: "Line 16: Issue with middle name ",
+        href: ""
+    },
+    {
+        html: "<strong>There are also issues on 5000 more lines</strong>",      
         href: ""
     }
   ]
