@@ -57,27 +57,17 @@
   ]
 }) }}
 
-<h2 class="govuk-heading-m">Please make sure you’ve corrected the issues on these lines and upload the file again. </h2>
+
+<p class="govuk-body">Please make sure you’ve corrected the issues on these lines and upload the file again.</p>
 
 
-{% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
 
-{{ govukFileUpload({
-  id: "file-upload-1",
-  name: "fileUpload1",
-  label: {
-    text: "Upload file again"
-  }
-}) }}
-
-{{ govukButton({
-    text: "Upload",
-    classes: "govuk-button--primary",
-    href: '../batch-checking/batch-checking-loader'
-}) }}
-
+<p><a href="../batch-checking/upload.html">Try again</a></p>
 
 <p><a href="../checker/dashboard">Return to dashboard</a></p>
+
+<p><a href="">Sign out</a></p>
+
 
 
 {% endblock %}
