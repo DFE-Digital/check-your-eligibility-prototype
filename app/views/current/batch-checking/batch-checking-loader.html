@@ -34,7 +34,6 @@
                     var countElement = document.getElementById("counter");
                     var currentCount = parseInt(countElement.textContent);
                     var newCount = currentCount +1;
-                    // countElement.textContent = newCount;
                     if(newCount >= total_count) {
                       clearInterval(intervalId);
                       document.location = '/current/batch-checking/batch-check-success';
