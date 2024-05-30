@@ -9,19 +9,54 @@
 <div class="govuk-width-container">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-l">Reference 44455453</span>
-        <h1 class="govuk-heading-xl">Children added</h1>
-        <p>We have sent your details to Bramhope Primary School.</p>
+        <h1 class="govuk-heading-xl">Children details added</h1>
+        <p></p>
     </div>
   </div>
 </div>
 
+<h2 class="govuk-heading-m">We have sent details for:</h2>
+
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header">Name</th>
+          <th class="govuk-table__header">School</th>
+          <th class="govuk-table__header">Reference</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Samual Tesfay</td>
+          <td class="govuk-table__cell">Bramhope Primary School</td>
+          <td class="govuk-table__cell">44455453</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Thomas Tesfay</td>
+          <td class="govuk-table__cell">St Kings Primary School</td>
+          <td class="govuk-table__cell">44455454</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Rachel Tesfay</td>
+          <td class="govuk-table__cell">Bramhope Primary School</td>
+          <td class="govuk-table__cell">44455455</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
 <h2 class="govuk-heading-m">What happens next</h2>
 
 
-      <p>  The school will email you when they have registered your details, and will arrange for your children's free school meals to start. </p>
+<p>The school(s) will contact you when they have registered these details, and will arrange for your children’s free school meals to start. </p>
 
-<p>If you do not receive an update in 5 working days talk to the school administrator.</p>
+<p>If you do not receive an update soon, talk to the school administrator.</p>
 
 
 <p><a href="">Sign out</a></p>
