@@ -20,27 +20,20 @@
 
       {% call govukFieldset({
         legend: {
-          text: "Check a student's eligibility",
+          text: "Enter parent or guardian details          ",
           classes: "govuk-fieldset__legend--l",
           isPageHeading: true
         }
       }) %}
-
-
-
-     
-      
-      
-
       
         {% from "govuk/components/input/macro.njk" import govukInput %}
 
         {{ govukInput({
           label: {
-            text: "First name"
+            text: "Parent or guardian first name"
           },
           id: "Firstname",
-          name: "Firstname",
+          name: "Parent or guardian first name",
           autocomplete: "name",
           classes: "govuk-input--width-20",
           spellcheck: false
@@ -48,7 +41,7 @@
 
         {{ govukInput({
           label: {
-            text: "Surname"
+            text: "Parent or guardian last name"
           },
           id: "surName",
           name: "surName",
@@ -59,7 +52,7 @@
 
         {{ govukInput({
           label: {
-            text: "Email address"
+            text: "Parent or guardian email address"
           },
           id: "email",
           name: "email",
@@ -70,7 +63,7 @@
 
         {{ govukInput({
           label: {
-            text: "National Insurance number"
+            text: "Parent or guardian National Insurance number"
           },
           
           id: "full-name",
@@ -82,7 +75,7 @@
 <p>Or</p>
         {{ govukInput({
           label: {
-            text: "National asylum support number"
+            text: "Parent or guardian asylum support reference number"
           },
           id: "nass",
           name: "nass",
@@ -99,36 +92,23 @@
             
             fieldset: {
               legend: {
-                text: "Date of birth",
+                text: "Parent or guardian date of birth",
                 isPageHeading: false,
                 classes: "govuk-fieldset__legend--s"
               }
             },
             hint: {
-              text: "For example, 27 3 2007"
+              text: "For example, 27 3 1980"
             }
           }) }}
-  
-        
-        
-        
-        
 
-     
-      
-      
-      
-        
-      
-       
-      
       {% endcall %}
       
       
       
       
       {{ govukButton({
-        text: "Save and continue",
+        text: "Perform check",
         classes:'govuk-!-margin-top-5'
       }) }}
 
