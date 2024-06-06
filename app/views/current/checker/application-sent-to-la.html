@@ -18,7 +18,13 @@
   </div>
 </div>
 
+{% from "govuk/components/button/macro.njk" import govukButton %}
 
+{{ govukButton({
+  text: "Return to record",
+  classes: 'govuk-button--primary',
+  href:'../records/not-entitled-appeals-multi-sent'
+}) }}
 
 
 <div class="govuk-!-padding-bottom-3"></div>
