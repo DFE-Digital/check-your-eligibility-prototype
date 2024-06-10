@@ -11,9 +11,19 @@
     
     <h1 class="govuk-heading-l">The children of this parent or guardian are entitled to free school meals</h1>
   <p>This information should be passed on to their school.</p>
-    <p><a href="checker">Do another check</a></p>
-    <p><a href="dashboard">Return to dashboard</a></p>
-    <p><a href="../account/signin-or-create">Sign out</a></p>
+  
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Do another check",
+      href: 'checker'
+    }) }}
+
+  <p><a href="dashboard">Return to dashboard</a></p>
+  <p><a href="../account/signin-or-create">Sign out</a></p>
+
+
+  
 
     </div>
 
