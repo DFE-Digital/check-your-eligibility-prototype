@@ -58,175 +58,211 @@
         {text: 'Reference'},
         {text: 'Parent / guardian'},
         {text: 'Child'},
-        {text:'School'},
-        {text: 'DOB'},
+        {text: 'Child DOB'},
 
         {text: 'Eligible from'},
       
         {text: 'Status'},
-        {text: 'Date submitted'}
+        {text: 'Submission date'}
       ],
       rows: [
-        [
-          {html: '<a href="../records/approved" class="govuk-link">44455453</a>'},
-          {html: 'Eden Tesfay'},
-          {html: 'Samual Tesfay'},
-          {html:'St Marys'},
-          {html: '12 Jan 2017'},
-          {html: '01 Sep 2023'},
+
+      [
+      {html: '<a href="../records/approved" class="govuk-link">44455453</a>'},
+      {html: 'Eden Tesfay'},
+      {html: 'Samual Tesfay'},
+      {html: '12 Jan 2017'},
+      {html: '01 Sep 2023'},
       
-        
-          {html: 'Eligible'},
-          {text: '25 Sep 2023'}
-        ],
+      {html: govukTag({
+        text: "Entitled",
+        classes: "govuk-tag--green"
+      })},
+      {text: '25 Sep 2023'}
+      ],
+
         [
           {html: '<a href="../records/eligible.html" class="govuk-link">12323212</a>'},
           {html: 'Warren Sutton'},
           {html: 'Lisa Sutton'},
-          {html:'St Marys'},
           {html: '10 Jan 2017'},
           {html: '01 Sep 2023'},
         
       
-          {html: 'Eligible'},
+          {html: govukTag({
+            text: "Entitled",
+            classes: "govuk-tag--green"
+          })},
           {text: '25 Sep 2023'}
-        ],
+          ],
+
         [
           {html: '<a href="#" class="govuk-link">45678765</a>'},
           {html: 'Alan Jones'},
           {html: 'Jack Jones'},
-          {html:'St Marys'},
           {html: '10 Jan 2018'},
           {html: '01 Sep 2023'},
         
         
-          {html: 'Eligible'},
-          {text: '9 Sep 2023'}
-        ],
+          {html: govukTag({
+            text: "Evidence needed",
+            classes: "govuk-tag--light-blue"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+
         [
           {html: '<a href="#" class="govuk-link">12345678</a>'},
           {html: 'Jennifer Langley'},
           {html: 'Tilly Langley'},
-          {html:'St Marys'},
           {html: '03 Dec 2017'},
           {html: '01 Sep 2023'},
         
         
-          {html: 'Eligible'},
-          {text: '9 Sep 2023'}
-        ],
+          {html: govukTag({
+            text: "Sent for review",
+            classes: "govuk-tag--blue"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+
         [
           {html: '<a href="#" class="govuk-link">89009800</a>'},
           {html: 'Susan Francis'},
           {html: 'Noah Francis'},
-          {html:'St Marys'},
           {html: '13 Dec 2017'},
           {html: '01 Sep 2023'},
         
         
-          {html: 'Eligible'},
-          {text: '9 Sep 2023'}
-        ],
+          {html: govukTag({
+            text: "Reviewed entitled",
+            classes: "govuk-tag--turqoise"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+
         [
           {html: '<a href="#" class="govuk-link">44455453</a>'},
           {html: 'John Smith'},
           {html: 'Jo Smith'},
-          {html:'St Marys'},
           {html: '11 Dec 2017'},
           {html: '01 Sep 2023'},
          
         
-          {html: 'Eligible'},
-          {text: '25 Sep 2023'}
-        ],
+             {html: govukTag({
+        text: "Reviewed not entitled",
+        classes: "govuk-tag--orange"
+      })},
+      {text: '25 Sep 2023'}
+      ],
+
         [
           {html: '<a href="#" class="govuk-link">12323212</a>'},
           {html: 'Warren Sutton'},
           {html: 'Harry Sutton'},
-          {html:'St Marys'},
           {html: '09 Dec 2017'},
           {html: '01 Sep 2023'},
         
         
-          {html: 'Eligible'},
+          {html: govukTag({
+            text: "Receiving entitlement",
+            classes: "govuk-tag--pink"
+          })},
           {text: '25 Sep 2023'}
-        ],
+          ],
+
         [
           {html: '<a href="#" class="govuk-link">45678765</a>'},
           {html: 'Alan Jones'},
           {html: 'Scarlette Jones'},
-          {html:'St Marys'},
           {html: '10 Nov 2017'},
           {html: '01 Sep 2023'},
       
       
-          {html: 'Eligible'},
-          {text: '9 Sep 2023'}
-        ],
+          {html: govukTag({
+            text: "Entitled",
+            classes: "govuk-tag--green"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+
         [
           {html: '<a href="#" class="govuk-link">12345678</a>'},
           {html: 'Jennifer Langley'},
           {html: 'Hilda Langley'},
-          {html:'St Marys'},
           {html: '22 Nov 2017'},
        
           {html: '01 Sep 2023'},
        
  
-          {html: 'Eligible'},
-          {text: '9 Sep 2023'}
-        ],
+          {html: govukTag({
+            text: "Entitled",
+            classes: "govuk-tag--green"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+
         [
           {html: '<a href="#" class="govuk-link">89009800</a>'},
           {html: 'Susan Francis'},
           {html: 'Ada Francis'},
-          {html:'St Marys'},
           {html: '26 Oct 2017'},
           {html: '01 Sep 2023'},
       
     
-          {html: 'Eligible'},
-          {text: '9 Sep 2023'}
-        ],
+          {html: govukTag({
+            text: "Entitled",
+            classes: "govuk-tag--green"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+
         [
           {html: '<a href="#" class="govuk-link">45456765</a>'},
           {html: 'John Smith'},
           {html: 'Simon Smith'},
-          {html:'St Marys'},
-          {html:' {{ date() }} '},
+          {html: '11 Oct 2017'},
         
           {html: '01 Sep 2023'},
        
 
-          {html: 'Not found'},
-          {text: '9 Sep 2023'}
-        ],
+          {html: govukTag({
+            text: "Entitled",
+            classes: "govuk-tag--green"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+
         [
           {html: '<a href="#" class="govuk-link">88675411</a>'},
           {html: 'Margaret Blake'},
           {html: 'Margo Blake'},
-          {html:'St Marys'},
           {html: '12 Oct 2017'},
           {html: '01 Sep 2023'},
       
           
    
-          {html: 'Not found'},
-          {text: '9 Sep 2023'}
-        ],
+          {html: govukTag({
+            text: "Entitled",
+            classes: "govuk-tag--green"
+          })},
+          {text: '25 Sep 2023'}
+          ],
         
         [
           {html: '<a href="#" class="govuk-link">44455453</a>'},
           {html: 'John Smith'},
           {html: 'Jona Smith'},
-          {html:'St Marys'},
           {html: '11 Oct 2017'},
           {html: '01 Sep 2023'},
          
    
-          {html: 'Eligible'},
+          {html: govukTag({
+            text: "Entitled",
+            classes: "govuk-tag--green"
+          })},
           {text: '25 Sep 2023'}
-        ]
+          ]
       ]
     }) }}
   </div>

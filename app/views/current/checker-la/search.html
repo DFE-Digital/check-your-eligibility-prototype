@@ -11,8 +11,9 @@
   
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-l">
-    Search for eligible children
+      Search all records
     </h1>
+    <p>Fill in any of the fields on this page to find a free school meal record.</p>
     
   </div>
 </div>
@@ -39,7 +40,7 @@
       <div class="govuk-grid-column-one-quarter">
         <div class="govuk-form-group HO-uk-margin-bottom-3">
           <h6 class="govuk-heading-xxs HO-uk-margin-bottom-1">
-        Child surname
+        Child last name
           </h6>
           
             <input id="Name" class="govuk-input" type="text" name="Name" value="{{ data['Name'] }}" placeholder="Child surname">
@@ -52,7 +53,7 @@
           <div class="govuk-grid-column-one-quarter">
             <div class="govuk-form-group HO-uk-margin-bottom-3">
               <h6 class="govuk-heading-xxs HO-uk-margin-bottom-1">
-             Parent / guardian surname
+             Parent or guardian last name
               </h6>
               <div class="autocomplete">
                 <input id="deptCountry" class="countryAutocomplete govuk-input" type="text" name="deptCountry" value="{{ data['deptCountry'] }}" placeholder="Status">
@@ -103,21 +104,31 @@
                                 text: "All statuses"
                               },
                                 {
-                                  value: "eligible",
-                                  text: "Eligible"
+                                  value: "entitled",
+                                  text: "Entitled"
+                                },
+
+                               
+
+                                {
+                                  value: "evidence-needed",
+                                  text: "Evidence needed"
                                 },
                                 {
-                                  value: "not-found",
-                                  text: "Not found",
-                                  selected: true
+                                  value: "sent-for-review",
+                                  text: "Sent for review"
                                 },
                                 {
-                                  value: "views",
-                                  text: "Most views"
+                                  value: "reviewed-enititled",
+                                  text: "Reviewed entitled"
                                 },
                                 {
-                                  value: "comments",
-                                  text: "Most comments"
+                                  value: "reviewed-not-entitled",
+                                  text: "Reviewed not entitled"
+                                },
+                                {
+                                  value: "receiving-entitlement",
+                                  text: "Receiving entitlement"
                                 }
                               ]
                             }) }}
@@ -145,38 +156,7 @@
                       <form action="eligible-list" method="post" novalidate>
 
                       
-                  
-                
-                  
-                       
-                        
-                        
-                  
-                        
-                        
-                  
-                         
-                  
-                    
-                          
-                          
-                          
-                          
-                  
-                       
-                        
-                        
-                        
-                          
-                        
-                         
-                        
-                      
-                        
-                        
-                  
-                  
-                        
+
                       </form>
                     </div>
                    </div>
@@ -247,7 +227,7 @@
               <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                    Parent date of birth
+                    Parent or guardian date of birth
                   </legend>
                   <!--<div id="passport-issued-hint" class="govuk-hint">
                     For example, 12 11 2007
