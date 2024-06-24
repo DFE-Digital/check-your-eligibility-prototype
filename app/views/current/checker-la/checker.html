@@ -94,13 +94,14 @@
 
       {% endcall %}
       
-      
-      
-      
-      {{ govukButton({
-        text: "Perform check",
-        classes:'govuk-!-margin-top-5'
-      }) }}
+    
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Perform check",
+  href: "../checker-la/checking-la-loader"
+}) }}
 
       
     </form>
