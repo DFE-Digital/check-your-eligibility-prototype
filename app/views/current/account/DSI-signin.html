@@ -3,56 +3,71 @@
 {% set pageName="Home" %}
 
 {% block content %}
-
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds ">
-      
-
-<h1 class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-3">DfE sign in</h1>
+  <div class="govuk-grid-column-two-thirds ">
+    
 
 
-<p class="govuk-body">DfE Sign-in is how schools and other education organisations access DfE online services.</p>
-<p class="govuk-body">To access your DfE online services, you'll either need:</p>
+<input type="hidden" name="_csrf" value="NwbSEw2n-Gna8N8BwZSNt77jGcnGYDP8tfjs">
 
-<ul class="govuk-list govuk-list--bullet">
-<li><strong>an existing DfE Sign-in account.</strong> This will be email address and password you created when you first accessed DfE Sign-in.</li>
-<li><strong>to create a DfE Sign-in account.</strong> If you haven't used DfE Sign-in before you'll need to <a href="#">create a DfE Sign-in account.</a></li>
 
-</ul>
+
+<div class="govuk-form-group">
+<h1 class="govuk-label-wrapper">
+<label class="govuk-label govuk-label--l" for="email">
+Department for Education Sign-in</label>
+</h1>
+<p class="govuk-body">Sign-in to access DfE online services.</p>
 
 <div class="govuk-!-padding-bottom-2"></div>
 
-<form action="onegov-signin" method="post" novalidate>
 
-    {% from "govuk/components/button/macro.njk" import govukButton %}
+<div class="govuk-form-group">
+  <label class="govuk-label" for="email">
+    Email address
+  </label>
+  
+  <input class="govuk-input" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
+</div>
 
-    {{ govukButton({
-      text: "Start now",
-      href: "#",
-      isStartButton: true
-    }) }}
-    
+{% from "govuk/components/password-input/macro.njk" import govukPasswordInput %}
+
+{{ govukPasswordInput({
+  label: {
+    text: "Password"
+  },
+  id: "password-input",
+  name: "password"
+}) }}
+
+</div>
+
+
+
+
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Sign in",
+  href: "../account/DSI-landingpage",
+  classes:'govuk-button-primary'
+  }) }}
+
+{{ govukButton({
+  text: "Create account",
+  href: "#",
+  classes: "govuk-button--secondary"
+}) }}
+
 </form>
 
 
-<details class="govuk-details" data-module="govuk-details">
-<summary class="govuk-details__summary">
-<span class="govuk-details__summary-text">
-Services accessed using DfE Sign-in
-</span>
-</summary>
-<div class="govuk-details__text">
-
-<p class="govuk-body">GOV.UK One Login is new. At the moment you can only use it to access some government services.</p>
-<p class="govuk-body">It does not work with all government accounts or services yet (for example Government Gateway or Universal Credit).</p>
-<p class="govuk-body">In the future, you’ll be able to use GOV.UK One Login to access all services on GOV.UK.</p>
-
-</div>
-</details>
 
 
-
-    </div>
   </div>
+</div>
+
+
 
 {% endblock %}
