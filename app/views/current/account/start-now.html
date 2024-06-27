@@ -18,7 +18,7 @@
     <p>Here you can:</p>
 
     <ul class="govuk-list--bullet">
-      <li> enter information to find out if your children can get free school meals </li>
+      <li> find out if your children can get free school meals by entering key information</li>
       <li> send the decision on to your children’s school, college, nursery or childcare setting</li>
     
     </ul>
@@ -26,75 +26,8 @@
 
 
 <h2 class="govuk-heading-l">
-  Guidance</h2>
+  What you'll need</h2>
 
-  <p>Read guidance about who can get free school meals by choosing from the following sections.</p>
-
-  
-
-
-    {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
-
-{{ govukAccordion({
-  id: "accordion-default",
-  items: [
-    {
-      heading: {
-        text: "Infant free school meals"
-      },
-      content: {
-        html: '
-        <p class="govuk-body">Your children will be able to get free school meals if they’re in a government-funded school and in:</p>
-        <ul><li>  reception class </li>
-          <li>year 1</li>
-          <li>year 2</li>
-        
-        </ul>
-        <p class="govuk-body">They must be attending both before and after the lunchtime period.</p>
-          <p class="govuk-body">Tell <a href="https://www.gov.uk/find-local-council">your local authority</a> if you also get any of the qualifying benefits listed in the \'Pupils aged 4 to 16\' section. Your children’s school can get extra funding if you do. </p>
-          <p class="govuk-body">If you think your children are entitled, select \'Start now\' on this page and complete the check. If the result is positive, you can then apply for free school meals on their behalf.</p>'
-      }
-    },
-    {
-      heading: {
-        text: "Pupils aged 4 to 16"
-      },
-      content: {
-        html: '<p class="govuk-body">Your children may be able to get free school meals if you, or they, get any of these benefits:</p>
-        <ul><li>Universal Credit - if you apply on or after 1 April 2018 your household income must be less than £7,400 a year (after tax and not including any benefits you get)</li>
-          <li>Income Support </li>
-          <li>income-based Jobseeker’s Allowance </li>
-          <li>income-related Employment and Support Allowance </li>
-          <li>support under Part VI of the Immigration and Asylum Act 1999 </li>
-          <li>the guaranteed element of Pension Credit </li>
-          <li>Child Tax Credit (provided you’re not also entitled to Working Tax Credit and have an annual gross income of no more than £16,190) </li>
-          <li>Working Tax Credit run-on - paid for 4 weeks after you stop qualifying for Working Tax Credit </li>
-           
-        
-        </ul>
-        <p>If you think your children are entitled, select \'Start now\' on this page and complete the check. If the result is positive, you can then apply for free school meals on their behalf.</p>
-        '
-
-      }
-    },
-    {
-      heading: {
-        text: "Students in full time education"
-      },
-      content: {
-        html: '<p class="govuk-body">Disadvantaged students aged 16 to 19 in further education (FE) funded institutions are entitled to free school meals. This does not include apprentices. </p>
-        <p>To get free school meals, you or the student must be in receipt of one of the benefits listed in the \'Pupils aged 4 to 16\' section on this page.</p>
-        <p>If you think you or your child are entitled, select \'Start now\' on this page and complete the check. If the result is positive, you can then apply for free school meals.</p>'
-      }
-    
-    }
-  ]
-}) }}
-
-
-
-
-  <h2 class="govuk-heading-l">What you’ll need</h2>
   <p>While using this service, you will need: </p>
 
   <ul class="govuk-list--bullet">
@@ -114,6 +47,26 @@
   }) }}
 
  </form>
+
+ <h2 class="govuk-heading-l">
+  Criteria for free school meals</h2>
+
+<p>Children in compulsory education may be able to get free school meals if you, or they, get any of these benefits:</p>
+
+        <ul><li>Universal Credit - your household income must be less than £7,400 a year (after tax and not including any benefits you get)</li>
+          <li>Income Support </li>
+          <li>income-based Jobseeker’s Allowance </li>
+          <li>income-related Employment and Support Allowance </li>
+          <li>support under Part VI of the Immigration and Asylum Act 1999 </li>
+          <li>the guaranteed element of Pension Credit </li>
+          <li>Child Tax Credit (provided you’re not also entitled to Working Tax Credit and have an annual gross income of no more than £16,190) </li>
+          <li>Working Tax Credit run-on - paid for 4 weeks after you stop qualifying for Working Tax Credit </li>
+           
+        
+        </ul>
+        <p> Younger children aged 4 to 6 are always entitled to free school meals.</p>
+        <p>However, it's still important to apply for free school meals even if you know your child will get them. Schools receive extra funding based on the number of children they record as entitled.</p>
+
 
 <h2 class="govuk-heading-l">Further guidance and other ways to apply</h2>
 <p>If you need further support, <a target="_blank" href="../checker/parent-guidance.html">check the more detailed guidance</a>  for parents and guardians.</p>
