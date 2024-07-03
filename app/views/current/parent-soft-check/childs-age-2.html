@@ -22,9 +22,7 @@
 
 
     <div class="govuk-grid-row">
-
-            
-      <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-column-one-half">
 
     <form action="check-answers" method="post" novalidate>
 
@@ -38,10 +36,11 @@
       <div data-module="moj-add-another">
       
         <h1 class="govuk-heading-l" tabindex="-1">Provide details of your children</h1>
+        <p>Include all your children and their schools aged from 4 to 16 years. You can add another if you have more than one child.</p>
       
         <form method="post">
 
-          {% from "govuk/components/select/macro.njk" import govukSelect %}
+         <!-- {% from "govuk/components/select/macro.njk" import govukSelect %}
 
 {{ govukSelect({
   id: "relationship",
@@ -67,7 +66,7 @@
       text: "Step parent"
     }
   ]
-}) }}
+}) }}-->
       
           {% call govukFieldset({
             classes: 'moj-add-another__item',

@@ -17,32 +17,29 @@
 
 
     <div class="govuk-grid-row">
-
-            
       <div class="govuk-grid-column-one-half">
 
     <form action="childs-age-2" method="post" novalidate>
-
-
       
       <div>
       
         <h1 class="govuk-heading-l" tabindex="-1">Provide details of your children</h1>
-      
+        <p>Include all your children and their schools aged from 4 to 16 years. You can add another if you have more than one child.</p>
+    
         <form method="post">
-
-
-      
+          <div class="govuk-button-group--inline">
           {% call govukFieldset({
             classes: 'moj-add-another__item',
             legend: {
-              text: 'Child',
+              text: 'Child 1',
               classes: 'moj-add-another__title govuk-fieldset__legend--m',
               isPageHeading: false
             }
           }) %}
           {% endcall %}
-
+          
+     
+        </div>
       
           {{ govukInput({
             id: 'ch1-first-name',
@@ -108,7 +105,7 @@
       
 
          
-      
+      <!---->
           <div class="moj-button-action">
             {{ govukButton({
               text: 'Add another child',
