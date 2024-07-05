@@ -16,62 +16,23 @@
 
 
 
-
-  
-
-
-
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-half">
 
     <form action="check-answers" method="post" novalidate>
-
-
-      {%- from "govuk/components/button/macro.njk" import govukButton -%}
-      {%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
-      {%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
-      {%- from "govuk/components/input/macro.njk" import govukInput -%}
-      {%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
       
       <div data-module="moj-add-another">
       
         <h1 class="govuk-heading-l" tabindex="-1">Provide details of your children</h1>
-        <p>Include all your children and their schools aged from 4 to 16 years. You can add another if you have more than one child.</p>
+        <p>Include all your children who are in compulsory education. You can add another if you have more than one child.</p>
       
         <form method="post">
-
-         <!-- {% from "govuk/components/select/macro.njk" import govukSelect %}
-
-{{ govukSelect({
-  id: "relationship",
-  name: "relationship",
-  label: {
-    text: "Relationship to child"
-  },
-  items: [
-    {
-      value: "Parent",
-      text: "Parent"
-    },
-    {
-      value: "Guardian",
-      text: "Guardian"
-    },
-    {
-      value: "Foster parent",
-      text: "Foster parent"
-    },
-    {
-      value: "Step parent",
-      text: "Step parent"
-    }
-  ]
-}) }}-->
+        
       
           {% call govukFieldset({
             classes: 'moj-add-another__item',
             legend: {
-              text: 'Child 2 details',
+              text: 'Child 2',
               classes: 'moj-add-another__title govuk-fieldset__legend--m',
               isPageHeading: false
             }
