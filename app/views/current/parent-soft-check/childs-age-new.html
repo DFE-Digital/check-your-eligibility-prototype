@@ -1,0 +1,119 @@
+{% extends "../../current/parent-soft-check/layouts/layout-dfe.html" %}
+
+
+{% set pageName="Provide details of all children" %}
+
+{% block content %}
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+
+<div data-module="moj-add-another">
+
+  <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Add a person</h2>
+
+  <form method="post">
+
+    {%- for i in range(3) %}
+      {% call govukFieldset({
+        classes: 'moj-add-another__item',
+        legend: {
+          text: 'Person ' ~ (i + 1),
+          classes: 'moj-add-another__title govuk-fieldset__legend--m',
+          isPageHeading: false
+        }
+      }) %}
+
+      {{ govukInput({
+        id: 'person[' ~ i ~ '][first_name]',
+        name: 'person[' ~ i ~ '][first_name]',
+        label: {
+          html: 'First name',
+          classes: 'govuk-!-font-weight-bold'
+        },
+        attributes: {
+          'data-name': 'person[' ~ i ~ '][first_name]',
+          'data-id': 'person[' ~ i ~ '][first_name]'
+        }
+      }) }}
+
+      {{ govukInput({
+        id: 'person[' ~ i ~ '][last_name]',
+        name: 'person[' ~ i ~ '][last_name]',
+        label: {
+          html: 'Last name',
+          classes: 'govuk-!-font-weight-bold'
+        },
+        attributes: {
+          'data-name': 'person[' ~ i ~ '][last_name]',
+          'data-id': 'person[' ~ i ~ '][last_name]'
+        }
+      }) }}
+
+      {{ govukDateInput({
+        id: 'date-of-birth-' ~ i,
+        fieldset: {
+          legend: {
+            text: 'Date of birth',
+            classes: 'govuk-fieldset__legend--s'
+          }
+        },
+        hint: {
+          text: 'For example, 31 3 1980'
+        },
+        items: [
+          {
+            id: 'person[' ~ i ~ '][dob][day]',
+            name: 'person[' ~ i ~ '][dob][day]',
+            label: 'Day',
+            classes: 'govuk-input--width-2',
+            attributes: {
+              'data-name': 'person[' ~ i ~ '][dob][day]',
+              'data-id': 'person[' ~ i ~ '][dob][day]'
+            }
+          },
+          {
+            id: 'person[' ~ i ~ '][dob][month]',
+            name: 'person[' ~ i ~ '][dob][month]',
+            label: 'Month',
+            classes: 'govuk-input--width-2',
+            attributes: {
+              'data-name': 'person[' ~ i ~ '][dob][month]',
+              'data-id': 'person[' ~ i ~ '][dob][month]'
+            }
+          },
+          {
+            id: 'person[' ~ i ~ '][dob][year]',
+            name: 'person[' ~ i ~ '][dob][year]',
+            label: 'Year',
+            classes: 'govuk-input--width-2',
+            attributes: {
+              'data-name': 'person[' ~ i ~ '][dob][year]',
+              'data-id': 'person[' ~ i ~ '][dob][year]'
+            }
+          }
+        ]
+      }) }}
+
+      {% endcall %}
+    {%- endfor %}
+
+    <div class="moj-button-action">
+      {{ govukButton({
+        text: 'Add another person',
+        classes: 'govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4'
+      }) }}
+    </div>
+
+    <div class="moj-button-action">
+      {{ govukButton({
+        text: 'Submit'
+      }) }}
+    </div>
+
+  </form>
+
+</div>
+
+{% endblock %}
