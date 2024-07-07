@@ -12,17 +12,22 @@
     <p>To get free school meals for your children, follow these steps online. This typically takes just a few minutes.</p>
       
     <ol>
-      <li>Create or sign into your OneGov account.</li>
+      <li>Create or sign into your GOV.UK One Login account.</li>
       <li>Enter the details of your children and their school.</li>
       <li>These will be sent on to the school, which will arrange free school meals.</li>
       </ol>
 
+      {% from "govuk/components/details/macro.njk" import govukDetails %}
 
+      {{ govukDetails({
+        summaryText: "About GOV.UK One Login",
+        text: "GOV.UK One Login lets you sign in and prove your identity quickly and easily. You can use the same account for some other government services."
+      }) }}
 
 
 <form action="account/signin-or-create" method="post" novalidate>
   <button class="govuk-button govuk-!-margin-top-5" data-module="govuk-button">
-    Go to OneGov
+    Continue to GOV.UK One Login
     </button>
 </form>
 </div>
