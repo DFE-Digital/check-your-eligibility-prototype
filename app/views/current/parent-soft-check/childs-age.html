@@ -15,8 +15,32 @@
     defaultValue: '',
     selectElement: document.querySelector('#school-picker')
   })
+document.addEventListener('DOMContentLoaded', function () {
+
+  var addAnotherButton = document.querySelector('.moj-add-another__add-button');
+  var removeButton = document.querySelectorAll('.moj-add-another__remove-button');
+  removeButton.forEach(function (button){
+    button.addEventListener('click', updateLegends); 
+  });
+  addAnotherButton.addEventListener('click', updateLegends);
+  function updateLegends(){
+    setTimeout(() => {
+      const legends = document.querySelectorAll('.moj-add-another__title');
+      legends.forEach(function (legend, index) {
+        legend.innerHTML = `Child ${index + 1}`;
+      });
+      var removeButton = document.querySelectorAll('.moj-add-another__remove-button');
+      removeButton.forEach(function (button){
+        button.addEventListener('click', updateLegends); 
+    });
+    }, 50); 
+  }
+})
+
+
 </script>
 {% endblock %}
+
 
 
 {% block content %}
@@ -37,7 +61,7 @@
           {% call govukFieldset({
             classes: 'moj-add-another__item',
             legend: {
-              text: 'Child ',
+              text: 'Child 1',
               classes: 'moj-add-another__title govuk-fieldset__legend--m',
               isPageHeading: false
             }
