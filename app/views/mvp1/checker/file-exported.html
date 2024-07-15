@@ -1,0 +1,54 @@
+{% extends "../../mvp1/checker/layouts/layout-dfe.html" %}
+
+{% set pageName="File exported" %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {%- from "moj/components/banner/macro.njk" import mojBanner -%}
+
+{{ mojBanner({
+  type: 'success',
+  html:' <h3 class="govuk-heading-l">The list has been exported and is ready for download</h3>',
+  iconFallbackText: 'Success'
+}) }}
+
+  
+
+      
+        
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Exported file
+    </dt>
+    <dd class="govuk-summary-list__value">
+      DownloadedEligibleList
+      {{ date() }}.csv
+      
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="" role="button" href="">Download</a>
+    </dd>
+  </div>
+  </dl>
+
+  <p><a href="dashboard">Return to portal dashboard</a></p>
+  <p><a href="search">Search for more records</a></p>
+
+
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+
+{% endblock %}

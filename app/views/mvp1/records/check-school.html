@@ -1,0 +1,131 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+
+
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <h1 class="govuk-heading-l">Check this change of school before submitting</h1>
+
+    {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "School"
+      },
+      value: {
+        text: "School name here"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Address"
+      },
+      value: {
+        html: "72 Guild Street<br>London<br>SE23 6FH"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Contact details"
+      },
+      value: {
+        html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.phillips@example.com</p>'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Add",
+            visuallyHiddenText: "contact details"
+          },
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+    
+
+
+    
+
+    
+
+
+    <form action="document-sent" method="post" novalidate>
+
+      <input type="hidden" name="answers-checked" value="true">
+
+
+      <button class="govuk-button govuk-!-margin-top-5" data-module="govuk-button">
+       Submit change
+      </button>
+
+
+    </form>
+
+    
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+
+</div>
+</div>
+
+{% endblock %}

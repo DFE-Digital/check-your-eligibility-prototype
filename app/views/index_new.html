@@ -1,0 +1,674 @@
+{% extends "layouts/base.html" %}
+
+{% set pageName=" Eligibility checker prototype" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column--three-quarters">
+<h1 class="govuk-heading-l">
+  {{pageName}}
+</h1>
+
+<p>This is the starting page for the eligibility checker prototype</p>
+<h2 class="govuk-heading-s">Information required for usability tests
+<p></p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>Parents Name - [first name, last name]</li>
+  <li>Parents DoB</li>
+  <li>email address - [name@gmail.com]</li>
+  <li>password for one gov - [password]</li>
+  <li>6 digit code - 123456</li>
+  <li>NI number - [KL 123456]</li>
+  <li>AS reference - [KL 123456]</li>
+  <li>Child 1 - name/last name and school and dob</li>
+  <li>Child 2 - name/last name and school and dob</li>
+  </ul>
+</h2>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break">
+
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#research-versions">
+        Research versions
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#prototype-iterations">
+        Prototype Iterations
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#mvp-iterations">
+        Previous Iterations
+      </a>
+    </li>
+  </ul>
+
+<!-------------------Research Iterations------------------->
+<!--------------------------------------------------------->
+<div class="govuk-tabs__panel" id="research-versions">
+<h2 class="govuk-heading-m">Latest research version</h2>
+<p>This will be the most up to date version of the prototype and can be used with users for testing.</p>
+
+<!-----------------Research Prototype Parent----------------->
+<!------Link to the latest version-->
+<h3 class="govuk-heading-m">Prototype Version: MVP 1 - Parent user journey</h3>
+    
+<a href="/current/account/start-now" role="button" draggable="false" class="govuk-button govuk-button-" data-module="govuk-button">
+View family prototype</a>
+
+    
+
+      <h2 class="govuk-heading-s">Research sessions</h2>
+<table class="govuk-table">
+<thead class="govuk-table__head">
+  <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Round</th>
+          <th scope="col" class="govuk-table__header">No of <br>participants</th>
+          <th scope="col" class="govuk-table__header">Research goal</th>
+          <th scope="col" class="govuk-table__header">UR Confidence</th>
+          <th scope="col" class="govuk-table__header">Link to research findings</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">2</td>
+          <td class="govuk-table__cell">4</td>
+          <td class="govuk-table__cell">Testing ...</td>
+          <td class="govuk-table__cell">
+            <span class="govuk-tag govuk-tag--green">High</span>
+          <td class="govuk-table__cell">
+            <a href="#" class="govuk-link rel="noreferrer noopener target="_blank">Research document</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">3</td>
+          <td class="govuk-table__cell">4</td>
+          <td class="govuk-table__cell">Testing ...</td>
+          <td class="govuk-table__cell">
+            <span class="govuk-tag govuk-tag--yellow">Medium</span>
+            <td class="govuk-table__cell">
+              <a href="#" class="govuk-link rel="noreferrer noopener target="_blank">Research document</a>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">4</td>
+          <td class="govuk-table__cell">4</td>
+          <td class="govuk-table__cell">Testing ...</td>
+          <td class="govuk-table__cell">
+            <span class="govuk-tag govuk-tag--red">Low</span>
+            <td class="govuk-table__cell">
+              <a class="govuk-link rel="noreferrer noopener target="_blank">In progress</a>
+        </tr>
+      </tbody>
+    </table>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break">
+<!-----------------Research Prototype School----------------->
+<h3 class="govuk-heading-m">Prototype Version: MVP 1 - School user journey</h3>
+    
+<a href="/current/checker/dashboard" role="button" draggable="false" class="govuk-button govuk-button-" data-module="govuk-button">View school prototype</a>
+
+
+      <h2 class="govuk-heading-s">Research sessions</h2>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Round</th>
+                  <th scope="col" class="govuk-table__header">No of <br>participants</th>
+                  <th scope="col" class="govuk-table__header">UR Confidence</th>
+                  <th scope="col" class="govuk-table__header">Link to research findings</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">2</td>
+                  <td class="govuk-table__cell">4</td>
+                  <td class="govuk-table__cell">
+                    <span class="govuk-tag govuk-tag--yellow">Medium</span>
+                  <td class="govuk-table__cell">
+                    <a href="https://docs.google.com/presentation/d/1h1LhTjfXkoS5G9O2OfW48rPaZY54H48KXF9_rIEhK5Y/edit#slide=id.ge0c95a1ed0_0_130" class="govuk-link rel="noreferrer noopener" target="_blank">Research document
+      </a>
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">3</td>
+                  <td class="govuk-table__cell">5</td>
+                  <td class="govuk-table__cell">
+                    <span class="govuk-tag govuk-tag--yellow">Medium</span>
+                    <td class="govuk-table__cell">
+                      <a href="https://docs.google.com/presentation/d/1XYrMFy0_yr1G7J49WCsii_PAVEEoHPJZFEkUnoNLBNs/edit?usp=sharing" class="govuk-link rel="noreferrer noopener" target="_blank">Research document
+      </a>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">4</td>
+        <td class="govuk-table__cell">4</td>
+        <td class="govuk-table__cell">
+          <span class="govuk-tag govuk-tag--yellow">Medium</span>
+          <td class="govuk-table__cell">
+            <a class="govuk-link rel="noreferrer noopener target="_blank">In progress</a>
+      </tr>
+    </tbody>
+  </table>
+      
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break">
+
+
+<!-----------------Research Prototype LA----------------->
+<h3 class="govuk-heading-m">Prototype Version: MVP 1 - LA user journey</h3>
+
+<a href="/current/checker-la/dashboard" role="button" draggable="false" class="govuk-button govuk-button-" data-module="govuk-button">View school prototype</a>
+
+  <h2 class="govuk-heading-m">Research sessions</h2>
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Round</th>
+              <th scope="col" class="govuk-table__header">No of <br>participants</th>
+              <th scope="col" class="govuk-table__header">UR Confidence</th>
+              <th scope="col" class="govuk-table__header">Link to research findings</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">2</td>
+              <td class="govuk-table__cell">4</td>
+              <td class="govuk-table__cell">
+                <span class="govuk-tag govuk-tag--yellow">Medium</span>
+              <td class="govuk-table__cell">
+                <a href="https://lucid.app/lucidspark/31de0cbe-1c2e-4398-bb21-0be05342e025/edit?view_items=5rRKoSbg0xiq&invitationId=inv_22cf0c09-77f9-4ce6-b882-50254454f20f" class="govuk-link rel="noreferrer noopener" target="_blank">Lucid board of findings
+  </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">3</td>
+              <td class="govuk-table__cell">7</td>
+              <td class="govuk-table__cell">
+                <span class="govuk-tag govuk-tag--green">High</span>
+                <td class="govuk-table__cell">
+                  <a href="#" class="govuk-link rel="noreferrer noopener" target="_blank">Research document
+  </a>
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">4</td>
+    <td class="govuk-table__cell">4</td>
+    <td class="govuk-table__cell">
+      <span class="govuk-tag govuk-tag--yellow">Medium</span>
+      <td class="govuk-table__cell">
+        <a class="govuk-link rel="noreferrer noopener target="_blank">In progress</a>
+  </tr>
+</tbody>
+</table>
+  
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break">
+<!--<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<h2 class="govuk-heading-m">Figma walkthrough </h2>
+<a class="govuk-link" href="#" class="govuk-link rel="noreferrer noopener" target="_blank">Figma prototype (PoC)</a>
+-->
+        </tr>
+      </tbody>
+    </table>
+
+  
+
+<!-------------------Prototype Iterations------------------->
+<!--------------------------------------------------------->
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel" id="prototype-iterations">
+    <h2 class="govuk-heading-m">Prototype iterations</h2>
+
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+<h2 class="govuk-heading-m"><span class="govuk-tag govuk-tag--blue">PRIVATE BETA:</span> Post MVP (work in progress)</h2>
+<h3 class="govuk-heading-s">July 2024 onwards</h3>
+
+{{ govukButton({
+  text: "Parents",
+  href: "#",
+  isStartButton: true
+}) }}
+
+<table class="govuk-table">
+  <!---row header-->
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Screen</th>
+        <th scope="col" class="govuk-table__header">User need</th>
+        <th scope="col" class="govuk-table__header">Sprint</th>
+        <th scope="col" class="govuk-table__header">Status</th>
+        <th scope="col" class="govuk-table__header">Changes</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+     <!---row 1-->
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell"> <a href="#" class="govuk-link rel="noreferrer noopener target="_blank">Start page</a>
+        <td class="govuk-table__cell">4</td>
+        <td class="govuk-table__cell">4</td>
+        <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--grey">Not started</span>
+        <td class="govuk-table__cell">Content changes</td>
+    </tr>
+    <!---row 2-->
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="#" class="govuk-link rel="noreferrer noopener target="_blank">Start page</a>
+      <td class="govuk-table__cell">4</td>
+      <td class="govuk-table__cell">4</td>
+      <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--grey">Not started</span>
+      <td class="govuk-table__cell">Content changes</td>
+  </tr>
+    <!---row 3-->
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="#" class="govuk-link rel="noreferrer noopener target="_blank">Start page</a>
+      <td class="govuk-table__cell">4</td>
+      <td class="govuk-table__cell">4</td>
+      <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--grey">Not started</span>
+      <td class="govuk-table__cell">Content changes</td>
+  </tr>
+  </tbody>
+</table>
+
+<!---------------------------School Prototype--------------------------->
+
+{{ govukButton({
+  text: "Schools",
+  href: "#",
+  isStartButton: true
+}) }}
+
+<table class="govuk-table">
+  <!---row header-->
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Screen</th>
+        <th scope="col" class="govuk-table__header">User need</th>
+        <th scope="col" class="govuk-table__header">Sprint</th>
+        <th scope="col" class="govuk-table__header">Status</th>
+        <th scope="col" class="govuk-table__header">Changes</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+     <!---row 1-->
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell"> <a href="#" class="govuk-link rel="noreferrer noopener target="_blank">Start page</a>
+        <td class="govuk-table__cell">4</td>
+        <td class="govuk-table__cell">4</td>
+        <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">In Progress</span>
+        <td class="govuk-table__cell">Content changes</td>
+    </tr>
+    <!---row 2-->
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell"> <a href="#" class="govuk-link rel="noreferrer noopener target="_blank">Start page</a>
+        <td class="govuk-table__cell">5</td>
+        <td class="govuk-table__cell">4</td>
+        <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">In Progress</span>
+        <td class="govuk-table__cell">Content changes</td>
+    <!---row 3-->
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell"> <a href="#" class="govuk-link rel="noreferrer noopener target="_blank">Start page</a>
+        <td class="govuk-table__cell">5</td>
+        <td class="govuk-table__cell">4</td>
+        <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">In Progress</span>
+        <td class="govuk-table__cell">Content changes</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-----------------LA Prototoype Post MVP ---------------------->
+
+{{ govukButton({
+  text: "Local Authority",
+  href: "#",
+  isStartButton: true
+}) }}
+
+<table class="govuk-table">
+  <!---row header-->
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Screen</th>
+        <th scope="col" class="govuk-table__header">User need</th>
+        <th scope="col" class="govuk-table__header">Sprint</th>
+        <th scope="col" class="govuk-table__header">Status</th>
+        <th scope="col" class="govuk-table__header">Changes</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+     <!---row 1-->
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell"> <a href="#" class="govuk-link rel="noreferrer noopener target="_blank">Start page</a>
+        <td class="govuk-table__cell">4</td>
+        <td class="govuk-table__cell">4</td>
+        <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">In Progress</span>
+        <td class="govuk-table__cell">Content changes</td>
+    </tr>
+    <!---row 2-->
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell"> <a href="#" class="govuk-link rel="noreferrer noopener target="_blank">Start page</a>
+        <td class="govuk-table__cell">5</td>
+        <td class="govuk-table__cell">4</td>
+        <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">In Progress</span>
+        <td class="govuk-table__cell">Content changes</td>
+    <!---row 3-->
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="#" class="govuk-link rel="noreferrer noopener target="_blank">Start page</a>
+      <td class="govuk-table__cell">4</td>
+      <td class="govuk-table__cell">4</td>
+      <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">In Progress</span>
+      <td class="govuk-table__cell">Content changes</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<!---------------------------Error messages----------------->
+
+<h3>Additional screens</h3>
+<h2 class="govuk-heading-s">Error messages - WIP</h2>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a class="govuk-link" href="#">
+  Sorry, there is a problem with the service<span class="govuk-visually-hidden">Start</span></a></li>
+  <li><a class="govuk-link" href="#">
+  Page not found<span class="govuk-visually-hidden">Start</span></a></li>
+  <li><a class="govuk-link" href="#">
+  Incorrect password<span class="govuk-visually-hidden">Start</span></a></li>
+  <li><a class="govuk-link" href="#">
+  Passwords don't match<span class="govuk-visually-hidden">Start</span></a></li>
+  <li><a class="govuk-link" href="#">
+  Wrong format<span class="govuk-visually-hidden">Start</span></a></li>
+  <li><a class="govuk-link" href="#">
+  No password entered<span class="govuk-visually-hidden">Start</span></a></li>
+</ul>
+
+
+<h3 class="govuk-heading-s">Email notifications</h3>
+<ul class="govuk-list">
+  <li><a href="current/emails/notify-parent-new-application">Parent - new application submitted</a></li>
+  <li><a href="current/emails/notify-parent-app-successful">Parent - successful application</a></li>
+<li><a href="current/emails/notify-parent-evidence-rcvd">Parent - evidence received</a></li>
+
+  <li><a href="current/emails/notify-parent-evidence">Parent - more evidence required</a></li>
+  <li><a href="current/emails/notify-school-new">School - new application received</a></li>
+  <li><a href="current/emails/notify-school-approved">School - application approved</a></li>
+  <li><a href="current/emails/notify-la">Council - new query</a></li>
+</ul>
+
+<h3 class="govuk-heading-s">Offline and assisted digital journeys</h3>
+<ul class="govuk-list">
+  <li><a href="#">Parent 1</a></li>
+  <li><a href="#">School 1</a></li>
+  <li><a href="#">Local Authority 1</a></li>
+  <hr class="govuk-section-break govuk-section-break--m">
+
+
+<h3 class="govuk-heading-s">Important</h3>
+<ul class="govuk-list">
+  <li><a href="#">Privacy notice</a></li>
+  <li><a href="#">Accessibility statement</a></li>
+  <li><a href="#">Cookies</a></li>
+</ul>
+
+<hr class="govuk-section-break govuk-section-break--visible govuk-section-break--l">
+<h3>User journeys and additional documents</h3>
+<h2 class="govuk-heading-s">Lucid boards</h2>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a class="govuk-link" href="#">Service blueprint (Lucid boards)</a></li>
+  <li><a class="govuk-link" href="#">User journeys (Lucid boards)</a></li>
+</ul>
+
+
+<hr class="govuk-section-break govuk-section-break--visible govuk-section-break--l">
+<h3 class="govuk-heading-m">Resources</h3>
+<h4 class="govuk-heading-s">Archived  *need to review</h4>
+<ul class="govuk-list">
+  <li><a href="https://lucid.app/lucidspark/b115cd01-0ac7-4730-afb5-f2642cac497e/edit?viewport_loc=24096%2C4857%2C1920%2C905%2C0_0&invitationId=inv_9afffb46-9124-48a0-a911-020aa830cf69">Ideation board (alpha starting point)</a></li>
+  <li><a href="https://lucid.app/lucidspark/0ba178e2-087d-4f4d-9a5d-fec7410fd0c7/edit?viewport_loc=3804%2C-1463%2C6210%2C2928%2C0_0&invitationId=inv_40d6fdd4-620b-4c70-876e-c178860d978f">Alpha roadmap</a></li>
+  <li><a href="https://design-histories.education.gov.uk/check-your-eligibility">Design histories</a></li>
+  <li><a href="https://lucid.app/lucidspark/787b4ce2-8be7-4ac7-b2bd-0e4119920b46/edit?viewport_loc=4599%2C18362%2C2374%2C1119%2C0_0&invitationId=inv_d07de7d0-71dd-4dad-a07d-e8dddd924450">Alpha feedback board</a></li>
+<li><a href="https://lucid.app/lucidspark/e1cc0279-0165-49c0-a00f-f4acd02f9e5d/edit?viewport_loc=68661%2C-1371%2C11096%2C5232%2C0_0&invitationId=inv_cf261987-6f93-4de4-85b4-3fa1f0892bb8">Alpha options</a></li>
+  <li><a href="https://www.figma.com/file/wBFH28Ok1wLMvDjFKFw67E/DfE---EC-Flows---NEW?type=whiteboard&node-id=0%3A1&t=ubAsUcPp1ax791OV-1">Figma - User flows </a></li>
+  <li><a href="">Service user journeys - to be</a></li>
+  <li><a href="https://lucid.app/lucidspark/7693f26c-915e-4212-8d29-458e99fb286e/edit?viewport_loc=12646%2C-2378%2C5760%2C2716%2C0_0&invitationId=inv_8c3810e0-f15a-431d-b918-ae0ad0538c53">Round 1 user reseach findings</a></li>
+<li><a href="https://lucid.app/lucidspark/31de0cbe-1c2e-4398-bb21-0be05342e025/edit?view_items=5rRKoSbg0xiq&invitationId=inv_22cf0c09-77f9-4ce6-b882-50254454f20f">Round 2 user research findings</a></li>
+<li><a href="https://lucid.app/lucidspark/2663578b-4a6e-4abd-bd92-7dc1bcbe8c25/edit?viewport_loc=72771%2C74504%2C6121%2C2886%2C0_0&invitationId=inv_229b9730-70cb-4983-a6a9-aa096528d630">UR analysis all rounds</a></li>
+<li><a href="https://lucid.app/lucidspark/48bcf3ed-c0de-4d1a-8155-e07c9d08316d/edit?viewport_loc=160722%2C95969%2C8677%2C4115%2C0_0&invitationId=inv_7aafb472-fbca-4087-8e87-7d578024f55d">Design history V1</a></li>
+<li><a href="https://lucid.app/lucidspark/7464ef00-abc1-4654-8b31-115a1fcbfee2/edit?invitationId=inv_bfe11609-a5a2-4278-83c4-524f0ed041bf&page=0_0#">MVP feature set</a></li>
+</ul>
+
+</thead>
+</div>
+
+
+<!-------------------MVP1 Iterations------------------->
+<!--------------------------------------------------------->
+<div class="govuk-tabs__panel" id="mvp-iterations">
+  <h2 class="govuk-heading-m">Previous Iterations</h2>
+  <p>These are the latest versions that have gone through to development. <br>All have been fixed as of July 2024.</p>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+    <h2 class="govuk-heading-m"><span class="govuk-tag govuk-tag--blue">PRIVATE BETA:</span> MVP</h2>
+    <caption class="govuk-table__caption govuk-table__caption--l">Beta - MVP 1</caption><h2 class="govuk-heading-m">January - 5th July 2024</h2>
+
+ <!--<p><a href="beta-backlog">Development ready</a></p>-->
+
+<!----------------------MVP------------------------->
+<table class="govuk-table">
+  <!---row header-->
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Prototype</th>
+      <th scope="col" class="govuk-table__header">Version</th>
+      <th scope="col" class="govuk-table__header">Status</th>
+      <th scope="col" class="govuk-table__header">Completed</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">
+
+        <a href="https://dfe-gov-uk.visualstudio.com.mcas.ms/Solutions%20Development/_workitems/edit/150415" target="_blank">Legally required footer pages</a>
+      </td>
+      <td class="govuk-table__cell">
+        v 1.0
+      </td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--green">
+          Signed off
+        </strong>
+      </td>
+
+      <td class="govuk-table__cell">
+        <ol>
+          <li><a href="./current/accessibility">Accessibility statement</a></li>
+          <li><a href="./current/cookies">Cookies page</a></li>
+          <li><a href="./current/privacy">Privacy statement</a></li>
+          <li><a href="./current/terms-and-conditions">Terms and conditions</a></li>
+
+        </ol>
+      </td>
+    </tr>
+
+
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">
+
+        <a href="https://dfe-gov-uk.visualstudio.com.mcas.ms/Solutions%20Development/_workitems/edit/150415" target="_blank">DSI Login</a>
+      </td>
+      <td class="govuk-table__cell">
+        v 1.0
+      </td>
+      
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--green">
+          Signed off
+        </strong>
+      </td>
+
+      <td class="govuk-table__cell">
+        <ol>
+          <li><a href="./current/account/DSI-startnow.html">Start now page</a></li>
+          <li><a href="./current/account/DSI-signin">DfE login</a></li>
+          <li><a href="./current/account/DSI-landingpage">Landing page</a></li>
+
+        </ol>
+      </td>
+    </tr>
+
+    
+
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">
+
+        <a href="https://dfe-gov-uk.visualstudio.com.mcas.ms/Solutions%20Development/_workitems/edit/143476?McasTsid=26110&McasCtx=4">Parent pages</a>
+      </td>
+      <td class="govuk-table__cell">
+        v4
+      </td>
+      
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--green">
+          Signed off
+        </strong>
+      </td>
+
+      <td class="govuk-table__cell">
+        <ol>
+          <li><a href="./current/account/start-now">Start now page</a></li>
+          <li><a href="./current/parent-soft-check/check">Eligibility check</a></li>
+          <li>Outcomes
+            <ul><li><a href="./current/parent-soft-check/eligible">Found - eligible</a></li>
+              <li><a href="./current/parent-soft-check/outcome-not-entitled">Found - not eligible</a></li>
+              <li><a href="./current/parent-soft-check/outcome-could-not-find">Not found</a></li>
+              <li><a href="./current/parent-soft-check/outcome-could-not-find-pending">Not found - pending</a></li>
+              <li><a href="./current/parent-soft-check/outcome-technical-error.html">Technical error</a></li>
+
+              
+            </ul>
+          </li>
+          <li><a href="./current/parent-soft-check/nass-number">NASS number</a></li>
+          <li><a href="./current/parent-soft-check/checking-loader">Checking loader page</a></li>
+
+
+        </ol>
+      </td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">
+
+        <a href="mfa/scenarios">Local authority pages</a>
+      </td>
+      <td class="govuk-table__cell">
+        v 1.0
+      </td>
+      
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--green">
+          Signed off
+        </strong>
+      </td>
+
+      <td class="govuk-table__cell">
+        <ol>
+          <li><a href="./current/checker-la/dashboard">LA Portal home page</a></li>
+
+          <li><a href="./current/checker-la/checker-foster-family">Add a foster family</a></li>
+          <li><a href="./current/checker-la/application-types">Eligibility checker</a></li>
+          <li><a href="./current/batch-checking-la/upload">Batch check eligibility</a></li>
+          <ul>
+            <li><a href="./current/batch-checking-la/batch-check-success">Outcome - Upload successful</a></li>
+            <li><a href="./current/batch-checking-la/batch-error-not-accepted.html">Outcome - Error - File not accepted</a></li>
+            <li><a href="./current/batch-checking-la/batch-error-data-issue.html">Outcome - Error - Student data issue</a></li>
+          </ul></li>
+          <li><a href="./current/checker-la/applications">Eligible familys list</a></li>
+          <li><a href="./current/checker-la/pending-list">Pending applications list</a></li>
+          <ul>
+            <li>Outcomes</li>
+            <li><a href="./current/checker-la/eligible">Outcome - confirmation, found</a></li>
+            <li><a href="./current/checker-la/outcome-not-entitled.html">Outcome - may not be entitled</a></li>
+            <li><a href="./current/checker-la/outcome-could-not-find.html">Outcome - could not find no trace</a></li>
+            <li><a href="./current/checker-la/outcome-could-not-find-pending">Outcome - could not find pending</a></li>
+            <li><a href="./current/checker-la/outcome-technical-error.html">Technical error</a></li>
+
+
+
+          </ul>
+         
+          <li><a href="./current/checker-la/resources">Guidance pages / links</a></li>
+          <li><a href="./current/checker-la/search">Reporting</a></li>
+          <li><a href="./current/checker-la/appeals">Evidence submissions</a></li>
+          <li><a href="./current/checker-la/eligibility-confirmed">Application approved</a></li>
+          <li><a href="./current/checker-la/eligibility-declined">Application declined</a></li>
+
+
+
+        </ol>
+      </td>
+    </tr>
+  
+    <tr class="govuk-table__row">
+      <td scope="row" class="govuk-table__cell">
+
+        <a href="https://dfe-gov-uk.visualstudio.com.mcas.ms/Solutions%20Development/_workitems/edit/143481?McasTsid=26110&McasCtx=4">School pages</a>
+      </td>
+      <td class="govuk-table__cell">
+      V4
+      </td>
+      
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--green">
+          Signed off
+        </strong>
+      </td>
+
+      <td class="govuk-table__cell">
+        <ol type="i">
+          <li><a href="./current/checker/dashboard" target="_blank">Schools portal dashboard</a></li>
+          <li><a href="./current/checker/application-types" target="_blank">Free school meals checker</a>
+            <ul>
+              <li><a href="./current/checker/eligible">Outcome - confirmation, found</a></li>
+              <li><a href="./current/checker/outcome-not-entitled.html">Outcome - may not be entitled</a></li>
+              <li><a href="./current/checker/outcome-could-not-find.html">Outcome - could not find no trace</a></li>
+              <li><a href="./current/checker/outcome-could-not-find-pending">Outcome - could not find pending</a></li>
+              <li><a href="./current/checker/schools-outcome-technical-error.html">Technical error</a></li>
+
+            </ul></li>
+
+          <li><a href="./current/checker/applications" target="_blank">All applications list</a></li>
+          <li><a href="./current/checker/search">Search page</a></li>
+
+          <li><a href="./current/batch-checking/upload">Batch check eligibility</a></li>
+          <ul>
+            <li><a href="./current/batch-checking/batch-check-success">Outcome - Upload successful</a></li>
+            <li><a href="./current/batch-checking/batch-error-not-accepted.html">Outcome - Error - File not accepted</a></li>
+            <li><a href="./current/batch-checking/batch-error-data-issue.html">Outcome - Error - Student data issue</a></li>
+          </ul></li>
+
+          <li><a href="./current/records/add-sibling">Add a sibling</a></li>
+        
+
+        </ol>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<hr class="govuk-section-break govuk-section-break govuk-section-break--l">
+<h2 class="govuk-heading-m"><span class="govuk-tag govuk-tag--orange">DISCO - ALPHA:</span> Versions 1 - 3
+<h4 class="govuk-heading-s">Version 3: Nov - Dec 2023</h4>
+<p><a href="v3">Links to version 3</a></p>
+<h4 class="govuk-heading-s">Version 2: Oct - Nov 2023</h4>
+<p><a href="v2">Links to version 2</a></p>
+<h4 class="govuk-heading-s">Version 1:Sep - Oct 2023</h4>
+<p><a href="v1">Links to version 1</a></p>
+<hr class="govuk-section-break govuk-section-break--visible govuk-section-break--l">
+
+</tbody>
+</table>
+{% endblock %}

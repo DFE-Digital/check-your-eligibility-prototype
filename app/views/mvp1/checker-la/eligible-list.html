@@ -1,0 +1,314 @@
+{% extends "../../current/checker-la/layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+  
+
+
+  
+{% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
+
+{{ mojPageHeaderActions({
+  heading: {
+    text: 'Search results (203)',
+    
+    classes:'govuk-heading-l'
+  },
+  items: [{
+    text: 'Export as csv',
+    classes: 'govuk-button--secondary',
+    href:"file-exported"
+  }
+  ]
+}) }}
+
+<p><a href="search">Search again</a> </p>
+
+   
+
+
+    <div class="govuk-grid-row">
+
+            
+      
+
+      <div class="govuk-grid-column-full">
+
+
+
+
+
+<div class="moj-filter-layout">
+
+ 
+
+  <div class="moj-filter-layout__content">
+
+  
+
+  <div class="moj-scrollable-pane">
+    {{ govukTable({
+      firstCellIsHeader: true,
+      head: [
+        {text: 'Reference'},
+        {text: 'Parent / guardian'},
+        {text: 'Child'},
+        {text: 'Child DOB'},
+
+        {text: 'Eligible from'},
+      
+        {text: 'Status'},
+        {text: 'Submission date'}
+      ],
+      rows: [
+
+      [
+      {html: '<a href="../records/approved" class="govuk-link">44455453</a>'},
+      {html: 'Eden Tesfay'},
+      {html: 'Samual Tesfay'},
+      {html: '12 Jan 2017'},
+      {html: '01 Sep 2023'},
+      
+      {html: govukTag({
+        text: "Entitled",
+        classes: "govuk-tag--green"
+      })},
+      {text: '25 Sep 2023'}
+      ],
+
+        [
+          {html: '<a href="../records/eligible.html" class="govuk-link">12323212</a>'},
+          {html: 'Warren Sutton'},
+          {html: 'Lisa Sutton'},
+          {html: '10 Jan 2017'},
+          {html: '01 Sep 2023'},
+        
+      
+          {html: govukTag({
+            text: "Entitled",
+            classes: "govuk-tag--green"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+
+        [
+          {html: '<a href="#" class="govuk-link">45678765</a>'},
+          {html: 'Alan Jones'},
+          {html: 'Jack Jones'},
+          {html: '10 Jan 2018'},
+          {html: '01 Sep 2023'},
+        
+        
+          {html: govukTag({
+            text: "Evidence needed",
+            classes: "govuk-tag--light-blue"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+
+        [
+          {html: '<a href="#" class="govuk-link">12345678</a>'},
+          {html: 'Jennifer Langley'},
+          {html: 'Tilly Langley'},
+          {html: '03 Dec 2017'},
+          {html: '01 Sep 2023'},
+        
+        
+          {html: govukTag({
+            text: "Sent for review",
+            classes: "govuk-tag--blue"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+
+        [
+          {html: '<a href="#" class="govuk-link">89009800</a>'},
+          {html: 'Susan Francis'},
+          {html: 'Noah Francis'},
+          {html: '13 Dec 2017'},
+          {html: '01 Sep 2023'},
+        
+        
+          {html: govukTag({
+            text: "Reviewed entitled",
+            classes: "govuk-tag--turqoise"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+
+        [
+          {html: '<a href="#" class="govuk-link">44455453</a>'},
+          {html: 'John Smith'},
+          {html: 'Jo Smith'},
+          {html: '11 Dec 2017'},
+          {html: '01 Sep 2023'},
+         
+        
+             {html: govukTag({
+        text: "Reviewed not entitled",
+        classes: "govuk-tag--orange"
+      })},
+      {text: '25 Sep 2023'}
+      ],
+
+        [
+          {html: '<a href="#" class="govuk-link">12323212</a>'},
+          {html: 'Warren Sutton'},
+          {html: 'Harry Sutton'},
+          {html: '09 Dec 2017'},
+          {html: '01 Sep 2023'},
+        
+        
+          {html: govukTag({
+            text: "Receiving entitlement",
+            classes: "govuk-tag--pink"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+
+        [
+          {html: '<a href="#" class="govuk-link">45678765</a>'},
+          {html: 'Alan Jones'},
+          {html: 'Scarlette Jones'},
+          {html: '10 Nov 2017'},
+          {html: '01 Sep 2023'},
+      
+      
+          {html: govukTag({
+            text: "Entitled",
+            classes: "govuk-tag--green"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+
+        [
+          {html: '<a href="#" class="govuk-link">12345678</a>'},
+          {html: 'Jennifer Langley'},
+          {html: 'Hilda Langley'},
+          {html: '22 Nov 2017'},
+       
+          {html: '01 Sep 2023'},
+       
+ 
+          {html: govukTag({
+            text: "Entitled",
+            classes: "govuk-tag--green"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+
+        [
+          {html: '<a href="#" class="govuk-link">89009800</a>'},
+          {html: 'Susan Francis'},
+          {html: 'Ada Francis'},
+          {html: '26 Oct 2017'},
+          {html: '01 Sep 2023'},
+      
+    
+          {html: govukTag({
+            text: "Entitled",
+            classes: "govuk-tag--green"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+
+        [
+          {html: '<a href="#" class="govuk-link">45456765</a>'},
+          {html: 'John Smith'},
+          {html: 'Simon Smith'},
+          {html: '11 Oct 2017'},
+        
+          {html: '01 Sep 2023'},
+       
+
+          {html: govukTag({
+            text: "Entitled",
+            classes: "govuk-tag--green"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+
+        [
+          {html: '<a href="#" class="govuk-link">88675411</a>'},
+          {html: 'Margaret Blake'},
+          {html: 'Margo Blake'},
+          {html: '12 Oct 2017'},
+          {html: '01 Sep 2023'},
+      
+          
+   
+          {html: govukTag({
+            text: "Entitled",
+            classes: "govuk-tag--green"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+        
+        [
+          {html: '<a href="#" class="govuk-link">44455453</a>'},
+          {html: 'John Smith'},
+          {html: 'Jona Smith'},
+          {html: '11 Oct 2017'},
+          {html: '01 Sep 2023'},
+         
+   
+          {html: govukTag({
+            text: "Entitled",
+            classes: "govuk-tag--green"
+          })},
+          {text: '25 Sep 2023'}
+          ]
+      ]
+    }) }}
+  </div>
+</div>
+
+      </div>
+      {%- from "moj/components/pagination/macro.njk" import mojPagination -%}
+
+{{ mojPagination({
+  items: [{
+    text: '1',
+    href: '/page=1'
+  }, {
+    text: '2',
+    href: '/page=2',
+    selected: true
+  }, {
+    text: '3',
+    href: '/page=3'
+  }, {
+    type: 'dots'
+  }, {
+    text: '5',
+    href: '/page=5'
+  }],
+  results: {
+    count: 30,
+    from: 10,
+    to: 20,
+    text: 'pages'
+  },
+  previous: {
+    text: 'Previous',
+    href: ''
+  },
+  next: {
+    text: 'Next',
+    href: ''
+  }
+}) }}
+
+    
+    </div>
+
+  
+  </div>
+</div>
+
+{% endblock %}

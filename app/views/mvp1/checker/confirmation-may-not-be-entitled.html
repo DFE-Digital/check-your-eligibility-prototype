@@ -1,0 +1,109 @@
+{% extends "../../mvp1/checker/layouts/layout-dfe.html" %}
+
+{% set pageName="Outcome not entitled" %}
+
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-m">Appeal - Free school meals</span>
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Children details added</h1>
+        <div class="govuk-panel__body">
+          Added on<br /><strong>6 July 2024, 13:12</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="govuk-!-padding-top-5"></div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-m">You have successfully added children’s details to [Eden Tesfay’s] free school meals application record.</h1>
+    </div>
+  </div>
+</div>
+
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header">Parent or guardian</th>
+          <th class="govuk-table__header">Child</th>
+          <th class="govuk-table__header">Reference</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Eden Tesfay</td>
+          <td class="govuk-table__cell">Samual Tesfay</td>
+          <td class="govuk-table__cell">44455453</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Eden Tesfay</td>
+          <td class="govuk-table__cell">Thomas Tesfay</td>
+          <td class="govuk-table__cell">44455454</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Eden Tesfay</td>
+          <td class="govuk-table__cell">Rachel Tesfay</td>
+          <td class="govuk-table__cell">44455455</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="govuk-!-padding-bottom-3"></div>
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m">What to do next</h2>
+        <p>As these children may not be entitled to free school meals, you’ll now need to send supporting evidence to your local authority for review. 
+          <p>Go to the <a target="_blank" href="guidance"> guidance for reviewing evidence page</a> to see a complete list of acceptable evidence types.</p>
+          
+          <p>To continue the appeaks process, go to <a href="../checker/process-appeals" class="govuk-link">Process appeals</a> and follow the instructions there. </p>
+
+         
+
+           
+          
+      </div>
+    </div>
+</div>
+<!--
+<div class="govuk-!-padding-bottom-3"></div>
+
+<p><a href="../checker/dashboard">Return to dashboard</a></p>
+
+<p><a href="">Sign out</a></p>-->
+
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Return to dashboard",
+    classes: "govuk-button--secondary",
+    href: "../checker/dashboard"
+  }) }}
+
+  <a class="govuk-link" href="#">Sign out</a>
+</div>
+
+
+
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}
