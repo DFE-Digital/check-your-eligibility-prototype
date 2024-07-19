@@ -1,0 +1,223 @@
+{% extends "layouts/layout-dfe.html" %}
+
+
+<!-- {#
+  Override styles on this page and this page only, using the pageStyle block.
+  The contents of the block should be plain css, as the <style> tag is included in
+  the template.
+  {% block pageStyle %}
+  .record-item-input-box {
+    width: 40%;
+  }
+  .govuk-heading-m {
+    color: red;
+  }
+  {% endblock %}
+#} -->
+
+{% block backLink %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+<!-- The content between the heading 1 and the buttons -->
+
+{% block content %}
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+  <div class="govuk-grid-column-full">
+
+
+    <span class="govuk-hint">Eden Tesfay</span>
+
+
+    <div class="moj-page-header-actions">
+
+      <div class="moj-page-header-actions__title">
+        <h1 class="govuk-heading-xl">Application history
+          <span class="govuk-!-margin-left-5"> {{govukTag({
+            text: "Evidence submitted",
+            classes: "govuk-tag--pink"
+            })}}</span>
+        </h1>
+
+      </div>
+    
+      <div class="moj-page-header-actions__actions">
+    
+        <div class="moj-button-menu">
+          <div class="moj-button-menu__wrapper">
+    
+            <button class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button">
+              Transfer school
+            </button>
+    
+          
+    
+          </div>
+        </div>
+    
+      </div>
+    
+    </div>
+    
+    
+
+
+
+
+
+
+  
+
+      {%- from "moj/components/ticket-panel/macro.njk" import mojTicketPanel -%}
+
+      {{ mojTicketPanel({
+      attributes: {
+      'aria-label': 'Decision panel'
+      },
+      items: [
+      {
+      html: '
+      
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Reference number: 44455453</h2>
+      <p class="govuk-body">Ensure all supporting evidence has been reviewed prior to making a decision.</p>
+
+      <form action="supporting-evidence" method="post" novalidate>
+
+        <input type="hidden" name="approve-application" value="yes">
+
+
+      <button class="govuk-button" data-module="govuk-button">
+        Review application
+      </button>
+
+  ',
+      attributes: {
+      'aria-label': 'Section 1'
+      },
+      classes: 'moj-ticket-panel__content--blue'
+      }]
+      }) }}
+
+
+   
+    </form>
+
+
+
+
+  </div>
+
+</div>
+
+
+
+
+{%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
+
+{{ mojSubNavigation({
+  label: 'Sub navigation',
+  items: [{
+    text: 'Overview',
+    href: 'new-appeal'
+    
+  }, {
+    text: 'Supporting evidence',
+    href: 'appeal-docs',
+    active: true
+  }
+  ]
+}) }}
+<h2 class="govuk-heading-l govuk-!-margin-bottom govuk-!-font-size-36">Evidence submitted</h2>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form id="cop-form" action="tasklist-1" method="post" novalidate>
+
+    
+
+    
+
+
+      <div class="container">
+        <div>
+          <div>
+          
+          </div>
+          <br>
+          <br>
+          <div style="width:90%">
+            <div id="caption" class="caption-container">
+
+            </div>
+
+            <div class="mySlides">
+              <iframe src="/public/pdf/fsm-application.pdf" width="100%" height="800px"></iframe>
+            </div>
+            
+
+
+          </div>
+
+        </div>
+      </div>
+
+      <br>
+      <br>
+
+      
+
+      
+
+      
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+{% block pageScripts %}
+<!-- Add any javascript files here. Include javascript files only on the pages
+that need them. Excessive javascript files loaded on other pages may slow down
+the response times of the prototype. -->
+<script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+  showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+  showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  //let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  //captionText.innerHTML = "<a href='/public/images/digitise-penalties/"+dots[slideIndex-1].alt +"' class='govuk-link govuk-link--inverse' target='_blank'>"+dots[slideIndex-1].alt + " (Open in new tab)</a>";
+  }
+  </script>
+{% endblock %}

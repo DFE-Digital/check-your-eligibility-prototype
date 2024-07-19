@@ -1,0 +1,51 @@
+{% extends "../../current/checker-la/layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">
+    View and run reports
+    </h1>
+    <p class="govuk-body-m HO-uk-margin-bottom-5">
+      Search and run reports for eligible children
+    </p>
+  </div>
+</div>
+
+
+{% endblock %}
+{% block pageScripts %}
+<!-- Add any javascript files here. Include javascript files only on the pages
+that need them. Excessive javascript files loaded on other pages may slow down
+the response times of the prototype. -->
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+
+<script type="text/javascript">
+  if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
+  new MOJFrontend.MultiFileUpload({
+    container: $(".moj-multi-file-upload"),
+    uploadUrl: "/ajax-upload",
+    deleteUrl: "/ajax-delete",
+  });
+}
+</script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

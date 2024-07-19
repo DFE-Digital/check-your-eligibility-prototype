@@ -2,7 +2,6 @@
 // For guidance on how to create routes see:
 // https://prototype-kit.service.gov.uk/docs/create-routes
 //
-
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
@@ -65,9 +64,9 @@ router.get('*', function (req, res, next) {
 
  next()
 })
-////////////
-// LOCAL FOLDER ROUTES
-/////////
+/////////////////////////
+// LOCAL FOLDER ROUTES //
+/////////////////////////
 
 const radioButtonRedirect = require('radio-button-redirect')
 router.use(radioButtonRedirect)
@@ -77,12 +76,12 @@ require('./views/current/_routes');
 
 // V1 
 // Include version 1 routes
-
 require('./views/v1/_routes');
 
 module.exports = router;
 
 
+////////////////////////CURRENT//////////////////////////////////
 
 // Nationality
 router.post('/nationality-answer', function (req, res) {
@@ -247,11 +246,10 @@ router.post('/council-nass-number-answer', function (req, res) {
   
   })
 
-
    // Soft CHECKER
 router.post('/soft-check-ni-answer', function (req, res) {
 
-  // Make a variable 
+ //Make a variable 
   var nassNumber = req.session.data['ni-number']
 
   // Check whether the variable matches a condition
@@ -265,8 +263,44 @@ router.post('/soft-check-ni-answer', function (req, res) {
 
 })
 
-   // Soft CHECKER
-   router.post('/soft-check-nass-answer', function (req, res) {
+////////////////////////////////mvp1///////////////////////////////
+
+// Nationality
+router.post('/nationality-answer', function (req, res) {
+
+  // Make a variable 
+  var whatNationality = req.session.data['what-nationality']
+
+  // Check whether the variable matches a condition
+  if (whatNationality == "british"){
+    // Send user to next page
+    res.redirect('/mvp1/checker-parent/national-insurance')
+  } else {
+    // Send user to other page
+    res.redirect('/mvp1/checker-parent/asylum-seeker')
+  }
+
+})
+
+// Asylum number
+router.post('/asylum-answer', function (req, res) {
+
+  // Make a variable 
+  var seekingAsylum = req.session.data['seeking-asylum']
+
+  // Check whether the variable matches a condition
+  if (seekingAsylum == "yes"){
+    // Send user to next page
+    res.redirect('/mvp1/checker-parent/nass-number')
+  } else {
+    // Send user to other page
+    res.redirect('/mvp1/checker-parent/more-info-required-asylum')
+  }
+
+})
+
+  // NASS number
+  router.post('/nass-number-answer', function (req, res) {
 
     // Make a variable 
     var nassNumber = req.session.data['nass-number']
@@ -274,10 +308,139 @@ router.post('/soft-check-ni-answer', function (req, res) {
     // Check whether the variable matches a condition
     if (nassNumber == "yes"){
       // Send user to next page
-      res.redirect('/current/parent-soft-check/more-info-required-asylum')
+      res.redirect('/mvp1/checker-parent/childs-age')
     } else {
       // Send user to other page
-      res.redirect('/current/parent-soft-check/ineligible')
+      res.redirect('/mvp1/checker-parent/more-info-required-asylum')
     }
   
   })
+
+   // NI number
+   router.post('/ni-number-answer', function (req, res) {
+
+    // Make a variable 
+    var nassNumber = req.session.data['ni-number']
+  
+    // Check whether the variable matches a condition
+    if (nassNumber == "yes"){
+      // Send user to next page
+      res.redirect('/mvp1/checker-parent/childs-age')
+    } else {
+      // Send user to other page
+      res.redirect('/mvp1/checker-parent/nass-number')
+    }
+  
+  })
+
+
+// SCHOOLS AND COUNCIL JOURNEYS
+//
+
+
+// Nationality / CHECKER /
+router.post('/council-checker-nationality-answer', function (req, res) {
+
+// Make a variable 
+var whatNationality = req.session.data['what-nationality']
+
+// Check whether the variable matches a condition
+if (whatNationality == "british"){
+  // Send user to next page
+  res.redirect('/mvp1/checker/national-insurance')
+} else {
+  // Send user to other page
+  res.redirect('/mvp1/checker/asylum-seeker')
+}
+
+})
+
+
+// Asylum number CHECKER
+router.post('/council-checker-asylum-answer', function (req, res) {
+
+  // Make a variable 
+  var seekingAsylum = req.session.data['seeking-asylum']
+
+  // Check whether the variable matches a condition
+  if (seekingAsylum == "yes"){
+    // Send user to next page
+    res.redirect('/mvp1/checker/nass-number')
+  } else {
+    // Send user to other page
+    res.redirect('/mvp1/checker/check-answers')
+  }
+
+})
+
+
+
+// NASS number CHECKER
+router.post('/council-nass-number-answer', function (req, res) {
+
+  // Make a variable 
+  var nassNumber = req.session.data['nass-number']
+
+  // Check whether the variable matches a condition
+  if (nassNumber == "yes"){
+    // Send user to next page
+    res.redirect('/mvp1/checker/childs-age')
+  } else {
+    // Send user to other page
+    res.redirect('/mvp1/checker/ineligible')
+  }
+
+})
+
+
+ // NI number CHECKER
+ router.post('/council-ni-number-answer', function (req, res) {
+
+  // Make a variable 
+  var nassNumber = req.session.data['ni-number']
+
+  // Check whether the variable matches a condition
+  if (nassNumber == "yes"){
+    // Send user to next page
+    res.redirect('/mvp1/checker/childs-age')
+  } else {
+    // Send user to other page
+    res.redirect('/mvp1/checker/nass-number')
+  }
+
+})
+
+//
+  // NI number
+  router.post('/ni-number-check', function (req, res) {
+
+    // Make a variable 
+    var nassNumber = req.session.data['ni-number']
+  
+    // Check whether the variable matches a condition
+    if (nassNumber == "yes"){
+      // Send user to next page
+      res.redirect('/mvp1/parent-soft-check/eligible')
+    } else {
+      // Send user to other page
+      res.redirect('/mvp1/parent-soft-check/nass-number')
+    }
+  
+  })
+
+   /// Soft CHECKER
+router.post('/soft-check-ni-answer', function (req, res) {
+
+  // Make a variable 
+  var nassNumber = req.session.data['ni-number']
+
+  // Check whether the variable matches a condition
+ if (nassNumber == "yes"){
+    // Send user to next page
+    res.redirect('/mvp1/parent-soft-check/checking-loader')
+  } else {
+    // Send user to other page
+   res.redirect('/mvp1/parent-soft-check/nass-number')
+ }
+
+})

@@ -1,0 +1,53 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% set applicationSent %}
+<h3 class="govuk-notification-banner__heading">
+  Application sent
+  </h3>
+  <p class="govuk-body">
+    You have sent your application for free school meals. It may take upto 1 week to process.
+  </p>
+  <p>Your reference is 1234567</p>
+{% endset %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {% if data['answers-checked'] =="true" %}
+{{ govukNotificationBanner({
+  html: applicationSent,
+  type: 'success'
+}) }}
+
+{% endif %}
+
+
+    <h1 class="govuk-heading-l">
+      
+      Terms and conditions
+    </h1>
+
+
+    <div class="govuk-grid-row">
+
+            
+      <div class="govuk-grid-column-full">
+        
+
+
+
+
+        
+      </div>  
+    
+    </div>
+
+  
+  </div>
+</div>
+
+{% endblock %}
