@@ -1,16 +1,21 @@
-{% extends "layouts/layout-dfe.html" %} {% set pageName="Home" %} {% setapplicationSent %}
-<h3 class="govuk-notification-banner__heading">Application sent</h3>
-<p class="govuk-body">
-  You have sent your application for free school meals. It may take upto 1 week
-  to process.
-</p>
-<p>Your reference is 1234567</p>
-{% endset %} {% block content %}
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Privacy notice" %}
+
+{% set applicationSent %}
+<h3 class="govuk-notification-banner__heading">
+  Application sent
+  </h3>
+  <p class="govuk-body">
+    You have sent your application for free school meals. It may take upto 1 week to process.
+  </p>
+  <p>Your reference is 1234567</p>
+{% endset %}
+
+{% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-    
     <h1 class="govuk-heading-xl">Privacy Notice</h1>
     <h2 class="govuk-heading-l">Who we are</h2>
     <p>
@@ -39,11 +44,6 @@
     <p>
       When you use this service, we will use any personal information you give us for administration and research purposes.
     </p>
-   <!--<p>
-      The Entitlement checker is a Department for Education (DfE) digitalservice. This means the DfE is the data controller for the Entitlement checker, and so decides how and why any personal data is processed, including by third parties on our behalf.
-    </p>-->
-
-
 
     <h2 class="govuk-heading-l">What personal data we use</h2>
     <p>
@@ -89,7 +89,6 @@
    <a href="https://www.gov.uk/government/publications/privacy-information-key-stage-4-and-5-and-adult-education/privacy-information-key-stage-4-and-5-and-adult-education">key stage 4 and 5 and adult education </a>
   </li>
 </ul>
-
 <h2 class="govuk-heading-l">How we use your data</h2>
 <p>
   We will use your personal information to:
@@ -255,9 +254,7 @@
   <li>
     <a href="https://policies.google.com/technologies/partner-sites">Google analytics</a>
   </li>
-  
 </ul>
-
 <p>We will store this information in a way that it cannot be used to identify you. </p>
 
 <h2 class="govuk-heading-l">Last updated</h2>
@@ -271,44 +268,6 @@
 <p>
   Get more information about the <a href="https://www.gov.uk/government/organisations/department-for-education">Department for Education.</a> 
 </p>
-=======
-    <h1 class="govuk-heading-l">Privacy notice</h1>
-
-    <h2>Who we are</h2>
-    <p>
-      This service is run by the Department of Education. 
-    </p>
-    <p>
-      We will use the information you give us according to <a href="https://www.gov.uk/government/organisations/department-for-education/about/personal-information-charter">DfE personal information charter</a>
-    </p>
-    <p>
-      This privacy policy relates to the information we collect and store about
-      you as an Entitlement checker user. It is therefore relevant to parents
-      and/or guardians using the service, and also to any children you may be
-      checking or applying for.
-    </p>
-
-    <p>
-      It does not relate to the privacy of users elsewhere in the entitlement
-      checking and applying process, where other privacy statements may apply.
-    </p>
-    <p>We will email you if we update our privacy policy.</p>
-
-    <h2>Personal data standards – as a DfE service</h2>
-    <p>
-      The Entitlement checker is a Department for Education (DfE) digital
-      service. This means the DfE is the data controller for the Entitlement
-      checker, and so decides how and why any personal data is processed,
-      including by third parties on our behalf.
-    </p>
-
-    <p>
-      You can read the DfE Personal information charter for more information
-      about the standards DfE adheres to when we collect, hold or use your
-      and/or your child’s personal data.
-    </p>
-
-    <h3>Data we collect from you</h3>
   </div>
 </div>
 {% endblock %}
