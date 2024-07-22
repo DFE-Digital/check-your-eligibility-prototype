@@ -250,15 +250,15 @@ router.post('/council-nass-number-answer', function (req, res) {
 router.post('/soft-check-ni-answer', function (req, res) {
 
  //Make a variable 
-  var nassNumber = req.session.data['ni-number']
+ var nassNumber = req.session.data['ni-number']
 
   // Check whether the variable matches a condition
   if (nassNumber == "yes"){
     // Send user to next page
-    res.redirect('/current/parent-soft-check/checking-loader')
+  res.redirect('/current/parent-soft-check/checking-loader')
   } else {
     // Send user to other page
-    res.redirect('/current/parent-soft-check/nass-number')
+   res.redirect('/current/parent-soft-check/nass-number')
   }
 
 })
@@ -429,11 +429,9 @@ router.post('/council-nass-number-answer', function (req, res) {
   })
 
    /// Soft CHECKER
-router.post('/soft-check-ni-answer', function (req, res) {
-
+router.post('/mvp1-soft-check-ni-answer', function (req, res) {
   // Make a variable 
   var nassNumber = req.session.data['ni-number']
-
   // Check whether the variable matches a condition
  if (nassNumber == "yes"){
     // Send user to next page
@@ -442,5 +440,189 @@ router.post('/soft-check-ni-answer', function (req, res) {
     // Send user to other page
    res.redirect('/mvp1/parent-soft-check/nass-number')
  }
+})
+
+router
+
+
+
+////////////////////////////////mvp2///////////////////////////////
+
+// Nationality
+router.post('/nationality-answer', function (req, res) {
+
+  // Make a variable 
+  var whatNationality = req.session.data['what-nationality']
+
+  // Check whether the variable matches a condition
+  if (whatNationality == "british"){
+    // Send user to next page
+    res.redirect('/mvp2/checker-parent/national-insurance')
+  } else {
+    // Send user to other page
+    res.redirect('/mvp2/checker-parent/asylum-seeker')
+  }
 
 })
+
+// Asylum number
+router.post('/asylum-answer', function (req, res) {
+
+  // Make a variable 
+  var seekingAsylum = req.session.data['seeking-asylum']
+
+  // Check whether the variable matches a condition
+  if (seekingAsylum == "yes"){
+    // Send user to next page
+    res.redirect('/mvp2/checker-parent/nass-number')
+  } else {
+    // Send user to other page
+    res.redirect('/mvp2/checker-parent/more-info-required-asylum')
+  }
+
+})
+
+  // NASS number
+  router.post('/nass-number-answer', function (req, res) {
+
+    // Make a variable 
+    var nassNumber = req.session.data['nass-number']
+  
+    // Check whether the variable matches a condition
+    if (nassNumber == "yes"){
+      // Send user to next page
+      res.redirect('/mvp2/checker-parent/childs-age')
+    } else {
+      // Send user to other page
+      res.redirect('/mvp2/checker-parent/more-info-required-asylum')
+    }
+  
+  })
+
+   // NI number
+   router.post('/ni-number-answer', function (req, res) {
+
+    // Make a variable 
+    var nassNumber = req.session.data['ni-number']
+  
+    // Check whether the variable matches a condition
+    if (nassNumber == "yes"){
+      // Send user to next page
+      res.redirect('/mvp2/checker-parent/childs-age')
+    } else {
+      // Send user to other page
+      res.redirect('/mvp2/checker-parent/nass-number')
+    }
+  
+  })
+
+
+// SCHOOLS AND COUNCIL JOURNEYS
+//
+
+
+// Nationality / CHECKER /
+router.post('/council-checker-nationality-answer', function (req, res) {
+
+// Make a variable 
+var whatNationality = req.session.data['what-nationality']
+
+// Check whether the variable matches a condition
+if (whatNationality == "british"){
+  // Send user to next page
+  res.redirect('/mvp2/checker/national-insurance')
+} else {
+  // Send user to other page
+  res.redirect('/mvp2/checker/asylum-seeker')
+}
+
+})
+
+
+// Asylum number CHECKER
+router.post('/council-checker-asylum-answer', function (req, res) {
+
+  // Make a variable 
+  var seekingAsylum = req.session.data['seeking-asylum']
+
+  // Check whether the variable matches a condition
+  if (seekingAsylum == "yes"){
+    // Send user to next page
+    res.redirect('/mvp2/checker/nass-number')
+  } else {
+    // Send user to other page
+    res.redirect('/mvp2/checker/check-answers')
+  }
+
+})
+
+
+
+// NASS number CHECKER
+router.post('/council-nass-number-answer', function (req, res) {
+
+  // Make a variable 
+  var nassNumber = req.session.data['nass-number']
+
+  // Check whether the variable matches a condition
+  if (nassNumber == "yes"){
+    // Send user to next page
+    res.redirect('/mvp2/checker/childs-age')
+  } else {
+    // Send user to other page
+    res.redirect('/mvp2/checker/ineligible')
+  }
+
+})
+
+
+ // NI number CHECKER
+ router.post('/council-ni-number-answer', function (req, res) {
+
+  // Make a variable 
+  var nassNumber = req.session.data['ni-number']
+
+  // Check whether the variable matches a condition
+  if (nassNumber == "yes"){
+    // Send user to next page
+    res.redirect('/mvp2/checker/childs-age')
+  } else {
+    // Send user to other page
+    res.redirect('/mvp2/checker/nass-number')
+  }
+
+})
+
+//
+  // NI number
+  router.post('/ni-number-check', function (req, res) {
+
+    // Make a variable 
+    var nassNumber = req.session.data['ni-number']
+  
+    // Check whether the variable matches a condition
+    if (nassNumber == "yes"){
+      // Send user to next page
+      res.redirect('/mvp2/parent-soft-check/eligible')
+    } else {
+      // Send user to other page
+      res.redirect('/mvp2/parent-soft-check/nass-number')
+    }
+  
+  })
+
+   /// Soft CHECKER
+router.post('/mvp2-soft-check-ni-answer', function (req, res) {
+  // Make a variable 
+  var nassNumber = req.session.data['ni-number']
+  // Check whether the variable matches a condition
+ if (nassNumber == "yes"){
+    // Send user to next page
+    res.redirect('/mvp2/parent-soft-check/checking-loader')
+  } else {
+    // Send user to other page
+   res.redirect('/mvp2/parent-soft-check/nass-number')
+ }
+})
+
+router

@@ -1,0 +1,110 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% set applicationSent %}
+<h3 class="govuk-notification-banner__heading">
+  Based on your details, your children are eligible
+</h3>
+<p class="govuk-body-m">You need to register with the school so that your children can get free school meals.</p>
+
+{% endset %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {% if data['answers-checked'] =="true" %}
+    {{ govukNotificationBanner({
+    html: applicationSent,
+    type: 'success'
+    }) }}
+
+    {% endif %}
+
+
+    <div class="govuk-grid-row">
+
+            
+      <div class="govuk-grid-column-one-half">
+      
+      
+
+        {{ govukRadios({
+        
+          name: "changedName",
+          fieldset: {
+            legend: {
+              text: "Do you want to register now?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          
+        },
+   
+        hint: {
+          text: "Your details are only used to register and will not be stored"
+        },
+        
+          items: [
+            {
+              value: "yes",
+              text: "Yes, send my details to the school"
+            },
+            {
+              value: "no",
+              text: "    No, I understand my children will not get free school meals"
+            }
+          ]
+        }) }}
+
+
+
+        <form action="application-sent" method="post" novalidate>
+      
+          <input type="hidden" name="answers-checked" value="true">
+  
+          {{ govukButton({
+            text: "Continue",
+            classes:'govuk-!-margin-top-5'
+          }) }}
+
+          <p><a href="">Save details for later</a></p>
+  
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+        
+      </div>  
+    
+    </div>
+
+  
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+
+{% endblock %}

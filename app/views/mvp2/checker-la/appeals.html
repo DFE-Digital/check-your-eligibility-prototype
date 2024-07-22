@@ -1,0 +1,371 @@
+{% extends "../../mvp1/checker-la/layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <span class="govuk-hint">Your local authority</span>
+    {% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
+    
+    {{ mojPageHeaderActions({
+      heading: {
+        text: 'Evidence submissions',
+        classes:'govuk-heading-l'
+      },
+      items: [{
+        text: 'Export as csv',
+        classes: 'govuk-button--secondary'
+      }
+      ]
+    }) }}
+
+  
+
+    
+
+
+    <div class="govuk-grid-row">
+
+            
+      
+
+      <div class="govuk-grid-column-full">
+
+
+
+{% set filterOptionsHtml %}
+
+
+
+{{ govukRadios({
+  classes: "govuk-radios--small",
+  name: "changedName",
+  fieldset: {
+    legend: {
+      text: "Dates",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "Current month to date",
+      text: "Current month to date"
+    },
+    {
+      value: "Last 3 months",
+      text: "Last 3 months"
+    },
+    {
+      value: "Last 6 months",
+      text: "Last 6 months"
+    }
+  ]
+}) }}
+
+
+{% include "../includes/schools.html" %}
+
+
+  {{ govukCheckboxes({
+    idPrefix: 'type',
+    name: 'type',
+    classes: "govuk-checkboxes--small",
+    fieldset: {
+      legend: {
+        text: 'Type',
+        classes: 'govuk-fieldset__legend--m'
+      }
+    },
+    items: [
+      {
+        value: '1',
+        text: 'Free school meals (22)',
+        checked: true
+      },
+    
+      {
+        value: '2',
+        text: 'Early years pupil premium ',
+        checked: false
+      },
+
+      {
+        value: '2',
+        text: 'Free childcare 2yr olds',
+        checked: false
+      }
+
+    ]
+  }) }}
+
+
+{% endset %}
+
+
+<div class="moj-filter-layout">
+
+  <div class="moj-filter-layout__filter">
+
+    {{ mojFilter({
+      heading: {
+      text: 'Filter'
+      },
+      selectedFilters: {
+
+      heading: {
+        text: 'Selected filters'
+      },
+
+      clearLink: {
+        text: 'Clear filters'
+      },
+
+      categories: [
+
+       {
+          heading: {
+            text: 'Date range'
+          },
+          items: [{
+            href: '#',
+            text: 'Current period'
+          }
+          ]
+        },
+
+
+        {
+          heading: {
+            text: 'School'
+          },
+          items: [{
+            href: '#',
+            text: 'St Marys'
+          }
+          ]
+        },
+
+
+        {
+
+          heading: {
+            text: 'Type'
+          },
+
+          items: [
+          
+          {
+            href: '#',
+            text: 'Free school meals'
+          }
+
+        
+          
+          ]
+          
+        }
+      ]
+    },
+      optionsHtml: filterOptionsHtml
+    }) }}
+
+  </div>
+
+  <div class="moj-filter-layout__content">
+
+  
+
+  <div class="moj-scrollable-pane">
+
+    {{ govukTable({
+      firstCellIsHeader: false,
+      head: [
+        {text: 'School'},
+        {text: 'Carer'},
+        {text: 'Child'},
+        {text: 'Type'},
+        {text: 'Date submitted'},
+        {text: ''}
+      ],
+      rows: [
+        [
+         {text:'St Marys CofE'},
+          {text: 'Eden Tesfay'},
+          {text: 'Samual Tesfay'},
+          {text: 'Free school meals'},
+          {text: '25 Sep 2023'},
+          {html: '<a href="../records/new-appeal">View</a>'}
+        ],
+
+
+
+
+
+        [
+          {html: 'St Marys CofE'},
+          {html: 'Warren Sutton'},
+          {html: 'Alfie Sutton'},
+          {text: 'Free school meals'},
+          {text: '25 Sep 2023'},
+           {html: '<a href="../records/new-appeal">View</a>'}
+        
+        ],
+        [
+          {html: 'St Marys CofE'},
+          {html: 'Alan Jones'},
+          {html: 'Alan Jones'},
+          {text: 'Free school meals'},
+          {text: '25 Sep 2023'},
+          
+           {html: '<a href="../records/new-appeal">View</a>'}
+        ],
+        [
+          {html: 'St Marys CofE'},
+          {html: 'Jennifer Langley'},
+          {html: 'Jennifer Langley'},
+          {text: 'Free school meals'},
+          {text: '25 Sep 2023'},
+            {html: '<a href="../records/new-appeal">View</a>'}
+          
+        ],
+        [
+          {html: 'St Marys CofE'},
+          {html: 'Susan Francis'},
+          {html: 'Susan Francis'},
+          {text: 'Free school meals'},
+          {text: '25 Sep 2023'},
+          
+           {html: '<a href="../records/new-appeal">View</a>'}
+        ],
+        [
+          {html: 'St Marys CofE'},
+          {html: 'John Smith'},
+          {html: 'John Smith'},
+          {text: 'Free school meals'},
+          {text: '25 Sep 2023'},
+            {html: '<a href="../records/new-appeal">View</a>'}
+        
+        ],
+        [
+        {html: 'St Marys CofE'},
+          {html: 'Warren Sutton'},
+          {html: 'Warren Sutton'},
+          {text: 'Free school meals'},
+          {text: '25 Sep 2023'},
+            {html: '<a href="../records/new-appeal">View</a>'}
+         
+        ],
+        [
+        {html: 'St Marys CofE'},
+          {html: 'Alan Jones'},
+          {html: 'Alan Jones'},
+          {text: 'Free school meals'},
+          {text: '25 Sep 2023'},
+            {html: '<a href="../records/new-appeal">View</a>'}
+         
+        ],
+        [
+        {html: 'St Marys CofE'},
+          {html: 'Jennifer Langley'},
+          {html: 'Jennifer Langley'},
+
+          {text: 'Free school meals'},
+          {text: '25 Sep 2023'},
+            {html: '<a href="../records/new-appeal">View</a>'}
+          
+        ],
+        [
+        {html: 'St Marys CofE'},
+          {html: 'Susan Francis'},
+          {html: 'Susan Francis'},
+          {text: 'Free school meals'},
+          {text: '25 Sep 2023'},
+            {html: '<a href="../records/new-appeal">View</a>'}
+          
+        ],
+        [
+        {html: 'St Marys CofE'},
+          {html: 'John Smith'},
+          {html: 'John Smith'},
+          {text: 'Free school meals'},
+          {text: '25 Sep 2023'},
+            {html: '<a href="../records/new-appeal">View</a>'}
+        
+        ],
+        [
+        {html: 'St Marys CofE'},
+          {html: 'Margaret Blake'},
+          {html: 'Margaret Blake'},
+          {text: 'Free school meals'},
+          {text: '25 Sep 2023'},
+            {html: '<a href="../records/new-appeal">View</a>'}
+        
+        ],
+        [
+        {html: 'St Marys CofE'},
+          {html: 'John Smith'},
+          {html: 'John Smith'},
+          {text: 'Free school meals'},
+          {text: '25 Sep 2023'},
+            {html: '<a href="../records/new-appeal">View</a>'}
+          
+        ],
+        [
+        {html: 'St Marys CofE'},
+          {html: 'Warren Sutton'},
+          {html: 'Warren Sutton'},
+          {text: 'Free school meals'},
+          {text: '25 Sep 2023'},
+            {html: '<a href="../records/new-appeal">View</a>'}
+          
+        ],
+        [
+        {html: 'St Marys CofE'},
+          {html: 'Alan Jones'},
+          {html: 'Alan Jones'},
+          {text: 'Free school meals'},
+          {text: '25 Sep 2023'},
+            {html: '<a href="../records/new-appeal">View</a>'}
+          
+        ],
+        [
+        {html: 'St Marys CofE'},
+          {html: 'Jennifer Langley'},
+          {html: 'Jennifer Langley'},
+          {text: 'Free school meals'},
+          {text: '25 Sep 2023'},
+            {html: '<a href="../records/new-appeal">View</a>'}
+        
+        ]
+      ]
+    }) }}
+  </div>
+</div>
+
+      </div>
+
+      
+    
+    </div>
+
+    
+
+  
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/autocomplete.js"></script>
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    selectElement: document.querySelector('#school-picker')
+  })
+</script>
+{% endblock %}

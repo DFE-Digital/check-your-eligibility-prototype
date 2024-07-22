@@ -60,7 +60,7 @@
 <!------Link to the latest version-->
 <h3 class="govuk-heading-m">Prototype Version: MVP 1 - Parent user journey</h3>
     
-<a href="/current/account/start-now" role="button" draggable="false" class="govuk-button govuk-button-" data-module="govuk-button">
+<a href="/mvp1/account/start-now" role="button" draggable="false" class="govuk-button govuk-button-" data-module="govuk-button">
 View family prototype</a>
 
     
@@ -112,7 +112,7 @@ View family prototype</a>
 <!-----------------Research Prototype School----------------->
 <h3 class="govuk-heading-m">Prototype Version: MVP 1 - School user journey</h3>
     
-<a href="/current/checker/dashboard" role="button" draggable="false" class="govuk-button govuk-button-" data-module="govuk-button">View school prototype</a>
+<a href="/mvp1/checker/dashboard" role="button" draggable="false" class="govuk-button govuk-button-" data-module="govuk-button">View school prototype</a>
 
 
       <h2 class="govuk-heading-s">Research sessions</h2>
@@ -121,6 +121,7 @@ View family prototype</a>
           <tr class="govuk-table__row">
                   <th scope="col" class="govuk-table__header">Round</th>
                   <th scope="col" class="govuk-table__header">No of <br>participants</th>
+                  <th scope="col" class="govuk-table__header">Research goal</th>
                   <th scope="col" class="govuk-table__header">UR Confidence</th>
                   <th scope="col" class="govuk-table__header">Link to research findings</th>
                 </tr>
@@ -129,6 +130,7 @@ View family prototype</a>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">2</td>
                   <td class="govuk-table__cell">4</td>
+                  <td class="govuk-table__cell">Testing ...</td>
                   <td class="govuk-table__cell">
                     <span class="govuk-tag govuk-tag--yellow">Medium</span>
                   <td class="govuk-table__cell">
@@ -139,6 +141,7 @@ View family prototype</a>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">3</td>
                   <td class="govuk-table__cell">5</td>
+                  <td class="govuk-table__cell">Testing ...</td>
                   <td class="govuk-table__cell">
                     <span class="govuk-tag govuk-tag--yellow">Medium</span>
                     <td class="govuk-table__cell">
@@ -147,6 +150,7 @@ View family prototype</a>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">4</td>
         <td class="govuk-table__cell">4</td>
+        <td class="govuk-table__cell">Testing ...</td>
         <td class="govuk-table__cell">
           <span class="govuk-tag govuk-tag--yellow">Medium</span>
           <td class="govuk-table__cell">
@@ -161,7 +165,7 @@ View family prototype</a>
 <!-----------------Research Prototype LA----------------->
 <h3 class="govuk-heading-m">Prototype Version: MVP 1 - LA user journey</h3>
 
-<a href="/current/checker-la/dashboard" role="button" draggable="false" class="govuk-button govuk-button-" data-module="govuk-button">View school prototype</a>
+<a href="/mvp1/checker-la/dashboard" role="button" draggable="false" class="govuk-button govuk-button-" data-module="govuk-button">View LA prototype</a>
 
   <h2 class="govuk-heading-m">Research sessions</h2>
   <table class="govuk-table">
@@ -226,33 +230,33 @@ View family prototype</a>
 <h3 class="govuk-heading-s">July 2024 onwards</h3>
 
 {{ govukButton({
-  text: "Parents",
-  href: "#",
-  isStartButton: true
+  text: "Parents journey",
+  href: "mvp2/account/start-now",
+  isStartButton: false
 }) }}
 
 <table class="govuk-table">
   <!---row header-->
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-        <th scope="col" class="govuk-table__header">Screen</th>
-        <th scope="col" class="govuk-table__header">User need</th>
-        <th scope="col" class="govuk-table__header">Sprint</th>
-        <th scope="col" class="govuk-table__header">Status</th>
-        <th scope="col" class="govuk-table__header">Changes</th>
+      <th scope="col" class="govuk-table__header">Screen</th>
+      <th scope="col" class="govuk-table__header">User need</th>
+      <th scope="col" class="govuk-table__header">Sprint</th>
+      <th scope="col" class="govuk-table__header">Status</th>
+      <th scope="col" class="govuk-table__header">Changes</th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
      <!---row 1-->
     <tr class="govuk-table__row">
-        <td class="govuk-table__cell"> <a href="#" class="govuk-link rel="noreferrer noopener target="_blank">Start page</a>
+        <td class="govuk-table__cell"> <a href="#" class="govuk-link">Guidance for parents</a>
         <td class="govuk-table__cell">4</td>
         <td class="govuk-table__cell">4</td>
         <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--grey">Not started</span>
         <td class="govuk-table__cell">Content changes</td>
     </tr>
     <!---row 2-->
-    <tr class="govuk-table__row">
+   <!-- <tr class="govuk-table__row">
       <td class="govuk-table__cell"> <a href="#" class="govuk-link rel="noreferrer noopener target="_blank">Start page</a>
       <td class="govuk-table__cell">4</td>
       <td class="govuk-table__cell">4</td>
@@ -260,39 +264,39 @@ View family prototype</a>
       <td class="govuk-table__cell">Content changes</td>
   </tr>
     <!---row 3-->
-    <tr class="govuk-table__row">
+   <!-- <tr class="govuk-table__row">
       <td class="govuk-table__cell"> <a href="#" class="govuk-link rel="noreferrer noopener target="_blank">Start page</a>
       <td class="govuk-table__cell">4</td>
       <td class="govuk-table__cell">4</td>
       <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--grey">Not started</span>
       <td class="govuk-table__cell">Content changes</td>
-  </tr>
+  </tr>-->
   </tbody>
 </table>
 
 <!---------------------------School Prototype--------------------------->
 
 {{ govukButton({
-  text: "Schools",
-  href: "#",
-  isStartButton: true
+  text: "Schools journey",
+  href: "mvp2/checker/dashboard",
+  isStartButton: false
 }) }}
 
 <table class="govuk-table">
   <!---row header-->
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-        <th scope="col" class="govuk-table__header">Screen</th>
-        <th scope="col" class="govuk-table__header">User need</th>
-        <th scope="col" class="govuk-table__header">Sprint</th>
-        <th scope="col" class="govuk-table__header">Status</th>
-        <th scope="col" class="govuk-table__header">Changes</th>
+      <th scope="col" class="govuk-table__header">Screen</th>
+      <th scope="col" class="govuk-table__header">User need</th>
+      <th scope="col" class="govuk-table__header">Sprint</th>
+      <th scope="col" class="govuk-table__header">Status</th>
+      <th scope="col" class="govuk-table__header" class=govuk-input govuk-!-width-one-third>Changes</th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
      <!---row 1-->
-    <tr class="govuk-table__row">
-        <td class="govuk-table__cell"> <a href="#" class="govuk-link rel="noreferrer noopener target="_blank">Start page</a>
+ <tr class="govuk-table__row">
+        <td class="govuk-table__cell"> <a href="#" class="govuk-link">School Guidance</a>
         <td class="govuk-table__cell">4</td>
         <td class="govuk-table__cell">4</td>
         <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">In Progress</span>
@@ -300,18 +304,18 @@ View family prototype</a>
     </tr>
     <!---row 2-->
     <tr class="govuk-table__row">
-        <td class="govuk-table__cell"> <a href="#" class="govuk-link rel="noreferrer noopener target="_blank">Start page</a>
+        <td class="govuk-table__cell"> <a href="#" class="govuk-link rel="noreferrer noopener target="_blank">Dashboard</a>
         <td class="govuk-table__cell">5</td>
         <td class="govuk-table__cell">4</td>
         <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">In Progress</span>
-        <td class="govuk-table__cell">Content changes</td>
+        <td class="govuk-table__cell" class=govuk-input govuk-!-width-one-third>Changes</td>
     <!---row 3-->
-    <tr class="govuk-table__row">
+     <tr class="govuk-table__row">
         <td class="govuk-table__cell"> <a href="#" class="govuk-link rel="noreferrer noopener target="_blank">Start page</a>
         <td class="govuk-table__cell">5</td>
         <td class="govuk-table__cell">4</td>
         <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">In Progress</span>
-        <td class="govuk-table__cell">Content changes</td>
+        <td class="govuk-table__cell" class=govuk-input govuk-!-width-one-third>Content changes</td>
     </tr>
   </tbody>
 </table>
@@ -319,30 +323,30 @@ View family prototype</a>
 <!-----------------LA Prototoype Post MVP ---------------------->
 
 {{ govukButton({
-  text: "Local Authority",
-  href: "#",
-  isStartButton: true
+  text: "Local Authority journey",
+  href: "mvp2/checker-la/dashboard",
+  isStartButton: false
 }) }}
 
 <table class="govuk-table">
   <!---row header-->
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-        <th scope="col" class="govuk-table__header">Screen</th>
-        <th scope="col" class="govuk-table__header">User need</th>
+        <th scope="col" class="govuk-table__header" >Screen</th>
+        <th scope="col"  class="govuk-table__header">User need</th>
         <th scope="col" class="govuk-table__header">Sprint</th>
         <th scope="col" class="govuk-table__header">Status</th>
-        <th scope="col" class="govuk-table__header">Changes</th>
+        <th scope="col"  class="govuk-table__header" class=govuk-input govuk-!-width-one-third >Changes</th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
      <!---row 1-->
     <tr class="govuk-table__row">
-        <td class="govuk-table__cell"> <a href="#" class="govuk-link rel="noreferrer noopener target="_blank">Start page</a>
+        <td class="govuk-table__cell"> <a href="#" class="govuk-link rel="noreferrer noopener target="_blank">Guidance</a>
         <td class="govuk-table__cell">4</td>
         <td class="govuk-table__cell">4</td>
-        <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">In Progress</span>
-        <td class="govuk-table__cell">Content changes</td>
+        <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--grey">Not started</span>
+        <td class="govuk-table__cell" ><b>Amends:</b>Text added<br>to the boxes</td>
     </tr>
     <!---row 2-->
     <tr class="govuk-table__row">
@@ -362,7 +366,49 @@ View family prototype</a>
   </tbody>
 </table>
 
+<!--------------------------Legally required screens-------------------------->
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break">
 
+<h3>Legally required screens</h3>
+<table class="govuk-table">
+  <!---row header-->
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Screen</th>
+      <th scope="col" class="govuk-table__header">Version</th>
+      <th scope="col" class="govuk-table__header">Sprint</th>
+      <th scope="col" class="govuk-table__header">Status</th>
+      <th scope="col" class="govuk-table__header">Changes</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+     <!---row 1-->
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell"> <a href="mvp2/privacy" >Privacy statement</a>
+        <td class="govuk-table__cell">1.1</td>
+        <td class="govuk-table__cell">X</td>
+        <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">In progress</span>
+        <td class="govuk-table__cell">Amends: content amends based on latest updates</td>
+    </tr>
+         <!---row 2-->
+         <tr class="govuk-table__row">
+          <td class="govuk-table__cell"> <a href="mvp2/accessibility" >Accessibility statement</a>
+          <td class="govuk-table__cell">1.1</td>
+          <td class="govuk-table__cell">X</td>
+          <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">In progress</span>
+          <td class="govuk-table__cell">Amends: content amends based on latest updates</td>
+      </tr>
+           <!---row 3-->
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="mvp2/cookies" >Cookies statement</a>
+      <td class="govuk-table__cell">1.1</td>
+      <td class="govuk-table__cell">X</td>
+      <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">In progress</span>
+      <td class="govuk-table__cell">Amends: content amends based on latest updates</td>
+  </tr>
+  </tbody>
+</table>
 
 <!---------------------------Error messages----------------->
 
@@ -403,13 +449,6 @@ View family prototype</a>
   <li><a href="#">Local Authority 1</a></li>
   <hr class="govuk-section-break govuk-section-break--m">
 
-
-<h3 class="govuk-heading-s">Important</h3>
-<ul class="govuk-list">
-  <li><a href="#">Privacy notice</a></li>
-  <li><a href="#">Accessibility statement</a></li>
-  <li><a href="#">Cookies</a></li>
-</ul>
 
 <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--l">
 <h3>User journeys and additional documents</h3>
@@ -483,10 +522,10 @@ View family prototype</a>
 
       <td class="govuk-table__cell">
         <ol>
-          <li><a href="./current/accessibility">Accessibility statement</a></li>
-          <li><a href="./current/cookies">Cookies page</a></li>
-          <li><a href="./current/privacy">Privacy statement</a></li>
-          <li><a href="./current/terms-and-conditions">Terms and conditions</a></li>
+          <li><a href="./mvp1/accessibility">Accessibility statement</a></li>
+          <li><a href="./mvp1/cookies">Cookies page</a></li>
+          <li><a href="./mvp1/privacy">Privacy statement</a></li>
+          <li><a href="./mvp1/terms-and-conditions">Terms and conditions</a></li>
 
         </ol>
       </td>
@@ -572,6 +611,7 @@ View family prototype</a>
         </strong>
       </td>
 
+
       <td class="govuk-table__cell">
         <ol>
           <li><a href="./current/checker-la/dashboard">LA Portal home page</a></li>
@@ -594,8 +634,6 @@ View family prototype</a>
             <li><a href="./current/checker-la/outcome-could-not-find-pending">Outcome - could not find pending</a></li>
             <li><a href="./current/checker-la/outcome-technical-error.html">Technical error</a></li>
 
-
-
           </ul>
          
           <li><a href="./current/checker-la/resources">Guidance pages / links</a></li>
@@ -604,12 +642,10 @@ View family prototype</a>
           <li><a href="./current/checker-la/eligibility-confirmed">Application approved</a></li>
           <li><a href="./current/checker-la/eligibility-declined">Application declined</a></li>
 
-
-
         </ol>
       </td>
     </tr>
-  
+
     <tr class="govuk-table__row">
       <td scope="row" class="govuk-table__cell">
 
@@ -651,6 +687,14 @@ View family prototype</a>
           <li><a href="./current/records/add-sibling">Add a sibling</a></li>
         
 
+          <h3 class="govuk-heading-s">Important</h3>
+          <ul class="govuk-list">
+            <li><a href="mvp2/privacy">Privacy notice</a></li>
+            <li><a href="mvp2/accessibility">Accessibility statement</a></li>
+            <li><a href="mvp2/cookies">Cookies</a></li>
+          </ul>
+          
+
         </ol>
       </td>
     </tr>
@@ -668,6 +712,7 @@ View family prototype</a>
 <h4 class="govuk-heading-s">Version 1:Sep - Oct 2023</h4>
 <p><a href="v1">Links to version 1</a></p>
 <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--l">
+
 
 </tbody>
 </table>

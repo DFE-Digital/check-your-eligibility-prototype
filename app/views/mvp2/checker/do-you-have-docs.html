@@ -1,0 +1,109 @@
+{% extends "../../mvp1/checker/layouts/layout-dfe.html" %}
+
+
+
+
+
+
+
+
+
+{% block backLink %}
+{{ govukBackLink({
+text: "Back",
+href: "/"
+}) }}
+{% endblock %}
+
+
+<!-- The content between the heading 1 and the buttons -->
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+  <div class="govuk-grid-column-full">
+
+
+
+
+ 
+ <form action="upload-file" method="post" novalidate>
+
+
+{{ govukRadios({
+  name: "evidence",
+  id:'evidence',
+  fieldset: {
+    legend: {
+      text: "Which document do you have?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "You will need to upload this document as a jpg, png, tiff, or pdf"
+  },
+  items: [
+    {
+      value: "Universal Credit number",
+      text: "Universal Credit number"
+    },
+    {
+      value: "National asylum support number ",
+      text: "National asylum support number"
+    },
+    {
+      value: "Income support",
+      text: "Income support"
+    },
+    {
+      value: "Income based jobseeker's allowance",
+      text: "Income based jobseeker's allowance"
+    },
+    {
+      value: "pension-credit",
+      text: "Pension credit"
+    },
+    {
+      value: "Pension credit",
+      text: "Child tax credit"
+    },
+    {
+      value: "Working tax credit",
+      text: "Working tax credit"
+    }
+   
+  ]
+}) }}
+
+
+
+
+{{ govukButton({
+  text: "Save and continue"
+  
+}) }}
+
+
+ </form>   
+
+    </div>
+    </div>
+
+
+
+{% endblock %}
+
+{% block buttons %}
+{% endblock %}
+
+{% block pageScripts %}
+<!-- Add any javascript files here. Include javascript files only on the pages
+that need them. Excessive javascript files loaded on other pages may slow down
+the response times of the prototype. -->
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+
+
+{% endblock %}

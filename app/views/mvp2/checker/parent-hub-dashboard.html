@@ -1,0 +1,101 @@
+{% extends "../../mvp1/checker/layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% set parentName="Eden Tesfay" %}
+
+{% set applicationSent %}
+<h3 class="govuk-notification-banner__heading">
+  Application sent
+  </h3>
+  <p class="govuk-body">
+    You have sent your application for free school meals. It may take upto 1 week to process.
+  </p>
+  <p>Your reference is 1234567</p>
+{% endset %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {% if data['answers-checked'] =="true" %}
+{{ govukNotificationBanner({
+  html: applicationSent,
+  type: 'success'
+}) }}
+
+{% endif %}
+
+
+    <span class="govuk-hint">Parent portal</span>
+    <h1 class="govuk-heading-l">
+      
+      
+     Eden Tesfay
+    </h1>
+
+
+    <div class="govuk-grid-row">
+
+            
+      <div class="govuk-grid-column-full">
+        
+
+<div class="dfe-grid-container">
+
+
+    <div class="dfe-card-container">
+
+      <div class="def-card">
+        <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="checker/">Check eligibility</a>
+        </h2>
+        <p>See what a child at your school or authority is eligible for.</p>
+    </div>
+    </div>
+
+    <div class="dfe-card-container">
+
+      <div class="def-card">
+        <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="checker/">Upload applications</a>
+        </h2>
+        <p>Upload a forecast of children needed ing free school meals.</p>
+    </div>
+    </div>
+
+
+
+    <div class="dfe-card-container">
+
+      <div class="def-card">
+        <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="support/">Guidance and support</a>
+        </h2>
+        <p>Guidance and support for getting the help you and your family need.</p>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+        
+      </div>  
+    
+    </div>
+
+  
+  </div>
+</div>
+
+{% endblock %}

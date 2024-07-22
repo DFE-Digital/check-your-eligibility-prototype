@@ -1,0 +1,96 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{%- from "moj/components/banner/macro.njk" import mojBanner -%}
+
+{{ mojBanner({
+  type: 'success',
+  text: 'You have successfully added 1 question.',
+  iconFallbackText: 'Success'
+}) }}
+
+
+{% set applicationSent %}
+<h3 class="govuk-notification-banner__heading">
+  Free school meal record has been reviewed and approved
+</h3>
+<p class="govuk-body">
+  Both the parent or carer and the school have been notified.
+ 
+</p>
+{% endset %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+    {%- from "moj/components/banner/macro.njk" import mojBanner -%}
+
+    {{ mojBanner({
+      type: 'success',
+      html:'<h3 class="govuk-notification-banner__heading">
+        Free school meal record has been reviewed and approved
+      </h3>
+      <p class="govuk-body">
+        Both the parent or carer and the school have been notified.
+       
+      </p>',
+      text: 'Free school meal record has been reviewed and approved',
+      iconFallbackText: 'Success'
+    }) }}
+    
+
+
+
+
+
+    <div class="govuk-grid-row">
+
+
+      <div class="govuk-grid-column-one-half">
+
+
+      
+
+        <p>The school will be notified of the new free school meals provision.</p>
+        <p>The parent or carer will recieve either a letter or email based on their contact preferences.</p>
+
+        <p><a href="../../current/checker-la/childcare/homepage">Go to your portal homepage</a></p>
+        <p><a href="../account/signin-or-create">Sign out of the portal</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+
+
+
+  
+
+
+
+    <div class="govuk-grid-row">
+
+            
+      <div class="govuk-grid-column-two-thirds">
+
+        <span class="govuk-hint">Your local council is</span>
+
+        <h1 class="govuk-heading-xl" tabindex="-1">Manchester City Council</h1>
+
+        <p>If this is not correct, you can <a href="which-la">search again</a>.</p>
+
+        <form action="name" method="post" novalidate>
+          
+
+
+          {{ govukButton({
+            text: "Save and continue",
+            classes:'govuk-!-margin-top-5'
+          }) }}
+
+        </form>
+
+
+        
+
+
+
+
+        
+      </div>  
+    
+    </div>
+
+  
+
+
+{% endblock %}

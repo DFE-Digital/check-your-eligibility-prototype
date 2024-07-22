@@ -1,0 +1,92 @@
+{% extends "../../mvp1/checker-la/layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+
+
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <h1 class="govuk-heading-l">Check your document before submitting</h1>
+
+   
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Document
+        </dt>
+        <dd class="govuk-summary-list__value">
+        manchester-la-nov-23.docx (467kb)
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> document</span>
+          </a>
+
+        </dd>
+
+      </div>
+
+
+
+    </dl>
+
+
+
+    
+
+
+    <form action="batch-applications" method="post" novalidate>
+
+      <input type="hidden" name="answers-checked" value="true">
+
+
+      <button class="govuk-button govuk-!-margin-top-5" data-module="govuk-button">
+    Perform check
+      </button>
+
+
+    </form>
+
+    
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+
+</div>
+</div>
+
+{% endblock %}

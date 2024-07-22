@@ -1,0 +1,288 @@
+{% extends "../../mvp1/checker/layouts/layout-dfe.html" %}
+
+
+
+
+
+
+
+
+
+{% block backLink %}
+{{ govukBackLink({
+text: "Back",
+href: "/"
+}) }}
+{% endblock %}
+
+
+<!-- The content between the heading 1 and the buttons -->
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+  <div class="govuk-grid-column-full">
+
+
+    <span class="govuk-hint">Eden Tesfay</span>
+
+
+    <div class="moj-page-header-actions">
+
+      <div class="moj-page-header-actions__title">
+        <h1 class="govuk-heading-xl">Application history
+          <span class="govuk-!-margin-left-5"> {{govukTag({
+            text: "New appeal",
+            classes: "govuk-tag--pink"
+            })}}</span>
+        </h1>
+
+      </div>
+    
+      <div class="moj-page-header-actions__actions">
+    
+        <div class="moj-button-menu">
+          <div class="moj-button-menu__wrapper">
+    
+            <button class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button">
+              Transfer school
+            </button>
+    
+          
+    
+          </div>
+        </div>
+    
+      </div>
+    
+    </div>
+    
+    
+
+
+
+
+
+
+  
+
+      {%- from "moj/components/ticket-panel/macro.njk" import mojTicketPanel -%}
+
+      {{ mojTicketPanel({
+      attributes: {
+      'aria-label': 'Decision panel'
+      },
+      items: [
+      {
+      html: '
+      
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Reference number: 44455453</h2>
+      <p class="govuk-body">Ensure all supporting evidence has been reviewed prior to making a decision.</p>
+
+      <form action="supporting-evidence" method="post" novalidate>
+
+        <input type="hidden" name="approve-application" value="yes">
+
+
+      <button class="govuk-button" data-module="govuk-button">
+        Review application
+      </button>
+
+  ',
+      attributes: {
+      'aria-label': 'Section 1'
+      },
+      classes: 'moj-ticket-panel__content--blue'
+      }]
+      }) }}
+
+
+   
+    </form>
+
+
+
+
+  </div>
+
+</div>
+
+
+
+
+<h2 class="govuk-heading-l govuk-!-margin-bottom govuk-!-font-size-36">Overview</h2>
+
+
+
+
+
+
+{%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
+
+{{ mojSubNavigation({
+label: 'Sub navigation',
+items: [
+
+
+
+{
+text: 'Overview',
+href: 'parent-record-appeal'
+
+},
+{
+text: 'Documents',
+href: 'documents',
+active: true
+
+}
+
+]
+}) }}
+
+
+
+
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <form id="cop-form" action="tasklist-1" method="post" novalidate>
+
+
+      <h2 class="govuk-heading-l">Documents</h2>
+      <p class="govuk-body-l govuk-hint">No documents are attached to this application yet</p>
+
+
+
+      <!-- FILE UPLOAD -->
+
+
+      {% from "govuk/components/details/macro.njk" import govukDetails %}
+      {{ govukDetails({
+      summaryText: "File types accepted",
+      text: "You can upload an AVI, BMP, CSV, DOC, DOCX, DOT, EML, EPS, FLV, GIF, GPG, HEIC, HEIF, HTM, HTML, JPG, JPEG,
+      M4V, MOV, MP3, MSG, ODP, ODT, OGA, OGG, OGV, PDF, PGP, PNG, PPS, PPT, PPTX, RTF, TIF, XLS or XLSX",
+      classes:"govuk-!-margin-bottom-0"
+      }) }}
+
+      {%- from "govuk/components/file-upload/macro.njk" import govukFileUpload -%}
+      {%- from "govuk/components/button/macro.njk" import govukButton -%}
+      {%- from "govuk/components/error-summary/macro.njk" import govukErrorSummary -%}
+      {%- from "moj/components/multi-file-upload/macro.njk" import mojMultiFileUpload -%}
+
+
+
+      {% if errorSummary.items.length %}
+      {{ govukErrorSummary({
+      titleText: 'There is a problem',
+      errorList: errorSummary.items
+      }) }}
+      {% endif %}
+
+
+
+
+
+
+
+      {% set uploadHtml %}
+      {{ govukFileUpload({
+      id: "documents",
+      name: "documents",
+      classes: 'moj-multi-file-upload__input',
+      label: {
+      text: "Upload a file",
+
+      classes: 'govuk-label--s'
+      },
+      hint: {
+      text: "Each file must be less than 25MB"
+      },
+      attributes: { multiple: '' },
+      errorMessage: errorMessage
+      }) }}
+
+
+      {{govukButton({
+      text: 'Upload file',
+      classes: 'govuk-button--secondary moj-multi-file-upload__button'
+      })}}
+      {% endset %}
+
+
+
+      {{ mojMultiFileUpload({
+      uploadedFiles: {
+      heading: {
+      text: '' },
+      id:'attachment',
+      name:'attachment',
+      items: uploadedFiles
+      },
+      uploadHtml: uploadHtml
+      }) }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+{% endblock %}
+
+
+{% block buttons %}
+
+{% endblock %}
+
+
+{% block pageScripts %}
+<!-- Add any javascript files here. Include javascript files only on the pages
+that need them. Excessive javascript files loaded on other pages may slow down
+the response times of the prototype. -->
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+<script>
+  new MOJFrontend.ButtonMenu({
+    container: $(".moj-button-menu"),
+    mq: "(min-width: 200em)",
+    buttonText: "Task actions",
+    buttonClasses:
+      "",
+  });
+</script>
+
+<script type="text/javascript">
+  if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
+    new MOJFrontend.MultiFileUpload({
+      container: $(".moj-multi-file-upload"),
+      uploadUrl: "/ajax-upload",
+      deleteUrl: "/ajax-delete",
+    });
+  }
+
+</script>
+{% endblock %}
