@@ -1,0 +1,73 @@
+{% extends "layouts/mvp1.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds ">
+    
+
+
+<input type="hidden" name="_csrf" value="NwbSEw2n-Gna8N8BwZSNt77jGcnGYDP8tfjs">
+
+
+
+<div class="govuk-form-group">
+<h1 class="govuk-label-wrapper">
+<label class="govuk-label govuk-label--l" for="email">
+Department for Education Sign-in</label>
+</h1>
+<p class="govuk-body">Sign-in to access DfE online services.</p>
+
+<div class="govuk-!-padding-bottom-2"></div>
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="email">
+    Email address
+  </label>
+  
+  <input class="govuk-input" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
+</div>
+
+{% from "govuk/components/password-input/macro.njk" import govukPasswordInput %}
+
+{{ govukPasswordInput({
+  label: {
+    text: "Password"
+  },
+  id: "password-input",
+  name: "password"
+}) }}
+
+</div>
+
+
+
+
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Sign in",
+  href: "../account/DSI-landingpage",
+  classes:'govuk-button-primary'
+  }) }}
+
+{{ govukButton({
+  text: "Create account",
+  href: "#",
+  classes: "govuk-button--secondary"
+}) }}
+
+</form>
+
+
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}

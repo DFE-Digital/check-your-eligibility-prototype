@@ -1,0 +1,78 @@
+{% extends "../../current/checker-la/layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {% if data['answers-checked'] =="true" %}
+    {{ govukNotificationBanner({
+      html: applicationSent,
+      type: 'success'
+    }) }}
+    
+    {% endif %}
+
+
+
+    <div class="govuk-grid-row">
+
+            
+      <div class="govuk-grid-column-two-thirds">
+
+
+{{ mojBanner({
+  type: 'success',
+  html:'<h3 class="govuk-notification-banner__heading">
+    Free school meal record has been reviewed and approved
+    </h3> <p>The parent or carer and the LA have been notified</p>',
+  
+  iconFallbackText: 'Success'
+}) }}
+
+      
+
+<p>The local authority will be notified of the new free school meals provision.</p>
+
+<p>The parent or carer will recieve either a letter or an email.</p>
+
+
+<p><a href="dashboard">Go to your portal homepage</a></p>
+<p><a href="../account/dfe-account">Sign out of the  portal</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+        
+      </div>  
+    
+    </div>
+
+  
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}

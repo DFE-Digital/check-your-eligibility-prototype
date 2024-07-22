@@ -1,0 +1,47 @@
+{% extends "layouts/layout-dfe.html" %}
+
+
+
+
+
+
+
+
+
+{% block backLink %}
+{{ govukBackLink({
+text: "Back",
+href: "/"
+}) }}
+{% endblock %}
+
+
+
+
+{% block content %}
+
+<h1 class="govuk-heading govuk-heading--l">{{title}}</h1>
+
+{% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+{{ govukFileUpload({
+  id: "file-upload-1",
+  name: "file-upload-1",
+  label: {
+    text: "Upload a file"
+  }
+}) }}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{{ govukButton({
+  text: "Upload",
+  classes:"govuk-button--secondary",
+  href:"task-viewer"
+}) }}
+
+  {% block buttons %}
+
+  {% endblock %}
+
+
+
+{% endblock %}

@@ -1,0 +1,96 @@
+{% extends "../../current/parent-soft-check/layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+
+
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <h1 class="govuk-heading-l">Check your document before submitting</h1>
+
+    <h2 class="govuk-heading-m">Document details</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Document type
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["evidence"] }} 
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> document</span>
+          </a>
+
+        </dd>
+
+      </div>
+
+
+
+    </dl>
+
+
+    <h2 class="govuk-heading-m">Submit your document</h2>
+
+    <p class="govuk-body">By submitting this document you are confirming that to your knowledge the information contained
+      is correct.</p>
+
+    
+
+
+    <form action="document-sent" method="post" novalidate>
+
+      <input type="hidden" name="answers-checked" value="true">
+
+
+      <button class="govuk-button govuk-!-margin-top-5" data-module="govuk-button">
+       Submit document
+      </button>
+
+
+    </form>
+
+    
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+
+</div>
+</div>
+
+{% endblock %}

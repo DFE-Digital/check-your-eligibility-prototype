@@ -1,0 +1,113 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+
+
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <h1 class="govuk-heading-l">Check sibling details before submitting</h1>
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Child"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "child",
+          href:'add-sibling'
+        }
+      ]
+    }
+  },
+
+
+  rows: [
+
+  {
+    key: {
+      text: "Full name"
+    },
+    value: {
+      html: "Tim Tesfay"
+    }
+  },
+
+
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        html: "07 Sep 2019"
+      }
+    }
+
+
+
+  ]
+}) }}
+
+
+    
+
+
+    
+
+    
+
+
+    <form action="approved?sibling=added" method="post" novalidate>
+
+      <input type="hidden" name="sibling-added" value="true">
+
+
+      <button class="govuk-button govuk-!-margin-top-5" data-module="govuk-button">
+       Submit
+      </button>
+
+
+    </form>
+
+    
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+
+</div>
+</div>
+
+{% endblock %}

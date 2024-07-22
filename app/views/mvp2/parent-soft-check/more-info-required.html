@@ -1,0 +1,54 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Application declined</h1>
+
+
+    <p>You need a national asylum support number for us to be able to check if you can get free school meals for your child. </p>
+
+
+
+
+
+        {% if data['ni-number'] == 'no' %}
+    <p>If you don't have a national insurance number, find out how to <a href="https://www.gov.uk/apply-national-insurance-number">apply for one.</a></p>
+{% elif data['nass-number'] == 'no' %}
+    <p>You can <a href="https://www.gov.uk/asylum-support">check to see what support you can et</a></p>
+{% endif %}
+
+    
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+ 
+
+  
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}

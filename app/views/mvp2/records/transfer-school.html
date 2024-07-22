@@ -1,0 +1,97 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/autocomplete.js"></script>
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    selectElement: document.querySelector('#school-picker')
+  })
+</script>
+{% endblock %}
+
+{% block content %}
+
+
+
+
+  
+
+
+
+    <div class="govuk-grid-row">
+
+            
+      <div class="govuk-grid-column-two-thirds">
+
+    <form action="check-answers" method="post" novalidate>
+
+
+      {%- from "govuk/components/button/macro.njk" import govukButton -%}
+      {%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+      {%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+      {%- from "govuk/components/input/macro.njk" import govukInput -%}
+      {%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+      
+      <div data-module="moj-add-another">
+      
+        <h1 class="govuk-heading-l" tabindex="-1">Transfer a child to different school</h1>
+      
+        <form method="post">
+
+        
+
+
+      
+      
+        
+
+
+          {% include "../includes/schools.html" %}
+
+          
+      
+        
+
+         
+      
+          
+      
+          <div class="moj-button-action">
+            {{ govukButton({
+              text: 'Save and continue'
+            }) }}
+          </div>
+
+          <input type="hidden" name="child-2" id="child-2" value="Yes">
+      
+        </form>
+      
+      </div>
+      
+
+
+
+
+      
+    </form>
+
+
+
+
+        
+
+
+
+
+        
+      </div>  
+    
+    </div>
+
+  
+
+
+{% endblock %}

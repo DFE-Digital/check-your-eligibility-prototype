@@ -1,0 +1,91 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% set applicationSent %}
+<h3 class="govuk-notification-banner__heading">
+  We have sent your details to Bramhope Primary School
+</h3>
+
+<p class="govuk-body-m">Your reference number is 1234567</p>
+{% endset %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {% if data['answers-checked'] =="true" %}
+    {{ govukNotificationBanner({
+    html: applicationSent,
+    type: 'success'
+    }) }}
+
+    {% endif %}
+
+
+
+    <div class="govuk-grid-row">
+
+
+      <div class="govuk-grid-column-one-half">
+
+        <p>We have sent you a confirmation email.</p>
+
+
+        <h2 class="govuk-heading-l">What happens next</h2>
+
+
+      <p>  The school will email you when they have registered your details and will arrange for your child's free school meals to start.
+<p>If you do not receive an update within 5 working days: </p>
+
+
+<ul class="govuk-list govuk-list--bullet">
+    <li>check for updates in your parent portal</a></li>
+    <li>talk to the school administrator</a></li> 
+
+<p>
+<p><a href="../account/signin-or-create">Sign out of your parent portal</a></p>
+</p>
+
+
+
+
+        
+
+        <form action=""></form>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}

@@ -1,0 +1,149 @@
+{% extends "../../mvp1/parent-soft-check/layouts/layout-dfe-signed-out.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Enter your details</h1>
+        <p>The information you provide will be compared with other government departments records to check for your eligibility. For further information, please check our <a href=""> privacy statement</a>.</p>
+
+    <form action="/mvp2-soft-check-ni-answer" method="post" novalidate>
+
+      {% call govukFieldset({
+        legend: {
+          text: "What is your name?",
+          classes: "govuk-fieldset__legend--m",
+          isPageHeading: false
+        },
+        hint: {
+          text: "Please use the name on your passport, driving licence, birth certificate or Biometric Residence Permit"
+        }
+      }
+      ) %}
+      
+    
+
+
+      {{ govukInput({
+        label: {
+          text: "Parent's first name"
+        },
+        classes: "govuk-!-width-two-thirds",
+        id: "first-name",
+        name: "first-name",
+        autocomplete: ""
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Parent's last name"
+        },
+        classes: "govuk-!-width-two-thirds",
+        id: "surname",
+        name: "surname",
+        autocomplete: ""
+      }) }}
+      
+      
+    
+      
+      {% endcall %}
+
+      
+        {{ govukDateInput({
+          
+          id: "dob",
+          namePrefix: "dob",
+          
+          fieldset: {
+            legend: {
+              text: "What is your date of birth?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example, 31 3 1980"
+          }
+        }) }}
+
+      
+
+      {% set yesHtml %}
+      {{ govukInput({
+      id: "ni-number-entered",
+      name: "ni-number-entered",
+      type: "text",
+      autocomplete: "text",
+      spellcheck: false,
+      classes: "govuk-!-width-one-third",
+      label: {
+      text:"Parent's National Insurance number"
+      },
+  hint: {
+    text: "For example, ‘QQ 12 34 56 C’"
+  }
+     
+      }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+      name: "ni-number",
+      id:'ni-number',
+      fieldset: {
+      legend: {
+      text: "Do you have a National Insurance number?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+      }
+      },
+      hint: {
+      text: "It’s on your National Insurance card, payslip, P60 or letters about tax, pension and benefits."
+      },
+      items: [
+      {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+      html: yesHtml
+      }
+      },
+      {
+      value: "no",
+      text: "No, I do not have one"
+
+      }
+
+      ]
+      }) }}
+
+  
+      
+      
+      
+      {{ govukButton({
+        text: "Save and continue",
+        classes:'govuk-!-margin-top-5'
+      }) }}
+
+      
+    </form>
+
+
+
+
+        
+
+
+
+
+        
+      </div>  
+    
+    </div>
+
+
+
+{% endblock %}
