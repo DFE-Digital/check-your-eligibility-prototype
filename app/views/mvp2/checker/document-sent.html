@@ -1,0 +1,68 @@
+{% extends "../../mvp1/checker/layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+
+
+{% block content %}
+
+
+
+  
+
+
+
+    <div class="govuk-grid-row">
+
+            
+      <div class="govuk-grid-column-two-thirds">
+
+
+{{ mojBanner({
+  type: 'success',
+  html:'<h3 class="govuk-notification-banner__heading">
+    The free school meal application has been approved
+    </h3>',
+  
+  iconFallbackText: 'Success'
+}) }}
+
+      
+
+<p>The local authority will be notified of the new free school meals provision.</p>
+
+<p>The parent or carer will recieve either a letter or an email.</p>
+
+
+<p><a href="dashboard">Go to your portal homepage</a></p>
+<p><a href="../account/dfe-account">Sign out of the  portal</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+   
+
+  
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}

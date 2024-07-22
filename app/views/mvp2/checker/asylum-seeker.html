@@ -1,0 +1,91 @@
+{% extends "../../mvp1/checker/layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+
+
+
+
+
+
+    <div class="govuk-grid-row">
+
+            
+      <div class="govuk-grid-column-one-half">
+
+        <form action="/council-checker-asylum-answer" method="post" novalidate>
+
+          
+
+
+{{ govukRadios({
+  name: "seeking-asylum",
+  fieldset: {
+    legend: {
+      text: "Are they currently seeking asylum?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+    
+  ]
+}) }}
+
+<!-- 
+<input type="hidden" name="submit-application" id="submit-application" value="success">
+-->
+
+{{ govukButton({
+  text: "Save and continue",
+  classes:'govuk-!-margin-top-5'
+}) }}
+
+        
+</form>
+
+
+
+
+
+  
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+        
+      </div>  
+    
+    </div>
+
+  
+
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}

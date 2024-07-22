@@ -1,0 +1,50 @@
+{% extends "../../mvp1/checker/layouts/layout-dfe.html" %}
+
+{% set pageName="Outcome not entitled" %}
+
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l">Reference 44455453</span>
+        <h1 class="govuk-heading-xl">Application sent for review </h1>
+        <p>Its status has now changed to ‘Sent for review’.  
+
+            If you don’t hear back from the local authority, get in touch with them to ask for an update. </p>
+    </div>
+  </div>
+</div>
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Return to record",
+  classes: 'govuk-button--primary',
+  href:'../records/not-entitled-appeals-multi-sent'
+}) }}
+
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+<p><a href="../checker/process-appeals-two">Process more appeals</a></p>
+
+<p><a href="../checker/dashboard">Return to dashboard</a></p>
+
+<p><a href="">Sign out</a></p>
+
+
+
+
+
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}
