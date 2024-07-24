@@ -50,13 +50,23 @@
         <tr class="govuk-table__row">
             <td class="govuk-table__cell">.AspNetCore.Antiforgery.[random number]</td>
             <td class="govuk-table__cell">Prevents malicious activity while you’re using the website</td>
-            <td class="govuk-table__cell">When you leave the website</td>
+            <td class="govuk-table__cell">Expires at the end of your session</td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell">.AspNetCore.Session[random number]</td>
+            <td class="govuk-table__cell">Helps the service remember information about your session as you navigate through it.</td>
+            <td class="govuk-table__cell">Expires at the end of your session</td>
+        </tr>
+        <tr>
+            <td class="govuk-table__cell">.AspNetCore.Mvc.CookieTempDataProvider</td>
+            <td class="govuk-table__cell">Helps the service remember information about your session as you navigate through it.</td>
+            <td class="govuk-table__cell">Expires at the end of your session</td>
         </tr>
         </tbody>
     </table>
 
     <h2 class="govuk-heading-m govuk-!-margin-top-6">Analytics cookies (optional)</h2>
-    <p>With your permission, we use Google Analytics to collect data about how you use Connect families to support. This information helps us to improve our service.</p>
+    <p>With your permission, we use Google Analytics and Microsft Clarity to collect data about how you use and interact with the Eligibility Checking Engine. This information helps us to improve our service.</p>
     <p>Google is not allowed to use or share our analytics data with anyone.</p>
     <p>Google Analytics stores anonymised information about:</p>
     <ul class="govuk-list govuk-list--bullet">
@@ -100,6 +110,39 @@
             </td>
             <td class="govuk-table__cell">
                 2 years
+            </td>
+        </tr>
+        <tr>
+            <td class="govuk-table__cell">
+                _clsk_[random number]
+            </td>
+            <td class="govuk-table__cell">
+                Links multiple page views by a user into a single Clarity session recording.
+            </td>
+            <td class="govuk-table__cell">
+                30 days
+            </td>
+        </tr>
+        <tr>
+            <td class="govuk-table__cell">
+                _clck_
+            </td>
+            <td class="govuk-table__cell">
+                Persists the Clarity User ID and preferences, unique to that site is attributed to the same user ID.
+            </td>
+            <td class="govuk-table__cell">
+                13 months
+            </td>
+        </tr>
+        <tr>
+            <td class="govuk-table__cell">
+                CLID
+            </td>
+            <td class="govuk-table__cell">
+                Identifies the first-time Clarity saw this user on any site using Clarity.
+            </td>
+            <td class="govuk-table__cell">
+                13 months
             </td>
         </tr>
         </tbody>
