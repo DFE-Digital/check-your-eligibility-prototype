@@ -1,4 +1,4 @@
-{% extends "layouts/base.html" %}
+{% extends "layouts/main.html" %}
 
 {% set pageName=" Eligibility checker prototype" %}
 
@@ -6,20 +6,23 @@
 
 <div class="govuk-grid-row">
 <div class="govuk-grid-column--three-quarters">
+
+
+<span class="govuk-hint">All prototypes for</span>
 <h1 class="govuk-heading-l">
-  {{pageName}}
+  {{ serviceName }}
 </h1>
 
-<p>This is the starting page for the eligibility checker prototype.</p>
-<ul class="<ul class="govuk-list">
+<p>This is the starting page for the eligibility checking engine prototype.</p>
+<ul>
   <li>
-    Latest versions being worked on are under Prototype Iterations.
+    <b>Tab 1</b> All journeys used for research are under Research versions.
   </li>
   <li>
-    Fixed journeys for research are under Research versions.
+    <b>Tab 2</b> WIP versions are listed in Prototype Iterations.
   </li>
   <li>
-    Previous iterations are Disco-Beta MVP
+    <b>Tab 3</b> Previous iterations are Disco-Beta MVP 
   </li>
 </ul>
 <h2 class="govuk-heading-m">Information required for usability tests
@@ -233,17 +236,51 @@ View family prototype</a>
 <!--------------------------------------------------------->
 </div>
   <div class="govuk-tabs__panel govuk-tabs__panel" id="prototype-iterations">
-    <h2 class="govuk-heading-m">Prototype iterations</h2>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m">Prototype iterations</h2>
+      </div>
+      <div class="govuk-grid-column-one-third govuk-!-display-inline govuk-!-align-right">
+        {{ govukButton({
+          text: "Prototype latest page index",
+          href: "mvp2/index-list",
+          classes: "govuk-button--secondary"
+        }) }}
+      </div>
+    </div>
+
+    <!--<h2 class="govuk-heading-m">Prototype iterations</h2>
+    {{ govukButton({
+      text: "Index of WIP pages",
+      href: "mvp2/index2",
+      classes: "govuk-button--secondary"
+    }) }}-->
 <thead class="govuk-table__head">
 <tr class="govuk-table__row">
 <h2 class="govuk-heading-m"><span class="govuk-tag govuk-tag--blue">PRIVATE BETA:</span> Post MVP (MVP2 - work in progress)</h2>
 <h3 class="govuk-heading-s">July 2024 onwards</h3>
 
+<div class="govuk-inset-text">
+  <h4>Status</h4>
+  <p><span class="govuk-tag govuk-tag--grey">Not started</span> See Trello board for ticket </p> 
+  <p><span class="govuk-tag govuk-tag--blue">In progress (WIP)</span> Being worked on - may change</p>
+  <p><span class="govuk-tag govuk-tag--yellow">Amends</span> Changes required after sign off</p>
+  <p><span class="govuk-tag govuk-tag--orange">Review</span> Ready for PO sign off review session</p>
+  <p><span class="govuk-tag govuk-tag--green">Completed</span> Signed off by PO and ready for development</p>
+  <p><span class="govuk-tag govuk-tag--pink">Descoped</span> Left in prototype for future prioritisation</p>
+</div>
+
+<div>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"></div>
+
+
 {{ govukButton({
-  text: "Parent start page",
+  text: "End to End Parent journey",
   href: "mvp2/account/start-now",
   isStartButton: false
 }) }}
+
 
 <table class="govuk-table">
   <!---row header-->
@@ -263,16 +300,16 @@ View family prototype</a>
       <td class="govuk-table__cell"> <a href="mvp2/privacy" class="govuk-link ">Privacy statement</a>
       <td class="govuk-table__cell">22.07.24</td>
       <td class="govuk-table__cell">#180</td>
-      <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--orange">Ready to review</span>
-      <td class="govuk-table__cell">Amends: content updated from version 2. </td>
+      <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--yellow">Amends</span>
+      <td class="govuk-table__cell">Amends: content updated from version 2 </td>
   </tr>
   <!---row 2-->
   <tr class="govuk-table__row">
     <td class="govuk-table__cell"> <a href="mvp2/checker/parent-guidance" class="govuk-link">Guidance for parents</a>
       <td class="govuk-table__cell">23.07.24</td>
       <td class="govuk-table__cell">#181</td>
-    <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--orange">Ready to review</span>
-    <td class="govuk-table__cell" >.</td>
+    <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--orange">Review</span>
+    <td class="govuk-table__cell" >Amends: Content for section - How to apply for free school meals.</td>
 </tr>
     <!---row 3-->
     <tr class="govuk-table__row">
@@ -311,26 +348,33 @@ View family prototype</a>
         <td class="govuk-table__cell"> <a href="mvp2/cookies" class="govuk-link">Cookies</a>
           <td class="govuk-table__cell">24.07.24</td>
           <td class="govuk-table__cell">#182</td>
-          <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--yellow">Feedback req</span>
-        <td class="govuk-table__cell">Ticket-171609 Amends: reviewing content</td>
+          <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--orange">Review</span>
+        <td class="govuk-table__cell">Ticket-171609 Amends: updated content - waiting on Privacy team</td>
     </tr>
   </tr>
   <!---row 8-->
   <tr class="govuk-table__row">
-    <td class="govuk-table__cell"> <a href="mvp2/ " class="govuk-link">Technical Error Webpage </a>
+    <td class="govuk-table__cell"> <a href="mvp2/parent-soft-check/outcome-technical-error " class="govuk-link">Technical Error Webpage </a>
       <td class="govuk-table__cell">24.07.24</td>
       <td class="govuk-table__cell">#183</td>
-      <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Complete</span>
-    <td class="govuk-table__cell"> 163383 - No changes needed for parents journeys. <br>Link to DfE support for Schools/LA version </td>
+      <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Completed</span>
+    <td class="govuk-table__cell"> 163383 - No changes needed for parents journeys. </td>
 </tr>
-
+<!---row 8-->
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell"> <a href="mvp2/account/fsm-print-version " class="govuk-link">FSM-print-version</a>
+    <td class="govuk-table__cell">29.07.24</td>
+    <td class="govuk-table__cell">#183</td>
+    <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Completed</span>
+  <td class="govuk-table__cell"> ticket 168850 Amend:What to do content.<br> Given scenario based context and important warning around multiple schools </td>
+</tr>
   </tbody>
 </table>
 
 <!---------------------------School Prototype--------------------------->
 
 {{ govukButton({
-  text: "School start page",
+  text: "End to End School journey",
   href: "mvp2/checker/dashboard",
   isStartButton: false
 }) }}
@@ -362,7 +406,7 @@ View family prototype</a>
     <td class="govuk-table__cell"> <a href="mvp2/checker/schools-outcome-technical-error" class="govuk-link">Technical Error Webpage </a>
       <td class="govuk-table__cell">24.07.24</td>
       <td class="govuk-table__cell">#183</td>
-      <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--orange">Ready for review</span>
+      <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Completed</span>
     <td class="govuk-table__cell"> 163383 Link to DfE support for Schools/LA version </td>
 </tr>
 <!---row 3-->
@@ -388,7 +432,7 @@ View family prototype</a>
 <!-----------------LA Prototoype Post MVP ---------------------->
 
 {{ govukButton({
-  text: "Local Authority start page",
+  text: "End to End Local Authority journey",
   href: "mvp2/checker-la/dashboard",
   isStartButton: false
 }) }}
@@ -409,8 +453,8 @@ View family prototype</a>
     
    <tr class="govuk-table__row">
       <td class="govuk-table__cell"> <a href="#" class="govuk-link rel="noreferrer noopener target="_blank">Guidance for LAs</a>
-      < <td class="govuk-table__cell">24.07.24</td>
-      <td class="govuk-table__cell">#18 3</td>
+      <td class="govuk-table__cell">24.07.24</td>
+      <td class="govuk-table__cell">#183</td>
       <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--grey">Not started</span>
       <td class="govuk-table__cell">Amends: content updated from version 2</td>
   </tr>
@@ -427,7 +471,7 @@ View family prototype</a>
     <td class="govuk-table__cell"> <a href="mvp2/checker-la/outcome-technical-error" class="govuk-link">Technical Error Webpage </a>
       <td class="govuk-table__cell">24.07.24</td>
       <td class="govuk-table__cell">#183</td>
-      <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--orange">Ready for review</span>
+      <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Completed</span>
     <td class="govuk-table__cell"> 163383 Link to DfE support for Schools/LA version </td>
 </tr>
 

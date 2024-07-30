@@ -1,0 +1,256 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName=" Eligibility checker prototype" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+<div class="govuk-!-width-two-thirds">
+<span class="govuk-table__caption--m">Index of pages for</span>
+<h1 class="govuk-heading-l">
+  {{ serviceName }}
+</h1>
+
+
+<p>Use these pages to jump to a specific point in the prototype.</p>
+<p>They're grouped by user task or service activity.</p>
+
+<h2 span class="govuk-section-break--m govuk-heading-m">Parent pages</h2>
+<ul class="govuk-task-list">
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-1-status">
+        Company Directors
+      </a>
+    </div>
+    <div class="govuk-task-list__status" id="company-details-1-status">
+      Completed
+    </div>
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-1-status">
+        Company Directors
+      </a>
+    </div>
+    <div class="govuk-task-list__status" id="company-details-1-status">
+      Completed
+    </div>
+  </li>
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-2-status">
+        Registered company details
+      </a>
+    </div>
+    <div class="govuk-task-list__status" id="company-details-2-status">
+      <strong class="govuk-tag govuk-tag--blue">
+        Incomplete
+      </strong>
+    </div>
+  </li>
+</li>
+</ul>
+<h2 span class="govuk-section-break--m govuk-heading-m">School pages</h2>
+
+<ul class="govuk-task-list">
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-3-hint company-details-3-status">
+        Financial history
+      </a>
+      <div id="company-details-3-hint" class="govuk-task-list__hint">
+        Include 5 years of the company’s relevant financial information.
+      </div>
+    </div>
+    <div class="govuk-task-list__status" id="company-details-3-status">
+      <strong class="govuk-tag govuk-tag--blue">
+        Incomplete
+      </strong>
+    </div>
+  </li>
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-4-status">
+        Business plan
+      </a>
+    </div>
+    <div class="govuk-task-list__status" id="company-details-4-status">
+      <strong class="govuk-tag govuk-tag--blue">
+        Incomplete
+      </strong>
+    </div>
+  </li>
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-5-status">
+        References
+      </a>
+    </div>
+    <div class="govuk-task-list__status" id="company-details-5-status">
+      <strong class="govuk-tag govuk-tag--blue">
+        Incomplete
+      </strong>
+    </div>
+  </li>
+</ul>
+<!--
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Parent pages
+    </h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <div class="govuk-grid-column-one-quarter govuk-!-padding-bottom-2"><a href="/mvp2/account/start-now" class="govuk-link page-title" target="_blank">Start</a>
+      <div class="govuk-width-container">Test</div>
+
+  <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          text
+        </dt>
+        <dd class="govuk-summary-list__value">
+          text
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">View<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          text
+        </dt>
+        <dd class="govuk-summary-list__value">
+          text
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> nationality (Lead tenant)</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          text
+        </dt>
+        <dd class="govuk-summary-list__value">
+          text
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">View<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      School pages
+    </h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          text
+        </dt>
+        <dd class="govuk-summary-list__value">
+          text
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">View<span class="govuk-visually-hidden"> whether details are known (Person 2)</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          text
+        </dt>
+        <dd class="govuk-summary-list__value">
+          text
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">View<span class="govuk-visually-hidden"> relationship to lead tenant (Person 2)</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          text
+        </dt>
+        <dd class="govuk-summary-list__value">
+          text
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">View<span class="govuk-visually-hidden"> age (Person 2)</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          text
+        </dt>
+        <dd class="govuk-summary-list__value">
+          text
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">View<span class="govuk-visually-hidden"> working situation (Person 2)</span></a>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Local Authority
+    </h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          text
+        </dt>
+        <dd class="govuk-summary-list__value">
+          text
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">View<span class="govuk-visually-hidden">  </span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          text
+        </dt>
+        <dd class="govuk-summary-list__value">
+          text
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">view<span class="govuk-visually-hidden"> relationship to lead tenant (Person 3)</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          text
+        </dt>
+        <dd class="govuk-summary-list__value">
+          text
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">View<span class="govuk-visually-hidden"> age (Person 3)</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          text
+        </dt>
+        <dd class="govuk-summary-list__value">
+          text
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">View<span class="govuk-visually-hidden"> working situation (Person 3)</span></a>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>-->
+
+
+{% endblock %}
