@@ -7,7 +7,6 @@
 <div class="govuk-grid-row">
 <div class="govuk-grid-column--three-quarters">
 
-
 <span class="govuk-hint">All prototypes for</span>
 <h1 class="govuk-heading-l">
   {{ serviceName }}
@@ -16,14 +15,15 @@
 <p>This is the starting page for the eligibility checking engine prototype.</p>
 <ul>
   <li>
-    <b>Tab 1</b> All journeys used for research are under Research versions.
+    <b>Tab 1</b> Development ready version - MVP 
   </li>
   <li>
-    <b>Tab 2</b> WIP versions are listed in Prototype Iterations.
+    <b>Tab 2</b> All journeys used for research are under Research versions.
   </li>
   <li>
-    <b>Tab 3</b> Previous iterations are Disco-Beta MVP 
+    <b>Tab 3</b> WIP versions
   </li>
+
 </ul>
 <h2 class="govuk-heading-m">Information required for usability tests
 <p></p>
@@ -47,6 +47,16 @@
     Contents
   </h2>
   <ul class="govuk-tabs__list">
+  <!--- <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#dev-iterations">
+        Dev ready iterations
+      </a>
+    </li>-->
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#mvp-iterations">
+        Dev ready version
+      </a>
+    </li>
     <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
       <a class="govuk-tabs__tab" href="#research-versions">
         Research versions
@@ -54,12 +64,7 @@
     </li>
     <li class="govuk-tabs__list-item">
       <a class="govuk-tabs__tab" href="#prototype-iterations">
-        Prototype Iterations
-      </a>
-    </li>
-    <li class="govuk-tabs__list-item">
-      <a class="govuk-tabs__tab" href="#mvp-iterations">
-        Previous Iterations
+        Work in progress versions
       </a>
     </li>
   </ul>
@@ -72,9 +77,9 @@
 
 <!-----------------Research Prototype Parent----------------->
 <!------Link to the latest version-->
-<h3 class="govuk-heading-m">Prototype Version: MVP 1 - Parent user journey</h3>
+<h3 class="govuk-heading-m">Prototype Version: MVP 2 - Parent user journey</h3>
     
-<a href="/mvp1/account/start-now" role="button" draggable="false" class="govuk-button govuk-button-" data-module="govuk-button">
+<a href="/mvp2/account/start-now" role="button" draggable="false" class="govuk-button govuk-button-" data-module="govuk-button">
 View family prototype</a>
 
     
@@ -124,9 +129,9 @@ View family prototype</a>
 
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break">
 <!-----------------Research Prototype School----------------->
-<h3 class="govuk-heading-m">Prototype Version: MVP 1 - School user journey</h3>
+<h3 class="govuk-heading-m">Prototype Version: MVP 2 - School user journey</h3>
     
-<a href="/mvp1/checker/dashboard" role="button" draggable="false" class="govuk-button govuk-button-" data-module="govuk-button">View school prototype</a>
+<a href="/mvp2/checker/dashboard" role="button" draggable="false" class="govuk-button govuk-button-" data-module="govuk-button">View school prototype</a>
 
 
       <h2 class="govuk-heading-s">Research sessions</h2>
@@ -177,9 +182,9 @@ View family prototype</a>
 
 
 <!-----------------Research Prototype LA----------------->
-<h3 class="govuk-heading-m">Prototype Version: MVP 1 - LA user journey</h3>
+<h3 class="govuk-heading-m">Prototype Version: MVP 2 - LA user journey</h3>
 
-<a href="/mvp1/checker-la/dashboard" role="button" draggable="false" class="govuk-button govuk-button-" data-module="govuk-button">View LA prototype</a>
+<a href="/mvp2/checker-la/dashboard" role="button" draggable="false" class="govuk-button govuk-button-" data-module="govuk-button">View LA prototype</a>
 
   <h2 class="govuk-heading-m">Research sessions</h2>
   <table class="govuk-table">
@@ -267,7 +272,7 @@ View family prototype</a>
   <p><span class="govuk-tag govuk-tag--blue">In progress (WIP)</span> Being worked on - may change</p>
   <p><span class="govuk-tag govuk-tag--yellow">Amends</span> Changes required after sign off</p>
   <p><span class="govuk-tag govuk-tag--orange">Review</span> Ready for PO sign off review session</p>
-  <p><span class="govuk-tag govuk-tag--green">Completed</span> Signed off by PO and ready for development</p>
+  <p><span class="govuk-tag govuk-tag--green">Completed</span> Signed off by PO and ready for next round of testing</p>
   <p><span class="govuk-tag govuk-tag--pink">Descoped</span> Left in prototype for future prioritisation</p>
 </div>
 
@@ -579,7 +584,7 @@ View family prototype</a>
 <h3>User journeys and additional documents</h3>
 <h2 class="govuk-heading-s">Lucid boards</h2>
 <ul class="govuk-list govuk-list--bullet">
-  <li><a class="govuk-link" href="#">Service blueprint (Lucid boards)</a></li>
+  <li><a class="govuk-link" href="https://lucid.app/lucidspark/7bfb84e0-27ee-4e9c-b4a4-f30efbbe829c/edit?invitationId=inv_ba08c3b6-b88c-409c-b971-8fee8f5fbb21&page=0_0#">Service blueprint (Lucid boards)</a></li>
   <li><a class="govuk-link" href="#">User journeys (Lucid boards)</a></li>
 </ul>
 
@@ -605,11 +610,11 @@ View family prototype</a>
 </thead>
 </div>
 
-
-<!-------------------MVP1 Iterations------------------->
+<!-------------------Dev ready iterations-MVP1------------------>
 <!--------------------------------------------------------->
+
 <div class="govuk-tabs__panel" id="mvp-iterations">
-  <h2 class="govuk-heading-m">Previous Iterations</h2>
+  <h2 class="govuk-heading-m">Dev ready version</h2>
   <p>These are the latest versions that have gone through to development. <br>All have been fixed as of July 2024.</p>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
@@ -648,10 +653,10 @@ View family prototype</a>
       <td class="govuk-table__cell">
         <ol>
           <li><a href="./mvp1/accessibility">Accessibility statement</a></li>
-          <li><a href="./mvp1/cookies">Cookies page</a></li>
-          <li><a href="./mvp1/privacy">Privacy statement</a></li>
-          <li><a href="./mvp1/terms-and-conditions">Terms and conditions</a></li>
-
+          <li><a href="./mvp1/cookies">Cookies page</a> <strong class="govuk-tag govuk-tag--green">Updated</strong></li>
+          <li><a href="./mvp1/privacy">Privacy statement</a>  <strong class="govuk-tag govuk-tag--green">Updated</strong></li>
+          <!--<li><a href="./mvp1/terms-and-conditions">Terms and conditions</a> <strong class="govuk-tag govuk-tag--orange">No content</strong></li>
+          -->
         </ol>
       </td>
     </tr>
