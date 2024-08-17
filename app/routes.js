@@ -71,8 +71,15 @@ router.get('*', function (req, res, next) {
 const radioButtonRedirect = require('radio-button-redirect')
 router.use(radioButtonRedirect)
 
+// MVP2 
+//require('./views/mvp2/_routes');
+
 // CURRENT 
-require('./views/current/_routes');
+//require('./views/current/_routes');
+
+// MVP1 
+//require('./views/mvp1/_routes');
+
 
 // V1 
 // Include version 1 routes

@@ -1,256 +1,159 @@
 {% extends "layouts/main.html" %}
 
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/index"
+}) }}
+
+{% endblock %}
+
 {% set pageName=" Eligibility checker prototype" %}
+{% set version=" MVP2" %}
 
 {% block content %}
-
 <div class="govuk-grid-row">
-<div class="govuk-!-width-two-thirds">
-<span class="govuk-table__caption--m">Index of pages for</span>
+  <div class="govuk-!-width-two-thirds">
+    <span class="govuk-table__caption--m">Index of pages for {{version}}</span>
 <h1 class="govuk-heading-l">
-  {{ serviceName }}
-</h1>
+  {{ serviceName }}</h1>
+<p>Use these pages to jump to a specific point in the prototype quickly.</p>
 
+<div class="govuk-inset-text">
+  <h4>Status</h4>
+  <p><span class="govuk-tag govuk-tag--grey">Not changed</span> No change since last version</p>
+  <p><span class="govuk-tag govuk-tag--yellow">Amended</span> Amends made since last version</p> 
+  <p><span class="govuk-tag govuk-tag--turquoise">Changed</span> Significant change since last version</p> 
+  <p><span class="govuk-tag govuk-tag--pink">Removed</span> Page removed - locate in previous version</p> 
+</div>
+  <!--row1-->
+ 
+<div class="govuk-!-width-two-thirds">
+  <h2 span class="govuk-section-break--m govuk-heading-m">Parent pages</h2>
+</div><!--
+  <table class="govuk-table">
+    <!---row header
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row"
+        <th scope="col" class="govuk-table__header">Page</th>-->
+        <!--<th scope="col" class="govuk-table__header">Page title</th>
+        <th scope="col" class="govuk-table__header">Version</th>
+        <th scope="col" class="govuk-table__header">Status</th>
+      </tr>
+    </thead>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <ol>
+          <li><a href="account/start-now">Start-now</a></li>
+          <li><a href="parent-soft-check/check">Check</a></li>
+          <li>Outcomes
+            <ul><li><a href="./mvp2/parent-soft-check/eligible">Found - eligible</a></li>
+              <li><a href="./mvp2/parent-soft-check/outcome-not-entitled">Found - not eligible</a></li>
+              <li><a href="./mvp2/parent-soft-check/outcome-could-not-find">Not found</a></li>
+              <li><a href="./mvp2/parent-soft-check/outcome-could-not-find-pending">Not found - pending</a></li>
+              <li><a href="./mvp2/parent-soft-check/outcome-technical-error.html">Technical error</a></li>
+            </ul>
+          </li>
+          <li><a href="./mvp2/parent-soft-check/nass-number">NASS number</a></li>
+          <li><a href="./mvp2/parent-soft-check/checking-loader">Checking loader page</a></li>
+        </ol>
+</td>
+      <td class="govuk-table__cell">
+        v1<br>
+      </td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--grey">
+          Not changed
+        </strong>
+      </td>
 
-<p>Use these pages to jump to a specific point in the prototype.</p>
-<p>They're grouped by user task or service activity.</p>
+    </tr>
+  </table>
+<!----->
 
-<h2 span class="govuk-section-break--m govuk-heading-m">Parent pages</h2>
-<ul class="govuk-task-list">
+  <ul class="govuk-task-list">
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-1-status">
-        Company Directors
-      </a>
-    </div>
-    <div class="govuk-task-list__status" id="company-details-1-status">
-      Completed
-    </div>
-  <li class="govuk-task-list__item govuk-task-list__item--with-link">
-    <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-1-status">
-        Company Directors
-      </a>
-    </div>
-    <div class="govuk-task-list__status" id="company-details-1-status">
-      Completed
-    </div>
-  </li>
-  <li class="govuk-task-list__item govuk-task-list__item--with-link">
-    <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-2-status">
-        Registered company details
-      </a>
-    </div>
-    <div class="govuk-task-list__status" id="company-details-2-status">
-      <strong class="govuk-tag govuk-tag--blue">
-        Incomplete
-      </strong>
-    </div>
-  </li>
-</li>
-</ul>
-<h2 span class="govuk-section-break--m govuk-heading-m">School pages</h2>
-
-<ul class="govuk-task-list">
-  <li class="govuk-task-list__item govuk-task-list__item--with-link">
-    <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-3-hint company-details-3-status">
-        Financial history
+      <a class="govuk-link govuk-task-list__link" href="account/start-now" aria-describedby="Start-now-page">
+        account/Start-now
       </a>
       <div id="company-details-3-hint" class="govuk-task-list__hint">
-        Include 5 years of the company’s relevant financial information.
+        Check if your children can get free school meals  </div>
+    </div>
+    <div class="govuk-task-list__status" id="company-details-2-status">
+      <strong class="govuk-tag govuk-tag--grey">
+        Not changed
+      </strong>
+    </div>
+    </li>
+    <li class="govuk-task-list__item govuk-task-list__item--with-link">
+      <div class="govuk-task-list__name-and-hint">
+        <a class="govuk-link govuk-task-list__link" href="parent-soft-check/check" aria-describedby="Start-now-page">
+          parent-soft-check/check
+        </a>
+        <div id="company-details-3-hint" class="govuk-task-list__hint">
+          Enter your details
       </div>
-    </div>
-    <div class="govuk-task-list__status" id="company-details-3-status">
-      <strong class="govuk-tag govuk-tag--blue">
-        Incomplete
-      </strong>
-    </div>
-  </li>
-  <li class="govuk-task-list__item govuk-task-list__item--with-link">
-    <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-4-status">
-        Business plan
-      </a>
-    </div>
-    <div class="govuk-task-list__status" id="company-details-4-status">
-      <strong class="govuk-tag govuk-tag--blue">
-        Incomplete
-      </strong>
-    </div>
-  </li>
-  <li class="govuk-task-list__item govuk-task-list__item--with-link">
-    <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-5-status">
-        References
-      </a>
-    </div>
-    <div class="govuk-task-list__status" id="company-details-5-status">
-      <strong class="govuk-tag govuk-tag--blue">
-        Incomplete
-      </strong>
-    </div>
-  </li>
+      </div>
+      <div class="govuk-task-list__status" id="company-details-2-status">
+        <strong class="govuk-tag govuk-tag--grey">
+          Not changed
+        </strong>
+      </div>
+      </li>
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="parent-soft-check/nass-number" aria-describedby="Start-now-page">
+            Do you have an asylum support reference number?
+          </a>
+          <div id="company-details-3-hint" class="govuk-task-list__hint">
+            Checking your entitlement
+        </div>
+        </div>
+        <div class="govuk-task-list__status" id="company-details-2-status">
+          <strong class="govuk-tag govuk-tag--grey">
+            Not changed
+          </strong>
+        </div>
+        </li>
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="parent-soft-check/checking-loader" aria-describedby="Start-now-page">
+            parent-soft-check/checking-loader
+          </a>
+          <div id="company-details-3-hint" class="govuk-task-list__hint">
+            Checking your entitlement
+        </div>
+        </div>
+        <div class="govuk-task-list__status" id="company-details-2-status">
+          <strong class="govuk-tag govuk-tag--yellow">
+            Changed
+          </strong>
+        </div>
+        </li>
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="parent-soft-check/eligible" aria-describedby="Start-now-page">
+              Outcome - eligible
+            </a>
+            <div id="company-details-3-hint" class="govuk-task-list__hint">
+              Your children are entitled to free school meals
+          </div>
+          </div>
+          <div class="govuk-task-list__status" id="company-details-2-status">
+            <strong class="govuk-tag govuk-tag--grey">
+              Not changed
+            </strong>
+          </div>
+          </li>
 </ul>
-<!--
-<div class="govuk-summary-card">
-  <div class="govuk-summary-card__title-wrapper">
-    <h2 class="govuk-summary-card__title">
-      Parent pages
-    </h2>
-  </div>
-  <div class="govuk-summary-card__content">
-    <div class="govuk-grid-column-one-quarter govuk-!-padding-bottom-2"><a href="/mvp2/account/start-now" class="govuk-link page-title" target="_blank">Start</a>
-      <div class="govuk-width-container">Test</div>
 
-  <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          text
-        </dt>
-        <dd class="govuk-summary-list__value">
-          text
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">View<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          text
-        </dt>
-        <dd class="govuk-summary-list__value">
-          text
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> nationality (Lead tenant)</span></a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          text
-        </dt>
-        <dd class="govuk-summary-list__value">
-          text
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">View<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
-        </dd>
-      </div>
-    </dl>
-  </div>
-</div>
-<div class="govuk-summary-card">
-  <div class="govuk-summary-card__title-wrapper">
-    <h2 class="govuk-summary-card__title">
-      School pages
-    </h2>
-  </div>
-  <div class="govuk-summary-card__content">
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          text
-        </dt>
-        <dd class="govuk-summary-list__value">
-          text
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">View<span class="govuk-visually-hidden"> whether details are known (Person 2)</span></a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          text
-        </dt>
-        <dd class="govuk-summary-list__value">
-          text
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">View<span class="govuk-visually-hidden"> relationship to lead tenant (Person 2)</span></a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          text
-        </dt>
-        <dd class="govuk-summary-list__value">
-          text
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">View<span class="govuk-visually-hidden"> age (Person 2)</span></a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          text
-        </dt>
-        <dd class="govuk-summary-list__value">
-          text
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">View<span class="govuk-visually-hidden"> working situation (Person 2)</span></a>
-        </dd>
-      </div>
-    </dl>
-  </div>
-</div>
-<div class="govuk-summary-card">
-  <div class="govuk-summary-card__title-wrapper">
-    <h2 class="govuk-summary-card__title">
-      Local Authority
-    </h2>
-  </div>
-  <div class="govuk-summary-card__content">
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          text
-        </dt>
-        <dd class="govuk-summary-list__value">
-          text
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">View<span class="govuk-visually-hidden">  </span></a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          text
-        </dt>
-        <dd class="govuk-summary-list__value">
-          text
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">view<span class="govuk-visually-hidden"> relationship to lead tenant (Person 3)</span></a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          text
-        </dt>
-        <dd class="govuk-summary-list__value">
-          text
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">View<span class="govuk-visually-hidden"> age (Person 3)</span></a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          text
-        </dt>
-        <dd class="govuk-summary-list__value">
-          text
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">View<span class="govuk-visually-hidden"> working situation (Person 3)</span></a>
-        </dd>
-      </div>
-    </dl>
-  </div>
-</div>-->
+<h2 span class="govuk-section-break--m govuk-heading-m">School pages</h2>
+
+
+
+<h2 span class="govuk-section-break--m govuk-heading-m">Local Authority pages</h2>
 
 
 {% endblock %}
