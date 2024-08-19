@@ -1,4 +1,5 @@
-{% extends "layouts/mvp1.html" %}
+{% extends "layouts/main.html" %}
+
 
 {% set pageName="Home" %}
 
@@ -16,10 +17,15 @@
 
     <p class="govuk-body">It might take a few minutes to arrive. The code will expire after 15 minutes.</p>
 
+    {% if data['parent-portal'] == 'evidence-required' %}
+<!---
+    <form action="../checker-parent/dashboard?=la" method="post">
+    -->
+      {% else %}
 
-    
+    <form action="../account/apply/childs-age" method="post">
 
-    
+      {% endif %}
       <div class="govuk-form-group">
         <label class="govuk-label" for="code">
           Enter the 6 digit security code
@@ -30,42 +36,9 @@
 
       </div>
 
-      
-
-
-<!-- -->
-
-{% if data['flow'] =="submit-evidence" %}
-
-<form action="../../parent-soft-check/do-you-have-docs" method="post" novalidate>
-
-    {{ govukButton({
-        text: "Continue",
-        classes: "govuk-button govuk-!-margin-right-3"
-        
-      }) }}
-    
-    
-  
-</form>
-
-{% else %}
-
-<form action="../../parent-soft-check/childs-age" method="post" novalidate>
-
-  {{ govukButton({
-      text: "Continue",
-      classes: "govuk-button govuk-!-margin-right-3"
-      
-    }) }}
-  
-  
-</form>
-
-{% endif %}
-
-
-
+      <button type="Submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
 
 
       <details class="govuk-details" data-module="govuk-details">
@@ -93,7 +66,7 @@
         </div>
       </details>
 
-    
+    </form>
 
   </div>
 </div>
