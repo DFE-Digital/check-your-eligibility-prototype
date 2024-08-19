@@ -1,17 +1,22 @@
-//
 // For guidance on how to create routes see:
 // https://prototype-kit.service.gov.uk/docs/create-routes
 //
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
+// Add your routes here - above the module.exports line
 
-// Add your routes here
+
+const radioButtonRedirect = require('radio-button-redirect')
+router.use(radioButtonRedirect)
+
+// Pass the router to the routes folder
+require('./routes/account')(router);
+require('./routes/softCheck')(router);
 
 router.get('*', function (req, res, next) {
 
   // These functions are available on all pages in the prototype.
   // To use call the function inside curly brackets, for example {{ example_function() }}
-
   // Examples of date
   //
   // {{ date() }} shows todays date in the format 5 May 2022
@@ -68,8 +73,6 @@ router.get('*', function (req, res, next) {
 // LOCAL FOLDER ROUTES //
 /////////////////////////
 
-const radioButtonRedirect = require('radio-button-redirect')
-router.use(radioButtonRedirect)
 
 // MVP2 
 //require('./views/mvp2/_routes');
@@ -80,10 +83,9 @@ router.use(radioButtonRedirect)
 // MVP1 
 //require('./views/mvp1/_routes');
 
-
 // V1 
 // Include version 1 routes
-require('./views/v1/_routes');
+//require('./views/v1/_routes');
 
 module.exports = router;
 
@@ -91,21 +93,21 @@ module.exports = router;
 ////////////////////////CURRENT//////////////////////////////////
 
 // Nationality
-router.post('/nationality-answer', function (req, res) {
+//router.post('/nationality-answer', function (req, res) {
 
   // Make a variable 
-  var whatNationality = req.session.data['what-nationality']
+ // var whatNationality = req.session.data['what-nationality']
 
   // Check whether the variable matches a condition
-  if (whatNationality == "british"){
+ // if (whatNationality == "british"){
     // Send user to next page
-    res.redirect('/current/checker-parent/national-insurance')
-  } else {
+ //   res.redirect('/current/checker-parent/national-insurance')
+ // } else {
     // Send user to other page
-    res.redirect('/current/checker-parent/asylum-seeker')
-  }
+ //  res.redirect('/current/checker-parent/asylum-seeker')
+ // }
 
-})
+//})
 
 // Asylum number
 router.post('/asylum-answer', function (req, res) {
@@ -289,22 +291,22 @@ router.post('/nationality-answer', function (req, res) {
 
 })
 
-// Asylum number
-router.post('/asylum-answer', function (req, res) {
+// Asylum number-NOT USED IN CURRENT VERSIONS//
+//router.post('/asylum-answer', function (req, res) {
 
   // Make a variable 
-  var seekingAsylum = req.session.data['seeking-asylum']
+  //var seekingAsylum = req.session.data['seeking-asylum']
 
   // Check whether the variable matches a condition
-  if (seekingAsylum == "yes"){
+  //if (seekingAsylum == "yes"){
     // Send user to next page
-    res.redirect('/mvp1/checker-parent/nass-number')
-  } else {
+    //res.redirect('/mvp1/checker-parent/nass-number')
+  //} else {
     // Send user to other page
-    res.redirect('/mvp1/checker-parent/more-info-required-asylum')
-  }
+    //res.redirect('/mvp1/checker-parent/more-info-required-asylum')
+  //}
 
-})
+//})
 
   // NASS number
   router.post('/nass-number-answer', function (req, res) {
@@ -420,10 +422,8 @@ router.post('/council-nass-number-answer', function (req, res) {
 //
   // NI number
   router.post('/ni-number-check', function (req, res) {
-
     // Make a variable 
     var nassNumber = req.session.data['ni-number']
-  
     // Check whether the variable matches a condition
     if (nassNumber == "yes"){
       // Send user to next page
@@ -632,4 +632,31 @@ router.post('/mvp2-soft-check-ni-answer', function (req, res) {
  }
 })
 
-router
+///workingMVP3///
+
+   /// Soft CHECKER
+   router.post('/mvp3-soft-check-ni-answer', function (req, res) {
+    // Make a variable 
+    var nassNumber = req.session.data['ni-number']
+    // Check whether the variable matches a condition
+   if (nassNumber == "yes"){
+      // Send user to next page
+      res.redirect('/mvp3/_family/parent-soft-check/checking-loader')
+    } else {
+      // Send user to other page
+     res.redirect('/mvp3/_family/parent-soft-check/nass-number')
+   }
+  })
+//account
+     // POST route mvp3
+     router.post('/mvp3/_family/account/onegov-signin', (req, res) => {
+      req.session.data.user = {};
+      res.redirect('/account/enter-password');
+  });
+     // GET route  MVP3
+     router.get('/', function(req, res) {
+      res.send('Account Page');
+  });
+
+
+module.exports = router;
