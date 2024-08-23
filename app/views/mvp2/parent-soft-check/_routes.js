@@ -1,6 +1,6 @@
-const govukPrototypeKit = require(‘govuk-prototype-kit’)
-const router = govukPrototypeKit.requests.setupRouter(‘/mvp1’)
-///mvp1///
+//const govukPrototypeKit = require(‘govuk-prototype-kit’)
+//const router = govukPrototypeKit.requests.setupRouter(‘/mvp2’)
+///mvp2///
 //const routes = require(‘./views/mvp1/_routes’);
     // NI number CHECKER
     //router.post(‘/test-answer’, function (req, res) {

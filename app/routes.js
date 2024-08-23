@@ -10,8 +10,8 @@ const radioButtonRedirect = require('radio-button-redirect')
 router.use(radioButtonRedirect)
 
 // Pass the router to the routes folder
-require('./routes/account')(router);
-require('./routes/softCheck')(router);
+require('./routes/mvp3/account')(router);
+require('./routes/mvp3/softCheck')(router);
 
 router.get('*', function (req, res, next) {
 
@@ -85,8 +85,8 @@ router.get('*', function (req, res, next) {
 
 // V1 
 // Include version 1 routes
+//require('./routes/v1');
 //require('./views/v1/_routes');
-
 module.exports = router;
 
 
@@ -274,7 +274,7 @@ router.post('/soft-check-ni-answer', function (req, res) {
 
 ////////////////////////////////mvp1///////////////////////////////
 
-// Nationality
+// Nationality//Not used
 router.post('/nationality-answer', function (req, res) {
 
   // Make a variable 
@@ -435,7 +435,7 @@ router.post('/council-nass-number-answer', function (req, res) {
   
   })
 
-   /// Soft CHECKER
+   /// Soft CHECKER//- relink to new routes folder //routes/mvp1/softCheck.js
 router.post('/mvp1-soft-check-ni-answer', function (req, res) {
   // Make a variable 
   var nassNumber = req.session.data['ni-number']
@@ -635,7 +635,7 @@ router.post('/mvp2-soft-check-ni-answer', function (req, res) {
 ///workingMVP3///
 
    /// Soft CHECKER
-   router.post('/mvp3-soft-check-ni-answer', function (req, res) {
+   router.post('/mvp3_v1/_family/soft-check-ni-answer', function (req, res) {
     // Make a variable 
     var nassNumber = req.session.data['ni-number']
     // Check whether the variable matches a condition
@@ -649,7 +649,7 @@ router.post('/mvp2-soft-check-ni-answer', function (req, res) {
   })
 //account
      // POST route mvp3
-     router.post('/mvp3/_family/account/onegov-signin', (req, res) => {
+     router.post('/mvp3_v1/_family/account/onegov-signin', (req, res) => {
       req.session.data.user = {};
       res.redirect('/account/enter-password');
   });

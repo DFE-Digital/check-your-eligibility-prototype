@@ -1,0 +1,51 @@
+{% extends "../../../../../layouts/layout-dfe-schoolnav-noback.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    {{ mojBanner({
+      type: 'success',
+      text: 'This parent or guardian is entitled to free school meals.',
+      iconFallbackText: 'Success'
+    }) }}
+    <!--<h1 class="govuk-heading-l">The children of this parent or guardian are entitled to free school meals</h1>
+    -->
+
+    <h2 class="govuk-heading-m">What to do next</h2>
+
+        <p>Select 'Add children's details' to complete the information about children attending your school.</p>
+
+
+  {{ govukInsetText({
+    text: "If this parent or guardian has children at other schools, they will need to apply at those schools."
+    }) }}
+
+      
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Add children's details",
+    href: '../../apply/outcome-eligible-childs-age'
+  }) }}
+
+  <a class="govuk-link" href="../../dashboard">Return to dashboard</a>
+</div>
+
+
+<!--<p><a href="dashboard">Return to dashboard</a></p>
+<p><a href="">Sign out</a></p>-->
+
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+
+{% endblock %}

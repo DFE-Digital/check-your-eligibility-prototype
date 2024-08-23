@@ -11,7 +11,7 @@ module.exports = function(router) {
         res.send('Account Page');
     });
 
-     // POST route mvp3
+     // POST route MVP3
      router.post('/mvp3/_family/account/onegov-signin', (req, res) => {
         req.session.data.user = {};
         res.redirect('/account/enter-password');
