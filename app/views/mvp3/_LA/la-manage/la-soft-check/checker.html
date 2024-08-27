@@ -1,0 +1,110 @@
+{% extends "../../../../layouts/layout-dfe-lanav.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+    <form action="eligible" method="post" novalidate>
+
+      {% call govukFieldset({
+        legend: {
+          text: "Enter parent or guardian details          ",
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          label: {
+            text: "Parent or guardian first name"
+          },
+          id: "Firstname",
+          name: "Parent or guardian first name",
+          autocomplete: "name",
+          classes: "govuk-input--width-20",
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Parent or guardian last name"
+          },
+          id: "surName",
+          name: "surName",
+          autocomplete: "name",
+          classes: "govuk-input--width-20",
+          spellcheck: false
+        }) }}
+
+
+        {{ govukInput({
+          label: {
+            text: "Parent or guardian National Insurance number"
+          },
+
+          id: "full-name",
+          name: "fullName",
+          autocomplete: "name",
+          classes: "govuk-input--width-20",
+          spellcheck: false
+        }) }}
+
+<p>Or</p>
+
+        {{ govukInput({
+          label: {
+            text: "Parent or guardian asylum support reference number"
+          },
+          id: "nass",
+          name: "nass",
+          autocomplete: "name",
+          classes: "govuk-input--width-20",
+          spellcheck: false
+        }) }}
+
+
+          {{ govukDateInput({
+
+            id: "dob",
+            namePrefix: "dob",
+
+            fieldset: {
+              legend: {
+                text: "Parent or guardian date of birth",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            hint: {
+              text: "For example, 27 3 1980"
+            }
+          }) }}
+
+      {% endcall %}
+
+
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Perform check",
+  href: "checking-la-loader"
+}) }}
+
+
+    </form>
+
+
+
+      </div>
+
+    </div>
+
+
+
+{% endblock %}

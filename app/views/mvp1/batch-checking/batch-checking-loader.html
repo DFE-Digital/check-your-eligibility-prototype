@@ -1,4 +1,4 @@
-{% extends "../../current/parent-soft-check/layouts/layout-dfe-signed-out.html" %}
+{% extends "../../mvp1/parent-soft-check/layouts/layout-dfe-signed-out.html" %}
 
 {% set pageName="Checking for you" %}
 
@@ -36,7 +36,7 @@
                     var newCount = currentCount +1;
                     if(newCount >= total_count) {
                       clearInterval(intervalId);
-                      document.location = '/current/batch-checking/batch-check-success';
+                      document.location = '/mvp1/batch-checking/batch-check-success';
                     } else {
                       countElement.innerHTML = newCount;
                     }

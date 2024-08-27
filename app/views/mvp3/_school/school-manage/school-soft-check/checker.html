@@ -1,0 +1,126 @@
+{% extends "../../../../layouts/layout-dfe-schoolnav.html" %}
+
+{% set pageName="Enter parent or guardian's details" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="outcomes/outcome-eligible" method="post" novalidate>
+
+      {% call govukFieldset({
+        legend: {
+          text: pageName,
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+  
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+        {{ govukInput({
+          label: {
+            text: "First name"
+          },
+          id: "Firstname",
+          name: "Firstname",
+          
+          autocomplete: "name",
+          classes: "govuk-input--width-20",
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Last name"
+          },
+          id: "surName",
+          name: "surName",
+          autocomplete: "name",
+          classes: "govuk-input--width-20",
+          spellcheck: false
+        }) }}
+
+
+    
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break">
+
+        {{ govukInput({
+          label: {
+            text: "National Insurance number"
+          },
+          id: "full-name",
+          name: "fullName",
+          autocomplete: "name",
+          classes: "govuk-input--width-20",
+          spellcheck: false
+        }) }}
+<p>Or</p>
+        {{ govukInput({
+          label: {
+            text: "Asylum support reference number"
+          },
+          hint: {
+            text: "If they don't have a National insurance number"
+          },
+          id: "nass",
+          name: "nass",
+          autocomplete: "name",
+          classes: "govuk-input--width-20",
+          
+          spellcheck: false
+        }) }}
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break">
+
+          {{ govukDateInput({
+            
+            id: "dob",
+            namePrefix: "dob",
+            fieldset: {
+              legend: {
+                text: "Parent or guardian date of birth",
+                isPageHeading: false              
+              }
+            },
+            hint: {
+              text: "For example, 27 3 1980"
+            }
+          }) }}
+
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break">
+
+
+          {{ govukInput({
+            label: {
+              text: "Parent or guardian's email address"
+            },
+            id: "email",
+            name: "email",
+            hint: {
+              text: "This is so we can notify them with updates of the application"
+            },
+            autocomplete: "name",
+            classes: "govuk-input--width-20",
+            spellcheck: false
+          }) }}
+      
+      {% endcall %}
+      
+
+      
+    </form>
+
+    {{ govukButton({
+      text: "Perform check",
+      href: '../school-soft-check/school-checking-loader'
+    }) }}
+        
+      </div>  
+    
+    </div>
+
+
+
+{% endblock %}

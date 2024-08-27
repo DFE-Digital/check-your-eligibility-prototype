@@ -1,0 +1,30 @@
+{% extends "layouts/main.html" %}
+{% set pageName="prototype versions" %}
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "/"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<p>Designers README-first.</p>
+
+<p>Breakdown for MVP folders.</p>
+<ul>
+  <li>
+    <b>MVP1</b> Halted from handover of other Designers
+  </li>
+  <li>
+    <b>MVP2</b> Tweaks/Bugs for Dev ready user journeys
+  </li>
+  <li>
+    <b>MVP3</b> Reconfigured folder structure. Research ready post beta - make sure all these are up to date with Design version before testing.
+  </li>
+  <li>
+    <b>MVP4</b> Current work in progress for post-mvp iterations and future designs.
+  </li>
+
+
+{% endblock %}

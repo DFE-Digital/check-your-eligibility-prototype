@@ -1,0 +1,757 @@
+{% extends "../../../../layouts/layout-dfe-schoolnav.html" %}
+
+{% set pageName="Search all records" %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">
+    {{pageName}}
+    </h1>
+    <!--<p>Fill in any of the fields on this page to find a free school meal record.</p>
+    -->
+  </div>
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <form action="eligible-list" method="post" class="form">
+
+
+    <!-- SEARCH BAR 
+    <div class="cardDesign">-->
+    
+{{ mojPageHeaderActions({
+  heading: {
+    text: 'Search results (203)',
+    
+    classes:'govuk-heading-m'
+  },
+  items: [{
+    text: 'Export as csv',
+    classes: 'govuk-button--secondary',
+    href:"file-exported"
+  }
+  ]
+}) }}
+<!---
+<p><a href="search">Search again</a> </p>
+-->
+   
+
+{%- from "moj/components/filter/macro.njk" import mojFilter -%}
+{%- from "govuk/components/checkboxes/macro.njk" import govukCheckboxes -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+
+{%- set filterOptionsHtml %}
+
+  {{ govukInput({
+    id: 'keywords',
+    name: 'keywords',
+    label: {
+      text: 'Keywords',
+      classes: 'govuk-label--m'
+    }
+  }) }}
+
+  {{ govukCheckboxes({
+    idPrefix: 'type',
+    name: 'type',
+    classes: "govuk-checkboxes--small",
+    fieldset: {
+      legend: {
+        text: 'Type',
+        classes: 'govuk-fieldset__legend--m'
+      }
+    },
+    items: [
+      {
+        value: '1',
+        text: 'Blue (18)',
+        checked: true
+      },
+      {
+        value: '2',
+        text: 'Yellow (5)',
+        checked: true
+      },
+      {
+        value: '3',
+        text: 'Red (2)'
+      }
+    ]
+  }) }}
+
+  {{ govukCheckboxes({
+    idPrefix: 'status',
+    name: 'status',
+    classes: "govuk-checkboxes--small",
+    fieldset: {
+      legend: {
+        text: 'Status',
+        classes: 'govuk-fieldset__legend--m'
+      }
+    },
+    items: [
+      {
+        value: 'complete',
+        text: 'Completed (2)',
+        checked: true
+      },
+      {
+        value: 'incomplete',
+        text: 'Incomplete (5)'
+      },
+      {
+        value: 'inprogress',
+        text: 'In progress (3)',
+        checked: false
+      }
+    ]
+  }) }}
+{% endset -%}
+
+{{ mojFilter({
+  heading: {
+    text: 'Filter'
+  },
+
+  submit: {
+    attributes: {
+        "data-test-id": "submit-button"
+    }
+  },
+
+  selectedFilters: {
+
+    heading: {
+      text: 'Selected filters'
+    },
+
+    clearLink: {
+      text: 'Clear filters'
+    },
+
+    categories: [
+      {
+        heading: {
+          text: 'Type'
+        },
+        items: [{
+          href: '/path/to/remove/this',
+          text: 'Blue'
+        }, {
+          href: '/path/to/remove/this',
+          text: 'Yellow'
+        }]
+      },
+      {
+        heading: {
+          text: 'Status'
+        },
+        items: [{
+          href: '/path/to/remove/this',
+          text: 'Completed'
+        }]
+      }
+    ]
+  },
+  optionsHtml: filterOptionsHtml
+}) }}
+
+
+    <div class="govuk-grid-row">
+
+            
+      
+
+      <div class="govuk-grid-column-full">
+
+
+
+<div class="moj-filter-layout">
+
+ 
+
+  <div class="moj-filter-layout__content">
+
+  
+
+  <div class="moj-scrollable-pane">
+    {{ govukTable({
+      firstCellIsHeader: true,
+      head: [
+        {text: 'Reference'},
+        {text: 'Parent / guardian'},
+        {text: 'Child'},
+        {text: 'Child DOB'},
+
+        {text: 'Eligible from'},
+      
+        {text: 'Status'},
+        {text: 'Submission date'}
+      ],
+      rows: [
+
+      [
+      {html: '<a href="../records/approved" class="govuk-link">44455453</a>'},
+      {html: 'Eden Tesfay'},
+      {html: 'Samual Tesfay'},
+      {html: '12 Jan 2017'},
+      {html: '01 Sep 2023'},
+      
+      {html: govukTag({
+        text: "Entitled",
+        classes: "govuk-tag--green"
+      })},
+      {text: '25 Sep 2023'}
+      ],
+
+        [
+          {html: '<a href="../records/eligible.html" class="govuk-link">12323212</a>'},
+          {html: 'Warren Sutton'},
+          {html: 'Lisa Sutton'},
+          {html: '10 Jan 2017'},
+          {html: '01 Sep 2023'},
+        
+      
+          {html: govukTag({
+            text: "Entitled",
+            classes: "govuk-tag--green"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+
+        [
+          {html: '<a href="#" class="govuk-link">45678765</a>'},
+          {html: 'Alan Jones'},
+          {html: 'Jack Jones'},
+          {html: '10 Jan 2018'},
+          {html: '01 Sep 2023'},
+        
+        
+          {html: govukTag({
+            text: "Evidence needed",
+            classes: "govuk-tag--light-blue"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+
+        [
+          {html: '<a href="#" class="govuk-link">12345678</a>'},
+          {html: 'Jennifer Langley'},
+          {html: 'Tilly Langley'},
+          {html: '03 Dec 2017'},
+          {html: '01 Sep 2023'},
+        
+        
+          {html: govukTag({
+            text: "Sent for review",
+            classes: "govuk-tag--blue"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+
+        [
+          {html: '<a href="#" class="govuk-link">89009800</a>'},
+          {html: 'Susan Francis'},
+          {html: 'Noah Francis'},
+          {html: '13 Dec 2017'},
+          {html: '01 Sep 2023'},
+        
+        
+          {html: govukTag({
+            text: "Reviewed entitled",
+            classes: "govuk-tag--turqoise"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+
+        [
+          {html: '<a href="#" class="govuk-link">44455453</a>'},
+          {html: 'John Smith'},
+          {html: 'Jo Smith'},
+          {html: '11 Dec 2017'},
+          {html: '01 Sep 2023'},
+         
+        
+             {html: govukTag({
+        text: "Reviewed not entitled",
+        classes: "govuk-tag--orange"
+      })},
+      {text: '25 Sep 2023'}
+      ],
+
+        [
+          {html: '<a href="#" class="govuk-link">12323212</a>'},
+          {html: 'Warren Sutton'},
+          {html: 'Harry Sutton'},
+          {html: '09 Dec 2017'},
+          {html: '01 Sep 2023'},
+        
+        
+          {html: govukTag({
+            text: "Receiving entitlement",
+            classes: "govuk-tag--pink"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+
+        [
+          {html: '<a href="#" class="govuk-link">45678765</a>'},
+          {html: 'Alan Jones'},
+          {html: 'Scarlette Jones'},
+          {html: '10 Nov 2017'},
+          {html: '01 Sep 2023'},
+      
+      
+          {html: govukTag({
+            text: "Entitled",
+            classes: "govuk-tag--green"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+
+        [
+          {html: '<a href="#" class="govuk-link">12345678</a>'},
+          {html: 'Jennifer Langley'},
+          {html: 'Hilda Langley'},
+          {html: '22 Nov 2017'},
+       
+          {html: '01 Sep 2023'},
+       
+ 
+          {html: govukTag({
+            text: "Entitled",
+            classes: "govuk-tag--green"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+
+        [
+          {html: '<a href="#" class="govuk-link">89009800</a>'},
+          {html: 'Susan Francis'},
+          {html: 'Ada Francis'},
+          {html: '26 Oct 2017'},
+          {html: '01 Sep 2023'},
+      
+    
+          {html: govukTag({
+            text: "Entitled",
+            classes: "govuk-tag--green"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+
+        [
+          {html: '<a href="#" class="govuk-link">45456765</a>'},
+          {html: 'John Smith'},
+          {html: 'Simon Smith'},
+          {html: '11 Oct 2017'},
+        
+          {html: '01 Sep 2023'},
+       
+
+          {html: govukTag({
+            text: "Entitled",
+            classes: "govuk-tag--green"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+
+        [
+          {html: '<a href="#" class="govuk-link">88675411</a>'},
+          {html: 'Margaret Blake'},
+          {html: 'Margo Blake'},
+          {html: '12 Oct 2017'},
+          {html: '01 Sep 2023'},
+      
+          
+   
+          {html: govukTag({
+            text: "Entitled",
+            classes: "govuk-tag--green"
+          })},
+          {text: '25 Sep 2023'}
+          ],
+        
+        [
+          {html: '<a href="#" class="govuk-link">44455453</a>'},
+          {html: 'John Smith'},
+          {html: 'Jona Smith'},
+          {html: '11 Oct 2017'},
+          {html: '01 Sep 2023'},
+         
+   
+          {html: govukTag({
+            text: "Entitled",
+            classes: "govuk-tag--green"
+          })},
+          {text: '25 Sep 2023'}
+          ]
+      ]
+    }) }}
+  </div>
+</div>
+
+      </div>
+      {%- from "moj/components/pagination/macro.njk" import mojPagination -%}
+
+{{ mojPagination({
+  items: [{
+    text: '1',
+    href: '/page=1'
+  }, {
+    text: '2',
+    href: '/page=2',
+    selected: true
+  }, {
+    text: '3',
+    href: '/page=3'
+  }, {
+    type: 'dots'
+  }, {
+    text: '5',
+    href: '/page=5'
+  }],
+  results: {
+    count: 30,
+    from: 10,
+    to: 20,
+    text: 'pages'
+  },
+  previous: {
+    text: 'Previous',
+    href: ''
+  },
+  next: {
+    text: 'Next',
+    href: ''
+  }
+}) }}
+
+    
+    </div>
+
+  
+  </div>
+</div>
+
+{% endblock %}
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+    
+    
+
+
+      <!---
+      <div id="PersonName">
+    
+      <div class="govuk-grid-row">
+       
+
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group HO-uk-margin-bottom-3">
+          <h6 class="govuk-heading-xxs HO-uk-margin-bottom-1">
+        Child last name
+          </h6>
+          
+            <input id="Name" class="govuk-input" type="text" name="Name" value="{{ data['Name'] }}" placeholder="Child surname">
+          
+          </div>
+          </div>
+          <!--COL 1
+
+
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-form-group HO-uk-margin-bottom-3">
+              <h6 class="govuk-heading-xxs HO-uk-margin-bottom-1">
+             Parent or guardian last name
+              </h6>
+              <div class="autocomplete">
+                <input id="deptCountry" class="countryAutocomplete govuk-input" type="text" name="deptCountry" value="{{ data['deptCountry'] }}" placeholder="Status">
+              </div>
+              
+              </div>
+              </div>
+               <!--COL 2-->
+              
+
+
+              
+                   <!--COL 3-
+                   </div>
+
+                   <!-- ROW 2 
+
+                   <div class="govuk-grid-row">
+       
+
+                    <div class="govuk-grid-column-one-quarter">
+                      <div class="govuk-form-group HO-uk-margin-bottom-3">
+                        <h6 class="govuk-heading-xxs HO-uk-margin-bottom-1">
+                    Reference number
+                        </h6>
+                        
+                          <input id="Name" class="govuk-input" type="text" name="Name" value="{{ data['Name'] }}" placeholder="Reference number">
+                        
+                        </div>
+                        </div>
+                        <!--COL 1
+              
+              
+                        <div class="govuk-grid-column-one-quarter">
+                          <div class="govuk-form-group HO-uk-margin-bottom-3">
+                            <h6 class="govuk-heading-xxs HO-uk-margin-bottom-1">
+                           Status
+                            </h6>
+                            {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+                            {{ govukSelect({
+                              id: "sort",
+                              name: "sort",
+                              
+                              items: [
+                              {
+                                value: "all",
+                                text: "All statuses"
+                              },
+                                {
+                                  value: "entitled",
+                                  text: "Entitled"
+                                },
+
+                               
+
+                                {
+                                  value: "evidence-needed",
+                                  text: "Evidence needed"
+                                },
+                                {
+                                  value: "sent-for-review",
+                                  text: "Sent for review"
+                                },
+                                {
+                                  value: "reviewed-enititled",
+                                  text: "Reviewed entitled"
+                                },
+                                {
+                                  value: "reviewed-not-entitled",
+                                  text: "Reviewed not entitled"
+                                },
+                                {
+                                  value: "receiving-entitlement",
+                                  text: "Receiving entitlement"
+                                }
+                              ]
+                            }) }}
+                            
+                            </div>
+                            </div>
+                             <!--COL 2-->
+                            
+              
+                                 <!--COL 3
+                                 </div>
+
+
+                   <!-- ROW 3
+
+
+                   <div class="govuk-grid-row">
+
+                    <div class="govuk-grid-column-one-quarter">
+
+                      <form action="eligible-list" method="post" novalidate>
+
+                      
+                  
+                        
+                      </form>
+                    </div>
+                   </div>
+
+              
+          
+<!-- CHILD 
+          <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-one-quarter">
+                    
+
+              <div class="govuk-form-group HO-uk-margin-bottom-3">
+                <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Child date of birth
+                  </legend>
+                  <!--<div id="passport-issued-hint" class="govuk-hint">
+                    For example, 12 11 2007
+                  </div> 
+                  <div class="govuk-date-input" id="dob">
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="dob-day">
+                          Day
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                        
+           
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="dob-month">
+                          Month
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                          Year
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                        
+                    </div>
+                  </div>
+              
+                </fieldset>
+              </div>
+              </div>
+ 
+
+             
+
+            
+          </div>
+
+          <!-- PARENT 
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-quarter">
+                    
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                    Parent or guardian date of birth
+                  </legend>
+                  <!--<div id="passport-issued-hint" class="govuk-hint">
+                    For example, 12 11 2007
+                  </div> 
+                  <div class="govuk-date-input" id="passport-issued">
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                          Day
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                         
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                          Month
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                          Year
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                  </div>
+              
+                </fieldset>
+              </div>
+              </div>
+          </div>
+          <!-- SEX 
+          <div class="govuk-grid-row">
+    
+            <div class="govuk-grid-column-full">
+      
+            <form action="eligible-list">
+              <button class="govuk-button govuk-button HO-button-white moj-button-menu__item govuk-!-margin-top-6" data-module="govuk-button">
+                Generate results
+              </button>
+
+            </form>
+            
+              
+              
+            </div>
+      
+      
+          </div>
+
+      
+      <!-- EXPLANATIONS REMOVED FOR V2 
+      
+      
+
+     
+    
+    </div>
+    <!--END SHOW/HIDE 
+
+  
+
+    </div>
+    
+      <!-- END CARD // SEARCH BAR 
+      
+
+
+
+</form>
+
+
+        </div>
+      </div>
+
+<!--FOOTER -->
+
+
+<!-- MODAL -->
+
+
+{% block pageScripts %}
+<!-- Add any javascript files here. Include javascript files only on the pages
+that need them. Excessive javascript files loaded on other pages may slow down
+the response times of the prototype. -->
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+
+<script type="text/javascript">
+  if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
+  new MOJFrontend.MultiFileUpload({
+    container: $(".moj-multi-file-upload"),
+    uploadUrl: "/ajax-upload",
+    deleteUrl: "/ajax-delete",
+  });
+}
+</script>
+{% endblock %}
+
