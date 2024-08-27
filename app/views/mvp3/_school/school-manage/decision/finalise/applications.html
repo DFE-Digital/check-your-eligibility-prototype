@@ -1,4 +1,4 @@
-{% extends "layouts/layout-dfe-lanav.html" %}
+{% extends "/layouts/layout-dfe-schoolnav-noback.html" %}
 
 {% set pageName="Home" %}
 
@@ -12,9 +12,41 @@
   <p>Your reference is 1234567</p>
 {% endset %}
 
+
 {% block content %}
 
-<div class="govuk-grid-row">
+<div class="moj-page-header-actions">
+  <div class="moj-page-header-actions__title">
+    <div class=“govuk-grid-column-full”>
+
+    <div class="notifications-container"></div>
+    <span id="notifications" class="moj-notification-badge" style="white-space: nowrap";>13</span>
+    <h1 class="govuk-heading-l">Finalise applications</h1>
+  </div>
+<div class="moj-page-header-actions__title">
+</div>
+</div>
+<!---
+<div class=“govuk-!-display-flex govuk-!-align-items-right govuk-!-gap-10>
+  {{ mojNotificationBadge({
+    text: "4"
+  }) }}
+  {{ mojPageHeaderActions({
+  heading: {
+    text: 'Finalise applications',
+    classes:'govuk-heading-l',
+    style: nowrap
+  }
+}) }}
+</div>-->
+<div>
+  <div class="govuk-!-padding-bottom-3"></div>
+<div class=“govuk-grid-column-full”>
+  <p class=“govuk-g”>All the children in the table on this page are entitled to free school meals. Now you should finalise their applications.</p>
+</div>
+</div>
+
+<!--<div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
     {% if data['eligibility-confirmed'] =="yes" %}
@@ -22,57 +54,76 @@
       html: applicationSent,
       type: 'success'
     }) }}
-
+    
     {% endif %}
+</div>
 
+<div class=“govuk-!-display-flex govuk-!-align-items-center govuk-!-gap-5>
+  {{ mojNotificationBadge({
+    text: "4"
+  }) }}
+  {{ mojPageHeaderActions({
+  heading: {
+    text: 'Finalise applications',
+    classes:'govuk-heading-l'
+  }
+}) }}
+</div>
 
-
-
-    <div class="moj-page-header-actions">
-
-      <div class="moj-page-header-actions__title">
-        <h1 class="govuk-heading-l">Ineligible families (19)</h1>
-      </div>
-
-
-        <div class="moj-page-header-actions__actions">
-
-
-    <div class="moj-button-menu">
-      <div class="moj-button-menu__wrapper">
-
-
-
-
-
-
-      <form action="eligibility-confirmed" name="eligibility-confirmed" aria-checked="true">
-        <button class="govuk-button moj-button-menu__item moj-page-header-actions__action" data-module="govuk-button">
-          Confirm eligibility
-          </button>
-
-      </form>
-
-
-
-        </div>
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <p class="govuk-body">All the children in the table on this page are entitled to free school meals. Now you should finalise their applications.</p>
     </div>
+  </div>
+</div>-->
 
+<div class="govuk-!-padding-bottom-3"></div>
 
-        </div>
+<h2 class="govuk-heading-m">How to finalise</h2>
 
+  <ol>
+    <li>If you haven't already, add the details of each application to your own system.</li>
+    <li>Select the records you've added using the tick boxes.</li>
+    <li>Click 'Finalise applications'.</li>
+  </ol>
 
-    </div>
+  <div class="govuk-!-padding-bottom-3"></div>
 
+  <div class="moj-button-action">
 
-    <div class="govuk-grid-row">
+  {{ mojButtonMenu({
+    items: [{
+      text: 'Finalise applications',
+      href: 'finalise-apps-areyousure.html'
+    }, {
+      text: "Download all files",
+      href: "#",
+      classes: "govuk-button--secondary"
+    }, {
+      text: "Third action",
+      href: "#",
+      classes: "govuk-button--secondary"
+    }]
+  }) }}
 
+  <!--
+  <div class="moj-button-action">
+    {{ govukButton({
+      text: 'Finalise applications',
+      href: 'finalise-apps-areyousure.html'
+    }) }}
 
+    {{ govukButton({
+      text: "Download all files",
+      classes: "govuk-button--secondary"
+    }) }}
+  </div>
+ <div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+-->
 
-
-      <div class="govuk-grid-column-full">
-
-
+<div class="govuk-!-padding-bottom-5"></div>
 
 {% set filterOptionsHtml %}
 
@@ -101,7 +152,7 @@
         text: 'Yorkshire (18)',
         checked: true
       },
-
+    
       {
         value: '2',
         text: 'Humber (12)',
@@ -144,16 +195,15 @@
 <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-
+     
       <th class="govuk-table__header" scope="col" id="select-all"></th>
       <th class="govuk-table__header" scope="col">Reference</th>
-      <th class="govuk-table__header" scope="col">Parent / guardian</th>
+      <th class="govuk-table__header" scope="col">Parent or guardian</th>
       <th class="govuk-table__header" scope="col">Child</th>
-      <th class="govuk-table__header">School</th>
-      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Date of birth</th>
-      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Eligible from</th>
-      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Eligible to</th>
-      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Date submitted</th>
+      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Child date of birth</th>
+      <th class="govuk-table__header" scope="col">Status</th>
+      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Entitled from</th>
+      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Submission date</th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
@@ -166,14 +216,16 @@
           </label>
         </div>
       </td>
-
-      <td class="govuk-table__cell"><a href="../records/new-appeal" class="govuk-link">44455453</a></td>
+      
+      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
       <td class="govuk-table__cell">Eden Tesfay</td>
       <td class="govuk-table__cell">Samual Tesfay</td>
-      <td class="govuk-table__cell">St Mary's</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+      <td class="govuk-table__cell"> {{ govukTag({
+        text: "Entitled",
+        classes: "govuk-tag--green"
+      }) }}</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">01 Jul 2024</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
     </tr>
     <tr class="govuk-table__row">
@@ -189,10 +241,12 @@
       <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
       <td class="govuk-table__cell">Warren Sutton</td>
       <td class="govuk-table__cell">Lisa Sutton</td>
-      <td class="govuk-table__cell">St Mary's</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+      <td class="govuk-table__cell"> {{ govukTag({
+        text: "Entitled",
+        classes: "govuk-tag--green"
+      }) }}</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">01 Jul 2024</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
     </tr>
     <tr class="govuk-table__row">
@@ -207,11 +261,13 @@
       <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
       <td class="govuk-table__cell">Alan Jones</td>
       <td class="govuk-table__cell">Jack Jones</td>
-      <td class="govuk-table__cell">St Mary's</td>
-
+      
       <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+      <td class="govuk-table__cell"> {{ govukTag({
+        text: "Entitled",
+        classes: "govuk-tag--green"
+      }) }}</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">01 Jul 2024</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
     </tr>
     <tr class="govuk-table__row">
@@ -226,10 +282,12 @@
       <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
       <td class="govuk-table__cell">Eden Tesfay</td>
       <td class="govuk-table__cell">Samual Tesfay</td>
-      <td class="govuk-table__cell">St Mary's</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+      <td class="govuk-table__cell"> {{ govukTag({
+        text: "Reviewed Entitled",
+        classes: "govuk-tag--light-blue"
+      }) }}</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">01 Jul 2024</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
     </tr>
     <tr class="govuk-table__row">
@@ -244,10 +302,12 @@
       <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
       <td class="govuk-table__cell">Jennifer Langley</td>
       <td class="govuk-table__cell">Tilly Langley</td>
-      <td class="govuk-table__cell">St Mary's</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+      <td class="govuk-table__cell"> {{ govukTag({
+        text: "Reviewed Entitled",
+        classes: "govuk-tag--light-blue"
+      }) }}</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">01 Jul 2024</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
     </tr>
     <tr class="govuk-table__row">
@@ -262,10 +322,12 @@
       <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
       <td class="govuk-table__cell">Susan Francis</td>
       <td class="govuk-table__cell">Noah Francis</td>
-      <td class="govuk-table__cell">St Mary's</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+      <td class="govuk-table__cell"> {{ govukTag({
+        text: "Reviewed Entitled",
+        classes: "govuk-tag--light-blue"
+      }) }}</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">01 Jul 2024</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
     </tr>
     <tr class="govuk-table__row">
@@ -280,10 +342,12 @@
       <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
       <td class="govuk-table__cell">John Smith</td>
       <td class="govuk-table__cell">Jo Smith</td>
-      <td class="govuk-table__cell">St Mary's</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+      <td class="govuk-table__cell"> {{ govukTag({
+        text: "Reviewed Entitled",
+        classes: "govuk-tag--light-blue"
+      }) }}</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">01 Jul 2024</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
     </tr>
   </tbody>
@@ -292,10 +356,10 @@
 
 
 
-
+    
     </div>
 
-
+  
   </div>
 </div>
 

@@ -1,4 +1,4 @@
-{% extends "layouts/layout-dfe.html" %}
+{% extends "layouts/layout-dfe-lanav.html" %}
 
 {% block backLink %}
 {{ govukBackLink({
@@ -6,6 +6,8 @@ text: "Back",
 href: "javascript:window.history.back()"
 }) }}
 {% endblock %}
+
+
 
 
 {% set SiblingAdded %}
@@ -16,13 +18,15 @@ href: "javascript:window.history.back()"
     You have added sibling details to this record. This will show immediately.
   </p>
   <p>Your reference is 1234567</p>
-  <p><a href="">Dismiss</a></p>
 {% endset %}
+
 
 
 <!-- The content between the heading 1 and the buttons -->
 
 {% block content %}
+
+
 
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
   <div class="govuk-grid-column-full">
@@ -37,33 +41,9 @@ href: "javascript:window.history.back()"
       <div class="moj-banner__message">
         <h2 class="govuk-heading-l">Sibling added to record</h2>
 
-    <p class="govuk-body govuk-!-margin-bottom-5">
+    <p class="govuk-body">
         You have added sibling details to this record. This will show immediately.
       </p>
-      <button class="govuk-button govuk-button--secondary hide">Dismiss this message</button>
-
-
-
-      </div>
-
-    </div>
-
-
-
-    {% elif data['nass-number-entered'] =="yes" %}
-    <div class="moj-banner moj-banner--success" role="region" aria-label="Success">
-
-      <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
-        <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
-      </svg>
-
-      <div class="moj-banner__message">
-        <h2 class="govuk-heading-l govuk-!-margin-bottom-5">Asylum support reference added to record</h2>
-
-
-      <button class="govuk-button govuk-button--secondary hide">Dismiss this message</button>
-
-
 
 
 
@@ -74,83 +54,118 @@ href: "javascript:window.history.back()"
     {% endif %}
 
 
-    {{ mojPageHeaderActions({
-      heading: {
-        text: 'Eden Tesfay'
-      },
-      items: [
-      ]
-    }) }}
+    <span class="govuk-hint">Reference: 44455453</span>
+
+
+
+
+
+{% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
+
+{{ mojPageHeaderActions({
+  heading: {
+    text: 'Eden Tesfay'
+  },
+  items: [
+
+    {
+      text: 'Approve application',
+      href:'../records/pending-approve-areyousure'
+
+    },
+
+    {
+      text: 'Decline application',
+      classes: 'govuk-button--secondary',
+      href:'../records/pending-decline-areyousure'
+    }
+  ]
+}) }}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   </div>
+
 </div>
 
 
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
+
+<h2 class="govuk-heading-l govuk-!-margin-bottom govuk-!-font-size-36">Overview</h2>
+
+
 
 {{ govukSummaryList({
   card: {
-    title: {
-      text: "Child details: 31410907"
-    },
-    actions: {
+  title: {
+  text: "Child 1"
+  },
+  actions: {
+  items: [
 
-    }
+
+  {
+  href: "#",
+  text: "Edit details",
+  visuallyHiddenText: "from application"
+  }
+  ]
+  }
   },
   rows: [
+
+
 
     {
       key: {
         text: "Name"
       },
       value: {
-        text: "Samual Tesfay"
+        html: "Sam Tesfay"
       }
     },
-
 
     {
       key: {
         text: "Date of birth"
       },
       value: {
-        html: "01 September 1988"
-      }
-    },
-
-    {
-      key: {
-        text: "Status of application"
-      },
-      value: {
-        html: govukTag({
-                text: "Entitled",
-                classes: "govuk-tag--green"
-              })
+        html: "18 November 2018"
       }
     }
+
+
+
+
   ]
-}) }}
-
-
-<div class="govuk-!-padding-bottom-3"></div>
-
+  }) }}
 
 <!-- PERSON -->
 
 
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
 {{ govukSummaryList({
   card: {
     title: {
-      text: "Parent or guardian details"
+      text: "Parent / carer"
     },
     actions: {
       items: [
         {
           href: "#",
+          text: "Edit details",
           visuallyHiddenText: "of University of Gloucestershire"
         }
 
@@ -170,6 +185,23 @@ href: "javascript:window.history.back()"
       }
     },
 
+    {
+      key: {
+        text: "Relationship"
+      },
+      value: {
+        html: "Parent"
+      }
+    },
+
+    {
+      key: {
+        text: "Nationality"
+      },
+      value: {
+        html: "Eritrean"
+      }
+    },
 
     {
       key: {
@@ -179,32 +211,14 @@ href: "javascript:window.history.back()"
         html: "01 September 1988"
       }
     },
-
-
-
     {
       key: {
-        text: "National Insurance number"
-      },
-
-
-      value: {
-        html: "AB123456C"
-      }
-    },
-
-    {
-      key: {
-        text: "Status"
+        text: "National Insurance / NASS"
       },
       value: {
-        html: govukTag({
-                text: "Entitled",
-                classes: "govuk-tag--green"
-              })
+        html: "098765432211"
       }
     },
-
     {
       key: {
         text: "Email address"
@@ -217,8 +231,14 @@ href: "javascript:window.history.back()"
     }
 
 
+
   ]
 }) }}
+
+
+
+
+
 
 
 
@@ -234,16 +254,14 @@ href: "javascript:window.history.back()"
 that need them. Excessive javascript files loaded on other pages may slow down
 the response times of the prototype. -->
 <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
-<script src=
-"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
-    </script>
-
 <script>
-  $(document).ready(function () {
-            $(".hide").click(function () {
-                $(".moj-banner").hide();
-            });
-        });
-  </script>
+  new MOJFrontend.ButtonMenu({
+    container: $(".moj-button-menu"),
+    mq: "(min-width: 200em)",
+    buttonText: "Task actions",
+    buttonClasses:
+      "",
+  });
+</script>
 
 {% endblock %}

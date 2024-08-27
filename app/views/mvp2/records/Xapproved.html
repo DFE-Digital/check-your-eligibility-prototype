@@ -8,6 +8,8 @@ href: "javascript:window.history.back()"
 {% endblock %}
 
 
+
+
 {% set SiblingAdded %}
 <h3 class="govuk-notification-banner__heading">
   Sibling added to record
@@ -20,9 +22,12 @@ href: "javascript:window.history.back()"
 {% endset %}
 
 
+
 <!-- The content between the heading 1 and the buttons -->
 
 {% block content %}
+
+
 
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
   <div class="govuk-grid-column-full">
@@ -33,22 +38,22 @@ href: "javascript:window.history.back()"
       <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
         <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
       </svg>
-
+    
       <div class="moj-banner__message">
         <h2 class="govuk-heading-l">Sibling added to record</h2>
-
+      
     <p class="govuk-body govuk-!-margin-bottom-5">
         You have added sibling details to this record. This will show immediately.
       </p>
       <button class="govuk-button govuk-button--secondary hide">Dismiss this message</button>
-
-
-
+        
+      
+    
       </div>
-
+    
     </div>
-
-
+    
+    
 
     {% elif data['nass-number-entered'] =="yes" %}
     <div class="moj-banner moj-banner--success" role="region" aria-label="Success">
@@ -56,21 +61,21 @@ href: "javascript:window.history.back()"
       <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
         <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
       </svg>
-
+    
       <div class="moj-banner__message">
         <h2 class="govuk-heading-l govuk-!-margin-bottom-5">Asylum support reference added to record</h2>
-
-
+        
+    
       <button class="govuk-button govuk-button--secondary hide">Dismiss this message</button>
-
-
-
-
-
+      
+    
+        
+      
+    
       </div>
-
+    
     </div>
-
+    
     {% endif %}
 
 
@@ -79,61 +84,84 @@ href: "javascript:window.history.back()"
         text: 'Eden Tesfay'
       },
       items: [
+      {
+        text: 'Add sibling',
+        classes: 'govuk-button--secondary',
+        href:'add-sibling'
+      }
+      
       ]
     }) }}
 
   </div>
+
 </div>
 
 
+<h2 class="govuk-heading-l govuk-!-margin-bottom govuk-!-font-size-32">Children Overview</h2>
+
+
+{% from "govuk/components/tag/macro.njk" import govukTag %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-
-{{ govukSummaryList({
-  card: {
-    title: {
-      text: "Child details: 31410907"
-    },
-    actions: {
-
-    }
-  },
-  rows: [
-
-    {
-      key: {
-        text: "Name"
-      },
-      value: {
-        text: "Samual Tesfay"
-      }
-    },
-
-
-    {
-      key: {
-        text: "Date of birth"
-      },
-      value: {
-        html: "01 September 1988"
-      }
-    },
-
-    {
-      key: {
-        text: "Status of application"
-      },
-      value: {
-        html: govukTag({
-                text: "Entitled",
-                classes: "govuk-tag--green"
-              })
-      }
-    }
-  ]
-}) }}
-
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header">Name</th>
+          <th class="govuk-table__header">Date of birth</th>
+          <th class="govuk-table__header">Status of application</th>
+          <th class="govuk-table__header">Reference</th>
+          <th class="govuk-table__header">Edit</th>
+          <th class="govuk-table__header"></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Samual Tesfay</td>
+          <td class="govuk-table__cell">18 September 2017</td>
+          <td class="govuk-table__cell">
+            {{ govukTag({
+              text: "Document needed",
+              classes: "govuk-tag--light-blue"
+            }) }}
+          </td>
+          <td class="govuk-table__cell">44455453</td>
+          <td class="govuk-table__cell"><a href="../checker/outcome-eligible-childs-age.html" class="govuk-link">Edit details</a></td>
+          <td class="govuk-table__cell">
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Thomas Tesfay</td>
+          <td class="govuk-table__cell">01 June 2019</td>
+          <td class="govuk-table__cell">
+            {{ govukTag({
+              text: "Sent for review",
+              classes: "govuk--tag-grey"
+            }) }}
+          </td>
+          <td class="govuk-table__cell">44455454</td>
+          <td class="govuk-table__cell"><a href="../checker/outcome-eligible-childs-age.html" class="govuk-link">Edit details</a></td>
+          <td class="govuk-table__cell">          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Rachel Tesfay</td>
+          <td class="govuk-table__cell">05 August 2021</td>
+          <td class="govuk-table__cell">
+            {{ govukTag({
+              text: "Entitled",
+              classes: "govuk-tag--green"
+            }) }}
+          </td>
+          <td class="govuk-table__cell">44455455</td>
+          <td class="govuk-table__cell"><a href="../checker/outcome-eligible-childs-age.html" class="govuk-link">Edit details</a></td>
+          <td class="govuk-table__cell"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <div class="govuk-!-padding-bottom-3"></div>
 
@@ -141,6 +169,7 @@ href: "javascript:window.history.back()"
 <!-- PERSON -->
 
 
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
 {{ govukSummaryList({
   card: {
@@ -153,7 +182,7 @@ href: "javascript:window.history.back()"
           href: "#",
           visuallyHiddenText: "of University of Gloucestershire"
         }
-
+       
       ]
     }
   },
@@ -169,8 +198,8 @@ href: "javascript:window.history.back()"
         html: "Eden Tesfay"
       }
     },
-
-
+     
+     
     {
       key: {
         text: "Date of birth"
@@ -180,16 +209,16 @@ href: "javascript:window.history.back()"
       }
     },
 
-
+ 
 
     {
       key: {
-        text: "National Insurance number"
+        text: "Asylum support reference number"
       },
 
-
+      
       value: {
-        html: "AB123456C"
+        html: "Should only be 9 numbers long"
       }
     },
 
@@ -210,12 +239,14 @@ href: "javascript:window.history.back()"
         text: "Email address"
       },
 
-
+      
       value: {
         html: "edamcheese@hotmail.com"
       }
     }
 
+     
+    
 
   ]
 }) }}

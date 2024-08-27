@@ -1,8 +1,6 @@
-{% extends "layouts/layout-dfe.html" %}
+{% extends "layouts/layout-dfe-lanav.html" %}
 
 {% set pageName="Outcome not entitled" %}
-
-
 
 {% block content %}
 
@@ -23,7 +21,7 @@
 
 {{ govukButton({
   text: "Yes, approve now",
-  href: '/current/checker-la/eligibility-confirmed?'
+  href: 'eligibility-confirmed'
 }) }}
 
 {% from "govuk/components/button/macro.njk" import govukButton %}
@@ -31,7 +29,7 @@
 {{ govukButton({
   text: "No, return to table",
   classes: "govuk-button--secondary",
-  href: '../records/pending'
+  href: '../pending-list'
 }) }}
 
 <div class="govuk-!-padding-bottom-3"></div>

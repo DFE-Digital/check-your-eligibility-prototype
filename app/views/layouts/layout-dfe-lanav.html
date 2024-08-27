@@ -1,4 +1,4 @@
-{# 1 #} 
+{# 1 #}
 {% from 'node_modules/dfe-frontend-alpha/packages/components/header/macro.njk' import header %}
 
 {# 2 #}
@@ -9,7 +9,7 @@
 
 {{ header({
     "showNav": "true",
-    "showSearch": "false",
+    "showSearch": "true",
     "showHeaderActionLinks": "true",
     "logoPath": "public/images",
     "searchAction": "/search/",
@@ -32,19 +32,19 @@
       }
     ],
     "primaryLinks": [
-        {
-        "url"  : "/mvp3/_school/dashboard",
-        "label" : "Dashboard"
-      }, {
-        "url"  : "#",
-        "label" : "Check eligibility"
-      }, {
-        "url"  : "#",
-        "label" : "Process appeals"
-      }, {
-        "url"  : "#",
-        "label" : "Finalise applications"
-      }
+    {
+      "url"  : "",
+      "label" : "Dashboard"
+    }, {
+      "url"  : "#2",
+      "label" : "Check eligibility"
+    }, {
+      "url"  : "#",
+      "label" : "Process appeals"
+    }, {
+      "url"  : "#",
+      "label" : "Finalise applications"
+    }
     ]
   })
 }}
@@ -69,8 +69,14 @@
 {% endblock %}
 
 {% block beforeContent %}
-  
 
+
+  {% block backLink %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+    }) }}
+  {% endblock %}
 
 {% endblock %}
 
@@ -108,7 +114,7 @@
  }) }}
 {% endblock %}
 
-{# 4 #} 
+{# 4 #}
 {% block scripts %}
   {{ super() }}
   <script src="/public/javascripts/dfefrontend.js"></script>

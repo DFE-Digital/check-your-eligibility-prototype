@@ -1,4 +1,4 @@
-{% extends "layouts/layout-dfe.html" %}
+{% extends "/layouts/layout-dfe-schoolnav-noback.html" %}
 
 {% set pageName="Outcome not entitled" %}
 
@@ -10,8 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <p class="govuk-heading-l">Are you sure?</p>
-      <p class="govuk-body">Make sure you want to approve this application.</p>
-      <p class="govuk-body">If a mistake is made, the parent will have to start a new application with their children’s school.  </p>
+      <p class="govuk-body">Applications should only be finalised after you've added the details to your own system.</p>
     </div>
   </div>
 </div>
@@ -22,8 +21,8 @@
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
 {{ govukButton({
-  text: "Yes, approve now",
-  href: '/current/checker-la/eligibility-confirmed?'
+  text: "Yes, finalise now",
+  href: 'eligibility-confirmed'
 }) }}
 
 {% from "govuk/components/button/macro.njk" import govukButton %}
@@ -31,10 +30,12 @@
 {{ govukButton({
   text: "No, return to table",
   classes: "govuk-button--secondary",
-  href: '../records/pending'
+  href: 'applications'
 }) }}
 
 <div class="govuk-!-padding-bottom-3"></div>
+
+
 
   </div>
 </div>

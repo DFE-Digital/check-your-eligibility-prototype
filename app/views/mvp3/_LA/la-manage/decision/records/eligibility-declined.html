@@ -2,15 +2,7 @@
 
 {% set pageName="Home" %}
 
-{% set applicationSent %}
-<h3 class="govuk-notification-banner__heading">
-  Eligibility confirmed
-  </h3>
-  <p class="govuk-body">
-   This record has now been moved to all applications
-  </p>
 
-{% endset %}
 
 {% block content %}
 
@@ -19,11 +11,7 @@
 
     <span class="govuk-hint">Reference: 44455453</span>
 
-{{ mojBanner({
-  type: 'success',
-  html:' <h3 class="govuk-heading-l">Application approved</h3>',
-  iconFallbackText: 'Success'
-}) }}
+<h1 class="govuk-heading-l">Application declined</h1>
 
 
 
@@ -35,11 +23,11 @@
       <div class="govuk-grid-column-one-half">
 
         <p>Thank you for processing this application. </p>
-<p><strong>Please respond to your contacts at all relevant schools to pass on your decision.</strong></p>
+<p><strong>Please respond to your contacts at all relevant schools to pass on your decision.</strong> </p>
 <p>If you need to find the application again, search in Search all records. </p>
 
-        <p><a href="ineligible-list">Confirm another application</a></p>
-        <p><a href="dashboard">Go to your homepage</a></p>
+        <p><a href="../pending-list">Confirm another application</a></p>
+        <p><a href="../../../dashboard">Go to your homepage</a></p>
 
 
 

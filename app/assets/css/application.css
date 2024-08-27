@@ -266,7 +266,6 @@ a:focus, .govuk-link:focus {
     }
 }
 
-
 .govuk-heading-xl {
     color: #0b0c0c;
     font-family: "GDS Transport", arial, sans-serif;
@@ -775,9 +774,11 @@ p + .govuk-heading-s,
 }
 
 
-
-
-
+.notification-grid-wrapper {
+    display: grid;
+    justify-items: right;
+    width: 100%;
+}
 
 
 
