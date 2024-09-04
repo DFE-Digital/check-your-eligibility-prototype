@@ -5,19 +5,21 @@
 
 // Add extra styles here
 @import 'node_modules/dfe-frontend-alpha/packages/dfefrontend';
-
 @import "components/autocomplete";
 
-
-
- .govuk-width-container {max-width: 1200px;}
-
+.govuk-width-container {max-width: 1200px;}
 
 .dfe-width-container {max-width: 1200px !important;}
 
+
+///filter styles
+@import "components/hidden.scss";
+@import "components/action-bar.scss";
+@import "components/filter-layout.scss";
+@import "components/filter-panel.scss";
+
+
 // CARDS
-
-
 
 .dfe-card-container{
     padding-left: 0 !important;
@@ -119,4 +121,7 @@
   }
 }
 
-
+.app-action-bar {
+  font-size: 0; // Removes white space
+  @include govuk-clearfix;
+}
