@@ -23,7 +23,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 {% from "govuk/components/header/macro.njk" import govukHeader %}
 
 {{ govukHeader({
-  homepageUrl: "#"
+  homepageUrl: "/index"
 }) }}
 
 <div class="app-phase-banner__wrapper">
@@ -44,7 +44,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 
 {% endblock %}
 
-{# 4 #} 
+{# 4 #}
 {% block scripts %}
   {{ super() }}
   <script src="/public/javascripts/dfefrontend.js"></script>

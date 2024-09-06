@@ -21,7 +21,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 {% from "govuk/components/header/macro.njk" import govukHeader %}
 
 {{ govukHeader({
-  homepageUrl: "#",
+  homepageUrl: "/index",
   serviceName: "DfE Sign-in",
   serviceUrl: "#",
   navigation: [
@@ -48,7 +48,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 {% endblock %}
 
 
-{# 4 #} 
+{# 4 #}
 {% block scripts %}
   {{ super() }}
   <script src="/public/javascripts/dfefrontend.js"></script>

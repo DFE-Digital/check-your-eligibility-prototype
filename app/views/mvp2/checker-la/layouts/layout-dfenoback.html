@@ -7,49 +7,36 @@
 {# 3 #}
 {% block header %}
 
+
 {{ header({
-    "showNav": "true",
-    "showSearch": "true",
-    "showHeaderActionLinks": "true",
-    "logoPath": "public/images",
-    "searchAction": "/search/",
-    "searchInputName": "q",
-    "logoAltText": "Department for Education",
-    "homeHref": "https://gov.uk",
-    "selectedNav": view,
-    "service": {
-      "name": "Check a family's eligibility",
-      "serviceUrl": "/"
-    },
-    "headerActionLinks": [
-      {
-        "url"  : "/",
-        "label" : "My account"
-      },
-      {
-        "url"  : "/",
-        "label" : "Sign out"
-      }
-    ],
-    "primaryLinks": [
+  "showNav": "true",
+  "showSearch": "false",
+  "showHeaderActionLinks": "true",
+  "logoPath": "public/images",
+  "searchAction": "/search/",
+  "searchInputName": "q",
+  "service": {
+    "name": "Check a family's eligibility"
+  },
+  "headerActionLinks": [
     {
       "url"  : "/",
-      "label" : "Dashboard"
-    }, {
-      "url"  : "#2",
-      "label" : " "
-    }, {
-      "url"  : "#",
-      "label" : " "
-    }, {
-      "url"  : "#",
-      "label" : " "
+      "label" : "My account"
+    },
+    {
+      "url"  : "../../",
+      "label" : "Sign out"
     }
+  ],
+    "primaryLinks": [
+        {
+        "url"  : "/current/*checker*/dashboard",
+        "label" : "Dashboard"
+      }
     ]
-  })
+
+})
 }}
-
-
 
 <div class="app-phase-banner__wrapper">
 
@@ -68,17 +55,7 @@
 
 {% endblock %}
 
-{% block beforeContent %}
 
-
-  {% block backLink %}
-    {{ govukBackLink({
-      text: "Back",
-      href: "javascript:window.history.back()"
-    }) }}
-  {% endblock %}
-
-{% endblock %}
 
 {% block footer %}
  {{ govukFooter({
