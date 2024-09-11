@@ -1,4 +1,4 @@
-{% extends "../../mvp1/checker/layouts/layout-dfe.html" %}
+{% extends "../../mvp2/checker/layouts/layout-dfe.html" %}
 
 {% set pageName="Home" %}
 
@@ -12,40 +12,40 @@
 
     <div class="govuk-grid-row">
 
-            
+
       <div class="govuk-grid-column-two-thirds">
 
 
-        
+
 
         <div class="govuk-form-group">
-  
-    
-        
+
+
+
           <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l " for="value">
           How many hours a week do you usually work?
         </label> </h1>
-        
-      
-  
+
+
+
 
 
   <div id="value-hint" class="govuk-hint">
   This is the hours worked in all their paid jobs, zero hours contracts and self-employment. For example, 37
 </div>
 
-  
-  
+
+
       <input class="govuk-input govuk-input--width-5" id="value" name="value" type="text" spellcheck="true" aria-describedby="value-hint" inputmode="numeric">
-  
+
 
 </div>
 
-        
 
 
 
-      
+
+
 <form action="benefits" method="post" value="eligibility-yes" novalidate>
   <input type="hidden" name="submit-application" id="submit-application" value="success">
 
@@ -55,7 +55,7 @@
     classes:'govuk-!-margin-top-5'
   }) }}
 </form>
-  
+
   </div>
 </div>
 
@@ -68,17 +68,17 @@
 
 
 
-        
 
 
 
 
-        
-      </div>  
-    
+
+
+      </div>
+
     </div>
 
-  
+
 
 
 {% endblock %}

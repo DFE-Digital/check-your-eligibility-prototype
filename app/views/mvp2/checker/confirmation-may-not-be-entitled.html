@@ -1,4 +1,4 @@
-{% extends "../../mvp1/checker/layouts/layout-dfe.html" %}
+{% extends "../../mvp2/checker/layouts/layout-dfe.html" %}
 
 {% set pageName="Outcome not entitled" %}
 
@@ -23,7 +23,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <h1 class="govuk-heading-m">You have successfully added children’s details to [Eden Tesfay’s] free school meals application record.</h1>
+      <h1 class="govuk-heading-m">You have successfully added children’s details to {{ data["first-name"] }}  {{ data["surname"] }} free school meals application record.</h1>
     </div>
   </div>
 </div>
@@ -66,26 +66,26 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
         <h2 class="govuk-heading-m">What to do next</h2>
-        <p>As these children may not be entitled to free school meals, you’ll now need to send supporting evidence to your local authority for review. 
+        <p>As these children may not be entitled to free school meals, you’ll now need to send supporting evidence to your local authority for review.
           <p>Go to the <a target="_blank" href="guidance"> guidance for reviewing evidence page</a> to see a complete list of acceptable evidence types.</p>
-          
+
           <p>To continue the appeaks process, go to <a href="../checker/process-appeals" class="govuk-link">Process appeals</a> and follow the instructions there. </p>
 
-         
 
-           
-          
+
+
+
       </div>
     </div>
 </div>
 <!--
 <div class="govuk-!-padding-bottom-3"></div>
-
+-->
 <p><a href="../checker/dashboard">Return to dashboard</a></p>
-
+<!---
 <p><a href="">Sign out</a></p>-->
 
-
+<!---
 <div class="govuk-button-group">
   {{ govukButton({
     text: "Return to dashboard",
@@ -94,7 +94,7 @@
   }) }}
 
   <a class="govuk-link" href="#">Sign out</a>
-</div>
+</div>-->
 
 
 

@@ -1,4 +1,4 @@
-{% extends "../../mvp1/checker/layouts/layout-dfe.html" %}
+{% extends "../../mvp2/checker/layouts/layout-dfe.html" %}
 
 {% set pageName="Home" %}
 
@@ -8,7 +8,7 @@
 
 
 <div class="govuk-grid-row HO-uk-margin-top-5">
-  
+
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-l">
     Run a report
@@ -27,25 +27,25 @@
 
     <!-- SEARCH BAR -->
     <div class="cardDesign">
-    
 
-    
 
-    
-    
+
+
+
+
       <div id="PersonName">
-    
+
       <div class="govuk-grid-row">
-       
+
 
       <div class="govuk-grid-column-one-quarter">
         <div class="govuk-form-group HO-uk-margin-bottom-3">
           <h6 class="govuk-heading-xxs HO-uk-margin-bottom-1">
         School
           </h6>
-          
+
             <input id="Name" class="govuk-input" type="text" name="Name" value="{{ data['Name'] }}" placeholder="School">
-          
+
           </div>
           </div>
           <!--COL 1-->
@@ -59,13 +59,13 @@
               <div class="autocomplete">
                 <input id="deptCountry" class="countryAutocomplete govuk-input" type="text" name="deptCountry" value="{{ data['deptCountry'] }}" placeholder="Status">
               </div>
-              
+
               </div>
               </div>
                <!--COL 2-->
 
 
-              
+
                    <!--COL 3-->
                    </div>
 
@@ -76,8 +76,8 @@
 
                       <form action="eligible-list" method="post" novalidate>
 
-                      
-                  
+
+
                   {{ govukSelect({
                     id: "offer",
                     name: "offer",
@@ -101,51 +101,51 @@
                       }
                     ]
                   }) }}
-                  
-                       
-                        
-                        
-                  
-                        
-                        
-                  
-                         
-                  
-                    
-                          
-                          
-                          
-                          
-                  
-                       
-                        
-                        
-                        
-                          
-                        
-                         
-                        
-                      
-                        
-                        
-                  
-                  
-                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                       </form>
                     </div>
                    </div>
 
-              
-                  
-                
 
-                  
-          
+
+
+
+
+
 <!-- DOB -->
           <div class="govuk-grid-row">
 
             <div class="govuk-grid-column-one-quarter">
-                    
+
 
               <div class="govuk-form-group HO-uk-margin-bottom-3">
                 <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
@@ -162,8 +162,8 @@
                           Day
                         </label>
                         <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                        
-           
+
+
                     </div>
                     <div class="govuk-date-input__item">
                       <div class="govuk-form-group">
@@ -178,17 +178,17 @@
                           Year
                         </label>
                         <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                        
+
                     </div>
                   </div>
-              
+
                 </fieldset>
               </div>
               </div>
  <!--COL 1-->
 
               <div class="govuk-grid-column-one-quarter">
-                    
+
 
                 <div class="govuk-form-group">
                   <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
@@ -205,7 +205,7 @@
                             Day
                           </label>
                           <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                           
+
                       </div>
                       <div class="govuk-date-input__item">
                         <div class="govuk-form-group">
@@ -222,48 +222,48 @@
                           <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
                       </div>
                     </div>
-                
+
                   </fieldset>
                 </div>
                 </div>
 
-            
+
           </div>
           <!-- SEX -->
           <div class="govuk-grid-row HO-uk-margin-top-4">
-    
+
             <div class="govuk-grid-column-full">
-      
+
             <form action="eligible-list">
               <button class="govuk-button govuk-button HO-button-white moj-button-menu__item govuk-!-margin-top-6" data-module="govuk-button">
                 Generate results
               </button>
 
             </form>
-            
-              
-              
+
+
+
             </div>
-      
-      
+
+
           </div>
 
-      
-      <!-- EXPLANATIONS REMOVED FOR V2 -->
-      
-      
 
-     
-    
+      <!-- EXPLANATIONS REMOVED FOR V2 -->
+
+
+
+
+
     </div>
     <!--END SHOW/HIDE -->
 
-  
+
 
     </div>
-    
+
       <!-- END CARD // SEARCH BAR -->
-      
+
 
 
 
@@ -309,4 +309,4 @@ the response times of the prototype. -->
 
 
 
- 
+

@@ -1,18 +1,11 @@
-{% extends "../../mvp1/checker/layouts/layout-dfe.html" %}
+{% extends "../../mvp2/checker/layouts/layout-dfe.html" %}
 
 {% set pageName="Home" %}
 
 {% block content %}
 
-
-
-
     <div class="govuk-grid-row">
-
-            
       <div class="govuk-grid-column-two-thirds">
-
-
     <form action="eligible" method="post" novalidate>
 
       {% call govukFieldset({
@@ -27,7 +20,7 @@
       }) %}
 
 
-      
+
         {% from "govuk/components/input/macro.njk" import govukInput %}
 
         {{ govukInput({
@@ -67,7 +60,7 @@
           label: {
             text: "Parent or guardian National Insurance number"
           },
-          
+
           id: "full-name",
           name: "fullName",
           autocomplete: "name",
@@ -86,12 +79,12 @@
           spellcheck: false
         }) }}
 
-     
+
           {{ govukDateInput({
-            
+
             id: "dob",
             namePrefix: "dob",
-            
+
             fieldset: {
               legend: {
                 text: "Parent or guardian date of birth",
@@ -103,12 +96,12 @@
               text: "For example, 27 3 1980"
             }
           }) }}
-  
-      
-      {% endcall %}
-      
 
-      
+
+      {% endcall %}
+
+
+
     </form>
 
     {% from "govuk/components/button/macro.njk" import govukButton %}
@@ -117,9 +110,9 @@
       text: "Perform check",
       href: '../parent-soft-check/school-checking-loader'
     }) }}
-        
-      </div>  
-    
+
+      </div>
+
     </div>
 
 

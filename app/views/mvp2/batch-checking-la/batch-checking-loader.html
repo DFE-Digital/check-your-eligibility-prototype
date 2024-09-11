@@ -1,4 +1,4 @@
-{% extends "../../mvp1/parent-soft-check/layouts/layout-dfe-signed-out.html" %}
+{% extends "../../mvp2/parent-soft-check/layouts/layout-dfe-signed-out.html" %}
 
 {% set pageName="Checking for you" %}
 
@@ -14,14 +14,14 @@
 
     <div class="govuk-grid-row">
 
-            
+
       <div class="govuk-grid-column-full">
 
         <div class="flex-container">
 
           <div class="container">
             <h1 class="govuk-heading-l">
-          
+
                Checking
               </h1>
               <p class="govuk-body-l">Please wait. This may take a few minutes</p>
@@ -32,11 +32,11 @@
                   var total_count = Math.floor(Math.random() *1000);
                   const intervalId = setInterval(() => {
                     var countElement = document.getElementById("counter");
-                    var mvp1Count = parseInt(countElement.textContent);
-                    var newCount = mvp1Count +1;
+                    var mvp2Count = parseInt(countElement.textContent);
+                    var newCount = mvp2Count +1;
                     if(newCount >= total_count) {
                       clearInterval(intervalId);
-                      document.location = '/mvp1/batch-checking-la/batch-check-success';
+                      document.location = '/mvp2/batch-checking-la/batch-check-success';
                     } else {
                       countElement.innerHTML = newCount;
                     }
@@ -48,10 +48,10 @@
 
           <div class="govuk-!-padding-bottom-5"></div>
 
-      </div>  
+      </div>
     </div>
 
-  
+
 
 
 {% endblock %}

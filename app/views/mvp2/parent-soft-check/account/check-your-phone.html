@@ -1,4 +1,4 @@
-{% extends "layouts/mvp1.html" %}
+{% extends "layouts/mvp2.html" %}
 
 {% set pageName="Home" %}
 
@@ -16,9 +16,9 @@
     <p class="govuk-body">It might take a few minutes to arrive. The code will expire after 15 minutes.</p>
 
 
-    
 
-    
+
+
       <div class="govuk-form-group">
         <label class="govuk-label" for="code">
           Enter the 6 digit security code
@@ -29,7 +29,7 @@
 
       </div>
 
-      
+
 
 
 <!-- -->
@@ -41,11 +41,11 @@
     {{ govukButton({
         text: "Continue",
         classes: "govuk-button govuk-!-margin-right-3"
-        
+
       }) }}
-    
-    
-  
+
+
+
 </form>
 
 {% else %}
@@ -55,10 +55,10 @@
   {{ govukButton({
       text: "Continue",
       classes: "govuk-button govuk-!-margin-right-3"
-      
+
     }) }}
-  
-  
+
+
 </form>
 
 {% endif %}
@@ -92,7 +92,7 @@
         </div>
       </details>
 
-    
+
 
   </div>
 </div>
