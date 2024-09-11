@@ -30,8 +30,8 @@
   ],
     "primaryLinks": [
         {
-        "url"  : "#",
-        "label" : ""
+        "url"  : "/current/*checker*/dashboard",
+        "label" : "Dashboard"
       }
     ]
 
@@ -55,17 +55,7 @@
 
 {% endblock %}
 
-{% block beforeContent %}
 
-
-  {% block backLink %}
-    {{ govukBackLink({
-      text: "Back",
-      href: "javascript:window.history.back()"
-    }) }}
-  {% endblock %}
-
-{% endblock %}
 
 {% block footer %}
  {{ govukFooter({

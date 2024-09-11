@@ -1,4 +1,4 @@
-{% extends "../../mvp1/parent-soft-check/layouts/layout-dfe.html" %}
+{% extends "../../mvp2/parent-soft-check/layouts/layout-dfe.html" %}
 
 {% set pageName="Home" %}
 
@@ -24,7 +24,7 @@
           <li class="govuk-summary-card__action">
             <a class="govuk-link" href="checker">Change<span class="govuk-visually-hidden"> Parent or guardian details</span></a>
           </li>
-        
+
         </ul>
       </div>
       <div class="govuk-summary-card__content">
@@ -34,18 +34,18 @@
               Parent or guardian name
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data["first-name"] }}  {{ data["surname"] }} 
+              {{ data["first-name"] }}  {{ data["surname"] }}
             </dd>
-          
+
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
              Parent or guardian date of birth
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data["dob-day"] }} {{ data["dob-month"] }} {{ data["dob-year"] }} 
+              {{ data["dob-day"] }} {{ data["dob-month"] }} {{ data["dob-year"] }}
             </dd>
-          
+
           </div>
           {% if data['ni-number'] == 'yes' %}
           <div class="govuk-summary-list__row">
@@ -55,7 +55,7 @@
             <dd class="govuk-summary-list__value">
               {{ data["ni-number-entered"] }}
             </dd>
-          
+
           </div>
           {% else %}
           <div class="govuk-summary-list__row">
@@ -63,9 +63,9 @@
              Asylum support reference number
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data["nass-number-entered"] }} 
+              {{ data["nass-number-entered"] }}
             </dd>
-            
+
           </div>
           {% endif %}
           <div class="govuk-summary-list__row">
@@ -75,7 +75,7 @@
             <dd class="govuk-summary-list__value">
               edamcheese@hotmail.com
             </dd>
-          
+
           </div>
         </dl>
       </div>
@@ -91,7 +91,7 @@
           <li class="govuk-summary-card__action">
             <a class="govuk-link" href="childs-age-two">Change<span class="govuk-visually-hidden"> Child details</span></a>
           </li>
-        
+
         </ul>
       </div>
       <div class="govuk-summary-card__content">
@@ -101,24 +101,24 @@
              Child's name
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data["ch1-first-name"] }} {{ data["ch1-surname"] }} 
+              {{ data["ch1-first-name"] }} {{ data["ch1-surname"] }}
             </dd>
-          
+
           </div>
-        
-        
+
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
             Child's date of birth
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data["ch1-day"] }}  {{ data["ch1-month"] }}  {{ data["ch1-year"] }} 
+              {{ data["ch1-day"] }}  {{ data["ch1-month"] }}  {{ data["ch1-year"] }}
             </dd>
-            
+
           </div>
-  
-      
-           
+
+
+
         </dl>
       </div>
     </div>
@@ -132,7 +132,7 @@
             <li class="govuk-summary-card__action">
               <a class="govuk-link" href="childs-age-two">Change<span class="govuk-visually-hidden"> Child details</span></a>
             </li>
-          
+
           </ul>
         </div>
         <div class="govuk-summary-card__content">
@@ -142,24 +142,24 @@
                Child's name
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data["ch2-first-name"] }} {{ data["ch2-surname"] }} 
+                {{ data["ch2-first-name"] }} {{ data["ch2-surname"] }}
               </dd>
-            
+
             </div>
-          
-          
+
+
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
               Child's date of birth
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data["ch2-day"] }}  {{ data["ch2-month"] }}  {{ data["ch2-year"] }} 
+                {{ data["ch2-day"] }}  {{ data["ch2-month"] }}  {{ data["ch2-year"] }}
               </dd>
-              
+
             </div>
-    
-        
-             
+
+
+
           </dl>
         </div>
     </div>
@@ -168,9 +168,9 @@
 
     {% endif %}
 
-   
 
-   
+
+
 
 
 
@@ -185,7 +185,7 @@
 
     <p class="govuk-body">By submitting this information, you confirm that, to the best of your knowledge, the details are correct.</p>
 
-    
+
 
 
     <form action="eligible" method="post" novalidate>
@@ -206,7 +206,7 @@
 
     </form>
 
-  
+
 
   </div>
 </div>

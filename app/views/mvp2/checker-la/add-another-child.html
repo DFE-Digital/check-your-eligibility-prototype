@@ -1,4 +1,4 @@
-{% extends "../../mvp1/checker-la/layouts/layout-dfe.html" %}
+{% extends "../../mvp2/checker-la/layouts/layout-dfe.html" %}
 
 {% set pageName="Home" %}
 
@@ -8,13 +8,13 @@
   <div class="govuk-grid-column-full">
 
 
-  
+
 
 
 
     <div class="govuk-grid-row">
 
-            
+
       <div class="govuk-grid-column-one-half">
 
     <form action="result" method="post" novalidate>
@@ -25,13 +25,13 @@
       {%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
       {%- from "govuk/components/input/macro.njk" import govukInput -%}
       {%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
-      
+
       <div data-module="moj-add-another">
-      
+
         <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Add a child</h2>
-      
+
         <form method="post">
-      
+
           {% call govukFieldset({
             classes: 'moj-add-another__item',
             legend: {
@@ -40,7 +40,7 @@
               isPageHeading: false
             }
           }) %}
-      
+
           {{ govukInput({
             id: 'person[0][first_name]',
             name: 'person[0][first_name]',
@@ -53,7 +53,7 @@
               'data-id': 'person[%index%][first_name]'
             }
           }) }}
-      
+
           {{ govukInput({
             id: 'person[0][last_name]',
             name: 'person[0][last_name]',
@@ -66,7 +66,7 @@
               'data-id': 'person[%index%][last_name]'
             }
           }) }}
-      
+
           {{ govukDateInput({
             id: "date-of-birth",
             fieldset: {
@@ -111,47 +111,47 @@
               }
             ]
           }) }}
-      
+
           {% endcall %}
-      
+
           <div class="moj-button-action">
             {{ govukButton({
               text: 'Add another person',
               classes: 'govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4'
             }) }}
           </div>
-      
+
           <div class="moj-button-action">
             {{ govukButton({
               text: 'Submit'
             }) }}
           </div>
-      
+
         </form>
-      
+
       </div>
-      
 
 
 
 
-      
+
+
     </form>
 
 
 
 
-        
 
 
 
 
-        
-      </div>  
-    
+
+
+      </div>
+
     </div>
 
-  
+
   </div>
 </div>
 

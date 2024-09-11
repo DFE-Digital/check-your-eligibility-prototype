@@ -1,4 +1,4 @@
-{% extends "../../mvp1/parent-soft-check/layouts/layout-dfe-signed-out.html" %}
+{% extends "../../mvp2/parent-soft-check/layouts/layout-dfe-signed-out.html" %}
 
 {% set pageName="Home" %}
 
@@ -22,8 +22,8 @@
         }
       }
       ) %}
-      
-    
+
+
 
 
       {{ govukInput({
@@ -45,18 +45,18 @@
         name: "surname",
         autocomplete: ""
       }) }}
-      
-      
-    
-      
+
+
+
+
       {% endcall %}
 
-      
+
         {{ govukDateInput({
-          
+
           id: "dob",
           namePrefix: "dob",
-          
+
           fieldset: {
             legend: {
               text: "What is your date of birth?",
@@ -69,7 +69,7 @@
           }
         }) }}
 
-      
+
 
       {% set yesHtml %}
       {{ govukInput({
@@ -85,7 +85,7 @@
   hint: {
     text: "For example, ‘QQ 12 34 56 C’"
   }
-     
+
       }) }}
       {% endset -%}
 
@@ -119,29 +119,29 @@
       ]
       }) }}
 
-  
-      
-      
-      
+
+
+
+
       {{ govukButton({
         text: "Save and continue",
         classes:'govuk-!-margin-top-5'
       }) }}
 
-      
+
     </form>
 
 
 
 
-        
 
 
 
 
-        
-      </div>  
-    
+
+
+      </div>
+
     </div>
 
 

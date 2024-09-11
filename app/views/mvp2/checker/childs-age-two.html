@@ -1,4 +1,4 @@
-{% extends "../../mvp1/checker/layouts/layout-dfe.html" %}
+{% extends "../../mvp2/checker/layouts/layout-dfe.html" %}
 
 {% set pageName="Home" %}
 
@@ -134,7 +134,7 @@
               'data-id': 'child[1][first_name]'
             }
           }) }}
-        
+
           {{ govukInput({
             id: 'ch2-surname',
             name: 'ch2-surname',
@@ -194,7 +194,7 @@
           }) }}
 
           {% endcall %}
-        
+
         {% include "../includes/schools-three.html" %}
 
         {% from "govuk/components/button/macro.njk" import govukButton %}
@@ -205,7 +205,7 @@
         }) }}
 
           <div class="govuk-!-padding-bottom-3"></div>
-                
+
       </div>
     </form>
 
@@ -213,7 +213,7 @@
 </div>
 
 {% from "govuk/components/button/macro.njk" import govukButton %}
-        
+
 {{ govukButton({
   text: "Add another child",
   classes: "govuk-button--secondary"

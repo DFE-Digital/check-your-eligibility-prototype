@@ -1,31 +1,15 @@
 {% extends "../../mvp2/checker/layouts/layout-dfe.html" %}
-
-{% set pageName="Outcome not entitled" %}
-
-
+{% set pageName="eligible" %}
 
 {% block content %}
 
 <div class="govuk-width-container">
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-m">Appeal - Free school meals</span>
-
-      <div class="govuk-panel govuk-panel--confirmation">
-        <h1 class="govuk-panel__title">Children details added</h1>
-        <div class="govuk-panel__body">
-          Added on<br /><strong>6 July 2024, 13:12</strong>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="govuk-!-padding-top-5"></div>
-  <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-
-      <h1 class="govuk-heading-m">You have added children’s details to Eden Tesfay's appeal for free school meals.</h1>
+        <h1 class="govuk-heading-xl">Children details added</h1>
+        <p>You have successfully added children’s details to {{ data["first-name"] }}  {{ data["surname"] }} free school meals application record.</p>
     </div>
-  </div>
+</div>
 </div>
 
 {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
@@ -62,44 +46,27 @@
 </div>
 
 <div class="govuk-!-padding-bottom-3"></div>
+
 <div class="govuk-width-container">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
         <h2 class="govuk-heading-m">What to do next</h2>
-        <p>You’ll need to send supporting evidence to your local authority by email for review in support of the appeal.
-          <p>Go to <a target="_blank" href="guidance"> guidance for reviewing evidence</a> to see a complete list of acceptable evidence types.</p>
-
-          <p>After you have sent the evidence to the local authority go to <a href="../checker/process-appeals" class="govuk-link">Process appeals</a> and follow the instructions. </p>
-
-
-
-
-
-      </div>
+        <p>As these children are entitled to free school meals, you’ll now need to add details of their application to your own system before finalising.</p>
+        <p> Go to <a href="../checker/applications" class="govuk-link">Finalise applications</a> and follow the instructions there. </p>
     </div>
 </div>
-<!--
+</div>
+
 <div class="govuk-!-padding-bottom-3"></div>
--->
+
 <p><a href="../checker/dashboard">Return to dashboard</a></p>
-<!---
-<p><a href="">Sign out</a></p>-->
 
-<!---
-<div class="govuk-button-group">
-  {{ govukButton({
-    text: "Return to dashboard",
-    classes: "govuk-button--secondary",
-    href: "../checker/dashboard"
-  }) }}
-
-  <a class="govuk-link" href="#">Sign out</a>
-</div>-->
+<p><a href="">Sign out</a></p>
 
 
 
 
-  </div>
+</div>
 </div>
 
 {% endblock %}

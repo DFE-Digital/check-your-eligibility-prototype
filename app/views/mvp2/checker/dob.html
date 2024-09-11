@@ -1,4 +1,4 @@
-{% extends "../../mvp1/checker/layouts/layout-dfe.html" %}
+{% extends "../../mvp2/checker/layouts/layout-dfe.html" %}
 
 {% set pageName="Home" %}
 
@@ -12,15 +12,15 @@
 
     <div class="govuk-grid-row">
 
-            
+
       <div class="govuk-grid-column-two-thirds">
 
     <form action="national-insurance" method="post" novalidate>
         {{ govukDateInput({
-          
+
           id: "dob",
           namePrefix: "dob",
-          
+
           fieldset: {
             legend: {
               text: "What is the parent's date of birth?",
@@ -33,32 +33,32 @@
           }
         }) }}
 
-      
-      
-      
-      
+
+
+
+
       {{ govukButton({
         text: "Save and continue",
         classes:'govuk-!-margin-top-5'
       }) }}
 
-      
+
     </form>
 
 
 
 
-        
 
 
 
 
-        
-      </div>  
-    
+
+
+      </div>
+
     </div>
 
-  
+
 
 
 {% endblock %}

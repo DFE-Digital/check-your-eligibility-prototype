@@ -1,4 +1,4 @@
-{% extends "../../mvp1/checker/layouts/layout-dfe.html" %}
+{% extends "../../mvp2/checker/layouts/layout-dfe.html" %}
 
 {% set pageName="Home" %}
 
@@ -12,7 +12,7 @@
 
     <div class="govuk-grid-row">
 
-            
+
       <div class="govuk-grid-column-two-thirds">
 
 
@@ -25,7 +25,7 @@
           isPageHeading: true
         }
       }) %}
-      
+
         {% from "govuk/components/input/macro.njk" import govukInput %}
 
         {{ govukInput({
@@ -55,7 +55,7 @@
           label: {
             text: "Parent or guardian National Insurance number"
           },
-          
+
           id: "full-name",
           name: "fullName",
           autocomplete: "name",
@@ -74,12 +74,12 @@
           spellcheck: false
         }) }}
 
-     
+
           {{ govukDateInput({
-            
+
             id: "dob",
             namePrefix: "dob",
-            
+
             fieldset: {
               legend: {
                 text: "Parent or guardian date of birth",
@@ -93,8 +93,8 @@
           }) }}
 
       {% endcall %}
-      
-    
+
+
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
@@ -103,13 +103,13 @@
   href: "../checker-la/checking-la-loader"
 }) }}
 
-      
+
     </form>
 
 
-        
-      </div>  
-    
+
+      </div>
+
     </div>
 
 

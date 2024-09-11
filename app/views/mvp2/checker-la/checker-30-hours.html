@@ -1,4 +1,4 @@
-{% extends "../../mvp1/checker-la/layouts/layout-dfe.html" %}
+{% extends "../../mvp2/checker-la/layouts/layout-dfe.html" %}
 
 {% set pageName="Home" %}
 
@@ -12,7 +12,7 @@
 
     <div class="govuk-grid-row">
 
-            
+
       <div class="govuk-grid-column-two-thirds">
 
         <span class="govuk-hint">Check eligibility for </span>
@@ -30,11 +30,11 @@
 
 
 
-     
-      
-      
 
-      
+
+
+
+
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
@@ -58,7 +58,7 @@
           spellcheck: false
         }) }}
 
-       
+
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
 
@@ -66,7 +66,7 @@
           label: {
             text: "National Insurance number"
           },
-          
+
           id: "full-name",
           name: "fullName",
           autocomplete: "name",
@@ -85,12 +85,12 @@
           spellcheck: false
         }) }}
 
-     
+
           {{ govukDateInput({
-            
+
             id: "dob",
             namePrefix: "dob",
-            
+
             fieldset: {
               legend: {
                 text: "Date of birth",
@@ -102,44 +102,44 @@
               text: "For example, 27 3 2007"
             }
           }) }}
-  
-        
-        
-        
-        
 
-     
-      
-      
-      
-        
-      
-       
-      
+
+
+
+
+
+
+
+
+
+
+
+
+
       {% endcall %}
-      
-      
-      
-      
+
+
+
+
       {{ govukButton({
         text: "Save and continue",
         classes:'govuk-!-margin-top-5'
       }) }}
 
-      
+
     </form>
 
 
 
 
-        
 
 
 
 
-        
-      </div>  
-    
+
+
+      </div>
+
     </div>
 
 

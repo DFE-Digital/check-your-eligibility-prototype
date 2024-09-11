@@ -10,9 +10,9 @@ module.exports = function(router) {
    //     res.redirect('/mvp2/_family/parent-soft-check/check');
    // });
 
-//mvp1//
+//mvp2//
    router.post('/mvp2-soft-check-ni-answer', function (req, res) {
-    // Make a variable 
+    // Make a variable
     var nassNumber = req.session.data['ni-number']
     // Check whether the variable matches a condition
    if (nassNumber == "yes"){
