@@ -47,6 +47,7 @@ Go to http://localhost:3000 in your browser.
 
 <h3>Deployed prototype</h3>
 URL: https://check-your-eligibility-prototype.azurewebsites.net
+password: request from team
 
 This version deploys automatically from merges to main and is the 'latest' version for UR and UX iteration.
 
@@ -61,12 +62,14 @@ A history of the design of this service
 <h3>Git status naming conventions</h3>
 
 [UserJourney][Feature/Tweak/Bug]{Designername]
+<br>
 example: 
 Schools-tweak-contentupdate-EW
-Family-feature-uploadevidence-JH
+<br>Family-feature-uploadevidence-JH
 [Description of changes]
 
 NB Github no# recorded in Prototype index for dev visibility
+
 ---------------------------------------------------------------------------------
 
 <h3>Glossary of terms used</h3>
