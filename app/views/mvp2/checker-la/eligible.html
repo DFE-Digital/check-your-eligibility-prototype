@@ -1,4 +1,4 @@
-{% extends "../../current/checker-la/layouts/layout-dfe.html" %}
+{% extends "../../mvp2/checker-la/layouts/layout-dfenoback.html" %}
 
 {% set pageName="Home" %}
 
@@ -8,10 +8,11 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
     <h1 class="govuk-heading-l">The children of this parent or guardian are entitled to free school meals</h1>
   <p>This information should be passed on to their school.</p>
-  
+
   {% from "govuk/components/button/macro.njk" import govukButton %}
 
     {{ govukButton({
@@ -19,24 +20,18 @@
       href: 'checker'
     }) }}
 
-  <p><a href="dashboard">Return to dashboard</a></p>
-  <p><a href="../account/signin-or-create">Sign out</a></p>
+  <div>
+
+    <div class="govuk-button-group">
+      <a class="govuk-link" href="dashboard">Return to dashboard</a>
+      <a class="govuk-link" href="../account/signin-or-create">Sign out</a>
+    </div>
+
+
 
     </div>
 
     </div>
-  
-
-
-
-    
-        
-
-
-
-
-
-
 
 
 

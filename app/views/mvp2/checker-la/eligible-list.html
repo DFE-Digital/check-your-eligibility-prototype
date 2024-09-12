@@ -1,4 +1,4 @@
-{% extends "../../current/checker-la/layouts/layout-dfe.html" %}
+{% extends "../../mvp2/checker-la/layouts/layout-dfenoback-la.html" %}
 
 {% set pageName="Home" %}
 
@@ -7,16 +7,13 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-  
 
-
-  
 {% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
 
 {{ mojPageHeaderActions({
   heading: {
     text: 'Search results (203)',
-    
+
     classes:'govuk-heading-l'
   },
   items: [{
@@ -29,13 +26,13 @@
 
 <p><a href="search">Search again</a> </p>
 
-   
+
 
 
     <div class="govuk-grid-row">
 
-            
-      
+
+
 
       <div class="govuk-grid-column-full">
 
@@ -45,11 +42,11 @@
 
 <div class="moj-filter-layout">
 
- 
+
 
   <div class="moj-filter-layout__content">
 
-  
+
 
   <div class="moj-scrollable-pane">
     {{ govukTable({
@@ -61,7 +58,7 @@
         {text: 'Child DOB'},
 
         {text: 'Eligible from'},
-      
+
         {text: 'Status'},
         {text: 'Submission date'}
       ],
@@ -73,7 +70,7 @@
       {html: 'Samual Tesfay'},
       {html: '12 Jan 2017'},
       {html: '01 Sep 2023'},
-      
+
       {html: govukTag({
         text: "Entitled",
         classes: "govuk-tag--green"
@@ -87,8 +84,8 @@
           {html: 'Lisa Sutton'},
           {html: '10 Jan 2017'},
           {html: '01 Sep 2023'},
-        
-      
+
+
           {html: govukTag({
             text: "Entitled",
             classes: "govuk-tag--green"
@@ -102,8 +99,8 @@
           {html: 'Jack Jones'},
           {html: '10 Jan 2018'},
           {html: '01 Sep 2023'},
-        
-        
+
+
           {html: govukTag({
             text: "Evidence needed",
             classes: "govuk-tag--light-blue"
@@ -117,8 +114,8 @@
           {html: 'Tilly Langley'},
           {html: '03 Dec 2017'},
           {html: '01 Sep 2023'},
-        
-        
+
+
           {html: govukTag({
             text: "Sent for review",
             classes: "govuk-tag--blue"
@@ -132,8 +129,8 @@
           {html: 'Noah Francis'},
           {html: '13 Dec 2017'},
           {html: '01 Sep 2023'},
-        
-        
+
+
           {html: govukTag({
             text: "Reviewed entitled",
             classes: "govuk-tag--turqoise"
@@ -147,9 +144,9 @@
           {html: 'Jo Smith'},
           {html: '11 Dec 2017'},
           {html: '01 Sep 2023'},
-         
-        
-             {html: govukTag({
+
+
+          {html: govukTag({
         text: "Reviewed not entitled",
         classes: "govuk-tag--orange"
       })},
@@ -162,8 +159,8 @@
           {html: 'Harry Sutton'},
           {html: '09 Dec 2017'},
           {html: '01 Sep 2023'},
-        
-        
+
+
           {html: govukTag({
             text: "Receiving entitlement",
             classes: "govuk-tag--pink"
@@ -177,8 +174,8 @@
           {html: 'Scarlette Jones'},
           {html: '10 Nov 2017'},
           {html: '01 Sep 2023'},
-      
-      
+
+
           {html: govukTag({
             text: "Entitled",
             classes: "govuk-tag--green"
@@ -191,10 +188,10 @@
           {html: 'Jennifer Langley'},
           {html: 'Hilda Langley'},
           {html: '22 Nov 2017'},
-       
+
           {html: '01 Sep 2023'},
-       
- 
+
+
           {html: govukTag({
             text: "Entitled",
             classes: "govuk-tag--green"
@@ -208,8 +205,8 @@
           {html: 'Ada Francis'},
           {html: '26 Oct 2017'},
           {html: '01 Sep 2023'},
-      
-    
+
+
           {html: govukTag({
             text: "Entitled",
             classes: "govuk-tag--green"
@@ -222,9 +219,9 @@
           {html: 'John Smith'},
           {html: 'Simon Smith'},
           {html: '11 Oct 2017'},
-        
+
           {html: '01 Sep 2023'},
-       
+
 
           {html: govukTag({
             text: "Entitled",
@@ -239,24 +236,23 @@
           {html: 'Margo Blake'},
           {html: '12 Oct 2017'},
           {html: '01 Sep 2023'},
-      
-          
-   
+
+
+
           {html: govukTag({
             text: "Entitled",
             classes: "govuk-tag--green"
           })},
           {text: '25 Sep 2023'}
           ],
-        
+
         [
           {html: '<a href="#" class="govuk-link">44455453</a>'},
           {html: 'John Smith'},
           {html: 'Jona Smith'},
           {html: '11 Oct 2017'},
           {html: '01 Sep 2023'},
-         
-   
+
           {html: govukTag({
             text: "Entitled",
             classes: "govuk-tag--green"
@@ -267,9 +263,7 @@
     }) }}
   </div>
 </div>
-
-      </div>
-      {%- from "moj/components/pagination/macro.njk" import mojPagination -%}
+</div>
 
 {{ mojPagination({
   items: [{
@@ -304,10 +298,10 @@
   }
 }) }}
 
-    
+
     </div>
 
-  
+
   </div>
 </div>
 

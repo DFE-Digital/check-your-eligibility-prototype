@@ -19,21 +19,8 @@
     "name": "Check a family's eligibility"
   },
   "headerActionLinks": [
-    {
-      "url"  : "/",
-      "label" : "My account"
-    },
-    {
-      "url"  : "../../",
-      "label" : "Sign out"
-    }
-  ],
-    "primaryLinks": [
-        {
-        "url"  : "dashboard",
-        "label" : "Dashboard"
-      }
-    ]
+
+  ]
 
 })
 }}
@@ -57,13 +44,6 @@
 
 {% block beforeContent %}
 
-
-  {% block backLink %}
-    {{ govukBackLink({
-      text: "Back",
-      href: "javascript:window.history.back()"
-    }) }}
-  {% endblock %}
 
 {% endblock %}
 

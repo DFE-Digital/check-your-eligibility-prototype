@@ -1,4 +1,4 @@
-{% extends "../../mvp2/checker/layouts/layout-dfe.html" %}
+{% extends "../../mvp2/checker/layouts/layout-dfenoback.html" %}
 
 {% set pageName="Outcome not entitled" %}
 
@@ -18,14 +18,12 @@
 <div class="govuk-!-padding-bottom-3"></div>
 
 
-{% from "govuk/components/button/macro.njk" import govukButton %}
 
 {{ govukButton({
   text: "Yes, send now",
   href: '../checker/application-sent-to-la'
 }) }}
 
-{% from "govuk/components/button/macro.njk" import govukButton %}
 
 {{ govukButton({
   text: "No, return to record",

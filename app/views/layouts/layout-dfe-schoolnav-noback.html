@@ -1,4 +1,4 @@
-{# 1 #} 
+{# 1 #}
 {% from 'node_modules/dfe-frontend-alpha/packages/components/header/macro.njk' import header %}
 
 {# 2 #}
@@ -24,7 +24,7 @@
     "headerActionLinks": [
       {
         "url"  : "/",
-        "label" : "My account"
+        "label" : " "
       },
       {
         "url"  : "/",
@@ -37,13 +37,13 @@
         "label" : "Dashboard"
       }, {
         "url"  : "#",
-        "label" : "Check eligibility"
+        "label" : " "
       }, {
         "url"  : "#",
-        "label" : "Process appeals"
+        "label" : " "
       }, {
         "url"  : "#",
-        "label" : "Finalise applications"
+        "label" : " "
       }
     ]
   })
@@ -69,7 +69,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-  
+
 
 
 {% endblock %}
@@ -108,7 +108,7 @@
  }) }}
 {% endblock %}
 
-{# 4 #} 
+{# 4 #}
 {% block scripts %}
   {{ super() }}
   <script src="/public/javascripts/dfefrontend.js"></script>
