@@ -1,9 +1,6 @@
 {% extends "../../current/checker-la/layouts/layout-dfe.html" %}
-
 {% set pageName="Home" %}
-
 {% block content %}
-
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -15,11 +12,10 @@
       }) }}
     {% endif %}
 
- 
 
     <form action="check-upload" method="post" enctype="multipart/form-data">
 
-      
+
 {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 

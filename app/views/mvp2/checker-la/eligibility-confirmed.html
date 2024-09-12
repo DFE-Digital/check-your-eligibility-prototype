@@ -1,7 +1,5 @@
-{% extends "layouts/layout-dfe-lanav.html" %}
-
+{% extends "layouts/layout-dfe-lanav-noback.html" %}
 {% set pageName="Home" %}
-
 {% set applicationSent %}
 <h3 class="govuk-notification-banner__heading">
   Eligibility confirmed
@@ -10,14 +8,15 @@
    This record has now been moved to all applications
   </p>
 
+
 {% endset %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-
     <span class="govuk-hint">Reference: 44455453</span>
+
 
 {{ mojBanner({
   type: 'success',
@@ -27,44 +26,24 @@
 
 
 
-
-
     <div class="govuk-grid-row">
-
-
       <div class="govuk-grid-column-one-half">
 
         <p>Thank you for processing this application. </p>
-<p><strong>Please respond to your contacts at all relevant schools to pass on your decision.</strong></p>
-<p>If you need to find the application again, search in Search all records. </p>
-
+        <p><strong>Please respond to your contacts at all relevant schools to pass on your decision.</strong></p>
+        <p>If you need to find the application again, search in <a href="search">Search all records.</a> </p>
+<!---
         <p><a href="ineligible-list">Confirm another application</a></p>
         <p><a href="dashboard">Go to your homepage</a></p>
+-->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <div class="govuk-button-group">
+          <a class="govuk-link" href="../checker-la/ineligible-list">Confirm another application</a>
+          <a class="govuk-link" href="dashboard">Return to dashboard</a>
+        </div>
 
       </div>
-
     </div>
-
-
   </div>
 </div>
 

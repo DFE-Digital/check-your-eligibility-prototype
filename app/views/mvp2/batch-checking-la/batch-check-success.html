@@ -2,22 +2,16 @@
 
 {% set pageName="Home" %}
 
-
-
 {% block content %}
 
-{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break">
 
 {% set html %}
   <h1 class="govuk-notification-banner__heading">
     Checks completed
   </h1>
   <p class="govuk-body">Now download the checked file to see which parents can claim free school meals for their children.</p>
-
   <p>free-school-meal-outcomes-YYYYMMDD.csv</p>
-
-
-  {% from "govuk/components/button/macro.njk" import govukButton %}
 
   {{ govukButton({
     text: "Download",
@@ -40,9 +34,10 @@
     <p><strong>Error</strong> – There was a problem accessing this parent or guardian’s data to obtain a result. </p>
 
 
-<p><a href="../checker-la/dashboard">Return to dashboard</a></p>
-
-<p><a href="">Sign out</a></p>
+    <div class="govuk-button-group">
+      <a class="govuk-link" href="../checker-la/dashboard">Return to dashboard</a>
+      <a class="govuk-link" href="../account/onegov-signin">Sign out</a>
+    </div>
 
 {% endblock %}
 

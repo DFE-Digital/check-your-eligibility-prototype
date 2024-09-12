@@ -30,7 +30,7 @@
   ],
     "primaryLinks": [
         {
-        "url"  : "dashboard",
+        "url"  : "/mvp2/checker-la/dashboard",
         "label" : "Dashboard"
       }
     ]
@@ -55,17 +55,7 @@
 
 {% endblock %}
 
-{% block beforeContent %}
 
-
-  {% block backLink %}
-    {{ govukBackLink({
-      text: "Back",
-      href: "javascript:window.history.back()"
-    }) }}
-  {% endblock %}
-
-{% endblock %}
 
 {% block footer %}
  {{ govukFooter({

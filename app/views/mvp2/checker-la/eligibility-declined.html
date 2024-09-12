@@ -1,4 +1,4 @@
-{% extends "../../current/checker-la/layouts/layout-dfe.html" %}
+{% extends "../../mvp2/checker-la/layouts/layout-dfenoback.html" %}
 
 {% set pageName="Home" %}
 
@@ -8,26 +8,30 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-
     <span class="govuk-hint">Reference: 44455453</span>
-  
-<h1 class="govuk-heading-l">Application declined</h1>
-    
+    <h1 class="govuk-heading-l">Application declined</h1>
 
 
+<!---
+{{ mojBanner({
+  type: 'warning',
+  html:' <h3 class="govuk-heading-l">Application declined</h3>',
+  iconFallbackText: 'Success'
+}) }}-->
 
 
-    <div class="govuk-grid-row">
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-one-half">
 
-            
-      <div class="govuk-grid-column-one-half">
-
-        <p>Thank you for processing this application. </p>
+<p>Thank you for processing this application. </p>
 <p><strong>Please respond to your contacts at all relevant schools to pass on your decision.</strong> </p>
 <p>If you need to find the application again, search in Search all records. </p>
-      
-        <p><a href="ineligible-list">Confirm another application</a></p>
-        <p><a href="dashboard">Go to your homepage</a></p>
+
+
+        <div class="govuk-button-group">
+          <a class="govuk-link" href="../checker-la/ineligible-list">Confirm another application</a>
+          <a class="govuk-link" href="dashboard">Return to dashboard</a>
+        </div>
 
 
 
@@ -42,17 +46,14 @@
 
 
 
-        
 
 
 
+      </div>
 
-        
-      </div>  
-    
     </div>
 
-  
+
   </div>
 </div>
 
