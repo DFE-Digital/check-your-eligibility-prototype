@@ -19,21 +19,8 @@
     "name": "Check a family's eligibility"
   },
   "headerActionLinks": [
-    {
-      "url"  : "/",
-      "label" : "My account"
-    },
-    {
-      "url"  : "../../",
-      "label" : "Sign out"
-    }
-  ],
-    "primaryLinks": [
-        {
-        "url"  : "/mvp2/*checker*/dashboard",
-        "label" : "Dashboard"
-      }
-    ]
+
+  ]
 
 })
 }}
@@ -55,7 +42,10 @@
 
 {% endblock %}
 
+{% block beforeContent %}
 
+
+{% endblock %}
 
 {% block footer %}
  {{ govukFooter({

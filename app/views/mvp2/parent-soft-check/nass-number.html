@@ -4,22 +4,12 @@
 
 {% block content %}
 
-
-
-
-
-
     <div class="govuk-grid-row">
 
-            
+
       <div class="govuk-grid-column-two-thirds">
 
     <form method="post" novalidate>
-
-      
-
-  
-
 
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -50,12 +40,12 @@ text: "Enter the first 9 numbers"
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
     }
-  
+
   },
   hint: {
     text: "This can be found on letters from the Home Office. It was previously known as a NASS number."
   },
- 
+
   items: [
     {
       value: "yes~/current/parent-soft-check/outcome-not-entitled",
@@ -67,32 +57,21 @@ text: "Enter the first 9 numbers"
     {
       value: "no~/current/parent-soft-check/outcome-could-not-check",
       text: "No, I do not have one"
-      
+
     }
-    
+
   ]
 }) }}
-
 
 
 {{ govukButton({
   text: "Save and continue"
 }) }}
 
-      
     </form>
 
+      </div>
 
-
-
-        
-
-
-
-
-        
-      </div>  
-    
     </div>
 
 
