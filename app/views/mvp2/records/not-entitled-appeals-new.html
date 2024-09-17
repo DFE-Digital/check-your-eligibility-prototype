@@ -80,27 +80,47 @@ href: "javascript:window.history.back()"
     <span class="govuk-hint">Reference: 44455453</span>
 -->
 
-
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <h1 class="govuk-heading-xl" style="margin: 1;">Warren Sutton</h1>
+  <div style="display: flex;">
+    <div class="govuk-button-group" style="display: flex;">
+      {{ govukButton({
+        text: "Send for review",
+        href:'../records/pending-approve-areyousure'
+      }) }}
+      {{ govukButton({
+        text: "Download as csv file",
+        classes: 'govuk-button--secondary',
+        href:'../records/pending-decline-areyousure'
+      }) }}
+    </div>
+  </div>
+</div>
+<!---
     {{ mojPageHeaderActions({
       heading: {
         text: 'Warren Sutton'
       }
     }) }}
-
+  -->
 
 <div class="govuk-width-container">
-    <div class="govuk-grid-column-full-width">
+  <div class="govuk-grid-column-full-width">
+    <div class="govuk-grid-column-two-thirds">
       <p class="govuk-heading-s">Once you've received evidence from this parent:</p>
       <ol class="govuk-list govuk-list--number">
-        <li>Send it to your local authority contact along with the application reference number. Typically this would happen via email.</li>
+        <li>Send it to your local authority contact along with the application reference number. <br>Typically this would happen via email.</li>
         <li>Select ‘Send for review’ on this page. This will notify the local authority that the free school meals application is ready for their attention.</li>
       </ol>
     </div>
   </div>
+</div>
+</div>
+</div>
 
 <div class="govuk-!-padding-bottom-3"></div>
 
-
+<!---
 <div class="moj-button-action">
   {{ govukButton({
     text: 'Send for review',
@@ -111,9 +131,7 @@ href: "javascript:window.history.back()"
     text: "Download csv file",
     classes: "govuk-button--secondary"
   }) }}
-</div>
-
-<h2 class="govuk-heading-l govuk-!-margin-bottom govuk-!-font-size-36">Overview</h2>
+</div>-->
 
 
 {{ govukSummaryList({

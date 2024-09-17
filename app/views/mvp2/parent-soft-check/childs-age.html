@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var addAnotherButton = document.querySelector('.moj-add-another__add-button');
   var removeButton = document.querySelectorAll('.moj-add-another__remove-button');
   removeButton.forEach(function (button){
-    button.addEventListener('click', updateLegends); 
+    button.addEventListener('click', updateLegends);
   });
   addAnotherButton.addEventListener('click', updateLegends);
   function updateLegends(){
@@ -31,9 +31,9 @@ document.addEventListener('DOMContentLoaded', function () {
       });
       var removeButton = document.querySelectorAll('.moj-add-another__remove-button');
       removeButton.forEach(function (button){
-        button.addEventListener('click', updateLegends); 
+        button.addEventListener('click', updateLegends);
     });
-    }, 50); 
+    }, 50);
   }
 })
 
@@ -49,15 +49,15 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="govuk-grid-column-one-half">
 
     <form action="check-answers" method="post" novalidate>
-      
+
       <div data-module="moj-add-another">
-      
+
         <h1 class="govuk-heading-l" tabindex="-1">Provide details of your children</h1>
         <p>Include all your children who are in compulsory education. You can use the add another option, if you have more than one child.</p>
-      
+
         <form method="post">
-        
-      
+
+
           {% call govukFieldset({
             classes: 'moj-add-another__item',
             legend: {
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
               isPageHeading: false
             }
           }) %}
-      
+
           {{ govukInput({
             id: 'ch2-first-name',
             name: 'ch2-first-name',
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
               'data-id': 'child[%index%][first_name]'
             }
           }) }}
-      
+
           {{ govukInput({
             id: 'ch2-surname',
             name: 'ch2-surname',
@@ -92,12 +92,8 @@ document.addEventListener('DOMContentLoaded', function () {
               'data-id': 'child[%index%][last_name]'
             }
           }) }}
-
-
           {% include "../includes/schools.html" %}
 
-          
-      
           {{ govukDateInput({
             id: "ch2-date-of-birth",
             fieldset: {
@@ -142,18 +138,18 @@ document.addEventListener('DOMContentLoaded', function () {
               }
             ]
           }) }}
-      
+
           {% endcall %}
 
-         
-      
+
+
           <div class="moj-button-action">
             {{ govukButton({
               text: 'Add another child',
               classes: 'govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4'
             }) }}
           </div>
-      
+
           <div class="moj-button-action">
             {{ govukButton({
               text: 'Save and continue'
@@ -161,32 +157,12 @@ document.addEventListener('DOMContentLoaded', function () {
           </div>
 
           <input type="hidden" name="child-2" id="child-2" value="Yes">
-      
-        </form>
-      
+
+     </form>
+
+        </div>
+      </form>
       </div>
-      
-
-
-
-
-      
-    </form>
-
-
-
-
-        
-
-
-
-
-        
-      </div>  
-    
     </div>
-
-  
-
 
 {% endblock %}

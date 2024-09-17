@@ -1,4 +1,4 @@
-{# 1 #} 
+{# 1 #}
 {% from 'node_modules/dfe-frontend-alpha/packages/components/header/macro.njk' import header %}
 
 {# 2 #}
@@ -9,11 +9,11 @@
 
 {{ header({
     "showNav": "true",
-    "showSearch": "true",
+    "showSearch": "false",
     "showHeaderActionLinks": "true",
     "logoPath": "public/images",
     "searchAction": "/search/",
-    "searchInputName": "q",
+    "searchInputName": "",
     "logoAltText": "Department for Education",
     "homeHref": "https://gov.uk",
     "selectedNav": view,
@@ -37,13 +37,13 @@
       "label" : "Dashboard"
     }, {
       "url"  : "#",
-      "label" : "Check eligibility"
+      "label" : " "
     }, {
       "url"  : "#",
-      "label" : "Process appeals"
+      "label" : " "
     }, {
       "url"  : "#",
-      "label" : "Finalise applications"
+      "label" : " "
     }
     ]
   })
@@ -69,7 +69,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-  
+
 
   {% block backLink %}
     {{ govukBackLink({
@@ -114,7 +114,7 @@
  }) }}
 {% endblock %}
 
-{# 4 #} 
+{# 4 #}
 {% block scripts %}
   {{ super() }}
   <script src="/public/javascripts/dfefrontend.js"></script>

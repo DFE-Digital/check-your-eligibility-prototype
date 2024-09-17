@@ -1,18 +1,17 @@
 
-{# <!-- Where this file is includes, set nunjucks variables for countryID, countryName and countryLabelText to change the defaults 
+{# <!-- Where this file is includes, set nunjucks variables for countryID, countryName and countryLabelText to change the defaults
     {% set countryID = "departure-country" %}
     {% set countryName = "departure-country-name" %}
     {% set countryLabelText = "Which country did they depart from" %}
-    
+
     To remove the hint, set countryHint to an empty string
     {% set countryHint = ""}
-    
+
     To change the hint, set countryHint to the hint text
     {% set countryHint = "Type to search for a country" %}
     --> #}
 
-     
-    
+
     <div class="govuk-form-group">
       {{ govukSelect({
         id: "school-picker",
@@ -24,8 +23,9 @@
           name:"school-picker"
         },
         hint: {
-          text: countryHint | default("Type to search", false)
+          text: countryHint | default("test this", false)
         },
+
         value: countryValue or data[countryName or countryID or "country"] or "",
         items: [
       {
@@ -604,8 +604,8 @@
         value: "St Patrick's RC Primary School",
         text: "St Patrick's RC Primary School"
       }
-      
-      
         ]
       }) }}
+
     </div>
+
