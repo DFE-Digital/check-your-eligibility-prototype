@@ -8,8 +8,6 @@ href: "javascript:window.history.back()"
 {% endblock %}
 
 
-
-
 {% set SiblingAdded %}
 <h3 class="govuk-notification-banner__heading">
   Sibling added to record
@@ -20,12 +18,9 @@ href: "javascript:window.history.back()"
   <p>Your reference is 1234567</p>
 {% endset %}
 
-
-
 <!-- The content between the heading 1 and the buttons -->
 
 {% block content %}
-
 
 
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
@@ -50,21 +45,59 @@ href: "javascript:window.history.back()"
       </div>
 
     </div>
-
     {% endif %}
 
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <h1 class="govuk-heading-l" style="margin: 1;">Parent name</h1>
+      <div style="display: flex;">
+        <div class="govuk-button-group" style="display: flex;">
+          {{ govukButton({
+            text: "Approve application",
+            href:'../records/pending-approve-areyousure'
+          }) }}
+          {{ govukButton({
+            text: "Decline application",
+            classes: 'govuk-button--secondary',
+            href:'../records/pending-decline-areyousure'
+          }) }}
+        </div>
+      </div>
+    </div>
 
-    <span class="govuk-hint">Reference: 44455453</span>
+<!---
+<h1 class="govuk-heading-l"> Pupil name </h1>
+  <div style="float: right;">
+  <div class="govuk-button-group">
 
+  {{ govukButton({
+    text: "Approve application"
+  }) }}
 
+  {{ govukButton({
+    text: "Decline application",
+    classes: "govuk-button--secondary"
+  }) }}
+</div>
+</div>
+<!---
+{{ mojButtonMenu({
+  heading: {
+    text: 'Pupil name'
+  },
+  items: [{
+    text: "Primary action",
+    href: "#"
+  }, {
+    text: "Second action",
+    href: "#",
+    classes: "govuk-button--secondary"
+  }]
+}) }}-->
 
-
-
-{% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
-
+<!---
 {{ mojPageHeaderActions({
   heading: {
-    text: 'Eden Tesfay'
+    text: 'Pupil name'
   },
   items: [
 
@@ -81,10 +114,7 @@ href: "javascript:window.history.back()"
     }
   ]
 }) }}
-
-
-
-
+-->
 
 
 
@@ -99,17 +129,10 @@ href: "javascript:window.history.back()"
 
 </div>
 
-
-
-
-<h2 class="govuk-heading-l govuk-!-margin-bottom govuk-!-font-size-36">Overview</h2>
-
-
-
 {{ govukSummaryList({
   card: {
   title: {
-  text: "Child 1"
+  text: "Child details Reference: 44455453"
   },
   actions: {
   items: [
