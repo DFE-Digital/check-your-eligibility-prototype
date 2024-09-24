@@ -1,6 +1,6 @@
-{% extends "./layouts-apply/layout-dfe.html" %}
+{% extends "./layouts-apply/layout-dfe-signed-out-noback.html" %}
 
-{% set pageName="Application complete" %} 
+{% set pageName="Application complete" %}
 
 {% block content %}
 
@@ -15,7 +15,9 @@
       </div>
     </div>
   </div>
-
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
   <table class="govuk-table">
     <caption class="govuk-table__caption govuk-table__caption--m">
       We have sent details for
@@ -53,8 +55,15 @@
 
   <p>
     For any queries about the application, please write the reference numbers
-    down and discuss with your school administrator.
+    down to discuss with your school administrator.
   </p>
+  <p>
+    If you want to retain a paper copy of this page for your records choose <a href="">print page</a>
+    or select Print from your browser.
+  </p>
+  <!--<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Print page
+  </button>-->
 
   <h2 class="govuk-heading-m">What happens next</h2>
 
@@ -69,7 +78,7 @@
     <a href="">What did you think about this service?</a> (takes 30 seconds)
   </p>
 
-  
+
   {{govukButton({ text: "Finish and leave service", href: '../../start-now'
   }) }} {% endblock %} {% block pageScripts %}
   <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
