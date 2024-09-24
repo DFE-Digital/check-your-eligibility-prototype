@@ -1,4 +1,4 @@
-{% extends "../../../../layouts/layout-dfe-schoolnav-noback.html" %}
+{% extends "/layouts/layout-dfe-schoolnav-noback.html" %}
 
 {% set pageName="Home" %}
 
@@ -13,7 +13,7 @@
 {% endset %}
 
 {% block beforeContent %}
-  
+
 
   {% block backLink %}
     {{ govukBackLink({
@@ -34,7 +34,7 @@
       html: applicationSent,
       type: 'success'
     }) }}
-    
+
     {% endif %}
 
 
@@ -73,14 +73,14 @@
   <div class="govuk-!-padding-bottom-3"></div>
 
     <div class="govuk-grid-row">
-  
+
       <div class="govuk-grid-column-full">
 
 
 <table class="govuk-table">
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-     
+
       <th class="govuk-table__header" scope="col" id="select-all"></th>
       <th class="govuk-table__header" scope="col">Reference</th>
       <th class="govuk-table__header" scope="col">Parent or guardian</th>
@@ -88,7 +88,7 @@
       <th class="govuk-table__header govuk-table__header--numeric" scope="col">Child date of birth</th>
       <th class="govuk-table__header" scope="col">Status</th>
       <th class="govuk-table__header govuk-table__header--numeric" scope="col">Submission date</th>
-      
+
       <th class="govuk-table__header govuk-table__header--numeric" scope="col">Sent for review on</th>
     </tr>
   </thead>
@@ -97,8 +97,8 @@
       <td class="govuk-table__cell">
         </div>
       </td>
-      
-      <td class="govuk-table__cell"><a href="../records/not-entitled-appeals-multi.html" class="govuk-link">44455453</a></td>
+
+      <td class="govuk-table__cell"><a href="../appeal/new-appeal.html" class="govuk-link">44455453</a></td>
       <td class="govuk-table__cell">Eden Tesfay</td>
       <td class="govuk-table__cell">Samual Tesfay</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
@@ -167,7 +167,7 @@
       <td class="govuk-table__cell"><a href="" class="govuk-link">44455457</a></td>
       <td class="govuk-table__cell">Alan Jones</td>
       <td class="govuk-table__cell">Jack Jones</td>
-      
+
       <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
       <td class="govuk-table__cell">{{ govukTag({
         text: "Evidence needed",
@@ -242,10 +242,10 @@
 
 
 
-    
+
     </div>
 
-  
+
   </div>
 </div>
 
