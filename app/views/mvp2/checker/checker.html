@@ -6,16 +6,16 @@
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Check free school meals for a single pupil</h1>
     <form action="eligible" method="post" novalidate>
+
+      <p class="govuk-body">Enter the details of the parent or guardian who applied.</p>
 
       {% call govukFieldset({
         legend: {
-          text: "Enter parent or guardian details",
-          classes: "govuk-fieldset__legend--l",
-          isPageHeading: true
-        },
-        hint: {
-          text: 'To check a pupil\'s entitlement to free school meals, enter the details of their parent or guardian.'
+          text: "Name and email address",
+          classes: "govuk-fieldset__legend--m",
+          isPageHeading: false
         }
       }) %}
 
@@ -25,7 +25,7 @@
 
         {{ govukInput({
           label: {
-            text: "Parent or guardian first name"
+            text: "First name"
           },
           id: "Firstname",
           name: "Firstname",
@@ -36,7 +36,7 @@
 
         {{ govukInput({
           label: {
-            text: "Parent or guardian last name"
+            text: "Last name"
           },
           id: "surName",
           name: "surName",
@@ -47,7 +47,7 @@
 
         {{ govukInput({
           label: {
-            text: "Parent or guardian email address"
+            text: "Email address"
           },
           id: "email",
           name: "email",
@@ -56,47 +56,89 @@
           spellcheck: false
         }) }}
 
-        {{ govukInput({
-          label: {
-            text: "Parent or guardian National Insurance number"
-          },
+        {{ govukDateInput({
 
-          id: "full-name",
-          name: "fullName",
-          autocomplete: "name",
-          classes: "govuk-input--width-20",
-          spellcheck: false
-        }) }}
-<p>Or</p>
-        {{ govukInput({
-          label: {
-            text: "Parent or guardian asylum support reference number"
-          },
-          id: "nass",
-          name: "nass",
-          autocomplete: "name",
-          classes: "govuk-input--width-20",
-          spellcheck: false
-        }) }}
+          id: "dob",
+          namePrefix: "dob",
 
-
-          {{ govukDateInput({
-
-            id: "dob",
-            namePrefix: "dob",
-
-            fieldset: {
-              legend: {
-                text: "Parent or guardian date of birth",
-                isPageHeading: false,
-                classes: "govuk-fieldset__legend--s"
-              }
-            },
-            hint: {
-              text: "For example, 27 3 1980"
+          fieldset: {
+            legend: {
+              text: "Date of birth",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
             }
-          }) }}
+          },
+          hint: {
+            text: "For example, 31 3 1980"
+          }
+        }) }}
 
+        {% set niHtml %}
+        {{ govukInput({
+        id: "ni-number-entered",
+        name: "ni-number-entered",
+        type: "text",
+        autocomplete: "text",
+        spellcheck: false,
+        classes: "govuk-!-width-one-third",
+        label: {
+        text:"Parent or guardian National Insurance number"
+        }
+
+
+        }) }}
+        {% endset -%}
+
+        {% set asrHtml %}
+        {{ govukInput({
+          id: "asr-number-entered",
+          name: "asr-number-entered",
+          type: "text",
+          autocomplete: "text",
+          spellcheck: false,
+          classes: "govuk-!-width-one-third",
+          label: {
+          text:"Parent or guardian asylum support reference number"
+          }
+
+
+          }) }}
+          {% endset -%}
+
+        {{ govukRadios({
+        name: "ni-number",
+        id:'ni-number',
+        fieldset: {
+        legend: {
+        text: "National Insurance number or asylum support reference",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--m"
+        }
+
+        },
+
+        hint: {
+          text: "Select one option."
+        },
+
+        items: [
+        {
+        value: "ni",
+        text: "National Insurance number",
+        conditional: {
+        html: niHtml
+        }
+        },
+        {
+          value: "asr",
+          text: "Asylum support reference",
+          conditional: {
+          html: asrHtml
+          }
+        }
+
+        ]
+        }) }}
 
       {% endcall %}
 
@@ -107,7 +149,7 @@
     {% from "govuk/components/button/macro.njk" import govukButton %}
 
     {{ govukButton({
-      text: "Perform check",
+      text: "Run check",
       href: '../parent-soft-check/school-checking-loader'
     }) }}
 
