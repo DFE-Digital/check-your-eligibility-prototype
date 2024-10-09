@@ -92,52 +92,7 @@
     </div>
 
     {% if data['child-2'] == 'Yes' %} {% endif %}
-    <h2 class="govuk-heading-m">Notifications (optional)</h2>
 
-    <p class="govuk-body">
-      We will send a confirmation email to you on receipt of your application and any additional updates about the progress of your application using the option you have selected.
-    </p>
-
-    <p class="govuk-body">
-      I would like to receive updates about my application by:
-
-    </p>
-
-    <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" aria-describedby="hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-        </legend>
-       <!--<div id="notify-hint" class="govuk-hint">
-          Select all that apply.
-        </div>-->
-        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-          <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="notifyemail" name="notifyemail" type="checkbox" value="">
-            <label class="govuk-label govuk-checkboxes__label" for="notifyemail">
-              email
-            </label>
-          </div>
-         <!--- <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="notifysms" name="notifysms" type="checkbox" value="">
-            <label class="govuk-label govuk-checkboxes__label" for="notifysms">
-              text message
-            </label>
-          </div>-->
-          </div>
-          </div>
-          <details class="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                What are the benefits of notifications?
-              </span>
-            </summary>
-            <div class="govuk-details__text">
-              By choosing to have notifications sent to your email you will have a record that you can refer to without having to write it down.
-            </div>
-          </details>
-          <p class="govuk-body">
-            If you do not want to have notifications sent to you, make a note of the reference numbers when you submit your application.
-          </p>
 
           <hr class="govuk-section-break govuk-section-break--m">
 
@@ -147,9 +102,9 @@
       By sending this information to the school you confirm that to the best
       of your knowledge, it is correct.
     </p>
-    <!--<p>Your details are only used to register and will not be stored.</p>-->
 
-    <form action="application-sent" method="post" novalidate>
+    <p class="govuk-body">
+      We'll use the email address from your GOV.UK One Login to confirm we've received your application, and to send you additional progress updates.</p>
       <input type="hidden" name="answers-checked" value="true" />
     </form>
 
