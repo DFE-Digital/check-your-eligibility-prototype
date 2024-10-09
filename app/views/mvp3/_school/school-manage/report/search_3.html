@@ -1,0 +1,120 @@
+{% extends "/layouts/layout-dfe-schoolnav.html" %}
+{% set pageName="Search all records" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">
+      {{pageName}}
+    </h1>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <form method="post" class="form" onsubmit="return false;">
+      {% include "mvp3/includes/filter-panel.html" %}
+
+ <!--Export and search results section-->
+  </div>
+  <div class="moj-filter-layout__content">
+    <div class="moj-scrollable-pane">
+
+      <div class="govuk-page-header" style="display: flex; align-items: center; justify-content: space-between;">
+        <h2 class="govuk-heading-m" style="margin: 0;">
+          Showing <span id="resultCount">0</span> results
+        </h2>
+        <button id="export" class="govuk-button govuk-button--secondary">Export as CSV</button>
+      </div>
+     <!--Table-->
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <div class="moj-filter-layout">
+            <div class="moj-filter-layout__content">
+              <div class="moj-scrollable-pane">
+
+                <div class="moj-scrollable-pane">
+                  <table class="govuk-table" table id="resultsTable">
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+
+                        <th scope="col" class="govuk-table__header">Reference</th>
+                        <th scope="col" class="govuk-table__header">Child name</th>
+                        <th scope="col" class="govuk-table__header">Child DoB</th>
+                        <th scope="col" class="govuk-table__header">Date submitted</th>
+                        <th scope="col" class="govuk-table__header">Status</th>
+                        <th scope="col" class="govuk-table__header">Eligible from</th>
+
+                      </tr>
+                    </thead>
+                    {% include "_includes/search-data.html" %}
+                </div>
+              </div>
+              </table>
+            </div>
+          </div>
+          {% include "_includes/pagination.html" %}
+
+        </div>
+      </div>
+
+      <!-- ROW 3-->
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          <form action="eligible-list" method="post" novalidate>
+
+
+        </div>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</form>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+<!--END SHOW/HIDE -->
+
+</div>
+
+<!-- END CARD // SEARCH BAR -->
+
+</form>
+</div>
+</div>
+
+<!--FOOTER -->
+
+<!-- MODAL -->
+
+{% endblock %}
+<!--FILTER TOGGLE-->
+{% block pageScripts %}
+
+
+<!--COUNT-->
+<script>
+  const updateVisibleRowCount = () => {
+    const table = document.querySelector("table");
+    const rows = table.querySelectorAll("tbody tr");
+
+    const visibleRows = Array.from(rows).filter(row => {
+      return row.style.display !== "none";
+    });
+
+    const visibleRowCount = visibleRows.length;
+    document.getElementById("resultCount").innerText = visibleRowCount;
+  };
+ // To update the count (e.g., after filtering)
+ updateVisibleRowCount();
+
+</script>
+
+<script src="/assets/javascripts/components/filter.js"></script>
+
+
+{% endblock %}

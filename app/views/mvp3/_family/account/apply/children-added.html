@@ -15,6 +15,9 @@
       </div>
     </div>
   </div>
+
+
+
   <div class="govuk-width-container">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
@@ -29,14 +32,14 @@
         <th scope="col" class="govuk-table__header app-custom-class">
           Reference
         </th>
-      </tr>
+<!---      </tr>
     </thead>
     <tbody class="govuk-table__body">
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">{{ data["ch1-first-name"] }} {{ data["ch1-surname"] }}</th>
         <td class="govuk-table__cell">{{ data["school-picker"] }}</td>
         <td class="govuk-table__cell">44455453</td>
-      </tr>
+      </tr>-->
 
     {% if data['child-2'] == 'Yes' %} {% endif %}
 
@@ -54,16 +57,8 @@
   </table>
 
   <p>
-    For any queries about the application, please write the reference numbers
-    down to discuss with your school administrator.
+    For any queries about the application, print this page or write down the reference numbers to discuss with your school administrator.
   </p>
-  <p>
-    If you want to retain a paper copy of this page for your records choose <a href="">print page</a>
-    or select Print from your browser.
-  </p>
-  <!--<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-    Print page
-  </button>-->
 
   <h2 class="govuk-heading-m">What happens next</h2>
 
@@ -80,7 +75,20 @@
 
 
   {{govukButton({ text: "Finish and leave service", href: '../../start-now'
-  }) }} {% endblock %} {% block pageScripts %}
+  }) }}
+<!---
+<button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="window.location.href='printable-page.html'">
+  Print page
+</button>-->
+
+<a href="printable-page.html" onclick="openPrintWindow(); return false;">Print This Page</a>
+
+  <p class="govuk-body">
+    <a href="printable-page.html" class="govuk-link " rel="noreferrer noopener" target="_blank" onclick="openPrintWindow(); return false;">Print this page</a>
+  </p>
+  {% endblock %}
+
+  {% block pageScripts %}
   <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
 </div>
 {% endblock %}
