@@ -1,0 +1,215 @@
+{% extends "/layouts/layout-dfe-schoolnav.html" %}
+{% set pageName="Search all records" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">
+      {{pageName}}
+    </h1>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    {% include "mvp3/includes/filter-panel.html" %}
+
+    <!--Export and search results section-->
+  </div>
+  <div class="moj-filter-layout__content">
+    <div class="moj-scrollable-pane">
+      <div class="govuk-page-header" style="display: flex; align-items: center; justify-content: space-between;">
+        <h2 class="govuk-heading-m" style="margin: 0;">
+          Showing <span id="resultCount">0</span> results
+        </h2>
+        <button id="export" class="govuk-button govuk-button--secondary">Export as CSV</button>
+      </div>
+      <!--Table-->
+
+<!---->
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <div class="moj-filter-layout">
+            <div class="moj-filter-layout__content">
+              <div class="moj-scrollable-pane">
+
+                <div class="moj-scrollable-pane">
+                  <table class="govuk-table" table id="resultsTable">
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+
+                        <th scope="col" class="govuk-table__header">Reference</th>
+                        <th scope="col" class="govuk-table__header">Child name</th>
+                        <th scope="col" class="govuk-table__header">Child DoB</th>
+                        <th scope="col" class="govuk-table__header">Date submitted</th>
+                        <th scope="col" class="govuk-table__header">Status</th>
+                        <th scope="col" class="govuk-table__header">Eligible from</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="govuk-table__body">
+                      {% for application in data.applications %}
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">
+                          <a href="#" class="govuk-link">{{ application.id }}</a>
+                        </th>
+                        <td class="govuk-table__cell">{{ application.childDetails.firstName }} {{ application.childDetails.lastName }}</td>
+                        <td class="govuk-table__cell">{{ application.dob | govukDate ("truncate")}}</td>
+                        <td class="govuk-table__cell">{{ application.submission.date | govukDate("truncate")}}</td>
+                        <td class="govuk-table__cell">
+
+                              {% if application.status.yes == "Entitled" %}
+                                <strong class="govuk-tag govuk-tag--green">{{application.status.yes}}</strong>
+
+                              {% elif application.status.yes == "Sent for review" %}
+                                <strong class="govuk-tag govuk-tag--purple">{{application.status.yes}}</strong>
+
+                              {% elif application.status.yes == "Review entitled" %}
+                                <strong class="govuk-tag govuk-tag--blue">{{application.status.yes}}</strong>
+
+                              {% elif application.status.yes == "Evidence needed" %}
+                                  <strong class="govuk-tag govuk-tag--light-blue">{{application.status.yes}}</strong>
+
+                              {% elif application.status.yes == "Receiving entitlement" %}
+                               <strong class="govuk-tag govuk-tag--turquoise">{{application.status.yes}}</strong>
+
+                              {% elif application.status.yes == "Reviewed not entitled" %}
+                                <strong class="govuk-tag govuk-tag--red">{{application.status.yes}}</strong>
+
+                                {% else %}
+                                <strong class="govuk-tag">{{application.status.yes}}</strong>
+                              {% endif %}
+
+                          <td class="govuk-table__cell">{{application.eligible.date | govukDate ("truncate")}}</td>
+                          {% endfor %}
+                        </tbody>
+
+                </div>
+              </div>
+              </table>
+            </div>
+          </div>
+
+          {% include "_includes/pagination.html" %}
+
+        </div>
+      </div>
+
+      <!-- ROW 3-->
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          <form action="eligible-list" method="post" novalidate>
+
+
+        </div>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--END SHOW/HIDE -->
+
+</div>
+
+<!-- END CARD // SEARCH BAR -->
+
+</div>
+</div>
+
+<!--FOOTER -->
+
+
+{% endblock %}
+<!--FILTER TOGGLE-->
+{% block pageScripts %}
+
+
+
+<!---------------SCRIPTS------------------>
+<!--COUNT-->
+<script>
+  const updateVisibleRowCount = () => {
+    const table = document.querySelector("table");
+    const rows = table.querySelectorAll("tbody tr");
+
+    const visibleRows = Array.from(rows).filter(row => {
+      return row.style.display !== "none";
+    });
+
+    const visibleRowCount = visibleRows.length;
+    document.getElementById("resultCount").innerText = visibleRowCount;
+  };
+  // To update the count (e.g., after filtering)
+  updateVisibleRowCount();
+
+</script>
+
+<!------FILTERS------->
+
+<script src="/assets/javascripts/components/filter.js"></script>
+
+<script>
+  function filterResults() {
+    const keyword = document.getElementById('keywords').value.toLowerCase();
+    const table = document.getElementById('resultsTable');
+    const rows = table.querySelectorAll('tbody tr');
+
+    let visibleCount = 0;
+
+    rows.forEach(row => {
+      const cells = row.getElementsByTagName('td');
+      let match = false;
+
+      for (let cell of cells) {
+        if (cell.textContent.toLowerCase().includes(keyword)) {
+          match = true;
+          break;
+        }
+      }
+
+// A row is visible if it matches either the keyword or the status
+
+if (match) {
+        row.style.display = ''; // Show row
+        visibleCount++;
+      } else {
+        row.style.display = 'none'; // Hide row
+      }
+    });
+
+
+    // Update the visible row count
+    document.getElementById('resultCount').innerText = visibleCount;
+  }
+
+  document.getElementById('applyFilter').addEventListener('click', filterResults);
+
+</script>
+
+
+<script>
+  function clearFilters() {
+    // Reset input fields and checkboxes as described
+    document.getElementById('keywords').value = '';
+
+    const radios = document.getElementsByName('submission-date');
+    radios.forEach(radio => radio.checked = false);
+
+    const checkboxes = document.getElementsByName('status');
+    checkboxes.forEach(checkbox => checkbox.checked = false);
+
+    // Optionally, refresh results
+    filterResults();
+  }
+</script>
+
+<script src="../helper/pagination.js"></script>
+
+
+{% endblock %}

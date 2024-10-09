@@ -1,8 +1,8 @@
 module.exports = function(router) {
 
-    router.post('/mvp2/_family/start-now', (req, res) => {
+    router.post('/mvp3/_family/start-now', (req, res) => {
         req.session.data.user = {};
-        res.redirect('/mvp2/_family/parent-soft-check/check');
+        res.redirect('/mvp3/_family/parent-soft-check/check');
     });
 
    // router.post('/mvp2/_family/parent-soft-check/check', (req, res) => {
@@ -12,7 +12,7 @@ module.exports = function(router) {
 
 //mvp1//
    router.post('/mvp1-soft-check-ni-answer', function (req, res) {
-    // Make a variable 
+    // Make a variable
     var nassNumber = req.session.data['ni-number']
     // Check whether the variable matches a condition
    if (nassNumber == "yes"){

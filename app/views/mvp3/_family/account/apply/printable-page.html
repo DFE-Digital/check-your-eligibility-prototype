@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printable Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .govuk-header {
+            background-color: #f3f4f4;
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+        .govuk-header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+    </style>
+    <script>
+        function printPage() {
+            window.print();
+        }
+    </script>
+</head>
+<body onload="printPage()">
+
+<!-- GOV.UK Header -->
+
+<div class="govuk-header">
+    <h1>GOV.UK</h1>
+    <p>Department for Education</p>
+</div>
+
+<!-- Content -->
+
+
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-panel govuk-panel--confirmation">
+                <h1 class="govuk-panel__title">Application complete</h1>
+                <div class="govuk-panel__body">
+                    Submitted on<br /><strong>6 July 2024, 13:12</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <table class="govuk-table">
+                    <caption class="govuk-table__caption govuk-table__caption--m">
+                        We have sent details for
+                    </caption>
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header">Name</th>
+                            <th scope="col" class="govuk-table__header">School</th>
+                            <th scope="col" class="govuk-table__header">Reference</th>
+                        </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Thomas Tesfay</th>
+                            <td class="govuk-table__cell">St Kings Primary School</td>
+                            <td class="govuk-table__cell">44455454</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Rachel Tesfay</th>
+                            <td class="govuk-table__cell">Bramhope Primary School</td>
+                            <td class="govuk-table__cell">44455455</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>
+                    For any queries about the application, print this page or write down the reference numbers to discuss with your school administrator.
+                </p>
+
+                <h2 class="govuk-heading-m">What happens next</h2>
+
+                <p>
+                    The school(s) will contact you when they have registered the details into
+                    their systems, and will arrange for your children’s free school meals to
+                    start.
+                </p>
+                <p>If you do not receive an update, talk to the school administrator.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- End Content -->
+</body>
+</html>
