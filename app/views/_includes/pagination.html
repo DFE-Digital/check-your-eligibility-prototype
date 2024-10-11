@@ -1,0 +1,28 @@
+<nav class="moj-pagination" aria-label="Pagination navigation">
+  <ul class="moj-pagination__list">
+    {% if pageNumber > 1 %}
+      <li class="moj-pagination__item moj-pagination__item--prev">
+        <a class="moj-pagination__link" href="/page={{ pageNumber - 1 }}">Previous<span class="govuk-visually-hidden"> page</span></a>
+      </li>
+    {% endif %}
+
+    {% for i in 1..pageCount %}
+      <li class="moj-pagination__item {% if i == pageNumber %}moj-pagination__item--active{% endif %}" aria-label="Page {{ i }} of {{ totalCount }}">
+        {% if i == pageNumber %}
+          {{ i }}
+        {% else %}
+          <a class="moj-pagination__link" href="/page={{ i }}" aria-label="Page {{ i }} of {{ totalCount }}">{{ i }}</a>
+        {% endif %}
+      </li>
+    {% endfor %}
+
+    {% if pageNumber <pageCount %}
+      <li class="moj-pagination__item moj-pagination__item--next">
+        <a class="moj-pagination__link" href="/page={{ pageNumber + 1 }}">Next<span class="govuk-visually-hidden"> page</span></a>
+      </li>
+    {% endif %}
+  </ul>
+  <p class="moj-pagination__results">
+    Showing <b>{{ firstResultNumber }}</b> to <b>{{ lastResultNumber }}</b> of <b>{{ totalCount }}</b> results
+  </p>
+</nav>

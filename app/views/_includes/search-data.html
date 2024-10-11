@@ -1,0 +1,37 @@
+<tbody class="govuk-table__body">
+    {% for application in data.applications %}
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">
+        <a href="#" class="govuk-link">{{ application.id }}</a>
+      </th>
+      <td class="govuk-table__cell">{{ application.childDetails.firstName }} {{ application.childDetails.lastName }}</td>
+      <td class="govuk-table__cell">{{ application.dob | govukDate ("truncate")}}</td>
+      <td class="govuk-table__cell">{{ application.submission.date | govukDate("truncate")}}</td>
+      <td class="govuk-table__cell">
+
+            {% if application.status.yes == "Entitled" %}
+              <strong class="govuk-tag govuk-tag--green">{{application.status.yes}}</strong>
+
+            {% elif application.status.yes == "Sent for review" %}
+              <strong class="govuk-tag govuk-tag--purple">{{application.status.yes}}</strong>
+
+            {% elif application.status.yes == "Review entitled" %}
+              <strong class="govuk-tag govuk-tag--blue">{{application.status.yes}}</strong>
+
+            {% elif application.status.yes == "Evidence needed" %}
+                <strong class="govuk-tag govuk-tag--light-blue">{{application.status.yes}}</strong>
+
+            {% elif application.status.yes == "Receiving entitlement" %}
+             <strong class="govuk-tag govuk-tag--turquoise">{{application.status.yes}}</strong>
+
+            {% elif application.status.yes == "Reviewed not entitled" %}
+              <strong class="govuk-tag govuk-tag--red">{{application.status.yes}}</strong>
+
+              {% else %}
+              <strong class="govuk-tag">{{application.status.yes}}</strong>
+            {% endif %}
+
+        <td class="govuk-table__cell">{{application.eligible.date | govukDate ("truncate")}}</td>
+        {% endfor %}
+      </tbody>
+

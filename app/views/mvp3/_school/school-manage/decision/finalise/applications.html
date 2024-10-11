@@ -1,8 +1,7 @@
-{% extends "/_layouts/layout-dfe-schoolnav-noback.html" %}
-
-{% set pageName="Home" %}
-
+{% extends "/layouts/layout-dfe-schoolnav-noback.html" %}
+{% set pageName="Finalise applications" %}
 {% set applicationSent %}
+
 <h3 class="govuk-notification-banner__heading">
   Your application has been sent
   </h3>
@@ -20,25 +19,14 @@
     <div class=“govuk-grid-column-full”>
 
     <div class="notifications-container"></div>
+
     <span id="notifications" class="moj-notification-badge" style="white-space: nowrap";>13</span>
     <h1 class="govuk-heading-l">Finalise applications</h1>
   </div>
 <div class="moj-page-header-actions__title">
 </div>
 </div>
-<!---
-<div class=“govuk-!-display-flex govuk-!-align-items-right govuk-!-gap-10>
-  {{ mojNotificationBadge({
-    text: "4"
-  }) }}
-  {{ mojPageHeaderActions({
-  heading: {
-    text: 'Finalise applications',
-    classes:'govuk-heading-l',
-    style: nowrap
-  }
-}) }}
-</div>-->
+
 
 <div>
   <div class="govuk-!-padding-bottom-3"></div>
@@ -98,10 +86,6 @@
       href: 'finalise-apps-areyousure.html'
     }, {
       text: "Download all files",
-      href: "#",
-      classes: "govuk-button--secondary"
-    }, {
-      text: "Third action",
       href: "#",
       classes: "govuk-button--secondary"
     }]

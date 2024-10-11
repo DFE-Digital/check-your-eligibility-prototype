@@ -1,7 +1,7 @@
 //
 // For guidance on how to add CSS and SCSS see:
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
-// 
+//
 
 // Add extra styles here
 @import 'node_modules/dfe-frontend-alpha/packages/dfefrontend';
@@ -12,18 +12,21 @@
 .dfe-width-container {max-width: 1200px !important;}
 
 
+
+
 ///filter styles
-@import "components/hidden.scss";
-@import "components/action-bar.scss";
-@import "components/filter-layout.scss";
-@import "components/filter-panel.scss";
+@import "components/_hidden.scss";
+@import "components/_list.scss";
+@import "components/_action-bar.scss";
+@import "components/_filter-layout.scss";
+@import "components/_filter-panel.scss";
 
 
 // CARDS
 
 .dfe-card-container{
     padding-left: 0 !important;
-    
+
 }
 
 .dfe-grid-container {
@@ -81,7 +84,7 @@
   .dfe-card-container .dfe-card-link--retake:focus {
     color:#0b0c0c
   }
- 
+
 // PAGE LOADER
 
 .flex-container{
@@ -89,11 +92,11 @@
   justify-content: center;
 }
 .container {
-    
+
   text-align: center;
   width: 50%;
   padding: 0 2em;
-  
+
 }
 
 // Spinner
@@ -108,7 +111,7 @@
 .animation-spin {
   -webkit-animation: spin 2s infinite linear;
   animation: spin 2s infinite linear;
-  
+
 }
 @keyframes spin {
   0% {

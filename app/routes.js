@@ -7,14 +7,17 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 
 const _ = require('lodash')
-// const express = require('express')
+const express = require('express')
 const { fakerEN_GB: faker } = require('@faker-js/faker')
 const moment = require('moment')
 const path = require('path')
-// const router = express.Router()
+router.use('/data', express.static(path.join(__dirname, '../data'))); // Adjust the path as necessary
+
+
+//const router = express.Router()
 const url = require('url')
-// const utils = require('./lib/utils')
-// const permissions = require('./filters/permissions.js').filters
+//const utils = require('./lib/utils')
+//const permissions = require('./filters/permissions.js').filters
 const fs = require('fs')
 
 
@@ -27,18 +30,21 @@ require('./routes/mvp3/softCheck')(router);
 
 router.get('*', function (req, res, next) {
 
-  // These functions are available on all pages in the prototype.
-  // To use call the function inside curly brackets, for example {{ example_function() }}
-  // Examples of date
-  //
-  // {{ date() }} shows todays date in the format 5 May 2022
-  // {{ date({day: 'numeric', month: 'numeric', year: 'numeric'}) }} shows todays date in the format 05/05/2022
-  // {{ date({day: 'numeric'}) }} shows the just the date of date, 5
-  // {{ date({day: '2-digit'}) }} shows the date with a leading zero, 05
-  // {{ date({day: 'numeric'}, {'day': -1}) }} shows just the date of yesterday
-  // {{ date({weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'}) }} shows todays date in the format Tuesday, 5 July 2022.
-  // {{ date({day: 'numeric', month: 'numeric', year: 'numeric'}, {'day': +2}) }}
-  res.locals.date = function (format = {day: 'numeric', month: 'long', year: 'numeric'}, diff = {'year': 0, 'month': 0, 'day': 0}) {
+
+// These functions are available on all pages in the prototype.
+// To use call the function inside curly brackets, for example {{ example_function() }}
+// Examples of date
+//
+// {{ date() }} shows todays date in the format 5 May 2022
+// {{ date({day: 'numeric', month: 'numeric', year: 'numeric'}) }} shows todays date in the format 05/05/2022
+// {{ date({day: 'numeric'}) }} shows the just the date of date, 5
+// {{ date({day: '2-digit'}) }} shows the date with a leading zero, 05
+// {{ date({day: 'numeric'}, {'day': -1}) }} shows just the date of yesterday
+// {{ date({weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'}) }} shows todays date in the format Tuesday, 5 July 2022.
+// {{ date({day: 'numeric', month: 'numeric', year: 'numeric'}, {'day': +2}) }}
+
+res.locals.date = function (format = {day: 'numeric', month: 'long', year: 'numeric'}, diff = {'year': 0, 'month': 0, 'day': 0}) {
+
     var date = new Date();
     if ('day' in diff) {
       date.setDate(date.getDate() + diff.day)
@@ -672,5 +678,11 @@ router.post('/mvp2-soft-check-ni-answer', function (req, res) {
       res.send('Account Page');
   });
 
+
+
+  ////pagination/////
+
+  const getPaginatedResults = require('./routes/mvp3/pagination');
+  router.get('/applications', getPaginatedResults);
 
 module.exports = router;
