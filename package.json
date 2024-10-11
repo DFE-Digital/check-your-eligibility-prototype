@@ -2,7 +2,7 @@
   "scripts": {
     "dev": "govuk-prototype-kit dev",
     "serve": "govuk-prototype-kit serve",
-    "start": "./node_modules/govuk-prototype-kit/bin/cli start"
+    "start": "govuk-prototype-kit start"
   },
   "dependencies": {
     "@govuk-prototype-kit/common-templates": "2.0.1",
@@ -10,10 +10,14 @@
     "@govuk-prototype-kit/task-list": "2.0.0",
     "@ministryofjustice/frontend": "2.2.0",
     "dfe-frontend-alpha": "^1.0.1",
-    "govuk-frontend": "5.6.0",
+    "govuk-frontend": "5.7.0",
     "govuk-prototype-kit": "13.16.2",
+    "hmrc-frontend": "6.34.0",
     "jquery": "3.7.1",
     "notifications-node-client": "8.2.1",
     "radio-button-redirect": "^1.2.0"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^9.0.3"
   }
 }

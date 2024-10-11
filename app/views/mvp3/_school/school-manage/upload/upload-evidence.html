@@ -1,0 +1,113 @@
+{% extends "/layouts/layout-dfe-schoolnav.html" %}
+
+{% set pageName="Add supporting evidence" %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+      <form action="/components/multi-file-upload/examples/default" method="post" enctype="multipart/form-data">
+
+
+        <!--Files added-->
+
+        <p class="govuk-body">
+          Local authorities will need to see supporting evidence as part of the appeal process as part of the review.
+          Upload the evidence here or send to your Local authority by email.</p>
+        <p class="govuk-body">
+
+          View <a href="/evidence-guidance" class="govuk-link">guidance about supporting evidence (opens in a new
+            window)</a>.
+        </p>
+
+
+
+        <div class="moj-multi-file-upload">
+          <div class="moj-multi-file__uploaded-files ">
+
+            <div class="moj-multi-file-upload__upload">
+              <hr class="govuk-section-break govuk-section-break--l">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--m" for="documents">
+                  Upload a file
+                </label>
+
+                <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents"
+                  type="file" multiple="">
+
+              </div>
+
+              <button type="submit" class="govuk-button govuk-button--secondary moj-multi-file-upload__button"
+                data-module="govuk-button">
+                Upload file
+              </button>
+
+            </div>
+          </div>
+          <hr class="govuk-section-break govuk-section-break--l">
+          <h2 class="govuk-heading-m">Files added</h2>
+          <div class="govuk-summary-list moj-multi-file-upload__list">
+
+            <dl class="govuk-summary-list govuk-summary-list--long-key">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  universalcredit-statement098762134.jpg
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <strong class="govuk-tag govuk-tag--yellow">Uploading</strong>
+
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> receipt2.jpg</span></a>
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  uc-statement098762134.jpg
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <strong class="govuk-tag govuk-tag--green">Completed</strong>
+
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> receipt2.jpg</span></a>
+                </dd>
+              </div>
+          </div>
+        </div>
+
+        <div class="govuk-button-group">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Attach evidence
+          </button>
+          <!-- <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Add evidence later
+        </button> -->
+        </div>
+
+
+        <div class="govuk-inset-text">
+          <p class="govuk-body">
+            The parent/guardian hasn't provided any evidence. <a href="#" class="govuk-link">Add
+              evidence later</a>.
+          </p>
+
+          <!-- </div>
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>
+            Appeals may be rejected without supporting evidence.
+          </strong>
+        </div>-->
+
+      </form>
+    </div>
+  </div>
+
+  {% endblock %}
