@@ -4,7 +4,6 @@
     "serve": "govuk-prototype-kit serve",
     "start": "./node_modules/govuk-prototype-kit/bin/cli start",
     "generate-data": "node ./scripts/generate-applications.js"
-
   },
   "dependencies": {
     "@govuk-prototype-kit/common-templates": "2.0.1",
@@ -12,6 +11,7 @@
     "@govuk-prototype-kit/task-list": "2.0.0",
     "@ministryofjustice/frontend": "2.2.4",
     "@x-govuk/govuk-prototype-filters": "^1.4.3",
+    "dfe-frontend": "^2.0.1",
     "dfe-frontend-alpha": "^1.0.1",
     "govuk-frontend": "5.7.0",
     "govuk-prototype-kit": "13.16.2",
