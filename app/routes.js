@@ -20,6 +20,7 @@ const url = require('url')
 //const permissions = require('./filters/permissions.js').filters
 const fs = require('fs')
 
+
 const radioButtonRedirect = require('radio-button-redirect')
 router.use(radioButtonRedirect)
 
@@ -28,6 +29,7 @@ require('./routes/mvp3/account')(router);
 require('./routes/mvp3/softCheck')(router);
 
 router.get('*', function (req, res, next) {
+
 
 // These functions are available on all pages in the prototype.
 // To use call the function inside curly brackets, for example {{ example_function() }}
@@ -42,6 +44,7 @@ router.get('*', function (req, res, next) {
 // {{ date({day: 'numeric', month: 'numeric', year: 'numeric'}, {'day': +2}) }}
 
 res.locals.date = function (format = {day: 'numeric', month: 'long', year: 'numeric'}, diff = {'year': 0, 'month': 0, 'day': 0}) {
+
     var date = new Date();
     if ('day' in diff) {
       date.setDate(date.getDate() + diff.day)
@@ -88,6 +91,8 @@ res.locals.date = function (format = {day: 'numeric', month: 'long', year: 'nume
 // LOCAL FOLDER ROUTES //
 /////////////////////////
 
+// MVP2
+//require('./views/mvp2/_routes');
 
 // MVP2
 //require('./views/mvp2/_routes');
@@ -647,7 +652,7 @@ router.post('/mvp2-soft-check-ni-answer', function (req, res) {
  }
 })
 
-///workingMVP3///
+///WorkingMVP3///
 
    /// Soft CHECKER
    router.post('/mvp3_v1/_family/soft-check-ni-answer', function (req, res) {
