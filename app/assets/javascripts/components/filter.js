@@ -1,91 +1,57 @@
 function filterResults() {
-    // Get the keyword input value
-    const keywords = document.getElementById('keywords').value;
+  const keywords = document.getElementById('keywords').value.toLowerCase();
+  const selectedStatuses = Array.from(document.querySelectorAll('input[name="status"]:checked'))
+                               .map(checkbox => checkbox.value.toLowerCase());
 
-    // Log the keyword to the console (for testing)
-    console.log('Keywords:', keywords);
+  const rows = document.querySelectorAll('#resultsTable tbody tr');
+  let visibleCount = 0;
 
-    // Here you would typically filter your data based on the keyword
-    // For example, call a function to filter a table or update the UI
-    filterDataByKeywords(keywords);
-  }
+  rows.forEach(row => {
+    const cells = row.querySelectorAll('td');
+    if (cells.length < 5) return; // Ensure enough cells exist
 
-  function filterDataByKeywords(keywords) {
-    // Example logic to filter data (replace this with your actual data filtering logic)
-    const data = [
-      { name: 'Alice', description: 'Loves apples' },
-      { name: 'Bob', description: 'Enjoys bananas' },
-      { name: 'Charlie', description: 'Collects cherries' }
-    ];
+    const childName = cells[1].textContent.toLowerCase();
+    const status = cells[4].textContent.toLowerCase();
 
-    const filteredData = data.filter(item =>
-      item.description.toLowerCase().includes(keywords.toLowerCase())
-    );
+    // Check for keyword matches
+    const matchesKeyword = keywords === '' || childName.includes(keywords);
 
-    // Display the filtered data (this is just a placeholder)
-    console.log('Filtered Data:', filteredData);
-  }
+    // Check for status matches
+    const matchesStatus = selectedStatuses.length === 0 || selectedStatuses.includes(status);
 
+    // Show or hide the row based on matches
+    if (matchesKeyword && matchesStatus) {
+      row.classList.remove('hidden'); // Show row
+      visibleCount++;
+    } else {
+      row.classList.add('hidden'); // Hide row
+    }
+  });
 
+  // Update the visible count
+  document.getElementById('resultCount').innerText = visibleCount;
+}
 
-// // app/javascripts/components/filter.js
-// function filterResults() {
-//     // Get the keyword input value
-//     const keywords = document.getElementById('keywords').value;
-//     const dateRange = document.querySelector('input[name="dateRange"]:checked');
-//     const statusCheckboxes = document.querySelectorAll('input[name="status"]:checked');
+// Debounce function to limit the number of calls to filterResults
+function debounce(func, wait) {
+  let timeout;
+  return function(...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), wait);
+  };
+}
 
-//     // Get table rows
-//     const rows = document.querySelectorAll('#resultsTable tbody tr');
+document.addEventListener('DOMContentLoaded', function () {
+  const debouncedFilter = debounce(filterResults, 300); // Adjust wait time as necessary
 
-//     // Define a function to check if a row matches the filters
-//     rows.forEach(row => {
-//         const cells = row.querySelectorAll('td');
-//         const childName = cells[1].textContent.toLowerCase();
-//         const dateSubmitted = new Date(cells[3].textContent);
-//         const status = cells[4].textContent.toLowerCase();
+  // Attach event listeners to all checkbox inputs
+  document.querySelectorAll('input[name="status"]').forEach(checkbox => {
+    checkbox.addEventListener('change', debouncedFilter);
+  });
 
-//         // Match keyword
-//         const matchesKeyword = childName.includes(keyword);
+  // Attach event listeners to the keyword input
+  document.getElementById('keywords').addEventListener('input', debouncedFilter);
+});
 
-//         // Match date range (this is just an example, customize as needed)
-//         let matchesDateRange = true;
-//         if (dateRange) {
-//             const rangeValue = dateRange.value;
-//             const today = new Date();
-//             if (rangeValue === "month") {
-//                 matchesDateRange = dateSubmitted >= new Date(today.getFullYear(), today.getMonth() - 1, 1);
-//             } else if (rangeValue === "6months") {
-//                 matchesDateRange = dateSubmitted >= new Date(today.getFullYear(), today.getMonth() - 6, 1);
-//             } else if (rangeValue === "12months") {
-//                 matchesDateRange = dateSubmitted >= new Date(today.getFullYear(), today.getMonth() - 12, 1);
-//             } else if (rangeValue === "2years") {
-//                 matchesDateRange = dateSubmitted <= new Date(today.getFullYear() - 2, today.getMonth(), today.getDate());
-//             }
-//         }
-
-//         // Match status
-//         let matchesStatus = statusCheckboxes.length === 0; // Show if no status is selected
-//         statusCheckboxes.forEach(checkbox => {
-//             if (status.includes(checkbox.value.toLowerCase())) {
-//                 matchesStatus = true;
-//             }
-//         });
-
-//         // Final visibility check
-//         if (matchesKeyword && matchesDateRange && matchesStatus) {
-//             row.style.display = '';
-//         } else {
-//             row.style.display = 'none';
-//         }
-//     }
-// );
-// }
-
-// // Initial filtering can be applied here if needed
-// document.addEventListener('DOMContentLoaded', function () {
-//     // Attach event listeners to the filters
-//     document.querySelectorAll('.govuk-input, .govuk-radios__input, .govuk-checkboxes__input').forEach(input => {
-//         input.addEventListener('input', filterResults);
-//     });
-// });
+// Add console logs to help debug
+console.log("Filter script loaded and event listeners attached.");

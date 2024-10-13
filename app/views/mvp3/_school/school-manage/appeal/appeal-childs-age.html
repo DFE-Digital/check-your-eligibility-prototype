@@ -1,7 +1,7 @@
 {% extends "/layouts/layout-dfe.html" %}
 {% set pageName="Provide details of all children" %}
-
 {% block pageScripts %}
+
 <script type="text/javascript" src="/public/javascripts/autocomplete.js"></script>
 <script type="text/javascript">
   accessibleAutocomplete.enhanceSelectElement({
@@ -29,44 +29,43 @@
       }, 50);
     }
   })
-
 </script>
 {% endblock %}
 
 {% block content %}
+<script>
+  console.log('Nunjucks layout "layouts/main.html is being used');
+</script>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-half">
-
-    <form action="check-answers" method="post" novalidate>
-
-      <div data-module="moj-add-another">
-
     <div class="govuk-notification-banner govuk-notification-banner" role="region"
       aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
       <div class="govuk-notification-banner__header">
         <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
           Important
         </h2>
-          </div>
-            <div class="govuk-notification-banner__content">
-              <p class="govuk-notification-banner__heading">
-                Appeals will be rejected if you do not send supporting evidence.
-              </p>
-              <p class="govuk-body">Read <a class="govuk-notification-banner__link" href="#">guidance about supporting
-                  evidence</a> for how to send evidence to your Local Authority.</p>
-            </div>
-          </div>
       </div>
-      <span class="govuk-caption-l">Appeal a free school meals outcome </span>
-      <h1 class="govuk-heading-l" tabindex="-1">{{pageName}}</h1>
-      <p>Add all children at your school who should be included in this appeal. You can use the add another option,
-        if there is more than one child.</p>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+          Appeals will be rejected if you do not send supporting evidence.
+        </p>
+        <p class="govuk-body">Read <a class="govuk-notification-banner__link" href="#">guidance about supporting
+            evidence</a> for how to send evidence to your Local Authority.</p>
+      </div>
+    </div>
+    <span class="govuk-caption-l">Appeal a free school meals outcome </span>
+    <h1 class="govuk-heading-l" tabindex="-1">{{pageName}}</h1>
+    <p>Add all children at your school who should be included in this appeal. You can use the add another option,
+      if there is more than one child. If there are children at other schools then the parent will need to appeal at that school.</p>
 
-        <form method="post">
 
-      <div class="govuk-!-padding-bottom-3"></div>
+    <form action="../upload/upload-evidence" method="post" novalidate>
+      <div data-module="moj-add-another">
 
-
+      </div>
+      <form method="post">
+        <div class="govuk-!-padding-bottom-3"></div>
 
         {% call govukFieldset({
         classes: 'moj-add-another__item',
@@ -150,11 +149,23 @@
 
         {% endcall %}
 
-
-
         <div class="moj-button-action">
+          <button type="button" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4"
+            data-module="govuk-button" onclick="window.location.href='appeal-childs-age2.html';">
+            Add another child
+          </button>
+        </div>
+        <div class="moj-button-action">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+        </div>
+
+
+      <!-- <div class="moj-button-action">
           {{ govukButton({
           text: 'Add another child',
+          href: appeal-childs-age2.html,
           classes: 'govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4'
           }) }}
         </div>
@@ -163,15 +174,14 @@
           {{ govukButton({
           text: 'Save and continue'
           }) }}
-        </div>
-
+        </div> -->
         <input type="hidden" name="child-2" id="child-2" value="Yes">
-
       </form>
+  </div>
+</div>
+</div>
 
-    </div>
-  </form>
-</div>
-</div>
+
+
 
 {% endblock %}

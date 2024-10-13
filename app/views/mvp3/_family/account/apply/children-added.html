@@ -1,6 +1,5 @@
 {% extends "./layouts-apply/layout-dfe-signed-out-noback.html" %}
-
-{% set pageName="Application complete" %}
+{% set pageName="Free school meals application completed" %}
 
 {% block content %}
 
@@ -8,9 +7,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-panel govuk-panel--confirmation">
-        <h1 class="govuk-panel__title">Application complete</h1>
+        <h1 class="govuk-panel--m">{{pageName}}</h1>
         <div class="govuk-panel__body">
-          Submitted on<br /><strong>6 July 2024, 13:12</strong>
+          Submitted on<br><span id="currentDate"></span>
         </div>
       </div>
     </div>
@@ -32,14 +31,32 @@
         <th scope="col" class="govuk-table__header app-custom-class">
           Reference
         </th>
-<!---      </tr>
+</tr>
     </thead>
     <tbody class="govuk-table__body">
       <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header">{{ data["ch1-first-name"] }} {{ data["ch1-surname"] }}</th>
-        <td class="govuk-table__cell">{{ data["school-picker"] }}</td>
-        <td class="govuk-table__cell">44455453</td>
-      </tr>-->
+        <th scope="row" class="govuk-table__header">{% if data["ch1-first-name"] %}
+          {{ data["ch1-first-name"] }}
+        {% else %}
+          Samuel
+        {% endif %}
+        {% if data["ch1-surname"] %}
+          {{ data["ch1-surname"] }}
+        {% else %}
+          Tesfay
+        {% endif %}</th>
+        <td class="govuk-table__cell">  {% if data["school-picker"] %}
+          {{ data["school-picker"] }}
+        {% else %}
+          St Kings Primary School
+        {% endif %}</td>
+        <td class="govuk-table__cell">{{ data.application.id }}
+          {% if data.application.id %}
+        {% else %}
+        44455474
+        {% endif %}
+        </td>
+      </tr>
 
     {% if data['child-2'] == 'Yes' %} {% endif %}
 
@@ -56,15 +73,13 @@
     </tbody>
   </table>
 
-  <p>
-    For any queries about the application, print this page or write down the reference numbers to discuss with your school administrator.
-  </p>
+  <p> <a href="" class="govuk-link" onclick="printPage()">Print this page</a> for any queries about your application as you will need a record of the reference numbers. You will need to speak to your School administrator to discuss any issues.</p>
+
 
   <h2 class="govuk-heading-m">What happens next</h2>
 
   <p>
-    The school(s) will contact you when they have registered the details into
-    their systems, and will arrange for your children’s free school meals to
+    You will receive a notification from us on the progress of your application and when you can expect your children’s free school meals to
     start.
   </p>
   <p>If you do not receive an update, talk to the school administrator.</p>
@@ -76,19 +91,39 @@
 
   {{govukButton({ text: "Finish and leave service", href: '../../start-now'
   }) }}
-<!---
-<button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="window.location.href='printable-page.html'">
-  Print page
-</button>-->
 
-<a href="printable-page.html" onclick="openPrintWindow(); return false;">Print This Page</a>
-
-  <p class="govuk-body">
-    <a href="printable-page.html" class="govuk-link " rel="noreferrer noopener" target="_blank" onclick="openPrintWindow(); return false;">Print this page</a>
-  </p>
   {% endblock %}
 
   {% block pageScripts %}
+
+  <script>
+    function generateRandomId() {
+      return 'app-' + Math.floor(Math.random() * 1000000);
+    }
+
+    // If application.id is not defined, set a random ID
+    if (!application.id) {
+      application.id = generateRandomId();
+    }
+  </script>
+
+
+<script>
+  // Function to format the date without time
+  function formatDate(date) {
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return date.toLocaleDateString('en-GB', options);
+  }
+
+  // Set the current date in the span
+  document.getElementById('currentDate').textContent = formatDate(new Date());
+</script>
+<script>
+  function printPage() {
+      window.print();  // This will open the print dialog
+  }
+  </script>
+
   <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
 </div>
 {% endblock %}

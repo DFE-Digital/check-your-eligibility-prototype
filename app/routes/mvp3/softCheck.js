@@ -55,7 +55,7 @@ router.post('/nass-number-answer', function (req, res) {
     }
 });
 
-//mvp2//
+//mvp3//
     router.post('/soft-check-ni-answer', function (req, res) {
         var niNumber = req.session.data['ni-number'];
         var enteredNiNumber = req.session.data['ni-number-entered'];
@@ -65,12 +65,12 @@ router.post('/nass-number-answer', function (req, res) {
 
         if (niNumber === "yes") {
             if (enteredNiNumber) {
-                res.redirect('/mvp2/_family/parent-soft-check/checking-loader');
+                res.redirect('/mvp3/_family/parent-soft-check/checking-loader');
             } else {
-                res.redirect('/mvp2/_family/parent-soft-check/error-ni');
+                res.redirect('/mvp3/_family/parent-soft-check/error-ni');
             }
         } else {
-            res.redirect('/mvp2/_family/parent-soft-check/nass-number');
+            res.redirect('/mvp3/_family/parent-soft-check/nass-number');
         }
     });
 

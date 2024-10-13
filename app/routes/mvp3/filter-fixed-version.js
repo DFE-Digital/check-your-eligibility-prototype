@@ -1,9 +1,7 @@
 // app/routes/mvp3/filter.js
 function filterResults() {
     // Get filter values
-    // const keyword = document.getElementById('keywords').value.toLowerCase();
-    const keywords = document.getElementById('keywords').value;
-
+    const keyword = document.getElementById('keywords').value.toLowerCase();
     const dateRange = document.querySelector('input[name="dateRange"]:checked');
     const statusCheckboxes = document.querySelectorAll('input[name="status"]:checked');
 

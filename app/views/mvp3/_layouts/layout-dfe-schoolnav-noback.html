@@ -13,7 +13,7 @@
     "showHeaderActionLinks": "true",
     "logoPath": "public/images",
     "searchAction": "/search/",
-    "searchInputName": "",
+    "searchInputName": "q",
     "logoAltText": "Department for Education",
     "homeHref": "https://gov.uk",
     "selectedNav": view,
@@ -24,7 +24,7 @@
     "headerActionLinks": [
       {
         "url"  : "/",
-        "label" : "My account"
+        "label" : " "
       },
       {
         "url"  : "/",
@@ -32,22 +32,24 @@
       }
     ],
     "primaryLinks": [
-    {
-      "url"  : "../../dashboard",
-      "label" : "Dashboard"
-    }, {
-      "url"  : "#",
-      "label" : " "
-    }, {
-      "url"  : "#",
-      "label" : "  "
-    }, {
-      "url"  : "#",
-      "label" : " "
-    }
+        {
+        "url"  : "/mvp3/_school/dashboard",
+        "label" : "Dashboard"
+      }, {
+        "url"  : "#",
+        "label" : " "
+      }, {
+        "url"  : "#",
+        "label" : " "
+      }, {
+        "url"  : "#",
+        "label" : " "
+      }
     ]
   })
 }}
+
+
 
 <div class="app-phase-banner__wrapper">
 
@@ -69,12 +71,6 @@
 {% block beforeContent %}
 
 
-  {% block backLink %}
-    {{ govukBackLink({
-      text: "Back",
-      href: "javascript:window.history.back()"
-    }) }}
-  {% endblock %}
 
 {% endblock %}
 
@@ -115,26 +111,18 @@
 {# 4 #}
 {% block scripts %}
   {{ super() }}
-
+  <script src="/public/javascripts/dfefrontend.js"></script>
+  <script type="text/javascript" src="assets/javascripts/autocomplete.js"></script>
+  <link rel="stylesheet" href="assets/css/accessible-autocomplete.min.css" />
   <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+<script type="text/javascript">
+  if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
+  new MOJFrontend.MultiFileUpload({
+    container: $(".moj-multi-file-upload"),
+    uploadUrl: "/ajax-upload",
+    deleteUrl: "/ajax-delete",
+  });
+}
 
-  <script type="text/javascript">
-    $(document).ready(function() {
-      if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
-        new MOJFrontend.MultiFileUpload({
-          container: $(".moj-multi-file-upload"),
-          uploadUrl: "/ajax-upload",
-          deleteUrl: "/ajax-delete",
-        });
-      }
-    });
-  </script>
-
-  <script>
-    var AppFrontend = {};
-  </script>
-
-  <script src="/public/javascripts/components/filter-toggle-button.js"></script>
-
-  {{ super() }}
+</script>
 {% endblock %}
