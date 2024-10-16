@@ -3,23 +3,23 @@ pageName="Home" %} {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
-    <h1 class="govuk-heading-l">Check your answers before registering</h1>
+    <h1 class="govuk-heading-l">Check your answers before sending</h1>
 
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">Parent or guardian details</h2>
+        <h2 class="govuk-heading-m">Parent or guardian details</h2>
       </div>
       <div class="govuk-summary-card__content">
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Parent or guardian name</dt>
+            <dt class="govuk-summary-list__key">Name</dt>
             <dd class="govuk-summary-list__value">
               {{ data["first-name"] }} {{ data["surname"] }}
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Parent or guardian date of birth
+              Date of birth
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data["dob-day"] }} {{ data["dob-month"] }} {{ data["dob-year"]
@@ -53,7 +53,7 @@ pageName="Home" %} {% block content %}
 
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">Child 1</h2>
+        <h2 class="govuk-heading-m">Child 1</h2>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action">
             <a class="govuk-link" href="#"
@@ -67,7 +67,7 @@ pageName="Home" %} {% block content %}
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row"></div>
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Child's name</dt>
+            <dt class="govuk-summary-list__key">Name</dt>
             <dd class="govuk-summary-list__value">
               {{ data["ch1-first-name"] }} {{ data["ch1-surname"] }}
             </dd>
@@ -80,7 +80,7 @@ pageName="Home" %} {% block content %}
           </div>
 
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Child's date of birth</dt>
+            <dt class="govuk-summary-list__key">Date of birth</dt>
             <dd class="govuk-summary-list__value">
               {{ data["ch1-day"] }} {{ data["ch1-month"] }} {{ data["ch1-year"]
               }}
@@ -98,14 +98,14 @@ pageName="Home" %} {% block content %}
       By sending this information on to the school you confirm that, to the best
       of your knowledge, it is correct.
     </p>
-    <p>Your details are only used to register and will not be stored.</p>
+    <p>Your details are only used to apply for free school meals and will not be stored.</p>
 
     <form action="application-sent" method="post" novalidate>
       <input type="hidden" name="answers-checked" value="true" />
     </form>
 
     {% from "govuk/components/button/macro.njk" import govukButton %} {{
-    govukButton({ text: "Submit your application", href:
+    govukButton({ text: "Send to the school", href:
     '../parent-soft-check/children-added' }) }}
   </div>
 </div>

@@ -7,7 +7,15 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">Enter your details</h1>
-        <p>The information you provide will be compared with other government departments records to check for your eligibility. For further information, please check our <a href=""> privacy statement</a>.</p>
+        <p class="govuk-body">The information you provide will be compared with other government departments records to check for your eligibility.</p>
+        <p class="govuk-body">For further information, please check our <a href=""> privacy statement</a>.</p>
+
+        {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+{{ govukWarningText({
+  text: "Use the details on your passport, driving licence, birth certificate or Biometric Residence Permit.",
+  iconFallbackText: "Warning"
+}) }}
 
     <form action="/mvp2-soft-check-ni-answer" method="post" novalidate>
 
@@ -16,19 +24,14 @@
           text: "What is your name?",
           classes: "govuk-fieldset__legend--m",
           isPageHeading: false
-        },
-        hint: {
-          text: "Please use the name on your passport, driving licence, birth certificate or Biometric Residence Permit"
         }
-      }
-      ) %}
-
+    }) %}
 
 
 
       {{ govukInput({
         label: {
-          text: "Parent's first name"
+          text: "First name"
         },
         classes: "govuk-!-width-two-thirds",
         id: "first-name",
@@ -38,7 +41,7 @@
 
       {{ govukInput({
         label: {
-          text: "Parent's last name"
+          text: "Last name"
         },
         classes: "govuk-!-width-two-thirds",
         id: "surname",
