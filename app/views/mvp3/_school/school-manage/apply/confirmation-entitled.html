@@ -1,5 +1,4 @@
 {% extends "../../../../layouts/layout-dfe-schoolnav-noback.html" %}
-
 {% set pageName="eligible" %}
 
 {% block content %}
@@ -20,63 +19,51 @@
   type: "success"
 }) }}
         <!--<h1 class="govuk-heading-xl">Children details added</h1>-->
-        <h3>You have successfully added children’s details to [Eden Tesfay’s] free school meals application record.</h3>
+        <h3>You have successfully added children’s details to {{ data.parent-firstname}} free school meals application record.</h3>
     </div>
 </div>
-</div>
 
-{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
+<div class="govuk-width-container">
+  <div class="govuk-grid-column-full-width">
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th class="govuk-table__header">Parent or guardian</th>
           <th class="govuk-table__header">Child</th>
           <th class="govuk-table__header">Reference</th>
         </tr>
       </thead>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Eden Tesfay</td>
-          <td class="govuk-table__cell">Samual Tesfay</td>
+          <td class="govuk-table__cell"> {{ data["first-name"] }} {{ data["surname"] }} </td>
           <td class="govuk-table__cell">44455453</td>
         </tr>
+
+        {% if data['child-2'] == 'Yes' %} {% endif %}
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Eden Tesfay</td>
-          <td class="govuk-table__cell">Thomas Tesfay</td>
+          <td class="govuk-table__cell"> {{ data["ch2-first-name"]}} {{ data["surname"] }}</td>
           <td class="govuk-table__cell">44455454</td>
         </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Eden Tesfay</td>
-          <td class="govuk-table__cell">Rachel Tesfay</td>
-          <td class="govuk-table__cell">44455455</td>
-        </tr>
+
       </tbody>
     </table>
   </div>
 </div>
-
 <div class="govuk-!-padding-bottom-3"></div>
-
-<div class="govuk-width-container">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
         <h2 class="govuk-heading-m">What to do next</h2>
+
         <p>As these children are entitled to free school meals, you’ll now need to add details of their application to your own system before finalising.</p>
-  
-       
+
+
        <div class="govuk-button-group">
         {{ govukButton({
           text: "Finalise applications",
-          href: '#'
+          href: "../decision/finalise/applications"
         }) }}
-      
+
         <a class="govuk-link" href="../../dashboard">Return to dashboard</a>
       </div>
-       
-        <!--<p> Go to <a href="../checker/applications" class="govuk-link">Finalise applications</a> and follow the instructions there. </p>-->
     </div>
 </div>
 </div>
@@ -90,5 +77,6 @@
 {% endblock %}
 
 {% block pageScripts %}
+
 <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
 {% endblock %}

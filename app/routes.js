@@ -1,23 +1,25 @@
 // For guidance on how to create routes see:
 // https://prototype-kit.service.gov.uk/docs/create-routes
 //
-const govukPrototypeKit = require('govuk-prototype-kit')
-const router = govukPrototypeKit.requests.setupRouter()
+const govukPrototypeKit = require('govuk-prototype-kit');
+const express = require('express');
+const router = govukPrototypeKit.requests.setupRouter(); // Create a router from the prototype kit
+const path = require('path');
+
 // Add your routes here - above the module.exports line
 
-
 const _ = require('lodash')
-const express = require('express')
+//const express = require('express')
 const { fakerEN_GB: faker } = require('@faker-js/faker')
-const moment = require('moment')
-const path = require('path')
+//const moment = require('moment')
+//const path = require('path')
 router.use('/data', express.static(path.join(__dirname, '../data'))); // Adjust the path as necessary
 
+// Serve static files
+//app.use('/mvp3/_school/school-manage/upload', express.static(path.join(__dirname, 'mvp3/_school/school-manage/upload/upload-evidence')));
 
-//const router = express.Router()
+
 const url = require('url')
-//const utils = require('./lib/utils')
-//const permissions = require('./filters/permissions.js').filters
 const fs = require('fs')
 
 const radioButtonRedirect = require('radio-button-redirect')
@@ -26,8 +28,13 @@ router.use(radioButtonRedirect)
 // Pass the router to the routes folder
 require('./routes/mvp3/account')(router);
 require('./routes/mvp3/softCheck')(router);
+require('./routes/mvp3/appeal')(router);
+require('./routes/mvp3/success')(router);
+
+
 
 router.get('*', function (req, res, next) {
+
 
 // These functions are available on all pages in the prototype.
 // To use call the function inside curly brackets, for example {{ example_function() }}
@@ -42,6 +49,7 @@ router.get('*', function (req, res, next) {
 // {{ date({day: 'numeric', month: 'numeric', year: 'numeric'}, {'day': +2}) }}
 
 res.locals.date = function (format = {day: 'numeric', month: 'long', year: 'numeric'}, diff = {'year': 0, 'month': 0, 'day': 0}) {
+
     var date = new Date();
     if ('day' in diff) {
       date.setDate(date.getDate() + diff.day)
@@ -88,6 +96,8 @@ res.locals.date = function (format = {day: 'numeric', month: 'long', year: 'nume
 // LOCAL FOLDER ROUTES //
 /////////////////////////
 
+// MVP2
+//require('./views/mvp2/_routes');
 
 // MVP2
 //require('./views/mvp2/_routes');
@@ -647,7 +657,7 @@ router.post('/mvp2-soft-check-ni-answer', function (req, res) {
  }
 })
 
-///workingMVP3///
+///WorkingMVP3///
 
    /// Soft CHECKER
    router.post('/mvp3_v1/_family/soft-check-ni-answer', function (req, res) {
@@ -662,6 +672,8 @@ router.post('/mvp2-soft-check-ni-answer', function (req, res) {
      res.redirect('/mvp3/_family/parent-soft-check/nass-number')
    }
   })
+
+
 //account
      // POST route mvp3
      router.post('/mvp3_v1/_family/account/onegov-signin', (req, res) => {
@@ -672,6 +684,9 @@ router.post('/mvp2-soft-check-ni-answer', function (req, res) {
      router.get('/', function(req, res) {
       res.send('Account Page');
   });
+
+
+  //add-children
 
 
 

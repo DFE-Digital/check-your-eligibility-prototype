@@ -536,6 +536,7 @@ MOJFrontend.FormValidator.prototype.validate = function() {
   }
   return this.errors.length === 0;
 };
+
 if(MOJFrontend.dragAndDropSupported() && MOJFrontend.formDataSupported() && MOJFrontend.fileApiSupported()) {
   MOJFrontend.MultiFileUpload = function(params) {
     this.defaultParams = {

@@ -14,18 +14,14 @@
 {% block header %}
 {% from "govuk/components/header/macro.njk" import govukHeader %}
 
-  {{ govukHeader({
-    homepageUrl: "/index",
+{{ govukHeader({
+  homepageUrl: "#",
     serviceName: "Check a family's eligibility",
     serviceUrl: "#",
     navigation: [
 
     ]
   }) }}
-
-
-
-
 
 <div class="app-phase-banner__wrapper">
 
@@ -43,7 +39,6 @@
 {% endblock %}
 
 
-
 {# 4 #}
 {% block scripts %}
 
@@ -53,7 +48,9 @@
 </script>
 <script src="/public/javascripts/components/filter-toggle-button.js"></script>
 
-
   {{ super() }}
   <script src="/public/javascripts/dfefrontend.js"></script>
+
+  {{ super() }}
+  <script src="/assets/js/dfefrontend.min.js"></script>
 {% endblock %}

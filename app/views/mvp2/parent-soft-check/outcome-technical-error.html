@@ -9,19 +9,26 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l">There’s been a technical error</h1>
-    <p>We could not check your children’s entitlement to free school meals.</p>
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Check failed
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">There’s been a technical error.</p>
+        <p><a href="checker">Try again later</a>, ensuring you’ve entered your details accurately.</p>
+      </div>
+    </div>
 
-    
-    <p>Please try again later, making sure you’ve entered your details accurately.</p>
+    <h1 class="govuk-heading-l">If the check keeps failing</h1>
+    <p>Contact your school administrator.</p>
 
-    <p>If you’ve received this message multiple times, contact your school administrator. </p>
-    
 
-  <p><a href="check">Try again</a></p>
-  
   </div>
-</div>
+
+  </div>
+
 
 {% endblock %}
 

@@ -1,126 +1,238 @@
 {% extends "../../../../layouts/layout-dfe-schoolnav.html" %}
-
-{% set pageName="Enter parent or guardian's details" %}
+{% set pageName="Run a check for one parent or guardian" %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="outcomes/outcome-eligible" method="post" novalidate>
+    <form action="school-checking-loader" method="post" novalidate>
 
-      {% call govukFieldset({
-        legend: {
-          text: pageName,
-          classes: "govuk-fieldset__legend--l",
-          isPageHeading: true
-        }
+    {% call govukFieldset({
+      legend: {
+      text: pageName,
+      classes: "govuk-fieldset__legend--l",
+      isPageHeading: false
+      }
       }) %}
-  
+      {% call govukFieldset({
+      legend: {
+      text:  "",
+      classes: "govuk-fieldset__legend--l",
+      isPageHeading: true
+      }
+      }) %}
+      <p class="govuk-body">Enter the details of the parent or guardian who is applying for free school meals.</p>
+
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+<!--
+      {{ govukInput({
+      label: {
+      text: "First name"
+      },
+      id: "parent-firstname",
+      name: "parent-firstname",
 
-        {{ govukInput({
-          label: {
-            text: "First name"
-          },
-          id: "Firstname",
-          name: "Firstname",
-          
-          autocomplete: "name",
-          classes: "govuk-input--width-20",
-          spellcheck: false
-        }) }}
+      autocomplete: "name",
+      classes: "govuk-input--width-20",
+      spellcheck: false
+      }) }}
 
-        {{ govukInput({
-          label: {
-            text: "Last name"
-          },
-          id: "surName",
-          name: "surName",
-          autocomplete: "name",
-          classes: "govuk-input--width-20",
-          spellcheck: false
-        }) }}
-
-
-    
-
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break">
-
-        {{ govukInput({
-          label: {
-            text: "National Insurance number"
-          },
-          id: "full-name",
-          name: "fullName",
-          autocomplete: "name",
-          classes: "govuk-input--width-20",
-          spellcheck: false
-        }) }}
-<p>Or</p>
-        {{ govukInput({
-          label: {
-            text: "Asylum support reference number"
-          },
-          hint: {
-            text: "If they don't have a National insurance number"
-          },
-          id: "nass",
-          name: "nass",
-          autocomplete: "name",
-          classes: "govuk-input--width-20",
-          
-          spellcheck: false
-        }) }}
-
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break">
-
-          {{ govukDateInput({
-            
-            id: "dob",
-            namePrefix: "dob",
-            fieldset: {
-              legend: {
-                text: "Parent or guardian date of birth",
-                isPageHeading: false              
-              }
-            },
-            hint: {
-              text: "For example, 27 3 1980"
-            }
-          }) }}
-
-          <hr class="govuk-section-break govuk-section-break--l govuk-section-break">
+      {{ govukInput({
+      label: {
+      text: "Last name"
+      },
+      id: "parent-surname",
+      name: "parent-surname",
+      autocomplete: "surname",
+      classes: "govuk-input--width-20",
+      spellcheck: false
+      }) }}
 
 
-          {{ govukInput({
-            label: {
-              text: "Parent or guardian's email address"
-            },
-            id: "email",
-            name: "email",
-            hint: {
-              text: "This is so we can notify them with updates of the application"
-            },
-            autocomplete: "name",
-            classes: "govuk-input--width-20",
-            spellcheck: false
-          }) }}
-      
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break">
+
+      {{ govukInput({
+      label: {
+      text: "National Insurance number"
+      },
+      id: "NINO",
+      name: "NINO",
+      autocomplete: "NINO",
+      classes: "govuk-input--width-20",
+      spellcheck: false
+      }) }}
+      <p>Or</p>
+      {{ govukInput({
+      label: {
+      text: "Asylum support reference number"
+      },
+      hint: {
+      text: "If they don't have a National insurance number"
+      },
+      id: "nass",
+      name: "nass",
+      autocomplete: "name",
+      classes: "govuk-input--width-20",
+
+      spellcheck: false
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break">
+
+      {{ govukDateInput({
+
+      id: "dob",
+      namePrefix: "dob",
+      fieldset: {
+      legend: {
+      text: "Parent or guardian date of birth",
+      isPageHeading: false
+      }
+      },
+      hint: {
+      text: "For example, 27 3 1980"
+      }
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break">
+
+      {{ govukInput({
+      label: {
+      text: "Parent or guardian's email address"
+      },
+      id: "email",
+      name: "email",
+      hint: {
+      text: "This is so we can notify them with updates of the application"
+      },
+      autocomplete: "email",
+      classes: "govuk-input--width-20",
+      spellcheck: false
+      }) }}
+
+      {% endcall %} -->
+
+      {{ govukInput({
+      label: {
+      text: "First name"
+      },
+      id: "parent-firstname",
+      name: "parent-firstname",
+      autocomplete: "name",
+      classes: "govuk-input--width-20",
+      spellcheck: false
+      }) }}
+
+      {{ govukInput({
+      label: {
+      text: "Last name"
+      },
+      id: "parent-surname",
+      name: "surname",
+      autocomplete: "name",
+      classes: "govuk-input--width-20",
+      spellcheck: false
+      }) }}
+
+      {{ govukInput({
+      label: {
+      text: "Email address"
+      },
+      id: "email",
+      name: "email",
+      autocomplete: "name",
+      classes: "govuk-input--width-20",
+      spellcheck: false
+      }) }}
+
+      {{ govukDateInput({
+
+      id: "dob",
+      namePrefix: "dob",
+      fieldset: {
+      legend: {
+      text: "Date of birth",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+      }
+      },
+      hint: {
+      text: "For example, 31 3 1980"
+      }
+      }) }}
+
+      {% set niHtml %}
+      {{ govukInput({
+      id: "ni-number-entered",
+      name: "ni-number-entered",
+      type: "text",
+      autocomplete: "text",
+      spellcheck: false,
+      classes: "govuk-!-width-one-third",
+      label: {
+      text:"Parent or guardian National Insurance number"
+      }
+
+
+      }) }}
+      {% endset -%}
+
+      {% set asrHtml %}
+      {{ govukInput({
+      id: "asr-number-entered",
+      name: "asr-number-entered",
+      type: "text",
+      autocomplete: "text",
+      spellcheck: false,
+      classes: "govuk-!-width-one-third",
+      label: {
+      text:"Parent or guardian asylum support reference number"
+      }
+
+
+      }) }}
+      {% endset -%}
+      {{ govukRadios({
+      name: "ni-number",
+      id:'ni-number',
+      fieldset: {
+      legend: {
+      text: "National Insurance number or asylum support reference",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+      }
+
+      },
+
+      hint: {
+      text: "Select one option."
+      },
+
+      items: [
+      {
+      value: "ni-number",
+      text: "National Insurance number",
+      conditional: {
+      html: niHtml
+      }
+      },
+      {
+      value: "asr",
+      text: "Asylum support reference",
+      conditional: {
+      html: asrHtml
+      }
+      }
+
+      ]
+      }) }}
+
       {% endcall %}
-      
 
-      
     </form>
-
-    {{ govukButton({
-      text: "Perform check",
-      href: '../school-soft-check/school-checking-loader'
-    }) }}
-        
-      </div>  
-    
-    </div>
-
-
+    <button type="Run check" class="govuk-button">Run check</button>
+  </div>
+</div>
+</div>
 
 {% endblock %}
