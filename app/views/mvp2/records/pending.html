@@ -93,11 +93,86 @@ href: "javascript:window.history.back()"
   </div>
 </div>-->
 
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Parent or guardian",
+      headingLevel: "2"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "of University of Gloucestershire"
+        }
+
+      ]
+    }
+  },
+  rows: [
+
+
+
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        html: "Eden Tesfay"
+      }
+    },
+
+    {
+      key: {
+        text: "Relationship"
+      },
+      value: {
+        html: "Parent"
+      }
+    },
+
+
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        html: "1 September 1988"
+      }
+    },
+    {
+      key: {
+        text: "National Insurance / ASR"
+      },
+      value: {
+        html: "098765432211"
+      }
+    },
+    {
+      key: {
+        text: "Email address"
+      },
+
+
+      value: {
+        html: "edentesfay@hotmail.com"
+      }
+    }
+
+
+
+  ]
+}) }}
 
 {{ govukSummaryList({
   card: {
   title: {
-  text: "Child 1"
+  text: "Child 1",
+  headingLevel: "2"
+
   },
   actions: {
   items: [
@@ -105,7 +180,7 @@ href: "javascript:window.history.back()"
 
   {
   href: "#",
-  text: "Edit details",
+  text: "Change",
   visuallyHiddenText: "from application"
   }
   ]
@@ -142,78 +217,7 @@ href: "javascript:window.history.back()"
 <!-- PERSON -->
 
 
-{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
-{{ govukSummaryList({
-  card: {
-    title: {
-      text: "Parent / carer"
-    },
-    actions: {
-      items: [
-        {
-          href: "#",
-          text: "Edit details",
-          visuallyHiddenText: "of University of Gloucestershire"
-        }
-
-      ]
-    }
-  },
-  rows: [
-
-
-
-    {
-      key: {
-        text: "Name"
-      },
-      value: {
-        html: "Eden Tesfay"
-      }
-    },
-
-    {
-      key: {
-        text: "Relationship"
-      },
-      value: {
-        html: "Parent"
-      }
-    },
-
-
-    {
-      key: {
-        text: "Date of birth"
-      },
-      value: {
-        html: "01 September 1988"
-      }
-    },
-    {
-      key: {
-        text: "National Insurance / ASR"
-      },
-      value: {
-        html: "098765432211"
-      }
-    },
-    {
-      key: {
-        text: "Email address"
-      },
-
-
-      value: {
-        html: "edentesfay@hotmail.com"
-      }
-    }
-
-
-
-  ]
-}) }}
 
 
 
