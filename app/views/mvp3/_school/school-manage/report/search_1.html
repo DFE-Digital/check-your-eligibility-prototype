@@ -51,40 +51,35 @@
 
                     <tbody class="govuk-table__body">
                       {% for application in data.applications %}
-                      <tr class="govuk-table__row">
+                      <tr class="govuk-table__row" data-status="{% if application.status.yes == 'Entitled' %}status-Entitled{% elif application.status.yes == 'Sent for review' %}status-review{% elif application.status.yes == 'Evidence needed' %}status-Evidence-needed{% endif %}">
                         <th scope="row" class="govuk-table__header">
                           <a href="#" class="govuk-link">{{ application.id }}</a>
                         </th>
                         <td class="govuk-table__cell">{{ application.childDetails.firstName }} {{ application.childDetails.lastName }}</td>
-                        <td class="govuk-table__cell">{{ application.dob | govukDate ("truncate")}}</td>
-                        <td class="govuk-table__cell">{{ application.submission.date | govukDate("truncate")}}</td>
+                        <td class="govuk-table__cell">{{ application.dob | govukDate("truncate") }}</td>
+                        <td class="govuk-table__cell">{{ application.submission.date | govukDate("truncate") }}</td>
                         <td class="govuk-table__cell">
+                          {% if application.status.yes == "Entitled" %}
+                            <strong class="govuk-tag govuk-tag--green">{{ application.status.yes }}</strong>
+                          {% elif application.status.yes == "Sent for review" %}
+                            <strong class="govuk-tag govuk-tag--purple">{{ application.status.yes }}</strong>
+                          {% elif application.status.yes == "Review entitled" %}
+                            <strong class="govuk-tag govuk-tag--blue">{{ application.status.yes }}</strong>
+                          {% elif application.status.yes == "Evidence needed" %}
+                            <strong class="govuk-tag govuk-tag--light-blue">{{ application.status.yes }}</strong>
+                          {% elif application.status.yes == "Receiving entitlement" %}
+                            <strong class="govuk-tag govuk-tag--turquoise">{{ application.status.yes }}</strong>
+                          {% elif application.status.yes == "Reviewed not entitled" %}
+                            <strong class="govuk-tag govuk-tag--red">{{ application.status.yes }}</strong>
+                          {% else %}
+                            <strong class="govuk-tag">{{ application.status.yes }}</strong>
+                          {% endif %}
+                        </td>
+                        <td class="govuk-table__cell">{{ application.eligible.date | govukDate("truncate") }}</td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
 
-                              {% if application.status.yes == "Entitled" %}
-                                <strong class="govuk-tag govuk-tag--green">{{application.status.yes}}</strong>
-
-                              {% elif application.status.yes == "Sent for review" %}
-                                <strong class="govuk-tag govuk-tag--purple">{{application.status.yes}}</strong>
-
-                              {% elif application.status.yes == "Review entitled" %}
-                                <strong class="govuk-tag govuk-tag--blue">{{application.status.yes}}</strong>
-
-                              {% elif application.status.yes == "Evidence needed" %}
-                                  <strong class="govuk-tag govuk-tag--light-blue">{{application.status.yes}}</strong>
-
-                              {% elif application.status.yes == "Receiving entitlement" %}
-                               <strong class="govuk-tag govuk-tag--turquoise">{{application.status.yes}}</strong>
-
-                              {% elif application.status.yes == "Reviewed not entitled" %}
-                                <strong class="govuk-tag govuk-tag--red">{{application.status.yes}}</strong>
-
-                                {% else %}
-                                <strong class="govuk-tag">{{application.status.yes}}</strong>
-                              {% endif %}
-
-                          <td class="govuk-table__cell">{{application.eligible.date | govukDate ("truncate")}}</td>
-                          {% endfor %}
-                        </tbody>
 
                 </div>
               </div>
@@ -126,13 +121,18 @@
 
 
 {% endblock %}
+
+
+
 <!--FILTER TOGGLE-->
+<!---------------SCRIPTS------------------>
+
 {% block pageScripts %}
 
 
 
-<!---------------SCRIPTS------------------>
-<!--COUNT-->
+<!--COUNT RESULTS-->
+
 <script>
   const updateVisibleRowCount = () => {
     const table = document.querySelector("table");
@@ -152,7 +152,9 @@
 
 <!------FILTERS------->
 
-<script src="/assets/javascripts/components/filter.js"></script>
+<!--not working-->
+<!--<script src="../components/filter.js"></script> -->
+
 
 <script>
   function filterResults() {
@@ -173,7 +175,7 @@
         }
       }
 
-// A row is visible if it matches either the keyword or the status
+// matches either the keyword or the status
 
 if (match) {
         row.style.display = ''; // Show row
@@ -187,12 +189,13 @@ if (match) {
     // Update the visible row count
     document.getElementById('resultCount').innerText = visibleCount;
   }
-
   document.getElementById('applyFilter').addEventListener('click', filterResults);
 
 </script>
 
 
+
+<!------- //clear filters ------->
 <script>
   function clearFilters() {
     // Reset input fields and checkboxes as described
@@ -208,8 +211,8 @@ if (match) {
     filterResults();
   }
 </script>
-
-<script src="../helper/pagination.js"></script>
+<!--
+<script src="../helper/pagination.js"></script> -->
 
 
 {% endblock %}

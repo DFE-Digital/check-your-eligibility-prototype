@@ -565,7 +565,7 @@ if(MOJFrontend.dragAndDropSupported() && MOJFrontend.formDataSupported() && MOJF
     this.dropzone.on('drop', $.proxy(this, 'onDrop'));
   };
   MOJFrontend.MultiFileUpload.prototype.setupLabel = function() {
-    this.label = $('<label for="'+this.fileInput[0].id+'" class="hods-button hods-button--secondary">'+ this.params.dropzoneButtonText +'</label>');
+    // this.label = $('<label for="'+this.fileInput[0].id+'" class="hods-button hods-button--secondary">'+ this.params.dropzoneButtonText +'</label>');
     this.dropzone.append('<p class="govuk-body">' + this.params.dropzoneHintText + '</p>');
     this.dropzone.append(this.label);
   };
@@ -1031,4 +1031,3 @@ MOJFrontend.SortableTable.prototype.getCellValue = function(cell) {
 };
 return MOJFrontend;
 }));
-```

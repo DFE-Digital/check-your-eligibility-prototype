@@ -434,13 +434,4 @@ that need them. Excessive javascript files loaded on other pages may slow down
 the response times of the prototype. -->
 <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
 
-<script type="text/javascript">
-  if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
-    new MOJFrontend.MultiFileUpload({
-      container: $(".moj-multi-file-upload"),
-      uploadUrl: "/ajax-upload",
-      deleteUrl: "/ajax-delete",
-    });
-  }
-</script>
 {% endblock %}
