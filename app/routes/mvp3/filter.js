@@ -10,6 +10,15 @@ function filterResults() {
     // Get table rows
     const rows = document.querySelectorAll('#resultsTable tbody tr');
 
+
+
+
+
+
+
+
+
+
     // Define a function to check if a row matches the filters
     rows.forEach(row => {
         const cells = row.querySelectorAll('td');

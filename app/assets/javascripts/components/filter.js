@@ -1,4 +1,5 @@
 function filterResults() {
+
   const keywords = document.getElementById('keywords').value.toLowerCase();
   const selectedStatuses = Array.from(document.querySelectorAll('input[name="status"]:checked'))
                                .map(checkbox => checkbox.value.toLowerCase());
