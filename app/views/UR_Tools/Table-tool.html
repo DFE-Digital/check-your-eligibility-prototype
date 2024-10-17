@@ -1,0 +1,426 @@
+{% extends "layouts/layout-dfe-UR.html" %}
+
+{% set pageName="Dynamic Table Tool" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table Tool</title>
+
+    <style>
+        th {
+            cursor: grab;
+        }
+        table {
+            width: 100%;
+        }
+        th, td {
+            text-align: center;
+        }
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #d8d8d8;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: 1px solid #d8d8d8;
+            border-bottom: none;
+            margin-right: 5px;
+        }
+        .tab.active {
+            background-color: #1d70b8;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        th.dragging {
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body class="govuk-template__body">
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <div class="tab active" onclick="openTab(event, 'localAuthorityTab')">Local Authority Appeals / manual applications</div>
+            <div class="tab" onclick="openTab(event, 'schoolAppealsTab')">School Process Appeals</div>
+            <div class="tab" onclick="openTab(event, 'searchRecordsTab')">Search Records</div>
+        </div>
+
+        <!-- Tab content for Local Authority Appeals -->
+        <div id="localAuthorityTab" class="tab-content active">
+
+            <!-- Dropdown for column titles -->
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="columnTitleLA">Choose a Column Title:</label>
+                <select class="govuk-select" id="columnTitleLA">
+                    <option value="Reference">Reference</option>
+                    <option value="Parent or Guardian">Parent or Guardian</option>
+                    <option value="Parent DOB">Parent or Guardian DOB</option>
+                    <option value="Child">Child</option>
+                    <option value="Child DOB">Child DOB</option>
+                    <option value="School">School</option>
+                    <option value="Date Submitted">Date Submitted</option>
+                    <option value="Parent Email">Parent Email</option>
+                    <option value="National Insurance">National Insurance/Asylum Support Number</option>
+                </select>
+            </div>
+
+            <div class="govuk-button-group">
+                <button class="govuk-button" onclick="addColumn('LA')">Add Column</button>
+                <button class="govuk-button govuk-button--secondary" onclick="deleteColumn('LA')">Delete Last Column</button>
+            </div>
+            <h2 class="govuk-heading-m">Appeal / manual Application (10)</h2>
+
+            {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+            {{ govukDetails({
+              summaryText: "Help with this page",
+              text: "This page contains applications for free school meals that couldn't be found in the system. Review any supporting evidence parents or guardians have provided, then approve or decline to process their applications."
+            }) }}
+
+            <br>
+
+            <!-- Table structure -->
+            <table class="govuk-table" id="dynamicTableLA">
+                <thead class="govuk-table__head">
+                    <tr id="headerRowLA" class="govuk-table__row">
+                        <!-- Dynamic column headers will be inserted here -->
+                    </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                    <!-- Dynamic rows and data will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tab content for School Process Appeals -->
+        <div id="schoolAppealsTab" class="tab-content">
+
+            <!-- Dropdown for column titles -->
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="columnTitleSchool">Choose a Column Title:</label>
+                <select class="govuk-select" id="columnTitleSchool">
+                    <option value="Reference">Reference</option>
+                    <option value="Parent or Guardian">Parent or Guardian</option>
+                    <option value="Parent DOB">Parent or Guardian DOB</option>
+                    <option value="Child">Child</option>
+                    <option value="Child DOB">Child DOB</option>
+                    <option value="Status">Status</option>
+                    <option value="Submission Date">Submission Date</option>
+                    <option value="Sent for Review On">Sent for Review On</option>
+                    <option value="Email Address">Email Address</option>
+                    <option value="National Insurance">National Insurance/Asylum Support Number</option>
+                </select>
+            </div>
+
+            <div class="govuk-button-group">
+                <button class="govuk-button" onclick="addColumn('School')">Add Column</button>
+                <button class="govuk-button govuk-button--secondary" onclick="deleteColumn('School')">Delete Last Column</button>
+            </div>
+
+
+
+            {% if data['eligibility-confirmed'] =="yes" %}
+            {{ govukNotificationBanner({
+              html: applicationSent,
+              type: 'success'
+            }) }}
+
+            {% endif %}
+
+
+
+            {% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
+
+            {{ mojPageHeaderActions({
+              heading: {
+                text: 'Process appeals (12)',
+                classes: 'govuk-heading-l'
+              }
+            }) }}
+            <div class="govuk-width-container">
+                <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-full">
+                    <p class="govuk-body">All the children in the table on this page need to have their supporting evidence reviewed by the local authority, to see if they can get free school meals.</p>
+                  </div>
+                </div>
+            </div>
+
+            <div class="govuk-!-padding-bottom-3"></div>
+
+
+            <div class="govuk-width-container">
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                  <h2 class="govuk-heading-m">How to process appeals</h2>
+                  <ol class="govuk-list govuk-list--number">
+                    <li>For each record with the status 'Evidence needed', ask the parent or guardian for supporting evidence. <a href="../checker/evidence-guidance.html" class="govuk-link">See a full list of acceptable documents.</a></li>
+                    <li>Once you have this, go into the record by selecting the reference number, and follow the instructions there.</li>
+                  </ol>
+                </div>
+              </div>
+          </div>
+
+            <br>
+
+            <!-- Table structure -->
+            <table class="govuk-table" id="dynamicTableSchool">
+                <thead class="govuk-table__head">
+                    <tr id="headerRowSchool" class="govuk-table__row">
+                        <!-- Dynamic column headers will be inserted here -->
+                    </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                    <!-- Dynamic rows and data will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tab content for Search Records -->
+        <div id="searchRecordsTab" class="tab-content">
+
+            <!-- Dropdown for column titles -->
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="columnTitleSearch">Choose a Column Title:</label>
+                <select class="govuk-select" id="columnTitleSearch">
+                    <option value="Reference">Reference</option>
+                    <option value="Parent or Guardian">Parent or Guardian</option>
+                    <option value="Child">Child</option>
+                    <option value="Child DOB">Child DOB</option>
+                    <option value="School">School</option>
+                    <option value="Eligible From">Eligible From</option>
+                    <option value="Status">Status</option>
+                    <option value="Submission Date">Submission Date</option>
+                    <option value="Email Address">Email Address</option>
+                    <option value="National Insurance">National Insurance/Asylum Support Number</option>
+                </select>
+            </div>
+
+            <div class="govuk-button-group">
+                <button class="govuk-button" onclick="addColumn('Search')">Add Column</button>
+                <button class="govuk-button govuk-button--secondary" onclick="deleteColumn('Search')">Delete Last Column</button>
+            </div>
+            <h2 class="govuk-heading-m">Search results (10)</h2>
+
+            <br>
+
+            <!-- Table structure -->
+            <table class="govuk-table" id="dynamicTableSearch">
+                <thead class="govuk-table__head">
+                    <tr id="headerRowSearch" class="govuk-table__row">
+                        <!-- Dynamic column headers will be inserted here -->
+                    </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                    <!-- Dynamic rows and data will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div>
+
+<!-- GOV.UK JavaScript -->
+<script src="https://govuk-frontend.herokuapp.com/public/javascripts/govuk-frontend-4.0.0.min.js"></script>
+
+<script>
+    let columnCountLA = 0;
+    let columnCountSchool = 0;
+    let columnCountSearch = 0;
+    const rowCount = 10; // Fixed number of rows
+
+    // Predefined data for Local Authority Appeals
+    const predefinedDataLA = {
+        "Reference": ["REF-001", "REF-002", "REF-003", "REF-004", "REF-005", "REF-006", "REF-007", "REF-008", "REF-009", "REF-010"],
+        "Parent or Guardian": ["John Doe", "Jane Man", "Bob Smith", "Alice Brown", "Michael Green", "Sarah White", "David Black", "Chris Blue", "Anna Red", "Tom Orange"],
+        "Parent DOB": ["01/01/1970", "02/03/1975", "15/06/1980", "22/09/1965", "12/04/1988", "05/08/1990", "07/11/1978", "20/12/1966", "01/03/1985", "11/05/1992"],
+        "Child": ["John Jr.", "Jane Jr.", "Bobby", "Alicia", "Mike", "Sally", "Dave", "Chris Jr.", "Ann", "Tommy"],
+        "Child DOB": ["01/01/2000", "02/02/2005", "03/03/2010", "04/04/2015", "05/05/2020", "06/06/2021", "07/07/2022", "08/08/2023", "09/09/2024", "10/10/2025"],
+        "School": ["Byker Primary School", "Chillingham Road Primary School", "St Georges RC Primary School", "South Gosforth First School", "Excelsior Academy", "Gosforth Junior High Academy", "Excelsior Academy", "Kenton School", "Studio West", "Walker Riverside Academy"],
+        "Date Submitted": ["01/01/2023", "02/01/2023", "03/01/2023", "04/01/2023", "05/01/2023", "06/01/2023", "07/01/2023", "08/01/2023", "09/01/2023", "10/01/2023"],
+        "Parent Email": ["JohnD@example.com", "Janey@example.com", "BobbySmith@example.com", "AliceBrown@example.com", "MichaelG123@example.com", "SarahW@example.com", "David@example.com", "ChrisB@example.com", "AnnaR@example.com", "Tom0@example.com"],
+        "National Insurance": ["QQ123456B", "QQ522456B", "QQ383246C", "QQ146397D", "QQ389105B", "QQ083856C", "QQ387645B", "QQ018274C", "QQ756385B", "QQ235164B"]
+    };
+
+    // Predefined data for School Process Appeals
+    const predefinedDataSchool = {
+        "Reference": ["REF-101", "REF-102", "REF-103", "REF-104", "REF-105", "REF-106", "REF-107", "REF-108", "REF-109", "REF-110"],
+        "Parent or Guardian": ["Alice Jones", "Tom Smith", "Emma Johnson", "James Williams", "Linda Brown", "Michael Taylor", "Barbara Davis", "Charles Wilson", "Laura Clark", "Richard Moore"],
+        "Parent DOB": ["01/01/1975", "02/02/1980", "03/03/1985", "04/04/1990", "05/05/1995", "06/06/2000", "07/07/2005", "08/08/2010", "09/09/2015", "10/10/2020"],
+        "Child": ["Sam", "Lucy", "Ben", "Olivia", "Sophia", "Liam", "Noah", "Emma", "Mia", "Isabella"],
+        "Child DOB": ["01/01/2015", "02/02/2016", "03/03/2017", "04/04/2018", "05/05/2019", "06/06/2020", "07/07/2021", "08/08/2022", "09/09/2023", "10/10/2024"],
+        "Status": ["Pending", "Approved", "Rejected", "Pending", "Approved", "Rejected", "Pending", "Approved", "Rejected", "Pending"],
+        "Submission Date": ["01/01/2023", "02/01/2023", "03/01/2023", "04/01/2023", "05/01/2023", "06/01/2023", "07/01/2023", "08/01/2023", "09/01/2023", "10/01/2023"],
+        "Sent for Review On": ["01/02/2023", "02/02/2023", "03/02/2023", "04/02/2023", "05/02/2023", "06/02/2023", "07/02/2023", "08/02/2023", "09/02/2023", "10/02/2023"],
+        "Email Address": ["AliceJ@example.com", "TomSmith@example.com", "EmmaJohn@example.com", "JamesW@example.com", "LindaB@example.com", "Michael123@example.com", "barbraD@example.com", "CharlesW@example.com", "LauraClark@example.com", "RichardM123@example.com"],
+        "National Insurance": ["QQ123456B", "QQ522456B", "QQ383246C", "QQ146397D", "QQ389105B", "QQ083856C", "QQ387645B", "QQ018274C", "QQ756385B", "QQ235164B"]
+    };
+
+    // Predefined data for Search Records
+    const predefinedDataSearch = {
+        "Reference": ["REF-201", "REF-202", "REF-203", "REF-204", "REF-205", "REF-206", "REF-207", "REF-208", "REF-209", "REF-210"],
+        "Parent or Guardian": ["George King", "Nancy Scott", "Albert Parker", "Betty Evans", "Roger Carter", "Katherine Edwards", "Zachary Thomas", "Monica Hill", "Diana Adams", "Victor Nelson"],
+        "Child": ["Jake", "Emily", "Ryan", "Chloe", "Sophia", "Liam", "Daniel", "Ella", "Mason", "Ava"],
+        "Child DOB": ["01/01/2012", "02/02/2013", "03/03/2014", "04/04/2015", "05/05/2016", "06/06/2017", "07/07/2018", "08/08/2019", "09/09/2020", "10/10/2021"],
+        "Eligible From": ["01/01/2023", "01/02/2023", "01/03/2023", "01/04/2023", "01/05/2023", "01/06/2023", "01/07/2023", "01/08/2023", "01/09/2023", "01/10/2023"],
+        "Status": ["Entiled", "Not Entitled", "Entitled", "Not Entitled", "Entitled", "Entitled", "Entitled", "Not Entitled", "Entitled", "Not Entitled"],
+        "School": ["Byker Primary School", "Chillingham Road Primary School", "St Georges RC Primary School", "South Gosforth First School", "Excelsior Academy", "Gosforth Junior High Academy", "Excelsior Academy", "Kenton School", "Studio West", "Walker Riverside Academy"],
+        "Submission Date": ["01/01/2023", "02/01/2023", "03/01/2023", "04/01/2023", "05/01/2023", "06/01/2023", "07/01/2023", "08/01/2023", "09/01/2023", "10/01/2023"],
+        "Email Address": ["GeorgeK@example.com", "Nancy123@example.com", "Albby@example.com", "EvansBe4@example.com", "RogerRoger@example.com", "KathyKath@example.com", "Zach@example.com", "MonicaHill@example.com", "DianA9@example.com", "ViccyVictorexample.com"],
+        "National Insurance": ["QQ123456B", "QQ522456B", "QQ383246C", "QQ146397D", "QQ389105B", "QQ083856C", "QQ387645B", "QQ018274C", "QQ756385B", "QQ235164B"]
+    };
+
+    window.onload = function() {
+        createInitialRows('LA');
+        createInitialRows('School');
+        createInitialRows('Search');
+        addDragAndDropListeners();
+    };
+
+    function createInitialRows(tableType) {
+        const table = document.getElementById(`dynamicTable${tableType}`);
+        for (let i = 0; i < rowCount; i++) {
+            const row = document.createElement('tr');
+            row.className = 'govuk-table__row';
+            table.tBodies[0].appendChild(row);
+        }
+    }
+
+    function addColumn(tableType) {
+        const columnTitle = document.getElementById(`columnTitle${tableType}`).value;
+        let columnCount = tableType === 'LA' ? ++columnCountLA : tableType === 'School' ? ++columnCountSchool : ++columnCountSearch;
+        const predefinedData = tableType === 'LA' ? predefinedDataLA : tableType === 'School' ? predefinedDataSchool : predefinedDataSearch;
+
+        if (predefinedData[columnTitle] && columnCount <= Object.keys(predefinedData).length) {
+            const table = document.getElementById(`dynamicTable${tableType}`);
+            const headerRow = document.getElementById(`headerRow${tableType}`);
+
+            const th = document.createElement('th');
+            th.className = 'govuk-table__header';
+            th.textContent = columnTitle;
+            th.draggable = true;
+            headerRow.appendChild(th);
+
+            const rows = table.tBodies[0].rows;
+            for (let i = 0; i < rowCount; i++) {
+                const td = document.createElement('td');
+                td.className = 'govuk-table__cell';
+                td.textContent = predefinedData[columnTitle][i];
+                rows[i].appendChild(td);
+            }
+
+            addDragAndDropListeners();
+        }
+    }
+
+    function deleteColumn(tableType) {
+        let columnCount = tableType === 'LA' ? columnCountLA : tableType === 'School' ? columnCountSchool : columnCountSearch;
+        const table = document.getElementById(`dynamicTable${tableType}`);
+        const headerRow = document.getElementById(`headerRow${tableType}`);
+
+        if (columnCount > 0) {
+            headerRow.removeChild(headerRow.lastElementChild);
+            const rows = table.tBodies[0].rows;
+            for (let i = 0; i < rowCount; i++) {
+                rows[i].removeChild(rows[i].lastElementChild);
+            }
+            if (tableType === 'LA') columnCountLA--;
+            else if (tableType === 'School') columnCountSchool--;
+            else columnCountSearch--;
+        }
+    }
+
+    function addDragAndDropListeners() {
+        const headers = document.querySelectorAll(`#headerRowLA th, #headerRowSchool th, #headerRowSearch th`);
+
+        headers.forEach(header => {
+            header.addEventListener('dragstart', dragStart);
+            header.addEventListener('dragover', dragOver);
+            header.addEventListener('drop', drop);
+            header.addEventListener('dragend', dragEnd);
+        });
+    }
+
+    let dragged;
+
+    function dragStart(e) {
+        dragged = this;
+        this.classList.add('dragging');
+        e.dataTransfer.effectAllowed = 'move';
+    }
+
+    function dragOver(e) {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+    }
+
+    function drop(e) {
+        e.stopPropagation();
+        if (dragged !== this) {
+            const headerRow = this.parentNode;
+            const headers = Array.from(headerRow.children);
+            const draggedIndex = headers.indexOf(dragged);
+            const droppedIndex = headers.indexOf(this);
+
+            if (draggedIndex < droppedIndex) {
+                headerRow.insertBefore(dragged, this.nextSibling);
+            } else {
+                headerRow.insertBefore(dragged, this);
+            }
+
+            // Reorder data in the rows
+            reorderRows(headerRow, draggedIndex, droppedIndex);
+        }
+    }
+
+    function reorderRows(headerRow, draggedIndex, droppedIndex) {
+        const tableType = headerRow.closest('table').id.replace('dynamicTable', '');
+        const rows = document.querySelectorAll(`#dynamicTable${tableType} tbody tr`);
+
+        rows.forEach(row => {
+            const cells = Array.from(row.children);
+            const movedCell = cells[draggedIndex];
+
+            if (draggedIndex < droppedIndex) {
+                // Move cell after the dropped cell
+                cells[droppedIndex].after(movedCell);
+            } else {
+                // Move cell before the dropped cell
+                cells[droppedIndex].before(movedCell);
+            }
+        });
+    }
+
+    function dragEnd() {
+        this.classList.remove('dragging');
+    }
+
+    function openTab(event, tabName) {
+        const tabs = document.querySelectorAll('.tab-content');
+        const tabLinks = document.querySelectorAll('.tab');
+
+        tabLinks.forEach(tab => tab.classList.remove('active'));
+        tabs.forEach(tab => tab.classList.remove('active'));
+
+        event.currentTarget.classList.add('active');
+        document.getElementById(tabName).classList.add('active');
+    }
+</script>
+</body>
+</html>
+
+{% endblock %}
+
+

@@ -1,0 +1,108 @@
+{# 1 #}
+{% from 'node_modules/dfe-frontend-alpha/packages/components/header/macro.njk' import header %}
+
+{# 2 #}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{# 3 #}
+{% block header %}
+
+
+{{ header({
+  "showNav": "true",
+  "showSearch": "false",
+  "showHeaderActionLinks": "true",
+  "logoPath": "public/images",
+  "searchAction": "/search/",
+  "searchInputName": "q",
+  "service": {
+    "name": "Check a family's eligibility"
+  },
+  "headerActionLinks": [
+    {
+      "url"  : "/",
+      "label" : "My account"
+    },
+    {
+      "url"  : "../../",
+      "label" : "Sign out"
+    }
+  ],
+    "primaryLinks": [
+        {
+        "url"  : "#",
+        "label" : ""
+      }
+    ]
+
+})
+}}
+
+
+
+{% endblock %}
+
+{% block beforeContent %}
+
+
+  {% block backLink %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+    }) }}
+  {% endblock %}
+
+{% endblock %}
+
+{% block footer %}
+ {{ govukFooter({
+   meta: {
+     items: [
+       {
+         href: "../privacy",
+         text: "Privacy policy"
+       },
+       {
+        href: "../accessibility",
+        text: "Accessibility"
+      },
+       {
+         href: "../cookies",
+         text: "Cookies"
+       },
+       {
+        href: "../contact",
+        text: "Contact us"
+      },
+      {
+        href:"/manage-prototype",
+        text:"Manage your prototype"
+      },
+       {
+         href: "/manage-prototype/clear-data",
+         text: "Clear data"
+       }
+     ],
+     visuallyHiddenTitle: "Footer links"
+   }
+ }) }}
+{% endblock %}
+
+{# 4 #}
+{% block scripts %}
+  {{ super() }}
+  <script src="/public/javascripts/dfefrontend.js"></script>
+  <script type="text/javascript" src="assets/javascripts/autocomplete.js"></script>
+  <link rel="stylesheet" href="assets/css/accessible-autocomplete.min.css" />
+  <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+<script type="text/javascript">
+  if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
+  new MOJFrontend.MultiFileUpload({
+    container: $(".moj-multi-file-upload"),
+    uploadUrl: "/ajax-upload",
+    deleteUrl: "/ajax-delete",
+  });
+}
+
+</script>
+{% endblock %}
