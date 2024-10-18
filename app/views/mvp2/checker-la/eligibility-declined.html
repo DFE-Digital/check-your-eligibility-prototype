@@ -2,14 +2,43 @@
 
 {% set pageName="Home" %}
 
-
-
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <span class="govuk-hint">Reference: 44455453</span>
-    <h1 class="govuk-heading-l">Application declined</h1>
+
+    <div class="govuk-width-container">
+      <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-panel govuk-panel--confirmation">
+              <h1 class="govuk-panel__title">
+                Application declined
+              </h1>
+              <div class="govuk-panel__body">
+                Application reference number<br><strong>44455453</strong>
+              </div>
+            </div>
+
+            <h2 class="govuk-heading-m">What to do next</h2>
+            <p class="govuk-body">
+              Tell all relevant schools about your decision.
+            </p>
+            <p class="govuk-body">
+              If you need to find the application again, you can <a href="search">search all records</a>.
+            </p>
+            <p class="govuk-body">
+              <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+            </p>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div class="govuk-button-group">
+      <a class="govuk-link" href="../checker-la/ineligible-list">Confirm another application</a>
+      <a class="govuk-link" href="dashboard">Return to dashboard</a>
+    </div>
 
 
 <!---
@@ -20,18 +49,10 @@
 }) }}-->
 
 
-<div class="govuk-grid-row">
-<div class="govuk-grid-column-one-half">
-
-<p>Thank you for processing this application. </p>
-<p><strong>Please respond to your contacts at all relevant schools to pass on your decision.</strong> </p>
-<p>If you need to find the application again, search in Search all records. </p>
 
 
-        <div class="govuk-button-group">
-          <a class="govuk-link" href="../checker-la/ineligible-list">Confirm another application</a>
-          <a class="govuk-link" href="dashboard">Return to dashboard</a>
-        </div>
+
+
 
 
 
