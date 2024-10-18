@@ -1,4 +1,4 @@
-{% extends "layouts/main-two.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
   Start page template – {{ serviceName }} – GOV.UK Prototype Kit
@@ -26,7 +26,7 @@
         <p>This will help approvers at your organisation verify your identity.</p>
 
       {% endset %}
-      
+
       {{ govukNotificationBanner({
         html: html
       }) }}
@@ -72,7 +72,7 @@
           ]
         ]
       }) }}
-      
+
 
     </div>
 

@@ -1,13 +1,5 @@
 {% extends "../../mvp2/parent-soft-check/layouts/layout-dfe.html" %}
 
-{%- from "govuk/components/button/macro.njk" import govukButton -%}
-{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
-{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
-{%- from "govuk/components/input/macro.njk" import govukInput -%}
-{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
-
-{% set pageName="Home" %}
-
 {% block pageScripts %}
 <script type="text/javascript" src="/public/javascripts/autocomplete.js"></script>
 <script type="text/javascript">
@@ -15,29 +7,27 @@
     defaultValue: '',
     selectElement: document.querySelector('#school-picker')
   })
-document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('DOMContentLoaded', function () {
 
-  var addAnotherButton = document.querySelector('.moj-add-another__add-button');
-  var removeButton = document.querySelectorAll('.moj-add-another__remove-button');
-  removeButton.forEach(function (button){
-    button.addEventListener('click', updateLegends);
-  });
-  addAnotherButton.addEventListener('click', updateLegends);
-  function updateLegends(){
-    setTimeout(() => {
-      const legends = document.querySelectorAll('.moj-add-another__title');
-      legends.forEach(function (legend, index) {
-        legend.innerHTML = `Child ${index + 1}`;
-      });
-      var removeButton = document.querySelectorAll('.moj-add-another__remove-button');
-      removeButton.forEach(function (button){
-        button.addEventListener('click', updateLegends);
+    var addAnotherButton = document.querySelector('.moj-add-another__add-button');
+    var removeButton = document.querySelectorAll('.moj-add-another__remove-button');
+    removeButton.forEach(function (button) {
+      button.addEventListener('click', updateLegends);
     });
-    }, 50);
-  }
-})
-
-
+    addAnotherButton.addEventListener('click', updateLegends);
+    function updateLegends() {
+      setTimeout(() => {
+        const legends = document.querySelectorAll('.moj-add-another__title');
+        legends.forEach(function (legend, index) {
+          legend.innerHTML = `Child ${index + 1}`;
+        });
+        var removeButton = document.querySelectorAll('.moj-add-another__remove-button');
+        removeButton.forEach(function (button) {
+          button.addEventListener('click', updateLegends);
+        });
+      }, 50);
+    }
+  })
 </script>
 {% endblock %}
 
@@ -45,8 +35,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 {% block content %}
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-half">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
 
     <form action="check-answers" method="post" novalidate>
 
@@ -57,112 +47,110 @@ document.addEventListener('DOMContentLoaded', function () {
 
         <form method="post">
 
-
           {% call govukFieldset({
-            classes: 'moj-add-another__item',
-            legend: {
-              text: 'Child 1',
-              classes: 'moj-add-another__title govuk-fieldset__legend--m',
-              isPageHeading: false
-            }
+          classes: 'moj-add-another__item',
+          legend: {
+          text: 'Child 1',
+          classes: 'moj-add-another__title govuk-fieldset__legend--m',
+          isPageHeading: false
+          }
           }) %}
 
           {{ govukInput({
-            id: 'ch2-first-name',
-            name: 'ch2-first-name',
-            label: {
-              html: 'First name',
-              classes: 'govuk-!-font-weight-bold'
-            },
-            attributes: {
-              'data-name': 'child[%index%][first_name]',
-              'data-id': 'child[%index%][first_name]'
-            }
+          id: 'ch2-first-name',
+          name: 'ch2-first-name',
+          label: {
+          html: 'First name',
+          classes: 'govuk-!-font-weight-bold'
+          },
+          attributes: {
+          'data-name': 'child[%index%][first_name]',
+          'data-id': 'child[%index%][first_name]'
+          }
           }) }}
 
           {{ govukInput({
-            id: 'ch2-surname',
-            name: 'ch2-surname',
-            label: {
-              html: 'Last name',
-              classes: 'govuk-!-font-weight-bold'
-            },
-            attributes: {
-              'data-name': 'child[%index%][last_name]',
-              'data-id': 'child[%index%][last_name]'
-            }
+          id: 'ch2-surname',
+          name: 'ch2-surname',
+          label: {
+          html: 'Last name',
+          classes: 'govuk-!-font-weight-bold'
+          },
+          attributes: {
+          'data-name': 'child[%index%][last_name]',
+          'data-id': 'child[%index%][last_name]'
+          }
           }) }}
           {% include "../includes/schools.html" %}
 
           {{ govukDateInput({
-            id: "ch2-date-of-birth",
-            fieldset: {
-              legend: {
-                text: "Date of birth",
-                classes: "govuk-fieldset__legend--s"
-              }
-            },
-            hint: {
-              text: "For example, 31 3 1980"
-            },
-            items: [
-              {
-                id: "ch2-day",
-                name: "ch2-day",
-                label: "Day",
-                classes: "govuk-input--width-2",
-                attributes: {
-                  'data-name': 'child[%index%][dob][day]',
-                  'data-id': 'child[%index%][dob][day]'
-                }
-              },
-              {
-                id: "ch2-month",
-                name: "ch2-month",
-                label: "Month",
-                classes: "govuk-input--width-2",
-                attributes: {
-                  'data-name': 'child[%index%][dob][month]',
-                  'data-id': 'child[%index%][dob][month]'
-                }
-              },
-              {
-                id: "ch2-year",
-                name: "ch2-year",
-                label: "Year",
-                classes: "govuk-input--width-4",
-                attributes: {
-                  'data-name': 'child[%index%][dob][year]',
-                  'data-id': 'child[%index%][dob][year]'
-                }
-              }
-            ]
+          id: "ch2-date-of-birth",
+          fieldset: {
+          legend: {
+          text: "Date of birth",
+          classes: "govuk-fieldset__legend--s"
+          }
+          },
+          hint: {
+          text: "For example, 31 3 1980"
+          },
+          items: [
+          {
+          id: "ch2-day",
+          name: "ch2-day",
+          label: "Day",
+          classes: "govuk-input--width-2",
+          attributes: {
+          'data-name': 'child[%index%][dob][day]',
+          'data-id': 'child[%index%][dob][day]'
+          }
+          },
+          {
+          id: "ch2-month",
+          name: "ch2-month",
+          label: "Month",
+          classes: "govuk-input--width-2",
+          attributes: {
+          'data-name': 'child[%index%][dob][month]',
+          'data-id': 'child[%index%][dob][month]'
+          }
+          },
+          {
+          id: "ch2-year",
+          name: "ch2-year",
+          label: "Year",
+          classes: "govuk-input--width-4",
+          attributes: {
+          'data-name': 'child[%index%][dob][year]',
+          'data-id': 'child[%index%][dob][year]'
+          }
+          }
+          ]
           }) }}
 
           {% endcall %}
 
 
-
           <div class="moj-button-action">
             {{ govukButton({
-              text: 'Add another child',
-              classes: 'govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4'
+            text: 'Add another child',
+            classes: 'govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4'
             }) }}
           </div>
 
           <div class="moj-button-action">
             {{ govukButton({
-              text: 'Save and continue'
+            text: 'Save and continue'
             }) }}
           </div>
 
           <input type="hidden" name="child-2" id="child-2" value="Yes">
 
-     </form>
+        </form>
 
-        </div>
-      </form>
       </div>
-    </div>
+    </form>
+  </div>
+</div>
 
 {% endblock %}

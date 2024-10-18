@@ -1,4 +1,4 @@
-{# 1 #} 
+{# 1 #}
 {% from 'node_modules/dfe-frontend-alpha/packages/components/header/macro.njk' import header %}
 
 {# 2 #}
@@ -15,6 +15,9 @@
   "logoPath": "public/images",
   "searchAction": "/search/",
   "searchInputName": "q",
+  "logoAltText": "Department for Education",
+  "homeHref": "/index.html",
+  "selectedNav": view,
   "service": {
     "name": "Check a family's eligibility"
   },
@@ -34,7 +37,7 @@
         "label" : "Dashboard"
       }
     ]
-  
+
 })
 }}
 
@@ -56,7 +59,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-  
+
 
   {% block backLink %}
     {{ govukBackLink({
@@ -101,7 +104,7 @@
  }) }}
 {% endblock %}
 
-{# 4 #} 
+{# 4 #}
 {% block scripts %}
   {{ super() }}
   <script src="/public/javascripts/dfefrontend.js"></script>
