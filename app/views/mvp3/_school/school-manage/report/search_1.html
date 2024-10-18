@@ -86,8 +86,40 @@
             </div>
           </div>
 
-          {% include "_includes/pagination.html" %}
+          {%- from "moj/components/pagination/macro.njk" import mojPagination -%}
 
+          {{ mojPagination({
+            items: [{
+              text: '1',
+              href: '/page=1',
+              selected: true
+            }, {
+              text: '2',
+              href: '/page=2'
+            }, {
+              text: '3',
+              href: '/page=3'
+            }, {
+              type: 'dots'
+            }, {
+              text: '5',
+              href: '/page=5'
+            }],
+            results: {
+              count: 34,
+              from: 1,
+              to: 10,
+              text: 'results'
+            },
+            previous: {
+              text: 'Previous',
+              href: ''
+            },
+            next: {
+              text: 'Next',
+              href: ''
+            }
+          }) }}
         </div>
       </div>
 
@@ -133,17 +165,27 @@
 <!--COUNT RESULTS-->
 
 <script>
-  const updateVisibleRowCount = () => {
-    const table = document.querySelector("table");
+ const updateVisibleRowCount = () => {
+    const table = document.getElementById("resultsTable");
     const rows = table.querySelectorAll("tbody tr");
+    const visibleRows = Array.from(rows).filter(row => row.style.display !== "none");
 
-    const visibleRows = Array.from(rows).filter(row => {
-      return row.style.display !== "none";
-    });
+    // Update the visible row count display
+    document.getElementById("resultCount").innerText = visibleRows.length;
 
-    const visibleRowCount = visibleRows.length;
-    document.getElementById("resultCount").innerText = visibleRowCount;
-  };
+    // Limit the number of visible rows to a maximum of 10
+    if (visibleRows.length > 10) {
+        let count = 0;
+        rows.forEach(row => {
+            if (count >= 10) {
+                row.style.display = 'none'; // Hide excess rows
+            } else if (row.style.display !== "none") {
+                count++; // Increment count for visible rows
+            }
+        });
+    }
+};
+
   // To update the count (e.g., after filtering)
   updateVisibleRowCount();
 
@@ -157,6 +199,7 @@
 
 <script>
   function filterResults() {
+
     const keyword = document.getElementById('keywords').value.toLowerCase();
     const table = document.getElementById('resultsTable');
     const rows = table.querySelectorAll('tbody tr');
