@@ -1,4 +1,4 @@
-{# 1 #} 
+{# 1 #}
 {% from 'node_modules/dfe-frontend-alpha/packages/components/header/macro.njk' import header %}
 
 {# 2 #}
@@ -6,6 +6,7 @@
 
 {# 3 #}
 {% block header %}
+
 {{ header({
   "showNav": "true",
   "showSearch": "false",
@@ -13,6 +14,9 @@
   "logoPath": "public/images",
   "searchAction": "/search/",
   "searchInputName": "q",
+  "logoAltText": "Department for Education",
+  "homeHref": "/index.html",
+  "selectedNav": view,
   "service": {
     "name": "Check your eligibility"
   },
@@ -37,7 +41,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-  
+
   {% block backLink %}
     {{ govukBackLink({
       text: "Back",
@@ -81,7 +85,7 @@
  }) }}
 {% endblock %}
 
-{# 4 #} 
+{# 4 #}
 {% block scripts %}
   {{ super() }}
   <script src="/public/javascripts/dfefrontend.js"></script>
