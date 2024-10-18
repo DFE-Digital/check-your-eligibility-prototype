@@ -143,16 +143,16 @@
 
       {% endcall %}
 
+      {% from "govuk/components/button/macro.njk" import govukButton %}
 
+      {{ govukButton({
+        text: "Run check",
+        href: '../parent-soft-check/school-checking-loader'
+      }) }}
 
     </form>
 
-    {% from "govuk/components/button/macro.njk" import govukButton %}
 
-    {{ govukButton({
-      text: "Run check",
-      href: '../parent-soft-check/school-checking-loader'
-    }) }}
 
       </div>
 
