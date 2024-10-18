@@ -1,5 +1,5 @@
 {% extends "../../../../layouts/layout-dfe-schoolnav-noback.html" %}
-{% set pageName="eligible" %}
+{% set pageName="Children's details added" %}
 
 {% block content %}
 
@@ -9,9 +9,10 @@
 
 {% set html %}
   <h3 class="govuk-notification-banner__heading">
-    Children’s details added
+    {{pageName}}
   </h3>
-  <p class="govuk-body">Go to <a class="govuk-notification-banner__link" href="#">finalise applications</a> to complete the process for free school meals.</p>
+  <p class="govuk-body">You've successfully added details to Eden Tesfays free school meals application record.</p>
+
 {% endset %}
 
 {{ govukNotificationBanner({
@@ -19,8 +20,10 @@
   type: "success"
 }) }}
         <!--<h1 class="govuk-heading-xl">Children details added</h1>-->
-        <h3>You have successfully added children’s details to {{ data.parent-firstname}} free school meals application record.</h3>
-    </div>
+        <h3>Application record for {{ data["parent-firstname"] or "Sarah" }} {{ data["parent-surname"] or "Frodsham" }}</h3>
+
+
+      </div>
 </div>
 
 <div class="govuk-width-container">
@@ -34,7 +37,7 @@
       </thead>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell"> {{ data["first-name"] }} {{ data["surname"] }} </td>
+          <td class="govuk-table__cell"> {{ data["ch1-first-name"]}}{{ data["surname"] }} </td>
           <td class="govuk-table__cell">44455453</td>
         </tr>
 
@@ -48,21 +51,24 @@
     </table>
   </div>
 </div>
-<div class="govuk-!-padding-bottom-3"></div>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
-        <h2 class="govuk-heading-m">What to do next</h2>
-
-        <p>As these children are entitled to free school meals, you’ll now need to add details of their application to your own system before finalising.</p>
 
 
-       <div class="govuk-button-group">
-        {{ govukButton({
-          text: "Finalise applications",
-          href: "../decision/finalise/applications"
-        }) }}
 
-        <a class="govuk-link" href="../../dashboard">Return to dashboard</a>
+        <div class="govuk-width-container">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+              <h2 class="govuk-heading-m">What to do next</h2>
+
+              <p> <a href="" class="govuk-link" onclick="printPage()"> Print this page</a> and give to the parent or guardian as a record of the reference numbers. </p>
+
+              <p>Add details of their application to your own system then <a href="../decision/finalise/applications" class="govuk-link">finalise applications</p>
+          </div>
+      </div>
+      </div>
+
+      <div class="govuk-!-padding-bottom-3"></div>
+
+      <p><a href="../../dashboard" class="govuk-link">Return to dashboard</p>
       </div>
     </div>
 </div>
@@ -77,6 +83,13 @@
 {% endblock %}
 
 {% block pageScripts %}
+
+
+<script>
+  function printPage() {
+      window.print();  // This will open the print dialog
+  }
+  </script>
 
 <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
 {% endblock %}

@@ -21,17 +21,17 @@
       isPageHeading: true
       }
       }) %}
-      <p class="govuk-body">Enter the details of the parent or guardian who is applying for free school meals.</p>
+      <p class="govuk-body">Enter the details of the parent or guardian who applied for free school meals.</p>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
-<!--
+<!--{% endcall %} -->
+
       {{ govukInput({
       label: {
       text: "First name"
       },
       id: "parent-firstname",
       name: "parent-firstname",
-
       autocomplete: "name",
       classes: "govuk-input--width-20",
       spellcheck: false
@@ -43,92 +43,6 @@
       },
       id: "parent-surname",
       name: "parent-surname",
-      autocomplete: "surname",
-      classes: "govuk-input--width-20",
-      spellcheck: false
-      }) }}
-
-
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break">
-
-      {{ govukInput({
-      label: {
-      text: "National Insurance number"
-      },
-      id: "NINO",
-      name: "NINO",
-      autocomplete: "NINO",
-      classes: "govuk-input--width-20",
-      spellcheck: false
-      }) }}
-      <p>Or</p>
-      {{ govukInput({
-      label: {
-      text: "Asylum support reference number"
-      },
-      hint: {
-      text: "If they don't have a National insurance number"
-      },
-      id: "nass",
-      name: "nass",
-      autocomplete: "name",
-      classes: "govuk-input--width-20",
-
-      spellcheck: false
-      }) }}
-
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break">
-
-      {{ govukDateInput({
-
-      id: "dob",
-      namePrefix: "dob",
-      fieldset: {
-      legend: {
-      text: "Parent or guardian date of birth",
-      isPageHeading: false
-      }
-      },
-      hint: {
-      text: "For example, 27 3 1980"
-      }
-      }) }}
-
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break">
-
-      {{ govukInput({
-      label: {
-      text: "Parent or guardian's email address"
-      },
-      id: "email",
-      name: "email",
-      hint: {
-      text: "This is so we can notify them with updates of the application"
-      },
-      autocomplete: "email",
-      classes: "govuk-input--width-20",
-      spellcheck: false
-      }) }}
-
-      {% endcall %} -->
-
-      {{ govukInput({
-      label: {
-      text: "First name"
-      },
-      id: "parent-firstname",
-      name: "parent-firstname",
-      autocomplete: "name",
-      classes: "govuk-input--width-20",
-      spellcheck: false
-      }) }}
-
-      {{ govukInput({
-      label: {
-      text: "Last name"
-      },
-      id: "parent-surname",
-      name: "surname",
       autocomplete: "name",
       classes: "govuk-input--width-20",
       spellcheck: false
@@ -230,7 +144,7 @@
       {% endcall %}
 
     </form>
-    <button type="Run check" class="govuk-button">Run check</button>
+    <button type="submit" class="govuk-button">Run check</button>
   </div>
 </div>
 </div>

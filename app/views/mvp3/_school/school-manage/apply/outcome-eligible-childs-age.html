@@ -1,6 +1,5 @@
 {% extends "../../../../layouts/layout-dfe-schoolnav-noback.html" %}
-
-{% set pageName="Home" %}
+{% set pageName="Provide details of all children" %}
 
 {% block pageScripts %}
 <script type="text/javascript" src="/public/javascripts/autocomplete.js"></script>
@@ -9,6 +8,28 @@
     defaultValue: '',
     selectElement: document.querySelector('#school-picker')
   })
+document.addEventListener('DOMContentLoaded', function () {
+
+  var addAnotherButton = document.querySelector('.moj-add-another__add-button');
+  var removeButton = document.querySelectorAll('.moj-add-another__remove-button');
+  removeButton.forEach(function (button){
+    button.addEventListener('click', updateLegends);
+  });
+  addAnotherButton.addEventListener('click', updateLegends);
+  function updateLegends(){
+    setTimeout(() => {
+      const legends = document.querySelectorAll('.moj-add-another__title');
+      legends.forEach(function (legend, index) {
+        legend.innerHTML = `Child ${index + 1}`;
+      });
+      var removeButton = document.querySelectorAll('.moj-add-another__remove-button');
+      removeButton.forEach(function (button){
+        button.addEventListener('click', updateLegends);
+    });
+    }, 50);
+  }
+})
+
 </script>
 {% endblock %}
 
@@ -16,120 +37,142 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-half">
+<form action="school-check-answers" method="post" novalidate>
 
-    <form action="check-answers" method="post" novalidate>
+  <div data-module="moj-add-another">
 
-      <div class="govuk-width-container">
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-full">
-              <h1 class="govuk-heading-l">Provide details of all children</h1>
-          </div>
-        </div>
-      </div>
+    <h1 class="govuk-heading-l" tabindex="-1">Provide details of your children</h1>
 
-        {% call govukFieldset({
-          classes: 'moj-add-another__item',
+    <form method="post">
+
+      {% call govukFieldset({
+        classes: 'moj-add-another__item',
+        legend: {
+          text: 'Child 1',
+          classes: 'moj-add-another__title govuk-fieldset__legend--m',
+          isPageHeading: false
+        }
+      }) %}
+
+      {{ govukInput({
+        id: 'ch2-first-name',
+        name: 'ch2-first-name',
+        label: {
+          html: 'First name',
+          classes: 'govuk-!-font-weight-bold'
+        },
+        attributes: {
+          'data-name': 'child[%index%][first_name]',
+          'data-id': 'child[%index%][first_name]'
+        }
+      }) }}
+
+      {{ govukInput({
+        id: 'ch2-surname',
+        name: 'ch2-surname',
+        label: {
+          html: 'Last name',
+          classes: 'govuk-!-font-weight-bold'
+        },
+        attributes: {
+          'data-name': 'child[%index%][last_name]',
+          'data-id': 'child[%index%][last_name]'
+        }
+      }) }}
+
+
+      {% include "../../../../_includes/schools.html" %}
+
+
+      {{ govukDateInput({
+        id: "ch2-date-of-birth",
+        fieldset: {
           legend: {
-            text: 'Child 1',
-            classes: 'moj-add-another__title govuk-fieldset__legend--m',
-            isPageHeading: false
+            text: "Date of birth",
+            classes: "govuk-fieldset__legend--s"
           }
-        }) %}
-        {{ govukInput({
-          id: 'ch1-first-name',
-          name: 'ch1-first-name',
-          classes:'govuk-input--width-20',
-          label: {
-            html: 'First name',
-            classes: 'govuk-!-font-weight-bold'
-          },
-          attributes: {
-            'data-name': 'child[%index%][first_name]',
-            'data-id': 'child[%index%][first_name]'
-          }
-        }) }}
-
-        {{ govukInput({
-          id: 'ch1-surname',
-          name: 'ch1-surname',
-          classes:'govuk-input--width-20',
-          label: {
-            html: 'Last name',
-            classes: 'govuk-!-font-weight-bold'
-          },
-          attributes: {
-            'data-name': 'child[%index%][last_name]',
-            'data-id': 'child[%index%][last_name]'
-          }
-        }) }}
-        {{ govukDateInput({
-          id: "ch1-date-of-birth",
-          fieldset: {
-            legend: {
-              text: "Date of birth",
-              classes: "govuk-fieldset__legend--s"
+        },
+        hint: {
+          text: "For example, 31 3 1980"
+        },
+        items: [
+          {
+            id: "ch2-day",
+            name: "ch2-day",
+            label: "Day",
+            classes: "govuk-input--width-2",
+            attributes: {
+              'data-name': 'child[%index%][dob][day]',
+              'data-id': 'child[%index%][dob][day]'
             }
           },
-          hint: {
-            text: "For example, 31 3 2007"
-          },
-          items: [
-            {
-              id: "ch1-day",
-              name: "ch1-day",
-              label: "Day",
-              classes: "govuk-input--width-2",
-              attributes: {
-                'data-name': 'child[%index%][dob][day]',
-                'data-id': 'child[%index%][dob][day]'
-              }
-            },
-            {
-              id: "ch1-month",
-              name: "ch1-month",
-              label: "Month",
-              classes: "govuk-input--width-2",
-              attributes: {
-                'data-name': 'child[%index%][dob][month]',
-                'data-id': 'child[%index%][dob][month]'
-              }
-            },
-            {
-              id: "ch1-year",
-              name: "ch1-year",
-              label: "Year",
-              classes: "govuk-input--width-2",
-              attributes: {
-                'data-name': 'child[%index%][dob][year]',
-                'data-id': 'child[%index%][dob][year]'
-              }
+          {
+            id: "ch2-month",
+            name: "ch2-month",
+            label: "Month",
+            classes: "govuk-input--width-2",
+            attributes: {
+              'data-name': 'child[%index%][dob][month]',
+              'data-id': 'child[%index%][dob][month]'
             }
-          ]
-        }) }}
+          },
+          {
+            id: "ch2-year",
+            name: "ch2-year",
+            label: "Year",
+            classes: "govuk-input--width-4",
+            attributes: {
+              'data-name': 'child[%index%][dob][year]',
+              'data-id': 'child[%index%][dob][year]'
+            }
+          }
+        ]
+      }) }}
 
-        <div class="govuk-!-padding-bottom-3"></div>
+      {% endcall %}
 
-        {% from "govuk/components/button/macro.njk" import govukButton %}
 
+
+      <div class="moj-button-action">
         {{ govukButton({
-          text: "Add another child",
-          classes: "govuk-button--secondary",
-          href: '../checker/childs-age-two'
+          text: 'Add another child',
+          classes: 'govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4'
         }) }}
-
-        {% endcall %}
-
-{% from "govuk/components/button/macro.njk" import govukButton %}
-
-{{ govukButton({
-  text: "Save and continue",
-  href: '../apply/outcome-eligible-check-answers'
-}) }}
-
       </div>
+
+      <div class="moj-button-action">
+        {{ govukButton({
+          text: 'Save and continue'
+        }) }}
+      </div>
+
+      <input type="hidden" name="child-2" id="child-2" value="Yes">
+
     </form>
 
   </div>
+
+
+
+
+
+
+</form>
+
+
+
+
+
+
+
+
+
+
+  </div>
+
 </div>
+
+
+
 
 {% endblock %}
