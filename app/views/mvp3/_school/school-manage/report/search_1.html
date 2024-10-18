@@ -50,7 +50,11 @@
 
                     <tbody class="govuk-table__body">
                       {% for application in data.applications %}
-                      <tr class="govuk-table__row" data-status="{% if application.status.yes == 'Entitled' %}status-Entitled{% elif application.status.yes == 'Sent for review' %}status-review{% elif application.status.yes == 'Evidence needed' %}status-Evidence-needed{% endif %}">
+                      <tr class="govuk-table__row" data-status="{% if application.status.yes == 'Entitled' %}status-Entitled
+                      {% elif application.status.yes == 'Not Entitled' %}status-Not-Entitled
+                      {% elif application.status.yes == 'Sent for review' %}status-review
+                      {% elif application.status.yes == 'Evidence needed' %}status-Evidence-needed
+                      {% endif %}">
                         <th scope="row" class="govuk-table__header">
                           <a href="#" class="govuk-link">{{ application.id }}</a>
                         </th>
@@ -61,14 +65,10 @@
                           {% if application.status.yes == "Entitled" %}
                             <strong class="govuk-tag govuk-tag--green">{{ application.status.yes }}</strong>
                           {% elif application.status.yes == "Sent for review" %}
-                            <strong class="govuk-tag govuk-tag--purple">{{ application.status.yes }}</strong>
-                          {% elif application.status.yes == "Review entitled" %}
                             <strong class="govuk-tag govuk-tag--blue">{{ application.status.yes }}</strong>
                           {% elif application.status.yes == "Evidence needed" %}
-                            <strong class="govuk-tag govuk-tag--light-blue">{{ application.status.yes }}</strong>
-                          {% elif application.status.yes == "Receiving entitlement" %}
                             <strong class="govuk-tag govuk-tag--turquoise">{{ application.status.yes }}</strong>
-                          {% elif application.status.yes == "Reviewed not entitled" %}
+                          {% elif application.status.yes == "Not Entitled" %}
                             <strong class="govuk-tag govuk-tag--red">{{ application.status.yes }}</strong>
                           {% else %}
                             <strong class="govuk-tag">{{ application.status.yes }}</strong>

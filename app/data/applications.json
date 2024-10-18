@@ -24,7 +24,7 @@
     },
     "dob": "2017-01-10",
     "status": {
-      "yes": "Entitled"
+      "yes": "Not Entitled"
     },
     "eligible": {
       "date": "2023-09-01"
@@ -75,7 +75,7 @@
     },
     "dob": "2017-12-13",
     "status": {
-      "yes": "Reviewed entitled"
+      "yes": "Not Entitled"
     },
     "eligible": {
       "date": "2023-09-01"
@@ -143,7 +143,7 @@
     },
     "dob": "2021-05-26",
     "status": {
-      "yes": "Reviewed entitled"
+      "yes": "Entitled"
     },
     "eligible": {
       "date": "2024-09-07"
@@ -194,7 +194,7 @@
     },
     "dob": "2018-12-11",
     "status": {
-      "yes": "Reviewed entitled"
+      "yes": "Entitled"
     },
     "eligible": {
       "date": "2024-09-26"
@@ -245,7 +245,7 @@
     },
     "dob": "2021-11-06",
     "status": {
-      "yes": "Entitled"
+      "yes": "Not Entitled"
     },
     "eligible": {
       "date": "2024-09-12"
@@ -279,7 +279,7 @@
     },
     "dob": "2020-07-12",
     "status": {
-      "yes": "Receiving entitlement"
+      "yes": "Entitled"
     },
     "eligible": {
       "date": "2024-09-18"
@@ -313,7 +313,7 @@
     },
     "dob": "2021-01-21",
     "status": {
-      "yes": "Receiving entitlement"
+      "yes": "Not Entitled"
     },
     "eligible": {
       "date": "2024-09-18"
@@ -432,7 +432,7 @@
     },
     "dob": "2019-10-19",
     "status": {
-      "yes": "Reviewed entitled"
+      "yes": "Entitled"
     },
     "eligible": {
       "date": "2024-09-15"
@@ -449,7 +449,7 @@
     },
     "dob": "2021-06-18",
     "status": {
-      "yes": "Reviewed entitled"
+      "yes": "Not Entitled"
     },
     "eligible": {
       "date": "2024-09-19"
@@ -466,7 +466,7 @@
     },
     "dob": "2020-02-20",
     "status": {
-      "yes": "Reviewed entitled"
+      "yes": "Entitled"
     },
     "eligible": {
       "date": "2024-10-06"
