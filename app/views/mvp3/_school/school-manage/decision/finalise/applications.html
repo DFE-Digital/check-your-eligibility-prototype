@@ -1,4 +1,4 @@
-{% extends "/layouts/layout-dfe-schoolnav-noback.html" %}
+{% extends "/layouts/mvp3/layout-dfe.html" %}
 {% set pageName="Finalise applications" %}
 {% set applicationSent %}
 
@@ -18,11 +18,14 @@
   <div class="moj-page-header-actions__title">
     <div class=“govuk-grid-column-full”>
 
-    <div class="notifications-container"></div>
 
-    <span id="notifications" class="moj-notification-badge" style="white-space: nowrap";>13</span>
-    <h1 class="govuk-heading-l">Finalise applications</h1>
+      <div class="notifications-container" style="display: flex; justify-content: space-between; align-items: center;">
+        <h1 class="govuk-heading-l" style="margin: 0;">Finalise applications</h1>
+        <span id="notifications" class="moj-notification-badge" style="white-space: nowrap; margin-left: 10px;">13</span>
+    </div>
+
   </div>
+
 <div class="moj-page-header-actions__title">
 </div>
 </div>
@@ -31,7 +34,7 @@
 <div>
   <div class="govuk-!-padding-bottom-3"></div>
 <div class=“govuk-grid-column-full”>
-  <p class=“govuk-g”>All the children in the table on this page are entitled to free school meals. Now you should finalise their applications.</p>
+  <p class="govuk-body-l">All the children in the table on this page are entitled to free school meals. </p>
 </div>
 </div>
 
@@ -68,14 +71,16 @@
 
 <div class="govuk-!-padding-bottom-3"></div>
 
-<h2 class="govuk-heading-m">How to finalise</h2>
+<h2 class="govuk-heading-m">How to finalise an application</h2>
 
   <ol>
-    <li>If you haven't already, add the details of each application to your own system.</li>
-    <li>Select the records you've added using the tick boxes.</li>
-    <li>Click 'Finalise applications'.</li>
+    <li>Add the details of each application to your own system.</li>
+    <li>Select all the records you've added using the tick boxes and select 'Finalise applications'.</li>
   </ol>
 
+  <div class="govuk-inset-text">
+    You can also finalise an individual application by selecting the reference number link.
+  </div>
   <div class="govuk-!-padding-bottom-3"></div>
 
   <div class="moj-button-action">
@@ -175,6 +180,8 @@
   }) }}
 
 {% endset %}
+
+<div class="govuk-!-padding-bottom-3"></div>
 
 <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
   <thead class="govuk-table__head">

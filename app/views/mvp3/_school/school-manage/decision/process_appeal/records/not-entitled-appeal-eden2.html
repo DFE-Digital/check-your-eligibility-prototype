@@ -27,8 +27,6 @@ href: "javascript:window.history.back()"
 
 {% block content %}
 
-
-
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
   <div class="govuk-grid-column-full">
 
@@ -38,22 +36,22 @@ href: "javascript:window.history.back()"
       <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
         <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
       </svg>
-    
+
       <div class="moj-banner__message">
         <h2 class="govuk-heading-l">Sibling added to record</h2>
-      
+
     <p class="govuk-body govuk-!-margin-bottom-5">
         You have added sibling details to this record. This will show immediately.
       </p>
       <button class="govuk-button govuk-button--secondary hide">Dismiss this message</button>
-        
-      
-    
+
+
+
       </div>
-    
+
     </div>
-    
-    
+
+
 
     {% elif data['nass-number-entered'] =="yes" %}
     <div class="moj-banner moj-banner--success" role="region" aria-label="Success">
@@ -61,130 +59,132 @@ href: "javascript:window.history.back()"
       <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
         <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
       </svg>
-    
+
       <div class="moj-banner__message">
         <h2 class="govuk-heading-l govuk-!-margin-bottom-5">Asylum support reference added to record</h2>
-        
+
+
       <button class="govuk-button govuk-button--secondary hide">Dismiss this message</button>
-      
+
+
+
+
+
       </div>
-    
+
     </div>
-    
+
     {% endif %}
 
+<!---
+    <span class="govuk-hint">Reference: 44455453</span>
+-->
+
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <h1 class="govuk-heading-xl" style="margin: 1;">Warren Sutton</h1>
+  <div style="display: flex;">
+    <div class="govuk-button-group" style="display: flex;">
+      {{ govukButton({
+        text: "Send for review",
+        href:'../records/pending-approve-areyousure'
+      }) }}
+      {{ govukButton({
+        text: "Download as csv file",
+        classes: 'govuk-button--secondary',
+        href:'../records/pending-decline-areyousure'
+      }) }}
+    </div>
+  </div>
+</div>
+<!---
     {{ mojPageHeaderActions({
       heading: {
-        text: 'Eden Tesfay'
-      },
-      items: [
-      ]
+        text: 'Warren Sutton'
+      }
     }) }}
-
-{% from "govuk/components/button/macro.njk" import govukButton %}
+  -->
 
 <div class="govuk-width-container">
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+  <div class="govuk-grid-column-full-width">
+    <div class="govuk-grid-column-two-thirds">
       <p class="govuk-heading-s">Once you've received evidence from this parent:</p>
       <ol class="govuk-list govuk-list--number">
-        <li>Send it to your local authority contact along with the application reference number. Typically this would happen via email.</li>
+        <li>Send it to your local authority contact along with the application reference number. <br>Typically this would happen via email.</li>
         <li>Select ‘Send for review’ on this page. This will notify the local authority that the free school meals application is ready for their attention.</li>
       </ol>
     </div>
   </div>
 </div>
-
-
-  </div>
-
+</div>
 </div>
 
-<h2 class="govuk-heading-l govuk-!-margin-bottom govuk-!-font-size-32">Children Overview</h2>
+<div class="govuk-!-padding-bottom-3"></div>
+
+<!---
+<div class="moj-button-action">
+  {{ govukButton({
+    text: 'Send for review',
+    href: '../checker/not-entitled-appeal-areyousure.html'
+  }) }}
+
+  {{ govukButton({
+    text: "Download csv file",
+    classes: "govuk-button--secondary"
+  }) }}
+</div>-->
 
 
-{% from "govuk/components/tag/macro.njk" import govukTag %}
-{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Child details: 31410907"
+    },
+    actions: {
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header">Name</th>
-          <th class="govuk-table__header">Date of birth</th>
-          <th class="govuk-table__header">Status of application</th>
-          <th class="govuk-table__header">Reference</th>
-          <th class="govuk-table__header">Edit</th>
-          <th class="govuk-table__header"></th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Samual Tesfay</td>
-          <td class="govuk-table__cell">18 September 2017</td>
-          <td class="govuk-table__cell">
-            {{ govukTag({
-              text: "Sent for review",
-              classes: "govuk-tag--grey"
-            }) }}
-          </td>
-          <td class="govuk-table__cell">44455453</td>
-          <td class="govuk-table__cell"><a href="../checker/outcome-eligible-childs-age.html" class="govuk-link">Edit details</a></td>
-          <td class="govuk-table__cell">
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Thomas Tesfay</td>
-          <td class="govuk-table__cell">01 June 2019</td>
-          <td class="govuk-table__cell">
-            {{ govukTag({
-              text: "Document needed",
-              classes: "govuk-tag--light-blue"
-            }) }}
-          </td>
-          <td class="govuk-table__cell">44455454</td>
-          <td class="govuk-table__cell"><a href="../checker/outcome-eligible-childs-age.html" class="govuk-link">Edit details</a></td>
-          <td class="govuk-table__cell">
-            {{ govukButton({
-              text: "Send for review",
-              classes: 'govuk-button--primary',
-              href:'../checker/not-entitled-appeal-areyousure'
-            }) }}
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Rachel Tesfay</td>
-          <td class="govuk-table__cell">05 August 2021</td>
-          <td class="govuk-table__cell">
-            {{ govukTag({
-              text: "Document needed",
-              classes: "govuk-tag--light-blue"
-            }) }}
-          </td>
-          <td class="govuk-table__cell">44455455</td>
-          <td class="govuk-table__cell"><a href="../checker/outcome-eligible-childs-age.html" class="govuk-link">Edit details</a></td>
-          <td class="govuk-table__cell">
-            {{ govukButton({
-              text: "Send for review",
-              classes: 'govuk-button--primary',
-              href:'../checker/not-entitled-appeal-areyousure'
-            }) }}
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
+    }
+  },
+  rows: [
 
-<div class="govuk-!-padding-bottom-5"></div>
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Joshua Sutton"
+      }
+    },
 
+
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        html: "01 September 2009"
+      }
+    },
+
+    {
+      key: {
+        text: "Status of application"
+      },
+      value: {
+        html: govukTag({
+                text: "Entitled",
+                classes: "govuk-tag--green"
+              })
+      }
+    }
+  ]
+}) }}
+
+
+<div class="govuk-!-padding-bottom-3"></div>
 
 
 <!-- PERSON -->
 
 
-{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
 {{ govukSummaryList({
   card: {
@@ -197,7 +197,7 @@ href: "javascript:window.history.back()"
           href: "#",
           visuallyHiddenText: "of University of Gloucestershire"
         }
-       
+
       ]
     }
   },
@@ -210,7 +210,124 @@ href: "javascript:window.history.back()"
         text: "Name"
       },
       value: {
-        html: "Eden Tesfay"
+        html: "Warren Sutton"
+      }
+    },
+
+
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        html: "01 September 1984"
+      }
+    },
+
+
+
+    {
+      key: {
+        text: "National Insurance number"
+      },
+
+
+      value: {
+        html: "AB123456C"
+      }
+    },
+
+
+    {
+      key: {
+        text: "Email address"
+      },
+
+
+      value: {
+        html: "warren.sutton1@gmail.com"
+      }
+    }
+
+
+  ]
+}) }}
+
+<!---
+{{ govukSummaryList({
+  card: {
+  title: {
+  text: "Lisa Sutton"
+  },
+  actions: {
+  items: [
+
+
+  {
+  href: "#",
+  text: "Edit details",
+  visuallyHiddenText: "from application"
+  }
+  ]
+  }
+  },
+  rows: [
+
+
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        html: "18 November 2018"
+      }
+    },
+
+    {
+      key: {
+        text: "Status of application"
+      },
+      value: {
+        html: govukTag({
+                text: "Document needed",
+                classes: "govuk-tag--light-blue"
+              })
+        }
+    }
+
+  ]
+  }) }}
+
+<!-- PERSON
+
+
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Parent / Guardian"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          visuallyHiddenText: "of University of Gloucestershire"
+        }
+
+      ]
+    }
+  },
+  rows: [
+
+
+
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        html: "Warren Sutton"
       }
     },
 
@@ -222,7 +339,7 @@ href: "javascript:window.history.back()"
         html: "Eritrean"
       }
     },
-     
+
     {
       key: {
         text: "Date of birth"
@@ -237,7 +354,7 @@ href: "javascript:window.history.back()"
         text: "Asylum support reference number"
       },
 
-      
+
       value: {
         html: "Should only be 9 numbers long"
       }
@@ -247,17 +364,19 @@ href: "javascript:window.history.back()"
         text: "Email address"
       },
 
-      
+
       value: {
         html: "edamcheese@hotmail.com"
       }
     }
 
-     
-    
-
   ]
 }) }}
+  -->
+
+
+
+
 
 
 

@@ -32,7 +32,7 @@
           Name
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["parent-firstname"] or "Sarah" }} {{ data["parent-surname"] or "Frodsham" }}
+          {{ data["parent-firstname"] or "Eden" }} {{ data["parent-surname"] or "Tesfay" }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -40,7 +40,7 @@
           Date of birth
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["dob-day"] }} {{ data["dob-month"] }} {{ data["dob-year"] }}
+          {{ data["dob-day"] or "10" }} {{ data["dob-month"] or "04" }} {{ data["dob-year"] or "1984" }}
         </dd>
       </div>
 
@@ -49,7 +49,7 @@
           Email address
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data.email }}
+          {{ data["email"] or "tesfay@gmail.com" }}
         </dd>
       </div>
 
@@ -58,7 +58,7 @@
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">National Insurance number</dt>
         <dd class="govuk-summary-list__value">
-          {{ data["ni-number-entered"] }}
+          {{ data["ni-number-entered"] or "NW123456B" }}
         </dd>
       </div>
       {% else %}
@@ -67,7 +67,7 @@
           Asylum support reference number
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["asr-number-entered"] }}
+          {{ data["asr-number-entered"] or "98340001A" }}
         </dd>
       </div>
       {% endif %}
@@ -100,7 +100,7 @@
           Name
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["ch1-first-name"] or "Amy" }} {{ data["ch1-surname"] or "Tilly" }}
+          {{ data["ch1-first-name"] or "Rachel" }} {{ data["ch1-surname"] or "Tesfay" }}
         </dd>
 
       </div>
@@ -109,7 +109,7 @@
           Date of birth
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["dob-day"] }} {{ data["dob-month"] }} {{ data["dob-year"] }}        </dd>
+          {{ data["dob-day"] or "12" }} {{ data["dob-month"] or "06" }} {{ data["dob-year"] or "2020" }}        </dd>
       </div>
 
       {% if data['child-2'] == 'Yes' %}
