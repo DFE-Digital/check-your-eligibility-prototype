@@ -1,6 +1,6 @@
 {% extends "/layouts/layout-dfe-schoolnav-noback.html" %}
 
-{% set pageName="Outcome not entitled" %}
+{% set pageName="Finalise these applications?" %}
 
 
 
@@ -9,12 +9,52 @@
 <div class="govuk-width-container">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <p class="govuk-heading-l">Finalise these applications?</p>
+      <p class="govuk-heading-l">{{pageName}}</p>
 
       {{ govukWarningText({
         text: "Applications should only be finalised after you've added the details to your own system.",
         iconFallbackText: "Warning"
       }) }}
+
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="start-date-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              Add a start date for these applications.
+          </legend>
+          <div id="start-date-hint" class="govuk-hint">
+            For example, 27 09 2024
+          </div>
+          <div class="govuk-date-input" id="start-date">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="start-date-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-date--day" name="start-date--day" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="start-date--month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-date--month" name="start-date--month" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="start-date-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="start-date-year" name="start-date-year" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
 
     </div>
   </div>

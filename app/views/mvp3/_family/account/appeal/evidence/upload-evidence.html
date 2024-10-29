@@ -1,0 +1,22 @@
+{% extends "/layouts/mvp3/layout-dfe.html" %}
+{% set pageName="Do you have evidence?" %}
+
+{%block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds ">
+<p class="govuk-body">Add in upload guidance - photo screen</p>
+
+<div class="govuk-form-group">
+    <label class="govuk-label" for="file-upload-1">
+      Upload a file
+    </label>
+    <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+  </div>
+
+{{ govukButton({
+    text: "Save and continue"
+}) }}
+
+
+{%endblock %}

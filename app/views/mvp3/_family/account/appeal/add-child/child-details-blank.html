@@ -1,0 +1,22 @@
+{% extends "/layouts/mvp3/layout-dfe.html" %}
+{% set pageName="Child and school details" %}
+
+{%block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-heading-l">
+        {{pageName}}
+      </div>
+      <p class="govuk-body">
+        Enter all your children that you want to add to the free school meals application including the schools that
+        they attend. Include all children even if they are at different schools.
+      </p>
+
+
+    {{ govukButton({
+    text: "Add a child"
+    }) }}
+
+</div>
+    {%endblock %}
