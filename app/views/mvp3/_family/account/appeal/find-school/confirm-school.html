@@ -1,0 +1,31 @@
+{% extends "/layouts/mvp3/layout-dfe.html" %}
+{% set pageName="Confirm school" %}
+
+{%block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-width-container">
+    <div class="govuk-heading-l">
+      {{pageName}}
+    </div>
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+
+    <p>1 school found for <b>wr11nl</b> and <b>St Mary's</b>. <a href="find-school-1.html">Search again</a></p>
+
+    {{ govukInsetText({
+    html: "St Mary's Primary school<br>Manchester<br>M24 1NL"
+    }) }}
+
+    {{ govukButton({
+    text: "Use this address"
+    }) }}
+
+    <!-- <p class="govuk-body"><a href="#" class="govuk-link">Select a different address</a></p> -->
+    <p class="govuk-body govuk-!-margin-bottom-0"><a href="#" class="govuk-link">Enter address manually</a></p>
+    </div>
+
+
+</div>
+{% endblock %}

@@ -6,29 +6,28 @@
 
 {# 3 #}
 {% block header %}
-{% from 'node_modules/dfe-frontend/packages/components/header/macro.njk' import header %}
 
 {{ header({
-    "showNav": "false",
-    "showSearch": "false",
-    "showHeaderActionLinks": "true",
-    "logoPath": "public/images",
-    "searchAction": "/search/",
-    "searchInputName": "q",
-    "logoAltText": "Department for Education",
-    "homeHref": "/index.html",
-    "selectedNav": false,
-    "service": {
-      "name": "Check a family's eligibility",
-      "serviceUrl": "/index.html"
-    },
+  "showNav": "true",
+  "showSearch": "true",
+  "showHeaderActionLinks": "true",
+  "logoPath": "public/images",
+  "searchAction": "/search/",
+  "searchInputName": "q",
+  "logoAltText": "Department for Education",
+  "homeHref": "https://gov.uk",
+  "selectedNav": selectedNav,
+  "service": {
+    "name": "Get help with school and childcare costs",
+    "serviceUrl": "/"
+  },
     "headerActionLinks": [
       {
-        "url"  : "",
+        "url"  : "/",
         "label" : "My account"
       },
       {
-        "url"  : "",
+        "url"  : "/",
         "label" : "Sign out"
       }
     ],
@@ -38,7 +37,7 @@
         "label" : "Dashboard"
       }, {
         "url"  : "#",
-        "label" : ""
+        "label" : " "
       }, {
         "url"  : "#",
         "label" : " "

@@ -1,0 +1,52 @@
+{% extends "/layouts/mvp3/layout-dfe-b.html" %}
+{% set pageName="Do you have evidence?" %}
+
+{%block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds ">
+
+{{ govukRadios({
+  name: "signIn",
+  fieldset: {
+    legend: {
+      text: "What evidence do you have?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "You’ll need your evidence that you are elligible"
+  },
+  items: [
+    {
+      value: "digital evidence",
+      text: "Digital evidence",
+      hint: {
+        text: "upload a file sent by text or email"
+      }
+    },
+    {
+      value: "paper evidence",
+      text: "Paper evidence",
+      hint: {
+        text: "take a photo or scan physical or hard copy"
+      }
+    },
+    {
+        value: "no evidence",
+        text: "Not sure",
+        hint: {
+          text: "Continue without and send evidence to school"
+        }
+    }
+  ]
+}) }}
+
+
+{{ govukButton({
+    text: "Save and continue"
+}) }}
+
+
+{%endblock %}

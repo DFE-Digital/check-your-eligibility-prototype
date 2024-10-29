@@ -1,0 +1,63 @@
+{% extends "/layouts/mvp3/layout-dfe.html" %}
+{% set pageName="Child and school details" %}
+{%block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-heading-l">
+      {{pageName}}
+    </div>
+    <p class="govuk-body">
+      Enter all your children that you want to add to the free school meals application including the schools that
+      they attend. Include all children even if they are at different schools.
+    </p>
+
+
+    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Add another child
+    </button>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Child 1</h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">Child details</span></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row"></div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Child's name</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["ch1-first-name"] }} {{ data["ch1-surname"] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">School</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["school-picker"] }}
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Child's date of birth</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["ch1-day"] }} {{ data["ch1-month"] }} {{ data["ch1-year"]
+              }}
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+
+    {{ govukButton({
+    text: "Add a child"
+    }) }}
+
+  </div>
+  {% endblock %}
