@@ -39,6 +39,12 @@ document.addEventListener('DOMContentLoaded', function () {
   <div class="govuk-grid-column-one-half">
 <form action="school-check-answers" method="post" novalidate>
 
+  {%- from "govuk/components/button/macro.njk" import govukButton -%}
+  {%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+  {%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+  {%- from "govuk/components/input/macro.njk" import govukInput -%}
+  {%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+
   <div data-module="moj-add-another">
 
     <h1 class="govuk-heading-l" tabindex="-1">Provide details of your children</h1>
