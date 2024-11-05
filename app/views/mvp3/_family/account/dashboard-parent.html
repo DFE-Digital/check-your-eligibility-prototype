@@ -26,19 +26,17 @@
 {% endif %}
 
 
-    <span class="govuk-hint">Jonathan Spencer</span>
+    <span class="govuk-hint">Eden Tesfay</span>
     <h1 class="govuk-heading-l">
-      
-      
-      Eligibility checker hub
-    </h1>
+
+ Dashboard title   </h1>
 
 
     <div class="govuk-grid-row">
 
-            
+
       <div class="govuk-grid-column-full">
-        
+
 
 <div class="dfe-grid-container">
 
@@ -47,9 +45,20 @@
 
       <div class="def-card">
         <h2 class="govuk-heading-m">
-            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="checker/forms">Check eligibility</a>
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="checker/forms">Check and apply</a>
         </h2>
-        <p>See what a child at your school or authority is eligible for.</p>
+        <p>Check my eligibility for Free school meals and childcare</p>
+    </div>
+    </div>
+
+
+    <div class="dfe-card-container">
+
+      <div class="def-card">
+        <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="checker/forms">Update details</a>
+        </h2>
+        <p>Check my eligibility for Free school meals and childcare</p>
     </div>
     </div>
 
@@ -57,38 +66,27 @@
 
       <div class="def-card">
         <h2 class="govuk-heading-m">
-            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="checker/">Upload applications</a> 
-
-            
-        </h2>
-        <p>Upload a forecast of children neededing free school meals.</p>
-    </div>
-    </div>
-
-    <div class="dfe-card-container">
-
-      <div class="def-card">
-        <h2 class="govuk-heading-m">
-            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="applications/?">View applications</a>
-               {%- from "moj/components/notification-badge/macro.njk" import mojNotificationBadge -%}
-            
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="checker/">Upload evidence</a>
             {{ mojNotificationBadge({
-              text: "10"
+              text: "1"
             }) }}
+
+        </h2>
+        <p>Upload evidence for a free school meals application.</p>
+    </div>
+    </div>
+
+    <div class="dfe-card-container">
+
+      <div class="def-card">
+        <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="applications/?">View historical applications</a>
+               {%- from "moj/components/notification-badge/macro.njk" import mojNotificationBadge -%}
         </h2>
         <p>Check or update status of an application.</p>
     </div>
     </div>
 
-    <div class="dfe-card-container">
-
-      <div class="def-card">
-        <h2 class="govuk-heading-m">
-            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="support/">Training and support</a>
-        </h2>
-        <p>Training materials, policy updates, and general support for decision makers.</p>
-    </div>
-    </div>
 
 
 
@@ -96,18 +94,9 @@
 
 
 
-
-
-
-</div>
-
-
-        
-      </div>  
-    
     </div>
 
-  
+
   </div>
 </div>
 

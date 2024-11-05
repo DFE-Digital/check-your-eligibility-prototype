@@ -4,49 +4,54 @@
 {%block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds ">
+  <div class="govuk-grid-column-two-thirds ">
+    <!--routes found in routes/mvp3/appeal.js-->
+    <form action="/mvp3-evidence" method="post" novalidate>
 
-{{ govukRadios({
-  name: "signIn",
-  fieldset: {
-    legend: {
+      {{ govukRadios({
+      name: "evidence",
+      id:'evidence',
+      fieldset: {
+      legend: {
       text: "What evidence do you have?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
-    }
-  },
-  hint: {
-    text: "You’ll need your evidence that you are elligible"
-  },
-  items: [
-    {
-      value: "digital evidence",
+      }
+      },
+      hint: {
+      text: "You’ll need your evidence that you are eligible"
+      },
+      items: [
+      {
+      value: "digital",
       text: "Digital evidence",
       hint: {
-        text: "upload a file sent by text or email"
+      text: "upload a file sent by text or email"
       }
-    },
-    {
-      value: "paper evidence",
+      },
+      {
+      value: "paper",
       text: "Paper evidence",
       hint: {
-        text: "take a photo or scan physical or hard copy"
+      text: "take a photo or scan physical or hard copy"
       }
-    },
-    {
-        value: "no evidence",
-        text: "Not sure",
-        hint: {
-          text: "Continue without and send evidence to school"
-        }
-    }
-  ]
-}) }}
+      },
+      {
+      value: "none",
+      text: "Not sure",
+      hint: {
+      text: "Continue without and send evidence to school"
+      }
+      }
+      ]
+      }) }}
+
+      {{ govukButton({
+      text: "Continue",
+      classes:'govuk-!-margin-top-5'
+      }) }}
+    </form>
 
 
-{{ govukButton({
-    text: "Save and continue"
-}) }}
 
-
-{%endblock %}
+    {%endblock %}
