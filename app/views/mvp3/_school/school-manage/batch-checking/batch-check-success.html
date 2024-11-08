@@ -14,15 +14,48 @@
   </h1>
   <p class="govuk-body">Now download the checked file to see which parents can claim free school meals for their children.</p>
 
-  <p>free-school-meal-outcomes-YYYYMMDD.csv</p>
+  <p id="file-name-display">Filename will be displayed here.</p>
 
 
-  {% from "govuk/components/button/macro.njk" import govukButton %}
+  {%- from "govuk/components/button/macro.njk" import govukButton -%}
 
-  {{ govukButton({
-    text: "Download",
-    href: ''
-  }) }}
+  <div class="moj-button-action">
+    <a id="download-button" class="govuk-button" href="/public/csv/free-school-meals-outcomes-YYYYMMDD.csv" download role="button">
+      Download
+    </a>
+  </div>
+
+
+
+
+
+  <script type="text/javascript">
+    // Function to generate the filename based on today's date
+    function generateFilename() {
+      const today = new Date();
+      const year = today.getFullYear();
+      const month = String(today.getMonth() + 1).padStart(2, '0');
+      const day = String(today.getDate()).padStart(2, '0');
+      return `free-school-meals-outcomes-${year}${month}${day}.csv`;
+    }
+
+    // Update the filename display on page load
+    document.addEventListener('DOMContentLoaded', function () {
+      const filename = generateFilename();
+      document.getElementById('file-name-display').innerText = filename; // Display the filename
+      document.getElementById('download-button').setAttribute('download', filename);
+    });
+
+
+  </script>
+
+
+
+
+
+
+
+
 
 {% endset %}
 
