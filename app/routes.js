@@ -31,6 +31,8 @@ require('./routes/mvp3/softCheck')(router);
 require('./routes/mvp3/appeal')(router);
 require('./routes/mvp3/success')(router);
 
+require('./routes/mvp2/betacheck')(router);
+
 
 
 router.get('*', function (req, res, next) {
@@ -657,21 +659,38 @@ router.post('/mvp2-soft-check-ni-answer', function (req, res) {
  }
 })
 
+
+///Privatebetachoice///
+router.post('/mvp2-betacheck', function (req, res) {
+  // Make a variable
+  var betaschool = req.session.data['beta-school']
+  // Check whether the variable matches a condition
+ if (betaschool == "Yes"){
+    // Send user to next page
+    res.redirect('/mvp2/parent-soft-check/check.html')
+  } else {
+    // Send user to a different page for physical evidence
+    res.redirect('/mvp2/parent-soft-check/account/beta-school-check-no.html');
+}
+})
+
+
+
 ///WorkingMVP3///
 
-   /// Soft CHECKER
-   router.post('/mvp3_v1/_family/soft-check-ni-answer', function (req, res) {
-    // Make a variable
-    var nassNumber = req.session.data['ni-number']
-    // Check whether the variable matches a condition
-   if (nassNumber == "yes"){
-      // Send user to next page
-      res.redirect('/mvp3/_family/parent-soft-check/checking-loader')
-    } else {
-      // Send user to other page
-     res.redirect('/mvp3/_family/parent-soft-check/nass-number')
-   }
-  })
+  //  /// Soft CHECKER
+  //  router.post('/mvp3_v1/_family/soft-check-ni-answer', function (req, res) {
+  //   // Make a variable
+  //   var nassNumber = req.session.data['ni-number']
+  //   // Check whether the variable matches a condition
+  //  if (nassNumber == "yes"){
+  //     // Send user to next page
+  //     res.redirect('/mvp3/_family/parent-soft-check/checking-loader')
+  //   } else {
+  //     // Send user to other page
+  //    res.redirect('/mvp3/_family/parent-soft-check/nass-number')
+  //  }
+  // })
 
 
 //account
@@ -685,27 +704,6 @@ router.post('/mvp2-soft-check-ni-answer', function (req, res) {
       res.send('Account Page');
   });
 
-
-  ////////////////////APPEAL-PARENTS///////////////////////////////////
-
-
-  // ///have-evidence///
-
-  //  router.post('/mvp3-evidence', function (req, res) {
-  //   // Make a variable
-  //   var evidence = req.session.data['evidence']
-  //   // Check whether the variable matches a condition
-  //  if (evidence == "digital"){
-  //     // Send user to next page
-  //     res.redirect('/mvp3/_family/account/appeal/evidence/upload-guidance-digital')
-  //   } else if (evidence === "paper") {
-  //     // Send user to a different page for physical evidence
-  //     res.redirect('/mvp3/_family/account/appeal/evidence/upload-guidance');
-  // } else {
-  //     // Skip evidence section
-  //     res.redirect('/mvp3/_family/account/appeal/add-child/child-details-blank');
-  // }
-  // })
 
 
 

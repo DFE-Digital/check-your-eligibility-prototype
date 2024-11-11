@@ -1,7 +1,23 @@
 {% extends "../../layouts/layout-dfe-schoolnav.html" %}
 {% set pageName="Bramhope Primary School" %}
 
+{% block sideContent %}
+
+<nav class="dfe-vertical-nav">
+  <ul class="dfe-vertical-nav__section">
+    <li class="dfe-vertical-nav__section-item ">
+      <a class="dfe-vertical-nav__link" href=" ">Test</a>
+    </li>
+    <li class="dfe-vertical-nav__section-item dfe-vertical-nav__section-item--current">
+      <a class="dfe-vertical-nav__link" href="">Test</a>
+    </li>
+  </ul>
+</nav>
+
+{% endblock %}
+
 {% block content %}
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-l">

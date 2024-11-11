@@ -1,5 +1,5 @@
-{# 1 #} 
-{% from 'node_modules/dfe-frontend-alpha/packages/components/header/macro.njk' import header %}
+{# 1 #}
+{% from 'node_modules/dfe-frontend/packages/components/header/macro.njk' import header %}
 
 {# 2 #}
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
@@ -34,7 +34,7 @@
         "label" : "Dashboard"
       }
     ]
-  
+
 })
 }}
 
@@ -90,7 +90,7 @@
  }) }}
 {% endblock %}
 
-{# 4 #} 
+{# 4 #}
 {% block scripts %}
   {{ super() }}
   <script src="/public/javascripts/dfefrontend.js"></script>

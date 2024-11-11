@@ -1,5 +1,5 @@
 {# 1 #}
-{% from 'node_modules/dfe-frontend-alpha/packages/components/header/macro.njk' import header %}
+{% from 'node_modules/dfe-frontend/packages/components/header/macro.njk' import header %}
 
 {# 2 #}
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
@@ -62,7 +62,10 @@
     </p>
   </div>
 
+
 </div>
+
+
 
 {% endblock %}
 
@@ -76,7 +79,6 @@
     }) }}
   {% endblock %}
 
-{% endblock %}
 
 {% block footer %}
  {{ govukFooter({

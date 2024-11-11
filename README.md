@@ -1,6 +1,7 @@
 <h1>Eligibility Checking Engine</h1>
 
-The Eligibility Checking Engine (ECE) is to provide a single platform where families and schools can check eligibility of support functions during the lifetime of the pupil: 
+The Eligibility Checking Engine (ECE) is a platform which enables services to be supproted by the means to check the eligibility of families and children during their education.
+
 This includes but is not limited to:
 - Parents can check eligibility, apply and appeal against decisions around Free School Meals (FSM)
 - Schools and LA's can check eligibility, apply and appeal against decisions around Free School Meals (FSM)
@@ -11,7 +12,7 @@ This includes but is not limited to:
 <h2>Documentation</h2>
 <ol>
   <li>
-    Prototype 
+    Prototype
   </li>
    <li>
     Design History
@@ -36,6 +37,7 @@ This prototype is based on the:
 
 <h3>Requirements</h3>
 <code>node.js - version 20.x.x or later</code>
+<code>dfe-frontend v2.01 last updated 5 May 2024</code>
 
 <h3>Install dependencies</h3>
 <code>npm install</code>
@@ -54,7 +56,7 @@ This version deploys automatically from merges to main and is the 'latest' versi
 ---------------------------------------------------------------------------------
 
 <h3>Design history</h3>
-URL: https:// 
+URL: https://
 
 A history of the design of this service
 
@@ -63,7 +65,7 @@ A history of the design of this service
 
 [UserJourney][Feature/Tweak/Bug]{Designername]
 <br>
-example: 
+example:
 Schools-tweak-contentupdate-EW
 <br>Family-feature-uploadevidence-JH
 [Description of changes]

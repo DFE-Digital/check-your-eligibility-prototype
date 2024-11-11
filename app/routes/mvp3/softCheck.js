@@ -10,6 +10,7 @@ module.exports = function(router) {
    //     res.redirect('/mvp2/_family/parent-soft-check/check');
    // });
 
+
 //mvp1//
    router.post('/mvp1-soft-check-ni-answer', function (req, res) {
     // Make a variable
@@ -56,6 +57,23 @@ router.post('/nass-number-answer', function (req, res) {
 });
 
 //mvp3//
+
+
+//    /// Soft CHECKER
+//    router.post('/mvp3_v1/_family/soft-check-ni-answer', function (req, res) {
+//     // Make a variable
+//     var nassNumber = req.session.data['ni-number']
+//     // Check matches yes
+//    if (nassNumber == "yes"){
+//       // Send user to next page
+//       res.redirect('/mvp3/_family/parent-soft-check/checking-loader')
+//     } else {
+//       // or send user to other page
+//      res.redirect('/mvp3/_family/parent-soft-check/nass-number')
+//    }
+//   })
+
+
     router.post('/soft-check-ni-answer', function (req, res) {
         var niNumber = req.session.data['ni-number'];
         var enteredNiNumber = req.session.data['ni-number-entered'];
@@ -84,4 +102,5 @@ router.post('/nass-number-answer', function (req, res) {
         }
     });
 };
+
 
