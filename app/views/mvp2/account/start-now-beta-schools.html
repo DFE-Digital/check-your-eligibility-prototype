@@ -14,29 +14,33 @@
 
       <div class="govuk-grid-column-two-thirds">
 
-          <p class="govuk-body">This service helps schools view and improve their spending. It is replacing the View my financial insights tool and the Schools financial benchmarking service.</p>
+          <h1 class="govuk-heading-xl">{{pageName}}</h1>
 
-          <p class="govuk-body">Anyone can use it to compare schools, academies or trusts across England, though you will need a <a href="https://services.signin.education.gov.uk/">DfE Sign-in account</a> to access some parts of the service.</p>
-          <h2 class="govuk-heading-m">At a school level</h2><p class="govuk-body">
-            <p>You can:</p>
-          <ul class="govuk-list govuk-list--bullet">
-              <li>see how spending compares with similar schools
-              <li>enter your own data to see how it affects the benchmarking position</li>
-              <li>plan school curriculum finances</li>
-              <li>see tailored commercial recommendations for each school based on data</li>
+        <p class="govuk-body">Here you can:</p>
+        <ul class="govuk-list--bullet">
+          <li> enter a few details to find out if your children can get free school meals</li>
+          <li> send the decision to your children’s school, college, nursery or childcare setting</li>
+        </ul>
 
-          </ul>
-          <h2 class="govuk-heading-m">At a trust or local authority level</h2>
+        <p class="govuk-body">It should take about 5 minutes to run a check.</p>
 
-            <p class="govuk-body">You can:</p>
-          <ul class="govuk-list govuk-list--bullet">
-              <li>get an overview of all your schools and see how spending compares with similar schools</li>
-              <li> identify where schools need more support with their spending</li>
-              <li>see how your spending compares with similar trusts</li>
-              <li> view risks based on the budget forecast return (trusts only)</li>
-          </ul>
-              <p class="govuk-body">You can also download data and findings to use in reports.</p>
-          </ul>
+        <h2 class="govuk-heading-l">Before you start</h2>
+
+          <p class="govuk-body">You will need:</p>
+
+          <ul class="govuk-list--bullet">
+            <li>a National Insurance number or asylum support reference number (previously NASS reference number)</li>
+            <li>to use or create a GOV.UK One Login to sign in</li>
+            <li>details of the children you're applying for, including the name of their school</li>
+        </ul>
+
+        <p class="govuk-body">You may also need <a href="/mvp3/_family/guidance/parent-guidance#:~:text=Providing%20the%20right%20evidence"
+              class="govuk-link">supporting evidence for your application</a>.</p>
+        </ul>
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        <form action="../parent-soft-check/check" method="post">
 
           {{ govukButton({
             text: "Start now",
@@ -44,96 +48,41 @@
 
             isStartButton: true
           }) }}
+
+         </form>
+
+
       </div>
   </div>
-      </div>
 
 
+<h2 class="govuk-heading-l">Who can get free school meals</h2>
 
+<p class="govuk-body">Younger children aged 4 to 6 are always entitled to free school meals.</p>
+<p class="govuk-body">Children in compulsory education may be able to get free school meals if you, or they, get any of these benefits:</p>
 
-
-
-
-<div class="govuk-width-container">
-  <main class="govuk-main-wrapper">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">{{pageName}}</h1>
-      </div>
-    </div>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <p class="govuk-body-l">Here you can:</p>
-          <ul class="govuk-list--bullet">
-            <li> find out if your children can get free school meals by entering key information</li>
-            <li> send the decision on to your children’s school, college, nursery or childcare setting</li>
-          </ul>
-        </p>
-
-
-      <p>It should take about 5 minutes to complete.</p>
-
-
-      <h2 class="govuk-heading-l">
-        What you'll need</h2>
-
-        <p>While using this service, you will need to: </p>
-
-        <ul class="govuk-list--bullet">
-          <li>provide a National Insurance number or asylum support reference number (previously NASS reference number)</li>
-          <li>create or sign in to a GOV.UK One Login account</li>
-          <li>tell us details about any children you want to get free school meals, including the name of their school</li>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Universal Credit - your household income must be less than £7,400 a year (after tax and not including any benefits you get)</li>
+        <li>Income Support </li>
+        <li>income-based Jobseeker’s Allowance </li>
+        <li>income-related Employment and Support Allowance </li>
+        <li>support under Part VI of the Immigration and Asylum Act 1999 </li>
+        <li>the guaranteed element of Pension Credit </li>
+        <li>Child Tax Credit (provided you’re not also entitled to Working Tax Credit and have an annual gross income of no more than £16,190) </li>
+        <li>Working Tax Credit run-on - paid for 4 weeks after you stop qualifying for Working Tax Credit </li>
       </ul>
-      {% from "govuk/components/button/macro.njk" import govukButton %}
 
-      <form action="../parent-soft-check/check" method="post">
-
-        {{ govukButton({
-          text: "Start now",
-          href:'../parent-soft-check/account/beta-school-check',
-
-          isStartButton: true
-        }) }}
-
-       </form>
-
-       <h2 class="govuk-heading-l">
-        Criteria for free school meals</h2>
-
-      <p>Children in compulsory education may be able to get free school meals if you, or they, get any of these benefits:</p>
-
-              <ul><li>Universal Credit - your household income must be less than £7,400 a year (after tax and not including any benefits you get)</li>
-                <li>Income Support </li>
-                <li>income-based Jobseeker’s Allowance </li>
-                <li>income-related Employment and Support Allowance </li>
-                <li>support under Part VI of the Immigration and Asylum Act 1999 </li>
-                <li>the guaranteed element of Pension Credit </li>
-                <li>Child Tax Credit (provided you’re not also entitled to Working Tax Credit and have an annual gross income of no more than £16,190) </li>
-                <li>Working Tax Credit run-on - paid for 4 weeks after you stop qualifying for Working Tax Credit </li>
+      <p class="govuk-body">You should apply for free school meals even if you know your child will get them, as schools get extra funding based on the number of eligible children they record.</p>
+      <p class="govuk-body">See <a target="_blank" href="../checker/parent-guidance.html">more detailed guidance on applying for free school meals</a>.</p>
 
 
-              </ul>
-              <p> Younger children aged 4 to 6 are always entitled to free school meals.</p>
-              <p>However, it's still important to apply for free school meals even if you know your child will get them. Schools receive extra funding based on the number of children they record as entitled.</p>
-
-
-      <h2 class="govuk-heading-l">Further guidance and other ways to apply</h2>
-      <p>If you need further support, <a target="_blank" href="../checker/parent-guidance.html">check the more detailed guidance</a>  for parents and guardians.</p>
-      <p>If you cannot apply online, you can fill in <a href="fsm-print-version">the 'Free school meals entitlement checker' form</a> and give it to your children's school. </p>
+      <h2 class="govuk-heading-l">Other ways to apply</h2>
+      <p class="govuk-body">If you cannot apply online, you can fill in <a href="fsm-print-version">the 'Free school meals entitlement checker' form</a> and give it to your children's school. </p>
 
 
 
-      </div>
-      <div class="govuk-grid-column-one-third">
-        <div class="x-govuk-related-navigation">
-          <nav class="x-govuk-related-navigation__nav-section" role="navigation" aria-labelledby="related-navigation-related-content">
-            <h2 class="x-govuk-related-navigation__main-heading" id="related-navigation-related-content">
-              Related content
-            </h2>
-            <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="../account/DSI-startnow">If you are a School or Local authority you can log in to the service here</a>
-          </nav>
-        </div>
-      </div>
+
+
     </div>
   </main>
 </div>
