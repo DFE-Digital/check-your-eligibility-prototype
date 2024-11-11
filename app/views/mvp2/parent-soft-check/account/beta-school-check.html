@@ -6,8 +6,8 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+      data-module="govuk-notification-banner">
       <div class="govuk-notification-banner__header">
         <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
           Important
@@ -21,8 +21,6 @@
 
       </div>
     </div>
-
-
 
     <h1 class="govuk-heading-l">Schools included in this test service</h1>
 
@@ -38,34 +36,37 @@
       <li>Upper Wharfedale School</li>
     </ul>
 
-<!--If yes go to </mvp2/parent-soft-check/account/beta-school-check>!-->
-<!--If yes go to </mvp2/parent-soft-check/account/beta-school-check-no>!-->
 
-
-    <form action="/form-handler" method="post" novalidate>
+    <form action="/mvp2-betacheck" method="post" novalidate>
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            <h2 class="govuk-fieldset__heading">
-              Do any of your children go to these schools?
-            </h2>
-          </legend>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+                Do any of your children go to these schools?
+              </h2>
+            </legend>
 
-          <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
-              <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
-                Yes
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
-              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
-                No
-              </label>
-            </div>
-          </div>
-        </fieldset>
+            {{ govukRadios({
+            name: "betaschool",
+            id:'betaschool',
+
+            items: [
+            {
+            value: "Yes",
+            text: "Yes"
+            },
+            {
+            value: "No",
+            text: "No"
+            }
+            ]
+            }) }}
+
+
+          </fieldset>
+        </div>
+
       </div>
       <button type="submit" class="govuk-button" data-module="govuk-button">
         Continue

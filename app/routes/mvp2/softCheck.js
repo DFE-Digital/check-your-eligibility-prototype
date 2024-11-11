@@ -1,6 +1,26 @@
 module.exports = function(router) {
 
-    router.post('/mvp2/_family/start-now', (req, res) => {
+
+///Privatebetachoice///
+
+router.post('/mvp2-beta-check', (req, res) => {
+
+  // Check whether the variable matches a condition
+  if (beta-school == "yes"){
+    // Send user to next page
+    res.redirect('/mvp2/parent-soft-check/account/beta-school-check')
+  } else {
+    // Send user to other page
+    res.redirect('/mvp2/parent-soft-check/account/beta-school-check-no')
+  }
+})
+
+
+
+
+
+
+  router.post('/mvp2/_family/start-now', (req, res) => {
         req.session.data.user = {};
         res.redirect('/mvp2/_family/parent-soft-check/check');
     });

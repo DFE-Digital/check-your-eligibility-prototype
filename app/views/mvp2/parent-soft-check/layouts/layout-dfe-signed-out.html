@@ -1,5 +1,5 @@
-{# 1 #} 
-{% from 'node_modules/dfe-frontend-alpha/packages/components/header/macro.njk' import header %}
+{# 1 #}
+{% from 'node_modules/dfe-frontend/packages/components/header/macro.njk' import header %}
 
 {# 2 #}
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
@@ -19,9 +19,9 @@
     "name": "Check a family's eligibility"
   },
   "headerActionLinks": [
-    
+
   ]
-  
+
 })
 }}
 
@@ -43,7 +43,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-  
+
 
   {% block backLink %}
     {{ govukBackLink({
@@ -88,7 +88,7 @@
  }) }}
 {% endblock %}
 
-{# 4 #} 
+{# 4 #}
 {% block scripts %}
   {{ super() }}
   <script src="/public/javascripts/dfefrontend.js"></script>
