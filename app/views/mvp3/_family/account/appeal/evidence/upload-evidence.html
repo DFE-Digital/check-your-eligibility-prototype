@@ -6,7 +6,6 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds ">
 <h1 class="govuk-heading-l">{{pageName}}</h1>
-<p class="govuk-body"><b>[Question - do we need separate pages for this?]</b></p>
 <div class="govuk-form-group">
     <label class="govuk-label" for="file-upload-1">
       Upload a file
@@ -21,9 +20,12 @@
     </ul>
 
 {{ govukButton({
-    text: "Save and continue",
+    text: "Upload and continue",
     href: "../add-child/child-details-blank.html"
 }) }}
 
+<div class="govuk-inset-text">
+  If you have problems uploading your evidence, you can <a href="../evidence/have-evidence.html" class="govuk-link">choose to take it into your children's schools instead</a>.
+</div>
 
 {%endblock %}
