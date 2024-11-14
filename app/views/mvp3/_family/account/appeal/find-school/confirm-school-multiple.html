@@ -1,30 +1,47 @@
 {% extends "/layouts/mvp3/layout-dfe.html" %}
-{% set pageName="Confirm school" %}
+{% set pageName="Choose [firstname]'s school" %}
 
 {%block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-width-container">
-    <div class="govuk-heading-l">
-      {{pageName}}
+    <div class="govuk-width-container">
+      <div class="govuk-heading-l">
+        {{pageName}}
+      </div>
+      <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            <div class="govuk-width-container">
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset">
+  <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+    <p>2 school's found for <b>BD23 2SJ</b> and <b>Greatwood</b>.</p>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="select-an-address" name="select-an-address" type="radio" value="1 Washington Street, Worcester, WR1 1NL"
+        data-ga-question="Select an address" data-ga-answer="Answer 1">
+      <label class="govuk-label govuk-radios__label" for="select-an-address">
+        Greatwood Community Primary School, Pinhaw Rd, Skipton BD23 2SJ
+      </label>
     </div>
-    {% from "govuk/components/button/macro.njk" import govukButton %}
-    {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
-
-
-    <p>2 schools found for <b>wr11nl</b> and <b>St Mary's</b>. <a href="find-school-1.html">Search again</a></p>
-
-    {{ govukInsetText({
-    html: "St Mary's Primary school<br>Manchester<br>M24 1NL"
-    }) }}
-
-    {{ govukButton({
-    text: "Use this address"
-    }) }}
-
-    <p class="govuk-body"><a href="#" class="govuk-link">Select a different address</a></p>
-    <p class="govuk-body govuk-!-margin-bottom-0"><a href="#" class="govuk-link">Enter address manually</a></p>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="select-an-address" name="select-an-address" type="radio" value="1 Washington Street, Worcester, WR1 1NL"
+        data-ga-question="Select an address" data-ga-answer="Answer 1">
+      <label class="govuk-label govuk-radios__label" for="select-an-address">
+        Greatwood Community Nursery School, Pinhaw Rd, Skipton BD23 2SJ
+      </label>
     </div>
+  </div>
+  </div>
+</fieldset>
+</div>
+<button type="submit" class="govuk-button" data-module="govuk-button">
+Add this school
+</button>
+
+<p class="govuk-body"><a href="find-school-1.html">Search again</a></p>
+<p class="govuk-body govuk-!-margin-bottom-0"><a href="#" class="govuk-link">Enter school address manually</a></p>
+</div>
 
 
 </div>

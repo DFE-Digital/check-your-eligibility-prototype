@@ -1,5 +1,5 @@
 {% extends "/layouts/mvp3/layout-dfe.html" %}
-{% set pageName="Add the school manually" %}
+{% set pageName="Add [firstname]'s' school manually" %}
 
 {%block content %}
 
@@ -10,8 +10,7 @@
     </div>
 
     <fieldset class="govuk-fieldset">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-School address      </legend>
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">School address</legend>
 
       {{ govukInput({
         label: {
@@ -25,7 +24,7 @@ School address      </legend>
 
       {{ govukInput({
         label: {
-          text: "School URN"
+          text: "School unique reference number (URN)"
         },
         id: "urn",
         name: "urn",
@@ -53,6 +52,10 @@ School address      </legend>
       }) }}
   </div>
   </div>
+
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Add this school
+    </button>
 
 
 </div>

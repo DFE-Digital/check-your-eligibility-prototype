@@ -1,5 +1,5 @@
 {% extends "/layouts/mvp3/layout-dfe.html" %}
-{% set pageName="Find school" %}
+{% set pageName="Find [firstname]'s school" %}
 
 {%block content %}
 
@@ -22,12 +22,12 @@
 
 {{ govukInput({
   label: {
-    text: "Postcode",
+    text: "School postcode",
     classes: "govuk-label--s"
 
   },
   hint: {
-    text: "You can find this on any letters from the school or their website"
+    text: "You can find this on any letters from the school or on their website"
   },
   classes: "govuk-input--width-10",
   id: "address-postcode",
@@ -75,7 +75,7 @@
 
 
   {{ govukButton({
-  text: "Find your child's school"
+  text: "Find this child's school"
   }) }}
 
 </div>
