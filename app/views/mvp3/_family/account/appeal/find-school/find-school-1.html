@@ -1,6 +1,6 @@
 {% extends "/layouts/mvp3/layout-dfe.html" %}
-{% set pageName="Find [firstname]'s school" %}
-
+{% set firstName = data["ch1-first-name"] or "the child" %}
+{% set pageName = "Find " ~ firstName ~ "'s school" %}
 {%block content %}
 
 <div class="govuk-grid-row">
@@ -8,7 +8,6 @@
     <div class="govuk-heading-l">
       {{pageName}}
     </div>
-
 
 {{ govukInput({
   id: "school name",
@@ -40,7 +39,7 @@
       id: "start-date",
       fieldset: {
         legend: {
-          text: "When did [firstname] start this school",
+          text: "When did " ~ (data["ch1-first-name"] or "the child") ~ " start this school",
           classes: "govuk-input--width-6",
           classes: "govuk-fieldset__legend--s"
         }

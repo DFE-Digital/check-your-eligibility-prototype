@@ -36,10 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 {% block content %}
-<script>
-  console.log('Nunjucks layout "layouts/main.html is being used');
-</script>
-
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-half">
     <form action="check-answers" method="post" novalidate>
@@ -136,8 +132,6 @@ document.addEventListener('DOMContentLoaded', function () {
           }) }}
 
           {% endcall %}
-
-
 
           <div class="moj-button-action">
             {{ govukButton({

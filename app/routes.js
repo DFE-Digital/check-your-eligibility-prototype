@@ -30,13 +30,13 @@ require('./routes/mvp3/account')(router);
 require('./routes/mvp3/softCheck')(router);
 require('./routes/mvp3/appeal')(router);
 require('./routes/mvp3/success')(router);
-
 require('./routes/mvp2/betacheck')(router);
 
 
+// const appealRoutes = require('./routes/mvp3/appeal');
+// appealRoutes(router);
 
 router.get('*', function (req, res, next) {
-
 
 // These functions are available on all pages in the prototype.
 // To use call the function inside curly brackets, for example {{ example_function() }}
@@ -302,21 +302,21 @@ router.post('/soft-check-ni-answer', function (req, res) {
 ////////////////////////////////mvp1///////////////////////////////
 
 // Nationality//Not used
-router.post('/nationality-answer', function (req, res) {
+// router.post('/nationality-answer', function (req, res) {
 
-  // Make a variable
-  var whatNationality = req.session.data['what-nationality']
+//   // Make a variable
+//   var whatNationality = req.session.data['what-nationality']
 
-  // Check whether the variable matches a condition
-  if (whatNationality == "british"){
-    // Send user to next page
-    res.redirect('/mvp1/checker-parent/national-insurance')
-  } else {
-    // Send user to other page
-    res.redirect('/mvp1/checker-parent/asylum-seeker')
-  }
+//   // Check whether the variable matches a condition
+//   if (whatNationality == "british"){
+//     // Send user to next page
+//     res.redirect('/mvp1/checker-parent/national-insurance')
+//   } else {
+//     // Send user to other page
+//     res.redirect('/mvp1/checker-parent/asylum-seeker')
+//   }
 
-})
+// })
 
 // Asylum number-NOT USED IN CURRENT VERSIONS//
 //router.post('/asylum-answer', function (req, res) {
@@ -675,7 +675,6 @@ router.post('/mvp2-betacheck', function (req, res) {
 })
 
 
-
 ///WorkingMVP3///
 
   //  /// Soft CHECKER
@@ -703,6 +702,13 @@ router.post('/mvp2-betacheck', function (req, res) {
      router.get('/', function(req, res) {
       res.send('Account Page');
   });
+
+
+/////////////
+
+
+
+
 
 
 

@@ -8,45 +8,44 @@
 {% block header %}
 
 {% from 'node_modules/dfe-frontend/packages/components/header/macro.njk' import header %}
-{% block header %}
 
 {{ header({
-    "showNav": "true",
-    "showSearch": "true",
-    "showHeaderActionLinks": "true",
-    "logoPath": "public/images",
-    "searchAction": "/search/",
-    "searchInputName": "q",
-    "logoAltText": "Department for Education",
-    "homeHref": "https://gov.uk",
-    "selectedNav": view,
-    "service": {
-      "name": "Service name",
-      "serviceUrl": "/"
+  "showNav": "true",
+  "showSearch": "true",
+  "showHeaderActionLinks": "true",
+  "logoPath": "public/images",
+  "searchAction": "/search/",
+  "searchInputName": "q",
+  "logoAltText": "Department for Education",
+  "homeHref": "https://gov.uk",
+  "selectedNav": view,
+  "service": {
+    "name": "Service name",
+    "serviceUrl": "/"
+  },
+  "headerActionLinks": [
+    {
+      "url"  : "/",
+      "label" : "My account"
     },
-    "headerActionLinks": [
+    {
+      "url"  : "/",
+      "label" : "Sign out"
+    }
+  ],
+  "primaryLinks": [
       {
-        "url"  : "/",
-        "label" : "My account"
-      },
-      {
-        "url"  : "/",
-        "label" : "Sign out"
-      }
-    ],
-    "primaryLinks": [
-        {
-        "url"  : "#",
-        "label" : "Home"
-      }, {
-        "url"  : "#",
-        "label" : "About"
-      }, {
-        "url"  : "#",
-        "label" : "News"
-      }
-    ]
-  })
+      "url"  : "#",
+      "label" : "Home"
+    }, {
+      "url"  : "#",
+      "label" : "About"
+    }, {
+      "url"  : "#",
+      "label" : "News"
+    }
+  ]
+})
 }}
 
 {% endblock %}

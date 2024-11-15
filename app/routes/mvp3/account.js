@@ -1,5 +1,5 @@
-module.exports = function(router) { 
-    
+module.exports = function(router) {
+
     // POST route MVP2
     router.post('/mvp2/_family/account/onegov-signin', (req, res) => {
         req.session.data.user = {};
@@ -31,6 +31,6 @@ module.exports = function(router) {
 //const express = require('express');
 //const router = express.Router();
 
-    
-//exports close bracket   
+
+//exports close bracket
 }

@@ -6,26 +6,27 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds ">
     <h1 class="govuk-heading-l">{{pageName}}</h1>
+    <form action="/mvp3-digital" method="post" novalidate>
 
-    <p class="govuk-body">It is important that your evidence can be read by our system or it will be rejected. </p>
+      <p class="govuk-body">It is important that your evidence can be read by our system or it will be rejected. </p>
 
-    <p class="govuk-body">On each piece of evidence, make sure:</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>all the text can be read easily</li>
-      <li>it is on 1 page with your contact details visibile</li>
-      <li>the benefit or amount you earn is visible</li>
-      <li>your National Insurance number is visible</li>
-      <li>the whole statement or letter is visible including all four corners</li>
-    </ul>
+      <p class="govuk-body">On each piece of evidence, make sure:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>all the text can be read easily</li>
+        <li>it is on 1 page with your contact details visibile</li>
+        <li>the benefit or amount you earn is visible</li>
+        <li>your National Insurance number is visible</li>
+        <li>the whole statement or letter is visible including all four corners</li>
+      </ul>
 
-    <div class="govuk-grid-column-one-quarter">
+      <div class="govuk-grid-column-one-quarter">
 
-      <!--Need to work out how big an image needs to be here.-->
+        <!--Need to work out how big an image needs to be here.-->
 
-      <a target="_self" tabindex="-1" aria-hidden="true">
-        <img alt="Add in text here" class="" src="/public/images/UC_statement.png">
-      </a>
-    </div>
+        <a target="_self" tabindex="-1" aria-hidden="true">
+          <img alt="Add in text here" class="" src="/public/images/UC_statement.png">
+        </a>
+      </div>
 
   </div>
 </div>
@@ -37,5 +38,5 @@ href: "upload-evidence"
 
 }) }}
 
-
+</form>
 {%endblock %}
