@@ -1,10 +1,13 @@
 {% extends "/layouts/mvp3/layout-dfe.html" %}
-{% set pageName="Add [firstname]'s' school manually" %}
+{% set firstName = data["ch1-first-name"] or "the child" %}
+{% set pageName="Add  " ~ firstName ~ "s' school manually" %}
 
 {%block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-width-container">
+    <form action="/mvp3-manual" method="post" novalidate>
+
     <div class="govuk-heading-l">
       {{pageName}}
     </div>
