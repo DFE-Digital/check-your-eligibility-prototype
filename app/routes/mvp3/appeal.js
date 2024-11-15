@@ -1,24 +1,79 @@
-module.exports = function(router) {
-
+module.exports = function (router) {
 
   ///have-evidence///
-
   router.post('/mvp3-evidence', function (req, res) {
     // Make a variable
     var evidence = req.session.data['evidence']
     // Check whether the variable matches a condition
-   if (evidence == "digital"){
+    if (evidence == "digital") {
       // Send user to next page
       res.redirect('/mvp3/_family/account/appeal/evidence/upload-guidance-digital')
     } else if (evidence === "paper") {
       // Send user to a different page for physical evidence
       res.redirect('/mvp3/_family/account/appeal/evidence/upload-guidance');
-  } else {
+    } else {
       // Skip evidence section
       res.redirect('/mvp3/_family/account/appeal/add-child/child-details-blank');
-  }
+    }
+  })
+  ///////////////////////////////////////////////////////////////////////////////////////
+
+
+  //////GOV login decision tree///////
+// module.exports = function (router) {
+
+  router.get('/mvp3/_family/parent-soft-check/outcomes/outcome-not-entitled-appeal', (req, res) => {
+      req.session.data.startingPage = 'appeal-process';
+      res.render('mvp3/_family/parent-soft-check/outcomes/outcome-not-entitled-appeal');
+  });
+  router.get('/mvp3/_family/parent-soft-check/outcomes/eligible', (req, res) => {
+      req.session.data.startingPage = 'eligible';
+      res.render('mvp3/_family/parent-soft-check/outcomes/eligible');
+  });
+  // Route for signin-or-create
+  router.get('/account/signin-or-create', (req, res) => {
+      req.session.data.startingPage = 'appeal-process';
+      res.render('account/signin-or-create');
+  });
+  // POST route for sign-in submission
+  router.post('/mvp3/_family/account/onegov-signin', (req, res) => {
+      req.session.data.user = {};
+      res.redirect('/account/enter-password');
+  });
+
+  router.get('/account/enter-password', (req, res) => {
+    req.session.data.user = {};
+    res.redirect('/mvp3/_family/account/check-your-phone');
+});
+
+  // Direct to final page based on starting page
+  router.get('/account/enter-password', (req, res) => {
+      if (req.session.data.startingPage === 'appeal-process') {
+          res.redirect('/mvp3/_family/account/appeal/evidence/have-evidence');
+      } else if (req.session.data.startingPage === 'eligible') {
+          res.redirect('/mvp3/_family/account/apply/childs-age');
+      }
+  });
+
+    ///paper-evidence///
+    router.post('/mvp3-paper', function (req, res) {
+      res.redirect('/mvp3/_family/account/appeal/evidence/upload-guidance');
   })
 
+      ///digital-evidence///
+      router.post('/mvp3-digital', function (req, res) {
+        res.redirect('/mvp3/_family/account/appeal/evidence/upload-guidance');
+    })
+    ///child-details///
+    router.post('/mvp3-child', function (req, res) {
+      res.redirect('/mvp3/_family/account/appeal/add-child/child-details-1');
+  })
+
+      ///child-details-1///
+      router.post('/mvp3-child-1', function (req, res) {
+        res.redirect('/mvp3/_family/account/appeal/find-school/find-school-1.html');
+    })
 
 
 }
+
