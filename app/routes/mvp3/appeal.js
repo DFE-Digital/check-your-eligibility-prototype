@@ -18,8 +18,7 @@ module.exports = function (router) {
   })
   ///////////////////////////////////////////////////////////////////////////////////////
 
-
-  //////GOV login decision tree///////
+  //////GOV login variable///////
 // module.exports = function (router) {
 
   router.get('/mvp3/_family/parent-soft-check/outcomes/outcome-not-entitled-appeal', (req, res) => {
@@ -69,11 +68,30 @@ module.exports = function (router) {
       res.redirect('/mvp3/_family/account/appeal/add-child/child-details-1');
   })
 
-      ///child-details-1///
+      ///child-1///
       router.post('/mvp3-child-1', function (req, res) {
         res.redirect('/mvp3/_family/account/appeal/find-school/find-school-1.html');
     })
 
+        ///school///
+        router.post('/mvp3-school', function (req, res) {
+          res.redirect('/mvp3/_family/account/appeal/find-school/confirm-school.html');
+      })
+
+        ///manual-school///
+        router.post('/mvp3-manual', function (req, res) {
+          res.redirect('/mvp3/_family/account/appeal/find-school/confirm-school.html');
+      })
+
+      ///confirm///
+      router.post('/mvp3-added', function (req, res) {
+        res.redirect('/mvp3/_family/account/appeal/add-child/child-details-complete-1.html');
+    })
+
+      ///success///
+      router.post('/mvp3-success', function (req, res) {
+        res.redirect('/mvp3/_family/account/appeal/add-child/children-added.html');
+    })
 
 }
 

@@ -4,7 +4,8 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <div class="govuk-heading-l">
+    <form action="/mvp3-success" method="post" novalidate>
+      <div class="govuk-heading-l">
       {{pageName}}
     </div>
     <p class="govuk-body">Add all children you want to include in your application, even if they go to different schools.</p>
@@ -117,6 +118,6 @@
     {{ govukButton({
       text: "Confirm details and send appeal"
       }) }}
-
+</form>
   </div>
   {% endblock %}

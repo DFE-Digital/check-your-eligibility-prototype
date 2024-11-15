@@ -82,9 +82,17 @@
     <a href="">What did you think about this service?</a> (takes 30 seconds)
   </p>
 
-  {% from "govuk/components/button/macro.njk" import govukButton %} {{
-  govukButton({ text: "Finish and leave service", href: '../account/start-now'
-  }) }} {% endblock %} {% block pageScripts %}
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+
+  {{ govukButton({
+    text: "Finish and leave service",
+    href: '../../../start-now'
+    }) }}
+
+
+  {% endblock %}
+  {% block pageScripts %}
   <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
 </div>
 {% endblock %}
