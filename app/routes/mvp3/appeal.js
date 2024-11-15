@@ -18,7 +18,12 @@ module.exports = function (router) {
   })
   ///////////////////////////////////////////////////////////////////////////////////////
 
-  //////GOV login variable///////
+  ///temp gov routes///
+  router.post('/mvp3-gov', function (req, res) {
+    res.redirect('/mvp3/_family/account/appeal/evidence/have-evidence.html');
+})
+
+  //////GOV login either or routng - needs fixing///////
 // module.exports = function (router) {
 
   router.get('/mvp3/_family/parent-soft-check/outcomes/outcome-not-entitled-appeal', (req, res) => {

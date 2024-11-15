@@ -8,7 +8,9 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds ">
+
     <h1 class="govuk-heading-l govuk-!-margin-top-0 govuk-!-margin-bottom-3">Check your phone</h1>
+
     <div class="govuk-inset-text">
       We have sent a code to *******6975.
     </div>
@@ -16,12 +18,12 @@
     <p class="govuk-body">It might take a few minutes to arrive. The code will expire after 15 minutes.</p>
 
     {% if data['parent-portal'] == 'evidence-required' %}
-    <!---
+<!---
     <form action="../checker-parent/dashboard?=la" method="post">
     -->
-    {% else %}
+      {% else %}
 
-    <form action="../account/apply/childs-age" method="post">
+    <form action="/mvp3-gov" method="post">
 
       {% endif %}
       <div class="govuk-form-group">
@@ -37,7 +39,7 @@
       <button type="Submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
         Continue
       </button>
-
+</form>
 
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
