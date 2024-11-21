@@ -1,0 +1,65 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Contact us" %}
+<!---
+{% set applicationSent %}
+<h3 class="govuk-notification-banner__heading">
+  Application sent
+  </h3>
+  <p class="govuk-body">
+    You have sent your application for free school meals. It may take upto 1 week to process.
+  </p>
+  <p>Your reference is 1234567</p>
+{% endset %}-->
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1>Contact us</h1>
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <h2 class="govuk-tabs__title">
+        Contact us
+      </h2>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#contact-us">
+            General support
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#send-feedback">
+            Send us feedback
+          </a>
+        </li>
+      </ul>
+      <div class="govuk-tabs__panel" id="contact-us">
+        <h2 class="govuk-heading-l">General support queries</h2>
+<p class="govuk-body">This is a new service and we're still adding features. Your <a href="/mvp3/contact#send-feedback" class="govuk-link">feedback</a> will help us continue to improve it.</p>
+<p class="govuk-body">For any other questions or support using the service, <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=yXfS-grGoU2187O4s0qC-URYbNo1-R1EubHA0gNJis5UOVo3VU1KV0E0QkxTMFQ0RFZQUUZCR0E0WC4u" class="govuk-link">contact the DfE Check a family's eligibility team</a>.</p>
+      </div>
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="send-feedback">
+        <h2 class="govuk-heading-l">Send feedback</h2>
+        <p class="govuk-body">Your feedback will help us improve Check a family's eligibility as we add more features.</p>
+        <p>You can send us feedback by <a href="#" class="govuk-link">filling out this short survey</a>.</p>
+      </div>
+
+
+    </div>
+
+
+
+
+
+{% if data['answers-checked'] =="true" %}
+{{ govukNotificationBanner({
+  html: applicationSent,
+  type: 'success'
+}) }}
+
+{% endif %}
+
+
+
+
+{% endblock %}
