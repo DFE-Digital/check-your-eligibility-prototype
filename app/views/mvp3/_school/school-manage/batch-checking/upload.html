@@ -7,27 +7,43 @@
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">{{pageName}}</h1>
 
-    <p class="govuk-body">Upload a template with details of the parents or guardians who applied for free school meals.
+    <p class="govuk-body">Connect to your school system or upload a template to run a batch check on free school meal applications.
+    </p>
+    <h2 class="govuk-heading-m">Connect to your school system</h2>
+
+    <p class="govuk-body">Connect to your school system to download application details.</p>
     </p>
 
-    <h2 class="govuk-heading-m">Running a batch check</h2>
-    <ol class="govuk-list govuk-list--number">
-      <li>Download the <a href="/public/csv/Batch-check-template.csv" download class="govuk-link">batch check template</a> (185kb) </li>
-      <li>Add the details of all parents you need to check, including: Name, Date of birth, National Insurance number or
-        Asylum support reference number.</li>
-      <li>Save it as a CSV file. </li>
-      <li>Upload the completed template on this page on this page and perform checks. </li>
-      <li>You’ll be given a file to download containing results. </li>
-    </ol>
+    {% from "govuk/components/button/macro.njk" import govukButton %}
 
+    {{ govukButton({
+    text: "Connect and run batch check",
+    classes: "govuk-button--primary",
+    href: '../batch-checking/imported-records'
+    }) }}
 
+    <h2 class="govuk-heading-m">Run a manual batch check</h2>
 
-    <h2 class="govuk-heading-m">Upload a completed template and run a check</h2>
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          How to run a manual batch check
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <ol class="govuk-list govuk-list--number">
+          <li>Add the details of all parents you need to check to the template, including: Name, Date of birth, National Insurance number or
+            Asylum support reference number.</li>
+          <li>Save it as a CSV file.</li>
+          <li>Upload the completed template below and run manual checks. </li>
+          <li>You’ll be given a file to download containing the results. </li>
+        </ol>
+      </div>
+    </details>
 
-    <p class="govuk-body">The batch check template must be fully completed and in CSV format. </p>
+    <p class="govuk-body">Download the <a href="/public/csv/Batch-check-template.csv" download class="govuk-link">batch check template</a> (185kb). This must be fully completed and in CSV format. </p>
 
-
-
+    <h3 class="govuk-heading-s">Upload a completed template</h3>
 
     {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
 
@@ -39,10 +55,14 @@
     }
     }) }}
 
+
+
+
+
     {% from "govuk/components/button/macro.njk" import govukButton %}
 
     {{ govukButton({
-    text: "Run checks",
+    text: "Upload and run a manual check",
     classes: "govuk-button--primary",
     href: '../batch-checking/batch-checking-loader'
     }) }}

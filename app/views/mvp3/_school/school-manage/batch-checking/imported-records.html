@@ -1,0 +1,66 @@
+{% extends "../../../../layouts/layout-dfe-schoolnav.html" %}
+{% set pageName="Imported records from a batch check" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <h2 class="govuk-tabs__title">
+        Contents
+      </h2>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#successful-checks">
+            Successful checks
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#errors">
+            Errors
+          </a>
+        </li>
+
+      </ul>
+      <div class="govuk-tabs__panel" id="successful-checks">
+        <h2 class="govuk-heading-l">Successful checks</h2>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Parent first name</th>
+              <th scope="col" class="govuk-table__header">Parent last name</th>
+              <th scope="col" class="govuk-table__header">Parent DOB</th>
+              <th scope="col" class="govuk-table__header">NINO or NASS</th>
+              <th scope="col" class="govuk-table__header">Email</th>
+              <th scope="col" class="govuk-table__header">Child first name</th>
+              <th scope="col" class="govuk-table__header">Child last name</th>
+              <th scope="col" class="govuk-table__header">Child DOB</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Eden</td>
+              <td class="govuk-table__cell">Tesfay</td>
+              <td class="govuk-table__cell">12 December 1978</td>
+              <td class="govuk-table__cell">QC123456A</td>
+              <td class="govuk-table__cell">test@test.com</td>
+              <td class="govuk-table__cell">Jim</td>
+              <td class="govuk-table__cell">Tesfay</td>
+              <td class="govuk-table__cell">18 December 2014</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="errors">
+        <h2 class="govuk-heading-l">Errors</h2>
+<p class="govuk-body">Content to go here</p>
+      </div>
+
+
+    </div>
+
+  </div>
+</div>
+    {% endblock %}
