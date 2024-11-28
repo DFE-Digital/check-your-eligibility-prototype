@@ -2,70 +2,88 @@
 
 {% set pageName="Home" %}
 
-
-
 {% block content %}
-
-{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
-
-{% set html %}
-  <h1 class="govuk-notification-banner__heading">
-    Checks completed
-  </h1>
-  <p class="govuk-body">Now download the checked file to see which parents can claim free school meals for their children.</p>
-
-  <p id="file-name-display">Filename will be displayed here.</p>
-
-
-  {%- from "govuk/components/button/macro.njk" import govukButton -%}
-
-  <div class="moj-button-action">
-    <a id="download-button" class="govuk-button" href="/public/csv/free-school-meals-outcomes-YYYYMMDD.csv" download role="button">
-      Download
-    </a>
-  </div>
-
-
-
-
-
-  <script type="text/javascript">
-    // Function to generate the filename based on today's date
-    function generateFilename() {
-      const today = new Date();
-      const year = today.getFullYear();
-      const month = String(today.getMonth() + 1).padStart(2, '0');
-      const day = String(today.getDate()).padStart(2, '0');
-      return `free-school-meals-outcomes-${year}${month}${day}.csv`;
-    }
-
-    // Update the filename display on page load
-    document.addEventListener('DOMContentLoaded', function () {
-      const filename = generateFilename();
-      document.getElementById('file-name-display').innerText = filename; // Display the filename
-      document.getElementById('download-button').setAttribute('download', filename);
-    });
-
-
-  </script>
-
-
-
-
-
-
-
-
-
-{% endset %}
-
-{{ govukNotificationBanner({
-  html: html,
-  type: "success"
-}) }}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
+
+    {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+    {% set html %}
+      <h1 class="govuk-notification-banner__heading">
+        Checks completed
+      </h1>
+      <p class="govuk-body">See below which parents can claim free school meals for their children.</p>
+
+    {% endset %}
+
+    {{ govukNotificationBanner({
+      html: html,
+      type: "success"
+    }) }}
+
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">School</th>
+          <th scope="col" class="govuk-table__header">Parent name</th>
+          <th scope="col" class="govuk-table__header">Parent DOB</th>
+          <th scope="col" class="govuk-table__header">NINO or NASS</th>
+          <th scope="col" class="govuk-table__header">Email</th>
+          <th scope="col" class="govuk-table__header">Child name</th>
+          <th scope="col" class="govuk-table__header">Child DOB</th>
+          <th scope="col" class="govuk-table__header">Status</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+
+
     <h1 class="govuk-heading-m">Result explainer </h1>
     <p><strong>Entitled</strong> – The children of this parent or guardian are entitled to free school meals.</p>
     <p><strong>May not be entitled</strong> – The children of this parent or guardian may not be entitled to free school meals. To appeal, provide evidence to support your local authority in making a decision. View the list of acceptable evidence. </p>
