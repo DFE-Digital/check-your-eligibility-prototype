@@ -59,7 +59,15 @@
       </div>
 
 
+
     </div>
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+    text: "Check eligibility",
+    classes: "govuk-button--primary",
+    href: '../batch-checking/batch-checking-loader'
+    }) }}
 
   </div>
 </div>
