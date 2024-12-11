@@ -29,8 +29,8 @@
       <ul class="govuk-tabs__list">
 
         <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-          <a class="govuk-tabs__tab" href="#design-documentation">
-            Design documentation
+          <a class="govuk-tabs__tab" href="#design-principles">
+            Design principles
           </a>
         </li>
 
@@ -68,9 +68,267 @@
 
       <!-------------------Design documentation------------------->
 
-      <div class="govuk-tabs__panel" id="design-documentation">
+      <div class="govuk-tabs__panel" id="design-principles">
 
-        <h2 class="govuk-heading-m">Archived</h2>
+        <h2 class="govuk-heading-m">How we design</h2>
+
+        <p class="govuk-body">We design this service using GDS and DfE design standards:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+        <li><a href="https://www.gov.uk/guidance/government-design-principles" class="govuk-link">GDS Design Principles</a></li>
+        <li><a href="https://design-system.service.gov.uk/" class="govuk-link">GOV.UK Design System</a></li>
+        <li><a href="https://design.education.gov.uk/" class="govuk-link">DfE Design manual</a></li>
+        <li><a href="https://design.education.gov.uk/design-system" class="govuk-link">DfE Design system</a></li>
+        </ul>
+
+        <p class="govuk-body">We have also used design patterns and components from DWP and MoJ.</p>
+
+
+
+
+
+
+      </div>
+
+      <!-------------------Private beta------------------->
+
+      <div class="govuk-tabs__panel" id="private-beta">
+
+
+          <h2 class="govuk-heading-m">Statuses</h2>
+          <p><span class="govuk-tag govuk-tag--red">Needs updating</span> Needs updating following feedback and research</p>
+          <p><span class="govuk-tag govuk-tag--yellow"> In draft</span> Currently being updated</p>
+          <p><span class="govuk-tag govuk-tag--orange">Needs signing off</span> Changes made, need PO sign off</p>
+          <p><span class="govuk-tag govuk-tag--green"> Published to test</span> Signed off by PO and published to test</p>
+
+
+
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m">Private beta service</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Parent journey (FSM)</th>
+              <th scope="col" class="govuk-table__header">Schools</th>
+              <th scope="col" class="govuk-table__header">Local authorities</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/mvp2/account/start-now-beta-schools" class="govuk-link">Start page</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></td>
+              <td class="govuk-table__cell">Dashboard</td>
+              <td class="govuk-table__cell">Dashboard</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/mvp2/checker/parent-guidance" class="govuk-link">Guidance</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/mvp2/parent-soft-check/account/beta-school-check" class="govuk-link">Beta school check</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/mvp2/parent-soft-check/account/beta-school-check-no" class="govuk-link">Schools not included in beta</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/mvp2/parent-soft-check/account/beta-school-check" class="govuk-link">Eligibility check</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/mvp2/parent-soft-check/nass-number" class="govuk-link">Asylum reference check</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/mvp2/parent-soft-check/checking-loader" class="govuk-link">Checking loader</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/mvp2/parent-soft-check/eligible" class="govuk-link">Eligible</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/mvp2/parent-soft-check/outcome-not-entitled" class="govuk-link">Not eligible</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/mvp2/parent-soft-check/outcome-could-not-find" class="govuk-link">Not found</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/mvp2/parent-soft-check/outcome-could-not-find-pending" class="govuk-link">Not found - need UC statements</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/mvp2/parent-soft-check/outcome-technical-error" class="govuk-link">Check failed</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/mvp2/parent-soft-check/childs-age" class="govuk-link">Add children</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/mvp2/parent-soft-check/childs-age-no-javascript" class="govuk-link">Add children - no JavaScript</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/mvp2/parent-soft-check/check-answers" class="govuk-link">Check answers</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/mvp2/parent-soft-check/check-answers-no-javascript" class="govuk-link">Check answers - no JavaScript</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/mvp2/parent-soft-check/children-added" class="govuk-link">Application complete</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/mvp2/privacy" class="govuk-link">Privacy</a> <strong class="govuk-tag govuk-tag--yellow"> In draft</strong></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/mvp2/cookies-parents" class="govuk-link">Cookies</a> <strong class="govuk-tag govuk-tag--yellow"> In draft</strong></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/mvp2/service-unavailable-parents" class="govuk-link">Service unavailable</a> <strong class="govuk-tag govuk-tag--yellow"> In draft</strong></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/mvp2/problem-with-service-parents" class="govuk-link">There is a problem with this service</a> <strong class="govuk-tag govuk-tag--yellow"> In draft</strong></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/mvp2/page-not-found-parents" class="govuk-link">Page not found</a> <strong class="govuk-tag govuk-tag--yellow"> In draft</strong></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+
+
+
+
+
+          </tbody>
+        </table>
+
+      </div>
+
+      <!-------------------Design ideas------------------->
+
+      <div class="govuk-tabs__panel" id="design-ideas">
+
+        <p class="govuk-body"><a href="/mvp3/_family/parent-soft-check/outcomes/outcome-not-entitled-appeal" class="govuk-link">Parents appeal journey</a></p>
+        <p class="govuk-body"><a href="" class="govuk-link">Batch checking</a></p>
+
+
+    </div>
+
+      <!-------------------For usability testing------------------->
+
+      <div class="govuk-tabs__panel" id="usability-testing">
+
+      </div>
+
+      <!-------------------Ready for dev handover------------------->
+
+      <div class="govuk-tabs__panel" id="ready-for-dev">
+
+      </div>
+
+      <!-------------------Archive versions------------------->
+
+      <div class="govuk-tabs__panel" id="archive-versions">
+        <h2 class="govuk-heading-m">Alpha to Beta</h2>
+          <p class="govuk-body"><a href="beta-backlog">MVP: January - 5th July 2024</a></p>
+          <h2 class="govuk-heading-m">Discovery to Alpha:</h2>
+
+            <p><a href="v3">Version 3: Nov to Dec 2023</a></p>
+
+            <p><a href="v2">Version 2: Oct to Nov 2023</a></p>
+
+            <p><a href="v1">Version 1: Sep to Oct 2023</a></p>
+
+            <h2 class="govuk-heading-m">Archive design resources</h2>
         <ul class="govuk-list">
           <li><a
               href="https://lucid.app/lucidspark/b115cd01-0ac7-4730-afb5-f2642cac497e/edit?viewport_loc=24096%2C4857%2C1920%2C905%2C0_0&invitationId=inv_9afffb46-9124-48a0-a911-020aa830cf69">Ideation
@@ -97,64 +355,6 @@
               href="https://lucid.app/lucidspark/7464ef00-abc1-4654-8b31-115a1fcbfee2/edit?invitationId=inv_bfe11609-a5a2-4278-83c4-524f0ed041bf&page=0_0#">MVP
               feature set</a></li>
         </ul>
-
-      </div>
-
-      <!-------------------Private beta------------------->
-
-      <div class="govuk-tabs__panel" id="private-beta">
-
-        <table class="govuk-table">
-          <caption class="govuk-table__caption govuk-table__caption--m">Private beta service</caption>
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header">Parent journey (FSM)</th>
-              <th scope="col" class="govuk-table__header">Schools</th>
-              <th scope="col" class="govuk-table__header">Local authorities</th>
-            </tr>
-          </thead>
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="/mvp2/account/start-now-beta-schools" class="govuk-link">Start page</a></td>
-              <td class="govuk-table__cell">Dashboard</td>
-              <td class="govuk-table__cell">Dashboard</td>
-            </tr>
-
-          </tbody>
-        </table>
-
-      </div>
-
-      <!-------------------Design ideas------------------->
-
-      <div class="govuk-tabs__panel" id="design-ideas">
-      <p class="govuk-body"><a href="/mvp3/_family/parent-soft-check/outcomes/outcome-not-entitled-appeal" class="govuk-link">Parents appeal journey</a></p>
-      </div>
-
-      <!-------------------For usability testing------------------->
-
-      <div class="govuk-tabs__panel" id="usability-testing">
-
-      </div>
-
-      <!-------------------Ready for dev handover------------------->
-
-      <div class="govuk-tabs__panel" id="ready-for-dev">
-
-      </div>
-
-      <!-------------------Archive versions------------------->
-
-      <div class="govuk-tabs__panel" id="archive-versions">
-        <h2 class="govuk-heading-m">Alpha to Beta</h2>
-          <p class="govuk-body"><a href="beta-backlog">MVP: January - 5th July 2024</a></p>
-          <h2 class="govuk-heading-m">Discovery to Alpha:</h2>
-
-            <p><a href="v3">Version 3: Nov to Dec 2023</a></p>
-
-            <p><a href="v2">Version 2: Oct to Nov 2023</a></p>
-
-            <p><a href="v1">Version 1: Sep to Oct 2023</a></p>
       </div>
 
 
