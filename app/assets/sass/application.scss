@@ -585,10 +585,46 @@ section.dfe {
 }
 
 .dfe-page-header {
-  background-color: #f0f8ff; /* Example: Light blue */
+  background-color: #f0f8ff; /*Light blue */
   padding: 20px;
 }
 
 .moj-sub-navigation .moj-sub-navigation__link[aria-current="true"] {
   border-bottom: 4px solid #1d70b8;
+}
+
+/* Flexbox alignment for the radio button, image, and text */
+.govuk-radios__label {
+  display: flex;
+  align-items: flex-start; /* Align radio button to the top of the content */
+  gap: 15px; /* Space between the radio button and the content */
+  margin-bottom: 15px; /* Add spacing between radio button items */
+}
+
+/* Wrap image and text together */
+.radio-content {
+  display: flex;
+  // flex-direction: column; /* Stack image and text vertically */
+  gap: 5px; /* Space between image and text */
+}
+
+/* Ensure consistent size for logos */
+.radio-button-image {
+  width: 100px; /* Fixed width */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensure logos are not stretched */
+}
+
+/* Optional: Adjust text for alignment */
+.radio-button-text {
+  font-size: 16px;
+  line-height: 1.2;
+  margin: 0; /* Remove any default margin */
+}
+
+.text-red {
+  color: #d4351c; /* GOV.UK standard red */
+  font-weight: bold;
+  margin: 0; /* Ensure no additional margins */
+  display: inline; /* Keep it inline */
 }
