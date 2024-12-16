@@ -3,7 +3,8 @@
     "dev": "govuk-prototype-kit dev",
     "serve": "govuk-prototype-kit serve",
     "start": "./node_modules/govuk-prototype-kit/bin/cli start",
-    "generate-data": "node ./scripts/generate-applications.js"
+    "generate-data": "node ./scripts/generate-applications.js",
+    "generate-batch": "node ./scripts/generateBatchCheckSchool.js"
   },
   "dependencies": {
     "@govuk-prototype-kit/common-templates": "2.0.1",
@@ -20,6 +21,6 @@
     "radio-button-redirect": "^1.2.0"
   },
   "devDependencies": {
-    "@faker-js/faker": "^9.0.3"
+    "@faker-js/faker": "^9.3.0"
   }
 }

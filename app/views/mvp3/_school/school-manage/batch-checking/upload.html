@@ -3,6 +3,8 @@
 
 {% block content %}
 
+
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">{{pageName}}</h1>
@@ -10,18 +12,18 @@
     <p class="govuk-body">
       Export and upload a CTF from your school system or complete and upload our template to run a batch check on free school meal applications.
     </p>
-    <!-- <h2 class="govuk-heading-m">Connect to the ECS using your school system</h2>
+    <h2 class="govuk-heading-m">Connect to the ECE using your school system</h2>
 
-    <p class="govuk-body">View results of the check from your system </p>
+    <p class="govuk-body">Fetch data using API from your School MIS to perform a batch check </p>
     </p>
 
     {% from "govuk/components/button/macro.njk" import govukButton %}
 
     {{ govukButton({
-    text: "Connect and view batch check results",
+    text: "Fetch data from your school system",
     classes: "govuk-button--primary",
     href: '../batch-checking/imported-records'
-    }) }} -->
+    }) }}
 
 
 
@@ -36,9 +38,12 @@
         school uses) in the admin area of your school management information system </li>
       <li>Select export pupil data </li>
       <li>Save the exported file on your computer </li>
+      <li>Add in any additional information that your system doesn't collect (for example National Insurance) and resave the file as a XML</li>
       <li>Navigate to the saved CTF and select your chosen file</li>
     </ol>
     </ul>
+
+
 
     <h3 class="govuk-heading-s">Upload a XML file from your school management information system</h3>
 
@@ -56,12 +61,12 @@
     {{ govukButton({
     text: "Upload and run a CTF batch check",
     classes: "govuk-button--primary",
-    href: '../batch-checking/batch-checking-loader'
+    href: '../batch-checking/imported-records'
     }) }}
 
 
 
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break">
 
     <h2 class="govuk-heading-m">Run a manual batch check</h2>
 
