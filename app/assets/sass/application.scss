@@ -583,3 +583,12 @@ section.dfe {
   font-size: 0; // Removes white space
   @include govuk-clearfix;
 }
+
+.dfe-page-header {
+  background-color: #f0f8ff; /* Example: Light blue */
+  padding: 20px;
+}
+
+.moj-sub-navigation .moj-sub-navigation__link[aria-current="true"] {
+  border-bottom: 4px solid #1d70b8;
+}

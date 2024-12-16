@@ -18,7 +18,6 @@ function generateNameInLocale(locale) {
   const PolishName = generateNameInLocale('pl');
   const UkranianName = generateNameInLocale('uk');
   const ChineseTaiwanName = generateNameInLocale('zh_TW');
-
 }
 
 const generateApplication = () => {
