@@ -621,3 +621,10 @@ section.dfe {
   line-height: 1.2;
   margin: 0; /* Remove any default margin */
 }
+
+.text-red {
+  color: #d4351c; /* GOV.UK standard red */
+  font-weight: bold;
+  margin: 0; /* Ensure no additional margins */
+  display: inline; /* Keep it inline */
+}
