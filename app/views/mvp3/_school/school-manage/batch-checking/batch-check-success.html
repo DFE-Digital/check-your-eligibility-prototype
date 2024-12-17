@@ -2,6 +2,7 @@
 {% set pageName="All checks completed successfully" %}
 
 {% block content %}
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
@@ -26,7 +27,7 @@
 
     {{ govukNotificationBanner({
     html: html,
-    type: "success"
+    type: ""
     }) }}
 
     <div class="govuk-grid-column-full">
@@ -60,7 +61,7 @@
           <div class="govuk-button-group">
             {{ govukButton({
             text: "Notify parents",
-            href: ' '
+            href: 'batch-check-notify.html'
             }) }}
             {{ govukButton({
             text: "Export results",
