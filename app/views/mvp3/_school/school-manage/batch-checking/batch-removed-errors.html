@@ -5,9 +5,6 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full-width">
-    <!-- <h1 class="govuk-heading-l">{{pageName}}</h1> -->
-
-
     <article class="moj-ticket-panel" aria-label="Sub navigation 1">
       <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
         <div class="govuk-notification-banner__header">
@@ -19,49 +16,16 @@
           <h3 class="govuk-notification-banner__heading">
             {{pageName}}
           </h3>
-          <p class="govuk-body">4 records with errors have been successfully removed. <br> Download the XML file with the updated records and import them again or run batch check with the remaining records. </div>
+          <p class="govuk-body">4 records with errors have been successfully removed. <br> Download the XML file with the updated records and import them again or run batch check with the remaining records.</p>
+        </div>
       </div>
-
-
-      <!-- <section class="moj-ticket-panel__content  moj-ticket-panel__content--red" aria-label="Section 1">
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">You have 7 errors</h2>
-        <p class="govuk-body">Return to your MIS to fix the listed errors. Once the errors are fixed, download a new XML
-          file with the specified records and upload it again.</p>
-        <a class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button">
-          Remove files with errors
-        </a>
-      </section> -->
-
     </article>
   </div>
 
   <div class="govuk-grid-column-full">
-
-    <!-- <nav class="moj-sub-navigation" aria-label="Sub navigation">
-        <ul class="moj-sub-navigation__list">
-          <li class="moj-sub-navigation__item">
-            <a class="moj-sub-navigation__link" aria-current="true" data-section="ready-section"
-              href="#ready"><strong>Ready to check</strong></a>
-         </li>
-           <li class="moj-sub-navigation__item">
-            <a class="moj-sub-navigation__link" data-section="error-section" href="#errors"><strong>Errors</strong></a>
-          </li>
-        </ul>
-      </nav> -->
-
-
-    <div id="ready-section" class="govuk-table-section">
-      <div class="govuk-grid-column-two-thirds">
-        <!-- <h2 class="govuk-heading-l">Ready to check</h2> -->
-      </div>
-
-    </div>
-
-    <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all"
-      data-multi-select-idprefix=" -" data-module="moj-sortable-table">
+    <table class="govuk-table" data-module="moj-sortable-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th class="govuk-table__header" scope="col" id="select-all"></th>
           <th scope="col" class="govuk-table__header">Parent <br>first name</th>
           <th scope="col" class="govuk-table__header">Parent last name</th>
           <th scope="col" class="govuk-table__header">Parent date <br>of birth</th>
@@ -73,39 +37,17 @@
         </tr>
       </thead>
       <tbody class="govuk-table__body">
-        <tr class="govuk-table__row govuk-table__row--selected">
-          <td class="govuk-table__cell">
-            <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-              <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
-              <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
-                <span class="govuk-visually-hidden"> </span>
-              </label>
-            </div>
-          </td>
-          <!-- <tr class="govuk-table__row"> -->
-
-
+        <tr class="govuk-table__row">
           <td class="govuk-table__cell">Eden</td>
           <td class="govuk-table__cell">Tesfay</td>
           <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
-          <td class="govuk-table__cell ">NW123456b</td>
+          <td class="govuk-table__cell">NW123456b</td>
           <td class="govuk-table__cell">Samuel Tesfay</td>
           <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
           <td class="govuk-table__cell">edentesfay@icloud.com</td>
           <td class="govuk-table__cell"><span class="text-red">Issue with National Insurance number</span></td>
-
         </tr>
-      </tbody>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row govuk-table__row--selected">
-          <td class="govuk-table__cell">
-            <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-              <input type="checkbox" class="govuk-checkboxes__input" id="m ">
-              <label class="govuk-label govuk-checkboxes__label" for=" a">
-                <span class="govuk-visually-hidden"> </span>
-              </label>
-            </div>
-          </td>
+        <tr class="govuk-table__row">
           <td class="govuk-table__cell">Eden</td>
           <td class="govuk-table__cell">Tesfay</td>
           <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
@@ -114,74 +56,24 @@
           <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
           <td class="govuk-table__cell">edentesfay@icloud.com</td>
           <td class="govuk-table__cell"><span class="text-red">Issue with parent date of birth</span></td>
-
-
         </tr>
-      </tbody>
-      <tbody class="govuk-table__body">
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row govuk-table__row--selected">
-          <td class="govuk-table__cell">
-            <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-              <input type="checkbox" class="govuk-checkboxes__input" id=" ">
-              <label class="govuk-label govuk-checkboxes__label" for=" ">
-                <span class="govuk-visually-hidden"> </span>
-              </label>
-            </div>
-          </td>
-          <td class="govuk-table__cell">Eden </td>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Eden</td>
           <td class="govuk-table__cell">Tesfay</td>
           <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
           <td class="govuk-table__cell">NW123456b</td>
           <td class="govuk-table__cell">Samuel Tesfay</td>
           <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
           <td class="govuk-table__cell">edentesfay@icloud.com</td>
-          <td class="govuk-table__cell"><span class="text-red">Issue with National Insurance number</span></td>
-
-
+          <td class="govuk-table__cell"><span class="text-red">Issue with first name</span></td>
         </tr>
-      </tbody>
-      <tr class="govuk-table__row govuk-table__row--selected">
-        <td class="govuk-table__cell">
-          <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-            <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
-            <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
-              <span class="govuk-visually-hidden"> </span>
-            </label>
-          </div>
-        </td>
-        <td class="govuk-table__cell">Eden</td>
-        <td class="govuk-table__cell">Tesfay</td>
-        <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
-        <td class="govuk-table__cell">NW123456b</td>
-        <td class="govuk-table__cell">Samuel Tesfay</td>
-        <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
-        <td class="govuk-table__cell">edentesfay@icloud.com</td>
-        <td class="govuk-table__cell"><span class="text-red">Issue with first name</span> </td>
-
-
-      </tr>
       </tbody>
     </table>
   </div>
-
-
-
-  </table>
-</div>
-<!--
-    {{ govukButton({
-    text: "Run batch check",
-    classes: "govuk-button--primary",
-    href: '../batch-checking/batch-checking-loader'
-    }) }} -->
-
-</div>
 </div>
 {% endblock %}
 
 {% block pageScripts %}
-
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const navLinks = document.querySelectorAll('.moj-sub-navigation__link');
@@ -213,6 +105,4 @@
     });
   });
 </script>
-
-
 {% endblock %}
