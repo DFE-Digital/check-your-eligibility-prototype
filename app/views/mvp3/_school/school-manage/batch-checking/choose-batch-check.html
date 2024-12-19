@@ -1,0 +1,56 @@
+{% extends "../../../../layouts/layout-dfe-schoolnav.html" %}
+{% set pageName="" %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+    <form action="/" method="post" novalidate>
+
+      {{ govukRadios({
+      name: "evidence",
+      id:'batch check',
+      fieldset: {
+      legend: {
+      text: "How do you want to run a batch check?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+      }
+      },
+      hint: {
+      text: "You can choose 3 different ways to run a batch check depending on your school setup."
+      },
+      items: [
+      {
+      value: "connect",
+      text: "Connect to your school management information system (MIS)",
+      hint: {
+      text: "Connect to your MIS and fetch the data for running a batch check"
+      }
+      },
+      {
+      value: "ctf",
+      text: "Use a Common File Transfer (CTF)",
+      hint: {
+      text: "Upload a CTF from your school management information system"
+      }
+      },
+      {
+      value: "csv",
+      text: "Run a manual batch check using our CSV template",
+      hint: {
+      text: "Download and use our CSV template to run a batch check manually"
+      }
+      }
+      ]
+      }) }}
+
+      {{ govukButton({
+      text: "Continue",
+      classes:'govuk-!-margin-top-5'
+      }) }}
+    </form>
+    {% endblock %}
