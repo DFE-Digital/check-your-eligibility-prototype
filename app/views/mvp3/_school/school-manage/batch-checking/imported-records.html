@@ -17,7 +17,7 @@
       </div>
       <div class="govuk-notification-banner__content">
         <p class="govuk-notification-banner__heading">
-          46 records have successfully been added </p>
+          46 records have been imported </p>
 
         <!-- <p class="govuk-notification-banner__heading">
             There are 7 errors that need your attention.
@@ -26,14 +26,14 @@
       </div>
     </div>
 
-    <div class="govuk-warning-text">
+    <!--<div class="govuk-warning-text">
       <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
       <strong class="govuk-warning-text__text">
         <span class="govuk-visually-hidden">Warning</span>
-        There are errors in your file. <a href="imported-errors" class="govuk-link">View and fix errors</a> before
+        You must <a href="imported-errors" class="govuk-link">view and fix these errors</a> before
         continuing with the batch check.
       </strong>
-    </div>
+    </div> -->
 
 
   </div>
@@ -163,13 +163,12 @@
   </table>
 </div>
 
+<h2 class="govuk-heading-m">This import contains errors</h2>
 
-<p class="govuk-body">You can run a batch check using the records that were successfully uploaded. These won't include
-  the records that contain errors.</p>
-
+<p class="govuk-body">You can <a href="imported-errors" class="govuk-link">view and fix the errors before running a check</a> or just run a check on the records without errors.</p>
 
 {{ govukButton({
-text: "Run batch check",
+text: "Check records without errors",
 classes: "govuk-button--primary",
 href: '../batch-checking/batch-checking-loader'
 }) }}

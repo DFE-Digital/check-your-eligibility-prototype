@@ -1,5 +1,5 @@
 {% extends "../../../../layouts/layout-dfe-schoolnav.html" %}
-{% set pageName="Common File Transfer (CTF) errors removed" %}
+{% set pageName="Errors removed from import" %}
 
 {% block content %}
 
@@ -16,10 +16,13 @@
           <h3 class="govuk-notification-banner__heading">
             {{pageName}}
           </h3>
-          <p class="govuk-body">4 records with errors have been successfully removed. <br> Download the XML file with the updated records and import them again or run batch check with the remaining records.</p>
-          <p class="govuk-body">
-          <a href="upload" class="govuk-link">Run a batch check</a> for multiple parents or guardians.
-          </p>
+          <p class="govuk-body">4 records with errors have been removed from the Common File Transfer (CTF) import.</p>
+          <p class="govuk-body">You can now download the XML file with the updated records and <a href="upload" class="govuk-link">upload it again</a> or run a batch check with the remaining records.</p>
+          {{ govukButton({
+            text: "Check remaining records",
+            classes: "govuk-button--primary",
+            href: '../batch-checking/batch-checking-loader'
+            }) }}
         </div>
       </div>
     </article>
