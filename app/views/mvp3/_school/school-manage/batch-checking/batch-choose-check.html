@@ -8,7 +8,7 @@
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">{{pageName}}</h1>
 
-    <form action="/" method="post" novalidate>
+
 
       {{ govukRadios({
       name: "evidence",
@@ -25,21 +25,21 @@
       },
       items: [
       {
-      value: "connect",
+      value: "batch-connect",
       text: "Connect to your school management information system (MIS)",
       hint: {
       text: "Connect to your MIS and fetch the data for running a batch check"
       }
       },
       {
-      value: "ctf",
+      value: "batch-common-file-transfer",
       text: "Use a Common File Transfer (CTF)",
       hint: {
       text: "Upload a CTF from your school management information system"
       }
       },
       {
-      value: "csv",
+      value: "batch-manual-check",
       text: "Run a manual batch check using our CSV template",
       hint: {
       text: "Download and use our CSV template to run a batch check manually"
@@ -50,7 +50,27 @@
 
       {{ govukButton({
       text: "Continue",
-      classes:'govuk-!-margin-top-5'
+      classes:'govuk-!-margin-top-5',
+      attributes: {
+        href: "#",
+        id: "Continue-bttn"
+      }
       }) }}
-    </form>
+
+      <script>
+      document.getElementById('Continue-bttn').addEventListener('click', function (event) {
+        const selectedOption = document.querySelector('input[name="evidence"]:checked');
+
+        if (selectedOption) {
+
+            window.location.href = selectedOption.value;
+
+          } else {
+            event.preventDefault();
+          }
+
+        });
+
+      </script>
+
     {% endblock %}
