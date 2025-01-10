@@ -1,0 +1,149 @@
+{% extends "layouts/main.html" %}
+{% set pageName=" Eligibility checker prototype" %}
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column--three-quarters">
+
+
+    <h1 class="govuk-heading-l">
+      {{ serviceName }} - private beta protoype
+    </h1>
+
+    <p class="govuk-body">This a detailed view of all pages included in the Private Beta service prototype</p>
+    <p class="govuk-body">View <a href="/indexes/index-design-wip" class="govuk-link">design work in progress</a> and the iteration status of Private Beta service pages.</p>
+
+    <h2 class="govuk-heading-m">Statuses</h2>
+          <p><span class="govuk-tag govuk-tag--red">Needs updating</span> Needs updating following feedback and research</p>
+          <p><span class="govuk-tag govuk-tag--yellow"> In draft</span> Currently being updated</p>
+          <p><span class="govuk-tag govuk-tag--orange">Needs signing off</span> Changes made, need PO sign off</p>
+          <p><span class="govuk-tag govuk-tag--green"> Published to test</span> Signed off by PO and published to test</p>
+
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break">
+          <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                    Free school meals
+                  </span>
+                </h2>
+              </div>
+              <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+                <div class="govuk-tabs" data-module="govuk-tabs">
+                  <h2 class="govuk-tabs__title">
+                    Contents
+                  </h2>
+                  <ul class="govuk-tabs__list">
+                    <li class="govuk-tabs__list-item">
+                      <a class="govuk-tabs__tab" href="#parents-and-guardians">
+                        Parents and guardians
+                      </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                      <a class="govuk-tabs__tab" href="#schools">
+                        Schools
+                      </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                      <a class="govuk-tabs__tab" href="#Local-authorities">
+                        Local authorities
+                      </a>
+                    </li>
+                  </ul>
+
+                <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="parents-and-guardians">
+
+                  <h2 class="govuk-heading-m">Parents and guardians journey</h2>
+                  <p class="govuk-body"><a href="/mvp2/account/start-now-beta-schools" class="govuk-link">Start page</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></p>
+                  <p class="govuk-body"><a href="/mvp2/checker/parent-guidance" class="govuk-link">Guidance</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></p>
+                  <p class="govuk-body"><a href="/mvp2/parent-soft-check/account/beta-school-check" class="govuk-link">Beta school check</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></p>
+                  <p class="govuk-body"><a href="/mvp2/parent-soft-check/account/beta-school-check-no" class="govuk-link">Schools not included in beta</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></p>
+                  <p class="govuk-body"><a href="/mvp2/parent-soft-check/account/beta-school-check" class="govuk-link">Eligibility check</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></p>
+                  <p class="govuk-body"><a href="/mvp2/parent-soft-check/nass-number" class="govuk-link">Asylum reference check</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></p>
+                  <p class="govuk-body"><a href="/mvp2/parent-soft-check/checking-loader" class="govuk-link">Checking loader</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></p>
+                  <p class="govuk-body"><a href="/mvp2/parent-soft-check/eligible" class="govuk-link">Eligible</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></p>
+                  <p class="govuk-body"> <a href="/mvp2/parent-soft-check/outcome-not-entitled" class="govuk-link">Not eligible</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></p>
+                  <p class="govuk-body"><a href="/mvp2/parent-soft-check/outcome-could-not-find" class="govuk-link">Not found</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></p>
+                  <p class="govuk-body"> <a href="/mvp2/parent-soft-check/outcome-could-not-find-pending" class="govuk-link">Not found - need UC statements</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></p>
+                  <p class="govuk-body"><a href="/mvp2/parent-soft-check/outcome-technical-error" class="govuk-link">Check failed</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></p>
+                  <p class="govuk-body"><a href="/mvp2/parent-soft-check/childs-age" class="govuk-link">Add children</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></p>
+                  <p class="govuk-body"> <a href="/mvp2/parent-soft-check/childs-age-no-javascript" class="govuk-link">Add children - no JavaScript</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></p>
+                  <p class="govuk-body"> <a href="/mvp2/parent-soft-check/check-answers" class="govuk-link">Check answers</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></p>
+                  <p class="govuk-body"> <a href="/mvp2/parent-soft-check/check-answers-no-javascript" class="govuk-link">Check answers - no JavaScript</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></p>
+                  <p class="govuk-body"><a href="/mvp2/parent-soft-check/children-added" class="govuk-link">Application complete</a> <strong class="govuk-tag govuk-tag--green">Published to test</strong></p>
+                  <p class="govuk-body">  <a href="/mvp2/privacy" class="govuk-link">Privacy</a> <strong class="govuk-tag govuk-tag--yellow"> In draft</strong></p>
+                  <p class="govuk-body"> <a href="/mvp2/cookies-parents" class="govuk-link">Cookies</a> <strong class="govuk-tag govuk-tag--yellow"> In draft</strong></p>
+                  <p class="govuk-body"> <a href="/mvp2/service-unavailable-parents" class="govuk-link">Service unavailable</a> <strong class="govuk-tag govuk-tag--yellow"> In draft</strong></p>
+                  <p class="govuk-body"> <a href="/mvp2/problem-with-service-parents" class="govuk-link">There is a problem with this service</a> <strong class="govuk-tag govuk-tag--yellow"> In draft</strong></p>
+                  <p class="govuk-body"> <a href="/mvp2/page-not-found-parents" class="govuk-link">Page not found</a> <strong class="govuk-tag govuk-tag--yellow"> In draft</strong></p>
+
+                  </div>
+
+                  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="Schools">
+                    <h2 class="govuk-heading-m">Parents and guardians journey</h2>
+                  </div>
+
+                  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="local-authorities">
+                    <h2 class="govuk-heading-m">Local authorities</h2>
+                  </div>
+              </div>
+            </div>
+            <div class="govuk-accordion__section">
+              <div class="govuk-accordion__section-header">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                    Childcare
+                  </span>
+                </h2>
+              </div>
+              <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+                <div class="govuk-tabs" data-module="govuk-tabs">
+                  <h2 class="govuk-tabs__title">
+                    Contents
+                  </h2>
+                  <ul class="govuk-tabs__list">
+                    <li class="govuk-tabs__list-item">
+                      <a class="govuk-tabs__tab" href="#parents-and-guardians">
+                        Parents and guardians
+                      </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                      <a class="govuk-tabs__tab" href="#schools">
+                        Schools
+                      </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                      <a class="govuk-tabs__tab" href="#Local-authorities">
+                        Local authorities
+                      </a>
+                    </li>
+                  </ul>
+
+                <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="parents-and-guardians">
+
+                  </div>
+
+                  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="Schools">
+                    <h2 class="govuk-heading-m">Parents and guardians journey</h2>
+                  </div>
+
+                  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="local-authorities">
+                    <h2 class="govuk-heading-m">Local authorities</h2>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+                {% endblock %}
