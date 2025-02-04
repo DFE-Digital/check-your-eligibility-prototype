@@ -1,0 +1,106 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% set parentName="Eden Tesfay" %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+
+
+    <span class="govuk-hint">John Spencer</span>
+    <h1 class="govuk-heading-l">
+    Bramhope Primary School Portal
+    </h1>
+
+
+    <div class="govuk-grid-row">
+
+            
+      <div class="govuk-grid-column-full">
+        
+
+<div class="dfe-grid-container">
+
+
+    <div class="dfe-card-container">
+
+      <div class="def-card">
+        <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="application-types">Check eligibility</a>
+        </h2>
+        <p>See what a child at your school or authority is eligible for.</p>
+    </div>
+    </div>
+
+    <div class="dfe-card-container">
+
+      <div class="def-card">
+        <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="applications">Eligible families</a>
+            {%- from "moj/components/notification-badge/macro.njk" import mojNotificationBadge -%}
+            
+            {{ mojNotificationBadge({
+              text: "10"
+            }) }}
+        </h2>
+        <p>Check which children have been approved for free school meals and early years pupil premium.</p>
+    </div>
+    </div>
+
+    <div class="dfe-card-container">
+
+      <div class="def-card">
+        <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="appeals">Appeals</a>
+            {%- from "moj/components/notification-badge/macro.njk" import mojNotificationBadge -%}
+            
+            {{ mojNotificationBadge({
+              text: "3"
+            }) }}
+        </h2>
+        <p>New appeals which need to be checked and approved or submitted for guidance from your local authority.</p>
+    </div>
+    </div>
+
+
+
+
+    <div class="dfe-card-container">
+
+      <div class="def-card">
+        <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="resources">Resources</a>
+        </h2>
+        <p>Guidance and documenation for making decisions on applications.</p>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+        
+      </div>  
+    
+    </div>
+
+  
+  </div>
+</div>
+
+{% endblock %}

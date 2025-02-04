@@ -1,0 +1,187 @@
+{% extends "/layouts/mvp3/layout-dfe.html" %}
+{% set pageName="Provide details of all children" %}
+{% block pageScripts %}
+
+<script type="text/javascript" src="/public/javascripts/autocomplete.js"></script>
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    selectElement: document.querySelector('#school-picker')
+  })
+  document.addEventListener('DOMContentLoaded', function () {
+
+    var addAnotherButton = document.querySelector('.moj-add-another__add-button');
+    var removeButton = document.querySelectorAll('.moj-add-another__remove-button');
+    removeButton.forEach(function (button) {
+      button.addEventListener('click', updateLegends);
+    });
+    addAnotherButton.addEventListener('click', updateLegends);
+    function updateLegends() {
+      setTimeout(() => {
+        const legends = document.querySelectorAll('.moj-add-another__title');
+        legends.forEach(function (legend, index) {
+          legend.innerHTML = `Child ${index + 1}`;
+        });
+        var removeButton = document.querySelectorAll('.moj-add-another__remove-button');
+        removeButton.forEach(function (button) {
+          button.addEventListener('click', updateLegends);
+        });
+      }, 50);
+    }
+  })
+</script>
+{% endblock %}
+
+{% block content %}
+<script>
+  console.log('Nunjucks layout "layouts/main.html is being used');
+</script>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <div class="govuk-notification-banner govuk-notification-banner" role="region"
+      aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Important
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+          Appeals will be rejected if you do not send supporting evidence.
+        </p>
+        <p class="govuk-body">Read <a class="govuk-notification-banner__link" href="#">guidance about supporting
+            evidence</a> for how to send evidence to your Local Authority.</p>
+      </div>
+    </div>
+    <span class="govuk-caption-l">Appeal a free school meals outcome </span>
+    <h1 class="govuk-heading-l" tabindex="-1">{{pageName}}</h1>
+    <p>Add all children at your school who should be included in this appeal. You can use the add another option,
+      if there is more than one child. If there are children at other schools then the parent will need to appeal at that school.</p>
+
+
+    <form action="../upload/upload-evidence" method="post" novalidate>
+      <div data-module="moj-add-another">
+
+      </div>
+      <form method="post">
+        <div class="govuk-!-padding-bottom-3"></div>
+
+        {% call govukFieldset({
+        classes: 'moj-add-another__item',
+        legend: {
+        text: 'Child 1',
+        classes: 'moj-add-another__title govuk-fieldset__legend--m',
+        isPageHeading: false
+        }
+        }) %}
+
+        {{ govukInput({
+        id: 'ch2-first-name',
+        name: 'ch2-first-name',
+        label: {
+        html: 'First name',
+        classes: 'govuk-!-font-weight-bold'
+        },
+        attributes: {
+        'data-name': 'child[%index%][first_name]',
+        'data-id': 'child[%index%][first_name]'
+        }
+        }) }}
+
+        {{ govukInput({
+        id: 'ch2-surname',
+        name: 'ch2-surname',
+        label: {
+        html: 'Last name',
+        classes: 'govuk-!-font-weight-bold'
+        },
+        attributes: {
+        'data-name': 'child[%index%][last_name]',
+        'data-id': 'child[%index%][last_name]'
+        }
+        }) }}
+
+        {{ govukDateInput({
+        id: "ch2-date-of-birth",
+        fieldset: {
+        legend: {
+        text: "Date of birth",
+        classes: "govuk-fieldset__legend--s"
+        }
+        },
+        hint: {
+        text: "For example, 31 3 1980"
+        },
+        items: [
+        {
+        id: "ch2-day",
+        name: "ch2-day",
+        label: "Day",
+        classes: "govuk-input--width-2",
+        attributes: {
+        'data-name': 'child[%index%][dob][day]',
+        'data-id': 'child[%index%][dob][day]'
+        }
+        },
+        {
+        id: "ch2-month",
+        name: "ch2-month",
+        label: "Month",
+        classes: "govuk-input--width-2",
+        attributes: {
+        'data-name': 'child[%index%][dob][month]',
+        'data-id': 'child[%index%][dob][month]'
+        }
+        },
+        {
+        id: "ch2-year",
+        name: "ch2-year",
+        label: "Year",
+        classes: "govuk-input--width-4",
+        attributes: {
+        'data-name': 'child[%index%][dob][year]',
+        'data-id': 'child[%index%][dob][year]'
+        }
+        }
+        ]
+        }) }}
+
+        {% endcall %}
+
+        <div class="moj-button-action">
+          <button type="button" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4"
+            data-module="govuk-button" onclick="window.location.href='appeal-childs-age2.html';">
+            Add another child
+          </button>
+        </div>
+        <div class="moj-button-action">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+        </div>
+
+
+      <!-- <div class="moj-button-action">
+          {{ govukButton({
+          text: 'Add another child',
+          href: appeal-childs-age2.html,
+          classes: 'govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4'
+          }) }}
+        </div>
+
+        <div class="moj-button-action">
+          {{ govukButton({
+          text: 'Save and continue'
+          }) }}
+        </div> -->
+        <input type="hidden" name="child-2" id="child-2" value="Yes">
+      </form>
+  </div>
+</div>
+</div>
+
+
+
+
+{% endblock %}

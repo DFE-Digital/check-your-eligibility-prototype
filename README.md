@@ -12,7 +12,7 @@ This includes but is not limited to:
 <h2>Documentation</h2>
 <ol>
   <li>
-    Prototype
+    Prototypes
   </li>
    <li>
     Design History
@@ -49,9 +49,21 @@ Go to http://localhost:3000 in your browser.
 
 <h3>Deployed prototype</h3>
 URL: https://check-your-eligibility-prototype.azurewebsites.net
-password: request from team
+password: request from Design team
 
-This version deploys automatically from merges to main and is the 'latest' version for UR and UX iteration.
+This version deploys automatically from merges to main and is the 'latest' version for UR and UX iterations.
+
+Prototypes are for both Free school meals and Childcare as separate prototypes for this stage of the replacement service.
+
+The rationale behind this is:
+
+Free school meals is to be translated into Welsh
+Childcare options are not to be translated into Welsh
+
+Childcare services are to be reviewed and determined further by additional teams with discovery taking place in 2025.
+The free school meals service will be rolled out across the UK and continuously iterated on.
+
+NB Development ready designs can be viewed in #Ready for Development and Work in progress designs can be viewed in #Design and research.
 
 ---------------------------------------------------------------------------------
 
@@ -63,11 +75,11 @@ A history of the design of this service
 ---------------------------------------------------------------------------------
 <h3>Git status naming conventions</h3>
 
-[UserJourney][Feature/Tweak/Bug]{Designername]
+[Eligibility service][User][Feature/Tweak/Bug][Designername]
 <br>
 example:
-Schools-tweak-contentupdate-EW
-<br>Family-feature-uploadevidence-JH
+FSM-Schools-tweak-contentupdate-EW
+<br>Childcare-Family-feature-uploadevidence-JH
 [Description of changes]
 
 NB Github no# recorded in Prototype index for dev visibility

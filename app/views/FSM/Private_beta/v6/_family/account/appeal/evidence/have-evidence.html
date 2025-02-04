@@ -1,0 +1,57 @@
+{% extends "/layouts/mvp3/layout-dfe-back.html" %}
+{% set pageName="Do you have evidence?" %}
+
+{%block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds ">
+    <!--routes found in routes/mvp3/appeal.js-->
+    <form action="/mvp3-evidence" method="post" novalidate>
+
+      {{ govukRadios({
+      name: "evidence",
+      id:'evidence',
+      fieldset: {
+      legend: {
+      text: "How do you want to send your evidence?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+      }
+      },
+      hint: {
+      text: "You’ll need to send evidence that shows you are eligible"
+      },
+      items: [
+      {
+      value: "digital",
+      text: "Upload digital files",
+      hint: {
+      text: "Use this for files you've downloaded or have been sent by text or email"
+      }
+      },
+      {
+      value: "paper",
+      text: "Take a photo or scan paper documents",
+      hint: {
+      text: "Use this for uploading photos or scans of paper copies of your evidence"
+      }
+      },
+      {
+      value: "none",
+      text: "Take it into school",
+      hint: {
+      text: "Continue without uploading anything and take evidence into your children's schools"
+      }
+      }
+      ]
+      }) }}
+
+      {{ govukButton({
+      text: "Continue",
+      classes:'govuk-!-margin-top-5'
+      }) }}
+    </form>
+
+
+
+    {%endblock %}

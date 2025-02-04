@@ -1,0 +1,112 @@
+{# 1 #}
+{% from 'node_modules/dfe-frontend/packages/components/header/macro.njk' import header %}
+
+{# 2 #}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{# 3 #}
+{% block header %}
+
+{{ header({
+    "showNav": "true",
+    "showSearch": "false",
+    "showHeaderActionLinks": "true",
+    "logoPath": "public/images",
+    "searchAction": "/search/",
+    "searchInputName": "q",
+    "logoAltText": "Department for Education",
+    "homeHref": "https://gov.uk",
+    "selectedNav": view,
+    "service": {
+      "name": "Check a family's eligibility",
+      "serviceUrl": "/"
+    },
+    "headerActionLinks": [
+
+    ],
+    "primaryLinks": [
+    {
+    "url"  : "FSM/index-fsm.html",
+    "label" : "Free School meals prototype"
+  }, {
+    "url"  : "#",
+    "label" : "Childcare prototype"
+  }, {
+    "url"  : "#",
+    "label" : " "
+  }
+]
+  })
+}}
+
+<section class="dfe-page-header">
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l govuk-!-margin-top-5">Private Beta prototypes
+        </span>
+        <h1 class="govuk-heading-xl">Check a family's eligibility</h1>
+        <div class="govuk-heading-s">This is the starting page for the {{ serviceName }} prototypes for Free school meals and Childcare services.</div>
+
+        <nav class="app-sub-navigation" aria-label="Application menu">
+          <ul class="app-sub-navigation__list">
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link" aria-current=" " href="/ "> </a>
+            </li>
+            <li class="app-sub-navigation__item">
+              <a class="app-sub-navigation__link" aria-current=" " href=" "> </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% block backLink %}
+  {% endblock %}
+
+{% endblock %}
+
+{% block footer %}
+ {{ govukFooter({
+   meta: {
+     items: [
+      {
+        href:"/manage-prototype",
+        text:"Manage your prototype"
+      },
+       {
+         href: "/manage-prototype/clear-data",
+         text: "Clear data"
+       }
+     ],
+     visuallyHiddenTitle: "Footer links"
+   }
+ }) }}
+{% endblock %}
+
+{# 4 #}
+{% block scripts %}
+  {{ super() }}
+  <script src="/public/javascripts/dfefrontend.js"></script>
+  <script type="text/javascript" src="assets/javascripts/autocomplete.js"></script>
+  <link rel="stylesheet" href="assets/css/accessible-autocomplete.min.css" />
+  <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+<script type="text/javascript">
+  if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
+  new MOJFrontend.MultiFileUpload({
+    container: $(".moj-multi-file-upload"),
+    uploadUrl: "/ajax-upload",
+    deleteUrl: "/ajax-delete",
+  });
+}
+
+
+</script>
+{% endblock %}

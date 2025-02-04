@@ -1,0 +1,179 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <span class="govuk-hint">Barnsley Council</span>
+
+    <h1 class="govuk-heading-l">
+      
+      
+  Batch upload results
+    </h1>
+
+
+    <div class="govuk-grid-row">
+
+            
+      
+
+      <div class="govuk-grid-column-full">
+
+
+
+
+
+
+<div class="moj-filter-layout">
+
+ 
+
+  <div class="moj-filter-layout__content">
+
+
+
+  <div class="moj-scrollable-pane">
+    {{ govukTable({
+      firstCellIsHeader: true,
+      head: [
+        {text: 'Reference'},
+        {text: 'Person'},
+        {text: 'Type'},
+        {text: 'Status'},
+        {text: 'Date of last event'}
+      ],
+      rows: [
+        [
+          {html: '<a href="../../records/new-appeal" class="govuk-link">44455453</a>'},
+          {html: 'Eden Tesfay'},
+          {text: 'Free school meals'},
+          {html: 'New appeal'},
+          {text: '25 October 2023'}
+        ],
+        [
+          {html: '<a href="#" class="govuk-link">12323212</a>'},
+          {html: 'Warren Sutton'},
+          {text: 'Free school meals'},
+          {html: 'New appeal'},
+          {text: '25 October 2023'}
+        ],
+        [
+          {html: '<a href="#" class="govuk-link">45678765</a>'},
+          {html: 'Alan Jones'},
+          {text: 'Free school meals'},
+          {html: 'New appeal'},
+          {text: '9 October 2023'}
+        ],
+        [
+          {html: '<a href="#" class="govuk-link">12345678</a>'},
+          {html: 'Jennifer Langley'},
+          {text: 'Free school meals'},
+          {html: 'New appeal'},
+          {text: '9 October 2023'}
+        ],
+        [
+          {html: '<a href="#" class="govuk-link">89009800</a>'},
+          {html: 'Susan Francis'},
+          {text: 'Free school meals'},
+          {html: 'New appeal'},
+          {text: '9 October 2023'}
+        ],
+        [
+          {html: '<a href="#" class="govuk-link">44455453</a>'},
+          {html: 'John Smith'},
+          {text: 'Free school meals'},
+          {html: 'New appeal'},
+          {text: '25 October 2023'}
+        ],
+        [
+          {html: '<a href="#" class="govuk-link">12323212</a>'},
+          {html: 'Warren Sutton'},
+          {text: 'Free school meals'},
+          {html: 'New appeal'},
+          {text: '25 October 2023'}
+        ],
+        [
+          {html: '<a href="#" class="govuk-link">45678765</a>'},
+          {html: 'Alan Jones'},
+          {text: 'Free school meals'},
+          {html: 'New appeal'},
+          {text: '9 October 2023'}
+        ],
+        [
+          {html: '<a href="#" class="govuk-link">12345678</a>'},
+          {html: 'Jennifer Langley'},
+          {text: 'Free school meals'},
+          {html: 'New appeal'},
+          {text: '9 October 2023'}
+        ],
+        [
+          {html: '<a href="#" class="govuk-link">89009800</a>'},
+          {html: 'Susan Francis'},
+          {text: 'Free school meals'},
+          {html: 'New appeal'},
+          {text: '9 October 2023'}
+        ],
+        [
+          {html: '<a href="#" class="govuk-link">45456765</a>'},
+          {html: 'John Smith'},
+          {text: 'Free school meals'},
+          {html: 'New appeal'},
+          {text: '9 October 2023'}
+        ],
+        [
+          {html: '<a href="#" class="govuk-link">88675411</a>'},
+          {html: 'Margaret Blake'},
+          {text: 'Free school meals'},
+          {html: 'New appeal'},
+          {text: '9 October 2023'}
+        ],
+        [
+          {html: '<a href="#" class="govuk-link">44455453</a>'},
+          {html: 'John Smith'},
+          {text: 'Free school meals'},
+          {html: 'New appeal'},
+          {text: '25 October 2023'}
+        ],
+        [
+          {html: '<a href="#" class="govuk-link">12323212</a>'},
+          {html: 'Warren Sutton'},
+          {text: 'Free school meals'},
+          {html: 'New appeal'},
+          {text: '25 October 2023'}
+        ],
+        [
+          {html: '<a href="#" class="govuk-link">45678765</a>'},
+          {html: 'Alan Jones'},
+          {text: 'Free school meals'},
+          {html: 'New appeal'},
+          {text: '9 October 2023'}
+        ],
+        [
+          {html: '<a href="#" class="govuk-link">12345678</a>'},
+          {html: 'Jennifer Langley'},
+          {text: 'Free school meals'},
+          {html: 'New appeal'},
+          {text: '9 October 2023'}
+        ]
+      ]
+    }) }}
+  </div>
+</div>
+
+      </div>
+
+      
+    
+    </div>
+
+    
+
+  
+  </div>
+</div>
+
+{% endblock %}

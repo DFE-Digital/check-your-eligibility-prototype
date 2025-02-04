@@ -1,0 +1,114 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% set applicationSent %}
+<h3 class="govuk-notification-banner__heading">
+  Application sent
+  </h3>
+  <p class="govuk-body">
+    You have sent your application for free school meals. It may take upto 1 week to process.
+  </p>
+  <p>Your reference is 1234567</p>
+{% endset %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {% if data['answers-checked'] =="true" %}
+{{ govukNotificationBanner({
+  html: applicationSent,
+  type: 'success'
+}) }}
+
+{% endif %}
+
+
+    <span class="govuk-hint">Jonathan Spencer</span>
+    <h1 class="govuk-heading-l">
+      
+      
+      Eligibility checker hub
+    </h1>
+
+
+    <div class="govuk-grid-row">
+
+            
+      <div class="govuk-grid-column-full">
+        
+
+<div class="dfe-grid-container">
+
+
+    <div class="dfe-card-container">
+
+      <div class="def-card">
+        <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="checker/forms">Check eligibility</a>
+        </h2>
+        <p>See what a child at your school or authority is eligible for.</p>
+    </div>
+    </div>
+
+    <div class="dfe-card-container">
+
+      <div class="def-card">
+        <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="checker/">Upload applications</a> 
+
+            
+        </h2>
+        <p>Upload a forecast of children needed ing free school meals.</p>
+    </div>
+    </div>
+
+    <div class="dfe-card-container">
+
+      <div class="def-card">
+        <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="applications/?">View applications</a>
+               {%- from "moj/components/notification-badge/macro.njk" import mojNotificationBadge -%}
+            
+            {{ mojNotificationBadge({
+              text: "10"
+            }) }}
+        </h2>
+        <p>Check or update status of an application.</p>
+    </div>
+    </div>
+
+    <div class="dfe-card-container">
+
+      <div class="def-card">
+        <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="support/">Training and support</a>
+        </h2>
+        <p>Training materials, policy updates, and general support for decision makers.</p>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+        
+      </div>  
+    
+    </div>
+
+  
+  </div>
+</div>
+
+{% endblock %}

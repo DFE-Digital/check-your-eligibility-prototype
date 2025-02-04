@@ -1,0 +1,311 @@
+{% extends "layouts/fsm/layout-dfe-index-fsm.html" %}
+{% set pageName=" Eligibility checker prototype" %}
+{% set selectedNav = "Ready for development" %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-hint"> </span>
+    <h1 class="govuk-heading-l">
+      Free School meals prototype | <span class="govuk-tag--turquoise">Design and research</span>
+    </h1>
+
+    <!---Usability testing details -->
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Information required for usability tests
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        </ul>
+        <h2 class="govuk-heading-m">Information required for usability tests
+          <p></p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Parents Name - [first name, last name]</li>
+            <li>Parents DoB</li>
+            <li>email address - [name@gmail.com]</li>
+            <li>password for one gov - [password]</li>
+            <li>6 digit code - 123456</li>
+            <li>NI number - [KL 123456]</li>
+            <li>AS reference - [KL 123456]</li>
+            <li>Child 1 - name/last name and school and dob</li>
+            <li>Child 2 - name/last name and school and dob</li>
+            <li>School details</li>
+            <li>LA details</li>
+          </ul>
+        </h2>
+      </div>
+    </details>
+
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break">
+
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <h2 class="govuk-tabs__title">
+        Contents
+      </h2>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#general">
+            General pages
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#parent">
+            Parent user journeys
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#school">
+            School user journeys
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#LA">
+            Local Authority user journeys
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#dfe">
+            Internal DfE user journeys
+          </a>
+        </li>
+      </ul>
+
+
+      <!--General Table-->
+
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="general">
+        <h2 class="govuk-heading-l">General</h2>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+
+          </div>
+        </div>
+
+
+        <table class="govuk-table">
+          <h3 class="govuk-heading-m">Previous versions</h3>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Version</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date last updated</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="#" class="govuk-link">v6.2</a></td>
+              <td class="govuk-table__cell">Updated content </td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">Design</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">31 Jan 25</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="#" class="govuk-link">v6.2</a></td>
+              <td class="govuk-table__cell">Updated content </td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--orange">Research</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">31 Jan 25</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="#" class="govuk-link">v6.2</a></td>
+              <td class="govuk-table__cell">Updated content </td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Review</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">31 Jan 25</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!--Parent Table-->
+
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="parent">
+        <h2 class="govuk-heading-l">Parents</h2>
+
+        <h3 class="govuk-heading-m">Latest version - July 2024</h3>
+
+        <a href="/mvp3/account/start-now" role="button" draggable="false" class="govuk-button govuk-button-"
+          data-module="govuk-button">
+          View Parents prototype</a>
+
+
+        <table class="govuk-table">
+          <h3 class="govuk-heading-m">Previous versions</h3>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Version</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date last updated</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="#" class="govuk-link">v6.2</a></td>
+              <td class="govuk-table__cell">Updated content </td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">Design</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">31 Jan 25</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="#" class="govuk-link">v6.2</a></td>
+              <td class="govuk-table__cell">Updated content </td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--orange">Research</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">31 Jan 25</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="#" class="govuk-link">v6.2</a></td>
+              <td class="govuk-table__cell">Updated content </td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Review</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">31 Jan 25</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!--School Table-->
+
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="school">
+        <h2 class="govuk-heading-l">School</h2>
+
+        <h3 class="govuk-heading-m">Latest version - July 2024</h3>
+
+        <a href="/mvp3/account/start-now" role="button" draggable="false" class="govuk-button govuk-button-"
+          data-module="govuk-button">
+          View Schools prototype</a>
+
+
+        <table class="govuk-table">
+          <h3 class="govuk-heading-m">Previous versions</h3>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Version</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date last updated</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="#" class="govuk-link">v6.2</a></td>
+              <td class="govuk-table__cell">Updated content </td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">Design</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">31 Jan 25</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="#" class="govuk-link">v6.2</a></td>
+              <td class="govuk-table__cell">Updated content </td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--orange">Research</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">31 Jan 25</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="#" class="govuk-link">v6.2</a></td>
+              <td class="govuk-table__cell">Updated content </td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Review</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">31 Jan 25</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!--LA Table-->
+
+      <div class="govuk-tabs__panel" id="LA">
+        <h2 class="govuk-heading-l">Local Authority</h2>
+
+
+        <h3 class="govuk-heading-m">Latest version - July 2024</h3>
+
+        <a href="/mvp3/account/start-now" role="button" draggable="false" class="govuk-button govuk-button-"
+          data-module="govuk-button">
+          View LA prototype</a>
+
+
+        <table class="govuk-table">
+          <h3 class="govuk-heading-m">Previous versions</h3>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Version</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date last updated</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="#" class="govuk-link">v6.2</a></td>
+              <td class="govuk-table__cell">Updated content </td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">Design</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">31 Jan 25</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="#" class="govuk-link">v6.2</a></td>
+              <td class="govuk-table__cell">Updated content </td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--orange">Research</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">31 Jan 25</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="#" class="govuk-link">v6.2</a></td>
+              <td class="govuk-table__cell">Updated content </td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Review</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">31 Jan 25</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!--DfE Table-->
+
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="dfe">
+        <h2 class="govuk-heading-l">Internal DfE users</h2>
+
+
+        <h3 class="govuk-heading-m">Latest version - July 2024</h3>
+
+        <a href="/mvp3/account/start-now" role="button" draggable="false" class="govuk-button govuk-button-"
+          data-module="govuk-button">
+          View DfE internal prototype</a>
+
+
+        <table class="govuk-table">
+          <h3 class="govuk-heading-m">Previous versions</h3>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Version</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date last updated</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="#" class="govuk-link">v6.2</a></td>
+              <td class="govuk-table__cell">Updated content </td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">Design</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">31 Jan 25</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="#" class="govuk-link">v6.2</a></td>
+              <td class="govuk-table__cell">Updated content </td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--orange">Research</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">31 Jan 25</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="#" class="govuk-link">v6.2</a></td>
+              <td class="govuk-table__cell">Updated content </td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Review</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">31 Jan 25</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}
