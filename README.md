@@ -75,11 +75,11 @@ A history of the design of this service
 ---------------------------------------------------------------------------------
 <h3>Git status naming conventions</h3>
 
-[UserJourney][Feature/Tweak/Bug]{Designername]
+[Eligibility service][User][Feature/Tweak/Bug][Designername]
 <br>
 example:
-Schools-tweak-contentupdate-EW
-<br>Family-feature-uploadevidence-JH
+FSM-Schools-tweak-contentupdate-EW
+<br>Childcare-Family-feature-uploadevidence-JH
 [Description of changes]
 
 NB Github no# recorded in Prototype index for dev visibility
