@@ -1,0 +1,61 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Eligibility checker" %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "/"
+}) }}
+{% endblock %}
+
+
+
+
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <span class="govuk-hint">All prototypes for</span>
+    <h1 class="govuk-heading-l">
+      
+      
+      {{ serviceName }} - version 3
+    </h1>
+
+    
+
+    <h2 class="govuk-heading-m">Free school meals journey   - v3 2023</h2>
+
+
+    <ul class="govuk-list">
+      <li><a href="v3/account/start-now">Parent checks their eligibility for free school meals</a></li>
+      <li><a href="v3/parent-soft-check/start-now">Parent check now apply later flow - (soft check) happy path</a></li>
+      <li><a href="v3/parent-soft-check/check">Parent check now apply later flow - (soft check) unhappy path</a></li>
+      <li><a href="v3/checker-parent/dashboard">Parent checks status of appeal</a></li>
+      <li><a href="v3/account/dfe-account?who=council">LA portal</a></li>
+      
+
+  
+   
+      
+      
+    </ul>
+
+
+  
+  
+
+
+  
+  
+  </div>
+</div>
+
+{% endblock %}

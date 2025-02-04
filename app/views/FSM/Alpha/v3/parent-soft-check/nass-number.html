@@ -1,0 +1,100 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+
+
+
+
+
+    <div class="govuk-grid-row">
+
+            
+      <div class="govuk-grid-column-two-thirds">
+
+    <form action="/soft-check-nass-answer" method="post" novalidate>
+
+      
+
+  
+
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% set yesHtml %}
+{{ govukInput({
+id: "nass-number-entered",
+name: "nass-number-entered",
+type: "text",
+autocomplete: "text",
+spellcheck: false,
+classes: "govuk-!-width-one-third",
+label: {
+text:"NASS number"
+},
+hint: {
+text: "Enter the first 9 numbers"
+}
+}) }}
+{% endset -%}
+
+
+{{ govukRadios({
+  name: "nass-number",
+  fieldset: {
+    legend: {
+      text: "Do you have a national asylum support service (NASS) number?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  
+  },
+  hint: {
+    text: "It’s on any letters from the Home Office"
+  },
+ 
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: yesHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No, I do not have one"
+      
+    }
+    
+  ]
+}) }}
+
+
+
+{{ govukButton({
+  text: "Save and continue"
+}) }}
+
+      
+    </form>
+
+
+
+
+        
+
+
+
+
+        
+      </div>  
+    
+    </div>
+
+
+
+{% endblock %}

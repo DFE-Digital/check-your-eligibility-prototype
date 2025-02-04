@@ -1,0 +1,84 @@
+{% extends "/layouts/mvp3/layout-dfe.html" %}
+{% set pageName="Select an address" %}
+
+{%block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-heading-l">
+      {{pageName}}
+    </div>
+
+    {{ govukRadios({
+    name: "select-an-address",
+    classes: "govuk-radios--small",
+    fieldset: {
+      legend: {
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+    formGroup: {
+      beforeInputs: {
+        html: "<p>6 addresses found for <b>wr11nl</b> and <b>1</b>. <a href='#' >Search again</a></p>"
+      }
+    },
+    items: [
+      {
+        value: "1 Washington Street, Worcester, WR1 1NL",
+        text: "1 Washington Street, Worcester, WR1 1NL",
+        attributes: {
+          "data-ga-question": "Select an address",
+          "data-ga-answer": "Answer 1"
+        }
+      },
+      {
+        value: "10 Washington Street, Worcester, WR1 1NL",
+        text: "10 Washington Street, Worcester, WR1 1NL",
+        attributes: {
+          "data-ga-question": "Select an address",
+          "data-ga-answer": "Answer 2"
+        }
+      },
+      {
+        value: "11 Washington Street, Worcester, WR1 1NL",
+        text: "11 Washington Street, Worcester, WR1 1NL",
+        attributes: {
+          "data-ga-question": "Select an address",
+          "data-ga-answer": "Answer 2"
+        }
+      },
+      {
+        value: "101 Washington Street, Worcester, WR1 1NL",
+        text: "101 Washington Street, Worcester, WR1 1NL",
+        attributes: {
+          "data-ga-question": "Select an address",
+          "data-ga-answer": "Answer 3"
+        }
+      },
+      {
+        value: "110 Washington Street, Worcester, WR1 1NL",
+        text: "110 Washington Street, Worcester, WR1 1NL",
+        attributes: {
+          "data-ga-question": "Select an address",
+          "data-ga-answer": "Answer 4"
+        }
+      },
+      {
+        value: "111 Washington Street, Worcester, WR1 1NL",
+        text: "111 Washington Street, Worcester, WR1 1NL",
+        attributes: {
+          "data-ga-question": "Select an address",
+          "data-ga-answer": "Answer 5"
+        }
+      }
+    ]
+    }) }}
+
+    {{ govukButton({
+    text: "Use this address"
+    }) }}
+    <p class="govuk-body govuk-!-margin-bottom-0"><a href="#" class="govuk-link">Enter address manually</a></p>
+    </div>
+
+</div>
+{% endblock %}

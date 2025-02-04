@@ -1,0 +1,74 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% set applicationSent %}
+<h3 class="govuk-notification-banner__heading">
+  The application has been approved.
+</h3>
+<p class="govuk-body">
+  Both the parent or carer and the school have been notified.
+ 
+</p>
+<p>Your reference is 1234567</p>
+{% endset %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {% if data['answers-checked'] =="true" %}
+    {{ govukNotificationBanner({
+    html: applicationSent,
+    type: 'success'
+    }) }}
+
+    {% endif %}
+
+
+
+    <div class="govuk-grid-row">
+
+
+      <div class="govuk-grid-column-one-half">
+
+
+      
+
+        <p><a href="homepage">Go to your portal homepage</a></p>
+        <p><a href="../../account/signin-or-create">Sign out of the portal</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}

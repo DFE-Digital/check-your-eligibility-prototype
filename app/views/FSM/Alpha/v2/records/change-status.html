@@ -1,0 +1,76 @@
+{% extends "orange/task-management/current/base-form.html" %}
+
+<!-- This makes a H1 with the pageHeading text. It also sets the title of the
+page. -->
+
+
+<!-- Sets where the save and continue button goes -->
+{% set nextPage = "task-overview" %}
+
+<!-- The content between the heading 1 and the buttons -->
+{% block pageContent %}
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "status-change",
+  id:"status-change",
+  fieldset: {
+    legend: {
+      text: "What do you need to do with this task?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+  
+   
+    {
+      
+      name: "status-change",
+      id:"status-change-1",
+      value:"send-to-ncc",
+      text: "Send to NCC"
+    },
+      
+    {
+   
+      name:"status-change",
+      id:"status-change-2",
+      value:"send-to-port",
+      text: "Send to port"
+    },
+   
+    {
+   
+      name:"status-change",
+      id:"status-change-3",
+      value:"close-task",
+      text: "Acknowledge and close task"
+    }
+
+  ]
+}) }}
+
+{% endblock %}
+
+
+{% block buttons %}
+
+
+<form id="cop-form" action="task-overview" method="post" novalidate>
+  
+  <input type="hidden" name="change-status" id="change-status" value="Yes">
+
+
+  <div class="govuk-button-group">
+              
+    <button type="submit" class="hods-button cop-inline-button" data-module="hods-button">Save and continue</button>
+    <button class="hods-button hods-button--secondary" data-module="hods-button" formaction="#">
+      Save and return later
+    </button>
+  </div>
+  
+</form>
+
+  {% endblock %}

@@ -1,0 +1,299 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+
+
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <h1 class="govuk-heading-l">Check your answers before submitting</h1>
+
+    <h2 class="govuk-heading-m">Parent details</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Local council
+        </dt>
+        <dd class="govuk-summary-list__value">
+         Manchester City Council
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> council</span>
+          </a>
+
+        </dd>
+
+      </div>
+
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Parent or carer name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["first-name"] }}   {{ data["surname"] }}
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+
+        </dd>
+
+      </div>
+
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["dob-day"] }} {{ data["dob-month"] }} {{ data["dob-year"] }} 
+
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+
+        </dd>
+
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          nationality
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["what-nationality"] }}
+
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+
+        </dd>
+
+      </div>
+
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          National insurance number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["ni-number-entered"] }} 
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> customer reference</span>
+          </a>
+
+        </dd>
+
+      </div>
+
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          NASS number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["nass-number-entered"] }} 
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> nass</span>
+          </a>
+
+        </dd>
+
+      </div>
+
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["email"] }}
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> contact details</span>
+          </a>
+
+        </dd>
+
+      </div>
+
+
+    </dl>
+
+
+    <h2 class="govuk-heading-m">Child 1</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Child's name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["ch1-first-name"] }} {{ data["ch1-surname"] }} 
+
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> previous application number</span>
+          </a>
+
+        </dd>
+
+      </div>
+
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          School
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["school-picker"] }} 
+
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> school</span>
+          </a>
+
+        </dd>
+
+      </div>
+
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Child's DOB
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["ch1-day"] }}  {{ data["ch1-month"] }}  {{ data["ch1-year"] }} 
+
+
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> document</span>
+          </a>
+
+        </dd>
+
+      </div>
+
+
+    </dl>
+
+
+    <h2 class="govuk-heading-m">Submit for eligibility</h2>
+
+    <p class="govuk-body">By submitting your information you are confirming that, to the best of your knowledge, the
+      details you are providing are correct.</p>
+
+      {% if data['nass-number'] == 'yes' %}
+
+      <form action="ineligible" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+  
+  
+        <button class="govuk-button govuk-!-margin-top-5" data-module="govuk-button">
+          Check my eligibility
+        </button>
+  
+  
+      </form>
+
+      {% else %}
+
+
+    <form action="eligible" method="post" novalidate>
+
+      <input type="hidden" name="answers-checked" value="true">
+
+
+      <button class="govuk-button govuk-!-margin-top-5" data-module="govuk-button">
+        Check eligibility
+      </button>
+
+
+    </form>
+
+    {% endif %}
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+
+</div>
+</div>
+
+{% endblock %}

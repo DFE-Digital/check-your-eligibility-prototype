@@ -1,0 +1,155 @@
+
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+<h1 class="govuk-heading-xl">
+    Check to see if your child can get free school meals </h1>
+
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+    
+
+ 
+<p>Enter information about yourself and your child to check their eligibility then submit your details for review.  </p>
+
+<p>It should take about 5 minutes to complete.</p>
+
+<h2>Infant free school meals  </h2>
+
+  <p>
+    Your child will be able to get free school meals if they’re in a government-funded school and in: </p>
+
+
+<ul>
+    <li>reception class</li>
+    <li>year 1</li>
+    <li>year 2</li>
+  </ul>
+  <p>Tell your local authority if you also get any of the qualifying benefits. Your child’s school can get extra funding if you do.</p> 
+
+  <h2>Pupils aged 4 to 16</h2>
+  <p>Your child may be eligible if you get any of these benefits, or if your child gets them directly:</p>
+
+
+
+<ul class="govuk-list govuk-list--bullet">
+    <li>Income Support</li>
+    <li>income-based Jobseeker’s Allowance</li>
+    <li>income-related Employment and Support Allowance</li>
+    <li>support under Part VI of the Immigration and Asylum Act 1999</li>
+    <li>the guaranteed element of Pension Credit</li>
+    <li>Child Tax Credit (provided you’re not also entitled to Working Tax Credit and have an annual gross income of no more than £16,190)</li>
+    <li>Working Tax Credit run-on - paid for 4 weeks after you stop qualifying for Working Tax Credit</li>
+    <li>Universal Credit - if you apply on or after 1 April 2018 your household income must be less than £7,400 a year (after tax and not including any benefits you get)</li>
+  </ul>
+  
+
+     
+<p>Your child may still be eligible if you get any of these benefits and your child is both:</p> 
+
+<ul><li>  younger than the compulsory age for starting school </li>
+<li>    in full-time education </li>
+
+</ul>
+
+<h2>Students in full time education</h2>
+
+<p>The 1996 Education Act requires further education (FE) funed institutions to provice free meals to disadvantaged students 
+</p>
+
+<p>You can <a href="">check the guidance</a> on eligibility for free meals in education.</p>
+  
+
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Start now",
+  href: "check",
+  isStartButton: true
+}) }}
+
+
+
+
+
+
+ 
+
+<h2>Before you start </h2>
+
+<p>You will need: </p>
+
+
+<ul class="govuk-list govuk-list--bullet">
+    <li>To create or sign in to a <a target="_blank" href="https://signin.account.gov.uk/sign-in-or-create">OneGov account</a></li>
+    <li>a  National Insurance number - if you do not have one, you can apply for a National Insurance number </li>
+    <li> to tell us details about any children you want to get free school meals for, including the name of their school </li>
+
+  
+  
+  
+
+  </ul>
+
+
+<h2>Other ways to apply </h2>
+
+<p>If you cannot apply online, you can: </p>
+
+    <p>Apply using the <a href="fsm-print-version">Free School Meals Form</a> </p>
+
+ 
+</div>
+
+<div class="govuk-grid-column-one-third">
+
+    <div class="gem-c-contextual-sidebar">
+
+      <div class="gem-c-related-navigation" data-module="gem-track-click ga4-link-tracker"
+        data-gem-track-click-module-started="true" data-ga4-link-tracker-module-started="true">
+        <h2 id="related-nav-related_items-9a349ff3" class="gem-c-related-navigation__main-heading"
+          data-track-count="sidebarRelatedItemSection">
+          Related content
+        </h2>
+
+
+
+        <nav role="navigation" class="gem-c-related-navigation__nav-section"
+          aria-labelledby="related-nav-related_items-9a349ff3" data-module="gem-toggle"
+          data-gem-toggle-module-started="true">
+
+
+          <ul class="gem-c-related-navigation__link-list">
+            <li class="gem-c-related-navigation__link"><a
+                class="govuk-link govuk-link gem-c-related-navigation__section-link govuk-link gem-c-related-navigation__section-link--sidebar  govuk-link"
+                
+                href="/help-home-school-transport">Help with home to school transport </a></li>
+            <li class="gem-c-related-navigation__link"><a
+                class="govuk-link govuk-link gem-c-related-navigation__section-link govuk-link gem-c-related-navigation__section-link--sidebar  govuk-link"
+                href="/school-meals-food-standards">School meals - food standards</a></li>
+
+          </ul>
+        </nav>
+
+      </div>
+
+
+    </div>
+
+  </div>
+  </div>
+</div>
+{% endblock %}
+ 
+
+ 

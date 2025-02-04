@@ -1,0 +1,100 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+
+
+
+
+
+<div class="govuk-grid-row">
+
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/ni-number-answer" method="post" novalidate>
+
+
+
+
+
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {% set yesHtml %}
+      {{ govukInput({
+      id: "ni-number-entered",
+      name: "ni-number-entered",
+      type: "text",
+      autocomplete: "text",
+      spellcheck: false,
+      classes: "govuk-!-width-one-third",
+      label: {
+      text:"National Insurance number"
+      },
+  hint: {
+    text: "For example, ‘QQ 12 34 56 C’"
+  }
+     
+      }) }}
+      {% endset -%}
+
+
+      {{ govukRadios({
+      name: "ni-number",
+      id:'ni-number',
+      fieldset: {
+      legend: {
+      text: "Do you have a National Insurance (NI) number?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+      }
+      },
+      hint: {
+      text: "It’s on your National Insurance card, benefit letter, payslip or P60."
+      },
+      items: [
+      {
+      value: "yes~/v2/checker-parent/childs-age",
+      text: "Yes",
+      conditional: {
+      html: yesHtml
+      }
+      },
+      {
+      value: "no~/v2/checker-parent/nass-number",
+      text: "No, I do not have one"
+
+      }
+
+      ]
+      }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+      text: "Save and continue"
+      }) }}
+
+
+    </form>
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+</div>
+
+
+
+{% endblock %}

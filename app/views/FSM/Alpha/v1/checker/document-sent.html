@@ -1,0 +1,75 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% set applicationSent %}
+<h3 class="govuk-notification-banner__heading">
+  The document has been sent to the local authority
+  </h3>
+  <p class="govuk-body">
+    You will be 
+  </p>
+  <p>Your reference is 2727262535</p>
+{% endset %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {% if data['answers-checked'] =="true" %}
+    {{ govukNotificationBanner({
+      html: applicationSent,
+      type: 'success'
+    }) }}
+    
+    {% endif %}
+
+
+
+    <div class="govuk-grid-row">
+
+            
+      <div class="govuk-grid-column-one-half">
+      
+
+<h2 class="govuk-heading-m">What happens now</h2>
+
+<p>Both the parent and local authority will be notified of the update.</p>
+
+
+<p><a href="dashboard">Go to your portal homepage</a></p>
+<p><a href="../account/dfe-account">Sign out of the  portal</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+        
+      </div>  
+    
+    </div>
+
+  
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}
