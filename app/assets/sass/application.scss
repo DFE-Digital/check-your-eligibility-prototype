@@ -809,3 +809,22 @@ section.dfe {
 .app-sub-navigation .dfe-list>li,.app-sub-navigation ol>li,.app-sub-navigation ul>li {
   margin-bottom: 0
 }
+
+
+.app-sub-navigation .dfe-list>li,.app-sub-navigation ol>li,.app-sub-navigation ul>li {
+  margin-bottom: 0
+}
+
+.dfe-list--bordered {
+  margin: 0
+}
+
+.dfe-list--bordered li a {
+  border: 1px solid #b1b4b6;
+  padding: 20px;
+  text-decoration: none!important;
+  display: block;
+  text-decoration: none!important;
+  font-weight: 600;
+  margin: 0 0 15px 0
+}
