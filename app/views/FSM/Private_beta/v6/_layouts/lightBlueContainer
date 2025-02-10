@@ -6,7 +6,7 @@
           <a class="govuk-breadcrumbs__link" href="/">Home</a>
         </li>
         <li class="govuk-breadcrumbs__item">
-          <a class="govuk-breadcrumbs__link" href="/dashboard">Dashboard</a>
+          <a class="govuk-breadcrumbs__link" href="/ ">Dashboard</a>
         </li>
         <li class="govuk-breadcrumbs__item" aria-current="page">
           Current Page

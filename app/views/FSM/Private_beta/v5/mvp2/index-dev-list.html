@@ -1,0 +1,236 @@
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/index"
+}) }}
+
+{% endblock %}
+
+{% set pageName=" Eligibility checker prototype" %}
+{% set version=" MVP2" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+<div class="govuk-!-width-full-width">
+  <span class="govuk-table__caption--m">Index of pages for {{version}}</span>
+<h1 class="govuk-heading-l">{{ serviceName }}</h1>
+  <p>Use these pages to jump to a specific point in the prototype quickly.</p>
+
+
+
+
+<h3 class="govuk-heading-m">Parent updates</h3>
+
+<table class="govuk-table">
+  <!---row header-->
+<thead class="govuk-table__head">
+  <tr class="govuk-table__row">
+    <th scope="col" class="govuk-table__header">Screen</th>
+    <th scope="col" class="govuk-table__header">Last updated</th>
+    <th scope="col" class="govuk-table__header">Trello ref</th>
+    <th scope="col" class="govuk-table__header">Git ref</th>
+    <th scope="col" class="govuk-table__header">Status</th>
+    <th scope="col" class="govuk-table__header">Changes</th>
+  </tr>
+</thead>
+  <!---row 1-->
+<tbody class="govuk-table__body">
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell"> <a href="privacy" class="govuk-link ">Privacy statement</a>
+    <td class="govuk-table__cell">22.07.24</td>
+    <td class="govuk-table__cell">#XX</td>
+    <td class="govuk-table__cell">#180</td>
+    <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--yellow">Amends</span>
+    <td class="govuk-table__cell">Amends: content updated from version 2 </td>
+  </tr>
+  <!---row 2-->
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell"> <a href="checker/parent-guidance" class="govuk-link">Guidance for parents</a>
+    <td class="govuk-table__cell">23.07.24</td>
+    <td class="govuk-table__cell">#XX</td>
+    <td class="govuk-table__cell">#181</td>
+    <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--orange">Review</span>
+    <td class="govuk-table__cell" >Amends: Content for section - How to apply for free school meals.</td>
+  </tr>
+  <!---row 3-->
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell"> <a href="parent-soft-check/eligible" class="govuk-link">Outcome: entitled</a>
+    <td class="govuk-table__cell">24.07.24</td>
+    <td class="govuk-table__cell">#XX</td>
+    <td class="govuk-table__cell">#184</td>
+    <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Completed</span>
+    <td class="govuk-table__cell">Ticket-171609 Amends: Updated guidance link</td>
+  </tr>
+  <!---row 4-->
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell"> <a href="parent-soft-check/outcome-not-entitled" class="govuk-link">Outcome: not entitled</a>
+    <td class="govuk-table__cell">24.07.24</td>
+    <td class="govuk-table__cell">#XX</td>
+    <td class="govuk-table__cell">#184</td>
+    <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Completed</span>
+    <td class="govuk-table__cell">Ticket-171609 Amends: Removed accordion, <br>updated content and guidance link</td>
+  </tr>
+  <!---row 5-->
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell"> <a href="parent-soft-check/outcome-could-not-find-pending" class="govuk-link">Outcome could not find- Pending</a>
+    <td class="govuk-table__cell">24.07.24</td>
+    <td class="govuk-table__cell">#XX</td>
+    <td class="govuk-table__cell">#184</td>
+    <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Completed</span>
+    <td class="govuk-table__cell">Ticket-171609 Amends: Updated link in content</td>
+  </tr>
+      <!---row 6-->
+  <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="parent-soft-check/outcome-could-not-check" class="govuk-link">Outcome could not find - missing details</a>
+      <td class="govuk-table__cell">24.07.24</td>
+      <td class="govuk-table__cell">#XX</td>
+      <td class="govuk-table__cell">#184</td>
+      <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Completed</span>
+      <td class="govuk-table__cell">Ticket-171609 Amends: Updated link in content</td>
+  </tr>
+      <!---row 7-->
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell"> <a href="cookies" class="govuk-link">Cookies</a>
+          <td class="govuk-table__cell">24.07.24</td>
+          <td class="govuk-table__cell">#XX</td>
+          <td class="govuk-table__cell">#182</td>
+          <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--orange">Review</span>
+        <td class="govuk-table__cell">Ticket-171609 Amends: updated content - waiting on Privacy team</td>
+    </tr>
+  </tr>
+  <!---row 8-->
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell"> <a href="parent-soft-check/outcome-technical-error " class="govuk-link">Technical Error Webpage </a>
+      <td class="govuk-table__cell">24.07.24</td>
+      <td class="govuk-table__cell">#XX</td>
+      <td class="govuk-table__cell">#183</td>
+      <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Completed</span>
+    <td class="govuk-table__cell"> 163383 - No changes needed for parents journeys. </td>
+</tr>
+<!---row 8-->
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell"> <a href="account/fsm-print-version " class="govuk-link">FSM-print-version</a>
+    <td class="govuk-table__cell">29.07.24</td>
+    <td class="govuk-table__cell">#XX</td>
+    <td class="govuk-table__cell">#183</td>
+    <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Completed</span>
+  <td class="govuk-table__cell"> ticket 168850 Amend:What to do content.<br> Given scenario based context and important warning around multiple schools </td>
+</tr>
+<!---row 9-->
+
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell"> <a href="mvp2/parent-soft-check/" class="govuk-link">Java challenge with autocomplete</a>
+    <td class="govuk-table__cell">date</td>
+    <td class="govuk-table__cell">#XX</td>
+    <td class="govuk-table__cell">#XX</td>
+  <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">In progress</span>
+  <td class="govuk-table__cell" >Amends: MVP update. Explore progressive enhancement as a design option.</td>
+</tr>
+<!---row 1-->
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell"> <a href="#" class="govuk-link rel="noreferrer noopener target="_blank">Parent back links updated- refer to spreadsheet</a>
+  <td class="govuk-table__cell">10.09.24</td>
+  <td class="govuk-table__cell">#57</td>
+  <td class="govuk-table__cell">#201 </td>
+  <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Complete</span>
+  <td class="govuk-table__cell">Amends: back links updated based on <a href="https://educationgovuk-my.sharepoint.com/:x:/r/personal/deepa_kotian_education_gov_uk/_layouts/15/Doc.aspx?sourcedoc=%7B2F8EF200-D668-4CB9-A460-D9A97F6748AE%7D&file=FSM%20journey%20-Back%20button%20behaviour%20.xlsx&action=default&mobileredirect=true&DefaultItemOpen=1&ct=1726148920690&wdOrigin=OFFICECOM-WEB.START.EDGEWORTH&cid=7c3f27f7-c54f-4cc0-9378-27beda562f32&wdPreviousSessionSrc=HarmonyWeb&wdPreviousSession=f2a5002a-f249-4132-9e03-cb206da21995">Deepas spreadsheet</a></td>
+</tr>
+  </tbody>
+</table>
+
+<h3 class="govuk-heading-m">School updates</h3>
+
+<table class="govuk-table">
+  <!---row header-->
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Screen</th>
+      <th scope="col" class="govuk-table__header">Last updated</th>
+      <th scope="col" class="govuk-table__header">Trello ref</th>
+      <th scope="col" class="govuk-table__header">Git ref</th>
+      <th scope="col" class="govuk-table__header">Status</th>
+      <th scope="col" class="govuk-table__header">Changes</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+     <!---row 1-->
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="#" class="govuk-link rel="noreferrer noopener target="_blank">Guidance for schools</a>
+      <td class="govuk-table__cell">24.07.24</td>
+      <td class="govuk-table__cell">#XX</td>
+      <td class="govuk-table__cell">#18 </td>
+      <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">In progress</span>
+      <td class="govuk-table__cell">Amends: content updated from version 2</td>
+    </tr>
+
+    <!---row 2-->
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="checker/schools-outcome-technical-error" class="govuk-link">Technical Error Webpage </a>
+      <td class="govuk-table__cell">24.07.24</td>
+      <td class="govuk-table__cell">#XX</td>
+      <td class="govuk-table__cell">#183</td>
+      <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Completed</span>
+      <td class="govuk-table__cell"> 163383 Link to DfE support for Schools/LA version </td>
+    </tr>
+        <!---row 3-->
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"> <a href="records/approved" class="govuk-link rel="noreferrer noopener target="_blank">Single pupil record- approved</a>
+          <td class="govuk-table__cell">27.08.24</td>
+          <td class="govuk-table__cell">#43</td>
+          <td class="govuk-table__cell">#GIT </td>
+          <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--orange">Review</span>
+          <td class="govuk-table__cell">Amends: pupil record based on iterations by Richard in test site to simplify to a 1:1 ratio. Agreed with Marten prior</td>
+       </tr>
+    <!---row 4-->
+   <tr class="govuk-table__row">
+    <td class="govuk-table__cell"> <a href="" class="govuk-link rel="noreferrer noopener target="_blank">Back links updated</a>
+    <td class="govuk-table__cell">10.09.24</td>
+    <td class="govuk-table__cell">#58</td>
+    <td class="govuk-table__cell"># </td>
+    <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">In progress</span>
+    <td class="govuk-table__cell">Amends: back links updated based on <a href="https://educationgovuk-my.sharepoint.com/:x:/r/personal/deepa_kotian_education_gov_uk/_layouts/15/Doc.aspx?sourcedoc=%7B2F8EF200-D668-4CB9-A460-D9A97F6748AE%7D&file=FSM%20journey%20-Back%20button%20behaviour%20.xlsx&action=default&mobileredirect=true&DefaultItemOpen=1&ct=1726148920690&wdOrigin=OFFICECOM-WEB.START.EDGEWORTH&cid=7c3f27f7-c54f-4cc0-9378-27beda562f32&wdPreviousSessionSrc=HarmonyWeb&wdPreviousSession=f2a5002a-f249-4132-9e03-cb206da21995">Deepas spreadsheet</a></td>
+ </tr>
+</tbody>
+</table>
+
+<h3 class="govuk-heading-m">LA updates</h3>
+<table class="govuk-table">
+  <!---row header-->
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Screen</th>
+      <th scope="col" class="govuk-table__header">Last updated</th>
+      <th scope="col" class="govuk-table__header">Trello ref</th>
+      <th scope="col" class="govuk-table__header">Git ref</th>
+      <th scope="col" class="govuk-table__header">Status</th>
+      <th scope="col" class="govuk-table__header">Changes</th>
+    </tr>
+  </thead>
+<tbody class="govuk-table__body">
+   <!---row 1-->
+   <tr class="govuk-table__row">
+    <td class="govuk-table__cell"> <a href="https://educationgovuk-my.sharepoint.com/:x:/r/personal/deepa_kotian_education_gov_uk/_layouts/15/Doc.aspx?sourcedoc=%7B2F8EF200-D668-4CB9-A460-D9A97F6748AE%7D&file=FSM%20journey%20-Back%20button%20behaviour%20.xlsx&action=default&mobileredirect=true&DefaultItemOpen=1&ct=1726148920690&wdOrigin=OFFICECOM-WEB.START.EDGEWORTH&cid=7c3f27f7-c54f-4cc0-9378-27beda562f32&wdPreviousSessionSrc=HarmonyWeb&wdPreviousSession=f2a5002a-f249-4132-9e03-cb206da21995" class="govuk-link rel="noreferrer noopener target="_blank">Back links updated</a>
+    <td class="govuk-table__cell">10.09.24</td>
+    <td class="govuk-table__cell">#59 </td>
+    <td class="govuk-table__cell">200 </td>
+    <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Completed</span>
+    <td class="govuk-table__cell">Amends: back links updated based on <a href="https://educationgovuk-my.sharepoint.com/:x:/r/personal/deepa_kotian_education_gov_uk/_layouts/15/Doc.aspx?sourcedoc=%7B2F8EF200-D668-4CB9-A460-D9A97F6748AE%7D&file=FSM%20journey%20-Back%20button%20behaviour%20.xlsx&action=default&mobileredirect=true&DefaultItemOpen=1&ct=1726148920690&wdOrigin=OFFICECOM-WEB.START.EDGEWORTH&cid=7c3f27f7-c54f-4cc0-9378-27beda562f32&wdPreviousSessionSrc=HarmonyWeb&wdPreviousSession=f2a5002a-f249-4132-9e03-cb206da21995">Deepas spreadsheet</a></td>
+ </tr>
+     <!---row 1-->
+   <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="checker-la/guidance" class="govuk-link rel="noreferrer noopener target="_blank">Guidance for LAs</a>
+      <td class="govuk-table__cell">24.07.24</td>
+      <td class="govuk-table__cell">#XX</td>
+      <td class="govuk-table__cell">#183</td>
+      <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--grey">Not started</span>
+      <td class="govuk-table__cell">Amends: content updated from version 2</td>
+   </tr>
+</tbody>
+</table>
+
+
+{% endblock %}

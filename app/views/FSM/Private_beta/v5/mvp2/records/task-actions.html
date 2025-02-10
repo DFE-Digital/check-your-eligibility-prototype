@@ -1,0 +1,228 @@
+{% extends "layouts/layout-dfe.html" %}
+
+
+
+
+
+
+
+
+
+{% block backLink %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+<!-- The content between the heading 1 and the buttons -->
+
+{% block pageContent %}
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+  <div class="govuk-grid-column-full">
+
+
+
+
+
+
+
+
+
+
+
+     
+        <h1 class="govuk-heading-xl">Variance</h1>
+    
+
+    
+
+   
+
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Blue lights emergency </h2>
+
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-5">Reference: 
+  <span class="govuk-!-font-weight-regular"> COP-{{date({year: 'numeric'}) + date({month: '2-digit'}) + date({day:
+    '2-digit'})}}-2221</span></h2>
+
+
+
+    <a href="assign-task" role="button" draggable="false" class="govuk-button govuk-button--secondary govuk-!-margin-right-5" data-module="govuk-button">
+      Reassign task
+    </a>
+    <a href="change-status" role="button" draggable="false" class="govuk-button govuk-button--secondary govuk-!-margin-right-5" data-module="govuk-button">
+      Change status
+    </a>
+    <a href="link-task" role="button" draggable="false" class="govuk-button govuk-button--secondary govuk-!-margin-right-5" data-module="govuk-button">
+      Link task
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+</div>
+
+
+
+
+
+
+{%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
+
+{{ mojSubNavigation({
+label: 'Sub navigation',
+items: [
+
+{
+  text: 'Actions',
+  href: 'task-actions',
+  active: 'true'
+  
+  },
+
+{
+text: 'Overview',
+href: 'task-overview'
+},
+{
+text: 'Timeline',
+href: 'task-timeline'
+},
+{
+text: 'Documents',
+href: 'task-viewer'
+
+},
+{
+  text: 'Linked tasks',
+  href: 'linked-tasks'
+  
+  },
+  {
+    text: 'Notes',
+    href: 'task-notes'
+    
+    }
+]
+}) }}
+
+
+<h2 class="govuk-heading-l govuk-!-margin-bottom govuk-!-font-size-36">Actions</h2>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <ol class="app-task-list">
+
+      <li>
+        <h2 class="app-task-list__section govuk-!-margin-0">
+          <span class="app-task-list__section-number">1. </span> Notify port(s) of variance
+         
+        </h2>
+        <span class="govuk-hint govuk-!-padding-left-6"> Task can also be action by RCC</span>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="assign-task" aria-describedby="eligibility-status">
+                Action task
+              </a>
+            </span>
+            {% if data["confirm-arrival"] == "Yes" %}
+            <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="list-convictions-status">Completed</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="list-convictions-status">Pending</strong>
+            {% endif %}
+          </li>
+          
+        </ul>
+      </li>
+    
+      <li>
+        <h2 class="app-task-list__section govuk-!-margin-0">
+          <span class="app-task-list__section-number">2. </span> Update task when complete
+         
+        </h2>
+        <span class="govuk-hint govuk-!-padding-left-6">Ensure task has been updated</span>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="task-notes" aria-describedby="eligibility-status">
+                Action task
+              </a>
+            </span>
+            {% if data["confirm-arrival"] == "Yes" %}
+            <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="list-convictions-status">Completed</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="list-convictions-status">Pending</strong>
+            {% endif %}
+          </li>
+          
+        </ul>
+      </li>
+    
+    
+  
+    </ol>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+  {% block buttons %}
+
+
+
+  {% endblock %}
+
+
+{% block pageScripts %}
+<!-- Add any javascript files here. Include javascript files only on the pages
+that need them. Excessive javascript files loaded on other pages may slow down
+the response times of the prototype. -->
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+<script>
+  new MOJFrontend.ButtonMenu({
+    container: $(".moj-button-menu"),
+    mq: "(min-width: 200em)",
+    buttonText: "Task actions",
+    buttonClasses:
+      "",
+  });
+</script>
+<!--<script>
+  function myFunction() {
+    var x = document.getElementById("banner");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+    var x = document.getElementById("tag-pending");
+    if (x.style.display === "none") {
+      x.style.display = "inline-block";
+    } else {
+      x.style.display = "none";
+    }
+    var x = document.getElementById("tag-inprogress");
+    if (x.style.display === "inline-block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "inline-block";
+    }
+  }
+  </script> -->
+
+{% endblock %}

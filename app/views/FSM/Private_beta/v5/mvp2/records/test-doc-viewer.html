@@ -1,0 +1,198 @@
+{% extends "layouts/layout-dfe.html" %}
+
+<!-- {#
+  Override styles on this page and this page only, using the pageStyle block.
+  The contents of the block should be plain css, as the <style> tag is included in
+  the template.
+  {% block pageStyle %}
+  .record-item-input-box {
+    width: 40%;
+  }
+  .govuk-heading-m {
+    color: red;
+  }
+  {% endblock %}
+#} -->
+
+{% block backLink %}
+{{ govukBackLink({
+  text: "Back",
+  href: "index"
+}) }}
+{% endblock %}
+
+<!-- The content between the heading 1 and the buttons -->
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    
+
+      
+        <h1 class="govuk-heading-xl">Extradition
+        <span class="govuk-tag govuk-tag--blue">pending</span>
+        </h1>
+        
+
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-2">COP reference number</h2>
+        <p class="govuk-body govuk-!-margin-bottom-7">COP-{{date({year: 'numeric'}) + date({month: '2-digit'}) + date({day: '2-digit'})}}-2221</p>
+    
+    
+      
+
+        {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+        {{ govukInsetText({
+          text: "Task will be marked as viewed if not claimed"
+        }) }}    
+    
+      
+    
+            <button class="govuk-button govuk-!-margin-right-5" data-module="govuk-button">
+              Claim task
+            </button>
+    
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Mark task complete
+            </button>
+    
+        
+      
+    
+      </div>
+    
+    </div>
+    
+    
+
+
+
+</div>
+</div>
+
+ 
+
+{%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
+
+{{ mojSubNavigation({
+  label: 'Sub navigation',
+  items: [{
+    text: 'Overview',
+    href: 'task'
+    
+  }, {
+    text: 'Notes',
+    href: 'task-notes'
+    
+  }, 
+  
+  {
+    text: 'Timeline',
+    href: 'task-timeline'
+    
+  },
+  {
+    text: 'Documents',
+    href: 'task-viewer',
+    active: true
+  }
+  
+  ]
+}) }}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form id="cop-form" action="tasklist-1" method="post" novalidate>
+
+      <h2 class="govuk-heading-l">Documents</h2>
+
+    
+
+
+      <div class="container">
+        <div>
+          <div>
+          
+          </div>
+          <br>
+          <br>
+          <div style="width:90%">
+            <div id="caption" class="caption-container">
+
+            </div>
+
+            <div class="mySlides">
+              <iframe src="/public/pdf/fsm-application.pdf" width="100%" height="800px"></iframe>
+            </div>
+            <div class="mySlides">
+              <iframe src="/public/images/digitise-penalties/company-letter.pdf" width="100%" height="800px"></iframe>
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+
+      <br>
+      <br>
+
+      
+
+      
+
+      
+    </form>
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}
+
+
+  {% block buttons %}
+
+  {% endblock %}
+
+
+{% block pageScripts %}
+<!-- Add any javascript files here. Include javascript files only on the pages
+that need them. Excessive javascript files loaded on other pages may slow down
+the response times of the prototype. -->
+<script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+  showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+  showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  //let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  //captionText.innerHTML = "<a href='/public/images/digitise-penalties/"+dots[slideIndex-1].alt +"' class='govuk-link govuk-link--inverse' target='_blank'>"+dots[slideIndex-1].alt + " (Open in new tab)</a>";
+  }
+  </script>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "layouts/layout-dfenoback.html" %}
+
+{% set pageName="Checking for you" %}
+{% block content %}
+{% set title="Exporting" %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <div class="flex-container">
+          <div class="container">
+            <h1 class="govuk-heading-l">
+               Checking
+            </h1>
+              <p class="govuk-body-l">Please wait. This may take a few minutes</p>
+
+              <span id="counter">0</span>
+              <span>/
+                <script>
+                  var total_count = Math.floor(Math.random() *1000);
+                  const intervalId = setInterval(() => {
+                    var countElement = document.getElementById("counter");
+                    var mvp2Count = parseInt(countElement.textContent);
+                    var newCount = mvp2Count +1;
+                    if(newCount >= total_count) {
+                      clearInterval(intervalId);
+                      document.location = '/mvp2/batch-checking-la/batch-check-success';
+                    } else {
+                      countElement.innerHTML = newCount;
+                    }
+                  }, 100);
+                  document.write(total_count);
+                </script>
+                records processed.
+              </span>
+
+          <div class="govuk-!-padding-bottom-5"></div>
+      </div>
+    </div>
+
+
+{% endblock %}

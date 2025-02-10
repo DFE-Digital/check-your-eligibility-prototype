@@ -1,0 +1,65 @@
+{% extends "../../mvp2/checker/layouts/layout-dfenoback.html" %}
+
+{% set pageName="Outcome not entitled" %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Check failed
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">Universal Credit statements needed to perform the check may not be currently available.</p>
+        <p>This could change in as little as 1 working day – keep checking for 4 to 6 weeks.</p>
+      </div>
+    </div>
+
+    <h1 class="govuk-heading-l">Contact the parent or guardian</h1>
+
+  <p>You could also contact the parent or guardian to ask for their up-to-date Universal Credit statements.</p>
+
+  <div class="govuk-warning-text">
+    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+    <strong class="govuk-warning-text__text">
+      <span class="govuk-visually-hidden">Warning</span>
+      Their annual net earned income must be no higher than £7,400 and any documents they provide must show their income and the date.
+    </strong>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}

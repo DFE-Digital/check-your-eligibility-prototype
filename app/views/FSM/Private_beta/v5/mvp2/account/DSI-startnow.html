@@ -1,0 +1,58 @@
+{% extends "layouts/layout-dfe-signed-out-noback.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds ">
+
+
+<h1 class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-3">DfE sign in</h1>
+
+
+<p class="govuk-body">DfE Sign-in is how schools and other education organisations access DfE online services.</p>
+<p class="govuk-body">To access your DfE online services, you'll either need:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+<li><strong>an existing DfE Sign-in account.</strong> This will be email address and password you created when you first accessed DfE Sign-in.</li>
+<li><strong>to create a DfE Sign-in account.</strong> If you haven't used DfE Sign-in before you'll need to <a href="#">create a DfE Sign-in account.</a></li>
+
+</ul>
+
+<div class="govuk-!-padding-bottom-2"></div>
+
+<form action="onegov-signin" method="post" novalidate>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Start now",
+      href: "../account/DSI-signin",
+      isStartButton: true
+    }) }}
+
+</form>
+
+
+<details class="govuk-details" data-module="govuk-details">
+<summary class="govuk-details__summary">
+<span class="govuk-details__summary-text">
+Services accessed using DfE Sign-in
+</span>
+</summary>
+<div class="govuk-details__text">
+
+<p class="govuk-body">GOV.UK One Login is new. At the moment you can only use it to access some government services.</p>
+<p class="govuk-body">It does not work with all government accounts or services yet (for example Government Gateway or Universal Credit).</p>
+<p class="govuk-body">In the future, you’ll be able to use GOV.UK One Login to access all services on GOV.UK.</p>
+
+</div>
+</details>
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
