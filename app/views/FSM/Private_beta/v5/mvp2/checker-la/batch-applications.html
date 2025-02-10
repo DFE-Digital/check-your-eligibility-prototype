@@ -1,0 +1,166 @@
+{% extends "../../mvp2/checker-la/layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+{% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
+
+{{ mojPageHeaderActions({
+  heading: {
+    text: 'Batch upload results (2234)',
+    classes:'govuk-heading-l'
+  },
+  items: [{
+    text: 'Export results',
+    classes: 'govuk-button--secondary'
+  }
+  ]
+}) }}
+
+
+
+
+
+    <div class="govuk-grid-row">
+
+
+
+
+      <div class="govuk-grid-column-full">
+
+
+
+
+
+
+<div class="moj-filter-layout">
+
+
+
+  <div class="moj-filter-layout__content">
+
+
+
+    <div class="moj-scrollable-pane">
+      {{ govukTable({
+        firstCellIsHeader: true,
+        head: [
+          {text: 'School'},
+          {text: 'Parent'},
+          {text: 'Type'},
+          {text: 'Status'},
+          {text: 'Date of last event'}
+        ],
+        rows: [
+
+
+          [
+            {html: 'St Marys'},
+            {html: 'Eden Tesfay'},
+            {text: 'Free school meals'},
+            {html: 'Eligible'},
+            {text: '25 October 2023'}
+          ],
+          [
+            {html: 'St Marys'},
+            {html: 'Warren Sutton'},
+            {text: 'Free school meals'},
+            {html: 'Eligible'},
+            {text: '25 October 2023'}
+          ],
+          [
+            {html: 'St Marys'},
+            {html: 'Alan Jones'},
+            {text: 'Free school meals'},
+            {html: 'Not found'},
+            {text: '9 October 2023'}
+          ],
+          [
+            {html: 'St Marys'},
+            {html: 'Jennifer Langley'},
+            {text: 'Free school meals'},
+            {html: 'Eligible'},
+            {text: '9 October 2023'}
+          ],
+          [
+            {html: 'St Marys'},
+            {html: 'Susan Francis'},
+            {text: 'Free school meals'},
+            {html: 'Eligible'},
+            {text: '9 October 2023'}
+          ],
+          [
+            {html: 'St Marys'},
+            {html: 'John Smith'},
+            {text: 'Free school meals'},
+            {html: 'Eligible'},
+            {text: '25 October 2023'}
+          ],
+
+          [
+            {html: 'St Marys'},
+            {html: 'Eden Tesfay'},
+            {text: 'Free school meals'},
+            {html: 'Eligible'},
+            {text: '25 October 2023'}
+          ],
+          [
+            {html: 'St Marys'},
+            {html: 'Warren Sutton'},
+            {text: 'Free school meals'},
+            {html: 'Eligible'},
+            {text: '25 October 2023'}
+          ],
+          [
+            {html: 'St Marys'},
+            {html: 'Alan Jones'},
+            {text: 'Free school meals'},
+            {html: 'Not found'},
+            {text: '9 October 2023'}
+          ],
+          [
+            {html: 'St Marys'},
+            {html: 'Jennifer Langley'},
+            {text: 'Free school meals'},
+            {html: 'Eligible'},
+            {text: '9 October 2023'}
+          ],
+          [
+            {html: 'St Marys'},
+            {html: 'Susan Francis'},
+            {text: 'Free school meals'},
+            {html: 'Eligible'},
+            {text: '9 October 2023'}
+          ],
+          [
+            {html: 'St Marys'},
+            {html: 'John Smith'},
+            {text: 'Free school meals'},
+            {html: 'Eligible'},
+            {text: '25 October 2023'}
+          ]
+
+        ]
+      }) }}
+    </div>
+
+</div>
+
+      </div>
+
+
+
+    </div>
+
+
+
+
+  </div>
+</div>
+
+{% endblock %}

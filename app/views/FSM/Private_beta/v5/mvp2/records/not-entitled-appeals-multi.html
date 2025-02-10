@@ -1,0 +1,293 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% block backLink %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+
+
+{% set SiblingAdded %}
+<h3 class="govuk-notification-banner__heading">
+  Sibling added to record
+  </h3>
+  <p class="govuk-body">
+    You have added sibling details to this record. This will show immediately.
+  </p>
+  <p>Your reference is 1234567</p>
+  <p><a href="">Dismiss</a></p>
+{% endset %}
+
+
+
+<!-- The content between the heading 1 and the buttons -->
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+  <div class="govuk-grid-column-full">
+
+    {% if data['sibling-added'] =="true" %}
+    <div class="moj-banner moj-banner--success" role="region" aria-label="Success">
+
+      <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+        <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
+      </svg>
+    
+      <div class="moj-banner__message">
+        <h2 class="govuk-heading-l">Sibling added to record</h2>
+      
+    <p class="govuk-body govuk-!-margin-bottom-5">
+        You have added sibling details to this record. This will show immediately.
+      </p>
+      <button class="govuk-button govuk-button--secondary hide">Dismiss this message</button>
+        
+      
+    
+      </div>
+    
+    </div>
+    
+    
+
+    {% elif data['nass-number-entered'] =="yes" %}
+    <div class="moj-banner moj-banner--success" role="region" aria-label="Success">
+
+      <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+        <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
+      </svg>
+    
+      <div class="moj-banner__message">
+        <h2 class="govuk-heading-l govuk-!-margin-bottom-5">Asylum support reference added to record</h2>
+        
+      <button class="govuk-button govuk-button--secondary hide">Dismiss this message</button>
+      
+      </div>
+    
+    </div>
+    
+    {% endif %}
+
+    {{ mojPageHeaderActions({
+      heading: {
+        text: 'Eden Tesfay'
+      },
+      items: [
+      ]
+    }) }}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <p class="govuk-heading-s">Once you've received evidence from this parent or guardian:</p>
+      <ol class="govuk-list govuk-list--number">
+        <li>Send it to your local authority contact along with the application reference number. Typically this would happen via email.</li>
+        <li>Select ‘Send for review’ on this page. This will notify the local authority that the free school meals application is ready for their attention.</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+
+  </div>
+
+</div>
+
+<h2 class="govuk-heading-l govuk-!-margin-bottom govuk-!-font-size-32">Children Overview</h2>
+
+
+{% from "govuk/components/tag/macro.njk" import govukTag %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header">Name</th>
+          <th class="govuk-table__header">Date of birth</th>
+          <th class="govuk-table__header">Status of application</th>
+          <th class="govuk-table__header">Reference</th>
+          <th class="govuk-table__header">Edit</th>
+          <th class="govuk-table__header"></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Samual Tesfay</td>
+          <td class="govuk-table__cell">18 September 2017</td>
+          <td class="govuk-table__cell">
+            {{ govukTag({
+              text: "Document needed",
+              classes: "govuk-tag--light-blue"
+            }) }}
+          </td>
+          <td class="govuk-table__cell">44455453</td>
+          <td class="govuk-table__cell"><a href="../checker/outcome-eligible-childs-age.html" class="govuk-link">Edit details</a></td>
+          <td class="govuk-table__cell">
+            {{ govukButton({
+              text: "Send for review",
+              classes: 'govuk-button--primary',
+              href:'../checker/not-entitled-appeal-areyousure'
+            }) }}
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Thomas Tesfay</td>
+          <td class="govuk-table__cell">01 June 2019</td>
+          <td class="govuk-table__cell">
+            {{ govukTag({
+              text: "Document needed",
+              classes: "govuk-tag--light-blue"
+            }) }}
+          </td>
+          <td class="govuk-table__cell">44455454</td>
+          <td class="govuk-table__cell"><a href="../checker/outcome-eligible-childs-age.html" class="govuk-link">Edit details</a></td>
+          <td class="govuk-table__cell">
+            {{ govukButton({
+              text: "Send for review",
+              classes: 'govuk-button--primary',
+              href:'../checker/not-entitled-appeal-areyousure'
+            }) }}
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Rachel Tesfay</td>
+          <td class="govuk-table__cell">05 August 2021</td>
+          <td class="govuk-table__cell">
+            {{ govukTag({
+              text: "Document needed",
+              classes: "govuk-tag--light-blue"
+            }) }}
+          </td>
+          <td class="govuk-table__cell">44455455</td>
+          <td class="govuk-table__cell"><a href="../checker/outcome-eligible-childs-age.html" class="govuk-link">Edit details</a></td>
+          <td class="govuk-table__cell">
+            {{ govukButton({
+              text: "Send for review",
+              classes: 'govuk-button--primary',
+              href:'../checker/not-entitled-appeal-areyousure'
+            }) }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="govuk-!-padding-bottom-5"></div>
+
+
+
+<!-- PERSON -->
+
+
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Parent or guardian details"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          visuallyHiddenText: "of University of Gloucestershire"
+        }
+       
+      ]
+    }
+  },
+  rows: [
+
+
+
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        html: "Eden Tesfay"
+      }
+    },
+
+    {
+      key: {
+        text: "Nationality"
+      },
+      value: {
+        html: "Eritrean"
+      }
+    },
+     
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        html: "01 September 1988"
+      }
+    },
+
+    {
+      key: {
+        text: "Asylum support reference number"
+      },
+
+      
+      value: {
+        html: "Should only be 9 numbers long"
+      }
+    },
+    {
+      key: {
+        text: "Email address"
+      },
+
+      
+      value: {
+        html: "edamcheese@hotmail.com"
+      }
+    }
+
+     
+    
+
+  ]
+}) }}
+
+
+
+
+
+{% endblock %}
+
+{% block buttons %}
+{% endblock %}
+
+{% block pageScripts %}
+<!-- Add any javascript files here. Include javascript files only on the pages
+that need them. Excessive javascript files loaded on other pages may slow down
+the response times of the prototype. -->
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+
+<script>
+  $(document).ready(function () {
+            $(".hide").click(function () {
+                $(".moj-banner").hide();
+            });
+        });
+  </script>
+
+{% endblock %}

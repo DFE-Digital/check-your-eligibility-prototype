@@ -1,0 +1,88 @@
+{% extends "../../mvp2/checker-la/layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+
+
+    <div class="govuk-grid-row">
+
+
+      <div class="govuk-grid-column-two-thirds">
+
+    <form action="nationality" method="post" novalidate>
+
+      {% call govukFieldset({
+        legend: {
+          text: "Apply for free school meals",
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+        {{ govukInput({
+          label: {
+            text: "First name"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "first-name",
+          name: "first-name",
+          autocomplete: ""
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Surname"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "surname",
+          name: "surname",
+          autocomplete: ""
+        }) }}
+
+
+
+
+
+
+
+
+
+
+      {% endcall %}
+
+
+
+
+      {{ govukButton({
+        text: "Save and continue",
+        classes:'govuk-!-margin-top-5'
+      }) }}
+
+
+    </form>
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
+
+{% endblock %}

@@ -45,8 +45,6 @@
           </a>
         </li>
       </ul>
-
-
       <!--General Table-->
 
       <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="general">
@@ -106,6 +104,7 @@ Completed              </strong>
 
         </ul>
       </div>
+            <!--Parent Table-->
       <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="parent">
         <h2 class="govuk-heading-l">Parent</h2>
         <div class="govuk-grid-row">
@@ -281,17 +280,6 @@ Completed              </strong>
 
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="/mvp2/parent-soft-check/check-answers-no-javascript" aria-describedby="status-16">
-                Check answers - no JavaScript
-              </a>
-            </div>
-            <div class="govuk-task-list__status" id="status-16">
-              Completed
-            </div>
-          </li>
-
-          <li class="govuk-task-list__item govuk-task-list__item--with-link">
-            <div class="govuk-task-list__name-and-hint">
               <a class="govuk-link govuk-task-list__link" href="/mvp2/parent-soft-check/children-added" aria-describedby="status-17">
                 Application complete
               </a>
@@ -301,7 +289,148 @@ Completed              </strong>
             </div>
           </li>
         </ul>
+</div>
+ <!--School Table-->
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="school">
+        <h2 class="govuk-heading-l">School</h2>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+          </div>
+        </div>
 
+        <ul class="govuk-task-list">
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="./Private_beta/v5/mvp2/checker/dashboard.html" aria-describedby="status-1">
+                LA Dashboard start
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status-1">Completed</div>
+          </li>
+
+          <!-- <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="./mvp2/checker-la/checker-foster-family" aria-describedby="status-2">
+                Add a foster family
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status-2">Completed</div>
+          </li> -->
+
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="./Private_beta/v5/mvp2/checker/checker" aria-describedby="status-3">
+                Check an individuals eligibility
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status-3">Completed</div>
+          </li>
+
+          <!-- <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint"><b>Individual check - outcomes</b></div>
+          </li> -->
+
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="./Private_beta/v5/mvp2/checker/eligible" aria-describedby="status-4">
+                Outcome - confirmation, found
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status-4">Completed</div>
+          </li>
+
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="./Private_beta/v5/mvp2/checker/outcome-not-entitled.html" aria-describedby="status-5">
+                Outcome - may not be entitled
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status-5">Completed</div>
+          </li>
+
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="./Private_beta/v5/mvp2/checker/outcome-could-not-find.html" aria-describedby="status-6">
+                Outcome - could not find no trace
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status-6">Completed</div>
+          </li>
+
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="./Private_beta/v5/mvp2/batch-checking/upload" aria-describedby="status-7">
+                Batch check eligibility
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status-7">Completed</div>
+          </li>
+
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="./Private_beta/v5/mvp2/batch-checking/batch-check-success" aria-describedby="status-8">
+                Outcome batch check - success
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status-8">Completed</div>
+          </li>
+
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="./Private_beta/v5/mvp2/batch-checking/batch-error-not-accepted" aria-describedby="status-8">
+                Outcome batch check - file not accepted
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status-8">Completed</div>
+          </li>
+
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="./Private_beta/v5/mvp2/batch-checking/batch-error-data-issue" aria-describedby="status-8">
+                Outcome batch check - pupil data issues
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status-8">Completed</div>
+          </li>
+
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="./Private_beta/v5/mvp2/checker/pending-list" aria-describedby="status-9">
+                Finalise applications list
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status-9">Completed</div>
+          </li>
+
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="./Private_beta/v5//mvp2/checker-la/guidance.html" aria-describedby="status-10">
+                Guidance pages / links - **links to LA
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status-10">Completed</div>
+          </li>
+
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="./Private_beta/v5/mvp2/checker/search.html" aria-describedby="status-11">
+                Search
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status-11">Completed</div>
+          </li>
+
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="./Private_beta/v5/mvp2/checker/eligible-list.html" aria-describedby="status-12">
+                Search results
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status-12">Completed</div>
+          </li>
+        </ul>
+      </td>
+        </ul>
 
 
       </div>

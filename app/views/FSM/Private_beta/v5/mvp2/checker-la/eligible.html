@@ -1,0 +1,59 @@
+{% extends "../../mvp2/checker-la/layouts/layout-dfenoback.html" %}
+
+{% set pageName="Home" %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Children eligible
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          The children of this parent or guardian are eligible for free school meals.
+        </h3>
+        </div>
+    </div>
+    <h1 class="govuk-heading-l">Tell their school</h1>
+    <p class="govuk-body">Tell the school that the children of this parent or guardian are eligible for free school meals and ask them to make an application.</p>
+
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Run another check",
+      href: 'checker'
+    }) }}
+
+  <div>
+
+    <div class="govuk-button-group">
+      <a class="govuk-link" href="dashboard">Return to dashboard</a>
+    </div>
+
+
+
+    </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+
+{% endblock %}

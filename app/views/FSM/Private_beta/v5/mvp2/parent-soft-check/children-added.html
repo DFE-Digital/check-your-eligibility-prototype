@@ -1,0 +1,72 @@
+{% extends "../../mvp2/parent-soft-check/layouts/layout-confirmation.html" %}
+{% set pageName="Application complete" %} {% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Application complete</h1>
+        <div class="govuk-panel__body">
+          Submitted on<br /><strong>6 July 2024, 13:12</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="govuk-section-break govuk-section-break--m">
+  <table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--m">
+      We have sent details for:
+    </caption>
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header app-custom-class">Name</th>
+        <th scope="col" class="govuk-table__header app-custom-class">School</th>
+        <th scope="col" class="govuk-table__header app-custom-class">
+          Reference
+        </th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Samual Tesfay</th>
+        <td class="govuk-table__cell">St Kings Primary School</td>
+        <td class="govuk-table__cell">44455453</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Thomas Tesfay</th>
+        <td class="govuk-table__cell">St Kings Primary School</td>
+        <td class="govuk-table__cell">44455454</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Rachel Tesfay</th>
+        <td class="govuk-table__cell">Bramhope Primary School</td>
+        <td class="govuk-table__cell">44455455</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    For any queries about the application, please write the reference numbers
+    down and discuss with your school administrator.
+  </p>
+
+  <h2 class="govuk-heading-m">What happens next</h2>
+
+  <p>
+    The school(s) will contact you when they have registered the details into
+    their systems, and will arrange for your children’s free school meals to
+    start.
+  </p>
+  <p>If you do not receive an update, talk to the school administrator.</p>
+
+  <p>
+    <a href="">What did you think about this service?</a> (takes 30 seconds)
+  </p>
+
+  {% from "govuk/components/button/macro.njk" import govukButton %} {{
+  govukButton({ text: "Finish and leave service", href: '../account/start-now'
+  }) }} {% endblock %} {% block pageScripts %}
+  <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+</div>
+{% endblock %}

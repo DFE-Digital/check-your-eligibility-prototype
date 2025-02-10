@@ -1,0 +1,62 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Outcome could not check" %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Check failed
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">The personal information you entered does not match departmental records.</p>
+
+      </div>
+    </div>
+
+    <h1 class="govuk-heading-l">Check your details and try again</h1>
+
+    <p class="govuk-body"><a href="check">Try again</a>, ensuring you’ve entered your details accurately.</p>
+
+    <p class="govuk-body">If the check keeps failing, contact your school administrator.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}

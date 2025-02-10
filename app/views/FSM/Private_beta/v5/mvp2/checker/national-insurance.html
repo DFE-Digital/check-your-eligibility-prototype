@@ -1,0 +1,95 @@
+{% extends "../../mvp2/checker/layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+
+
+
+
+
+<div class="govuk-grid-row">
+
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/council-ni-number-answer" method="post" novalidate>
+
+
+
+
+
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {% set yesHtml %}
+      {{ govukInput({
+      id: "ni-number-entered",
+      name: "ni-number-entered",
+      type: "text",
+      autocomplete: "text",
+      spellcheck: false,
+      classes: "govuk-!-width-one-third",
+      label: {
+      text: "National Insurance number"
+      }
+      }) }}
+      {% endset -%}
+
+
+      {{ govukRadios({
+      name: "ni-number",
+      fieldset: {
+      legend: {
+      text: "Do they have a National Insurance (NI) number?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+      }
+      },
+      hint: {
+      text: "For example, ‘QQ 12 34 56 C’"
+      },
+      items: [
+      {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+      html: yesHtml
+      }
+      },
+      {
+      value: "no",
+      text: "No, I dont have one"
+
+      }
+
+      ]
+      }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+      text: "Save and continue"
+      }) }}
+
+
+    </form>
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+</div>
+
+
+
+{% endblock %}

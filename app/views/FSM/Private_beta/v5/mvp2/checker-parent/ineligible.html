@@ -1,0 +1,111 @@
+{% extends "layouts/layout-dfe.html" %}
+
+{% set pageName="Home" %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Your child may not be eligible</h1>
+    <p>Based on your details, we were not able to confirm information about you in our system. 
+      <p>If you think your child should be eligible for free school meals, you can upload and submit supporting evidence.</p>
+
+
+    {{ govukRadios({
+      classes: "",
+      name: "appeal",
+      id:"appeal",
+      fieldset: {
+      legend: {
+      text: "Do you want to upload and submit supporting evidence now?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m govuk-!-margin-top-5"
+      }
+      },
+   
+    hint: {
+      text: "The school will need to review it before your child can get free school meals"
+    },
+      items: [
+      {
+      value: "yes",
+      text: "Yes, I'll upload and submit evidence for review"
+      },
+      {
+      value: "no",
+      text: "No, I understand my child will not get free school meals"
+      }
+      ]
+      }) }}
+
+    
+      <p>You will need to upload a document showing you have one of the following: </p>
+
+
+
+
+    <ul class="govuk-!-margin-bottom-10">
+
+
+     <li> Income Support </li> 
+
+    <li>Income-based Jobseeker's Allowance </li>
+  
+      <li>Income-related Employment and Support Allowance</li>  
+  
+      <li>Support under Part VI of the Immigration and Asylum Act 1999. For example, national asylum support number (NASS), Application Registration Card (ARC), Port reference number</li> 
+  
+     <li> Child Tax Credit</li>
+  
+      <li>the guarantee element of Pension Credit</li>  
+  
+     <li> Working Tax Credit run-on</li>
+  
+     <li> Universal Credit</li>
+
+      
+
+    </ul>
+
+
+
+   
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+    text: "Continue",
+    href:'do-you-have-docs'
+    }) }}
+
+    <p><a href="">Save details for later</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}
