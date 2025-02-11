@@ -1,0 +1,64 @@
+{% extends "/childcare/v1/layouts/layout-childcare.html" %}
+
+{% block pageTitle %}
+  30 hours childcare for working parents
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">Run a batch check</h1>
+
+    <p>Upload a csv file with details of multiple parents or guardians</p>
+
+    <div class="dfe-grid-container">
+
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="">Childcare for working families</a>
+          </h2>
+          <p>15 and 30 hours free childcare for children aged 9 months to 4 years.</p>
+        </div>
+      </div>
+
+
+        <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="">2 years old early learning</a>
+            </h2>
+            <p>15 hours free early learning for children aged 2 years in families receiving additional support.</p>
+          </div>
+        </div>
+
+        <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="">Early years pupil premium</a>
+            </h2>
+            <p>some words</p>
+          </div>
+        </div>
+
+    </div>
+
+    <h2 class="govuk-heading-m">Batch check history</h2>
+
+    <p>Insert table</p>
+
+
+
+  </div>
+</div>
+
+{% endblock %}
