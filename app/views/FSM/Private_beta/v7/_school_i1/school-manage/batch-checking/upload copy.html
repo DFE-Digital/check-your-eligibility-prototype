@@ -1,0 +1,128 @@
+{% extends "../../../../layouts/layout-dfe-schoolnav.html" %}
+{% set pageName="Run a batch check for multiple parents or guardians" %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+    <!---<p class="govuk-body">
+      Export and upload a Common File Transfer CTF from your school system or complete and upload our template to run a batch check on free school meal applications.
+    </p>--->
+    <p class="govuk-body">Connect your school management information system to fetch data and run a batch check.</p>
+    </p>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+    text: "Fetch data from your school system",
+    classes: "govuk-button--primary",
+    href: '../batch-checking/school-mis/select-mis'
+    }) }}
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+    <h2 class="govuk-heading-m">Other ways to run a batch check</h2>
+
+      <p class=govuk-body><a href="#" class="govuk-link">Use a Common File Transfer (CTF)</a></p>
+      <p class=govuk-body><a href="#" class="govuk-link">Use our CSV template</a></li>
+
+    <!---<p class="govuk-body">Follow the instructions below to extract your CTF:</p>
+    <ol class="govuk-list govuk-list--number">
+
+      <li>Navigate to your school management information system (this could be SIMS or XXX or any other system your
+        school uses) in the admin area of your school management information system </li>
+      <li>Select export pupil data </li>
+      <li>Save the exported file on your computer </li>
+      <li>Add in any additional information that your system doesn't collect (for example National Insurance) and resave the file as a XML</li>
+      <li>Navigate to the saved CTF and select your chosen file</li>
+    </ol>
+    </ul>
+
+
+    <h3 class="govuk-heading-s">Upload a XML file from your school management information system</h3>
+
+    {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+    {{ govukFileUpload({
+    id: "file-upload-1",
+    name: "fileUpload1",
+    label: {
+    text: ""
+    }
+    }) }}
+
+
+    {{ govukButton({
+    text: "Upload and run a CTF batch check",
+    classes: "govuk-button--primary",
+    href: '../batch-checking/imported-records'
+    }) }}
+
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+    <h2 class="govuk-heading-m">Run a manual batch check</h2>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          How to run a manual batch check
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <ol class="govuk-list govuk-list--number">
+          <li>Add the details of all parents you need to check to the template, including: Name, Date of birth, National
+            Insurance number or
+            Asylum support reference number.</li>
+          <li>Save it as a CSV file.</li>
+          <li>Upload the completed template below and run manual checks. </li>
+          <li>You’ll be given a file to download containing the results. </li>
+        </ol>
+      </div>
+    </details>
+
+    <p class="govuk-body">Download the <a href="/public/csv/Batch-check-template.csv" download class="govuk-link">batch
+        check template</a> (185kb). This must be fully completed and in CSV format. </p>
+
+    <h3 class="govuk-heading-s">Upload a completed template</h3>
+
+    {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+    {{ govukFileUpload({
+    id: "file-upload-1",
+    name: "fileUpload1",
+    label: {
+    text: ""
+    }
+    }) }}
+
+
+    {{ govukButton({
+    text: "Upload and run a manual check",
+    classes: "govuk-button--primary",
+    href: '../batch-checking/batch-checking-loader'
+    }) }}--->
+
+
+    {% endblock %}
+    {% block pageScripts %}
+    <!-- Add any javascript files here.
+
+Include javascript files only on the pages
+that need them. Excessive javascript files loaded on other pages may slow down
+the response times of the prototype. -->
+    <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+
+    <script type="text/javascript">
+      if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
+        new MOJFrontend.MultiFileUpload({
+          container: $(".moj-multi-file-upload"),
+          uploadUrl: "/ajax-upload",
+          deleteUrl: "/ajax-delete",
+        });
+      }
+    </script>
+    {% endblock %}

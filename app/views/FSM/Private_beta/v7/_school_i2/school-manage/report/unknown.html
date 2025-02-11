@@ -1,0 +1,116 @@
+
+  <!-- SEARCH BAR -->
+    <!---
+    <div class="cardDesign">
+      <div id="PersonName">
+      <div class="govuk-grid-row">
+
+
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-form-group HO-uk-margin-bottom-3">
+          <h6 class="govuk-heading-xxs HO-uk-margin-bottom-1">
+        Child last name
+          </h6>
+
+            <input id="Name" class="govuk-input" type="text" name="Name" value="{{ data['Name'] }}" placeholder="Child surname">
+
+          </div>
+          </div>
+          <!--COL 1
+
+
+          <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-form-group HO-uk-margin-bottom-3">
+              <h6 class="govuk-heading-xxs HO-uk-margin-bottom-1">
+             Parent or guardian last name
+              </h6>
+              <div class="autocomplete">
+                <input id="deptCountry" class="countryAutocomplete govuk-input" type="text" name="deptCountry" value="{{ data['deptCountry'] }}" placeholder="Status">
+              </div>
+
+              </div>
+              </div>
+               <!--COL 2
+
+
+               <div class="govuk-grid-row">
+
+
+                <div class="govuk-grid-column-one-quarter">
+                  <div class="govuk-form-group HO-uk-margin-bottom-3">
+                    <h6 class="govuk-heading-xxs HO-uk-margin-bottom-1">
+                Reference number
+                    </h6>
+
+                      <input id="Name" class="govuk-input" type="text" name="Name" value="{{ data['Name'] }}" placeholder="Reference number">
+
+                    </div>
+                    </div>
+
+
+                   <!--COL 3-
+                   </div>
+
+                  ROW 2-->
+
+                        <!--COL 1
+
+
+                        <div class="govuk-grid-column-one-quarter">
+                          <div class="govuk-form-group HO-uk-margin-bottom-3">
+                            <h6 class="govuk-heading-xxs HO-uk-margin-bottom-1">
+                           Status
+                            </h6>
+                            {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+                            {{ govukSelect({
+                              id: "sort",
+                              name: "sort",
+
+                              items: [
+                              {
+                                value: "all",
+                                text: "All statuses"
+                              },
+                                {
+                                  value: "entitled",
+                                  text: "Entitled"
+                                },
+
+
+
+                                {
+                                  value: "evidence-needed",
+                                  text: "Evidence needed"
+                                },
+                                {
+                                  value: "sent-for-review",
+                                  text: "Sent for review"
+                                },
+                                {
+                                  value: "reviewed-enititled",
+                                  text: "Reviewed entitled"
+                                },
+                                {
+                                  value: "reviewed-not-entitled",
+                                  text: "Reviewed not entitled"
+                                },
+                                {
+                                  value: "receiving-entitlement",
+                                  text: "Receiving entitlement"
+                                }
+                              ]
+                            }) }}
+
+                            </div>
+                            </div>
+                             <!--COL 2-->
+
+
+
+
+                                 <!--COL 3-->
+                                </div>
+
+
+

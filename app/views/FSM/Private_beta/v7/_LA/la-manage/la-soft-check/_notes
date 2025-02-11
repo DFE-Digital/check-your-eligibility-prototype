@@ -1,0 +1,15 @@
+{% extends "layouts/main.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column--three-quarters">
+
+<span class="govuk-hint">All prototypes for</span>
+<h1 class="govuk-heading-l">
+  {{ pageName }}
+</h1>
+
+<p>This is the starting page for the Check a families eligibility prototype.</p>
+
+{% endblock}
