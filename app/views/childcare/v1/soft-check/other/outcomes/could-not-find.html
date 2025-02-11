@@ -1,0 +1,34 @@
+{% extends "/childcare/v1/layouts/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Check failed
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Check failed
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">The personal information you entered does not match departmental records.</p>
+      </div>
+    </div>
+
+    <h1 class="govuk-heading-l">Check the details and try again</h1>
+
+    <p class="govuk-body"><a href="#">Try again</a>, ensuring you've entered the parent or guardian details accurately.</p>
+
+    <p class="govuk-body"><a href="#">Return to dashboard</a></p>
+
+  </div>
+</div>
+
+{% endblock %}

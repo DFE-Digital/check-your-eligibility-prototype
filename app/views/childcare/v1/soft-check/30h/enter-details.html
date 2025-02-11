@@ -1,0 +1,100 @@
+{% extends "/childcare/v1/layouts/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Enter the details of the parent or guardian
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">Enter the eligibility code details</h1>
+
+
+        <form class="form" action="/childcare/v1/soft-check/30h/checking-loader" method="post" novalidate>
+
+          {% call govukFieldset({
+
+          }) %}
+
+            {% from "govuk/components/input/macro.njk" import govukInput %}
+
+            {{ govukInput({
+              label: {
+                text: "Eligibility code",
+                classes: "govuk-label--s",
+                isPageHeading: false
+              },
+              hint: {
+                text: "Eligibility code must be 11 digits long"
+              },
+              classes: "govuk-input--width-10",
+              id: "30h-code",
+              name: "30h-code"
+            }) }}
+
+            {{ govukInput({
+              classes: "govuk-!-width-one-third",
+              label: {
+                text: "National Insurance number",
+                classes: "govuk-fieldset__legend--s"
+              },
+              hint: {
+                text: "For parent or guardian"
+              },
+              id: "ni-number",
+              name: "ni-number"
+            }) }}
+
+            {{ govukDateInput({
+
+              id: "dob",
+              namePrefix: "dob",
+
+              fieldset: {
+                legend: {
+                  text: "Child date of birth",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
+              hint: {
+                text: "For example, 27 3 1980"
+              }
+            }) }}
+
+
+
+          {% endcall %}
+
+
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Run check"
+          }) }}
+
+
+        </form>
+
+
+
+      </div>
+
+    </div>
+
+
+
+{% endblock %}
