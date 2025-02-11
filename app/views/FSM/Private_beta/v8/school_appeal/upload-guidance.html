@@ -1,0 +1,59 @@
+{% extends "/layouts/mvp3/layout-dfe.html" %}
+{% set pageName="Take a photo or scan paper documents" %}
+
+{%block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds ">
+        <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+<p class="govuk-body">Take a photo or scan paper copies of the evidence to upload and send for review.</p>
+
+<h3 class="govuk-heading-m">Before you upload it</h3>
+
+<p class="govuk-body">It is important that the parent or guardian's evidence can be read by our system or it will be rejected, so make sure:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>all the text can be read easily</li>
+  <li>it is on 1 page with their contact details visibile</li>
+  <li>the benefit or amount they earn is visible</li>
+  <li>their National Insurance number is visible</li>
+  <li>the whole statement or letter is visible including all four corners</li>
+</ul>
+
+<div class="govuk-grid-column-one-quarter">
+
+<a target="_self" tabindex="-1" aria-hidden="true">
+    <img alt="Add in text here" class="" src="/public/images/UC_statement.png">
+  </a>
+</div>
+
+</div>
+</div>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break">
+
+<h2 class="govuk-heading-m">Take a photo</h2>
+
+<ol class="govuk-list govuk-list--number">
+  <li>Put the document on a flat surface, make sure it has no creases or folds and is lying straight.</li>
+  <li>It should be well lit and without any shadows.</li>
+  <li>The whole of the document should be visible in the photo.</li>
+</ol>
+
+<h2 class="govuk-heading-m">Scan it</h2>
+
+<ol class="govuk-list govuk-list--number">
+  <li>Make sure the scanner is connected to a laptop or other device.</li>
+  <li>Place the document text side down on the scanner. If your document is 2-sided, you must scan the side which shows your details.</li>
+  <li>Make sure the document is lying straight and there are no creases or folds.</li>
+  <li>Save the scanned image somewhere that's easy to find later.</li>
+</ol>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break">
+
+{{ govukButton({
+    text: "Continue to upload",
+    href: "upload-evidence"
+
+}) }}
+
+{%endblock %}

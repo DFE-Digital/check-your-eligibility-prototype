@@ -1,0 +1,140 @@
+{% extends "layouts/mvp3/layout-dfe.html" %}
+{% set pageName="Appeal sbmitted" %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+        aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Appeal submitted
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+            Appeal submitted to local authority
+          </h3>
+          <p>Eden Tesfay has been sent an email notification about this appeal, but you can also <a href="" class="govuk-link" onclick="printPage()">print this page</a> for them to keep.</p>
+
+
+
+        </div>
+      </div>
+
+      <h1 class="govuk-heading-m">Application record for Eden Tesfay</h1>
+    </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header">Child</th>
+          <th class="govuk-table__header">Reference</th>
+          <th class="govuk-table__header"></th>
+
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" style="width: 40%;">Samuel Tesfay</td>
+          <td class="govuk-table__cell" style="width: 40%;"><a href="not-entitled-appeal-wait" class="govuk-link">44455453</a></td>
+          <td class="govuk-table__cell" style="width: 20%;"></td>
+
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" style="width: 40%;">Thomas Tesfay</td>
+          <td class="govuk-table__cell" style="width: 40%;"><a href="#" class="govuk-link">44455454</a></td>
+          <td class="govuk-table__cell" style="width: 20%;"></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" style="width: 40%;">Rachel Tesfay</td>
+          <td class="govuk-table__cell" style="width: 40%;"><a href="#" class="govuk-link">44455455</a></td>
+          <td class="govuk-table__cell" style="width: 20%;"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" style="width: 40%;">Evidence</th>
+          <th class="govuk-table__header" style="width: 40%;">Filesize</th>
+          <th class="govuk-table__header" style="width: 40%;"></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" style="width: 40%;">0997618234647.png</td>
+          <td class="govuk-table__cell" style="width: 40%;">1.2mb</td>
+          <th class="govuk-table__header" style="width: 40%;"></th>
+        </tr>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" style="width: 40%;">    Scan0123099647.png
+            </td>
+            <td class="govuk-table__cell" style="width: 40%;">586kb</td>
+            <th class="govuk-table__header" style="width: 40%;"></th>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+    <div class="govuk-!-padding-bottom-3"></div>
+    <div class="govuk-width-container">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <h2 class="govuk-heading-m">What to do next</h2>
+
+          <ol class="govuk-list govuk-list--number">
+            <li>Wait for the local authority decision - the record will be updated when they've made a decision.</li>
+          <li>Find the record in <a href="applications" class="govuk-link">record a decision</a>.</li>
+            <li>Follow the instructions on next actions.</li>
+          </ol>
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+    <!--
+<div class="govuk-!-padding-bottom-3"></div>
+-->
+
+
+
+
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+<script>
+  function printPage() {
+    window.print();  // This will open the print dialog
+  }
+</script>
+
+<script>
+  function printSection() {
+    window.print();
+  }
+</script>
+
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}

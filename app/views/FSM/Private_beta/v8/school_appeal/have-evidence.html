@@ -1,0 +1,66 @@
+{% extends "/layouts/layout-dfe-schoolnav.html" %}
+{% set pageName="How do you want to send the evidence?" %}
+{% block content %}
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!--routes found in routes/mvp3/appeal.js-->
+    <form action="/mvp3-school-evidence" method="post" novalidate>
+
+      {{ govukRadios({
+      name: "schools_evidence",
+      id:'schools_evidence',
+      fieldset: {
+      legend: {
+      text: "How do you want to send the evidence?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+      }
+      },
+      hint: {
+      text: "You’ll need to send evidence that shows the parent or guardian is eligible"
+      },
+      items: [
+      {
+      value: "digital",
+      text: "Upload digital files",
+      hint: {
+      text: "Use this for files you've downloaded or have been sent by text or email"
+      }
+      },
+      {
+      value: "paper",
+      text: "Take a photo or scan paper documents",
+      hint: {
+      text: "Use this for uploading photos or scans of paper copies of your evidence"
+      }
+      },
+      {
+      value: "later",
+      text: "Upload files later",
+      hint: {
+      text: "Continue and upload the evidence later"
+      }
+      },
+      {
+      value: "none",
+      text: "Send it by email",
+      hint: {
+      text: "Continue without uploading anything and send it to the local authority by email later"
+        }
+      }
+      ]
+      }) }}
+
+      {{ govukButton({
+      text: "Continue",
+      classes:'govuk-!-margin-top-5'
+      }) }}
+    </form>
+
+
+      </div>
+    </div>
+
+    {% endblock %}

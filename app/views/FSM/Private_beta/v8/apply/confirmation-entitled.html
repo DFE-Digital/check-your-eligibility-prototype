@@ -1,0 +1,95 @@
+{% extends "layouts/layout-dfe-schoolnav-noback.html" %}
+{% set pageName="Application completed" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+{% set html %}
+  <h3 class="govuk-notification-banner__heading">
+    {{pageName}}
+  </h3>
+  <p>{{ data["parent-firstname"] or "Eden" }} {{ data["parent-surname"] or "Tesfay" }} has been sent an email notification to confirm this, but you can also <a href="" class="govuk-link" onclick="printPage()">print this page</a> for them to keep.</p>
+
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: "success"
+}) }}
+        <!--<h1 class="govuk-heading-xl">Children details added</h1>-->
+        <h3>Children included on this application for {{ data["parent-firstname"] or "Eden" }} {{ data["parent-surname"] or "Tesfay" }}</h3>
+
+
+      </div>
+</div>
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-column-two-thirds">
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header">Child</th>
+          <th class="govuk-table__header">Reference</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Rachel Tesfay</td>
+          <td class="govuk-table__cell"><a href="entitled-rachel" class="govuk-link">44455453</a></td>
+        </tr>
+
+        <!-- {% if data['child-2'] == 'Yes' %} {% endif %}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"> {{ data["ch1-first-name"] or "Samuel" }} {{ data["surname"]or data["parent-surname"] }}</td>
+          <td class="govuk-table__cell">44455454</td>
+        </tr> -->
+
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+        <div class="govuk-width-container">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+              <h2 class="govuk-heading-m">What to do next</h2>
+
+              <ol class="govuk-list govuk-list--number">
+                <li><a href="entitled-rachel" class="govuk-link">Go to the record</a>.</li>
+                <li>Add the details of the application to your own system.</li>
+                <li>Mark the record as completed.</li>
+              </ol>
+
+              </div>
+      </div>
+      </div>
+
+
+    </div>
+</div>
+</div>
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+
+</div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+
+<script>
+  function printPage() {
+      window.print();  // This will open the print dialog
+  }
+  </script>
+
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}

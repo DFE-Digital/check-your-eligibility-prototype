@@ -1,0 +1,36 @@
+{% extends "/layouts/mvp3/layout-dfe.html" %}
+{% set pageName="Upload the evidence" %}
+
+{%block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds ">
+<h1 class="govuk-heading-l">{{pageName}}</h1>
+<div class="govuk-form-group">
+  <form action="/mvp3-paper" method="post" novalidate>
+
+    <label class="govuk-label" for="file-upload-1">
+      Upload a file
+    </label>
+    <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+  </div>
+
+  <p class="govuk-body">Your file must be:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>a JPG, JPEG, HEIC, HEIF, BMP, PNG, TIF, or PDF</li>
+    <li>smaller than 10MB</li>
+    </ul>
+
+{{ govukButton({
+    text: "Upload and continue",
+    href: "appeal-check-answers-evidence.html"
+}) }}
+
+<div class="govuk-inset-text">
+  If you have problems uploading the evidence, you can <a href="../upload/have-evidence.html" class="govuk-link">choose to email it to the local authority instead</a>.
+</div>
+</div>
+</div>
+</form>
+
+{%endblock %}

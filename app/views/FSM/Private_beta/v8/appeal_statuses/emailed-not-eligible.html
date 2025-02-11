@@ -1,0 +1,254 @@
+{% extends "layouts/layout-dfe.html" %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+  <div class="govuk-grid-column-full">
+
+
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <h1 class="govuk-heading-xl" style="margin: 1;">Trevor Sinclair</h1>
+      <div style="display: flex;">
+
+        <div class="govuk-button-group" style="display: flex;">
+          {{ govukButton({
+            text: "Mark as completed",
+            href:'not-eligible-complete'
+          }) }}
+          {{ govukButton({
+            text: "Download CSV file",
+            classes: 'govuk-button--secondary',
+            href:'/download-csv'
+          }) }}
+        </div>
+      </div>
+    </div>
+    <!---
+        {{ mojPageHeaderActions({
+          heading: {
+            text: 'Warren Sutton'
+          }
+        }) }}
+      -->
+
+    <div class="govuk-width-container">
+      <div class="govuk-grid-column-full-width">
+        <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-heading-m">Actions required</h2>
+          <p>      <strong class="govuk-tag govuk-tag--pink">
+            Record decision
+          </strong> <strong class="govuk-tag govuk-tag--blue">
+            Mark as completed
+          </strong></p>
+
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-visually-hidden">Warning</span>
+              You must record the decision in your school system before marking as completed.
+            </strong>
+          </div>
+
+          <h2 class="govuk-heading-m">Review decision</h2>
+          <p>      <strong class="govuk-tag govuk-tag--green">
+            Eligible
+          </strong></p>
+
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+<!-- PERSON -->
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Parent or guardian details"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          visuallyHiddenText: ""
+        }
+
+      ]
+    }
+  },
+  rows: [
+
+
+
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        html: "Trevor Sinclair"
+      }
+    },
+
+
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        html: "01 September 1984"
+      }
+    },
+    {
+      key: {
+        text: "National Insurance number"
+      },
+
+
+      value: {
+        html: "AB123456C"
+      }
+    },
+
+
+    {
+      key: {
+        text: "Email address"
+      },
+
+
+      value: {
+        html: "t.sinclair1009@gmail.com"
+      }
+    }
+
+
+  ]
+}) }}
+
+
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+<!-- PERSON -->
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Child details: 	44455453"
+    },
+    actions: {
+      items: [
+    ]
+    }
+  },
+  rows: [
+
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Polly Sinclair"
+      }
+    },
+
+
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        html: "18 September 2017"
+      }
+    },
+
+    {
+      key: {
+        text: "Status of application"
+      },
+      value: {
+        html: govukTag({
+          text: "Not eligible after review",
+          classes: "govuk-tag--red"
+              })
+      },
+      actions: {
+        items: [
+        ]
+      }
+    }
+
+
+  ]
+}) }}
+
+<!--EVIDENCE-->
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Supporting evidence"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Add evidence",
+          visuallyHiddenText: "to the local authority"
+        }
+
+      ]
+    }
+  },
+  rows: [
+  {
+    key: {
+      text: "Supporting evidence"
+    },
+    value: {
+      html: "Emailed to local authority"
+    },
+    actions: {
+      items: [
+
+
+
+
+
+      ]
+    }
+  }
+  ]
+}) }}
+
+
+
+{% endblock %}
+
+{% block buttons %}
+{% endblock %}
+
+{% block pageScripts %}
+<!-- Add any javascript files here. Include javascript files only on the pages
+that need them. Excessive javascript files loaded on other pages may slow down
+the response times of the prototype. -->
+
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+
+<script>
+  $(document).ready(function () {
+            $(".hide").click(function () {
+                $(".moj-banner").hide();
+            });
+        });
+  </script>
+
+{% endblock %}
