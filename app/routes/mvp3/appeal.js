@@ -25,16 +25,16 @@ router.post('/mvp3-school-evidence', function (req, res) {
   // Check whether the variable matches a condition
   if (evidence == "digital") {
     // Send user to next page
-    res.redirect('/mvp3/_school/school-manage/upload/upload-guidance-digital');
+    res.redirect('/FSM/Private_beta/v8/school_appeal/upload-guidance-digital');
   } else if (evidence === "paper") {
     // Send user to a different page for physical evidence
-    res.redirect('/mvp3/_school/school-manage/upload/upload-guidance');
+    res.redirect('/FSM/Private_beta/v8/school_appeal/upload-guidance');
   } else if (evidence === "later") {
     // Send user to a different page for uploading later
-    res.redirect('/mvp3/_school/school-manage/upload/appeal-check-answers-skip');
+    res.redirect('/FSM/Private_beta/v8/school_appeal/appeal-check-answers-skip');
   } else {
     // Send by email
-    res.redirect('/mvp3/_school/school-manage/upload/appeal-check-answers-skip');
+    res.redirect('/FSM/Private_beta/v8/school_appeal/appeal-check-answers-skip');
   }
 
 })
@@ -47,10 +47,10 @@ router.post('/mvp3-school-add-evidence', function (req, res) {
   // Check whether the variable matches a condition
   if (evidence == "digital") {
     // Send user to next page
-    res.redirect('/mvp3/_school//school-manage/upload/upload-guidance-digital-add')
+    res.redirect('/FSM/Private_beta/v8/school_appeal/add_evidence/upload-guidance-digital-add')
   } else if (evidence === "paper") {
     // Send user to a different page for physical evidence
-    res.redirect('/mvp3/_school/school-manage/upload/upload-guidance-add');
+    res.redirect('/FSM/Private_beta/v8/school_appeal/add_evidence/upload/upload-guidance-add');
   }
 
 })
