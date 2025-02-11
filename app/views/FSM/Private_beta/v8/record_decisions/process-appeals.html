@@ -1,0 +1,160 @@
+{% extends "/layouts/layout-dfe-schoolnav-noback.html" %}
+
+{% set pageName="Process appeals" %}
+{% set applicationSent %}
+<h3 class="govuk-notification-banner__heading">
+  Your application has been sent
+</h3>
+<p class="govuk-body">
+  We have sent your application to be processed by your local school. It may take upto 1 week to process.
+</p>
+<p>Your reference is 1234567</p>
+{% endset %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    {% if data['eligibility-confirmed'] =="yes" %}
+    {{ govukNotificationBanner({
+    html: applicationSent,
+    type: 'success'
+    }) }}
+
+    {% endif %}
+
+    <div class="notifications-container" style="display: flex; align-items: center;">
+      <h1 class="govuk-heading-l" style="margin: 0;">{{pageName}}</h1>
+      <span id="notifications" class="moj-notification-badge" style="white-space: nowrap; margin-left: 10px;">3</span>
+    </div>
+    <div class="govuk-!-padding-bottom-3"></div>
+
+  </div>
+  <div class="govuk-width-container">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+       <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>
+            You must get supporting evidence for these applications and upload or email them to the local authority.
+          </strong>
+        </div>
+
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                      Complete list of acceptable evidence
+                </span>
+          </summary>
+          <div class="govuk-details__text">
+                <p>You can send:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                      <li>up to three latest Universal Credit statements </li>
+                      <li>their latest tax credit statement form TC602A (Award Notices) or TC603R (Auto Renewal),
+                            showing they are receiving Working Tax Credit run-on
+                      </li>
+                      <li>their latest tax credit statement form TC602A (Award Notices) or TC603R (Auto Renewal),
+                            showing they are receiving Child Tax Credit
+                      </li>
+                      <li>a letter of entitlement for Income Support
+                      </li>
+                      <li>a letter of entitlement for income-based Jobseeker’s Allowance
+                      </li>
+                      <li>a letter of entitlement for the guaranteed element of Pension Credit
+                      </li>
+                      <li>documents showing they are receiving relevant support under part VI of the Immigration
+                            and Asylum Act 1999 </li>
+                </ul>
+                <p><a href="/mvp3/_family/guidance/parent-guidance#:~:text=Providing%20the%20right%20evidence"
+                      class="govuk-link">More information on supporting evidence</a>.</p>
+          </div>
+
+    </details>
+
+
+    <p class="govuk-body">After you receive the supporting evidence:</p>
+        <ol class="govuk-list govuk-list--number">
+  <li>Find the record below.</li>
+  <li>Select 'Upload evidence' to add it to the record or email it to your local authority and select 'Mark as emailed'.</li>
+  <li>Select ‘Send for review’ to submit the evidence.</li>
+  <li>Wait for the local authority decision - the record will be updated when they have.</li>
+</ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="govuk-!-padding-bottom-3"></div>
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-full">
+
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+
+            <th class="govuk-table__header" scope="col">Reference</th>
+            <th class="govuk-table__header" scope="col">Parent or guardian</th>
+            <th class="govuk-table__header" scope="col">Child</th>
+            <th class="govuk-table__header govuk-table__header--numeric" scope="col">Child date of birth</th>
+            <th class="govuk-table__header" scope="col">Next action</th>
+            <th class="govuk-table__header govuk-table__header--numeric" scope="col">Submission date</th>
+            <th class="govuk-table__header govuk-table__header--numeric" scope="col">Sent for review on</th>
+
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row govuk-table__row--selected">
+      <td class="govuk-table__cell"><a href="not-entitled-appeal" class="govuk-link">44455453</a></td>
+    <td class="govuk-table__cell">Eden Tesfay</td>
+    <td class="govuk-table__cell">Samual Tesfay</td>
+    <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+    <td class="govuk-table__cell"> {{ govukTag({
+      text: "Add or email evidence",
+      classes: "govuk-tag--red"
+      }) }}</td>
+    <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
+    <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="#" class="govuk-link">44455454</a></td>
+    <td class="govuk-table__cell">Eden Tesfay</td>
+    <td class="govuk-table__cell">Thomas Tesfay</td>
+    <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+    <td class="govuk-table__cell"> {{ govukTag({
+      text: "Add or email evidence",
+      classes: "govuk-tag--red"
+      }) }}</td>
+    <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
+    <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="#" class="govuk-link">44455455</a></td>
+    <td class="govuk-table__cell">Eden Tesfay</td>
+    <td class="govuk-table__cell">Rachel Tesfay</td>
+    <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+    <td class="govuk-table__cell"> {{ govukTag({
+      text: "Add or email evidence",
+      classes: "govuk-tag--red"
+      }) }}</td>
+    <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
+    <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
+    </tr>
+
+
+
+
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+{% endblock %}

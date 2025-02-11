@@ -1,0 +1,98 @@
+{% extends "/layouts/layout-dfe-schoolnav.html" %}
+{% set pageName="Outcome not entitled" %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+
+      <div class="govuk-grid-column-two-thirds">
+
+            <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+                  data-module="govuk-notification-banner">
+                  <div class="govuk-notification-banner__header">
+                        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                              May not be eligible
+                        </h2>
+                  </div>
+                  <div class="govuk-notification-banner__content">
+                        <p class="govuk-notification-banner__heading">
+                          The children of this parent or guardian may not be eligible for free school meals.
+                        </p>
+                        <p class="govuk-body">From the information you’ve provided we cannot confirm if the children of this parent or guardian are eligible for free school meals.</p>
+
+                  </div>
+            </div>
+
+            <h1 class="govuk-heading-l">If the parent or guardian thinks their children are eligible</h1>
+            <p>You can make an appeal on their behalf, but you'll need to:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>ask the parent or guardian to send you their supporting evidence</li>
+              <li>send their supporting evidence to your local authority to review</li>
+            </ul>
+            <p>You can upload the evidence when you appeal or email it to your local authority afterwards.</p>
+
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                          Complete list of acceptable evidence
+                    </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p>You can send:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                      <li>up to three latest Universal Credit statements </li>
+                      <li>their latest tax credit statement form TC602A (Award Notices) or TC603R (Auto Renewal),
+                            showing they are receiving Working Tax Credit run-on
+                      </li>
+                      <li>their latest tax credit statement form TC602A (Award Notices) or TC603R (Auto Renewal),
+                            showing they are receiving Child Tax Credit
+                      </li>
+                      <li>a letter of entitlement for Income Support
+                      </li>
+                      <li>a letter of entitlement for income-based Jobseeker’s Allowance
+                      </li>
+                      <li>a letter of entitlement for the guaranteed element of Pension Credit
+                      </li>
+                      <li>documents showing they are receiving relevant support under part VI of the Immigration
+                            and Asylum Act 1999 </li>
+                </ul>
+                    <p><a href="/mvp3/_family/guidance/parent-guidance#:~:text=Providing%20the%20right%20evidence"
+                          class="govuk-link">More information on supporting evidence</a>.</p>
+              </div>
+
+        </details>
+
+        <p>Alternatively, you can contact the Department for Education support desk at <a href="">ecs.admin@education.gov.uk </a>to request a separate check.
+        </p>
+
+    </div>
+  </div>
+</div>
+
+<form action="appeal-new-child-age" method="post" novalidate>
+  <button class="govuk-button">Appeal now</button>
+</form>
+
+
+
+
+
+  <!-- <div class="govuk-button-group">
+    {{ govukButton({
+      text: "Return to dashboard",
+      classes: "govuk-button--secondary"
+    }) }}
+
+    <a class="govuk-link" href="#">Sign out</a>
+  </div> -->
+
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}
