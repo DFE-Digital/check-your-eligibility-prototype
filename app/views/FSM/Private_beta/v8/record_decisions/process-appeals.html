@@ -105,12 +105,13 @@
             <th class="govuk-table__header" scope="col">Next action</th>
             <th class="govuk-table__header govuk-table__header--numeric" scope="col">Submission date</th>
             <th class="govuk-table__header govuk-table__header--numeric" scope="col">Sent for review on</th>
+            <th class="govuk-table__header" scope="col">Review decision</th>
 
           </tr>
         </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row govuk-table__row--selected">
-      <td class="govuk-table__cell"><a href="not-entitled-appeal" class="govuk-link">44455453</a></td>
+      <td class="govuk-table__cell"><a href="../appeal_statuses/add-evidence" class="govuk-link">44455453</a></td>
     <td class="govuk-table__cell">Eden Tesfay</td>
     <td class="govuk-table__cell">Samual Tesfay</td>
     <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
@@ -120,32 +121,38 @@
       }) }}</td>
     <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
     <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
+
+    <td class="govuk-table__cell govuk-table__cell--numeric"></td>
     </tr>
 
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><a href="#" class="govuk-link">44455454</a></td>
-    <td class="govuk-table__cell">Eden Tesfay</td>
-    <td class="govuk-table__cell">Thomas Tesfay</td>
+      <td class="govuk-table__cell"><a href="../appeal_statuses/eligible" class="govuk-link">44455454</a></td>
+    <td class="govuk-table__cell">Jim Smith</td>
+    <td class="govuk-table__cell">Arthur Smith</td>
     <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
     <td class="govuk-table__cell"> {{ govukTag({
-      text: "Add or email evidence",
-      classes: "govuk-tag--red"
+      text: "Record decision",
+      classes: "govuk-tag--pink"
       }) }}</td>
     <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
     <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
+
+    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Eligible</strong></td>
     </tr>
 
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><a href="#" class="govuk-link">44455455</a></td>
-    <td class="govuk-table__cell">Eden Tesfay</td>
-    <td class="govuk-table__cell">Rachel Tesfay</td>
+      <td class="govuk-table__cell"><a href="../appeal_statuses/emailed-not-eligible" class="govuk-link">44455455</a></td>
+    <td class="govuk-table__cell">Travor Sinclair</td>
+    <td class="govuk-table__cell">Polly Sinclair</td>
     <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
     <td class="govuk-table__cell"> {{ govukTag({
-      text: "Add or email evidence",
-      classes: "govuk-tag--red"
+      text: "Record decision",
+      classes: "govuk-tag--pink"
       }) }}</td>
     <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
     <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
+
+    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Not eligible</strong></td>
     </tr>
 
 

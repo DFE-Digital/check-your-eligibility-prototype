@@ -13,10 +13,7 @@
   <div style="display: flex;">
 
     <div class="govuk-button-group" style="display: flex;">
-      {{ govukButton({
-        text: "Send for review",
-        href:'not-entitled-appeal-sent-no-evidence'
-      }) }}
+
       {{ govukButton({
         text: "Download CSV file",
         classes: 'govuk-button--secondary',
@@ -196,12 +193,12 @@
     actions: {
       items: [
         {
-          href: "add-evidence",
+          href: "../school_appeal/add_evidence/add-evidence",
           text: "Add evidence",
           visuallyHiddenText: "to the local authority"
         },
         {
-          href: "not-entitled-appeal-emailed-samuel",
+          href: "emailed-not-sent",
           text: "Mark as emailed",
           visuallyHiddenText: "to the local authority"
         }
