@@ -7,20 +7,42 @@
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
   <div class="govuk-grid-column-full">
 
+    {% if data['nass-number-entered'] =="yes" %}
+    <div class="moj-banner moj-banner--success" role="region" aria-label="Success">
+      <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+        <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
+      </svg>
+      <div class="moj-banner__message">
+        <h2 class="govuk-heading-l govuk-!-margin-bottom-5">Asylum support reference added to record</h2>
+      <button class="govuk-button govuk-button--secondary hide">Dismiss this message</button>
+      </div>
+    </div>
+
+    {% endif %}
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+    aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Evidence added
+      </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+      <h3 class="govuk-notification-banner__heading">
+        Evidence has been added and sent to the local authority
+      </h3>
+      <p>Eden Tesfay has been sent an email notification about this.</p>
 
 
+    </div>
+  </div>
 
 <div style="display: flex; justify-content: space-between; align-items: center;">
   <h1 class="govuk-heading-xl" style="margin: 1;">Eden Tesfay</h1>
+
   <div style="display: flex;">
 
-
-
     <div class="govuk-button-group" style="display: flex;">
-      {{ govukButton({
-        text: "Send for review",
-        href:'emailed-wait'
-      }) }}
+
       {{ govukButton({
         text: "Download CSV file",
         classes: 'govuk-button--secondary',
@@ -37,14 +59,22 @@
     }) }}
   -->
 
-  <h2 class="govuk-heading-m">Actions required</h2>
+<div class="govuk-width-container">
+  <div class="govuk-grid-column-full-width">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-m">Actions required</h2>
 
-  <strong class="govuk-tag govuk-tag--blue">
-    Send for review
-  </strong></p>
+      <strong class="govuk-tag govuk-tag--yellow">
+        Wait for decision
+      </strong></p>
+
+    </div>
+  </div>
+</div>
+</div>
+</div>
 
 <div class="govuk-!-padding-bottom-3"></div>
-
 
 <!-- PERSON -->
 
@@ -82,7 +112,7 @@
         text: "Date of birth"
       },
       value: {
-        html: "1 September 1984"
+        html: "01 September 1984"
       }
     },
     {
@@ -155,8 +185,8 @@
       },
       value: {
         html: govukTag({
-                text: "Evidence emailed",
-                classes: "govuk-tag--yellow"
+          text: "Sent for review",
+          classes: "govuk-tag--yellow"
               })
       },
       actions: {
@@ -178,6 +208,11 @@
     },
     actions: {
       items: [
+        {
+          href: "#",
+          text: "Add more evidence",
+          visuallyHiddenText: "to the local authority"
+        }
 
       ]
     }
@@ -188,11 +223,16 @@
       text: "Supporting evidence"
     },
     value: {
-      html: "Emailed to local authority"
+      html: "Edens_Tesfay_UC.jpg"
     },
     actions: {
       items: [
 
+      {
+        href: "not-entitled-appeal",
+        text: "Remove",
+        visuallyHiddenText: "Remove details"
+      }
 
 
 

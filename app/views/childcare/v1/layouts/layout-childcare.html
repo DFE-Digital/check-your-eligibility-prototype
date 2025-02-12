@@ -8,6 +8,7 @@
 {% block header %}
 
 
+
 {{ header({
   "showNav": "true",
   "showSearch": "false",
@@ -112,6 +113,7 @@
 {# 4 #}
 {% block scripts %}
   {{ super() }}
+  <script src="/node_modules/dfe-frontend/dist/dfefrontend.min.js"></script>
   <script src="/public/javascripts/dfefrontend.js"></script>
   <script type="text/javascript" src="assets/javascripts/autocomplete.js"></script>
   <link rel="stylesheet" href="assets/css/accessible-autocomplete.min.css" />
