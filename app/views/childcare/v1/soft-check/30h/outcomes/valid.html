@@ -18,17 +18,18 @@
       </div>
       <div class="govuk-notification-banner__content">
         <h3 class="govuk-notification-banner__heading">
-          TBC
+          This eligibility code is still valid until {{ "today" | duration(3, 'months') |govukDate }}
         </h3>
+
         </div>
     </div>
 
-    <h1 class="govuk-heading-m">Eligibility code details</h1>
+    <h1 class="govuk-heading-m">Eligibility code dates</h1>
 
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Start date
+          Started
         </dt>
         <dd class="govuk-summary-list__value">
           {{ "today" | govukDate }}
@@ -36,7 +37,7 @@
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          End date
+          Ends
         </dt>
         <dd class="govuk-summary-list__value">
           {{ "today" | duration(3, 'months') |govukDate }}
@@ -44,7 +45,7 @@
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Grace period end date
+          Grace period ends
         </dt>
         <dd class="govuk-summary-list__value">
           {{ "today" | duration(4, 'months') |govukDate }}

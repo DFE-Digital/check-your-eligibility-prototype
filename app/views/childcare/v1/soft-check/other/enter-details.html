@@ -18,13 +18,13 @@
 
 
       <div class="govuk-grid-column-two-thirds">
-
+        <span class="govuk-caption-l">{{ data['eligibility-type'] }}</span>
         <h1 class="govuk-heading-l">Run a check for one parent or guardian</h1>
 
 
         <form class="form" action="/childcare/v1/soft-check/other/checking-loader" method="post" novalidate>
 
-          <p class="govuk-body">Enter the details of the parent or guardian who applied for {{ data['eligibility-type'] }}</p>
+          <p class="govuk-body">Enter the details of the parent or guardian who applied for {{ data['eligibility-type'] }}.</p>
 
           {% call govukFieldset({
             legend: {
