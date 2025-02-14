@@ -1,7 +1,7 @@
 {% extends "/childcare/v1/layouts/layout-childcare.html" %}
 
 {% block pageTitle %}
-  30 hours childcare for working parents
+  Run a batch check
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,28 +14,61 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
+  <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">Run a batch check</h1>
 
-    <p>Upload a csv file with details of multiple parents or guardians</p>
+    <p>Choose an eligibility:</p>
 
-    <div class="dfe-grid-container">
+
+    <div style="display:none;">
+
+      <h2 class="govuk-heading-m"><a href="">Childcare for working families</a></h2>
+
+      <p>15 and 30 hours free childcare for children aged 9 months to 4 years.</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m"><a href="">2 years old early learning</a></h2>
+
+      <p>15 hours free early learning for children aged 2 years in families receiving additional support.</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m"><a href="">Early Years Pupil Premium</a></h2>
+
+      <p>Additional funding given to early years providers to improve the education they provide to some 3 and 4-year-olds.</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    </div>
+
+  </div>
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+
+    <div class="dfe-grid-container" >
 
       <div class="dfe-card">
         <div class="dfe-card-container">
           <h2 class="govuk-heading-m">
-              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="">Childcare for working families</a>
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="#">Childcare for working families</a>
           </h2>
           <p>15 and 30 hours free childcare for children aged 9 months to 4 years.</p>
         </div>
       </div>
 
+      <!-- variables /childcare/v1/batch-check/upload?check-type=eligibility codes&batch-data=eligibility code, parent or guardian National Insurance number and child date of birth&eligibility-type=Childcare for working families -->
 
         <div class="dfe-card">
           <div class="dfe-card-container">
             <h2 class="govuk-heading-m">
-                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="">2 years old early learning</a>
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/childcare/v1/batch-check/other/upload?check-type=parents or guardians&batch-data=Name, Date of birth, National Insurance number or Asylum support reference number&eligibility-type=2 years old early learning">2 years old early learning</a>
             </h2>
             <p>15 hours free early learning for children aged 2 years in families receiving additional support.</p>
           </div>
@@ -44,18 +77,22 @@
         <div class="dfe-card">
           <div class="dfe-card-container">
             <h2 class="govuk-heading-m">
-                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="">Early years pupil premium</a>
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/childcare/v1/batch-check/other/upload?check-type=parents or guardians&batch-data=Name, Date of birth, National Insurance number or Asylum support reference number&eligibility-type=Early Years Pupil Premium">Early Years Pupil Premium</a>
             </h2>
-            <p>some words</p>
+            <p>Additional funding given to early years providers to improve the education they provide to some 3 and 4-year-olds.</p>
           </div>
         </div>
 
     </div>
 
-    <h2 class="govuk-heading-m">Batch check history</h2>
+    <h2 class="govuk-heading-m govuk-!-margin-top-9">Batch check history</h2>
 
-    <p>Insert table</p>
+    <p>View the status of batch checks and download outcomes.</p>
 
+    {{ govukButton({
+      text: "View history",
+      href: "/childcare/v1/batch-check/batch-history"
+    }) }}
 
 
   </div>
