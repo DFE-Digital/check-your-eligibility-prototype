@@ -7,18 +7,25 @@ This includes but is not limited to:
 - Schools and LA's can check eligibility, apply and appeal against decisions around Free School Meals (FSM)
 - Schools and LA's can finalise the application for FSM
 
+
 ---------------------------------------------------------------------------------
 
+<h3>Design history</h3>
+URL: https://
+
+A history of the design of this service
+
+---------------------------------------------------------------------------------
 <h2>Documentation</h2>
 <ol>
   <li>
     Prototypes
   </li>
-   <li>
-    Design History
+    <li>
+    Versioning in prototype 
   </li>
   <li>
-    Git status naming conventions
+    Git status naming conventions 
   </li>
   <li>
     Glossary
@@ -51,6 +58,8 @@ Go to http://localhost:3000 in your browser.
 URL: https://check-your-eligibility-prototype.azurewebsites.net
 password: request from Design team
 
+We are currently in a Private beta of the replacement Eligibility checking service - FSM. 
+
 This version deploys automatically from merges to main and is the 'latest' version for UR and UX iterations.
 
 Prototypes are for both Free school meals and Childcare as separate prototypes for this stage of the replacement service.
@@ -67,12 +76,13 @@ NB Development ready designs can be viewed in #Ready for Development and Work in
 
 ---------------------------------------------------------------------------------
 
-<h3>Design history</h3>
-URL: https://
+<h3>Prototype version </h3>
 
-A history of the design of this service
+Versions are numbered incrementally v6, v7 and only moved to Ready for development when it has been signed off by Ian Howard - Product Owner where the version number will be updated. 
+Design iterations are identified by i1, i2, i3 for each user group as we are testing. This means that we can focus on individual user groups in each round and identify key areas of prioritisation throughout . 
 
 ---------------------------------------------------------------------------------
+
 <h3>Git status naming conventions</h3>
 
 [Eligibility service][User][Feature/Tweak/Bug][Designername]
