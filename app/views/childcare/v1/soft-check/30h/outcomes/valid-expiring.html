@@ -10,17 +10,23 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
       <div class="govuk-notification-banner__header">
         <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          Code valid
+          Code expiring
         </h2>
       </div>
       <div class="govuk-notification-banner__content">
         <h3 class="govuk-notification-banner__heading">
-          This eligibility code is still valid.
+          This eligibility code expires on {{ "today" | duration(3, 'months') |govukDate }}
         </h3>
-        <p class="govuk-body">Tell the parent or guardian, or their childcare provider that their code is valid until {{ "today" | duration(3, 'months') |govukDate }}.</p>
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>
+            You must tell the parent or guardian or their childcare provider to renew their code through HMRC.
+          </strong>
+        </div>
         </div>
     </div>
 
@@ -53,15 +59,12 @@
       </div>
     </dl>
 
+    {% from "govuk/components/button/macro.njk" import govukButton %}
 
-
-
-          {% from "govuk/components/button/macro.njk" import govukButton %}
-
-          {{ govukButton({
-            text: "Run another check",
-            href: '/childcare/v1/soft-check/30h/enter-details'
-          }) }}
+      {{ govukButton({
+        text: "Run another check",
+        href: '/childcare/v1/soft-check/30h/enter-details'
+      }) }}
 
     <div class="govuk-button-group">
       <a class="govuk-link" href="/childcare/v1/dashboard">Return to dashboard</a>
