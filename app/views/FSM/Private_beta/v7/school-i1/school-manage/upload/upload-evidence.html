@@ -1,0 +1,79 @@
+{% extends "../_layouts/layout-dfe-schoolnav.html" %}{% set pageName="Add supporting evidence" %}
+{% block content %}
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+      <p class="govuk-body">
+        Local authorities need to see supporting evidence to review the appeal.
+        Upload the evidence here or send a copy to your Local authority by email.</p>
+      <p>
+        View <a href="/evidence-guidance" class="govuk-link">guidance about supporting evidence (opens in a new
+          window)</a>.</p>
+    </div>
+    </div>
+
+    {%- from "govuk/components/file-upload/macro.njk" import govukFileUpload -%}
+    {%- from "govuk/components/button/macro.njk" import govukButton -%}
+    {%- from "govuk/components/error-summary/macro.njk" import govukErrorSummary -%}
+    {%- from "moj/components/multi-file-upload/macro.njk" import mojMultiFileUpload -%}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-section-break--l">
+
+        {% if errorSummary.items.length %}
+        {{ govukErrorSummary({
+        titleText: 'There is a problem',
+        errorList: errorSummary.items
+        }) }}
+        {% endif %}
+
+        <form action="../appeal/appeal-check-answers-evidence" method="post" enctype="multipart/form-data">
+
+          {% set uploadHtml %}
+          {{ govukFileUpload({
+          id: "documents",
+          name: "documents",
+          classes: 'moj-multi-file-upload__input',
+          label: {
+          text: "Upload a file",
+          classes: 'govuk-label--m'
+          },
+          attributes: { multiple: '' },
+          errorMessage: errorMessage
+          }) }}
+
+          {{govukButton({
+          text: 'Upload file',
+          classes: 'govuk-button--secondary moj-multi-file-upload__button'
+          })}}
+          {% endset %}
+
+          {{ mojMultiFileUpload({
+          uploadedFiles: {
+            heading: { text: 'Files added'},
+
+          items: uploadedFiles
+          },
+          uploadHtml: uploadHtml
+          }) }}
+
+
+          {{govukButton({
+          text: 'Attach evidence',
+          type: 'submit'
+          })}}
+        </form>
+      </div>
+        <div class="govuk-inset-text">
+          <p class="govuk-body">
+            The parent/guardian hasn't provided any evidence. <a href="../appeal/appeal-check-answers-skip"
+              class="govuk-link">Add
+              evidence later</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {% endblock %}

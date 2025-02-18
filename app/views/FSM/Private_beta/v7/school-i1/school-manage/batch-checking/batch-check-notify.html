@@ -1,0 +1,78 @@
+{% extends "../_layouts/layout-dfe-schoolnav.html" %}{% set pageName="Parents notified of eligibility for Free school meals" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-width-container">
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+      aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          {{pageName}}
+        </h3>
+        <div class="govuk-panel__body">
+          Submitted on <span id="currentDate">17th December 2024</span>
+        </div>
+      </div>
+    </div>
+
+        <table class="govuk-table">
+          <div class="govuk-grid-column-full-width">
+            <caption class="govuk-table__caption govuk-table__caption--m">
+              We have sent notifications to the following parents
+            </caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header app-custom-class">Reference number</th>
+                <th scope="col" class="govuk-table__header app-custom-class">Parent Name</th>
+                <th scope="col" class="govuk-table__header app-custom-class">Parent email</th>
+                <th scope="col" class="govuk-table__header app-custom-class">Eligible children</th>
+                <th scope="col" class="govuk-table__header app-custom-class">
+                  Childs date of birth
+                </th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">4568721</th>
+                <td class="govuk-table__cell">Eden Tesfay</th>
+                <td class="govuk-table__cell">edentesfay@icloud.com</td>
+                <td class="govuk-table__cell">Samuel Tesfay</td>
+                <td class="govuk-table__cell govuk-table__cell--date">27 April 2019</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"> 4568721</th>
+                <td class="govuk-table__cell"> Eden Tesfay</th>
+                <td class="govuk-table__cell">edentesfay@icloud.com</td>
+                <td class="govuk-table__cell">Rachel Tesfay</td>
+                <td class="govuk-table__cell govuk-table__cell--date">12 August 2021</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"> 4568721</th>
+                <td class="govuk-table__cell"> Warren Sutton</th>
+                <td class="govuk-table__cell">sutton123@gmail.com</td>
+                <td class="govuk-table__cell">Joseph Sutton</td>
+                <td class="govuk-table__cell govuk-table__cell--date">6 December 2020</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"> 4568721</th>
+                <td class="govuk-table__cell"> Joe Johnson</th>
+                <td class="govuk-table__cell">jj1976@gmail.com</td>
+                <td class="govuk-table__cell">Emily Johnson</td>
+                <td class="govuk-table__cell govuk-table__cell--date">16 June 2020</td>
+              </tr>
+            </tbody>
+        </table>
+
+
+
+    <p class="govuk-body"><a href="batch-check-success.html">Notify more parents of the free school meal check</a>.</p>
+  </div>
+</div>
+    {% endblock %}

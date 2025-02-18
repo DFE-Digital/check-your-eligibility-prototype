@@ -1,0 +1,71 @@
+{% extends "layouts/FSM/v7/layout-dfe-schoolnav.html" %}
+{% set pageName="How do you want to run a batch check for multiple parents or guardians?" %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-form-group">
+      <form action="/radio-button-form" method="post">
+      <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            {{pageName}}
+          </h1>
+        </legend>
+        <div id="signIn-hint" class="govuk-hint">
+          Some text here about options for batch check
+        </div>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway"
+              aria-describedby="signIn-item-hint">
+            <label class="govuk-label govuk-radios__label" for="signIn">
+              Connect to your school management information system.
+            </label>
+            <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+              You’ll need to have your user ID to access to your system.
+            </div>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login"
+              aria-describedby="signIn-2-item-hint">
+            <label class="govuk-label govuk-radios__label" for="signIn-2">
+              Upload a manual batch check.
+            </label>
+            <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
+              You can use the XML file (Common Transfer file) or a CSV file to run a batch check.
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+
+
+    {{ govukButton({
+      text: "Select and continue",
+      classes: "govuk-button--primary",
+      href: '../batch-checking/manual'
+      }) }}
+
+
+
+    {% endblock %}
+    {% block pageScripts %}
+    <!-- Add any javascript files here.
+
+Include javascript files only on the pages
+that need them. Excessive javascript files loaded on other pages may slow down
+the response times of the prototype. -->
+    <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+
+    <script type="text/javascript">
+      if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
+        new MOJFrontend.MultiFileUpload({
+          container: $(".moj-multi-file-upload"),
+          uploadUrl: "/ajax-upload",
+          deleteUrl: "/ajax-delete",
+        });
+      }
+    </script>
+    {% endblock %}

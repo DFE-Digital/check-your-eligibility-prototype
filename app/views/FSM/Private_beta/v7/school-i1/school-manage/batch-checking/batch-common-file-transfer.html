@@ -1,0 +1,64 @@
+{% extends "../_layouts/layout-dfe-schoolnav.html" %}{% set pageName="Use a Common File Transfer (CTF)" %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+
+
+    <p class="govuk-body">Upload a CTF from your school management information system (MIS):</p>
+    <ol class="govuk-list govuk-list--number">
+
+      <li>Open your MIS (this could be SIMS or another system your school uses)
+      <li>Go to the admin area</li>
+      <li>Select export pupil data</li>
+      <li>Save the exported file on your computer</li>
+      <li>Open the exported file and add any additional information that your system doesn't collect (for example, National Insurance numbers)</li>
+      <li>Save the file again in XML format</li>
+      <li>Upload the completed XML file below</li>
+    </ol>
+
+
+    <h2 class="govuk-heading-m">Upload the completed XML file</h2>
+
+    {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+    {{ govukFileUpload({
+    id: "file-upload-1",
+    name: "fileUpload1",
+    label: {
+    text: ""
+    }
+    }) }}
+
+
+    {{ govukButton({
+    text: "Upload and import data",
+    classes: "govuk-button--primary",
+    href: '../batch-checking/imported-records'
+    }) }}
+
+
+
+    {% endblock %}
+    {% block pageScripts %}
+    <!-- Add any javascript files here.
+
+Include javascript files only on the pages
+that need them. Excessive javascript files loaded on other pages may slow down
+the response times of the prototype. -->
+    <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+
+    <script type="text/javascript">
+      if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
+        new MOJFrontend.MultiFileUpload({
+          container: $(".moj-multi-file-upload"),
+          uploadUrl: "/ajax-upload",
+          deleteUrl: "/ajax-delete",
+        });
+      }
+    </script>
+    {% endblock %}

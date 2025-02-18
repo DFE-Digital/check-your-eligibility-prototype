@@ -1,0 +1,28 @@
+{{ appPrimaryNavigation({
+  items: [
+    {
+      "url"  : "../../dashboard",
+      "label" : "Dashboard"
+    }, {
+      "url"  : "/",
+      "label" : " "
+    }, {
+      "url"  : "/",
+      "label" : "  "
+    }, {
+      "url"  : "/",
+      "label" : " "
+    }
+    {
+      href: "/activity",
+      text: "Activity log",
+      active: primaryNavId == 'activity'
+    },
+    {
+      href: "/reports",
+      text: "Reports",
+      active: primaryNavId == 'reports',
+      classes: "app-primary-navigation__item--align-right"
+    }
+  ]
+}) }}

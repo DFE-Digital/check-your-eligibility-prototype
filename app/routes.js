@@ -31,7 +31,7 @@ require('./routes/mvp3/softCheck')(router);
 require('./routes/mvp3/appeal')(router);
 require('./routes/mvp3/success')(router);
 require('./routes/mvp2/betacheck')(router);
-
+// require('./routes/fsm/private_beta/v7/batch-check')(router);
 
 // const appealRoutes = require('./routes/mvp3/appeal');
 // appealRoutes(router);

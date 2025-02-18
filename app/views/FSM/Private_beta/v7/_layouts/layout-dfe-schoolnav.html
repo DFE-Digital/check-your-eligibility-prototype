@@ -6,7 +6,7 @@
 
 {# 3 #}
 {% block header %}
-
+<!--This layout needs to be used for index-->
 {{ header({
     "showNav": "true",
     "showSearch": "false",
@@ -15,15 +15,15 @@
     "searchAction": "/search/",
     "searchInputName": "",
     "logoAltText": "Department for Education",
-    "homeHref": "https://gov.uk",
+    "homeHref": "../../../index-fsm.html",
     "selectedNav": view,
     "service": {
       "name": "Check a family's eligibility",
-      "serviceUrl": "/"
+      "serviceUrl": "../../../index-fsm.html"
     },
     "headerActionLinks": [
       {
-        "url"  : "/",
+        "url"  : "",
         "label" : "My account"
       },
       {
@@ -33,11 +33,11 @@
     ],
     "primaryLinks": [
     {
-      "url"  : "../../dashboard",
+      "url"  : "https://FSM/Private_beta/v7/school-i1/dashboard.html",
       "label" : "Dashboard"
     }, {
-      "url"  : "#",
-      "label" : " "
+      "url"  : "",
+      "label" : ""
     }, {
       "url"  : "#",
       "label" : "  "
@@ -48,9 +48,7 @@
     ]
   })
 }}
-
 <div class="app-phase-banner__wrapper">
-
   <div class="govuk-phase-banner app-phase-banner govuk-width-container">
     <p class="govuk-phase-banner__content">
       <strong class="govuk-tag govuk-phase-banner__content__tag">
@@ -61,7 +59,6 @@
       </span>
     </p>
   </div>
-
 </div>
 
 {% endblock %}
@@ -83,27 +80,27 @@
    meta: {
      items: [
        {
-         href: "../privacy",
+         href: "../legal/privacy",
          text: "Privacy policy"
        },
        {
-        href: "../accessibility",
+        href: "../legal/accessibility",
         text: "Accessibility"
       },
        {
-         href: "../cookies",
+         href: "../legal/cookies",
          text: "Cookies"
        },
        {
-        href: "../contact",
+        href: "../legal/contact",
         text: "Contact us"
       },
       {
-        href:"/manage-prototype",
+        href:"/legal/manage-prototype",
         text:"Manage your prototype"
       },
        {
-         href: "/manage-prototype/clear-data",
+         href: "/legalmanage-prototype/clear-data",
          text: "Clear data"
        }
      ],
@@ -129,7 +126,6 @@
 }
 
 </script>
-
 
 {{ super() }}
 <script>
