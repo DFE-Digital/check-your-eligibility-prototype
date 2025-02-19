@@ -5,19 +5,19 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <div class="govuk-form-group">
-      <form action="/radio-button-form" method="post">
-      <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <form action="/manual.html" method="post">
+        <!-- <fieldset class="govuk-fieldset" aria-describedby="batch-check"></fieldset> -->
+        <!-- <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
             {{pageName}}
           </h1>
         </legend>
-        <div id="signIn-hint" class="govuk-hint">
+        <div id="batch-check" class="govuk-hint">
           Some text here about options for batch check
         </div>
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway"
+            <input class="govuk-radios__input" id="connect" name="connect" type="radio" value="school-system"
               aria-describedby="signIn-item-hint">
             <label class="govuk-label govuk-radios__label" for="signIn">
               Connect to your school management information system.
@@ -27,29 +27,63 @@
             </div>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login"
+            <input class="govuk-radios__input" id="manual" name="manual" type="radio" value="manual-upload"
               aria-describedby="signIn-2-item-hint">
-            <label class="govuk-label govuk-radios__label" for="signIn-2">
+            <label class="govuk-label govuk-radios__label" for="manual">
               Upload a manual batch check.
             </label>
-            <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
+            <div id="manual-hint" class="govuk-hint govuk-radios__hint">
               You can use the XML file (Common Transfer file) or a CSV file to run a batch check.
             </div>
           </div>
         </div>
       </fieldset>
-    </div>
+    </div> -->
 
+        {{ govukRadios({
+        name: "batch-check",
+        fieldset: {
+        legend: {
+        text: pageName,
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+        }
+        },
+        hint: {
+        text: "Some text here about selecting options for batch check"
 
+        },
+        items: [
+        {
+        value: "connect",
+        text: "Connect to your school management information system.",
+        hint: {
+        text: "You’ll need to have your user ID to access to your system."
+        }
+        },
+        {
+        value: "manual",
+        text: "Upload a manual batch check.",
+        hint: {
+        text: " You can use the XML file (Common transfer file) or a CSV file to run a batch check."
+        }
+        }
+        ]
+        }) }}
 
-    {{ govukButton({
+         {{ govukButton({
       text: "Select and continue",
       classes: "govuk-button--primary",
       href: '../batch-checking/manual'
       }) }}
 
-
-
+        <div>
+       <!--- <button type="submit" class="govuk-button" data-module="govuk-button">
+            Select and continue
+          </button>
+      </form>
+    </div> -->
+    </div>
     {% endblock %}
     {% block pageScripts %}
     <!-- Add any javascript files here.

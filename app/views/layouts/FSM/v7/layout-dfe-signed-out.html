@@ -6,7 +6,7 @@
 
 {# 3 #}
 {% block header %}
-<!--This layout needs to be used for index-->
+<!--Correct version--->
 {{ header({
     "showNav": "true",
     "showSearch": "false",
@@ -24,11 +24,11 @@
     "headerActionLinks": [
       {
         "url"  : "/FSM/Private_beta/v7/dsi-account/dsi-landingpage",
-        "label" : "My account"
+        "label" : " "
       },
       {
         "url"  : "/FSM/Private_beta/v7/dsi-account/dsi-startnow",
-        "label" : "Sign out"
+        "label" : " "
       }
   ],
     "primaryLinks": [
@@ -37,7 +37,7 @@
       "label" : "Dashboard"
     }, {
       "url"  : "#",
-      "label" : "LALA "
+      "label" : " "
     }, {
       "url"  : "#",
       "label" : "  "
@@ -48,7 +48,9 @@
     ]
   })
 }}
+
 <div class="app-phase-banner__wrapper">
+
   <div class="govuk-phase-banner app-phase-banner govuk-width-container">
     <p class="govuk-phase-banner__content">
       <strong class="govuk-tag govuk-phase-banner__content__tag">
@@ -65,7 +67,6 @@
 
 {% block beforeContent %}
 
-
   {% block backLink %}
     {{ govukBackLink({
       text: "Back",
@@ -80,27 +81,27 @@
    meta: {
      items: [
        {
-         href: "../legal/privacy",
+         href: "/General/privacy",
          text: "Privacy policy"
        },
        {
-        href: "../legal/accessibility",
+        href: "/General/accessibility",
         text: "Accessibility"
       },
        {
-         href: "../legal/cookies",
+         href: "/General/cookies",
          text: "Cookies"
        },
        {
-        href: "../legal/contact",
+        href: "/General/contact",
         text: "Contact us"
       },
       {
-        href:"/legal/manage-prototype",
+        href:"/manage-prototype",
         text:"Manage your prototype"
       },
        {
-         href: "/legalmanage-prototype/clear-data",
+         href: "/manage-prototype/clear-data",
          text: "Clear data"
        }
      ],
@@ -126,6 +127,7 @@
 }
 
 </script>
+
 
 {{ super() }}
 <script>

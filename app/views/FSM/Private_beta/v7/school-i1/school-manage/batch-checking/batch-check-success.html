@@ -1,9 +1,7 @@
-{% extends "../../../_layouts/layout-dfe-schoolnav.html" %}
+{% extends "layouts/FSM/v7/layout-dfe-schoolnav.html" %}
 {% set pageName="All checks completed" %}
 
 {% block content %}
-
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     {% set html %}
@@ -32,7 +30,6 @@
     type: ""
     }) }}
 
-
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-third">
         <h1 class="govuk-heading-l">Batch check results</h1>
@@ -44,11 +41,10 @@
         </button>
       </div>
     </div>
-  </div>
+    </div>
 
 
   <div class="govuk-grid-column-full">
-
     <nav class="moj-sub-navigation" aria-label="Sub navigation">
       <ul class="moj-sub-navigation__list">
         <li class="moj-sub-navigation__item">
@@ -64,8 +60,8 @@
               check</strong></a>
         </li>
         <!-- <li class="moj-sub-navigation__item">
-            <a class="moj-sub-navigation__link" data-section="error-section" href="#errors"><strong>Errors</strong></a>
-          </li> -->
+              <a class="moj-sub-navigation__link" data-section="error-section" href="#errors"><strong>Errors</strong></a>
+            </li> -->
       </ul>
     </nav>
 
@@ -75,7 +71,7 @@
         <h2 class="govuk-heading-m">Eligible</h2>
       </div>
       <div class="govuk-grid-column-one-third govuk-text-align-right">
-        <div class="govuk-button-group style="display: flex; justify-content: flex-end; align-items: center;>
+        <div class="govuk-button-group style=" display: flex; justify-content: flex-end; align-items: center;>
           {{ govukButton({
           text: "Create application",
           href: '../records/batch-records/eligible/batch-confirm-eligible'
@@ -83,7 +79,7 @@
           {{ govukButton({
           text: "Update parent",
           classes: "govuk-button--secondary",
-          href: ' '
+          href: '../../../../../../../../FSM/Private_beta/v7/_emails/batch-check/notify-parent-apply.html'
           }) }}
         </div>
       </div>
@@ -117,7 +113,8 @@
             <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
             <td class="govuk-table__cell">edentesfay@icloud.com</td>
             <td class="govuk-table__cell">NW653213B</td>
-            <td class="govuk-table__cell">{{ application.childDetails.firstName or "Rachel" }} {{ application.childDetails.lastName or "Tesfay" }}</td>
+            <td class="govuk-table__cell">{{ application.childDetails.firstName or "Rachel" }} {{
+              application.childDetails.lastName or "Tesfay" }}</td>
             <td class="govuk-table__cell govuk-table__cell--date">{{ application.dob or "12 Jan 2017" }}</td>
             <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Update parent</a></td>
           </tr>
@@ -232,7 +229,8 @@
             <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
             <td class="govuk-table__cell">edentesfay@icloud.com</td>
             <td class="govuk-table__cell">NW653213B</td>
-            <td class="govuk-table__cell">{{ application.childDetails.firstName or "Rachel" }} {{ application.childDetails.lastName or "Tesfay" }}</td>
+            <td class="govuk-table__cell">{{ application.childDetails.firstName or "Rachel" }} {{
+              application.childDetails.lastName or "Tesfay" }}</td>
             <td class="govuk-table__cell govuk-table__cell--date">{{ application.dob or "12 Jan 2017" }}</td>
             <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Update parent</a></td>
           </tr>
@@ -310,7 +308,7 @@
           text: "Recheck details",
           href: ''
           }) }}
-         {{ govukButton({
+          {{ govukButton({
           text: "Update parent",
           classes: "govuk-button--secondary",
           href: ' '
@@ -348,7 +346,8 @@
             <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
             <td class="govuk-table__cell">edentesfay@icloud.com</td>
             <td class="govuk-table__cell">NW653213B</td>
-            <td class="govuk-table__cell">{{ application.childDetails.firstName or "Rachel" }} {{ application.childDetails.lastName or "Tesfay" }}</td>
+            <td class="govuk-table__cell">{{ application.childDetails.firstName or "Rachel" }} {{
+              application.childDetails.lastName or "Tesfay" }}</td>
             <td class="govuk-table__cell govuk-table__cell--date">{{ application.dob or "12 Jan 2017" }}</td>
             <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Update parent</a></td>
           </tr>

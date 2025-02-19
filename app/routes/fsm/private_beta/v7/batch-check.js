@@ -1,24 +1,19 @@
 const express = require('express');
 const router = express.Router();
 
-// Route to render the radio button form
-router.get('/radio-button-form', (req, res) => {
-  res.render('radio-button-form');
+/// Batch-check-connect ///
+router.post('/v7-batch-check', function (req, res) {
+    // Retrieve user selection from session data
+    const batchCheckStatus = req.session.data['batch-check'];
+    if (batchCheckStatus === "connect") {
+        res.redirect('/FSM/Private_beta/V7/school-i1/school-manage/batch-checkingschool-mis/select-mis.html');
+    } else if (batchCheckStatus === "manual") {
+        res.redirect('/FSM/Private_beta/V7/school-i1/school-manage/batch-checking/manual.html');
+    } else {
+        res.redirect('/FSM/Private_beta/V7/school-i1/school-manage/batch-checking/manual-error.html');
+    }
 });
 
-// Route to handle the radio button form submission
-router.post('/radio-button-form', (req, res) => {
-  const selectedOption = req.body.radioOption;
-  if (selectedOption === 'option1') {
-    // Handle option 1 Connect - local school
-    res.redirect('/option1-result');
-  } else if (selectedOption === 'option2') {
-    // Handle option 2 Upload manual batch check
-    res.redirect('/option2-result');
-  } else {
-    // Handle other options or errors
-    res.redirect('/error');
-  }
-});
-
+// Make sure the router is exported
 module.exports = router;
+
