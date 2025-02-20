@@ -5,41 +5,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <div class="govuk-form-group">
-      <form action="/manual.html" method="post">
-        <!-- <fieldset class="govuk-fieldset" aria-describedby="batch-check"></fieldset> -->
-        <!-- <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <h1 class="govuk-fieldset__heading">
-            {{pageName}}
-          </h1>
-        </legend>
-        <div id="batch-check" class="govuk-hint">
-          Some text here about options for batch check
-        </div>
-        <div class="govuk-radios" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="connect" name="connect" type="radio" value="school-system"
-              aria-describedby="signIn-item-hint">
-            <label class="govuk-label govuk-radios__label" for="signIn">
-              Connect to your school management information system.
-            </label>
-            <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-              You’ll need to have your user ID to access to your system.
-            </div>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="manual" name="manual" type="radio" value="manual-upload"
-              aria-describedby="signIn-2-item-hint">
-            <label class="govuk-label govuk-radios__label" for="manual">
-              Upload a manual batch check.
-            </label>
-            <div id="manual-hint" class="govuk-hint govuk-radios__hint">
-              You can use the XML file (Common Transfer file) or a CSV file to run a batch check.
-            </div>
-          </div>
-        </div>
-      </fieldset>
-    </div> -->
-
+      <form action="/v7-batch-check" method="post">
         {{ govukRadios({
         name: "batch-check",
         fieldset: {
@@ -51,7 +17,6 @@
         },
         hint: {
         text: "Some text here about selecting options for batch check"
-
         },
         items: [
         {
@@ -66,33 +31,20 @@
         text: "Upload a manual batch check.",
         hint: {
         text: " You can use the XML file (Common transfer file) or a CSV file to run a batch check."
-        }
+}
         }
         ]
         }) }}
-
-         {{ govukButton({
-      text: "Select and continue",
-      classes: "govuk-button--primary",
-      href: '../batch-checking/manual'
-      }) }}
-
         <div>
-       <!--- <button type="submit" class="govuk-button" data-module="govuk-button">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
             Select and continue
           </button>
       </form>
-    </div> -->
+    </div>
     </div>
     {% endblock %}
     {% block pageScripts %}
-    <!-- Add any javascript files here.
-
-Include javascript files only on the pages
-that need them. Excessive javascript files loaded on other pages may slow down
-the response times of the prototype. -->
     <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
-
     <script type="text/javascript">
       if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
         new MOJFrontend.MultiFileUpload({
