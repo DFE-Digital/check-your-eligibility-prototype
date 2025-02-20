@@ -482,9 +482,11 @@
     navLinks.forEach(link => link.addEventListener('click', updateNavigation));
 
     const currentHash = window.location.hash.replace('#', '');
-    if (currentHash) showSection(currentHash);
+    if (currentHash) {
+      showSection(currentHash);
+    } else {
+      showSection(navLinks[0].getAttribute('data-section'));
+    }
   });
 </script>
-
-
 {% endblock %}
