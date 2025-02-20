@@ -33,6 +33,9 @@ require('./routes/mvp3/success')(router);
 require('./routes/mvp2/betacheck')(router);
 
 
+//v7
+require('./routes/fsm/private_beta/v7/batch-check');
+
 // const appealRoutes = require('./routes/mvp3/appeal');
 // appealRoutes(router);
 
@@ -642,7 +645,6 @@ router.post('/council-nass-number-answer', function (req, res) {
       // Send user to other page
       res.redirect('/mvp2/parent-soft-check/nass-number')
     }
-
   })
 
    /// Soft CHECKER
@@ -705,10 +707,18 @@ router.post('/mvp2-betacheck', function (req, res) {
 
 
 /////////////
-
-
-
-
+/// Batch-check-connect ///
+router.post('/v7-batch-check', function (req, res) {
+  // Retrieve user selection from session data
+  const batchCheckStatus = req.session.data['batch-check'];
+  if (batchCheckStatus === "connect") {
+      res.redirect('/FSM/Private_beta/V7/school-i1/school-manage/batch-checkingschool-mis/select-mis.html');
+  } else if (batchCheckStatus === "manual") {
+      res.redirect('/FSM/Private_beta/V7/school-i1/school-manage/batch-checking/manual.html');
+  } else {
+      res.redirect('/FSM/Private_beta/V7/school-i1/school-manage/batch-checking/manual-error.html');
+  }
+});
 
 
 

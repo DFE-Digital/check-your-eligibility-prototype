@@ -1,0 +1,114 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        My services
+      </h1>
+
+      <h1 class="govuk-heading-s">
+        Here you can access servcies associated with your account. Need a new service, form, role, or census? Request a service under the related actions menu.
+      </h1>
+
+      {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+      {% set html %}
+        <p class="govuk-notification-banner__heading">
+          Provide information about your job title
+        </p>
+        <p>This will help approvers at your organisation verify your identity.</p>
+
+      {% endset %}
+
+      {{ govukNotificationBanner({
+        html: html
+      }) }}
+
+      {% from "govuk/components/table/macro.njk" import govukTable %}
+
+      {{ govukTable({
+        caption: "",
+        captionClasses: "govuk-table__caption--s",
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Service"
+          },
+          {
+            text: "Description"
+          }
+        ],
+        rows: [
+          [
+            {
+              html: '<a href="#">DfE Sign-in manage</a>'
+            },
+            {
+              text: "DfE Sign-in manage"
+            }
+          ],
+          [
+            {
+              html: '<a href="../_LA/dashboard.html">FSM Eligibility checking - Local Authority</a>'
+            },
+            {
+              text: "FSM Eligibility checking - Local Authority"
+            }
+          ],
+          [
+            {
+              html: '<a href="/school-i1/dashboard.html">FSM Eligibility checking - Schools</a>'
+            },
+            {
+              text: "FSM Eligibility checking - Schools"
+            }
+          ]
+        ]
+      }) }}
+
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related actions
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#">
+                View and edit services on my account
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Request access to a service
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                See approvers at an organisation
+              </a>
+            </li>
+            <li>
+              <a href="#" class="govuk-!-font-weight-bold">
+                More <span class="govuk-visually-hidden">in Subsection</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+
+{% endblock %}

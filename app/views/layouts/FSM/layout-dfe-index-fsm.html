@@ -8,37 +8,36 @@
 {% block header %}
 
 {{ header({
-    "showNav": "true",
-    "showSearch": "false",
-    "showHeaderActionLinks": "true",
-    "logoPath": "public/images",
-    "searchAction": "/search/",
-    "searchInputName": "q",
-    "logoAltText": "Department for Education",
-    "homeHref": "https://gov.uk",
-    "selectedNav": view,
-    "service": {
-      "name": "Check a family's eligibility",
-      "serviceUrl": "/"
-    },
-    "headerActionLinks": [
-
-    ],
-    "primaryLinks": [
-        {
-        "url"  : "FSM/index-fsm.html",
-        "label" : "Free School meals prototype"
-      }, {
-        "url"  : "#",
-        "label" : "Childcare prototype"
-      }, {
-        "url"  : "#",
-        "label" : " "
-      }
-    ]
-  })
+"showNav": "true",
+"showSearch": "false",
+"showHeaderActionLinks": "true",
+"logoPath": "public/images",
+"searchAction": "/search/",
+"searchInputName": "q",
+"logoAltText": "Department for Education",
+"homeHref": "/index-2",
+"selectedNav": view,
+"service": {
+"name": "Check a family's eligibility",
+"serviceUrl": "/index-2"
+},
+"headerActionLinks": [
+],
+"primaryLinks": [
+{
+"url" : "/FSM/index-fsm",
+"label" : "Free School meals prototype"
+}, {
+"url" : "/childcare/index-childcare",
+"label" : "Childcare prototype"
+}, {
+"url" : "#",
+"label" : " "
+}
+]
+})
 }}
-<section class="dfe-page-header">
+<section class="dfe-page-header govuk-!-padding-bottom-0" style="background-color:#e0f3ff;">
   <div class="govuk-width-container">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
@@ -47,77 +46,74 @@
         </span>
         <h1 class="govuk-heading-xl">Free school meals</h1>
         <div class="govuk-caption-l">
-          This is the starting page for the {{ serviceName }} FSM element prototype.
+          <p class="govuk-body-l"> This is the starting page for the {{ serviceName }} FSM element for Parents, Schools
+            and Local Authorities</p>
+          <hr class="govuk-section-break govuk-section-break--s govuk-section-break">
+
+          <nav class="app-sub-navigation" aria-label="Application menu">
+            <ul class="app-sub-navigation__list">
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link" aria-current="/FSM/index-fsm" href="/FSM/index-fsm">
+                  Design and Research
+                </a>
+              </li>
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link" aria-current="/FSM/index-fsm-dev" href="/FSM/index-fsm-dev">
+                  Ready for development
+                </a>
+              </li>
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link" aria-current="/FSM/index-fsm-docs" href="/FSM/index-fsm-docs">
+                  Documentation
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
-
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break">
-
-        <nav class="app-sub-navigation" aria-label="Application menu">
-          <ul class="app-sub-navigation__list">
-            <li class="app-sub-navigation__item">
-              <a class="app-sub-navigation__link" aria-current="#" href="index-fsm.html">
-                Design and Research
-              </a>
-            </li>
-            <li class="app-sub-navigation__item">
-              <a class="app-sub-navigation__link" aria-current="#" href="index-fsm-dev.html">
-                Ready for development
-              </a>
-            </li>
-            <li class="app-sub-navigation__item">
-              <a class="app-sub-navigation__link" aria-current="#" href="index-fsm-docs.html">
-                Documentation
-              </a>
-            </li>
-          </ul>
-        </nav>
       </div>
     </div>
-  </div>
 </section>
+
 
 {% endblock %}
 
 {% block beforeContent %}
 
-  {% block backLink %}
-  {% endblock %}
-
 {% endblock %}
 
 {% block footer %}
- {{ govukFooter({
-   meta: {
-     items: [
-      {
-        href:"/manage-prototype",
-        text:"Manage your prototype"
-      },
-       {
-         href: "/manage-prototype/clear-data",
-         text: "Clear data"
-       }
-     ],
-     visuallyHiddenTitle: "Footer links"
-   }
- }) }}
+{{ govukFooter({
+meta: {
+items: [
+{
+href:"/manage-prototype",
+text:"Manage your prototype"
+},
+{
+href: "/manage-prototype/clear-data",
+text: "Clear data"
+}
+],
+visuallyHiddenTitle: "Footer links"
+}
+}) }}
 {% endblock %}
 
 {# 4 #}
 {% block scripts %}
-  {{ super() }}
-  <script src="/public/javascripts/dfefrontend.js"></script>
-  <script type="text/javascript" src="assets/javascripts/autocomplete.js"></script>
-  <link rel="stylesheet" href="assets/css/accessible-autocomplete.min.css" />
-  <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{{ super() }}
+<script src="/public/javascripts/dfefrontend.js"></script>
+<script type="text/javascript" src="assets/javascripts/autocomplete.js"></script>
+<link rel="stylesheet" href="assets/css/accessible-autocomplete.min.css" />
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
 <script type="text/javascript">
   if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
-  new MOJFrontend.MultiFileUpload({
-    container: $(".moj-multi-file-upload"),
-    uploadUrl: "/ajax-upload",
-    deleteUrl: "/ajax-delete",
-  });
-}
+    new MOJFrontend.MultiFileUpload({
+      container: $(".moj-multi-file-upload"),
+      uploadUrl: "/ajax-upload",
+      deleteUrl: "/ajax-delete",
+    });
+  }
 </script>
 <script src="/assets/js/all.min.js"></script>
 <script src="/assets/js/cookies.min.js"></script>

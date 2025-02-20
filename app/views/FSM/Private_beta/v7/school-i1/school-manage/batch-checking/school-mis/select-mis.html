@@ -1,0 +1,81 @@
+{% extends "../_layouts/layout-dfe-schoolnav.html" %}{% set pageName="Select your school management information system" %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+    <p class="govuk-body">
+      You'll need your MIS login details to connect.</p>
+    <!-- <h2 class="govuk-heading-m">Connect to the ECE using your school system</h2>
+
+    <p class="govuk-body">Fetch data using API from your School MIS to perform a batch check </p>
+    </p>  <img src="/public/images/mis-logos/arbor-logo.png"  -->
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <!-- <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset"> Which system do you use </h2>
+        </legend> -->
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="mis-arbor" name="mis" type="radio" value="arbor">
+          <label class="govuk-label govuk-radios__label" for="mis-arbor">
+            <div class="radio-content">
+              <img src="/public/images/mis-logos/arbor-logo.png" alt="Arbor logo" class="radio-button-image">
+              <span>  </span>
+            </div>
+          </label>
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="mis-sims" name="mis" type="radio" value="sims">
+          <label class="govuk-label govuk-radios__label" for="mis-sims">
+            <div class="radio-content">
+              <img src="/public/images/mis-logos/sims.png" alt="Arbor logo" class="radio-button-image">
+              <span>   </span>
+            </div>
+          </label>
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="mis-bromcom" name="mis" type="radio" value="bromcom">
+          <label class="govuk-label govuk-radios__label" for="mis-bromcom">
+            <div class="radio-content">
+              <img src="/public/images/mis-logos/Bromcom_block-logo-bg.png" alt="Bromcom logo" class="radio-button-image">
+              <span>   </span>
+            </div>
+
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="mis-scholar" name="mis" type="radio" value="scholar">
+          <label class="govuk-label govuk-radios__label" for="mis-scholar">
+            <div class="radio-content">
+              <img src="/public/images/mis-logos/scholar-pack-MIS-logo.jpg" alt="Scholarpack logo" class="radio-button-image">
+              <span>   </span>
+            </div>
+
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="mis-notlisted" name="whereDoYouLive" type="radio" value="not listed">
+          <label class="govuk-label govuk-radios__label" for="mis-notlisted">
+            Not listed
+          </label>
+        </div>
+    </div>
+    </fieldset>
+  </div>
+  </div>
+
+
+  {{ govukButton({
+    text: "Connect to your MIS",
+    classes: "govuk-button--primary",
+    href: 'sims-login.html'
+    }) }}
+
+  {% endblock %}

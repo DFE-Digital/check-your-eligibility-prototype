@@ -1,0 +1,83 @@
+{% extends "layouts/FSM/v7/layout-dfe-schoolnav.html" %}
+
+{% set pageName="Bramhope Primary School" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">
+      {{pageName}}
+    </h1>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m">
+          Free School Meals
+        </h2>
+
+        <div class="dfe-grid-container">
+          <div class="dfe-card">
+            <div class="dfe-card-container">
+              <h3 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                  href="school-manage/school-soft-check/checker">Run a check for one parent or guardian</a>
+                </h2>
+                <p>Run an eligibility check for one parent or guardian.</p>
+            </div>
+          </div>
+          <div class="dfe-card">
+            <div class="dfe-card-container">
+              <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                  href="school-manage/batch-checking/upload">Run a batch check</a>
+              </h2>
+              <p>Run an eligibility check for multiple parents or guardians.</p>
+            </div>
+          </div>
+
+          <div class="dfe-card">
+            <div class="dfe-card-container">
+              <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                  href="school-manage/decision/process_appeal/process-appeals">Process appeals</a>
+              </h2>
+              <p>Check the status of appealed applications and send for local authority review.</p>
+            </div>
+          </div>
+
+          <div class="dfe-card">
+            <div class="dfe-card-container">
+              <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                  href="school-manage/decision/finalise/applications">Finalise applications</a>
+              </h2>
+              <p>Finalise applications.</p>
+            </div>
+          </div>
+
+          <div class="dfe-card">
+            <div class="dfe-card-container">
+
+              <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                  href="school-manage/report/search">Search all records</a>
+              </h2>
+              <p>Search all records and export results.</p>
+            </div>
+
+          </div>
+          <div class="dfe-card">
+            <div class="dfe-card-container">
+
+              <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                  href="../_offline/fsm-print-version-school.html">Download PDF form</a>
+              </h2>
+              <p>Download an eligibility form for parents to complete.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      {% endblock %}
