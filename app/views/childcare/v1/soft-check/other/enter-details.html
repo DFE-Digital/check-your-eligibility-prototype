@@ -28,7 +28,7 @@
 
           {% call govukFieldset({
             legend: {
-              text: "Name",
+              text: "Last name",
               classes: "govuk-fieldset__legend--m",
               isPageHeading: false
             }
@@ -36,21 +36,10 @@
 
             {% from "govuk/components/input/macro.njk" import govukInput %}
 
-            {{ govukInput({
-              label: {
-                text: "First name"
-              },
-              id: "Firstname",
-              name: "Firstname",
-              autocomplete: "name",
-              classes: "govuk-input--width-20",
-              spellcheck: false
-            }) }}
+
 
             {{ govukInput({
-              label: {
-                text: "Last name"
-              },
+
               id: "surName",
               name: "surName",
               autocomplete: "name",
