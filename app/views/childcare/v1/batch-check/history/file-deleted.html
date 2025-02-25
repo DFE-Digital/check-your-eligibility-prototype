@@ -1,14 +1,7 @@
 {% extends "/layouts/childcare/v1/layout-childcare.html" %}
 
 {% block pageTitle %}
-  Run a batch check
-{% endblock %}
-
-{% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  File deleted
 {% endblock %}
 
 {% block content %}
@@ -17,10 +10,26 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          File deleted
+        </h3>
+      </div>
+    </div>
 
     <h1 class="govuk-heading-l">Batch check history</h1>
+
+    <p><a href="/childcare/v1/batch-check/history/result-explainer">View result explainer</a></p>
+
     <p class="govuk-!-margin-bottom-0">Showing batch files uploaded in the last 7 days</p>
-    <table class="govuk-table">
+
+    <table class="govuk-table govuk-table--small-text-until-tablet">
       <caption class="govuk-table__caption govuk-table__caption--m"></caption>
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
@@ -34,12 +43,20 @@
       </thead>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
+          <td class="govuk-table__cell">2yearsFeb25b.csv</td>
+          <td class="govuk-table__cell">2 years old early learning</td>
+          <td class="govuk-table__cell"> 18 February 2025 12.11pm</td>
+          <td class="govuk-table__cell">Janet Eccles</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Not started</strong></td>
+          <td class="govuk-table__cell"><a href="/childcare/v1/batch-check/history/delete-file">Delete</a></td>
+        </tr>
+        <tr class="govuk-table__row">
           <td class="govuk-table__cell">2yearold.csv</td>
           <td class="govuk-table__cell">2 years old early learning</td>
           <td class="govuk-table__cell"> 12 February 2025 4.11pm</td>
           <td class="govuk-table__cell">Janet Eccles</td>
           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">In progress</strong></td>
-          <td class="govuk-table__cell"><a href="">View progress</a></td>
+          <td class="govuk-table__cell"><a href="/childcare/v1/batch-check/history/delete-file">Delete</a></td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">30h-MCC-feb-25.csv</td>
@@ -47,19 +64,10 @@
           <td class="govuk-table__cell"> 9 February 2025 11.54am</td>
           <td class="govuk-table__cell">Matty Smith</td>
           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Completed</strong></td>
-          <td class="govuk-table__cell"><a href="">Download outcomes</a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">batch-eypp-jan-25.csv</td>
-          <td class="govuk-table__cell">Early Years Pupil Premium</td>
-          <td class="govuk-table__cell">31 January 2025 9.03am</td>
-          <td class="govuk-table__cell">Taylor Johnson</td>
-          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Error</strong></td>
-          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"><a href="">Download results</a> | <a href="/childcare/v1/batch-check/history/delete-file">Delete</a></td>
         </tr>
       </tbody>
     </table>
-
 
 
   </div>
