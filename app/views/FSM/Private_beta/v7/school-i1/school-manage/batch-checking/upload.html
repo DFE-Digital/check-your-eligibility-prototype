@@ -1,7 +1,8 @@
 {% extends "layouts/FSM/v7/layout-dfe-schoolnav.html" %}
-{% set pageName="How do you want to run a batch check for multiple parents or guardians?" %}
+{% set pageName="How do you want to run a batch check?" %}
 {% block content %}
 
+<span class="govuk-caption-l">Run a batch check for multiple parents or guardians</span>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <div class="govuk-form-group">
@@ -10,27 +11,28 @@
         name: "batch-check",
         fieldset: {
         legend: {
+
         text: pageName,
         isPageHeading: true,
         classes: "govuk-fieldset__legend--l"
         }
         },
         hint: {
-        text: "Some text here about selecting options for batch check"
+        text: "Choose if you want to connect to your school system or run a check manually"
         },
         items: [
         {
         value: "connect",
-        text: "Connect to your school management information system.",
+        text: "Connect to your school system",
         hint: {
-        text: "You’ll need to have your user ID to access to your system."
+        text: "You’ll need your system login details"
         }
         },
         {
         value: "manual",
-        text: "Upload a manual batch check.",
+        text: "Upload a form and run a check manually",
         hint: {
-        text: " You can use the XML file (Common transfer file) or a CSV file to run a batch check."
+        text: " You can use an XML file (Common transfer file) or a CSV file"
 }
         }
         ]

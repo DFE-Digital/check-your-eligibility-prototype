@@ -1,15 +1,19 @@
 {% extends "layouts/FSM/v7/layout-dfe-schoolnav.html" %}
-{% set pageName="Run a manual batch check for multiple parents or guardians?" %}
+{% set pageName="Choose how to run a manual batch check" %}
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Run a batch check for multiple parents or guardians</span>
     <h1 class="govuk-heading-l">{{pageName}}</h1>
 
-    <p class="govuk-body">
-      Export and upload a CTF from your school system or complete and upload our template to run a batch check on free
-      school meal applications.
-    </p>
+    <p class="govuk-body">You can:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>export and upload a CTF from your school system in XML format</li>
+  <li>complete and upload our CSV template</li>
+
+</ul>
+
 <!--
     <details class="govuk-details">
       <summary class="govuk-details__summary">
@@ -35,36 +39,20 @@
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
     <!-- <h2 class="govuk-heading-m">Upload a Common File Transfer (CTF) from your school management information system</h2> -->
 
-    <h3 class="govuk-heading-m">Upload a XML file or a CSV</h3>
 
-    <!-- <p class="govuk-heading-s">Upload a file</p> -->
-
-    {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
-
-    {{ govukFileUpload({
-    id: "file-upload-1",
-    name: "fileUpload1",
-    label: {
-    text: ""
-    }
-    }) }}
-
-
-    <p class="govuk-heading-s">
-      How to extract a Common File Transfer (CTF) from your school management information system
-    </p>
+    <h2 class="govuk-heading-s">
+      Extracting a Common File Transfer (CTF)
+    </h2>
     </summary>
     <div class="govuk">
-      <p class="govuk-body">Follow the instructions below to extract your CTF:</p>
       <ol class="govuk-list govuk-list--number">
 
-        <li>Navigate to your school management information system (this could be SIMS or XXX or any other system your
-          school uses) in the admin area of your school management information system </li>
-        <li>Select export pupil data </li>
-        <li>Save the exported file on your computer </li>
-        <li>Add in any additional information that your system doesn't collect (for example National Insurance) and
-          resave the file as a XML</li>
-        <li>Navigate to the saved CTF and select your chosen file</li>
+        <li>Open your school management information system (this could be SIMS or XXX or any other system your
+          school uses) in the admin area of your school management information system.</li>
+        <li>Select export pupil data.</li>
+        <li>Save the exported file on your computer.</li>
+        <li>Add any information that your system doesn't collect (for example National Insurance numbers).</li>
+        <li>Save it as an XML file.</li>
       </ol>
       </ul>
     </div>
@@ -72,23 +60,31 @@
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
 
 
-    <p class="govuk-heading-s">Uploading a CSV file from the template</p>
-
-    <p class="govuk-body">Follow the instructions below to use our CSV template:</p>
+    <h2 class="govuk-heading-s">Uploading our CSV template</h2>
     <ol class="govuk-list govuk-list--number">
       <li>Download the <a href="/public/csv/Batch-check-template.csv" download class="govuk-link">batch
-          check template. (185kb) </a></li>
-      <li>Add the details of all parents you need to check, including: Name, Date of birth, National Insurance number or
-        Asylum support reference number</li>
-     <li> Save it as a CSV file</li>
-      <li>Select the completed template to upload</li>
-
+          check template (185kb)</a>.</li>
+      <li>Add the name, date of birth and National Insurance number or asylum support reference number for all the people you want to check.</li>
+     <li> Save it as a CSV file.</li>
+</ol>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+<!-- <p class="govuk-heading-s">Upload a file</p> -->
 
+<h3 class="govuk-heading-m">Upload an XML or CSV file</h3>
+
+{% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+{{ govukFileUpload({
+id: "file-upload-1",
+name: "fileUpload1",
+label: {
+text: ""
+}
+}) }}
 
       {{ govukButton({
-      text: "Upload and run a CTF batch check",
+      text: "Upload and run a manual batch check",
       classes: "govuk-button--primary",
       href: '../batch-checking/imported-records'
       }) }}

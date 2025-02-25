@@ -1,16 +1,16 @@
 {% extends "layouts/FSM/v7/layout-dfe-schoolnav.html" %}
-{% set pageName="Select your school management information system" %}
+{% set pageName="Select your school system" %}
 
 {% block content %}
 
 
-
+<span class="govuk-caption-l">Run a batch check for multiple parents or guardians</span>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">{{pageName}}</h1>
 
     <p class="govuk-body">
-      You'll need your MIS login details to connect.</p>
+      You'll need your login details to connect.</p>
     <!-- <h2 class="govuk-heading-m">Connect to the ECE using your school system</h2>
 
     <p class="govuk-body">Fetch data using API from your School MIS to perform a batch check </p>
@@ -74,7 +74,7 @@
 
 
   {{ govukButton({
-    text: "Connect to your MIS",
+    text: "Connect your system",
     classes: "govuk-button--primary",
     href: 'sims-login.html'
     }) }}
