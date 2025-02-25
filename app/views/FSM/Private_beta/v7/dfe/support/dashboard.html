@@ -1,0 +1,122 @@
+{% extends "layouts/FSM/v7/layout-dfe-schoolnav.html" %}
+
+{% set pageName="Welcome Rodney" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">
+      {{pageName}}
+    </h1>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m">
+          Free School Meals
+        </h2>
+
+        <div class="top-categories">
+          <div>
+              <h4 class="govuk-heading-s">Teaching and teaching supply staff</h4>
+              <p class="priority high">
+                  <strong class="govuk-tag govuk-tag--red">
+                      High priority
+                  </strong>
+                  Spends <strong>£4,747</strong> per pupil - higher spending than <strong>92%</strong> of benchmarked schools
+              </p>
+          </div>
+
+
+        <!-- <div class="govuk-grid-row headline-figures">
+          <div class="govuk-grid-column-one-quarter">
+              <div>
+                  <p>In year balance</p>
+                  <p>£26,943</p>
+              </div>
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+              <div>
+                  <p>Revenue reserve</p>
+                  <p>-£766,971</p>
+              </div>
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+              <div>
+                  <p>Ofsted rating</p>
+                  <p>Good in 2014</p>
+              </div>
+          </div>
+          <div class="govuk-grid-column-one-quarter">
+              <div>
+                  <p>School phase</p>
+                  <p>Secondary</p>
+              </div>
+          </div>
+      </div> -->
+
+        <div class="dfe-grid-container">
+          <div class="dfe-card">
+            <div class="dfe-card-container">
+              <h3 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                  href="#">Run a check for one parent or guardian</a>
+                </h2>
+                <p>Run an eligibility check for one parent or guardian.</p>
+            </div>
+          </div>
+          <div class="dfe-card">
+            <div class="dfe-card-container">
+              <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                  href="#">Run a batch check</a>
+              </h2>
+              <p>Run an eligibility check for multiple parents or guardians.</p>
+            </div>
+          </div>
+
+          <div class="dfe-card">
+            <div class="dfe-card-container">
+              <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                  href="#">View batch check history</a>
+              </h2>
+              <p>Check the history of batch checks carried out.</p>
+            </div>
+          </div>
+
+          <!-- <div class="dfe-card">
+            <div class="dfe-card-container">
+              <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                  href="school-manage/decision/finalise/applications">Finalise applications</a>
+              </h2>
+              <p>Finalise applications.</p>
+            </div>
+          </div> -->
+
+          <div class="dfe-card">
+            <div class="dfe-card-container">
+
+              <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                  href="school-manage/report/search">Search all records</a>
+              </h2>
+              <p>Search all records and export results.</p>
+            </div>
+
+          </div>
+          <div class="dfe-card">
+            <div class="dfe-card-container">
+
+              <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                  href="../_offline/fsm-print-version-school.html">Download PDF form</a>
+              </h2>
+              <p>Download an eligibility form for parents to complete.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      {% endblock %}
