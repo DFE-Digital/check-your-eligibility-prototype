@@ -9,17 +9,26 @@
     <div class="govuk-grid-column-full">
       {% set html %}
       <h3 class="govuk-notification-banner__heading">
-        {{pageName}}
+        3 eligible applications for Free school meals created.
       </h3>
-      <p class="govuk-body">3 eligible applications for Free school meals have been created. </p>Update your school
-      information system before <a href="../../../decision/record_decision/applications"
-        class="govuk-link">recording the decision.</a> A start date will be automatically applied to the pupils record
-      when you have done this.</p>
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          You must record these as eligible in your school system <a href="../../../decision/record_decision/applications"
+          class="govuk-link">before marking the applications as completed</a>.
+        </strong>
+      </div>
+
+      <p class="govuk-body">You can also finalise an individual application by selecting the reference link.</p>
+
 
       {% endset %}
 
       {{ govukNotificationBanner({
       html: html,
+      titleText: "Multiple applications created",
+      titleHeadingLevel: "1",
       type: "success"
       }) }}
       <!--<h1 class="govuk-heading-xl">Children details added</h1>-->
@@ -28,17 +37,18 @@
   </div>
   <div class="govuk-width-container">
     <div class="govuk-grid-column-full-width">
+
       <table class="govuk-table">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
           <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header">Child fullname</th>
+            <th scope="col" class="govuk-table__header">Child name</th>
             <th scope="col" class="govuk-table__header govuk-table__header--date">Child DOB</th>
             <th scope="col" class="govuk-table__header">Parent name</th>
             <th scope="col" class="govuk-table__header">Parent DOB</th>
-            <th scope="col" class="govuk-table__header">NINo or ASR</th>
+            <th scope="col" class="govuk-table__header">National Insurance or asylum support</th>
             <th scope="col" class="govuk-table__header">Email</th>
-            <th scope="col" class="govuk-table__header">Reference number</th>
+            <th scope="col" class="govuk-table__header">Reference</th>
 
           </tr>
         </thead>
@@ -95,17 +105,7 @@
 
 
 
-  <div class="govuk-width-container">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
-        <!-- <h2 class="govuk-heading-m">What to do next</h2> -->
 
-
-        <p> Go to <a href="../../../decision/record_decision/applications" class="govuk-link">record a decision</a> to update the
-          system</p>
-      </div>
-    </div>
-  </div>
 
   <div class="govuk-!-padding-bottom-3"></div>
 
