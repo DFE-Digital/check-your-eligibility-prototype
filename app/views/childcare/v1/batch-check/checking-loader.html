@@ -1,7 +1,7 @@
 {% extends "/layouts/childcare/v1/layout-childcare.html" %}
 
 {% block pageTitle %}
-  Checking
+  Checking eligibility
 {% endblock %}
 
 
@@ -13,7 +13,7 @@
     <div class="flex-container">
       <div class="container">
         <h1 class="govuk-heading-l">
-          Checking
+          Checking eligibility
         </h1>
         <p class="govuk-body-l">Do not close this page until the check is complete</p>
 
@@ -29,7 +29,7 @@
 </div>
 
 <script>
-  var total_count = Math.floor(Math.random() * 1000) + 1; // Ensure at least 1 record
+  var total_count = Math.floor(Math.random() * 100) + 1; // Ensure at least 1 record
   document.getElementById("total-count").textContent = total_count;
 
   const intervalId = setInterval(() => {
@@ -42,7 +42,7 @@
     if (newCount >= total_count) {
       clearInterval(intervalId);
       newCount = total_count; // Stop at total_count
-      document.location = '/childcare/v1/batch-check/other/batch-success';
+      document.location = '/childcare/v1/batch-check/batch-success';
     }
 
     countElement.textContent = newCount;
