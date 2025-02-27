@@ -5,29 +5,21 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     {% set html %}
-    <h1 class="govuk-notification-banner__heading">{{ pageName }}</h1>
-    <p class="govuk-body">The results show which parents can claim free school meals and who needs to provide evidence
-      to support their application.</p>
+    <p class="govuk-body">You can now:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>apply for free school meals or start an appeal on behalf of the parent</li>
+  <li>notify and ask the parent or guardians to apply or appeal</li>
+  <li>remove records that could not be checked or ask the parent or guardian to fix the problem</li>
+</ul>
 
-    <details class="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">Help with results</span>
-      </summary>
-      <div class="govuk-details__text">
-        <p><strong>Eligible</strong> – The children of this parent or guardian are eligible to free school meals.</p>
-        <p><strong>Not eligible</strong> – The children of this parent or guardian may not be eligible to free
-          school meals. To appeal this decision, they need to provide evidence to support your school or local authority
-          in making a decision.</p>
-        <p><strong>Could not check</strong> – This parent or guardian’s personal information doesn’t match the
-          departmental records or could not be found. Recheck the information and resubmit the check </p>
-        <!-- <p><strong>Error</strong> – There was a problem accessing this parent or guardian’s data to obtain a result.</p> -->
-      </div>
-    </details>
+
     {% endset %}
 
     {{ govukNotificationBanner({
     html: html,
-    type: ""
+    type: "success",
+    titleText: "All checks completed",
+    titleHeadingLevel: "1"
     }) }}
 
     <div class="govuk-grid-row">
@@ -37,7 +29,7 @@
       <div class="govuk-grid-column-two-thirds" style="display: flex; justify-content: flex-end; align-items: center;">
         <button type="submit" class="govuk-button govuk-button--secondary govuk-!-margin-right-15"
           data-module="govuk-button">
-          Export results
+          Export all results
         </button>
       </div>
     </div>
@@ -69,13 +61,14 @@
     <div id="eligible-section" class="govuk-table-section">
       <div class="govuk-grid-column-two-thirds">
         <h2 class="govuk-heading-m">Eligible</h2>
+        <p class="govuk-body">These children are eligible for free school meals.</p>
       </div>
       <div class="govuk-grid-column-one-third govuk-text-align-right" style="display: flex; justify-content: flex-end; align-items: center;">
         <div class="govuk-button-group">
       <!-- <div class="govuk-grid-column-one-third govuk-text-align-right">
         <div class="govuk-button-group style=" display: flex; justify-content: flex-end; align-items: center;> -->
           {{ govukButton({
-          text: "Create application",
+          text: "Create applications",
           href: '../records/batch-records/eligible/batch-confirm-eligible'
           }) }}
           {{ govukButton({
@@ -90,12 +83,12 @@
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th class="govuk-table__header" scope="col" id="select-all"></th>
+            <th scope="col" class="govuk-table__header">Child name</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--date">Child DOB</th>
             <th scope="col" class="govuk-table__header">Parent name</th>
             <th scope="col" class="govuk-table__header">Parent DOB</th>
+            <th scope="col" class="govuk-table__header">National Insurance or <br>asylum support</th>
             <th scope="col" class="govuk-table__header">Email</th>
-            <th scope="col" class="govuk-table__header">NINo or ASR</th>
-            <th scope="col" class="govuk-table__header">Child fullname</th>
-            <th scope="col" class="govuk-table__header govuk-table__header--date">Child DOB</th>
             <th scope="col" class="govuk-table__header">Action</th>
             <!-- <th scope="col" class="govuk-table__header">Notify</th> -->
           </tr>
@@ -111,13 +104,15 @@
                 </label>
               </div>
             </td>
-            <td class="govuk-table__cell">Eden Tesfay</td>
-            <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
-            <td class="govuk-table__cell">edentesfay@icloud.com</td>
-            <td class="govuk-table__cell">NW653213B</td>
             <td class="govuk-table__cell">{{ application.childDetails.firstName or "Rachel" }} {{
               application.childDetails.lastName or "Tesfay" }}</td>
             <td class="govuk-table__cell govuk-table__cell--date">{{ application.dob or "12 Jan 2017" }}</td>
+
+            <td class="govuk-table__cell">Eden Tesfay</td>
+            <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
+            <td class="govuk-table__cell">NW653213B</td>
+            <td class="govuk-table__cell">edentesfay@icloud.com</td>
+
             <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td>
           </tr>
         </tbody>
@@ -131,13 +126,14 @@
                 </label>
               </div>
             </td>
-            <td class="govuk-table__cell">Eden Tesfay</td>
-            <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
-            <td class="govuk-table__cell">edentesfay@icloud.com</td>
-            <td class="govuk-table__cell">NW653213B</td>
+            <td class="govuk-table__cell">{{ application.childDetails.firstName or "Rachel" }} {{
+              application.childDetails.lastName or "Tesfay" }}</td>
+            <td class="govuk-table__cell govuk-table__cell--date">{{ application.dob or "12 Jan 2017" }}</td>
 
-            <td class="govuk-table__cell">Samuel Tesfay</td>
-            <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
+            <td class="govuk-table__cell">Eden Tesfay</td>
+            <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
+            <td class="govuk-table__cell">NW653213B</td>
+            <td class="govuk-table__cell">edentesfay@icloud.com</td>
             <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td>
           </tr>
         </tbody>
@@ -152,13 +148,14 @@
                 </label>
               </div>
             </td>
-            <td class="govuk-table__cell">Eden Tesfay</td>
-            <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
-            <td class="govuk-table__cell">edentesfay@icloud.com</td>
-            <td class="govuk-table__cell">NW653213B</td>
+            <td class="govuk-table__cell">{{ application.childDetails.firstName or "Rachel" }} {{
+              application.childDetails.lastName or "Tesfay" }}</td>
+            <td class="govuk-table__cell govuk-table__cell--date">{{ application.dob or "12 Jan 2017" }}</td>
 
-            <td class="govuk-table__cell">Samuel Tesfay</td>
-            <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
+            <td class="govuk-table__cell">Eden Tesfay</td>
+            <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
+            <td class="govuk-table__cell">NW653213B</td>
+            <td class="govuk-table__cell">edentesfay@icloud.com</td>
             <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td>
           </tr>
         </tbody>
@@ -171,12 +168,14 @@
               </label>
             </div>
           </td>
+          <td class="govuk-table__cell">{{ application.childDetails.firstName or "Rachel" }} {{
+            application.childDetails.lastName or "Tesfay" }}</td>
+          <td class="govuk-table__cell govuk-table__cell--date">{{ application.dob or "12 Jan 2017" }}</td>
+
           <td class="govuk-table__cell">Eden Tesfay</td>
-          <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
-          <td class="govuk-table__cell">edentesfay@icloud.com</td>
+          <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
           <td class="govuk-table__cell">NW653213B</td>
-          <td class="govuk-table__cell">Samuel Tesfay</td>
-          <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
+          <td class="govuk-table__cell">edentesfay@icloud.com</td>
           <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td>
         </tr>
         </tbody>
@@ -194,11 +193,12 @@
     <div id="not-eligible-section" class="govuk-table-section">
       <div class="govuk-grid-column-two-thirds">
         <h2 class="govuk-heading-m">Not eligible</h2>
+        <p class="govuk-body">These children may not be eligible. The parent or guardian can appeal but must provide evidence for the school or local authority to make a decision.</p>
       </div>
        <div class="govuk-grid-column-one-third govuk-text-align-right" style="display: flex; justify-content: flex-end; align-items: right;">
         <div class="govuk-button-group">
           {{ govukButton({
-          text: "Create appeal",
+          text: "Start appeals",
           href: '../records/batch-records/not-eligible/batch-confirm-appeal'
           }) }}
           {{ govukButton({
@@ -214,13 +214,15 @@
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th class="govuk-table__header" scope="col" id="select-all"></th>
+            <th scope="col" class="govuk-table__header">Child name</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--date">Child DOB</th>
             <th scope="col" class="govuk-table__header">Parent name</th>
             <th scope="col" class="govuk-table__header">Parent DOB</th>
+            <th scope="col" class="govuk-table__header">National Insurance or <br>asylum support</th>
             <th scope="col" class="govuk-table__header">Email</th>
-            <th scope="col" class="govuk-table__header">NINo or ASR</th>
-            <th scope="col" class="govuk-table__header">Child fullname</th>
-            <th scope="col" class="govuk-table__header govuk-table__header--date">Child DOB</th>
-            <th scope="col" class="govuk-table__header">  </th>
+
+
+            <th scope="col" class="govuk-table__header"></th>
             <!-- <th scope="col" class="govuk-table__header"> </th> -->
           </tr>
         </thead>
@@ -235,13 +237,14 @@
                 </label>
               </div>
             </td>
-            <td class="govuk-table__cell">Eden Tesfay</td>
-            <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
-            <td class="govuk-table__cell">edentesfay@icloud.com</td>
-            <td class="govuk-table__cell">NW653213B</td>
             <td class="govuk-table__cell">{{ application.childDetails.firstName or "Rachel" }} {{
               application.childDetails.lastName or "Tesfay" }}</td>
             <td class="govuk-table__cell govuk-table__cell--date">{{ application.dob or "12 Jan 2017" }}</td>
+            <td class="govuk-table__cell">Eden Tesfay</td>
+            <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
+            <td class="govuk-table__cell">NW653213B</td>
+            <td class="govuk-table__cell">edentesfay@icloud.com</td>
+
             <!-- <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Add application</a></td> -->
           <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td>
 
@@ -257,12 +260,13 @@
                 </label>
               </div>
             </td>
+            <td class="govuk-table__cell">{{ application.childDetails.firstName or "Rachel" }} {{
+              application.childDetails.lastName or "Tesfay" }}</td>
+            <td class="govuk-table__cell govuk-table__cell--date">{{ application.dob or "12 Jan 2017" }}</td>
             <td class="govuk-table__cell">Eden Tesfay</td>
-            <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
-            <td class="govuk-table__cell">edentesfay@icloud.com</td>
+            <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
             <td class="govuk-table__cell">NW653213B</td>
-            <td class="govuk-table__cell">Samuel Tesfay</td>
-            <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
+            <td class="govuk-table__cell">edentesfay@icloud.com</td>
             <!-- <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Add application</a></td> -->
             <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td>        </tr>
         </tbody>
@@ -277,13 +281,13 @@
                 </label>
               </div>
             </td>
+            <td class="govuk-table__cell">{{ application.childDetails.firstName or "Rachel" }} {{
+              application.childDetails.lastName or "Tesfay" }}</td>
+            <td class="govuk-table__cell govuk-table__cell--date">{{ application.dob or "12 Jan 2017" }}</td>
             <td class="govuk-table__cell">Eden Tesfay</td>
-            <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
-            <td class="govuk-table__cell">edentesfay@icloud.com</td>
+            <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
             <td class="govuk-table__cell">NW653213B</td>
-
-            <td class="govuk-table__cell">Samuel Tesfay</td>
-            <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
+            <td class="govuk-table__cell">edentesfay@icloud.com</td>
             <!-- <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Add application</a></td> -->
             <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td>       </tr>
         </tbody>
@@ -296,12 +300,13 @@
               </label>
             </div>
           </td>
+          <td class="govuk-table__cell">{{ application.childDetails.firstName or "Rachel" }} {{
+            application.childDetails.lastName or "Tesfay" }}</td>
+          <td class="govuk-table__cell govuk-table__cell--date">{{ application.dob or "12 Jan 2017" }}</td>
           <td class="govuk-table__cell">Eden Tesfay</td>
-          <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
-          <td class="govuk-table__cell">edentesfay@icloud.com</td>
+          <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
           <td class="govuk-table__cell">NW653213B</td>
-          <td class="govuk-table__cell">Samuel Tesfay</td>
-          <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
+          <td class="govuk-table__cell">edentesfay@icloud.com</td>
           <!-- <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Add application</a></td> -->
           <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td>        </tr>
         </tbody>
@@ -312,6 +317,7 @@
     <div id="not-checked-section" class="govuk-table-section">
       <div class="govuk-grid-column-two-thirds">
         <h2 class="govuk-heading-m">Could not check</h2>
+        <p class="govuk-body">These records could not be checked for the reason stated. You can remove the records, fix the record in the batch check file or notify the parent or guardian.</p>
       </div>
       <div class="govuk-grid-column-one-third govuk-text-align-right" style="display: flex; justify-content: flex-end; align-items: right;">
         <div class="govuk-button-group">
@@ -333,12 +339,13 @@
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th class="govuk-table__header" scope="col" id="select-all"></th>
+            <th scope="col" class="govuk-table__header">Child name</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--date">Child DOB</th>
             <th scope="col" class="govuk-table__header">Parent name</th>
             <th scope="col" class="govuk-table__header">Parent DOB</th>
+            <th scope="col" class="govuk-table__header">National Insurance or <br>asylum support</th>
             <th scope="col" class="govuk-table__header">Email</th>
-            <th scope="col" class="govuk-table__header">NINo or ASR</th>
-            <th scope="col" class="govuk-table__header">Child fullname</th>
-            <th scope="col" class="govuk-table__header govuk-table__header--date">Child DOB</th>
+
             <th scope="col" class="govuk-table__header">Reason</th>
             <th scope="col" class="govuk-table__header"> </th>
             <!-- <th scope="col" class="govuk-table__header">Notify</th> -->
@@ -355,14 +362,14 @@
                 </label>
               </div>
             </td>
-            <td class="govuk-table__cell">Eden Tesfay</td>
-            <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
-            <td class="govuk-table__cell">edentesfay@icloud.com</td>
-            <td class="govuk-table__cell">NW653213B</td>
             <td class="govuk-table__cell">{{ application.childDetails.firstName or "Rachel" }} {{
               application.childDetails.lastName or "Tesfay" }}</td>
             <td class="govuk-table__cell govuk-table__cell--date">{{ application.dob or "12 Jan 2017" }}</td>
-            <td class="govuk-table__cell"><span class="text-red">Information doesn’t match records</span></td>
+            <td class="govuk-table__cell">Eden Tesfay</td>
+            <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
+            <td class="govuk-table__cell">NW653213B</td>
+            <td class="govuk-table__cell">edentesfay@icloud.com</td>
+            <td class="govuk-table__cell"><span class="text-red">Information does not match</span></td>
             <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td>
           </tr>
         </tbody>
@@ -376,14 +383,13 @@
                 </label>
               </div>
             </td>
-            <td class="govuk-table__cell">Eden Tesfay</td>
-            <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
-            <td class="govuk-table__cell">edentesfay@icloud.com</td>
-            <td class="govuk-table__cell">NW653213B</td>
-
             <td class="govuk-table__cell">Samuel Tesfay</td>
             <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
-            <td class="govuk-table__cell"><span class="text-red">Could not check <br>UC statements</span></td>
+            <td class="govuk-table__cell">Eden Tesfay</td>
+            <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
+            <td class="govuk-table__cell">NW653213B</td>
+            <td class="govuk-table__cell">edentesfay@icloud.com</td>
+            <td class="govuk-table__cell"><span class="text-red">Could not check <br>Universal Credit</span></td>
             <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td>
           </tr>
         </tbody>
@@ -398,14 +404,16 @@
                 </label>
               </div>
             </td>
-            <td class="govuk-table__cell">Eden Tesfay</td>
-            <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
-            <td class="govuk-table__cell">edentesfay@icloud.com</td>
-            <td class="govuk-table__cell">NW653213B</td>
-
             <td class="govuk-table__cell">Samuel Tesfay</td>
             <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
-            <td class="govuk-table__cell"><span class="text-red">Could not check <br>UC statements</span></td>
+            <td class="govuk-table__cell">Eden Tesfay</td>
+            <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
+            <td class="govuk-table__cell">NW653213B</td>
+            <td class="govuk-table__cell">edentesfay@icloud.com</td>
+
+
+
+            <td class="govuk-table__cell"><span class="text-red">Could not check <br>Universal Credit</span></td>
             <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td>
           </tr>
         </tbody>
@@ -418,13 +426,14 @@
               </label>
             </div>
           </td>
-          <td class="govuk-table__cell">Eden Tesfay</td>
-          <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
-          <td class="govuk-table__cell">edentesfay@icloud.com</td>
-          <td class="govuk-table__cell">NW653213B</td>
           <td class="govuk-table__cell">Samuel Tesfay</td>
           <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
-          <td class="govuk-table__cell"><span class="text-red">Information doesn’t match records</span></td>
+          <td class="govuk-table__cell">Eden Tesfay</td>
+          <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
+          <td class="govuk-table__cell">NW653213B</td>
+          <td class="govuk-table__cell">edentesfay@icloud.com</td>
+
+          <td class="govuk-table__cell"><span class="text-red">Technical error</span></td>
           <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td>
         </tr>
         </tbody>
