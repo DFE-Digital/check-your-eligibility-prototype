@@ -19,20 +19,18 @@
             </div>
           </div>
 
-          <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Submission date range</h3>
-        <ul class="moj-filter-tags">
-            <li><a class="app-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span>
-                Previous month</a></li>
-          </ul>
+          <div id="selected-submission-date-range-container" style="display: none;">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Submission date range</h3>
+            <ul class="moj-filter-tags" id="selected-submission-date-range">
+            </ul>
+         </div>
 
+         <div id="selected-submission-date-range-container" style="display: none;">
            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Status</h3>
-         <ul class="moj-filter-tags">
-            <li><a class="moj-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span>
-                Evidence needed</a></li>
-            <li><a class="moj-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> Sent
-                for review</a></li>
+         <ul class="moj-filter-tags" id="selected-status">
           </ul>
         </div>
+      </div>
 
         <div class="moj-filter__options">
           <button type="submit" class="govuk-button" data-module="govuk-button" onclick="filterResults()">
@@ -82,7 +80,11 @@
           {
           value: "Last 6 months",
           text: "Last 6 months"
-          }
+          },
+          {
+            value: "Last 12 months",
+            text: "Last 12 months"
+            }
           ]
           }) }}
 
@@ -156,7 +158,6 @@
       <div class="moj-action-bar__filter"></div>
       <div class="moj-button-menu">
         <div class="moj-button-menu__wrapper">
-
         </div>
       </div>
     </div>

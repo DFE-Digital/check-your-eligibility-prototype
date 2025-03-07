@@ -1,0 +1,79 @@
+{% extends "/layouts/layout-dfe-lanav-noback.html" %}
+
+{% set pageName="Home" %}
+
+
+
+{% block content %}
+
+{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+{{ govukErrorSummary({
+  titleText: "Error – Parent data issue ",
+  errorList: [
+    {
+        html: "<strong>There are issues with the parent data on the following lines:</strong>",      href: ""
+    },
+    {
+        text: "Line 8: Issue with National Insurance number ",
+        href: ""
+      },
+      {
+        text: "Line 9: Issue with date of birth ",
+        href: ""
+      },
+      {
+        text: "Line 10: Issue with middle name ",
+        href: ""
+      },
+      {
+        text: "Line 11: Issue with National Insurance number ",
+        href: ""
+      },
+      {
+        text: "Line 12: Issue with date of birth ",
+        href: ""
+      },
+      {
+        text: "Line 13: Issue with middle name ",
+        href: ""
+      },
+      {
+        text: "Line 14: Issue with National Insurance number ",
+        href: ""
+      },
+      {
+        text: "Line 15: Issue with date of birth ",
+        href: ""
+      },
+    {
+        text: "Line 16: Issue with middle name ",
+        href: ""
+    },
+    {
+        html: "<strong>There are also issues on 5000 more lines</strong>",
+        href: ""
+    }
+  ]
+}) }}
+
+
+<p class="govuk-body">Please make sure you’ve corrected the issues on these lines and upload the file again.</p>
+
+
+{{ govukButton({
+  text: "Download errors"
+}) }}
+
+<p><a href="../batch-checking/upload.html">Try again</a></p>
+
+<p><a href="../../dashboard">Return to dashboard</a></p>
+
+
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+
+{% endblock %}

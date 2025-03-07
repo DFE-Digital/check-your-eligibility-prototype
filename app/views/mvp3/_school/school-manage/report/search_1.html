@@ -1,6 +1,5 @@
 {% extends "/layouts/layout-dfe-schoolnav.html" %}
 {% set pageName="Search all records" %}
-
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
@@ -9,10 +8,10 @@
     </h1>
   </div>
 </div>
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     {% include "mvp3/includes/filter-panel.html" %}
+    <!--Export and search results section-->
 
     <!--Export and search results section-->
   </div>
@@ -26,52 +25,56 @@
       </div>
       <!--Table-->
 
-
-
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
           <div class="moj-filter-layout">
             <div class="moj-filter-layout__content">
               <div class="moj-scrollable-pane">
-
                 <div class="moj-scrollable-pane">
-                  <table class="govuk-table" table id="resultsTable">
+                  <table class="govuk-table" id="resultsTable" data-module="moj-sortable-table">
                     <thead class="govuk-table__head">
                       <tr class="govuk-table__row">
 
-                        <th scope="col" class="govuk-table__header">Reference</th>
-                        <th scope="col" class="govuk-table__header">Child name</th>
-                        <th scope="col" class="govuk-table__header">Child DoB</th>
-                        <th scope="col" class="govuk-table__header">Date submitted</th>
-                        <th scope="col" class="govuk-table__header">Status</th>
-                        <th scope="col" class="govuk-table__header">Eligible from</th>
+
+                        <!--sort function -->
+                        <th scope="col" class="govuk-table__header" aria-sort="ascending">Reference</th>
+                        <th scope="col" class="govuk-table__header" aria-sort="none">Child name</th>
+                        <th scope="col" class="govuk-table__header" aria-sort="none">Child dob</th>
+                        <th scope="col" class="govuk-table__header" aria-sort="none">Date submitted</th>
+                        <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
+                        <th scope="col" class="govuk-table__header" aria-sort="none">Eligible from</th>
                       </tr>
+                      <!-- <th scope="col" class="govuk-table__header">Reference</th>
+                            <th scope="col" class="govuk-table__header">Child name</th>
+                            <th scope="col" class="govuk-table__header">Child DoB</th>
+                            <th scope="col" class="govuk-table__header">Date submitted</th>
+                            <th scope="col" class="govuk-table__header">Status</th>
+                            <th scope="col" class="govuk-table__header">Eligible from</th>
+                          </tr> -->
                     </thead>
 
                     <tbody class="govuk-table__body">
                       {% for application in data.applications %}
-                      <tr class="govuk-table__row" data-status="{% if application.status.yes == 'Entitled' %}status-Entitled
-                      {% elif application.status.yes == 'Not Entitled' %}status-Not-Entitled
-                      {% elif application.status.yes == 'Sent for review' %}status-review
-                      {% elif application.status.yes == 'Evidence needed' %}status-Evidence-needed
-                      {% endif %}">
+                      <tr class="govuk-table__row"
+                        data-status="{% if application.status.yes == 'Entitled' %}status-Entitled{% elif application.status.yes == 'Not Entitled' %}status-Not-Entitled{% elif application.status.yes == 'Sent for review' %}status-Sent-for-review{% elif application.status.yes == 'Evidence needed' %}status-Evidence-needed{% endif %}">
                         <th scope="row" class="govuk-table__header">
                           <a href="#" class="govuk-link">{{ application.id }}</a>
                         </th>
-                        <td class="govuk-table__cell">{{ application.childDetails.firstName }} {{ application.childDetails.lastName }}</td>
+                        <td class="govuk-table__cell">{{ application.childDetails.firstName }} {{
+                          application.childDetails.lastName }}</td>
                         <td class="govuk-table__cell">{{ application.dob | govukDate("truncate") }}</td>
                         <td class="govuk-table__cell">{{ application.submission.date | govukDate("truncate") }}</td>
                         <td class="govuk-table__cell">
                           {% if application.status.yes == "Entitled" %}
-                            <strong class="govuk-tag govuk-tag--green">{{ application.status.yes }}</strong>
+                          <strong class="govuk-tag govuk-tag--green">{{ application.status.yes }}</strong>
                           {% elif application.status.yes == "Sent for review" %}
-                            <strong class="govuk-tag govuk-tag--blue">{{ application.status.yes }}</strong>
+                          <strong class="govuk-tag govuk-tag--blue">{{ application.status.yes }}</strong>
                           {% elif application.status.yes == "Evidence needed" %}
-                            <strong class="govuk-tag govuk-tag--turquoise">{{ application.status.yes }}</strong>
+                          <strong class="govuk-tag govuk-tag--turquoise">{{ application.status.yes }}</strong>
                           {% elif application.status.yes == "Not Entitled" %}
-                            <strong class="govuk-tag govuk-tag--red">{{ application.status.yes }}</strong>
+                          <strong class="govuk-tag govuk-tag--red">{{ application.status.yes }}</strong>
                           {% else %}
-                            <strong class="govuk-tag">{{ application.status.yes }}</strong>
+                          <strong class="govuk-tag">{{ application.status.yes }}</strong>
                           {% endif %}
                         </td>
                         <td class="govuk-table__cell">{{ application.eligible.date | govukDate("truncate") }}</td>
@@ -89,36 +92,36 @@
           {%- from "moj/components/pagination/macro.njk" import mojPagination -%}
 
           {{ mojPagination({
-            items: [{
-              text: '1',
-              href: '/page=1',
-              selected: true
-            }, {
-              text: '2',
-              href: '/page=2'
-            }, {
-              text: '3',
-              href: '/page=3'
-            }, {
-              type: 'dots'
-            }, {
-              text: '5',
-              href: '/page=5'
-            }],
-            results: {
-              count: 34,
-              from: 1,
-              to: 10,
-              text: 'results'
-            },
-            previous: {
-              text: 'Previous',
-              href: ''
-            },
-            next: {
-              text: 'Next',
-              href: ''
-            }
+          items: [{
+          text: '1',
+          href: '/page=1',
+          selected: true
+          }, {
+          text: '2',
+          href: '/page=2'
+          }, {
+          text: '3',
+          href: '/page=3'
+          }, {
+          type: 'dots'
+          }, {
+          text: '5',
+          href: '/page=5'
+          }],
+          results: {
+          count: 34,
+          from: 1,
+          to: 10,
+          text: 'results'
+          },
+          previous: {
+          text: 'Previous',
+          href: ''
+          },
+          next: {
+          text: 'Next',
+          href: ''
+          }
           }) }}
         </div>
       </div>
@@ -128,13 +131,13 @@
         <div class="govuk-grid-column-one-quarter">
           <form action="eligible-list" method="post" novalidate>
 
-
         </div>
         </fieldset>
       </div>
     </div>
   </div>
-</div>
+  <fieldset>
+  </fieldset>
 </div>
 </div>
 </div>
@@ -165,7 +168,7 @@
 <!--COUNT RESULTS-->
 
 <script>
- const updateVisibleRowCount = () => {
+  const updateVisibleRowCount = () => {
     const table = document.getElementById("resultsTable");
     const rows = table.querySelectorAll("tbody tr");
     const visibleRows = Array.from(rows).filter(row => row.style.display !== "none");
@@ -175,16 +178,16 @@
 
     // Limit the number of visible rows to a maximum of 10
     if (visibleRows.length > 10) {
-        let count = 0;
-        rows.forEach(row => {
-            if (count >= 10) {
-                row.style.display = 'none'; // Hide excess rows
-            } else if (row.style.display !== "none") {
-                count++; // Increment count for visible rows
-            }
-        });
+      let count = 0;
+      rows.forEach(row => {
+        if (count >= 10) {
+          row.style.display = 'none'; // Hide excess rows
+        } else if (row.style.display !== "none") {
+          count++; // Increment count for visible rows
+        }
+      });
     }
-};
+  };
 
   // To update the count (e.g., after filtering)
   updateVisibleRowCount();
@@ -195,7 +198,6 @@
 
 <!--not working-->
 <!--<script src="../components/filter.js"></script> -->
-
 
 <script>
   function filterResults() {
@@ -213,6 +215,29 @@
     // Get selected statuses
     const selectedStatuses = Array.from(document.querySelectorAll('input[name="status"]:checked')).map(checkbox => checkbox.value);
 
+    //update selected filters
+    document.getElementById('selected-submission-date-range').innerHTML = '';
+    document.getElementById('selected-submission-date-range-container').style.display = 'none';
+    document.getElementById('selected-status').innerHTML = '';
+    document.getElementById('selected-status-container').style.display = 'none';
+
+    if (selectedDateRange != null) {
+      const selected_submission_date = `<li><a class="app-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span>
+        ${selectedDateRange}</a></li>`;
+      document.getElementById('selected-submission-date-range').innerHTML = selected_submission_date;
+      document.getElementById('selected-submission-date-range-container').style.display = 'block';
+    }
+    selectedStatuses.forEach(status => {
+      status = status
+        .replace('status-', '')
+        .replace(/-/g, ' ')
+        .replace('Sent-for-review', 'Sent for review');      const selected_status = `<li><a class="app-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span>
+      ${status}</a></li>`;
+      document.getElementById('selected-status').innerHTML += selected_status;
+      document.getElementById('selected-status-container').style.display = 'block';
+
+    });
+
     rows.forEach(row => {
       const cells = row.getElementsByTagName('td');
       let match = false;
@@ -224,6 +249,7 @@
           break;
         }
       }
+
 
       // Check if row matches selected status
       const status = row.getAttribute('data-status'); // Assuming you store status in the data-status attribute
@@ -241,6 +267,8 @@
           matchesDateRange = submissionDate >= new Date(today.getFullYear(), today.getMonth() - 2, 1);
         } else if (selectedDateRange === "Last 6 months") {
           matchesDateRange = submissionDate >= new Date(today.getFullYear(), today.getMonth() - 5, 1);
+        } else if (selectedDateRange === "Last 12 months") {
+          matchesDateRange = submissionDate >= new Date(today.getFullYear(), today.getMonth() - 11, 1);
         }
       }
 
@@ -277,7 +305,13 @@
 
   }
 
-  document.getElementById('applyFilter').addEventListener('click', filterResults);
+  const applyFilterButton = document.getElementById('applyFilter');
+  const clearFiltersLink = document.querySelector('.govuk-link--no-visited-state');
+  if (clearFiltersLink) {
+    clearFiltersLink.addEventListener('click', clearFilters);
+  }
+  applyFilterButton.addEventListener('click', filterResults);
+
   document.querySelector('.govuk-link--no-visited-state').addEventListener('click', clearFilters);
 </script>
 

@@ -19,19 +19,17 @@
             </div>
           </div>
 
-          <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Submission date range</h3>
-        <ul class="moj-filter-tags">
-            <li><a class="app-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span>
-                Previous month</a></li>
-          </ul>
+          <div id="selected-submission-date-range-container" style="display: none;">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Submission date range</h3>
+            <ul class="moj-filter-tags" id="selected-submission-date-range">
+            </ul>
+          </div>
 
-           <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Status</h3>
-         <ul class="moj-filter-tags">
-            <li><a class="moj-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span>
-                Evidence needed</a></li>
-            <li><a class="moj-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> Sent
-                for review</a></li>
-          </ul>
+          <div id="selected-status-container" style="display: none;">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Status</h3>
+            <ul class="moj-filter-tags" id="selected-status">
+            </ul>
+          </div>
         </div>
 
         <div class="moj-filter__options">
@@ -43,22 +41,7 @@
             <label class="govuk-label govuk-label--m" for="keywords">Keywords</label>
             <input class="govuk-input" id="keywords" name="keywords" type="text">
           </div>
-          <!--
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Submission date range</legend>
-              <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="submission-date-month" name="submission-date" type="radio"
-                    value="month">
-                  <label class="govuk-label govuk-radios__label" for="submission-date-month">Previous month</label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="submission-date-6months" name="submission-date" type="radio"
-                    value="6months">
-                  <label class="govuk-label govuk-radios__label" for="submission-date-6months">Last 6 months</label>
 
-                </div> -->
 
           {{ govukRadios({
           classes: "govuk-radios--small",
@@ -82,6 +65,10 @@
           {
           value: "Last 6 months",
           text: "Last 6 months"
+          },
+          {
+          value: "Last 12 months",
+          text: "Last 12 months"
           }
           ]
           }) }}
@@ -105,48 +92,20 @@
           text: "Entitled"
           },
           {
-            value: "status-Not-Entitled",
-            text: "Not Entitled"
+          value: "status-Not-Entitled",
+          text: "Not Entitled"
           },
           {
           value: "status-Evidence-needed",
           text: "Evidence needed"
           },
           {
-          value: "status-review",
+          value: "status-Sent-for-review",
           text: "Sent for review"
           }
           ]
           }) }}
-          <!-- </div>
-        </fieldset>
-      </div>
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Status</legend>
-          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="status-entitled" name="status" type="checkbox"
-                value="Entitled">
-              <label class="govuk-label govuk-checkboxes__label" for="status-entitled">Entitled</label>
-            </div>
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="status-evidence-needed" name="status" type="checkbox"
-                value="evidence-needed">
-              <label class="govuk-label govuk-checkboxes__label" for="status-evidence-needed">Evidence
-                needed</label>
-            </div>
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="status-sent-for-review" name="status" type="checkbox"
-                value="sent-for-review">
-              <label class="govuk-label govuk-checkboxes__label" for="status-sent-for-review">Sent for review</label>
-            </div>
- -->
-          <!--
 
-          </div>
-        </fieldset> -->
-          <!-- </div> -->
         </div>
       </div>
     </div>
@@ -156,7 +115,6 @@
       <div class="moj-action-bar__filter"></div>
       <div class="moj-button-menu">
         <div class="moj-button-menu__wrapper">
-
         </div>
       </div>
     </div>
