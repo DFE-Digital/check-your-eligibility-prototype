@@ -33,6 +33,15 @@ require('./routes/mvp3/success')(router);
 require('./routes/mvp2/betacheck')(router);
 
 
+//v7
+require('./routes/fsm/private_beta/v7/batch-check');
+
+// Require the batch-check route
+const batchCheckRoute = require('./routes/fsm/private_beta/v7/batch-check');
+
+// Use the batch-check route
+router.use(batchCheckRoute);
+
 // const appealRoutes = require('./routes/mvp3/appeal');
 // appealRoutes(router);
 
@@ -642,7 +651,6 @@ router.post('/council-nass-number-answer', function (req, res) {
       // Send user to other page
       res.redirect('/mvp2/parent-soft-check/nass-number')
     }
-
   })
 
    /// Soft CHECKER
@@ -705,11 +713,6 @@ router.post('/mvp2-betacheck', function (req, res) {
 
 
 /////////////
-
-
-
-
-
 
 
 

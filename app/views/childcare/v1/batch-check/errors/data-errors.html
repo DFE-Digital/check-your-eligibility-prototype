@@ -1,0 +1,79 @@
+{% extends "/layouts/childcare/v1/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Run a batch check for multiple eligibility codes
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h1 class="govuk-error-summary__title">
+          There is a problem
+        </h1>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#missing">Your file is missing a column for parent last name</a>
+            </li>
+            <li>
+              <a href="#errors">Your file contains data errors</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="govuk-heading-m">Formatting errors</h2>
+    <ul>
+      <li>Your file is missing a column for parent last name.</li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Data errors</h2>
+
+    <table class="govuk-table" id="errors">
+      <caption class="govuk-table__caption govuk-table__caption--s"></caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Line</th>
+          <th scope="col" class="govuk-table__header">Error</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">3</td>
+          <td class="govuk-table__cell">Date of birth must be in the past</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">19</td>
+          <td class="govuk-table__cell">Enter a National Insurance number</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="govuk-heading-m">How to resubmit your batch check file</h2>
+
+    <ol>
+      <li>Fix the errors in your file</li>
+      <li>Make sure your file exactly matches the format in the <a href="">template</a></li>
+      <li>Make sure all required fields are completed</li>
+      <li><a href="/chilcare/v1/batch-check/upload">Upload your file</a> and run the check again</li>
+
+    </ol>
+
+
+
+  </div>
+</div>
+
+{% endblock %}

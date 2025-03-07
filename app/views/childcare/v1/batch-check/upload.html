@@ -1,0 +1,62 @@
+{% extends "/layouts/childcare/v1/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Run a batch check for multiple eligibility codes
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-l">{{ data['eligibility-type'] }}</span>
+
+    <h1 class="govuk-heading-l">Run a batch check</h1>
+
+    <p>Download the <a href="/assets/csv/eypp-2yo-batch-template.csv" download>batch check template</a> (1.3kb).</p>
+
+    <p>Add the details of the {{ data['check-type'] }} you need to check. </p>
+
+    <p>You must include:</p>
+
+    <ul>
+      <li>Last name</li>
+      <li>Date of birth (format YYYY-MM-DD or DD/MM/YYYY)</li>
+      <li>National Insurance number or Asylum support reference number</li>
+    </ul>
+
+    <p>Your file should contain fewer than XXX rows.</p>
+
+    <p>Save your file as a CSV.</p>
+
+
+    {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+    {{ govukFileUpload({
+      id: "file-upload-1",
+      name: "fileUpload1",
+      label: {
+        classes: "govuk-label--m",
+        text: "Upload a file"
+      }
+    }) }}
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Run check",
+      classes: "govuk-button--primary",
+      href: '/childcare/v1/batch-check/submitting-loader'
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}

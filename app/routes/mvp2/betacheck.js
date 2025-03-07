@@ -1,7 +1,6 @@
 module.exports = function(router) {
 
 
-
 ///Privatebetachoice///
 router.post('/mvp2-betacheck', function (req, res) {
   // Make a variable

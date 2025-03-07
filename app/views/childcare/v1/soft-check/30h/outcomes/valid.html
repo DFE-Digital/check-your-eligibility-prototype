@@ -1,4 +1,4 @@
-{% extends "/childcare/v1/layouts/layout-childcare.html" %}
+{% extends "/layouts/childcare/v1/layout-childcare.html" %}
 
 {% block pageTitle %}
   Code valid
@@ -18,9 +18,9 @@
       </div>
       <div class="govuk-notification-banner__content">
         <h3 class="govuk-notification-banner__heading">
-          This eligibility code is still valid until {{ "today" | duration(3, 'months') |govukDate }}
+          This eligibility code is valid.
         </h3>
-
+        <p class="govuk-body">Tell the parent or guardian, or their childcare provider that their code is valid until {{ "today" | duration(3, 'months') |govukDate }}.</p>
         </div>
     </div>
 
@@ -53,12 +53,15 @@
       </div>
     </dl>
 
-    {% from "govuk/components/button/macro.njk" import govukButton %}
 
-      {{ govukButton({
-        text: "Run another check",
-        href: '/childcare/v1/soft-check/30h/enter-details'
-      }) }}
+
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Run another check",
+            href: '/childcare/v1/soft-check/30h/enter-details'
+          }) }}
 
     <div class="govuk-button-group">
       <a class="govuk-link" href="/childcare/v1/dashboard">Return to dashboard</a>
