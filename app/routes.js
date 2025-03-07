@@ -32,6 +32,8 @@ require('./routes/mvp3/appeal')(router);
 require('./routes/mvp3/success')(router);
 require('./routes/mvp2/betacheck')(router);
 
+//v6
+require('./routes/fsm/private_beta/v6/betacheck')(router);
 
 //v7
 require('./routes/fsm/private_beta/v7/batch-check');
