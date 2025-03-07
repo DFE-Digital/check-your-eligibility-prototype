@@ -1,4 +1,4 @@
-{% extends "layouts/layout-dfe-signed-out.html" %}
+{% extends "layouts/FSM/v7/layout-dfe-signed-out.html" %}
 {% set pageName="Home" %}
 {% block content %}
 
@@ -21,6 +21,7 @@
     </div>
 
     <h1 class="govuk-heading-l">Schools included in this test service</h1>
+
     <ul class="govuk-list govuk-list--bullet">
       <li>Bradley Primary School</li>
       <li>Burley Oaks Primary School</li>
@@ -33,7 +34,8 @@
       <li>Upper Wharfedale School</li>
     </ul>
 
-    <form action="/mvp2-betacheck" method="post" novalidate>
+
+    <form action="/v6-betacheck" method="post" novalidate>
       <div class="govuk-form-group">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
@@ -58,6 +60,7 @@
             }
             ]
             }) }}
+
 
           </fieldset>
         </div>
