@@ -4,17 +4,31 @@
 
 {% block content %}
 
-
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-
     <h1 class="govuk-heading-l">Sorry, the service is unavailable</h1>
 
-    <p>You will be able to use the service again on [DATE].</p>
+    <p>You will be able to use the service again on <span id="tomorrow-date"></span>.</p>
 
-    <p>Contact the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=yXfS-grGoU2187O4s0qC-URYbNo1-R1EubHA0gNJis5UOVo3VU1KV0E0QkxTMFQ0RFZQUUZCR0E0WC4u" class="gov-link"> Department for Education support desk</a> for more help.</p>
+    <p>Contact the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=yXfS-grGoU2187O4s0qC-URYbNo1-R1EubHA0gNJis5UOVo3VU1KV0E0QkxTMFQ0RFZQUUZCR0E0WC4u" class="gov-link">Department for Education support desk</a> for more help.</p>
 
+  </div>
+</div>
+
+<script>
+  // Function to format date (for example: 8 March 2025)
+  function formatDate(date) {
+    const options = { day: 'numeric', month: 'long', year: 'numeric' };
+    return date.toLocaleDateString('en-GB', options);
+  }
+
+  // Calculate tomorrow's date
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 2);
+
+  // Insert formatted date into the page
+  document.getElementById('tomorrow-date').textContent = formatDate(tomorrow);
+</script>
 
 {% endblock %}

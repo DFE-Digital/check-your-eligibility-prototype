@@ -12,7 +12,22 @@
 
     <h1 class="govuk-heading-l">Sorry, the service is unavailable</h1>
 
-    <p>You will be able to use the service again on [DATE].</p>
+    <p>You will be able to use the service again on <span id="tomorrow-date"></span>.</p>
 
 
+
+<script>
+  // Function to format date (for example: 8 March 2025)
+  function formatDate(date) {
+    const options = { day: 'numeric', month: 'long', year: 'numeric' };
+    return date.toLocaleDateString('en-GB', options);
+  }
+
+  // Calculate tomorrow's date
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 3);
+
+  // Insert formatted date into the page
+  document.getElementById('tomorrow-date').textContent = formatDate(tomorrow);
+</script>
 {% endblock %}
