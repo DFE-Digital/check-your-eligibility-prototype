@@ -19,16 +19,16 @@
   <div class="govuk-grid-column-full">
 
 
-    <h1 class="govuk-heading-l">Batch check history</h1>
+    <h1 class="govuk-heading-l">Batch checks status</h1>
 
-    <p><a href="/childcare/v1/batch-check/history/result-explainer">View result explainer</a></p>
+    <p><a href="/childcare/v1/batch-check/history/result-explainer">Get help with check results</a></p>
 
     <table class="govuk-table govuk-table--small-text-until-tablet">
       <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-4">Showing 12 batch files uploaded in the last 7 days</caption>
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th scope="col" class="govuk-table__header">Filename</th>
-          <th scope="col" class="govuk-table__header">Type</th>
+          <th scope="col" class="govuk-table__header">Eligibility type</th>
           <th scope="col" class="govuk-table__header">Date submitted</th>
           <th scope="col" class="govuk-table__header">Submitted by</th>
           <th scope="col" class="govuk-table__header">Status</th>
@@ -42,7 +42,7 @@
           <td class="govuk-table__cell">{{ dateSubmitted | duration(7, 'days') | govukDate }} 12.11pm</td>
           <td class="govuk-table__cell">Janet Eccles</td>
           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Not started</strong></td>
-          <td class="govuk-table__cell"><a href="/childcare/v1/batch-check/history/delete-file">Delete</a></td>
+          <td class="govuk-table__cell"><a href="/childcare/v1/batch-check/history/cancel-check">Cancel</a></td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">2yearold.csv</td>
@@ -50,7 +50,7 @@
           <td class="govuk-table__cell">{{ dateSubmitted | duration(7, 'days') | govukDate }} 4.11pm</td>
           <td class="govuk-table__cell">Janet Eccles</td>
           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">In progress</strong></td>
-          <td class="govuk-table__cell"><a href="/childcare/v1/batch-check/history/delete-file">Delete</a></td>
+          <td class="govuk-table__cell"><a href="/childcare/v1/batch-check/history/cancel-check">Cancel</a></td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">30h-MCC-feb-25.csv</td>
