@@ -35,28 +35,35 @@
 
     <h1 class="govuk-heading-l">Run a batch check</h1>
 
-    <p>Download the <a href="/assets/csv/eypp-2yo-batch-template.csv" download>batch check template</a> (1.3kb).</p>
+    <ol class="govuk-list govuk-list--number">
+      <li>Download the <a href="/assets/csv/eypp-2yo-batch-template.csv" download class="govuk-link">batch
+          check template (1.3kb)</a>.</li>
+      <li>Add the details of the {{ data['check-type'] }} you need to check.</li>
+     <li> Save it as a CSV file.</li>
+    </ol>
 
-    <p>Add the details of the {{ data['check-type'] }} you need to check. </p>
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        Your saved file must match the template fields and contain fewer than 100 rows.
+      </strong>
+    </div>
 
     <p>You must include:</p>
 
     <ul>
-      <li>Last name</li>
-      <li>Date of birth (format YYYY-MM-DD or DD/MM/YYYY)</li>
-      <li>National Insurance number or Asylum support reference number</li>
+      <li>last name</li>
+      <li>date of birth (format YYYY-MM-DD or DD/MM/YYYY)</li>
+      <li>National Insurance number or asylum support reference number</li>
     </ul>
-
-    <p>Your file should contain fewer than XXX rows.</p>
-
-    <p>Save your file as a CSV.</p>
 
 
     {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
 
     {{ govukFileUpload({
-      id: "file-upload-1",
-      name: "fileUpload1",
+      id: "cc-batch-upload",
+      name: "cc-batch-upload",
       label: {
         classes: "govuk-label--m",
         text: "Upload a file"
