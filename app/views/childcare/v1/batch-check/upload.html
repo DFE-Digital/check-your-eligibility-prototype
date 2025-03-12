@@ -25,7 +25,7 @@
           check template (1.3kb)</a>.</li>
       <li>Add the details of the {{ data['check-type'] }} you need to check.</li>
      <li> Save it as a CSV file.</li>
-</ol>
+    </ol>
 
     <div class="govuk-warning-text">
       <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
@@ -50,8 +50,8 @@
     {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
 
     {{ govukFileUpload({
-      id: "file-upload-1",
-      name: "fileUpload1",
+      id: "cc-batch-upload",
+      name: "cc-batch-upload",
       label: {
         classes: "govuk-label--m",
         text: "Upload a file"
