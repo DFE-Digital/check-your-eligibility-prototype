@@ -26,7 +26,7 @@
         <h3 class="govuk-notification-banner__heading">
           Checks completed
         </h3>
-        <p>Now download the checked file to see which parents are eligible for {{ data['eligibility-type'] }}.</p>
+        <p>Now download the checked file to see which parents or guardians are eligible for {{ data['eligibility-type'] }}.</p>
 
         <p>[type]-outcomes-YYYYMMDD.csv</p>
         {% from "govuk/components/button/macro.njk" import govukButton %}
@@ -36,11 +36,11 @@
           href: '#'
         }) }}
 
-        <p><a href="/childcare/v1/batch-check/history/result-explainer">View result explainer</a></p>
+        <p><a href="/childcare/v1/batch-check/history/result-explainer">Get help with check results</a></p>
       </div>
     </div>
 
-    <p>You can also download batch check results from the last 7 days in <a href="/childcare/v1/batch-check/history/batch-history">batch check history</a>.</p>
+    <p>You can also <a href="/childcare/v1/batch-check/history/batch-history">download batch check results from the last 7 days</a>.</p>
 
 
     <div class="govuk-button-group">
