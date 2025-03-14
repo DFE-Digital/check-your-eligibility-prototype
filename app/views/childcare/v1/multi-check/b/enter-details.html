@@ -1,0 +1,155 @@
+{% extends "/layouts/childcare/v1/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Enter the details of the parent or guardian
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+
+
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Run a check for one parent or guardian</h1>
+
+
+        <form class="form" action="/childcare/v1/multi-check/checking-loader" method="post" novalidate>
+
+
+          {% call govukFieldset({
+            legend: {
+              text: "Last name",
+              classes: "govuk-fieldset__legend--m",
+              isPageHeading: false
+            }
+          }) %}
+
+            {% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+
+            {{ govukInput({
+
+              id: "surName",
+              name: "surName",
+              autocomplete: "name",
+              classes: "govuk-input--width-20",
+              spellcheck: false
+            }) }}
+
+            {{ govukDateInput({
+
+              id: "dob",
+              namePrefix: "dob",
+
+              fieldset: {
+                legend: {
+                  text: "Date of birth",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+                text: "For example, 27 3 1980"
+              }
+            }) }}
+
+            {% set niHtml %}
+            {{ govukInput({
+            id: "ni-number-entered",
+            name: "ni-number-entered",
+            type: "text",
+            autocomplete: "text",
+            spellcheck: false,
+            classes: "govuk-!-width-one-third",
+            label: {
+            text:"Parent or guardian National Insurance number"
+            }
+
+
+            }) }}
+            {% endset -%}
+
+            {% set asrHtml %}
+            {{ govukInput({
+              id: "asr-number-entered",
+              name: "asr-number-entered",
+              type: "text",
+              autocomplete: "text",
+              spellcheck: false,
+              classes: "govuk-!-width-one-third",
+              label: {
+              text:"Parent or guardian asylum support reference number"
+              }
+
+
+              }) }}
+              {% endset -%}
+
+            {{ govukRadios({
+            name: "ni-number",
+            id:'ni-number',
+            fieldset: {
+            legend: {
+            text: "National Insurance number or asylum support reference",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+            }
+
+            },
+
+            hint: {
+              text: "Select one option"
+            },
+
+            items: [
+            {
+            value: "ni",
+            text: "National Insurance number",
+            conditional: {
+            html: niHtml
+            }
+            },
+            {
+              value: "asr",
+              text: "Asylum support reference",
+              conditional: {
+              html: asrHtml
+              }
+            }
+
+            ]
+            }) }}
+
+          {% endcall %}
+
+
+
+
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Run check"
+          }) }}
+
+
+        </form>
+
+
+
+      </div>
+
+    </div>
+
+
+
+{% endblock %}

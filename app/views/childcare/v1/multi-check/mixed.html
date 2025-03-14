@@ -1,0 +1,57 @@
+{% extends "/layouts/childcare/v1/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Checks completed
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Checks completed</h1>
+
+    <h2 class="govuk-heading-m">Results</h2>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          2 years early learning
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <strong class="govuk-tag govuk-tag--green">
+            Eligible
+          </strong>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Early years pupil premium
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <strong class="govuk-tag govuk-tag--red">
+            Not eligible
+          </strong>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">What to do next</h2>
+
+    <p class="govuk-body">Tell the childcare provider that the children of this parent or guardian are eligible for 2 years old early learning.</p>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Run another check",
+        href: '#'
+      }) }}
+
+
+  </div>
+
+</div>
+
+
+{% endblock %}
