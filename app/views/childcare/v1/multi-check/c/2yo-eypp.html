@@ -1,0 +1,61 @@
+{% extends "/layouts/childcare/v1/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Select which eligibilities to check
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <form class="form" action="/childcare/v1/multi-check/b/enter-details" method="post" novalidate>
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+      {{ govukCheckboxes({
+        name: "waste",
+        fieldset: {
+          legend: {
+            text: "Select which eligibilities to check",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "Select all that apply"
+        },
+        items: [
+          {
+            value: "2yo",
+            text: "2 years early learning"
+          },
+          {
+            value: "eypp",
+            text: "Early years pupil premium"
+          }
+        ]
+      }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+
+    </form>
+
+
+  </div>
+</div>
+
+{% endblock %}
