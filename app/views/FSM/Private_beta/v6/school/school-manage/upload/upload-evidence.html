@@ -1,4 +1,4 @@
-{% extends "/layouts/layout-dfe-schoolnav.html" %}
+{% extends "layouts/FSM/v6/layout-dfe-schoolnav.html" %}
 {% set pageName="Add supporting evidence" %}
 {% block content %}
 <div class="govuk-width-container">
@@ -8,9 +8,19 @@
       <p class="govuk-body">
         Local authorities need to see supporting evidence to review the appeal.
         Upload the evidence here or send a copy to your Local authority by email.</p>
-      <p>
+
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>
+            View <a href="/evidence-guidance" class="govuk-link">guidance about supporting evidence (opens in a new
+              window)</a>.
+          </strong>
+        </div>
+
+        <!-- <p>
         View <a href="/evidence-guidance" class="govuk-link">guidance about supporting evidence (opens in a new
-          window)</a>.</p>
+          window)</a>.</p> -->
     </div>
     </div>
 

@@ -1,4 +1,4 @@
-{% extends "/layouts/mvp3/layout-dfe.html" %}
+{% extends "layouts/FSM/v6/layout-dfe-schoolnav.html" %}
 {% set pageName="Provide details of all children" %}
 
 
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <div class="govuk-notification-banner govuk-notification-banner" role="region"
+        <!-- <div class="govuk-notification-banner govuk-notification-banner" role="region"
             aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
             <div class="govuk-notification-banner__header">
                 <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
@@ -49,13 +49,13 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
             <div class="govuk-notification-banner__content">
                 <p class="govuk-notification-banner__heading">
-                    Appeals will be rejected if you do not send supporting evidence.
+                    Appeals will be delayed if you do not send supporting evidence.
                 </p>
-                <p class="govuk-body">Read<a class="govuk-notification-banner__link" href="#">guidance about
+                <p class="govuk-body">Read the <a class="govuk-notification-banner__link" href="#">guidance about
                         supporting
                         evidence</a> for how to send evidence to your Local Authority.</p>
             </div>
-        </div>
+        </div> -->
 
         <form action="../upload/upload-evidence" method="post" novalidate>
             <div data-module="moj-add-another">

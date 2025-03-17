@@ -1,4 +1,5 @@
-{% extends "../../../../layouts/layout-dfe-schoolnav-noback.html" %}
+{% extends "layouts/FSM/v6/layout-dfe-schoolnav.html" %}
+
 {% set pageName="Provide details of all children" %}
 
 {% block pageScripts %}
@@ -68,6 +69,9 @@
         legend.innerHTML = `Child ${index + 1}`; // Update legend to reflect current count
       });
     }
+
+    // Initial call to update legends to ensure the first child is correctly labeled
+    updateLegends();
   });
 </script>
 {% endblock %}
@@ -82,7 +86,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-half">
     <div data-module="moj-add-another">
-      <h1 class="govuk-heading-l" tabindex="-1">Provide details of your children</h1>
+      <h1 class="govuk-heading-l" tabindex="-1">Provide details of the children</h1>
       <form method="post">
         {% call govukFieldset({
           classes: 'moj-add-another__item',
