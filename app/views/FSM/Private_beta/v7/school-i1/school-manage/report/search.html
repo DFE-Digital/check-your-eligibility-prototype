@@ -216,23 +216,34 @@
     const selectedStatuses = Array.from(document.querySelectorAll('input[name="status"]:checked')).map(checkbox => checkbox.value);
 
     //update selected filters
+    console.log(document.getElementById('selected-keyword'))
+    document.getElementById('selected-keyword').innerHTML = '';
+    document.getElementById('selected-keyword-container').style.display = 'none';
     document.getElementById('selected-submission-date-range').innerHTML = '';
     document.getElementById('selected-submission-date-range-container').style.display = 'none';
     document.getElementById('selected-status').innerHTML = '';
     document.getElementById('selected-status-container').style.display = 'none';
 
+    if (keyword != '') {
+      const selected_keyword = `<li><button class="app-filter__tag" onclick="clearFilters('${keyword}')"><span class="govuk-visually-hidden">Remove this filter</span>
+        ${keyword}</button></li>`;
+      document.getElementById('selected-keyword').innerHTML = selected_keyword;
+      document.getElementById('selected-keyword-container').style.display = 'block';
+    }
+
     if (selectedDateRange != null) {
-      const selected_submission_date = `<li><a class="app-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span>
-        ${selectedDateRange}</a></li>`;
+      const selected_submission_date = `<li><button class="app-filter__tag" onclick="clearFilters('${selectedDateRange}')"><span class="govuk-visually-hidden">Remove this filter</span>
+        ${selectedDateRange}</button></li>`;
       document.getElementById('selected-submission-date-range').innerHTML = selected_submission_date;
       document.getElementById('selected-submission-date-range-container').style.display = 'block';
     }
     selectedStatuses.forEach(status => {
-      status = status
+      status_label = status
         .replace('status-', '')
         .replace(/-/g, ' ')
-        .replace('Sent-for-review', 'Sent for review');      const selected_status = `<li><a class="app-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span>
-      ${status}</a></li>`;
+        .replace('Sent-for-review', 'Sent for review');
+        const selected_status = `<li><button class="app-filter__tag" onclick="clearFilters('${status}')"><span class="govuk-visually-hidden">Remove this filter</span>
+      ${status_label}</button></li>`;
       document.getElementById('selected-status').innerHTML += selected_status;
       document.getElementById('selected-status-container').style.display = 'block';
 
@@ -286,16 +297,21 @@
     updateSelectedFilters();
   }
 
-  function clearFilters() {
-    // Reset input fields and checkboxes
-    document.getElementById('keywords').value = '';
+  function clearFilters(filter = null) {
+    if (filter == null) {
+      // Reset input fields and checkboxes
+      document.getElementById('keywords').value = '';
 
-    const radios = document.getElementsByName('date range');
-    radios.forEach(radio => radio.checked = false);
+      const radios = document.getElementsByName('date range');
+      radios.forEach(radio => radio.checked = false);
 
-    const checkboxes = document.getElementsByName('status');
-    checkboxes.forEach(checkbox => checkbox.checked = false);
-
+      const checkboxes = document.getElementsByName('status');
+      checkboxes.forEach(checkbox => checkbox.checked = false);
+    }
+    else {
+      const filterElement = document.querySelector(`input[value="${filter}"]`);
+      filterElement.checked = false;
+    }
     // Refresh results after clearing filters
     filterResults();
   }
