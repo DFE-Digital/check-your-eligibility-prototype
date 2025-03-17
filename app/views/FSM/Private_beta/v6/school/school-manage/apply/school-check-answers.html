@@ -1,4 +1,4 @@
-{% extends "../../../../layouts/layout-dfe-schoolnav-noback.html" %}
+{% extends "layouts/FSM/v6/layout-dfe-schoolnav.html" %}
 {% set pageName="Check your answers before submitting" %}
 {% block content %}
 
@@ -100,7 +100,7 @@
           Name
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["ch1-first-name"] or "Rachel" }} {{ data["ch1-surname"] or data["parent-surname"] }}
+          {{ data["ch1-first-name"] or "Rachel Tesfay" }} {{ data["ch1-surname"] or data["parent-surname"] }}
 
         </dd>
 
@@ -123,9 +123,7 @@
 <h2 class="govuk-heading-l">Confirm and add children details</h2>
 
 <p class="govuk-body">By submitting this information, you confirm that, to the best of your knowledge, the details are
-  correct.</p>
-
-<p class="govuk-body">Add info about notifications here.</p>
+  correct and you have parental consent to receive updates about their application.</p>
 
 <form action="eligible" method="post" novalidate>
 

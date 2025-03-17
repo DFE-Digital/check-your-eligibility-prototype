@@ -1,36 +1,44 @@
-{% extends "layouts/layout-dfe-signed-out.html" %}
+{% extends "layouts/FSm/v7/layout-dfe-signed-out.html" %}
 {% set pageName="Home" %}
 {% block content %}
 <div class="govuk-grid-row">
 
-<div class="govuk-grid-column-full">
-  <h1 class="govuk-heading-l">Your children are entitled to free school meals</h1>
+  <div class="govuk-grid-column-two-thirds">
 
-<h2 class="govuk-heading-m">What to do next</h2>
 
-    <p>To get free school meals for your children, follow these steps online. This usually takes a few minutes.</p>
-      
-   <!--- <ol>
-      <li>Create or sign into your GOV.UK One Login account.</li>
-      <li>Enter the details of your children and their school.</li>
-      <li>These will be sent on to the school, which will arrange free school meals.</li>
-      </ol>-->
+  <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Children eligible
+      </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+      <h3 class="govuk-notification-banner__heading">
+        Your children are eligible for free school meals.
+      </h3>
+      </div>
+  </div>
+
+
+  <h1 class="govuk-heading-l">Apply for free school meals for your children</h1>
+
+    <p>This usually takes a few minutes.</p>
 
       <ol>
         <li>
-          Sign in or create a GOV.UK One Login account.       
-         </li>
-        <li>
-          Enter the details of all your children and their schools. 
+          Sign in or create a GOV.UK One Login.
         </li>
         <li>
-          Submit your application to send it to your school.
+          Add the details of all your children and their schools.
         </li>
         <li>
-          We'll send you an email to the one you registered with to let you know it has been completed. 
+          Send your application to the school.
         </li>
         <li>
-          Your childrens school will arrange the free school meals. 
+          We'll send an application confirmation email to the email address used on your GOV.UK One Login.
+        </li>
+        <li>
+          Your children's school will arrange the free school meals.
         </li>
       </ol>
 
@@ -39,15 +47,26 @@
         text: "GOV.UK One Login lets you sign in and prove your identity quickly and easily. You can use the same account for some other government services."
       }) }}
 
-<form action="../../account/signin-or-create" method="post" novalidate>
-  <button class="govuk-button govuk-!-margin-top-5" data-module="govuk-button">
-    Continue to GOV.UK One Login
+    <!---  <div>
+    <form action="account/signin-or-create" method="post" novalidate>
+      <button class="govuk-button govuk-!-margin-top-5" data-module="govuk-button">
+        Continue to GOV.UK One Login
     </button>
-</form>
-</div>
-</div>
+    </form>
+  </div>
+</div>-->
 
-<hr class="govuk-section-break govuk-section-break govuk-section-break--l">
+
+<form action="../account/signin-or-create" method="post" novalidate>
+  <div class="govuk-button-group">
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Continue to GOV.UK One Login
+    </button>
+    <a class="govuk-link" href="../account/start-now"> Return to start now</a>
+  </div>
+</form>
+
+<hr class="govuk-section-break govuk-section-break govuk-section-break--m">
 
 <h2 class="govuk-heading-m">Further guidance and other ways to apply</h2>
 <p>If you need further support, <a target="_blank" href="../checker/parent-guidance.html">check the more detailed guidance</a>  for parents and guardians.</p>
@@ -57,6 +76,7 @@
 {{ govukInsetText({
   text: "It takes longer to apply through your school than it does online."
 }) }}
+
 
 </div>
 </div>

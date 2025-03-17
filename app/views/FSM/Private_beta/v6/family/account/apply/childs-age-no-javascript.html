@@ -1,0 +1,219 @@
+{% extends "layouts/FSM/v6/layout-dfe.html" %}
+
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
+{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
+{%- from "govuk/components/input/macro.njk" import govukInput -%}
+{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+
+{% set pageName="Home" %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/autocomplete.js"></script>
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    selectElement: document.querySelector('#school-picker')
+  })
+document.addEventListener('DOMContentLoaded', function () {
+
+  var addAnotherButton = document.querySelector('.moj-add-another__add-button');
+  var removeButton = document.querySelectorAll('.moj-add-another__remove-button');
+  removeButton.forEach(function (button){
+    button.addEventListener('click', updateLegends);
+  });
+  addAnotherButton.addEventListener('click', updateLegends);
+  function updateLegends(){
+    setTimeout(() => {
+      const legends = document.querySelectorAll('.moj-add-another__title');
+      legends.forEach(function (legend, index) {
+        legend.innerHTML = `Child ${index + 1}`;
+      });
+      var removeButton = document.querySelectorAll('.moj-add-another__remove-button');
+      removeButton.forEach(function (button){
+        button.addEventListener('click', updateLegends);
+    });
+    }, 50);
+  }
+})
+
+
+</script>
+{% endblock %}
+
+
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+
+    <form action="check-answers" method="post" novalidate>
+
+      <div data-module="moj-add-another">
+
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Important
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            <p class="govuk-notification-banner__heading">
+              You have JavaScript turned off. This will limit some search functionality.
+            </p>
+            <p class="govuk-notification-banner__heading">
+             Turn JavaScript on by searching for ‘JavaScript’ in your web browser settings.
+            </p>
+          </div>
+        </div>
+
+        <h1 class="govuk-heading-l" tabindex="-1">Provide details of your children</h1>
+        <p>Include all your children who are in compulsory education. You can use the add another option, if you have more than one child.</p>
+
+        <form method="post">
+
+
+          {% call govukFieldset({
+            classes: 'moj-add-another__item',
+            legend: {
+              text: 'Child 1',
+              classes: 'moj-add-another__title govuk-fieldset__legend--m',
+              isPageHeading: false
+            }
+          }) %}
+
+          {{ govukInput({
+            id: 'ch2-first-name',
+            name: 'ch2-first-name',
+            label: {
+              html: 'First name',
+              classes: 'govuk-!-font-weight-bold'
+            },
+            attributes: {
+              'data-name': 'child[%index%][first_name]',
+              'data-id': 'child[%index%][first_name]'
+            }
+          }) }}
+
+          {{ govukInput({
+            id: 'ch2-surname',
+            name: 'ch2-surname',
+            label: {
+              html: 'Last name',
+              classes: 'govuk-!-font-weight-bold'
+            },
+            attributes: {
+              'data-name': 'child[%index%][last_name]',
+              'data-id': 'child[%index%][last_name]'
+            }
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "School Unique Reference Number (URN)",
+              classes: 'govuk-!-font-weight-bold',
+              isPageHeading: false
+            },
+            hint: {
+              text: "Enter the URN for the school"
+            },
+            id: "school-urn",
+            name: "schoolURN"
+          }) }}
+
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Help with finding the URN
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body">You have JavaScript turned off, so we can only find your child’s school using the school URN.</p>
+              <p class="govuk-body">If you do not know the URN for your child’s school, you can:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>turn JavaScript on by searching for ‘JavaScript’ in your web browser settings - you’ll then be able to search by school name</li>
+                <li>do a web search for the URN, for example ‘Ilkley Grammar School URN’</li>
+                <li>call your child's school and ask for the URN</li>
+                <li>ask your child's school to complete this application for you instead
+            </div>
+
+          </details>
+
+          {{ govukDateInput({
+            id: "ch2-date-of-birth",
+            fieldset: {
+              legend: {
+                text: "Date of birth",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            hint: {
+              text: "For example, 31 3 1980"
+            },
+
+            items: [
+              {
+                id: "ch2-day",
+                name: "ch2-day",
+                label: "Day",
+                classes: "govuk-input--width-2",
+                attributes: {
+                  'data-name': 'child[%index%][dob][day]',
+                  'data-id': 'child[%index%][dob][day]'
+                }
+              },
+              {
+                id: "ch2-month",
+                name: "ch2-month",
+                label: "Month",
+                classes: "govuk-input--width-2",
+                attributes: {
+                  'data-name': 'child[%index%][dob][month]',
+                  'data-id': 'child[%index%][dob][month]'
+                }
+              },
+              {
+                id: "ch2-year",
+                name: "ch2-year",
+                label: "Year",
+                classes: "govuk-input--width-4",
+                attributes: {
+                  'data-name': 'child[%index%][dob][year]',
+                  'data-id': 'child[%index%][dob][year]'
+                }
+              }
+            ]
+          }) }}
+
+          {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+
+
+          {% endcall %}
+
+
+
+          <div class="moj-button-action">
+            {{ govukButton({
+              text: 'Add another child',
+              classes: 'govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4'
+            }) }}
+          </div>
+
+          <div class="moj-button-action">
+            {{ govukButton({
+              text: 'Save and continue'
+            }) }}
+          </div>
+
+          <input type="hidden" name="child-2" id="child-2" value="Yes">
+
+     </form>
+
+        </div>
+      </form>
+      </div>
+    </div>
+
+{% endblock %}
