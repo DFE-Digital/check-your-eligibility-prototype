@@ -6,9 +6,11 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
+    <span class="govuk-hint"> </span>
     <h1 class="govuk-heading-l">
-      <span class="govuk-tag govuk-tag--light-blue">Ready for development</span>
+      <span class="govuk-tag--green">Ready for development</span>
     </h1>
+
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break">
 
@@ -32,25 +34,82 @@
         </li>
       </ul>
 
-      <!-- General Table -->
-      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="general">
-        <span class="govuk-caption-m">Version 3</span>
-        <h2 class="govuk-heading-l">General</h2>
-        <ul class="govuk-task-list">
-          <li class="govuk-task-list__item">
-            <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link" href="/General/v3/privacy.html">Privacy page</a>
-            </div>
-            <div class="govuk-task-list__status">Completed</div>
-          </li>
-          <li class="govuk-task-list__item">
-            <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link" href="/General/v3/accessibility.html">Accessibility page</a>
-            </div>
-            <div class="govuk-task-list__status">Completed</div>
-          </li>
-        </ul>
+        <!-- General Table -->
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="general">
+          <span class="govuk-caption-m">Version 3</span>
+          <h2 class="govuk-heading-l">General</h2>
+          <ul class="govuk-task-list">
+            <li class="govuk-task-list__item">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link" href="/General/v3/privacy.html">Privacy page</a>
+              </div>
+              <div class="govuk-task-list__status">Completed</div>
+            </li>
+            <li class="govuk-task-list__item">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link" href="/General/v3/accessibility.html">Accessibility page</a>
+              </div>
+              <div class="govuk-task-list__status">Completed</div>
+            </li>
+            <li class="govuk-task-list__item">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link" href="/General/v3/contact.html">Contact page</a>
+              </div>
+              <div class="govuk-task-list__status">Completed</div>
+            </li>
+            <li class="govuk-task-list__item">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link" href="/General/v3/terms.html">Terms and conditions</a>
+              </div>
+              <div class="govuk-task-list__status">Completed</div>
+            </li>
+            <li class="govuk-task-list__item">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link" href="/General/v3/cookies-parents.html">Cookies page - Parents</a>
+              </div>
+              <div class="govuk-task-list__status">Completed</div>
+            </li>
+            <li class="govuk-task-list__item">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link" href="/General/v3/cookies-la.html">Cookies page - LA and schools</a>
+              </div>
+              <div class="govuk-task-list__status">Completed</div>
+            </li>
+            <li class="govuk-task-list__item">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link" href="/General/v3/cookies-banner.html">Cookies banner</a>
+              </div>
+              <div class="govuk-task-list__status">Dev as component</div>
+            </li>
+            <li class="govuk-task-list__item">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link" href="/General/v3/problem-parents.html">There is a problem - parents</a>
+              </div>
+              <div class="govuk-task-list__status">Completed</div>
+            </li>
+            <li class="govuk-task-list__item">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link" href="/General/v3/problem-la.html">There is a problem - LA and schools</a>
+              </div>
+              <div class="govuk-task-list__status">Completed</div>
+            </li>
+            <li class="govuk-task-list__item">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link" href="/General/v3/service-unavailable-parents.html">Service unavailable - Parents</a>
+              </div>
+              <div class="govuk-task-list__status">Completed</div>
+            </li>
+            <li class="govuk-task-list__item">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link" href="/General/v3/service-unavailable-la.html">Service unavailable - LA and schools</a>
+              </div>
+              <div class="govuk-task-list__status">Completed</div>
+            </li>
+          </ul>
+        </div>
       </div>
+    </div>
+  </div>
 
       <!-- Parent Table -->
       <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="parent">
@@ -75,7 +134,124 @@
             <div class="govuk-task-list__name-and-hint">
               <a class="govuk-link" href="/FSM/Private_beta/v6/dsi-account/dsi-startnow.html">Start now - DfE</a>
             </div>
-            <div class="govuk-task-list__status">Completed</div>
+
+            <div class="govuk-task-list__status" id="status-1">Completed</div>
+          </li>
+
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="./Private_beta/v5/mvp2/checker/checker" aria-describedby="status-3">
+                Check an individuals eligibility
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status-3">Completed</div>
+          </li>
+
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="./Private_beta/v5/mvp2/checker/eligible" aria-describedby="status-4">
+                Outcome - confirmation, found
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status-4">Completed</div>
+          </li>
+
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="./Private_beta/v5/mvp2/checker/outcome-not-entitled.html" aria-describedby="status-5">
+                Outcome - may not be entitled
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status-5">Completed</div>
+          </li>
+
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="./Private_beta/v5/mvp2/checker/outcome-could-not-find.html" aria-describedby="status-6">
+                Outcome - could not find no trace
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status-6">Completed</div>
+          </li>
+
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="./Private_beta/v5/mvp2/batch-checking/upload" aria-describedby="status-7">
+                Batch check eligibility
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status-7">Completed</div>
+          </li>
+
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="./Private_beta/v5/mvp2/batch-checking/batch-check-success" aria-describedby="status-8">
+                Outcome batch check - success
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status-8">Completed</div>
+          </li>
+
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="./Private_beta/v5/mvp2/batch-checking/batch-error-not-accepted" aria-describedby="status-8">
+                Outcome batch check - file not accepted
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status-8">Completed</div>
+          </li>
+
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="./Private_beta/v5/mvp2/batch-checking/batch-error-data-issue" aria-describedby="status-8">
+                Outcome batch check - pupil data issues
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status-8">Completed</div>
+          </li>
+
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="./Private_beta/v5/checker/pending-list" aria-describedby="status-9">
+                Finalise applications list
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status-9">Completed</div>
+          </li>
+
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="./Private_beta/v5//mvp2/checker-la/guidance.html" aria-describedby="status-10">
+                Guidance pages / links - **links to LA
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status-10">Completed</div>
+          </li>
+
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="./Private_beta/v7/school-i1/school-manage/report/search" aria-describedby="status-11">
+                Search
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status-11">Completed</div>
+          </li>
+
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="./Private_beta/v5/mvp2/checker/eligible-list.html" aria-describedby="status-12">
+                 Upload evidence
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status-12">Completed</div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="./Private_beta/v5/mvp2/checker/eligible-list.html" aria-describedby="status-12">
+                 Up
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status-12">Completed</div>
           </li>
         </ul>
       </div>
