@@ -3,3 +3,12 @@
 Version 6 of this project replaces the previous MVP3 version.
 
 Iterations documented in V6 include:
+
+
+
+Batch check version 1
+- User can run a batch check using CTF or CSV
+- User can view imported records before checking
+- User can view outcomes in table
+- User can export outcomes
+- User can notify parents to complete the application
