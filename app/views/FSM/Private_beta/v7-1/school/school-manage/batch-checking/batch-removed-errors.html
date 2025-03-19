@@ -1,0 +1,117 @@
+{% extends "layouts/FSM/v7/layout-dfe-schoolnav.html" %}
+{% set pageName="Errors removed from import" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-width">
+    <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Success
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+            {{pageName}}
+          </h3>
+          <p class="govuk-body">4 records with errors have been removed from the Common File Transfer (CTF) import.</p>
+          <p class="govuk-body">You can now download the XML file with the updated records and <a href="upload" class="govuk-link">upload it again</a> or run a batch check with the remaining records.</p>
+          {{ govukButton({
+            text: "Check remaining records",
+            classes: "govuk-button--primary",
+            href: '../batch-checking/batch-checking-loader'
+            }) }}
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <div class="govuk-grid-column-full">
+    <table class="govuk-table" data-module="moj-sortable-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Parent <br>first name</th>
+          <th scope="col" class="govuk-table__header">Parent last name</th>
+          <th scope="col" class="govuk-table__header">Parent date <br>of birth</th>
+          <th scope="col" class="govuk-table__header">Parent NINO <br>or NASS</th>
+          <th scope="col" class="govuk-table__header">Child</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--date">Childs date <br>of birth</th>
+          <th scope="col" class="govuk-table__header">Contact email</th>
+          <th scope="col" class="govuk-table__header">Error</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Eden</td>
+          <td class="govuk-table__cell">Tesfay</td>
+          <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
+          <td class="govuk-table__cell">NW123456b</td>
+          <td class="govuk-table__cell">Samuel Tesfay</td>
+          <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
+          <td class="govuk-table__cell">edentesfay@icloud.com</td>
+          <td class="govuk-table__cell"><span class="text-red">Issue with National Insurance number</span></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Eden</td>
+          <td class="govuk-table__cell">Tesfay</td>
+          <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
+          <td class="govuk-table__cell">NW123456b</td>
+          <td class="govuk-table__cell">Samuel Tesfay</td>
+          <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
+          <td class="govuk-table__cell">edentesfay@icloud.com</td>
+          <td class="govuk-table__cell"><span class="text-red">Issue with parent date of birth</span></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Eden</td>
+          <td class="govuk-table__cell">Tesfay</td>
+          <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
+          <td class="govuk-table__cell">NW123456b</td>
+          <td class="govuk-table__cell">Samuel Tesfay</td>
+          <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
+          <td class="govuk-table__cell">edentesfay@icloud.com</td>
+          <td class="govuk-table__cell"><span class="text-red">Issue with first name</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- <p class="govuk-body">
+      <a href="upload" class="govuk-link">Run a batch check</a> for multiple parents or guardians.
+      </p> -->
+  </div>
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const navLinks = document.querySelectorAll('.moj-sub-navigation__link');
+    const sections = document.querySelectorAll('.govuk-table-section');
+
+    // Initially hide all sections except the one corresponding to the active link
+    const activeLink = document.querySelector('.moj-sub-navigation__link[aria-current="true"]');
+    const targetId = activeLink ? activeLink.getAttribute('data-section') : 'ready-section';
+
+    sections.forEach(section => {
+      section.style.display = section.id === targetId ? 'block' : 'none';
+    });
+
+    // Add event listeners to handle tab switching
+    navLinks.forEach(link => {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        // Update aria-current for navigation links
+        navLinks.forEach(nav => nav.removeAttribute('aria-current'));
+        this.setAttribute('aria-current', 'true');
+
+        // Show only the corresponding section
+        const newTargetId = this.getAttribute('data-section');
+        sections.forEach(section => {
+          section.style.display = section.id === newTargetId ? 'block' : 'none';
+        });
+      });
+    });
+  });
+</script>
+{% endblock %}

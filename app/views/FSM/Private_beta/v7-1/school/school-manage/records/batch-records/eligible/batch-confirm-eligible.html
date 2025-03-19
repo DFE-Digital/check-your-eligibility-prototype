@@ -1,0 +1,136 @@
+{% extends "../../../../../../../../layouts/FSM/v7/layout-dfe-schoolnav.html" %}
+
+{% set pageName="Multiple applications created" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      {% set html %}
+      <h3 class="govuk-notification-banner__heading">
+        3 eligible applications for Free school meals created.
+      </h3>
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          You must record these as eligible in your school system <a href="../../../decision/record_decision/applications"
+          class="govuk-link">before marking the applications as completed</a>.
+        </strong>
+      </div>
+
+      <p class="govuk-body">You can also finalise an individual application by selecting the reference link.</p>
+
+
+      {% endset %}
+
+      {{ govukNotificationBanner({
+      html: html,
+      titleText: "Multiple applications created",
+      titleHeadingLevel: "1",
+      type: "success"
+      }) }}
+      <!--<h1 class="govuk-heading-xl">Children details added</h1>-->
+      <!-- <h3>Application record for {{ data["parent-firstname"] or "Eden" }} {{ data["parent-surname"] or "Tesfay" }}</h3> -->
+    </div>
+  </div>
+  <div class="govuk-width-container">
+    <div class="govuk-grid-column-full-width">
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Child name</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--date">Child DOB</th>
+            <th scope="col" class="govuk-table__header">Parent name</th>
+            <th scope="col" class="govuk-table__header">Parent DOB</th>
+            <th scope="col" class="govuk-table__header">National Insurance or <br>asylum support</th>
+            <th scope="col" class="govuk-table__header">Email</th>
+            <th scope="col" class="govuk-table__header">Reference</th>
+
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Samuel Tesfay</td>
+            <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
+            <td class="govuk-table__cell">Eden Tesfay</td>
+            <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
+            <td class="govuk-table__cell">NW653213B</td>
+            <td class="govuk-table__cell">edentesfay@icloud.com</td>
+            <td class="govuk-table__cell govuk-link"><b><a href="">44455453</a></b></td>
+          </tr>
+        </tbody>
+
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"> {{ data["ch1-first-name"] or "Rachel" }} {{ data["ch1-surname"] or
+              data["parent-surname"] or "Tesfay" }} </td>
+            <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
+            <td class="govuk-table__cell">Eden Tesfay</td>
+            <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
+            <td class="govuk-table__cell">NW653213B</td>
+
+            <td class="govuk-table__cell">edentesfay@icloud.com</td>
+            <td class="govuk-table__cell govuk-link"><b><a href="">44455453</a></b></td>          </tr>
+        </tbody>
+
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"> {{ data["ch1-first-name"] or "Rachel" }} {{ data["ch1-surname"] or
+              data["parent-surname"]or "Tesfay" }} </td>
+            <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
+            <td class="govuk-table__cell">Eden Tesfay</td>
+            <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
+            <td class="govuk-table__cell">NW653213B</td>
+            <td class="govuk-table__cell">edentesfay@icloud.com</td>
+
+            <td class="govuk-table__cell govuk-link"><b><a href="">44455453</a></b></td>          </tr>
+        </tbody>
+
+        <!-- {% if data['child-2'] == 'Yes' %} {% endif %}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"> {{ data["ch1-first-name"] or "Samuel" }} {{ data["surname"]or data["parent-surname"] }}</td>
+          <td class="govuk-table__cell">44455454</td>
+        </tr> -->
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="govuk-!-padding-bottom-3"></div>
+
+  <!-- <p><a href="../../dashboard" class="govuk-link">Return to dashboard</p> -->
+</div>
+</div>
+</div>
+</div>
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+
+</div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+
+<script>
+  function printPage() {
+    window.print();  // This will open the print dialog
+  }
+</script>
+
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}

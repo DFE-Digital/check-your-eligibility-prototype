@@ -1,0 +1,48 @@
+{% extends "/layouts/FSM/v7/layout-dfe-schoolnav.html" %}
+{% set pageName="Run a check for one parent or guardian" %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Declaration for schools to support parents</h1>
+    <h2 class="govuk-heading-m">Next steps</h2>
+
+  </div>
+</div>
+
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="declaration-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+      <h1 class="govuk-fieldset__heading">
+        Confirm
+      </h1>
+    </legend>
+    <div id="nationality-hint" class="govuk-hint">
+      You have to confirm this
+    </div>
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="british" aria-describedby="nationality-item-hint">
+        <label class="govuk-label govuk-checkboxes__label" for="nationality">
+          British
+        </label>
+      </div>
+
+    </div>
+  </fieldset>
+</div>
+
+
+{{ govukButton({
+  text: "Button text"
+}) }}
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}
