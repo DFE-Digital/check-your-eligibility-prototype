@@ -1,0 +1,25 @@
+{% extends "layouts/layout-email.html" %}
+{% set subject = "Eligible for Free school meals [reference]" %}
+{% set from = "DfE <dfe@gov.uk>" %}
+{% set to = "Eden Tesfay <eden.tesfay@gmail.com>" %}
+
+{% block content %}
+<p>Dear parent or guardian, </p>
+
+<p>We can confirm that you are eligible for free school meals and can apply using the link in this email </p>
+
+<p class="govuk-body">
+     <a href="../../family/account/signin-or-create" class="govuk-link">Apply for Free school meals</a> using the new service.
+  </p>
+
+<h2 class="govuk-heading-s">What happens next </h2>
+
+<p>Sign in or create an account using One login.</p>
+<p>Follow the onscreen instructions to complete the application form for Free school meals.</p>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+
+<p><b>From Department for Education</b></p>
+
+{% endblock %}

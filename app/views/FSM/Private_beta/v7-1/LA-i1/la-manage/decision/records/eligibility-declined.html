@@ -1,0 +1,61 @@
+{% extends "layouts/layout-dfe-lanav-noback.html" %}
+
+{% set pageName="Home" %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+<span class="govuk-hint"> Reference: 44455453</span>
+
+{{ mojBanner({
+  type: 'warning',
+  html:' <h3 class="govuk-heading-l">Application declined</h3>',
+  iconFallbackText: 'Success'
+}) }}
+
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-one-half">
+
+        <p>Thank you for processing this application. </p>
+<p><strong>Please respond to all relevant schools with your decision.</strong> </p>
+<p>If you need to find the application again, search in <a href="search">Search all records.</a> </p>
+
+        <div class="govuk-button-group">
+          <a class="govuk-link" href="../pending-list">Confirm another application</a>
+          <a class="govuk-link" href="../../../dashboard">Return to dashboard</a>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}

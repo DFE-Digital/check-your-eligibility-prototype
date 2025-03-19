@@ -1,0 +1,129 @@
+{% extends "./layouts-apply/layout-dfe-signed-out-noback.html" %}
+
+{% set pageName= "Home" %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+    <h1 class="govuk-heading-l">Check your answers before registering</h1>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Parent or guardian details</h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Parent or guardian name</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["first-name"] }} {{ data["surname"] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Parent or guardian date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["dob-day"] }} {{ data["dob-month"] }} {{ data["dob-year"]
+              }}
+            </dd>
+          </div>
+          {% if data['ni-number'] == 'yes' %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">National Insurance number</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["ni-number-entered"] }}
+            </dd>
+          </div>
+          {% else %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Asylum support reference number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["nass-number-entered"] }}
+            </dd>
+          </div>
+          {% endif %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Email address</dt>
+            <dd class="govuk-summary-list__value">{{data["email"]}}</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Child 1</h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action">
+            <a class="govuk-link" href="#"
+              >Change<span class="govuk-visually-hidden">Child details</span></a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row"></div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Child's name</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["ch1-first-name"] }} {{ data["ch1-surname"] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">School</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["school-picker"] }}
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Child's date of birth</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["ch1-day"] }} {{ data["ch1-month"] }} {{ data["ch1-year"]
+              }}
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    {% if data['child-2'] == 'Yes' %} {% endif %}
+
+
+          <hr class="govuk-section-break govuk-section-break--m">
+
+          <p class="govuk-heading-m">Confirm details and send to the school</p>
+
+    <p class="govuk-body">
+      By sending this information to the school you confirm that to the best
+      of your knowledge, it is correct.
+    </p>
+
+    <p class="govuk-body">
+      We'll use the email address from your GOV.UK One Login to confirm we've received your application, and to send you additional progress updates.</p>
+      <input type="hidden" name="answers-checked" value="true" />
+    </form>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %} {{
+    govukButton({ text: "Submit your application", href:
+    './children-added' }) }}
+  </div>
+</div>
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Get help with this page
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    Support information here
+  </div>
+</details>
+</div>
+</div>
+{% endblock %}
