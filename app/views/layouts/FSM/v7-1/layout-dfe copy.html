@@ -6,47 +6,36 @@
 
 {# 3 #}
 {% block header %}
-<!--Correct version--->
+
+
 {{ header({
-    "showNav": "true",
-    "showSearch": "false",
-    "showHeaderActionLinks": "true",
-    "logoPath": "public/images",
-    "searchAction": "/search/",
-    "searchInputName": "",
-    "logoAltText": "Department for Education",
-    "homeHref": "/FSM/Private_beta/v7/dsi-account/dsi-startnow",
-    "selectedNav": view,
-    "service": {
-      "name": "Check a family's eligibility",
-      "serviceUrl": "/FSM/index-fsm"
+  "showNav": "false",
+  "showSearch": "false",
+  "showHeaderActionLinks": "true",
+  "logoPath": "public/images",
+  "searchAction": "/search/",
+  "searchInputName": "q",
+  "service": {
+    "name": "Check a family's eligibility"
+  },
+  "headerActionLinks": [
+    {
+      "url"  : "/",
+      "label" : "My account"
     },
-    "headerActionLinks": [
-      {
-        "url"  : "/FSM/Private_beta/v7/dsi-account/dsi-landingpage",
-        "label" : "My account"
-      },
-      {
-        "url"  : "/FSM/Private_beta/v7/dsi-account/dsi-startnow",
-        "label" : "Sign out"
-      }
+    {
+      "url"  : "../../",
+      "label" : "Sign out"
+    }
   ],
     "primaryLinks": [
-    {
-      "url"  : "/FSM/Private_beta/v7/school/dashboard",
-      "label" : "Dashboard"
-    }, {
-      "url"  : "#",
-      "label" : " "
-    }, {
-      "url"  : "#",
-      "label" : "  "
-    }, {
-      "url"  : "#",
-      "label" : " "
-    }
+        {
+        "url"  : "dashboard",
+        "label" : "Dashboard"
+      }
     ]
-  })
+
+})
 }}
 
 <div class="app-phase-banner__wrapper">
@@ -61,11 +50,13 @@
       </span>
     </p>
   </div>
+
 </div>
 
 {% endblock %}
 
 {% block beforeContent %}
+
 
   {% block backLink %}
     {{ govukBackLink({
@@ -81,19 +72,19 @@
    meta: {
      items: [
        {
-         href: "/General/privacy",
+         href: "../privacy",
          text: "Privacy policy"
        },
        {
-        href: "/General/accessibility",
+        href: "../accessibility",
         text: "Accessibility"
       },
        {
-         href: "/General/cookies",
+         href: "../cookies",
          text: "Cookies"
        },
        {
-        href: "/General/contact",
+        href: "../contact",
         text: "Contact us"
       },
       {
@@ -127,11 +118,4 @@
 }
 
 </script>
-
-{{ super() }}
-<script>
- var AppFrontend = {}
-</script>
-<script src="/public/javascripts/components/filter-toggle-button.js"></script>
-
 {% endblock %}

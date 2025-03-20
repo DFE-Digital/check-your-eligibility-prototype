@@ -60,7 +60,17 @@
 
     <p><a href="../../../school/dashboard.html">Return to dashboard and do this later</a></p>
     {% endblock %}
-
     {% block pageScripts %}
     <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+    <script type="text/javascript">
+      document.getElementById('submitButton').addEventListener('click', function(event) {
+        var checkbox = document.getElementById('nationality');
+        if (!checkbox.checked) {
+          event.preventDefault();
+          window.location.href = 'declaration-error.html'; // Redirect to an error page
+        } else {
+          window.location.href = 'checker.html'; // Redirect to checker.html if checkbox is checked
+        }
+      });
+    </script>
     {% endblock %}

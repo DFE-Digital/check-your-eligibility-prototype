@@ -32,17 +32,23 @@ require('./routes/mvp3/appeal')(router);
 require('./routes/mvp3/success')(router);
 require('./routes/mvp2/betacheck')(router);
 
-//v6
+//v6 Pass the router to the routes folder
 require('./routes/fsm/private_beta/v6/betacheck')(router);
+require('./routes/fsm/private_beta/v6/softCheck')(router);
+const softCheckRoutes = require('./routes/fsm/private_beta/v6/softCheck');
+softCheckRoutes(router);
 
-//v7
+//v7 Pass the router to the routes folder
 require('./routes/fsm/private_beta/v7/batch-check');
 
-// Require the batch-check route
+// v7 Require the batch-check route
 const batchCheckRouteV7 = require('./routes/fsm/private_beta/v7/batch-check');
 
 // Use the batch-check route
 router.use(batchCheckRouteV7);
+
+const softCheckRoutesV7_1_new = require('./routes/fsm/private_beta/v7-1/softCheck');
+softCheckRoutesV7_1_new(router);
 
 // const appealRoutes = require('./routes/mvp3/appeal');
 // appealRoutes(router);
@@ -330,41 +336,7 @@ router.post('/soft-check-ni-answer', function (req, res) {
 
 })
 
-////////////////////////////////mvp1///////////////////////////////
 
-// Nationality//Not used
-// router.post('/nationality-answer', function (req, res) {
-
-//   // Make a variable
-//   var whatNationality = req.session.data['what-nationality']
-
-//   // Check whether the variable matches a condition
-//   if (whatNationality == "british"){
-//     // Send user to next page
-//     res.redirect('/mvp1/checker-parent/national-insurance')
-//   } else {
-//     // Send user to other page
-//     res.redirect('/mvp1/checker-parent/asylum-seeker')
-//   }
-
-// })
-
-// Asylum number-NOT USED IN CURRENT VERSIONS//
-//router.post('/asylum-answer', function (req, res) {
-
-  // Make a variable
-  //var seekingAsylum = req.session.data['seeking-asylum']
-
-  // Check whether the variable matches a condition
-  //if (seekingAsylum == "yes"){
-    // Send user to next page
-    //res.redirect('/mvp1/checker-parent/nass-number')
-  //} else {
-    // Send user to other page
-    //res.redirect('/mvp1/checker-parent/more-info-required-asylum')
-  //}
-
-//})
 
   // NASS number
   router.post('/nass-number-answer', function (req, res) {

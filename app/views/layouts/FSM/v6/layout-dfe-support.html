@@ -5,9 +5,10 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 
 {# 3 #}
-<head>
+{% block head %}
   <link rel="stylesheet" href="assets/css/accessible-autocomplete.min.css" />
-</head>
+
+{% endblock %}
 
 {% block header %}
 <!--This layout needs to be used for index-->
@@ -137,5 +138,10 @@ text: "Clear data"
 </script>
 <script src="/public/javascripts/components/filter-toggle-button.js"></script>
 <script>
-
-{% endblock %}
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    selectElement: document.querySelector('#school-picker')
+  })
+document.addEventListener('DOMContentLoaded', function () {
+  // Your code here
+});

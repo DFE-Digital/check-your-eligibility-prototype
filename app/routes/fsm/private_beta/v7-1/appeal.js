@@ -4,22 +4,22 @@ module.exports = function (router) {
   router.post('/v7-1-evidence', function (req, res) {
     var evidence = req.session.data['evidence'];
     if (evidence === "v7digital") {
-      res.redirect('/v7-1/family/account/appeal/evidence/upload-guidance-digital');
+      res.redirect('/FSM/Private_beta/v7-1/family/account/appeal/evidence/upload-guidance-digital');
     } else if (evidence === "v7paper") {
-      res.redirect('/v7-1/family/account/appeal/evidence/upload-guidance');
+      res.redirect('/FSM/Private_beta/v7-1/family/account/appeal/evidence/upload-guidance');
     } else {
-      res.redirect('/v7-1/family/account/appeal/add-child/child-details-blank');
+      res.redirect('/FSM/Private_beta/v7-1/family/account/appeal/add-child/child-details-blank');
     }
   });
 
-  ///temp gov routes///
+  /// gov routes///
   router.post('/v7-1-gov', function (req, res) {
-    res.redirect('/v7-1/family/account/appeal/evidence/have-evidence.html');
+    res.redirect('/FSM/Private_beta/v7-1/family/account/appeal/evidence/have-evidence.html');
   });
 
-  router.get('/v7-1/family/parent-soft-check/outcomes/outcome-not-entitled-appeal', (req, res) => {
+  router.get('/FSM/Private_beta/v7-1/family/parent-soft-check/outcomes/outcome-not-entitled-appeal', (req, res) => {
     req.session.data.startingPage = 'appeal-process';
-    res.render('v7-1/family/parent-soft-check/outcomes/outcome-not-entitled-appeal');
+    res.render('/FSM/Private_beta/v7-1/parent-soft-check/outcomes/outcome-not-entitled-appeal');
   });
 
   router.get('/v7-1/family/parent-soft-check/outcomes/eligible', (req, res) => {

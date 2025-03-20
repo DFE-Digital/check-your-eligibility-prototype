@@ -28,27 +28,19 @@
  </ul>
 
  <p class="govuk-body">You may also need supporting evidence for your application.</p>
- <p class="govuk-body">See <a target="_blank" href="../checker/parent-guidance.html">more detailed guidance on eligibility for free school meals</a>.</p>
+ <p class="govuk-body">See <a target="_blank" href="guidance/parent-guidance.html">more detailed guidance on eligibility for free school meals</a>.</p>
 
  <h2 class="govuk-heading-l">If you cannot apply online</h2>
- <p class="govuk-body">Fill in the <a href="fsm-print-version">free school meals entitlement checker form</a> and give it to your children's school. </p>
+ <p class="govuk-body">Fill in the <a href="../_offline/fsm-print-version.html">free school meals entitlement checker form</a> and give it to your children's school. </p>
 
  <hr class="govuk-section-break govuk-section-break--l govuk-section-break">
 
-{% from "govuk/components/button/macro.njk" import govukButton %}
-
-<form action="../parent-soft-check/check" method="post">
-
+<form action="/FSM/Private_beta/v6/family/beta-school-check" method="post">
   {{ govukButton({
     text: "Start now",
-    href:'../parent-soft-check/account/beta-school-check',
     isStartButton: true
   }) }}
-
- </form>
-
-
-
+</form>
 
 
 
