@@ -26,16 +26,7 @@
 
           {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
-          {{ govukCheckboxes({
-            name: "waste",
 
-            items: [
-              {
-                value: "eypp",
-                text: "Check eligiblity for Early Years Pupil Premium at the same time"
-              }
-            ]
-          }) }}
 
           <p class="govuk-body">Enter the details of the parent or guardian who applied for 2 years early learning.</p>
 
@@ -149,7 +140,16 @@
           {% endcall %}
 
 
+          {{ govukCheckboxes({
+            name: "waste",
 
+            items: [
+              {
+                value: "eypp",
+                text: "Also run a check for Early Years Pupil Premium?"
+              }
+            ]
+          }) }}
 
 
           {% from "govuk/components/button/macro.njk" import govukButton %}
