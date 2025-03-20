@@ -48,12 +48,22 @@
     </div>
 
 
-    {{ govukButton({
-    text: "Button text"
-    }) }}
+    <button type="submit" class="govuk-button" id="submitButton" data-module="govuk-button">
+      Save and continue
+    </button>
 
     {% endblock %}
-
     {% block pageScripts %}
     <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+    <script type="text/javascript">
+      document.getElementById('submitButton').addEventListener('click', function(event) {
+        var checkbox = document.getElementById('nationality');
+        if (!checkbox.checked) {
+          event.preventDefault();
+          window.location.href = 'declaration-error.html'; // Redirect to an error page
+        } else {
+          window.location.href = 'checker.html'; // Redirect to checker.html if checkbox is checked
+        }
+      });
+    </script>
     {% endblock %}

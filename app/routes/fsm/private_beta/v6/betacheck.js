@@ -1,6 +1,6 @@
 module.exports = function(router) {
 
-  ///Privatebetachoice///
+  ///Privatebetachoicev6///
 router.post('/v6-betacheck', function (req, res) {
   // Make a variable
   var betaschool = req.session.data['betaschool']

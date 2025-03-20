@@ -11,12 +11,12 @@ module.exports = function(router) {
         res.send('Account Page');
     });
 
-     // POST route MVP3
+     // POST route v7-1
      router.post('/FSM/Private_beta/v7-1/family/account/onegov-signin', (req, res) => {
         req.session.data.user = {};
         res.redirect('/account/enter-password');
     });
-       // GET route  MVP3
+       // GET route  v7-1
        router.get('/', function(req, res) {
         res.send('Account Page');
     });

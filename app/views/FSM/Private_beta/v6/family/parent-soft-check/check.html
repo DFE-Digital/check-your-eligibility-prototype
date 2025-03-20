@@ -1,92 +1,89 @@
-{% extends "/layouts/layout-dfe-signed-out.html" %}
+{% extends "layouts/FSM/v6/layout-dfe-signed-out.html" %}
 {% set pageName="Enter your details" %}
 {% block content %}
 
-{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+      aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          You can use this test service
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          You can apply for all children at schools in this test service.
+        </h3>
+        <p class="govuk-body">You will need to apply separately for children at schools not in this test service <a
+            href="https://www.gov.uk/apply-free-school-meals">using the existing process</a>.</p>
+      </div>
+    </div>
 
-        <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-          <div class="govuk-notification-banner__header">
-            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-              You can use this test service
-            </h2>
-          </div>
-          <div class="govuk-notification-banner__content">
-            <h3 class="govuk-notification-banner__heading">
-              You can apply for all children at schools in this test service.
-            </h3>
-            <p class="govuk-body">You will need to apply separately for children at schools not in this test service <a href="https://www.gov.uk/apply-free-school-meals">using the existing process</a>.</p>
-          </div>
-        </div>
+    <h1 class="govuk-heading-l">Enter your details</h1>
+    <p class="govuk-body">The information you provide will be compared with other government departments records to
+      check for your eligibility.</p>
+    <p class="govuk-body">For further information, please check our <a href=""> privacy statement</a>.</p>
 
-        <h1 class="govuk-heading-l">Enter your details</h1>
-        <p class="govuk-body">The information you provide will be compared with other government departments records to check for your eligibility.</p>
-        <p class="govuk-body">For further information, please check our <a href=""> privacy statement</a>.</p>
+    {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 
+    {{ govukWarningText({
+    text: "Use the details on your passport, driving licence, birth certificate or Biometric Residence Permit.",
+    iconFallbackText: "Warning"
+    }) }}
 
-{{ govukWarningText({
-  text: "Use the details on your passport, driving licence, birth certificate or Biometric Residence Permit.",
-  iconFallbackText: "Warning"
-}) }}
-
-    <form action="/mvp2-soft-check-ni-answer" method="post" novalidate>
+    <form action="/v6-soft-check-ni-answer" method="post" novalidate>
 
       {% call govukFieldset({
-        legend: {
-          text: "What is your name?",
-          classes: "govuk-fieldset__legend--m",
-          isPageHeading: false
-        }
-    }) %}
+      legend: {
+      text: "What is your name?",
+      classes: "govuk-fieldset__legend--m",
+      isPageHeading: false
+      }
+      }) %}
 
 
 
       {{ govukInput({
-        label: {
-          text: "First name"
-        },
-        classes: "govuk-!-width-two-thirds",
-        id: "first-name",
-        name: "first-name",
-        autocomplete: ""
+      label: {
+      text: "First name"
+      },
+      classes: "govuk-!-width-two-thirds",
+      id: "first-name",
+      name: "first-name",
+      autocomplete: ""
       }) }}
 
       {{ govukInput({
-        label: {
-          text: "Last name"
-        },
-        classes: "govuk-!-width-two-thirds",
-        id: "surname",
-        name: "surname",
-        autocomplete: ""
+      label: {
+      text: "Last name"
+      },
+      classes: "govuk-!-width-two-thirds",
+      id: "surname",
+      name: "surname",
+      autocomplete: ""
       }) }}
-
-
-
 
       {% endcall %}
 
 
-        {{ govukDateInput({
+      {{ govukDateInput({
 
-          id: "dob",
-          namePrefix: "dob",
+      id: "dob",
+      namePrefix: "dob",
 
-          fieldset: {
-            legend: {
-              text: "What is your date of birth?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          hint: {
-            text: "For example, 31 3 1980"
-          }
-        }) }}
-
-
+      fieldset: {
+      legend: {
+      text: "What is your date of birth?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+      }
+      },
+      hint: {
+      text: "For example, 31 3 1980"
+      }
+      }) }}
 
       {% set yesHtml %}
       {{ govukInput({
@@ -99,9 +96,9 @@
       label: {
       text:"Parent's National Insurance number"
       },
-  hint: {
-    text: "For example, ‘QQ 12 34 56 C’"
-  }
+      hint: {
+      text: "For example, ‘QQ 12 34 56 C’"
+      }
 
       }) }}
       {% endset -%}
@@ -136,31 +133,13 @@
       ]
       }) }}
 
-
-
-
-
       {{ govukButton({
-        text: "Save and continue",
-        classes:'govuk-!-margin-top-5'
+      text: "Save and continue",
+      classes:'govuk-!-margin-top-5'
       }) }}
 
-
     </form>
-
-
-
-
-
-
-
-
-
-
-      </div>
-
-    </div>
-
-
+  </div>
+</div>
 
 {% endblock %}
