@@ -1,11 +1,17 @@
 {% extends "/layouts/FSM/v7-1/layout-dfe-schoolnav.html" %}
-{% set pageName="Run a check for one parent or guardian" %}
+{% set pageName="Confirm you have consent" %}
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l">Declaration for schools to support parents</h1>
-    <h2 class="govuk-heading-m">Next steps</h2>
+    <h1 class="govuk-heading-l">You must get consent</h1>
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        The parent or guardian must be with you and consent for you to apply on their behalf
+      </strong>
+    </div>
 
   </div>
 </div>
@@ -15,18 +21,18 @@
   <fieldset class="govuk-fieldset" aria-describedby="declaration-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
       <h1 class="govuk-fieldset__heading">
-        Confirm
+        Confirm you have consent
       </h1>
     </legend>
     <div id="nationality-hint" class="govuk-hint">
-      You have to confirm this
+      Select if the parent or guardian is with you and has given consent
     </div>
     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
         <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="british"
           aria-describedby="nationality-item-hint">
         <label class="govuk-label govuk-checkboxes__label" for="nationality">
-          British
+          They are with me and have given consent
         </label>
       </div>
     </div>
@@ -35,8 +41,10 @@
 <!-- <button id="submitButton" class="govuk-button">Button text</button> -->
 
 <button type="submit" class="govuk-button" id="submitButton" data-module="govuk-button">
-  Save and continue
+  Confirm consent
 </button>
+
+<p><a href="../../../school/dashboard.html">Return to dashboard and do this later</a></p>
 
 {% endblock %}
 
