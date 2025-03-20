@@ -25,7 +25,7 @@ const fs = require('fs')
 const radioButtonRedirect = require('radio-button-redirect')
 router.use(radioButtonRedirect)
 
-// Pass the router to the routes folder
+// mvp3 Pass the router to the routes folder
 require('./routes/mvp3/account')(router);
 require('./routes/mvp3/softCheck')(router);
 require('./routes/mvp3/appeal')(router);
@@ -39,16 +39,36 @@ require('./routes/fsm/private_beta/v6/betacheck')(router);
 require('./routes/fsm/private_beta/v7/batch-check');
 
 // Require the batch-check route
-const batchCheckRoute = require('./routes/fsm/private_beta/v7/batch-check');
+const batchCheckRouteV7 = require('./routes/fsm/private_beta/v7/batch-check');
 
 // Use the batch-check route
-router.use(batchCheckRoute);
+router.use(batchCheckRouteV7);
 
 // const appealRoutes = require('./routes/mvp3/appeal');
 // appealRoutes(router);
 
+//v7-1
+const appealRoutes = require('./routes/fsm/private_beta/v7-1/appeal');
+appealRoutes(router);
+require('./routes/fsm/private_beta/v7-1/batch-check');
+// Require the batch-check route
+const batchCheckRouteV7_1 = require('./routes/fsm/private_beta/v7-1/batch-check');
+
+// Use the batch-check route
+router.use(batchCheckRouteV7_1);
+
+// const appealRoutes = require('./routes/fsm/private_beta/7-1/appeal');
+// appealRoutes(router);
+
+require('./routes/fsm/private_beta/v7-1/appeal')(router);
+
+require('./routes/fsm/private_beta/v7-1/betacheck')(router);
+
 router.get('*', function (req, res, next) {
 
+
+  //////////////////////////////
+  // LOCAL FUNCTIONS AND DATA //
 // These functions are available on all pages in the prototype.
 // To use call the function inside curly brackets, for example {{ example_function() }}
 // Examples of date

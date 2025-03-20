@@ -1,4 +1,5 @@
-{% extends "../_layouts/layout-dfe-schoolnav.html" %}{% set pageName="Finalise these applications?" %}
+{% extends "layouts/FSM/v7-1/layout-dfe-schoolnav.html" %}
+{% set pageName="Finalise these applications?" %}
 
 {% block content %}
 
@@ -12,61 +13,18 @@
         iconFallbackText: "Warning"
       }) }}
 
-
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
-
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" role="group" aria-describedby="start-date-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              Add a start date for these applications.
-          </legend>
-          <div id="start-date-hint" class="govuk-hint">
-            For example, 27 09 2024
-          </div>
-          <div class="govuk-date-input" id="start-date">
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="start-date-day">
-                  Day
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-date--day" name="start-date--day" type="text" inputmode="numeric">
-              </div>
-            </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="start-date--month">
-                  Month
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-date--month" name="start-date--month" type="text" inputmode="numeric">
-              </div>
-            </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="start-date-year">
-                  Year
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="start-date-year" name="start-date-year" type="text" inputmode="numeric">
-              </div>
-            </div>
-          </div>
-        </fieldset>
       </div>
-
     </div>
   </div>
-</div>
-
-<div class="govuk-!-padding-bottom-3"></div>
 
 
-{% from "govuk/components/button/macro.njk" import govukButton %}
-
+<div class="govuk-button-group">
 {{ govukButton({
   text: "Yes, finalise now",
   href: 'eligibility-confirmed'
 }) }}
-
-{% from "govuk/components/button/macro.njk" import govukButton %}
 
 {{ govukButton({
   text: "No, return to table",
@@ -75,12 +33,8 @@
 }) }}
 
 <div class="govuk-!-padding-bottom-3"></div>
-
-
-
   </div>
 </div>
-
 {% endblock %}
 
 {% block pageScripts %}

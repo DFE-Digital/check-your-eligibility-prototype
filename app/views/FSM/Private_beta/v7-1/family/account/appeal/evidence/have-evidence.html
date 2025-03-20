@@ -6,7 +6,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds ">
     <!--routes found in routes/mvp3/appeal.js-->
-    <form action="/mvp3-evidence" method="post" novalidate>
+    <form action="/v7-1-evidence" method="post" novalidate>
 
       {{ govukRadios({
       name: "evidence",
@@ -23,14 +23,14 @@
       },
       items: [
       {
-      value: "digital",
+      value: "v7digital",
       text: "Upload digital files",
       hint: {
       text: "Use this for files you've downloaded or have been sent by text or email"
       }
       },
       {
-      value: "paper",
+      value: "v7paper",
       text: "Take a photo or scan paper documents",
       hint: {
       text: "Use this for uploading photos or scans of paper copies of your evidence"

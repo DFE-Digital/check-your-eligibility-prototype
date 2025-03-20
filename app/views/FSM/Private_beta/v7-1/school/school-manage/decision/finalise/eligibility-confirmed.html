@@ -1,4 +1,5 @@
-{% extends "../_layouts/layout-dfe-schoolnav.html" %}{% set pageName="Home" %}
+{% extends "/layouts/FSM/v7-1/layout-dfe-schoolnav.html" %}
+{% set pageName="Application finalised" %}
 {% set applicationSent %}
 
 <h3 class="govuk-notification-banner__heading">
@@ -11,17 +12,14 @@
 {% endset %}
 
 {% block content %}
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-
-
 
     {{ mojBanner({
     type: 'success',
     html: '<h3 class="govuk-heading-l">Applications finalised</h3>
 
-    <p> Finalised applications can be found by searching in <a href="search">\'Search all records\'</a>.</p>',
+    <p> Finalised applications can be found by searching in <a href="/FSM/Private_beta/v7-1/school/school-manage/report/search.html">\'Search all records\'</a>.</p>',
     iconFallbackText: 'Success'
     }) }}
 

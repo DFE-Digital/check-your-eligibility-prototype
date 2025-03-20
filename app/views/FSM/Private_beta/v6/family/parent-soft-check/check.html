@@ -2,22 +2,46 @@
 {% set pageName="Enter your details" %}
 {% block content %}
 
-  <div class="govuk-grid-row">
+{% block content %}
+
+    <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              You can use this test service
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            <h3 class="govuk-notification-banner__heading">
+              You can apply for all children at schools in this test service.
+            </h3>
+            <p class="govuk-body">You will need to apply separately for children at schools not in this test service <a href="https://www.gov.uk/apply-free-school-meals">using the existing process</a>.</p>
+          </div>
+        </div>
+
         <h1 class="govuk-heading-l">Enter your details</h1>
-        <p>The information you provide will be compared with other government departments records to check for your eligibility. For further information, please check our Privacy statement.</p>
-    <form action="/mvp3-soft-check-ni-answer" method="post" novalidate>
+        <p class="govuk-body">The information you provide will be compared with other government departments records to check for your eligibility.</p>
+        <p class="govuk-body">For further information, please check our <a href=""> privacy statement</a>.</p>
+
+
+{{ govukWarningText({
+  text: "Use the details on your passport, driving licence, birth certificate or Biometric Residence Permit.",
+  iconFallbackText: "Warning"
+}) }}
+
+    <form action="/mvp2-soft-check-ni-answer" method="post" novalidate>
+
       {% call govukFieldset({
         legend: {
           text: "What is your name?",
           classes: "govuk-fieldset__legend--m",
           isPageHeading: false
-        },
-        hint: {
-          text: "Please use the name on your passport, driving licence, birth certificate or Biometric Residence Permit"
         }
-      }
-      ) %}
+    }) %}
+
+
 
       {{ govukInput({
         label: {
@@ -26,10 +50,7 @@
         classes: "govuk-!-width-two-thirds",
         id: "first-name",
         name: "first-name",
-        autocomplete: "",
-        hint: {
-          text: "or given name"
-        }
+        autocomplete: ""
       }) }}
 
       {{ govukInput({
@@ -39,13 +60,14 @@
         classes: "govuk-!-width-two-thirds",
         id: "surname",
         name: "surname",
-        autocomplete: "",
-        hint: {
-          text: "or family name"
-        }
+        autocomplete: ""
       }) }}
 
+
+
+
       {% endcall %}
+
 
         {{ govukDateInput({
 
@@ -65,6 +87,7 @@
         }) }}
 
 
+
       {% set yesHtml %}
       {{ govukInput({
       id: "ni-number-entered",
@@ -74,21 +97,13 @@
       spellcheck: false,
       classes: "govuk-!-width-one-third",
       label: {
-      text:"National Insurance number"
+      text:"Parent's National Insurance number"
       },
   hint: {
     text: "For example, ‘QQ 12 34 56 C’"
   }
 
       }) }}
-
-      <!-- {{ govukDetails({
-        summaryText: "Where you can find your NI number",
-        html: "You can find your National Insurance number on a document you already have,<br> for example: <li>a P60, payslip or letters about benefits</li> <li>in your personal tax account</li><li>in the HMRC app</li>
-       <li>in your Apple or Google Wallet (if you’ve previously saved it there)</li>
-         "
-      }) }} -->
-
       {% endset -%}
 
       {{ govukRadios({
@@ -122,6 +137,9 @@
       }) }}
 
 
+
+
+
       {{ govukButton({
         text: "Save and continue",
         classes:'govuk-!-margin-top-5'
@@ -131,9 +149,18 @@
     </form>
 
 
+
+
+
+
+
+
+
+
       </div>
 
     </div>
+
 
 
 {% endblock %}

@@ -1,5 +1,4 @@
-{% extends "../../../../../../../../layouts/FSM/v7/layout-dfe-schoolnav.html" %}
-
+{% extends "layouts/FSM/v7-1/layout-dfe-schoolnav.html" %}
 {% set pageName="Multiple applications created" %}
 
 {% block content %}
@@ -15,13 +14,11 @@
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
         <strong class="govuk-warning-text__text">
           <span class="govuk-visually-hidden">Warning</span>
-          You must record these as eligible in your school system <a href="../../../decision/record_decision/applications"
-          class="govuk-link">before marking the applications as completed</a>.
+          You must record these as eligible in your school system <a href="../../../decision/finalise/applications" class="govuk-link">before marking the applications as completed</a>.
         </strong>
       </div>
 
       <p class="govuk-body">You can also finalise an individual application by selecting the reference link.</p>
-
 
       {% endset %}
 
@@ -46,8 +43,8 @@
             <th scope="col" class="govuk-table__header govuk-table__header--date">Child DOB</th>
             <th scope="col" class="govuk-table__header">Parent name</th>
             <th scope="col" class="govuk-table__header">Parent DOB</th>
-            <th scope="col" class="govuk-table__header">National Insurance or <br>asylum support</th>
-            <th scope="col" class="govuk-table__header">Email</th>
+            <th scope="col" class="govuk-table__header">National Insurance or <br>asylum support ref</th>
+            <th scope="col" class="govuk-table__header">Parents email</th>
             <th scope="col" class="govuk-table__header">Reference</th>
 
           </tr>

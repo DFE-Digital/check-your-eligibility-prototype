@@ -1,4 +1,4 @@
-{% extends "layouts/FSM/v7/layout-dfe-schoolnav.html" %}
+{% extends "layouts/FSM/v7-1/layout-dfe-schoolnav.html" %}
 {% set pageName="How do you want to run a batch check?" %}
 {% block content %}
 
@@ -6,7 +6,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <div class="govuk-form-group">
-      <form action="/v7-batch-check" method="post">
+      <form action="/v7-1-batch-check" method="post">
         {{ govukRadios({
         name: "batch-check",
         fieldset: {
