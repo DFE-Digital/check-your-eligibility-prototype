@@ -1,0 +1,52 @@
+{% extends "layouts/FSM/v7-1/layout-gov.html" %}
+
+{% set pageName="Check if your children can get free school meals" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+
+    <p class="govuk-body">Here you can:</p>
+    <ul class="govuk-list--bullet">
+      <li> enter a few details to find out if your children can get free school meals</li>
+      <li> send the decision to your children’s school, college, nursery or childcare setting</li>
+    </ul>
+
+   <p class="govuk-body">It should take about 5 minutes to run a check.</p>
+
+   <h2 class="govuk-heading-l">Before you start</h2>
+
+   <p class="govuk-body">You will need:</p>
+
+   <ul class="govuk-list--bullet">
+     <li>a National Insurance number or asylum support reference number (previously NASS reference number)</li>
+     <li>to use or create a GOV.UK One Login</li>
+     <li>details of the children you're applying for, including the name of their school</li>
+ </ul>
+
+ <p class="govuk-body">You may also need supporting evidence for your application.</p>
+ <p class="govuk-body">See <a target="_blank" href="/parent-guidance.html">more detailed guidance on eligibility for free school meals</a>.</p>
+
+ <h2 class="govuk-heading-l">If you cannot apply online</h2>
+ <p class="govuk-body">Fill in the <a href="fsm-print-version">free school meals entitlement checker form</a> and give it to your children's school. </p>
+
+ <hr class="govuk-section-break govuk-section-break--l govuk-section-break">
+
+
+<!-- <form action="../parent-soft-check/check" method="post"> -->
+
+  {{ govukButton({
+    text: "Start now",
+    href:'/FSM/Private_beta/v7-1/family/beta-school-check.html',
+    isStartButton: true
+  }) }}
+
+ </form>
+
+ </div>
+ </div>
+
+{% endblock %}

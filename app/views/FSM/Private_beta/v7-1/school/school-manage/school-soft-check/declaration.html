@@ -1,12 +1,9 @@
-{% extends "/layouts/FSM/v7/layout-dfe-schoolnav.html" %}
+{% extends "/layouts/FSM/v7-1/layout-dfe-schoolnav.html" %}
 {% set pageName="Run a check for one parent or guardian" %}
-
-
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
     <h1 class="govuk-heading-l">Declaration for schools to support parents</h1>
     <h2 class="govuk-heading-m">Next steps</h2>
 
@@ -26,23 +23,34 @@
     </div>
     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="british" aria-describedby="nationality-item-hint">
+        <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="british"
+          aria-describedby="nationality-item-hint">
         <label class="govuk-label govuk-checkboxes__label" for="nationality">
           British
         </label>
       </div>
-
     </div>
   </fieldset>
 </div>
+<!-- <button id="submitButton" class="govuk-button">Button text</button> -->
 
-
-{{ govukButton({
-  text: "Button text"
-}) }}
+<button type="submit" class="govuk-button" id="submitButton" data-module="govuk-button">
+  Save and continue
+</button>
 
 {% endblock %}
 
 {% block pageScripts %}
 <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+<script type="text/javascript">
+  document.getElementById('submitButton').addEventListener('click', function(event) {
+    var checkbox = document.getElementById('nationality');
+    if (!checkbox.checked) {
+      event.preventDefault();
+      window.location.href = 'declaration-error.html'; // Redirect to an error page
+    } else {
+      window.location.href = 'checker.html'; // Redirect to checker.html if checkbox is checked
+    }
+  });
+</script>
 {% endblock %}
