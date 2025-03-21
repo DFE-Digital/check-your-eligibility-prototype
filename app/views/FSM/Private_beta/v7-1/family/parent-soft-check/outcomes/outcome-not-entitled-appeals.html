@@ -1,4 +1,4 @@
-{% extends "layouts/layout-dfe.html" %}
+{% extends "layouts/FSM/v7-1/layout-dfe" %}
 {% set pageName="May not be eligible" %}
 {% block content %}
 
@@ -23,7 +23,14 @@
             </div>
 
             <h1 class="govuk-heading-l">If you think your children are eligible</h1>
-            <p>You can make an appeal but you'll need to find supporting evidence.</p>
+            <p>You can still apply but you'll need to:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                  <li>find some evidence to support your application</li>
+                  <li>make an appointment to attend your children's school so they can apply on your behalf</li>
+
+            </ul>
+            <p>You'll need to take your evidence with you when you attend your appointment.</p>
 
             <details class="govuk-details">
                   <summary class="govuk-details__summary">
@@ -50,17 +57,14 @@
                               <li>documents showing you are receiving relevant support under part VI of the Immigration
                                     and Asylum Act 1999 </li>
                         </ul>
+                        <p><a href="/mvp3/_family/guidance/parent-guidance#:~:text=Providing%20the%20right%20evidence"
+                              class="govuk-link">More information on supporting evidence</a>.</p>
                   </div>
             </details>
 
-            <p><a href="/FSM/Private_beta/v6/family/guidance/parent-guidance.html"
-                        class="govuk-link">More information on supporting evidence</a>.</p>
-
-            <h2 class="govuk-heading-m">If you have evidence now</h2>
-            <p>You can appeal online and upload your evidence now.</p>
 
             <h2 class="govuk-heading-m">If you need time to find more evidence</h2>
-            <p class="govuk-body">You can appeal:</p>
+            <p class="govuk-body">You can apply with evidence:</p>
 
             <ul class="govuk-list govuk-list--bullet">
                   <li>online now and choose to take your evidence into your children's schools later</li>
@@ -71,22 +75,21 @@
                   <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
                   <strong class="govuk-warning-text__text">
                         <span class="govuk-visually-hidden">Warning</span>
-                        If want to appeal online, you need to do this now or you will need to apply again later
+                        If want to apply online, you need to do this now or you will need to check again later
                   </strong>
             </div>
 
 
             <div class="govuk-button-group">
                   {{ govukButton({
-                  text: "Appeal now",
+                  text: "Apply with evidence now",
                   href: "../../account/appeal/signin/signin-or-create"
                   }) }}
-                  <a class="govuk-link" href="../../../_offline/fsm-print-version.html">Appeal through your children's
+                  <a class="govuk-link" href="../../../_offline/fsm-print-version.html">Apply through your children's
                         schools</a>
             </div>
-            <!--Need to look at this content-->
 
-            <p><a href="../account/start-now">Return to start</a></p>
+            <p><a href="../account/start-now-beta-schools">Return to start</a></p>
 
             {% endblock %}
       </div>
