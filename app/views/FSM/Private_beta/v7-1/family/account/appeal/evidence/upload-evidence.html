@@ -1,4 +1,4 @@
-{% extends "/layouts/mvp3/layout-dfe.html" %}
+{% extends "layouts/FSM/v7-1/layout-dfe.html" %}
 {% set pageName="Upload your evidence" %}
 
 {%block content %}
@@ -7,7 +7,7 @@
   <div class="govuk-grid-column-two-thirds ">
 <h1 class="govuk-heading-l">{{pageName}}</h1>
 <div class="govuk-form-group">
-  <form action="/mvp3-paper" method="post" novalidate>
+  <form action="/v7-1-paper" method="post" novalidate>
 
     <label class="govuk-label" for="file-upload-1">
       Upload a file
@@ -23,7 +23,7 @@
 
 {{ govukButton({
     text: "Upload and continue",
-    href: "../add-child/child-details-blank.html"
+    href: "../add-child/child-details-complete-0.html"
 }) }}
 
 <div class="govuk-inset-text">
