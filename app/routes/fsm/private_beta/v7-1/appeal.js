@@ -8,13 +8,17 @@ module.exports = function (router) {
     } else if (evidence === "v7paper") {
       res.redirect('/FSM/Private_beta/v7-1/family/account/appeal/evidence/upload-guidance');
     } else {
-      res.redirect('/FSM/Private_beta/v7-1/family/account/appeal/add-child/child-details-blank');
+      res.redirect('/FSM/Private_beta/v7-1/family/account/appeal/add-child/child-details-complete-0-none.html');
     }
   });
 
   /// gov routes///
-  router.post('/v7-1-gov', function (req, res) {
-    res.redirect('/FSM/Private_beta/v7-1/family/account/appeal/evidence/have-evidence.html');
+  // router.post('/v7-1-gov', function (req, res) {
+  //   res.redirect('/FSM/Private_beta/v7-1/family/account/appeal/evidence/have-evidence.html');
+  // });
+
+  router.post('/v7-1-gov-2', function (req, res) {
+    res.redirect('/FSM/Private_beta/v7-1/family/account/appeal/add-child/child-details-0.html');
   });
 
   router.get('/FSM/Private_beta/v7-1/family/parent-soft-check/outcomes/outcome-not-entitled-appeal', (req, res) => {
@@ -50,6 +54,11 @@ module.exports = function (router) {
     }
   });
 
+  /// children-added///
+  router.post('/check-answers2', function (req, res) {
+    res.redirect('/FSM/Private_beta/v7-1/family/account/appeal/evidence/have-evidence.html');
+  });
+
   ///paper-evidence///
   router.post('/v7-1-paper', function (req, res) {
     res.redirect('/v7-1/family/account/appeal/evidence/upload-guidance');
@@ -59,6 +68,11 @@ module.exports = function (router) {
   router.post('/v7-1-digital', function (req, res) {
     res.redirect('/v7-1/family/account/appeal/evidence/upload-guidance');
   });
+
+  ///school-evidence///
+
+
+
 
   ///child-details///
   router.post('/v7-1-child', function (req, res) {
@@ -90,5 +104,21 @@ module.exports = function (router) {
     res.redirect('/v7-1/family/account/appeal/add-child/children-added.html');
   });
 
+    // ///success///
+    // router.post('/v7-1-success-b', function (req, res) {
+    //   res.redirect('/v7-1/family/account/appeal/add-child/children-added.html');
+    // });
+
+
+      ///success///
+  router.post('/v7-1-success-0', function (req, res) {
+    res.redirect('/FSM/Private_beta/v7-1/family/account/appeal/add-child/children-added-0.html');
+  });
+
+      ///success///
+      router.post('/v7-1-success-none', function (req, res) {
+        res.redirect('/FSM/Private_beta/v7-1/family/account/appeal/add-child/children-added-0-none.html');
+      });
 };
+
 
