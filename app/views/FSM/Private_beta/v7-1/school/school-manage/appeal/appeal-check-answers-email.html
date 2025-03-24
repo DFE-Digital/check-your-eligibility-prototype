@@ -131,41 +131,7 @@
 
     {% if data['child-2'] == 'Yes' %} {% endif %}
 
-    <div class="govuk-summary-card">
-      <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">Evidence</h2>
-        <ul class="govuk-summary-card__actions">
-          <li class="govuk-summary-card__action">
-            <a class="govuk-link" href="../upload/upload-evidence.html"
-              >Change<span class="govuk-visually-hidden">Evidence</span></a>
-          </li>
-        </ul>
-      </div>
-      <div class="govuk-summary-card__content">
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">File 1</dt>
-            <dd class="govuk-summary-list__value">
-              {% if data ["filename-1"] %}{{ data["filename-1"] }}
-              {% else %}
-              Scan0997618234647.png
-              {% endif %}
-            </dd>
-          </div>
 
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">File 2</dt>
-            <dd class="govuk-summary-list__value">
-              {% if data ["filename-2"] %}{{ data["filename-2"] }}
-              {% else %}
-              Scan0123099647.png
-              {% endif %}
-            </dd>
-          </div>
-        </dl>
-      </div>
-    </div>
 
     <h2 class="govuk-heading-m">Confirm and send application</h2>
 
@@ -177,8 +143,8 @@
     </form>
 
     {% from "govuk/components/button/macro.njk" import govukButton %} {{
-    govukButton({ text: "Send appeal", href:
-    'confirmation-appeal-with-evidence' }) }}
+    govukButton({ text: "Send application", href:
+    'confirmation-appeal-email' }) }}
   </div>
 </div>
 
