@@ -1,0 +1,75 @@
+{% extends "/layouts/childcare/v2/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Code valid
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Code valid
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          This eligibility code is valid.
+        </h3>
+        <p class="govuk-body">Tell the parent or guardian, or their childcare provider that their code is valid until {{ "today" | duration(3, 'months') |govukDate }}.</p>
+        </div>
+    </div>
+
+    <h1 class="govuk-heading-m">Eligibility code dates</h1>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Started
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ "today" | govukDate }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Ends
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ "today" | duration(3, 'months') |govukDate }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Grace period ends
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ "today" | duration(4, 'months') |govukDate }}
+        </dd>
+      </div>
+    </dl>
+
+
+
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Run another check",
+            href: '/childcare/v2/single-check/single'
+          }) }}
+
+    <div class="govuk-button-group">
+      <a class="govuk-link" href="/childcare/v2/dashboard">Return to dashboard</a>
+    </div>
+
+  </div>
+
+</div>
+
+
+{% endblock %}

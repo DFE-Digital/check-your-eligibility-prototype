@@ -1,0 +1,78 @@
+{% extends "/layouts/childcare/v2/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Code valid
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-notification-banner" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Code expiring
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          This eligibility code expires on {{ "today" | duration(3, 'months') |govukDate }}
+        </h3>
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>
+            You must tell the parent or guardian or their childcare provider to renew their code through HMRC.
+          </strong>
+        </div>
+        </div>
+    </div>
+
+    <h1 class="govuk-heading-m">Eligibility code dates</h1>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Started
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ "today" | govukDate }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Ends
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ "today" | duration(3, 'months') |govukDate }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Grace period ends
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ "today" | duration(4, 'months') |govukDate }}
+        </dd>
+      </div>
+    </dl>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Run another check",
+        href: '/childcare/v2/single-check/single'
+      }) }}
+
+    <div class="govuk-button-group">
+      <a class="govuk-link" href="/childcare/v2/dashboard">Return to dashboard</a>
+    </div>
+
+  </div>
+
+</div>
+
+
+{% endblock %}

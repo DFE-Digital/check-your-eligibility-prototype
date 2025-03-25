@@ -1,0 +1,70 @@
+{% extends "/layouts/childcare/v2/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Run a batch check
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">Run a batch check</h1>
+
+    <p>Choose which eligibility you want to run a batch check for.</p>
+
+    <div class="dfe-grid-container" >
+
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="#">Childcare for working families</a>
+          </h2>
+          <p>15 and 30 hours free childcare for children aged 9 months to 4 years.</p>
+        </div>
+      </div>
+
+      <!-- variables /childcare/v2/batch-check/upload?check-type=eligibility codes&eligibility-type=Childcare for working families -->
+
+        <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/childcare/v2/batch-check/upload?check-type=parents or guardians&eligibility-type=2 years old early learning">2 years old early learning</a>
+            </h2>
+            <p>15 hours free early learning for children aged 2 years in families receiving additional support.</p>
+          </div>
+        </div>
+
+        <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/childcare/v2/batch-check/upload?check-type=parents or guardians&eligibility-type=Early years pupil premium">Early years pupil premium</a>
+            </h2>
+            <p>Extra early years provider funding for eligible children age 9 months to 2 years or eligible 3 and 4-year-olds.</p>
+          </div>
+        </div>
+
+    </div>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-9">Batch checks status</h2>
+
+    <p>View the status of batch checks and download results.</p>
+
+    {{ govukButton({
+      text: "View batch checks status",
+      href: "/childcare/v2/batch-check/history/batch-history"
+    }) }}
+
+
+  </div>
+</div>
+
+{% endblock %}
