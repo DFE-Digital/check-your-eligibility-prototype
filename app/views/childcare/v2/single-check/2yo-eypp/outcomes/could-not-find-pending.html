@@ -1,0 +1,65 @@
+{% extends "/layouts/childcare/v2/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Check failed
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h1 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Check failed
+        </h1>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">Universal Credit statements needed to perform the check may not be currently available.</p>
+        <p>This could change in as little as 1 working day – keep checking for 4 to 6 weeks.</p>
+      </div>
+    </div>
+
+    <h2 class="govuk-heading-m">Parent or guardian details</h2>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Last name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["last-name"] or "Tesfay" }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["dob-day"] or "10" }} {{ data["dob-month"] or "04" }} {{ data["dob-year"] or "1984" }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          National Insurance number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["ni-number-entered"] or "PB123456C" }}
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-8">Contact the parent or guardian</h2>
+
+    <p>You could ask for the parent or guardian's latest Universal Credit statements (up to 3), then <a target="_blank" href="">review them as evidence</a>.</p>
+
+    <h3 class="govuk-heading-s">If the check keeps failing</h3>
+    <p>If the check still fails after 6 weeks, contact the <a href="#" class="gov-link"> Department for Education support desk</a>.</p>
+
+
+  </div>
+</div>
+
+{% endblock %}

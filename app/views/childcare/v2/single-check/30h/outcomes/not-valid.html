@@ -1,0 +1,69 @@
+{% extends "/layouts/childcare/v2/layout-childcare.html" %}
+
+{% block pageTitle %}
+  May not be eligible
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Code not valid
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+          This code expired on 30 March 2024 and cannot be used to get free childcare
+        </p>
+      </div>
+    </div>
+
+    <h1 class="govuk-heading-m">Eligibility code dates</h1>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Started
+        </dt>
+        <dd class="govuk-summary-list__value">
+          1 January 2024
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Ended
+        </dt>
+        <dd class="govuk-summary-list__value">
+          30 March 2024
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Grace period ended
+        </dt>
+        <dd class="govuk-summary-list__value">
+          30 April 2024
+        </dd>
+      </div>
+    </dl>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Run another check",
+        href: '/childcare/v2/single-check/single'
+      }) }}
+
+    <div class="govuk-button-group">
+      <a class="govuk-link" href="/childcare/v2/dashboard">Return to dashboard</a>
+    </div>
+
+
+  </div>
+</div>
+
+{% endblock %}
