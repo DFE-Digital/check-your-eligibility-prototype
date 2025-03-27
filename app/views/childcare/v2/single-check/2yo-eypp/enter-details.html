@@ -33,12 +33,13 @@
 
             {{ govukInput({
               label: {
-                text: "Last name",
+                text: "Last name in full",
                 classes: "govuk-label--m"
               },
               id: "last-name",
               name: "last-name",
               classes: "govuk-input--width-20"
+
             }) }}
 
             {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
