@@ -18,7 +18,6 @@ router.use('/data', express.static(path.join(__dirname, '../data'))); // Adjust 
 // Serve static files
 //app.use('/mvp3/_school/school-manage/upload', express.static(path.join(__dirname, 'mvp3/_school/school-manage/upload/upload-evidence')));
 
-
 const url = require('url')
 const fs = require('fs')
 
@@ -67,8 +66,8 @@ router.use(batchCheckRouteV7_1);
 // appealRoutes(router);
 
 require('./routes/fsm/private_beta/v7-1/appeal')(router);
-
 require('./routes/fsm/private_beta/v7-1/betacheck')(router);
+require('./routes/fsm/private_beta/v7-1/softcheck-admin')(router);
 
 router.get('*', function (req, res, next) {
 
@@ -156,22 +155,6 @@ module.exports = router;
 
 ////////////////////////CURRENT//////////////////////////////////
 
-// Nationality
-//router.post('/nationality-answer', function (req, res) {
-
-  // Make a variable
- // var whatNationality = req.session.data['what-nationality']
-
-  // Check whether the variable matches a condition
- // if (whatNationality == "british"){
-    // Send user to next page
- //   res.redirect('/current/checker-parent/national-insurance')
- // } else {
-    // Send user to other page
- //  res.redirect('/current/checker-parent/asylum-seeker')
- // }
-
-//})
 
 // Asylum number
 router.post('/asylum-answer', function (req, res) {

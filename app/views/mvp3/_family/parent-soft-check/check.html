@@ -5,7 +5,7 @@
   <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">Enter your details</h1>
-        <p>The information you provide will be compared with other government departments records to check for your eligibility. For further information, please check our Privacy statement.</p>
+        <p>The information you provide will be compared with other government departments records to check for your eligibility. For further information, please check our <a href="/privacy-statement" class="govuk-link">Privacy statement</a>.</p>
     <form action="/mvp3-soft-check-ni-answer" method="post" novalidate>
       {% call govukFieldset({
         legend: {
@@ -26,7 +26,7 @@
         classes: "govuk-!-width-two-thirds",
         id: "first-name",
         name: "first-name",
-        autocomplete: "",
+        autocomplete: "family-name",
         hint: {
           text: "or given name"
         }
@@ -70,7 +70,7 @@
       id: "ni-number-entered",
       name: "ni-number-entered",
       type: "text",
-      autocomplete: "text",
+      autocomplete: "off",
       spellcheck: false,
       classes: "govuk-!-width-one-third",
       label: {
@@ -124,7 +124,7 @@
 
       {{ govukButton({
         text: "Save and continue",
-        classes:'govuk-!-margin-top-5'
+        classes: "govuk-!-margin-top-5"
       }) }}
 
 
