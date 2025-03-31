@@ -38,7 +38,7 @@
           Date of birth
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["dob-day"] or "10" }} {{ data["dob-month"] or "04" }} {{ data["dob-year"] or "1984" }}
+          {{ data["dob-day"] or "10" }} {{ data["dob-month"] or "April" }} {{ data["dob-year"] or "1984" }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -55,11 +55,19 @@
 
     <p>You could ask for the parent or guardian's latest Universal Credit statements (up to 3), then <a target="_blank" href="">review them as evidence</a>.</p>
 
+    <p> <a href="" class="govuk-link" onclick="printPage()">Print this page</a> for the parent or guardian to keep.</p>
+
     <h3 class="govuk-heading-s">If the check keeps failing</h3>
     <p>If the check still fails after 6 weeks, contact the <a href="#" class="gov-link"> Department for Education support desk</a>.</p>
 
 
   </div>
 </div>
+
+<script>
+  function printPage() {
+      window.print();  // This will open the print dialog
+  }
+</script>
 
 {% endblock %}

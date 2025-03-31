@@ -39,7 +39,7 @@
           Date of birth
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["dob-day"] or "10" }} {{ data["dob-month"] or "04" }} {{ data["dob-year"] or "1984" }}
+          {{ data["dob-day"] or "10" }} {{ data["dob-month"] or "April" }} {{ data["dob-year"] or "1984" }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -56,6 +56,8 @@
 
     <p class="govuk-body">Tell the childcare provider that the children of this parent or guardian are eligible for {{ data['eligibility-type'] }}.</p>
 
+    <p> <a href="" class="govuk-link" onclick="printPage()">Print this page</a> for the parent or guardian to keep.</p>
+
 
 
     {% from "govuk/components/button/macro.njk" import govukButton %}
@@ -65,13 +67,16 @@
         href: '/childcare/v2/single-check/single'
       }) }}
 
-    <div class="govuk-button-group">
-      <a class="govuk-link" href="/childcare/v2/dashboard">Return to dashboard</a>
-    </div>
 
   </div>
 
 </div>
+
+<script>
+  function printPage() {
+      window.print();  // This will open the print dialog
+  }
+</script>
 
 
 {% endblock %}

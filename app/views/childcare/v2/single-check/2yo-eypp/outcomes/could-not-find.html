@@ -38,7 +38,7 @@
           Date of birth
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["dob-day"] or "10" }} {{ data["dob-month"] or "04" }} {{ data["dob-year"] or "1984" }}
+          {{ data["dob-day"] or "10" }} {{ data["dob-month"] or "April" }} {{ data["dob-year"] or "1984" }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -53,11 +53,31 @@
 
     <h2 class="govuk-heading-m govuk-!-margin-top-8">Check the details and try again</h2>
 
+    <!--
     <p class="govuk-body"><a href="/childcare/v2/single-check/2yo-eypp/enter-details">Try again</a>, ensuring you've entered the parent or guardian details accurately.</p>
+    -->
 
-    <p class="govuk-body"><a href="/childcare/v2/dashboard">Return to dashboard</a></p>
+    <p>Make sure you've entered the parent or guardian last name in full and that all details are accurate.</p>
+
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Try again",
+      href: '/childcare/v2/single-check/2yo-eypp/enter-details'
+    }) }}
+
+
+    <p> <a href="" class="govuk-link" onclick="printPage()">Print this page</a> for the parent or guardian to keep.</p>
+
 
   </div>
 </div>
+
+<script>
+  function printPage() {
+      window.print();  // This will open the print dialog
+  }
+</script>
 
 {% endblock %}
