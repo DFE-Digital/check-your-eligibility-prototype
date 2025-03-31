@@ -10,29 +10,75 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-      <div class="govuk-notification-banner__header">
-        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          Code valid
-        </h2>
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
+      <h1 class="govuk-panel__title">
+        Code is valid
+      </h1>
+      <div class="govuk-panel__body govuk-!-margin-bottom-5">
+        This code can be used for summer term 2025: 1st April - 31st August
       </div>
-      <div class="govuk-notification-banner__content">
-        <h3 class="govuk-notification-banner__heading">
-          This eligibility code is valid.
-        </h3>
-        <p class="govuk-body">Tell the parent or guardian, or their childcare provider that their code is valid until {{ "today" | duration(3, 'months') |govukDate }}.</p>
-        </div>
+      <p class="govuk-body-l govuk-!-margin-bottom-0" style="color:white;">Grace period ends on 31 December 2025</p>
     </div>
 
-    <h1 class="govuk-heading-m">Eligibility code dates</h1>
+    <h2 class="govuk-heading-m">Eligibility code details</h2>
 
     <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Eligibility code
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["30h-code"] or "50879487381" }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          National Insurance number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["ni-number"] or "PB123456C" }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Child date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["dob-day"] or "10" }} {{ data["dob-month"] or "04" }} {{ data["dob-year"] or "1984" }}
+        </dd>
+      </div>
+
+    </dl>
+
+
+
+    <!--
+
+    <h2 class="govuk-heading-m">Eligibility code dates</h2>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Submitted
+        </dt>
+        <dd class="govuk-summary-list__value">
+          25 March 2025
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Eligibility confirmed
+        </dt>
+        <dd class="govuk-summary-list__value">
+          25 March 2025
+        </dd>
+      </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Started
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ "today" | govukDate }}
+          27 March 2025
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -40,7 +86,7 @@
           Ends
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ "today" | duration(3, 'months') |govukDate }}
+          27 June 2025
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -48,28 +94,90 @@
           Grace period ends
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ "today" | duration(4, 'months') |govukDate }}
+          31 August 2025
         </dd>
       </div>
+
     </dl>
 
+  -->
 
+    <h2 class="govuk-heading-m govuk-!-margin-top-8">Eligibility code dates</h2>
 
+    <div class="moj-timeline">
 
-          {% from "govuk/components/button/macro.njk" import govukButton %}
+      <div class="moj-timeline__item">
+        <div class="moj-timeline__header">
+          <h2 class="moj-timeline__title">Grace period ends</h2>
+        </div>
+        <p class="moj-timeline__date">
+          <time>31 August 2025</time>
+        </p>
+        <div class="moj-timeline__description">
+          Explanation of how grace period is set
+        </div>
+      </div>
 
-          {{ govukButton({
-            text: "Run another check",
-            href: '/childcare/v2/single-check/single'
-          }) }}
+      <div class="moj-timeline__item">
+        <div class="moj-timeline__header">
+          <h2 class="moj-timeline__title">Reconfirm eligibility by / reconfirmation deadline (validity ends)</h2>
+        </div>
+        <p class="moj-timeline__date">
+          <time>27 June 2025</time>
+        </p>
+        <div class="moj-timeline__description">
+          Explanation of validity dates from HMRC?
+        </div>
+      </div>
 
-    <div class="govuk-button-group">
-      <a class="govuk-link" href="/childcare/v2/dashboard">Return to dashboard</a>
+      <div class="moj-timeline__item">
+        <div class="moj-timeline__header">
+          <h2 class="moj-timeline__title">Added to ECE</h2>
+        </div>
+        <p class="moj-timeline__date">
+          <time>27 March 2025</time>
+        </p>
+        <div class="moj-timeline__description">
+          This is the event date time - does it need to be listed? could be relevant for temp codes and discretionary start dates
+        </div>
+      </div>
+
+      <div class="moj-timeline__item">
+        <div class="moj-timeline__header">
+          <h2 class="moj-timeline__title">Eligibility confirmed</h2>
+          <p class="moj-timeline__byline">by HMRC</p>
+        </div>
+        <p class="moj-timeline__date">
+          <time>25 March 2025</time>
+        </p>
+        <div class="moj-timeline__description">
+          Explanation of validity dates from HMRC?
+        </div>
+      </div>
+
+      <div class="moj-timeline__item">
+        <div class="moj-timeline__header">
+          <h2 class="moj-timeline__title">Application submitted</h2>
+          <p class="moj-timeline__byline">by parent or guardian</p>
+        </div>
+        <p class="moj-timeline__date">
+          <time>25 March 2025</time>
+        </p>
+      </div>
+
     </div>
+
+    <p class="govuk-!-margin-top-8"> <a href="" class="govuk-link" onclick="printPage()">Print this page</a></p>
 
   </div>
 
 </div>
+
+<script>
+  function printPage() {
+      window.print();  // This will open the print dialog
+  }
+</script>
 
 
 {% endblock %}
