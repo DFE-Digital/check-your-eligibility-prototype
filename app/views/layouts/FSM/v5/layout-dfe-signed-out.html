@@ -6,50 +6,48 @@
 
 {# 3 #}
 {% block header %}
-
+<!--Correct version--->
 {{ header({
     "showNav": "true",
     "showSearch": "false",
     "showHeaderActionLinks": "true",
     "logoPath": "public/images",
     "searchAction": "/search/",
-    "searchInputName": "q",
+    "searchInputName": "",
     "logoAltText": "Department for Education",
-    "homeHref": "https://gov.uk",
+    "homeHref": "/FSM/Private_beta/v7/dsi-account/dsi-startnow",
     "selectedNav": view,
     "service": {
       "name": "Check a family's eligibility",
-      "serviceUrl": "/"
+      "serviceUrl": "/FSM/index-fsm"
     },
     "headerActionLinks": [
       {
-        "url"  : "/",
-        "label" : "My account"
+        "url"  : "/FSM/Private_beta/v7/dsi-account/dsi-landingpage",
+        "label" : " "
       },
       {
-        "url"  : "/",
-        "label" : "Sign out"
+        "url"  : "/FSM/Private_beta/v7/dsi-account/dsi-startnow",
+        "label" : " "
       }
-    ],
+  ],
     "primaryLinks": [
-        {
-        "url"  : "/_la/dashboard.html",
-        "label" : "Dashboard"
-      }, {
-        "url"  : "#",
-        "label" : "Check eligibility"
-      }, {
-        "url"  : "#",
-        "label" : "Process appeals"
-      }, {
-        "url"  : "#",
-        "label" : "Finalise applications"
-      }
+    {
+      "url"  : "/FSM/Private_beta/v7/school/dashboard",
+      "label" : "Dashboard"
+    }, {
+      "url"  : "#",
+      "label" : " "
+    }, {
+      "url"  : "#",
+      "label" : "  "
+    }, {
+      "url"  : "#",
+      "label" : " "
+    }
     ]
   })
 }}
-
-
 
 <div class="app-phase-banner__wrapper">
 
@@ -63,14 +61,18 @@
       </span>
     </p>
   </div>
-
 </div>
 
 {% endblock %}
 
 {% block beforeContent %}
 
-
+  {% block backLink %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+    }) }}
+  {% endblock %}
 
 {% endblock %}
 
@@ -79,19 +81,19 @@
    meta: {
      items: [
        {
-         href: "../privacy",
+         href: "/General/privacy",
          text: "Privacy policy"
        },
        {
-        href: "../accessibility",
+        href: "/General/accessibility",
         text: "Accessibility"
       },
        {
-         href: "../cookies",
+         href: "/General/cookies",
          text: "Cookies"
        },
        {
-        href: "../contact",
+        href: "/General/contact",
         text: "Contact us"
       },
       {
@@ -125,4 +127,12 @@
 }
 
 </script>
+
+
+{{ super() }}
+<script>
+ var AppFrontend = {}
+</script>
+<script src="/public/javascripts/components/filter-toggle-button.js"></script>
+
 {% endblock %}

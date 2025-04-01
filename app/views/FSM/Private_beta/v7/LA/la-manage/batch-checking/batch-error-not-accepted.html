@@ -1,9 +1,16 @@
-{% extends "/layouts/layout-dfe-lanav-noback.html" %}
-
-{% set pageName="Home" %}
-
-
+{% extends "/layouts/FSM/v7-1/layout-dfe-lanav.html" %}
+{% set pageName="Error - File not accepted" %}
 {% block content %}
+
+{% set pageTitle = "Error - File not accepted" %}
+
+{% block pageTitle %}
+{{ pageTitle }}
+{% endblock %}
+
+{% block pageHeading %}
+{{ pageName }}
+{% endblock %}
 
 {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
 
@@ -18,11 +25,15 @@
 }) }}
 
 
-
-
+<div class="govuk-button-group">
+  <a class="govuk-link" href="../batch-checking/upload.html">Try again</a>
+  <a class="govuk-link" href="../../dashboard">Return to dashboard</a></p>
+  </div>
+<!---
 <p><a href="../batch-checking/upload.html">Try again</a></p>
 
 <p><a href="../../dashboard">Return to dashboard</a></p>
+-->
 
 
 {% endblock %}

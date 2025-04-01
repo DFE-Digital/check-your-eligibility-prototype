@@ -1,344 +1,318 @@
-{% extends "/layouts/layout-dfe-lanav.html" %}
-
-{% set pageName="Search" %}
-
+{% extends "/layouts/FSM/v7/layout-dfe-lanav.html" %}
+{% set pageName= "Search all records" %}
 {% block content %}
-
-
-
-
 <div class="govuk-grid-row">
-
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-l">
-      Search all records
+      {{pageName}}
     </h1>
-    <p>Fill in any of the fields on this page to find a free school meal record.</p>
-
   </div>
 </div>
 
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <form action="eligible-list" method="post" class="form">
+    {% include "FSM/Private_beta/v7/_includes/filter-panel.html" %}
 
-
-    <!-- SEARCH BAR -->
-    <div class="cardDesign">
-
-
-
-
-
-
-      <div id="PersonName">
+    <!--Export and search results section-->
+  </div>
+  <div class="moj-filter-layout__content">
+    <div class="moj-scrollable-pane">
+      <div class="govuk-page-header" style="display: flex; align-items: center; justify-content: space-between;">
+        <h2 class="govuk-heading-m" style="margin: 0;">
+          Showing <span id="resultCount">0</span> results
+        </h2>
+        <button id="export" class="govuk-button govuk-button--secondary">Export as CSV</button>
+      </div>
+      <!--Table-->
 
       <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <div class="moj-filter-layout">
+            <div class="moj-filter-layout__content">
+              <div class="moj-scrollable-pane">
+                <div class="moj-scrollable-panel">
+                  <table class="govuk-table" id="resultsTable">
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
 
 
-      <div class="govuk-grid-column-one-quarter">
-        <div class="govuk-form-group HO-uk-margin-bottom-3">
-          <h6 class="govuk-heading-xxs HO-uk-margin-bottom-1">
-        Child last name
-          </h6>
+                        <!--sort function -->
+                        <th scope="col" class="govuk-table__header" aria-sort="ascending">Reference</th>
+                        <th scope="col" class="govuk-table__header" aria-sort="none">Child name</th>
+                        <th scope="col" class="govuk-table__header" aria-sort="none">Child dob</th>
+                        <th scope="col" class="govuk-table__header" aria-sort="none">Date submitted</th>
+                        <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
+                        <th scope="col" class="govuk-table__header" aria-sort="none">Eligible from</th>
+                      </tr>
 
-            <input id="Name" class="govuk-input" type="text" name="Name" value="{{ data['Name'] }}" placeholder="Child surname">
+                    </thead>
 
-          </div>
-          </div>
-          <!--COL 1-->
+                    <tbody class="govuk-table__body">
+                      {% for application in data.applications %}
+                      <tr class="govuk-table__row"
+                        data-status="{% if application.status.yes == 'Entitled' %}status-Entitled{% elif application.status.yes == 'Not Entitled' %}status-Not-Entitled{% elif application.status.yes == 'Sent for review' %}status-Sent-for-review{% elif application.status.yes == 'Evidence needed' %}status-Evidence-needed{% endif %}">
+                        <th scope="row" class="govuk-table__header">
+                          <a href="#" class="govuk-link">{{ application.id }}</a>
+                        </th>
+                        <td class="govuk-table__cell">{{ application.childDetails.firstName }} {{
+                          application.childDetails.lastName }}</td>
+                        <td class="govuk-table__cell">{{ application.dob | govukDate("truncate") }}</td>
+                        <td class="govuk-table__cell">{{ application.submission.date | govukDate("truncate") }}</td>
+                        <td class="govuk-table__cell">
+                          {% if application.status.yes == "Entitled" %}
+                          <strong class="govuk-tag govuk-tag--green">{{ application.status.yes }}</strong>
+                          {% elif application.status.yes == "Sent for review" %}
+                          <strong class="govuk-tag govuk-tag--blue">{{ application.status.yes }}</strong>
+                          {% elif application.status.yes == "Evidence needed" %}
+                          <strong class="govuk-tag govuk-tag--turquoise">{{ application.status.yes }}</strong>
+                          {% elif application.status.yes == "Not Entitled" %}
+                          <strong class="govuk-tag govuk-tag--red">{{ application.status.yes }}</strong>
+                          {% else %}
+                          <strong class="govuk-tag">{{ application.status.yes }}</strong>
+                          {% endif %}
+                        </td>
+                        <td class="govuk-table__cell">{{ application.eligible.date | govukDate("truncate") }}</td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
 
-
-          <div class="govuk-grid-column-one-quarter">
-            <div class="govuk-form-group HO-uk-margin-bottom-3">
-              <h6 class="govuk-heading-xxs HO-uk-margin-bottom-1">
-             Parent or guardian last name
-              </h6>
-              <div class="autocomplete">
-                <input id="deptCountry" class="countryAutocomplete govuk-input" type="text" name="deptCountry" value="{{ data['deptCountry'] }}" placeholder="Status">
+                </div>
               </div>
-
-              </div>
-              </div>
-               <!--COL 2-->
-
-
-
-
-                   <!--COL 3-->
-                   </div>
-
-                   <!-- ROW 2 -->
-
-                   <div class="govuk-grid-row">
-
-
-                    <div class="govuk-grid-column-one-quarter">
-                      <div class="govuk-form-group HO-uk-margin-bottom-3">
-                        <h6 class="govuk-heading-xxs HO-uk-margin-bottom-1">
-                    Reference number
-                        </h6>
-
-                          <input id="Name" class="govuk-input" type="text" name="Name" value="{{ data['Name'] }}" placeholder="Reference number">
-
-                        </div>
-                        </div>
-                        <!--COL 1-->
-
-
-                        <div class="govuk-grid-column-one-quarter">
-                          <div class="govuk-form-group HO-uk-margin-bottom-3">
-                            <h6 class="govuk-heading-xxs HO-uk-margin-bottom-1">
-                           Status
-                            </h6>
-                            {% from "govuk/components/select/macro.njk" import govukSelect %}
-
-                            {{ govukSelect({
-                              id: "sort",
-                              name: "sort",
-
-                              items: [
-                              {
-                                value: "all",
-                                text: "All statuses"
-                              },
-                                {
-                                  value: "entitled",
-                                  text: "Entitled"
-                                },
-
-
-
-                                {
-                                  value: "evidence-needed",
-                                  text: "Evidence needed"
-                                },
-                                {
-                                  value: "sent-for-review",
-                                  text: "Sent for review"
-                                },
-                                {
-                                  value: "reviewed-enititled",
-                                  text: "Reviewed entitled"
-                                },
-                                {
-                                  value: "reviewed-not-entitled",
-                                  text: "Reviewed not entitled"
-                                },
-                                {
-                                  value: "receiving-entitlement",
-                                  text: "Receiving entitlement"
-                                }
-                              ]
-                            }) }}
-
-                            </div>
-                            </div>
-                             <!--COL 2-->
-
-
-
-
-                                 <!--COL 3-->
-                                 </div>
-
-
-
-
-                   <!-- ROW 3 -->
-
-
-                   <div class="govuk-grid-row">
-
-                    <div class="govuk-grid-column-one-quarter">
-
-                      <form action="eligible-list" method="post" novalidate>
-
-
-
-                      </form>
-                    </div>
-                   </div>
-
-
-
-
-
-
-
-<!-- CHILD -->
-          <div class="govuk-grid-row">
-
-            <div class="govuk-grid-column-one-quarter">
-
-
-              <div class="govuk-form-group HO-uk-margin-bottom-3">
-                <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Child date of birth
-                  </legend>
-                  <!--<div id="passport-issued-hint" class="govuk-hint">
-                    For example, 12 11 2007
-                  </div> -->
-                  <div class="govuk-date-input" id="dob">
-                    <div class="govuk-date-input__item">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="dob-day">
-                          Day
-                        </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-
-
-                    </div>
-                    <div class="govuk-date-input__item">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="dob-month">
-                          Month
-                        </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                    </div>
-                    <div class="govuk-date-input__item">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                          Year
-                        </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-
-                    </div>
-                  </div>
-
-                </fieldset>
-              </div>
-              </div>
-
-
-
-
-
-          </div>
-
-          <!-- PARENT -->
-
-          <div class="govuk-grid-row">
-            <div class="govuk-grid-column-one-quarter">
-
-
-              <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                    Parent or guardian date of birth
-                  </legend>
-                  <!--<div id="passport-issued-hint" class="govuk-hint">
-                    For example, 12 11 2007
-                  </div> -->
-                  <div class="govuk-date-input" id="passport-issued">
-                    <div class="govuk-date-input__item">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                          Day
-                        </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-
-                    </div>
-                    <div class="govuk-date-input__item">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                          Month
-                        </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                    </div>
-                    <div class="govuk-date-input__item">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                          Year
-                        </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
-                    </div>
-                  </div>
-
-                </fieldset>
-              </div>
-              </div>
-          </div>
-          <!-- SEX -->
-          <div class="govuk-grid-row">
-
-            <div class="govuk-grid-column-full">
-
-            <form action="eligible-list">
-              <button class="govuk-button govuk-button HO-button-white moj-button-menu__item govuk-!-margin-top-6" data-module="govuk-button">
-                Generate results
-              </button>
-
-            </form>
-
-
-
+              </table>
             </div>
-
-
           </div>
 
-
-      <!-- EXPLANATIONS REMOVED FOR V2 -->
-
-
-
-
-
-    </div>
-    <!--END SHOW/HIDE -->
-
-
-
-    </div>
-
-      <!-- END CARD // SEARCH BAR -->
-
-
-
-
-</form>
-
-
+          <div style="display: flex; justify-content: center; margin-top: 20px;">
+            {{ govukPagination({
+              previous: {
+                href: "#"
+              },
+              next: {
+                href: "#"
+              },
+              items: [
+                {
+                  number: 1,
+                  href: "#"
+                },
+                {
+                  number: 2,
+                  current: true,
+                  href: "#"
+                },
+                {
+                  number: 3,
+                  href: "#"
+                }
+              ]
+            }) }}
+          </div>
         </div>
       </div>
+
+      <!-- ROW 3-->
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          <form action="eligible-list" method="post" novalidate>
+
+        </div>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+</div>
+</div>
+<!--END SHOW/HIDE -->
+
+</div>
+
+<!-- END CARD // SEARCH BAR -->
+
+</div>
+</div>
 
 <!--FOOTER -->
 
 
-<!-- MODAL -->
-
-
 {% endblock %}
+
+
+
+<!--FILTER TOGGLE-->
+<!---------------SCRIPTS------------------>
+
 {% block pageScripts %}
-<!-- Add any javascript files here. Include javascript files only on the pages
-that need them. Excessive javascript files loaded on other pages may slow down
-the response times of the prototype. -->
-<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
 
-<script type="text/javascript">
-  if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
-  new MOJFrontend.MultiFileUpload({
-    container: $(".moj-multi-file-upload"),
-    uploadUrl: "/ajax-upload",
-    deleteUrl: "/ajax-delete",
-  });
-}
+
+
+<!--COUNT RESULTS-->
+
+<script>
+  const updateVisibleRowCount = () => {
+    const table = document.getElementById("resultsTable");
+    const rows = table.querySelectorAll("tbody tr");
+    const visibleRows = Array.from(rows).filter(row => row.style.display !== "none");
+
+    // Update the visible row count display
+    document.getElementById("resultCount").innerText = visibleRows.length;
+
+    // Limit the number of visible rows to a maximum of 10
+    if (visibleRows.length > 10) {
+      let count = 0;
+      rows.forEach(row => {
+        if (count >= 10) {
+          row.style.display = 'none'; // Hide excess rows
+        } else if (row.style.display !== "none") {
+          count++; // Increment count for visible rows
+        }
+      });
+    }
+  };
+
+  // To update the count (e.g., after filtering)
+  updateVisibleRowCount();
+
 </script>
+
+<!------FILTERS------->
+
+<!--not working-->
+<!--<script src="../components/filter.js"></script> -->
+
+<script>
+  function filterResults() {
+
+    const keyword = document.getElementById('keywords').value.toLowerCase();
+    const table = document.getElementById('resultsTable');
+    const rows = table.querySelectorAll('tbody tr');
+
+    let visibleCount = 0;
+
+    // Get selected submission date range
+    const dateRange = document.querySelector('input[name="date range"]:checked');
+    const selectedDateRange = dateRange ? dateRange.value : null;
+
+    // Get selected statuses
+    const selectedStatuses = Array.from(document.querySelectorAll('input[name="status"]:checked')).map(checkbox => checkbox.value);
+
+    //update selected filters
+    console.log(document.getElementById('selected-keyword'))
+    document.getElementById('selected-keyword').innerHTML = '';
+    document.getElementById('selected-keyword-container').style.display = 'none';
+    document.getElementById('selected-submission-date-range').innerHTML = '';
+    document.getElementById('selected-submission-date-range-container').style.display = 'none';
+    document.getElementById('selected-status').innerHTML = '';
+    document.getElementById('selected-status-container').style.display = 'none';
+
+    if (keyword != '') {
+      const selected_keyword = `<li><button class="app-filter__tag" onclick="clearFilters('${keyword}')"><span class="govuk-visually-hidden">Remove this filter</span>
+        ${keyword}</button></li>`;
+      document.getElementById('selected-keyword').innerHTML = selected_keyword;
+      document.getElementById('selected-keyword-container').style.display = 'block';
+    }
+
+    if (selectedDateRange != null) {
+      const selected_submission_date = `<li><button class="app-filter__tag" onclick="clearFilters('${selectedDateRange}')"><span class="govuk-visually-hidden">Remove this filter</span>
+        ${selectedDateRange}</button></li>`;
+      document.getElementById('selected-submission-date-range').innerHTML = selected_submission_date;
+      document.getElementById('selected-submission-date-range-container').style.display = 'block';
+    }
+    selectedStatuses.forEach(status => {
+      status_label = status
+        .replace('status-', '')
+        .replace(/-/g, ' ')
+        .replace('Sent-for-review', 'Sent for review');
+        const selected_status = `<li><button class="app-filter__tag" onclick="clearFilters('${status}')"><span class="govuk-visually-hidden">Remove this filter</span>
+      ${status_label}</button></li>`;
+      document.getElementById('selected-status').innerHTML += selected_status;
+      document.getElementById('selected-status-container').style.display = 'block';
+
+    });
+
+    rows.forEach(row => {
+      const cells = row.getElementsByTagName('td');
+      let match = false;
+
+      // Check if row matches the keyword
+      for (let cell of cells) {
+        if (cell.textContent.toLowerCase().includes(keyword)) {
+          match = true;
+          break;
+        }
+      }
+
+
+      // Check if row matches selected status
+      const status = row.getAttribute('data-status'); // Assuming you store status in the data-status attribute
+      const matchesStatus = selectedStatuses.length === 0 || selectedStatuses.some(selectedStatus => status.includes(selectedStatus));
+
+      // Check if row matches the submission date range
+      const submissionDate = new Date(row.cells[3].textContent); // Assuming the submission date is in the 4th column
+      let matchesDateRange = true;
+
+      if (selectedDateRange) {
+        const today = new Date();
+        if (selectedDateRange === "Current month to date") {
+          matchesDateRange = submissionDate >= new Date(today.getFullYear(), today.getMonth(), 1);
+        } else if (selectedDateRange === "Last 3 months") {
+          matchesDateRange = submissionDate >= new Date(today.getFullYear(), today.getMonth() - 2, 1);
+        } else if (selectedDateRange === "Last 6 months") {
+          matchesDateRange = submissionDate >= new Date(today.getFullYear(), today.getMonth() - 5, 1);
+        } else if (selectedDateRange === "Last 12 months") {
+          matchesDateRange = submissionDate >= new Date(today.getFullYear(), today.getMonth() - 11, 1);
+        }
+      }
+
+      // Show or hide row based on all match conditions
+      if (match && matchesStatus && matchesDateRange) {
+        row.style.display = ''; // Show row
+        visibleCount++;
+      } else {
+        row.style.display = 'none'; // Hide row
+      }
+    });
+
+    // Update the visible row count
+    document.getElementById('resultCount').innerText = visibleCount;
+    updateSelectedFilters();
+  }
+
+  function clearFilters(filter = null) {
+    if (filter == null) {
+      // Reset input fields and checkboxes
+      document.getElementById('keywords').value = '';
+
+      const radios = document.getElementsByName('date range');
+      radios.forEach(radio => radio.checked = false);
+
+      const checkboxes = document.getElementsByName('status');
+      checkboxes.forEach(checkbox => checkbox.checked = false);
+    }
+    else {
+      const filterElement = document.querySelector(`input[value="${filter}"]`);
+      filterElement.checked = false;
+    }
+    // Refresh results after clearing filters
+    filterResults();
+  }
+
+  function updateSelectedFilters() {
+    console.log('updating selected filters');
+
+  }
+
+  const applyFilterButton = document.getElementById('applyFilter');
+  const clearFiltersLink = document.querySelector('.govuk-link--no-visited-state');
+  if (clearFiltersLink) {
+    clearFiltersLink.addEventListener('click', clearFilters);
+  }
+  applyFilterButton.addEventListener('click', filterResults);
+
+  document.querySelector('.govuk-link--no-visited-state').addEventListener('click', clearFilters);
+</script>
+
+
 {% endblock %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-

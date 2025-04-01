@@ -1,0 +1,52 @@
+{% extends "/layouts/FSM/v6/layout-dfe-lanav.html" %}
+
+{% set pageName="Home" %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">The children of this parent or guardian are entitled to free school meals</h1>
+  <p>This information should be passed on to their school.</p>
+
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Do another check",
+      href: '../checker'
+    }) }}
+
+  <p><a href="../../../dashboard">Return to dashboard</a></p>
+
+    </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+
+{% endblock %}
