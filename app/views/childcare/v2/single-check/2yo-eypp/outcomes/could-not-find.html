@@ -51,13 +51,15 @@
       </div>
     </dl>
 
-    <h2 class="govuk-heading-m govuk-!-margin-top-8">Check the details and try again</h2>
+    <h2 class="govuk-heading-m govuk-!-margin-top-8">What to do next</h2>
 
     <!--
     <p class="govuk-body"><a href="/childcare/v2/single-check/2yo-eypp/enter-details">Try again</a>, ensuring you've entered the parent or guardian details accurately.</p>
     -->
 
-    <p>Make sure you've entered the parent or guardian last name in full and that all details are accurate.</p>
+    <p>Check that you entered the parent or guardian last name in full and that all other details are correct.</p>
+
+    <p> If this keeps happening, <a href="" class="govuk-link" onclick="printPage()">print this page</a> for the parent or guardian to check their details.</p>
 
 
     {% from "govuk/components/button/macro.njk" import govukButton %}
@@ -68,7 +70,6 @@
     }) }}
 
 
-    <p> <a href="" class="govuk-link" onclick="printPage()">Print this page</a> for the parent or guardian to keep.</p>
 
 
   </div>
