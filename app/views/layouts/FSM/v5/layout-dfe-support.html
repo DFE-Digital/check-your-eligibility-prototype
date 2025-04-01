@@ -5,6 +5,11 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 
 {# 3 #}
+{% block head %}
+  <link rel="stylesheet" href="assets/css/accessible-autocomplete.min.css" />
+
+{% endblock %}
+
 {% block header %}
 <!--This layout needs to be used for index-->
 {{ header({
@@ -16,7 +21,7 @@
 "searchInputName": "",
 "logoAltText": "Department for Education",
 "homeHref": "/FSM/Private_beta/v7/dsi-account/dsi-startnow",
-"selectedNav": view,
+"selectedNav": "home",
 "service": {
 "name": "Check a family's eligibility",
 "serviceUrl": "/FSM/index-fsm"
@@ -31,42 +36,27 @@
 "label" : "Sign out"
 }
 ],
-"primaryLinks": [
-{
-"url" : "/FSM/Private_beta/v7/dfe/support/dashboard",
-"label" : "Dashboard",
-"active" : view == 'dashboard'
-}, {
-"url" : "#",
-"label" : "System status ",
-"active" : view == 'system-status'
-}, {
-"url" : "#",
-"label" : "Account users ",
-"active" : view == 'account-users'
-}, {
-"url" : "#",
-"label" : "Manual queries",
-"active" : view == 'manual-queries'
-}, {
-"url" : "#",
-"label" : "Batch check history",
-"active" : view == 'batch-check-history'
-}, {
-"url" : "#",
-"label" : "View as a LA user",
-"active" : view == 'view-as-la-user'
-},
-{
-"url" : "#",
-"label" : "View reports",
-"active" : view == 'view-reports'
-}
-]
-}
-]
+  "primaryLinks": [
+  {
+    "url"  : "/FSM/Private_beta/v7/school/dashboard",
+    "label" : "Dashboard"
+  }, {
+    "url"  : "#",
+    "label" : " "
+  }, {
+    "url"  : "#",
+    "label" : "  "
+  }, {
+    "url"  : "#",
+    "label" : " "
+  }
+  ]
 })
 }}
+
+{% endblock %}
+
+{% block phaseBanner %}
 
 <div class="app-phase-banner__wrapper">
   <div class="govuk-phase-banner app-phase-banner govuk-width-container">
@@ -121,18 +111,12 @@ href:"/legal/manage-prototype",
 text:"Manage your prototype"
 },
 {
-href: "/legalmanage-prototype/clear-data",
+href: "/legal/manage-prototype/clear-data",
 text: "Clear data"
 }
-],
-visuallyHiddenTitle: "Footer links"
+]
 }
 }) }}
-{% endblock %}
-
-{# 4 #}
-{% block scripts %}
-{{ super() }}
 <script src="/public/javascripts/dfefrontend.js"></script>
 <script type="text/javascript" src="assets/javascripts/autocomplete.js"></script>
 <link rel="stylesheet" href="assets/css/accessible-autocomplete.min.css" />
@@ -153,5 +137,11 @@ visuallyHiddenTitle: "Footer links"
   var AppFrontend = {}
 </script>
 <script src="/public/javascripts/components/filter-toggle-button.js"></script>
-
-{% endblock %}
+<script>
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    selectElement: document.querySelector('#school-picker')
+  })
+document.addEventListener('DOMContentLoaded', function () {
+  // Your code here
+});

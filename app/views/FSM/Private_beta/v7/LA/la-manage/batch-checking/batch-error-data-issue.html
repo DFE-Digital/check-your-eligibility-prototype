@@ -1,8 +1,6 @@
-{% extends "/layouts/layout-dfe-lanav-noback.html" %}
+{% extends "layouts/FSM/v7/layout-dfe-schoolnav.html" %}
 
 {% set pageName="Home" %}
-
-
 
 {% block content %}
 
@@ -60,14 +58,16 @@
 
 <p class="govuk-body">Please make sure you’ve corrected the issues on these lines and upload the file again.</p>
 
+<div class="govuk-button-group">
+  <a class="govuk-link" href="../batch-checking/upload.html">Try again</a>
+  <a class="govuk-link" href="../../dashboard">Return to dashboard</a></p>
+  </div>
 
-{{ govukButton({
-  text: "Download errors"
-}) }}
 
 <p><a href="../batch-checking/upload.html">Try again</a></p>
 
 <p><a href="../../dashboard">Return to dashboard</a></p>
+
 
 
 

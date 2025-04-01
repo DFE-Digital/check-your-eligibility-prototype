@@ -1,0 +1,33 @@
+{% extends "/layouts/FSM/v7/layout-dfe-lanav-noback.html" %}
+
+{% set pageName="Home" %}
+
+
+{% block content %}
+
+{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+{{ govukErrorSummary({
+  titleText: "Error – File not accepted ",
+  errorList: [
+    {
+      text: "There’s an issue with the file you uploaded. Please try again, making sure any file you upload exactly mirrors the layout of the original batch check template you downloaded, with no extra or missing columns.",
+      href: ""
+    }
+  ]
+}) }}
+
+
+
+
+<p><a href="../batch-checking/upload.html">Try again</a></p>
+
+<p><a href="../../dashboard">Return to dashboard</a></p>
+
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+
+{% endblock %}
