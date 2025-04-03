@@ -19,8 +19,8 @@
   "searchAction": "/search/",
   "searchInputName": "q",
   "service": {
-    "name": "Check childcare eligibility",
-    "serviceUrl": "/childcare/v2/dashboard"
+    "name": "",
+    "serviceUrl": ""
   },
   "headerActionLinks": [
 
@@ -28,38 +28,43 @@
       "url"  : "#",
       "label" : "Sign out"
     }
-  ],
-  "primaryLinks": [
-      {
-        "url"  : "/childcare/v2/dashboard",
-        "label" : "Dashboard"
-      },
-      {
-        "url"  : "/childcare/v2/single-check/single",
-        "label" : "Run a check"
-      },
-      {
-        "url"  : "/childcare/v2/batch-check/batch",
-        "label" : "Run a batch check"
-      },
-      {
-        "url"  : "#",
-        "label" : "Manage foster families"
-      },
-      {
-        "url"  : "#",
-        "label" : "Run reports"
-      },
-      {
-        "url"  : "#",
-        "label" : "Guidance"
-      }
-    ]
+  ]
+
 
 })
 }}
 
-<div class="app-phase-banner__wrapper">
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{{ govukServiceNavigation({
+  serviceName: "Check childcare eligibility",
+  serviceUrl: "/childcare/v2/dashboard",
+  navigation: [
+    {
+      href: "/childcare/v2/single-check/single",
+      text: "Run a check",
+      active: true
+    },
+    {
+      href: "/childcare/v2/batch-check/batch",
+      text: "Run a batch check"
+    },
+    {
+      href: "#",
+      text: "Manage foster families"
+    },
+    {
+      href: "#",
+      text: "Run reports"
+    },
+    {
+      href: "#",
+      text: "Guidance"
+    }
+  ]
+}) }}
+
+<div class="app-phase-banner__wrapper govuk-!-margin-top-2">
 
   <div class="govuk-phase-banner app-phase-banner govuk-width-container">
     <p class="govuk-phase-banner__content">
