@@ -1,4 +1,4 @@
-{% extends "/layouts/childcare/v2/layout-childcare.html" %}
+{% extends "/layouts/childcare/dev/layout-childcare.html" %}
 
 {% block pageTitle %}
   Checks completed
@@ -33,15 +33,15 @@
 
         {{ govukButton({
           text: "Download",
-          href: '/public/csv/eypp-2yo-outcomes-v2.csv'
+          href: '/public/csv/eypp-2yo-outcomes-dev.csv'
         }) }}
 
 
-        <p><a href="/childcare/v2/batch-check/history/result-explainer">Get help with check results</a></p>
+        <p><a href="/childcare/dev/batch-check/history/result-explainer">Get help with check results</a></p>
       </div>
     </div>
 
-    <p>You can also <a href="/childcare/v2/batch-check/history/batch-history">download batch check results from the last 7 days</a>.</p>
+    <p>You can also <a href="/childcare/dev/batch-check/history/batch-history">download batch check results from the last 7 days</a>.</p>
 
 
   </div>
