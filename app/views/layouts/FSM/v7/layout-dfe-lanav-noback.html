@@ -6,48 +6,52 @@
 
 {# 3 #}
 {% block header %}
-
+<!--Correct version--->
 {{ header({
-    "showNav": "true",
-    "showSearch": "false",
-    "showHeaderActionLinks": "true",
-    "logoPath": "public/images",
-    "searchAction": "/search/",
-    "searchInputName": "q",
-    "logoAltText": "Department for Education",
-    "homeHref": "/FSM/Private_beta/v7/dsi-account/dsi-startnow",
-    "selectedNav": view,
-    "service": {
-      "name": "Check a family's eligibility",
-      "serviceUrl": "/FSM/index-fsm"
-    },
-    "headerActionLinks": [
-      {
-        "url"  : "/FSM/Private_beta/v7/dsi-account/dsi-landingpage",
-        "label" : "My account"
-      },
-      {
-        "url"  : "/FSM/Private_beta/v7/dsi-account/dsi-startnow",
-        "label" : "Sign out"
-      }
-  ],
-    "primaryLinks": [
-    {
-      "url"  : "/FSM/Private_beta/v7/school/dashboard",
-      "label" : "Dashboard"
-    }, {
-      "url"  : "#",
-      "label" : "LALA "
-    }, {
-      "url"  : "#",
-      "label" : "  "
-    }, {
-      "url"  : "#",
-      "label" : " "
-    }
-    ]
-  })
+"showNav": "true",
+"showSearch": "false",
+"showHeaderActionLinks": "true",
+"logoPath": "public/images",
+"searchAction": "/search/",
+"searchInputName": "",
+"logoAltText": "Department for Education",
+"homeHref": "/FSM/Private_beta/v7/dsi-account/dsi-startnow",
+"selectedNav": view,
+"service": {
+"name": "Check a family's eligibility",
+"serviceUrl": "/FSM/index-fsm"
+},
+"headerActionLinks": [
+{
+"url" : "/FSM/Private_beta/v7/dsi-account/dsi-landingpage",
+"label" : "My account"
+},
+{
+"url" : "/FSM/Private_beta/v7/dsi-account/dsi-startnow",
+"label" : "Sign out"
+}
+],
+"primaryLinks": [
+{
+"url" : "/FSM/Private_beta/v7/LA/dashboard",
+"label" : "Dashboard"
+}, {
+"url" : "#",
+"label" : " "
+}, {
+"url" : "#",
+"label" : " "
+}, {
+"url" : "#",
+"label" : " "
+}
+]
+})
 }}
+
+
+
+
 <div class="app-phase-banner__wrapper">
 
   <div class="govuk-phase-banner app-phase-banner govuk-width-container">
@@ -66,12 +70,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {% block backLink %}
-    {{ govukBackLink({
-      text: "Back",
-      href: "javascript:window.history.back()"
-    }) }}
-  {% endblock %}
+
 
 {% endblock %}
 
@@ -124,14 +123,5 @@
     deleteUrl: "/ajax-delete",
   });
 }
-
 </script>
-
-
-{{ super() }}
-<script>
- var AppFrontend = {}
-</script>
-<script src="/public/javascripts/components/filter-toggle-button.js"></script>
-
 {% endblock %}

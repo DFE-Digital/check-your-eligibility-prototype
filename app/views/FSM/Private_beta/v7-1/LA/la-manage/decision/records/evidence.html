@@ -11,15 +11,13 @@
 {% block pageHeader %}
 {{pageName}}
 {% endblock %}
-
-
+<!----fudged the code for the back link as it wouldnt work with the zoom function on the evidence-->
 {% block beforeContent %}
 {{ govukBackLink({
   text: "Back",
-  href: "javascript:window.history.back()"
+  href: "pending.html"
 }) }}
-{% endblock beforeContent %}
-
+{% endblock %}
 {% block content %}
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
   <div class="govuk-grid-column-full">
@@ -46,7 +44,7 @@
           }
         </style>
         <img src="/public/images/evidence-examples/UCstatement-single.jpg" alt="Zoomed image"
-          style="margin: auto 0; display: block; max-width: 250%; max-height: 250%;">
+          style="margin: auto 15; display: block; max-width: 200%; max-height: 200%;">
       </div>
     </div>
     <script>

@@ -1,4 +1,4 @@
-{% extends "../../../../_layouts/layout-dfe-schoolnav.html" %}
+{% extends "layouts/FSM/v7/layout-dfe-schoolnav-noback.html" %}
 {% set pageName="Process appeals" %}
 {% set applicationSent %}
 <h3 class="govuk-notification-banner__heading">
@@ -32,6 +32,7 @@
     <div class="govuk-!-padding-bottom-3"></div>
 
   </div>
+
   <div class="govuk-width-container">
     <div class="govuk-grid-column-full">
       <div class="govuk-grid-row">
@@ -60,19 +61,18 @@
     <div class="govuk-grid-column-full">
 
 
-      <table class="govuk-table">
+      <table class="govuk-table" data-module="moj-sortable-table">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-
             <th class="govuk-table__header" scope="col" id="select-all"></th>
-            <th class="govuk-table__header" scope="col">Reference</th>
-            <th class="govuk-table__header" scope="col">Parent or guardian</th>
-            <th class="govuk-table__header" scope="col">Child</th>
-            <th class="govuk-table__header govuk-table__header--numeric" scope="col">Child date of birth</th>
-            <th class="govuk-table__header" scope="col">Status</th>
-            <th class="govuk-table__header govuk-table__header--numeric" scope="col">Submission date</th>
+            <th class="govuk-table__header" scope="col" aria-sort="ascending">Reference</th>
+            <th class="govuk-table__header" scope="col" aria-sort="none">Parent or guardian</th>
+            <th class="govuk-table__header" scope="col" aria-sort="none">Child</th>
+            <th class="govuk-table__header govuk-table__header--numeric" scope="col" aria-sort="none">Child date of birth</th>
+            <th class="govuk-table__header" scope="col"aria-sort="none">Status</th>
+            <th class="govuk-table__header govuk-table__header--numeric" scope="col"aria-sort="none">Submission date</th>
 
-            <th class="govuk-table__header govuk-table__header--numeric" scope="col">Sent for review on</th>
+            <th class="govuk-table__header govuk-table__header--numeric" scope="col"aria-sort="none">Sent for review on</th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
