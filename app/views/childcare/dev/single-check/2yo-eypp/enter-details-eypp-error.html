@@ -1,0 +1,141 @@
+{% extends "/layouts/childcare/dev/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Enter the details of the parent or guardian
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-error-summary" data-module="govuk-error-summary">
+          <div role="alert">
+            <h2 class="govuk-error-summary__title">
+              There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+              <ul class="govuk-list govuk-error-summary__list">
+                <li>
+                  <a href="#last-name">Enter last name in full</a>
+                </li>
+                <li>
+                  <a href="#dob">Date of birth must include a month</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <span class="govuk-caption-l">{{ data['eligibility-type'] }}</span>
+        <h1 class="govuk-heading-l">Run a check for one parent or guardian</h1>
+
+
+        <form class="form" action="#" method="post" novalidate>
+
+          <p class="govuk-body">Enter the details of the parent or guardian who applied for {{ data['eligibility-type'] }}.</p>
+
+
+
+            {% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+            {{ govukInput({
+              label: {
+                text: "Last name in full",
+                classes: "govuk-label--m"
+              },
+              errorMessage: {
+                text: "Enter last name in full"
+              },
+              id: "last-name",
+              name: "last-name",
+              classes: "govuk-input--width-20 govuk-input--error"
+
+            }) }}
+
+            {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+            {{ govukDateInput({
+
+              id: "dob",
+              namePrefix: "dob",
+
+              fieldset: {
+                legend: {
+                  text: "Date of birth",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+                text: "For example, 27 3 1980"
+              },
+              errorMessage: {
+                text: "Date of birth must include a month"
+              },
+              items: [
+                {
+                  classes: "govuk-input--width-2",
+                  name: "day",
+                  value: "6"
+                },
+                {
+                  classes: "govuk-input--width-2 govuk-input--error",
+                  name: "month",
+                  value: ""
+                },
+                {
+                  classes: "govuk-input--width-4",
+                  name: "year",
+                  value: "1990"
+                }
+              ]
+            }) }}
+
+            {{ govukInput({
+              classes: "govuk-!-width-one-third",
+              label: {
+                text: "National Insurance number",
+                classes: "govuk-fieldset__legend--m"
+              },
+              hint: {
+                text: "For example, ‘QQ 12 34 56 C’"
+              },
+              id: "ni-number-entered",
+              name: "ni-number-entered",
+              value: "PB123456C"
+            }) }}
+
+
+
+
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Run check"
+          }) }}
+
+
+        </form>
+
+
+
+      </div>
+
+    </div>
+
+
+
+{% endblock %}

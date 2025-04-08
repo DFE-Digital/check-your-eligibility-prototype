@@ -13,22 +13,70 @@
 
     <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
       <div class="govuk-notification-banner__header">
-        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        <h1 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
           Check failed
-        </h2>
+        </h1>
       </div>
       <div class="govuk-notification-banner__content">
         <p class="govuk-notification-banner__heading">The personal information you entered does not match departmental records.</p>
       </div>
     </div>
 
-    <h1 class="govuk-heading-l">Check the details and try again</h1>
+    <h2 class="govuk-heading-m">Parent or guardian details</h2>
 
-    <p class="govuk-body"><a href="/childcare/v2/single-check/30h/enter-details">Try again</a>, ensuring you've entered the details accurately.</p>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Eligibility code
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["30h-code"] or "50879487381" }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          National Insurance number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["ni-number"] or "PB123456C" }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Child date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["dob-day"] or "10" }} {{ data["dob-month"] or "April" }} {{ data["dob-year"] or "2022" }}
+        </dd>
+      </div>
 
-    <p class="govuk-body"><a href="/childcare/v2/dashboard">Return to dashboard</a></p>
+    </dl>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-8">What to do next</h2>
+
+    <!--
+    <p class="govuk-body"><a href="/childcare/v2/single-check/2yo-eypp/enter-details">Try again</a>, ensuring you've entered the parent or guardian details accurately.</p>
+    -->
+
+    <p>Check that you entered the details accurately.</p>
+
+    <p> If this keeps happening, <a href="" class="govuk-link" onclick="printPage()">print this page</a> for the parent or guardian to check their details.</p>
+
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Try again",
+      href: '/childcare/v2/single-check/2yo-eypp/enter-details'
+    }) }}
 
   </div>
 </div>
+
+<script>
+  function printPage() {
+      window.print();  // This will open the print dialog
+  }
+</script>
 
 {% endblock %}

@@ -10,12 +10,15 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
-      <h1 class="govuk-panel__title">
-        Code is valid
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7" style="background:#ffdd00;">
+      <h1 class="govuk-panel__title" style="color:#0b0c0c;">
+        Code in grace period
       </h1>
-      <div class="govuk-panel__body govuk-!-margin-bottom-5">
-        This code can be used between 1 April 2025 - 31 August 2025
+      <div class="govuk-panel__body">
+        <div class="govuk-panel__body govuk-!-margin-bottom-5" style="color:#0b0c0c;">
+          This code expires on 31 December 2025
+        </div>
+        <p class="govuk-body-l govuk-!-margin-bottom-0" >Parent cannot reconfirm eligibility as child will be too old next term</p>
       </div>
     </div>
 
@@ -48,7 +51,7 @@
               Child date of birth
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data["dob-day"] or "10" }} {{ data["dob-month"] or "October" }} {{ data["dob-year"] or "2021" }}
+              {{ data["dob-day"] or "10" }} {{ data["dob-month"] or "October" }} {{ data["dob-year"] or "2020" }}
             </dd>
           </div>
 
@@ -101,7 +104,7 @@
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title">
-          Code confirmation details
+          Code details
         </h2>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action">
@@ -133,8 +136,8 @@
               Reconfirmation status
             </dt>
             <dd class="govuk-summary-list__value">
-              <strong class="govuk-tag govuk-tag--green">
-                Not due
+              <strong class="govuk-tag govuk-tag--grey">
+                Cannot reconfirm
               </strong>
             </dd>
           </div>
@@ -163,7 +166,7 @@
               Child date of birth
             </dt>
             <dd class="govuk-summary-list__value">
-              10 October 2021
+              10 October 2020
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -171,7 +174,7 @@
               Child age
             </dt>
             <dd class="govuk-summary-list__value">
-              3 years old
+              4 years old
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -179,7 +182,7 @@
               Reaches compulsory school age
             </dt>
             <dd class="govuk-summary-list__value">
-              10 October 2026
+              10 October 2025
             </dd>
           </div>
 
@@ -187,8 +190,6 @@
 
       </div>
     </div>
-
-
 
 
 
