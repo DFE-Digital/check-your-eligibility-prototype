@@ -18,7 +18,11 @@
   <div class="govuk-grid-column-full">
 
 
-<h1 class="govuk-heading-l">{{pageName}} (19)</h1>
+<h1 class="govuk-heading-l">{{pageName}}
+
+  <span id="notifications" class="moj-notification-badge" style="white-space: nowrap; margin-left: 10px;">36</span>
+
+</h1>
 
 
 
@@ -41,19 +45,17 @@
       <div class="govuk-grid-column-full">
 
 
-<table class="govuk-table">
+<table class="govuk-table" data-module="moj-sortable-table">
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
 
 
-      <th class="govuk-table__header" scope="col">Reference</th>
-      <th class="govuk-table__header" scope="col">Parent or guardian</th>
-      <th class="govuk-table__header" scope="col">Parent or guardian date of birth</th>
-      <th class="govuk-table__header" scope="col">Child</th>
-      <th class="govuk-table__header" scope="col">School</th>
-
-
-      <th class="govuk-table__header" scope="col">Date submitted</th>
+      <th class="govuk-table__header" scope="col" aria-sort="ascending">Reference</th>
+      <th class="govuk-table__header" scope="col" aria-sort="none">Parent or guardian</th>
+      <th class="govuk-table__header" scope="col" aria-sort="none">Parent or guardian date of birth</th>
+      <th class="govuk-table__header" scope="col" aria-sort="none">Child</th>
+      <th class="govuk-table__header" scope="col" aria-sort="none">School</th>
+      <th class="govuk-table__header" scope="col" aria-sort="none">Date submitted</th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
@@ -246,10 +248,10 @@
     href: '/page=5'
   }],
   results: {
-    count: 30,
-    from: 10,
-    to: 20,
-    text: 'pages'
+    count: 36,
+    from: 1,
+    to: 14,
+    text: 'records'
   },
   previous: {
     text: 'Previous',
