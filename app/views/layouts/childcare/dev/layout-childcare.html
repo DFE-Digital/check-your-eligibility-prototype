@@ -19,8 +19,8 @@
   "searchAction": "/search/",
   "searchInputName": "q",
   "service": {
-    "name": "",
-    "serviceUrl": ""
+    "name": "Manage eligibility for childcare support",
+    "serviceUrl": "/childcare/dev/dashboard"
   },
   "headerActionLinks": [
 
@@ -34,23 +34,7 @@
 })
 }}
 
-{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
-{{ govukServiceNavigation({
-  serviceName: "Check childcare eligibility",
-  serviceUrl: "/childcare/dev/dashboard",
-  navigation: [
-    {
-      href: "/childcare/dev/single-check/single",
-      text: "Run a check",
-      active: true
-    },
-    {
-      href: "/childcare/dev/batch-check/batch",
-      text: "Run a batch check"
-    }
-  ]
-}) }}
 
 
 {% endblock %}
