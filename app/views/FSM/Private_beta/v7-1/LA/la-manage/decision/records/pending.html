@@ -48,7 +48,7 @@ href: "javascript:window.history.back()"
     {% endif %}
 
     <div style="display: flex; justify-content: space-between; align-items: center;">
-      <h1 class="govuk-heading-l" style="margin: 1;">Parent name</h1>
+      <h1 class="govuk-heading-l" style="margin: 1;">Eden Tesfay</h1>
       <div style="display: flex;">
         <div class="govuk-button-group" style="display: flex;">
           {{ govukButton({
@@ -250,10 +250,13 @@ href: "javascript:window.history.back()"
     },
     {
       key: {
-        text: "Supporting evidence"
+      text: "Supporting evidence"
       },
       value: {
-        html: '<a href="evidence.html" target="_blank" rel="noopener noreferrer">file.001.jpg</a>'
+      html: '
+        <a href="evidence.html" target="_blank" rel="noopener noreferrer">file.001.jpg</a><br>
+        <a href="evidence.html" target="_blank" rel="noopener noreferrer">file.002.jpg</a>
+      ' | safe
       }
     }
 
