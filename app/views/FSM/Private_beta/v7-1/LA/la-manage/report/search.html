@@ -11,7 +11,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    {% include "FSM/Private_beta/v7/_includes/filter-panel.html" %}
+    {% include "FSM/Private_beta/v7-1/_includes/filter-panel.html" %}
 
     <!--Export and search results section-->
   </div>
@@ -44,18 +44,11 @@
                         <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
                         <th scope="col" class="govuk-table__header" aria-sort="none">Eligible from</th>
                       </tr>
-                      <!-- <th scope="col" class="govuk-table__header">Reference</th>
-                            <th scope="col" class="govuk-table__header">Child name</th>
-                            <th scope="col" class="govuk-table__header">Child DoB</th>
-                            <th scope="col" class="govuk-table__header">Date submitted</th>
-                            <th scope="col" class="govuk-table__header">Status</th>
-                            <th scope="col" class="govuk-table__header">Eligible from</th>
-                          </tr> -->
                     </thead>
 
                     <tbody class="govuk-table__body">
                       {% for application in data.applications %}
-                      <tr class="govuk-table__row"
+                      <tr class="govuk-table__row matches-filters"
                         data-status="{% if application.status.yes == 'Entitled' %}status-Entitled{% elif application.status.yes == 'Not Entitled' %}status-Not-Entitled{% elif application.status.yes == 'Sent for review' %}status-Sent-for-review{% elif application.status.yes == 'Evidence needed' %}status-Evidence-needed{% endif %}">
                         <th scope="row" class="govuk-table__header">
                           <a href="#" class="govuk-link">{{ application.id }}</a>
@@ -113,40 +106,6 @@
               ]
             }) }}
           </div>
-<!--
-
-          {{ mojPagination({
-          items: [{
-          text: '1',
-          href: '/page=1',
-          selected: true
-          }, {
-          text: '2',
-          href: '/page=2'
-          }, {
-          text: '3',
-          href: '/page=3'
-          }, {
-          type: 'dots'
-          }, {
-          text: '5',
-          href: '/page=5'
-          }],
-          results: {
-          count: 34,
-          from: 1,
-          to: 10,
-          text: 'results'
-          },
-          previous: {
-          text: 'Previous',
-          href: ''
-          },
-          next: {
-          text: 'Next',
-          href: ''
-          }
-          }) }} -->
         </div>
       </div>
 
@@ -187,10 +146,30 @@
 {% block pageScripts %}
 
 
-
 <!--COUNT RESULTS-->
 
 <script>
+
+ //pagination
+ function paginate(page = 1) {
+    const visibleRows = Array.from(document.querySelectorAll('#resultsTable tbody tr.matches-filters'));
+    console.log(visibleRows);
+    // Limit the number of visible rows to a maximum of 10
+    if (visibleRows.length > 10) {
+      let count = 0;
+      visibleRows.forEach(row => {
+        row.style.display = 'none'; // Hide all rows initially
+        const min = 0 + ((page-1) * 10);
+        const max = 10 * page;
+        if (count > min && count < max) {
+          row.style.display = 'table-row'; // Hide excess rows
+
+        }
+        count++; // Increment count for visible rows
+      });
+    }
+  }
+
   const updateVisibleRowCount = () => {
     const table = document.getElementById("resultsTable");
     const rows = table.querySelectorAll("tbody tr");
@@ -199,17 +178,8 @@
     // Update the visible row count display
     document.getElementById("resultCount").innerText = visibleRows.length;
 
-    // Limit the number of visible rows to a maximum of 10
-    if (visibleRows.length > 10) {
-      let count = 0;
-      rows.forEach(row => {
-        if (count >= 10) {
-          row.style.display = 'none'; // Hide excess rows
-        } else if (row.style.display !== "none") {
-          count++; // Increment count for visible rows
-        }
-      });
-    }
+    // Update the pagination
+    paginate();
   };
 
   // To update the count (e.g., after filtering)
@@ -309,11 +279,15 @@
       // Show or hide row based on all match conditions
       if (match && matchesStatus && matchesDateRange) {
         row.style.display = ''; // Show row
+        row.classList.add('matches-filters')
         visibleCount++;
       } else {
         row.style.display = 'none'; // Hide row
+        row.classList.remove('matches-filters')
       }
     });
+
+    paginate();
 
     // Update the visible row count
     document.getElementById('resultCount').innerText = visibleCount;
@@ -333,8 +307,13 @@
     }
     else {
       const filterElement = document.querySelector(`input[value="${filter}"]`);
-      filterElement.checked = false;
-    }
+      if (filterElement) {
+        filterElement.checked = false;
+      }
+      else {
+        document.getElementById('keywords').value = '';
+      }
+   }
     // Refresh results after clearing filters
     filterResults();
   }
@@ -343,6 +322,8 @@
     console.log('updating selected filters');
 
   }
+
+
 
   const applyFilterButton = document.getElementById('applyFilter');
   const clearFiltersLink = document.querySelector('.govuk-link--no-visited-state');

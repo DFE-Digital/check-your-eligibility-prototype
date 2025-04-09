@@ -1,44 +1,106 @@
 {% extends "/layouts/FSM/v7-1/layout-dfe-lanav.html" %}
-{% set pageName="Error - File not accepted" %}
+{% set pageName="Choose how to run a manual batch check" %}
 {% block content %}
 
-{% set pageTitle = "Error - File not accepted" %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-{% block pageTitle %}
-{{ pageTitle }}
-{% endblock %}
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is an error with the file
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <!-- <li>
+              <a href="#">Error – File not accepted </a>
+            </li> -->
+            <li>
+              <a href="#">There’s an issue with the csv file you uploaded. It doesn't match the template provided. Correct the errors and then upload the file again.</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-{% block pageHeading %}
-{{ pageName }}
-{% endblock %}
+    <span class="govuk-caption-l">Run a batch check for multiple parents or guardians</span>
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
 
-{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+    <p class="govuk-body">You can:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>export and upload a CTF from your LA system in XML format</li>
+      <li>complete and upload our CSV template</li>
 
-{{ govukErrorSummary({
-  titleText: "Error – File not accepted ",
-  errorList: [
-    {
-      text: "There’s an issue with the file you uploaded. Please try again, making sure any file you upload exactly mirrors the layout of the original batch check template you downloaded, with no extra or missing columns.",
-      href: ""
-    }
-  ]
+    </ul>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+    <h2 class="govuk-heading-s">
+      Extracting a Common File Transfer (CTF)
+    </h2>
+    </summary>
+    <div class="govuk">
+      <ol class="govuk-list govuk-list--number">
+
+        <li>Open your LA management information system (this could be SIMS or XXX or any other system your
+          school uses) in the admin area of your LA management information system.</li>
+        <li>Select export pupil data.</li>
+        <li>Save the exported file on your computer.</li>
+        <li>Add any information that your system doesn't collect (for example National Insurance numbers).</li>
+        <li>Save it as an XML file.</li>
+      </ol>
+      </ul>
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+    <h2 class="govuk-heading-s">Uploading our CSV template</h2>
+    <ol class="govuk-list govuk-list--number">
+      <li>Download the <a href="/public/csv/Batch-check-template.csv" download class="govuk-link">batch
+          check template (185kb)</a>.</li>
+      <li>Add the name, date of birth and National Insurance number or asylum support reference number for all the
+        people you want to check.</li>
+      <li> Save it as a CSV file.</li>
+    </ol>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+    <!-- <p class="govuk-heading-s">Upload a file</p> -->
+
+    <h3 class="govuk-heading-m">Upload an XML or CSV file</h3>
+
+    {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+
+{{ govukFileUpload({
+  id: "file-upload-1",
+  name: "fileUpload1",
+  label: {
+    text: "Upload a file"
+  },
+  errorMessage: {
+    text: "The CSV must match the template provided"
+  }
 }) }}
 
+    {{ govukButton({
+    text: "Upload and run a manual batch check",
+    classes: "govuk-button--primary",
+    href: '../batch-checking/imported-records'
+    }) }}
 
-<div class="govuk-button-group">
-  <a class="govuk-link" href="../batch-checking/upload.html">Try again</a>
-  <a class="govuk-link" href="../../dashboard">Return to dashboard</a></p>
-  </div>
-<!---
-<p><a href="../batch-checking/upload.html">Try again</a></p>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
 
-<p><a href="../../dashboard">Return to dashboard</a></p>
--->
+    {% endblock %}
+    {% block pageScripts %}
+    <!-- Add any javascript files here.
 
+Include javascript files only on the pages that need them. Excessive javascript files loaded on other pages may slow down the response times of the prototype. -->
+    <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
 
-{% endblock %}
-
-{% block pageScripts %}
-<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
-
-{% endblock %}
+    <script type="text/javascript">
+      if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
+        new MOJFrontend.MultiFileUpload({
+          container: $(".moj-multi-file-upload"),
+          uploadUrl: "/ajax-upload",
+          deleteUrl: "/ajax-delete",
+        });
+      }
+    </script>
+    {% endblock %}
