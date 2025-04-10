@@ -24,7 +24,7 @@
 
         <form class="form" action="/childcare/v2/single-check/2yo-eypp/checking-loader" method="post" novalidate>
 
-          <p class="govuk-body">Enter the details of the parent or guardian who applied for {{ data['eligibility-type'] }}.</p>
+          <p class="govuk-body">Enter the details of the parent or guardian to check eligibility for {{ data['eligibility-type'] }}.</p>
 
 
 
@@ -61,72 +61,19 @@
               }
             }) }}
 
-            {% set niHtml %}
             {{ govukInput({
-            id: "ni-number-entered",
-            name: "ni-number-entered",
-            type: "text",
-            autocomplete: "text",
-            spellcheck: false,
-            classes: "govuk-!-width-one-third",
-            label: {
-            text:"Parent or guardian National Insurance number"
-            }
-
-
-            }) }}
-            {% endset -%}
-
-            {% set asrHtml %}
-            {{ govukInput({
-              id: "asr-number-entered",
-              name: "asr-number-entered",
-              type: "text",
-              autocomplete: "text",
-              spellcheck: false,
               classes: "govuk-!-width-one-third",
               label: {
-              text:"Parent or guardian asylum support reference number"
-              }
-
-
-              }) }}
-              {% endset -%}
-
-            {{ govukRadios({
-            name: "ni-number",
-            id:'ni-number',
-            fieldset: {
-            legend: {
-            text: "National Insurance number or asylum support reference",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--m"
-            }
-
-            },
-
-            hint: {
-              text: "Select one option"
-            },
-
-            items: [
-            {
-            value: "ni",
-            text: "National Insurance number",
-            conditional: {
-            html: niHtml
-            }
-            },
-            {
-              value: "asr",
-              text: "Asylum support reference",
-              conditional: {
-              html: asrHtml
-              }
-            }
-
-            ]
+                text: "National Insurance number",
+                classes: "govuk-fieldset__legend--m"
+              },
+              hint: {
+                text: "For example, ‘QQ 12 34 56 C’"
+              },
+              id: "ni-number-entered",
+              name: "ni-number-entered"
             }) }}
+
 
 
 

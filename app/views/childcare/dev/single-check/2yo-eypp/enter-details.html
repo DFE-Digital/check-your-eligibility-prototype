@@ -18,32 +18,13 @@
 
 
       <div class="govuk-grid-column-two-thirds">
-
-        <div class="govuk-error-summary" data-module="govuk-error-summary">
-          <div role="alert">
-            <h2 class="govuk-error-summary__title">
-              There is a problem
-            </h2>
-            <div class="govuk-error-summary__body">
-              <ul class="govuk-list govuk-error-summary__list">
-                <li>
-                  <a href="#last-name">Enter parent or guardian's last name in full</a>
-                </li>
-                <li>
-                  <a href="#dob">Date of birth must include a month</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
         <span class="govuk-caption-l">{{ data['eligibility-type'] }}</span>
         <h1 class="govuk-heading-l">Run a check for one parent or guardian</h1>
 
 
-        <form class="form" action="#" method="post" novalidate>
+        <form class="form" action="/childcare/dev/single-check/2yo-eypp/checking-loader" method="post" novalidate>
 
-          <p class="govuk-body">Enter the details of the parent or guardian who applied for {{ data['eligibility-type'] }}.</p>
+          <p class="govuk-body">Enter the details of the parent or guardian to check eligibility for {{ data['eligibility-type'] }}.</p>
 
 
 
@@ -55,12 +36,9 @@
                 text: "Last name in full",
                 classes: "govuk-label--m"
               },
-              errorMessage: {
-                text: "Enter parent or guardian's last name in full"
-              },
               id: "last-name",
               name: "last-name",
-              classes: "govuk-input--width-20 govuk-input--error"
+              classes: "govuk-input--width-20"
 
             }) }}
 
@@ -80,27 +58,7 @@
               },
               hint: {
                 text: "For example, 27 3 1980"
-              },
-              errorMessage: {
-                text: "Date of birth must include a month"
-              },
-              items: [
-                {
-                  classes: "govuk-input--width-2",
-                  name: "day",
-                  value: "6"
-                },
-                {
-                  classes: "govuk-input--width-2 govuk-input--error",
-                  name: "month",
-                  value: ""
-                },
-                {
-                  classes: "govuk-input--width-4",
-                  name: "year",
-                  value: "1990"
-                }
-              ]
+              }
             }) }}
 
             {{ govukInput({
@@ -113,8 +71,7 @@
                 text: "For example, ‘QQ 12 34 56 C’"
               },
               id: "ni-number-entered",
-              name: "ni-number-entered",
-              value: "PB123456C"
+              name: "ni-number-entered"
             }) }}
 
 
