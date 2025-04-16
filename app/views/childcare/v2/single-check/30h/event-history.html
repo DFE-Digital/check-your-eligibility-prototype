@@ -1,0 +1,250 @@
+{% extends "/layouts/childcare/v2/layout-childcare.html" %}
+
+{% block pageTitle %}
+ Event history
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+    <h1 class="govuk-heading-l">Event history</h1>
+
+    <dl class="govuk-summary-list govuk-!-width-two-thirds">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Eligibility code
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["30h-code"] or "50879487381" }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          National Insurance number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["ni-number"] or "PB123456C" }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Child date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["dob-day"] or "10" }} {{ data["dob-month"] or "October" }} {{ data["dob-year"] or "2021" }}
+        </dd>
+      </div>
+
+
+    </dl>
+
+
+
+    <table class="govuk-table govuk-table--small-text-until-tablet">
+      <caption class="govuk-table__caption govuk-table__caption--m"></caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header"></th>
+          <th scope="col" class="govuk-table__header">Application</th>
+          <th scope="col" class="govuk-table__header">Reconfirmation 1</th>
+          <th scope="col" class="govuk-table__header">Reconfirmation 2</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Event ID</th>
+          <td class="govuk-table__cell">cs5745uendd5</td>
+          <td class="govuk-table__cell">54845nvnr548</td>
+          <td class="govuk-table__cell">5csd845nr8ev</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Submitted on</th>
+          <td class="govuk-table__cell">28 September 2024</td>
+          <td class="govuk-table__cell">26 November 2024</td>
+          <td class="govuk-table__cell">3 July 2025</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Added to system</th>
+          <td class="govuk-table__cell">29 September 2024</td>
+          <td class="govuk-table__cell">26 November 2024</td>
+          <td class="govuk-table__cell">3 July 2025</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Discretionary start date</th>
+          <td class="govuk-table__cell">-</td>
+          <td class="govuk-table__cell">-</td>
+          <td class="govuk-table__cell">-</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Validity start date</th>
+          <td class="govuk-table__cell">29 September 2024</td>
+          <td class="govuk-table__cell">26 November 2024</td>
+          <td class="govuk-table__cell">3 July 2025</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Validity end date</th>
+          <td class="govuk-table__cell">29 December 2024</td>
+          <td class="govuk-table__cell">26 February 2025</td>
+          <td class="govuk-table__cell">3 September 2025</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Grace period end date</th>
+          <td class="govuk-table__cell">31 March 2025</td>
+          <td class="govuk-table__cell">31 August 2025</td>
+          <td class="govuk-table__cell">31 December 2025</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Parent National Insurance number</th>
+          <td class="govuk-table__cell">JJ653456C</td>
+          <td class="govuk-table__cell">JJ653456C</td>
+          <td class="govuk-table__cell">JJ653456C</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Parent first name</th>
+          <td class="govuk-table__cell">Nicola</td>
+          <td class="govuk-table__cell">Nicola</td>
+          <td class="govuk-table__cell">Nicola</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Parent last name</th>
+          <td class="govuk-table__cell">Morton</td>
+          <td class="govuk-table__cell">Morton</td>
+          <td class="govuk-table__cell">Morton</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Parent date of birth</th>
+          <td class="govuk-table__cell">28 December 1991</td>
+          <td class="govuk-table__cell">28 December 1991</td>
+          <td class="govuk-table__cell"><mark class="ho-highlight"><strong>27 December 1991</strong></mark></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Child first name</th>
+          <td class="govuk-table__cell">Isla</td>
+          <td class="govuk-table__cell">Isla</td>
+          <td class="govuk-table__cell">Isla</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Child last name</th>
+          <td class="govuk-table__cell">Morton</td>
+          <td class="govuk-table__cell">Morton</td>
+          <td class="govuk-table__cell">Morton</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Child date of birth</th>
+          <td class="govuk-table__cell">9 September 2023</td>
+          <td class="govuk-table__cell">9 September 2023</td>
+          <td class="govuk-table__cell">9 September 2023</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Postcode</th>
+          <td class="govuk-table__cell">DL10 7GH</td>
+          <td class="govuk-table__cell">DL10 7GH</td>
+          <td class="govuk-table__cell">DL10 7GH</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Partner National Insurance number</th>
+          <td class="govuk-table__cell">PB123456C</td>
+          <td class="govuk-table__cell">PB123456C</td>
+          <td class="govuk-table__cell"><mark class="ho-highlight"><strong>PB123456D</strong></mark></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Partner first name</th>
+          <td class="govuk-table__cell">Taylor</td>
+          <td class="govuk-table__cell">Taylor</td>
+          <td class="govuk-table__cell">Taylor</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Partner last name</th>
+          <td class="govuk-table__cell">Simpson</td>
+          <td class="govuk-table__cell">Simpson</td>
+          <td class="govuk-table__cell">Simpson</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Partner date of birth</th>
+          <td class="govuk-table__cell">30 April 1993</td>
+          <td class="govuk-table__cell">30 April 1993</td>
+          <td class="govuk-table__cell">30 April 1993</td>
+        </tr>
+
+
+      </tbody>
+    </table>
+
+    <!--
+
+    <div class="moj-timeline">
+
+      <div class="moj-timeline__item">
+        <div class="moj-timeline__header">
+          <h2 class="moj-timeline__title">Submitted on</h2>
+        </div>
+        <p class="moj-timeline__date">
+          <time>28 September 2024</time>
+        </p>
+      </div>
+      <div class="moj-timeline__item">
+        <div class="moj-timeline__header">
+          <h2 class="moj-timeline__title">Added to system</h2>
+        </div>
+        <p class="moj-timeline__date">
+          <time>28 September 2024</time>
+        </p>
+      </div>
+      <div class="moj-timeline__item">
+        <div class="moj-timeline__header">
+          <h2 class="moj-timeline__title">Discretionary start date</h2>
+        </div>
+        <p class="moj-timeline__date">
+          <time>-</time>
+        </p>
+      </div>
+      <div class="moj-timeline__item">
+        <div class="moj-timeline__header">
+          <h2 class="moj-timeline__title">Validity start date</h2>
+        </div>
+        <p class="moj-timeline__date">
+          <time>29 September 2024</time>
+        </p>
+      </div>
+      <div class="moj-timeline__item">
+        <div class="moj-timeline__header">
+          <h2 class="moj-timeline__title">Validity end date</h2>
+        </div>
+        <p class="moj-timeline__date">
+          <time>29 December 2024</time>
+        </p>
+      </div>
+      <div class="moj-timeline__item">
+        <div class="moj-timeline__header">
+          <h2 class="moj-timeline__title">Grace period end date</h2>
+        </div>
+        <p class="moj-timeline__date">
+          <time>31 March 2025</time>
+        </p>
+      </div>
+
+    </div>
+
+    -->
+
+
+
+  </div>
+
+</div>
+
+
+
+
+{% endblock %}

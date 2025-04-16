@@ -1,0 +1,120 @@
+{% extends "/layouts/childcare/v2/layout-childcare.html" %}
+
+{% block pageTitle %}
+Code in grace period
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7" style="background:#ffdd00;">
+      <h1 class="govuk-panel__title" style="color:#0b0c0c;">
+        Code in grace period
+      </h1>
+      <div class="govuk-panel__body">
+        <div class="govuk-panel__body govuk-!-margin-bottom-5" style="color:#0b0c0c;">
+          This code expires on 31 August 2025
+        </div>
+        <p class="govuk-body-l govuk-!-margin-bottom-0" >Tell the parent or guardian to reconfirm their code</p>
+      </div>
+    </div>
+
+    <h2 class="govuk-heading-m">Details checked</h2>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Eligibility code
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["30h-code"] or "50879487381" }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          National Insurance number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["ni-number"] or "PB123456C" }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Child date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["dob-day"] or "10" }} {{ data["dob-month"] or "October" }} {{ data["dob-year"] or "2021" }}
+        </dd>
+      </div>
+
+
+    </dl>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-8">Code details</h2>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Validity start date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          15 January 2025
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Validity end date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          15 April 2025
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Grace period end date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          31 August 2025
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Reconfirmation status
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <strong class="govuk-tag govuk-tag--red" style="max-width:100%;">
+            Overdue
+          </strong>
+        </dd>
+      </div>
+
+
+
+    </dl>
+
+
+
+    {{ govukButton({
+      text: "View code history",
+      classes: "govuk-!-margin-top-4"
+    }) }}
+
+
+
+    <p>You can <a href="" class="govuk-link" onclick="printPage()">print this page</a> for the parent or guardian to keep.</p>
+
+  </div>
+
+</div>
+
+<script>
+  function printPage() {
+      window.print();  // This will open the print dialog
+  }
+</script>
+
+
+{% endblock %}
