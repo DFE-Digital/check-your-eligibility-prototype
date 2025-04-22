@@ -1,7 +1,7 @@
 {% extends "/layouts/childcare/v2/layout-childcare.html" %}
 
 {% block pageTitle %}
-  Enter the carer details
+  Enter the child details
 {% endblock %}
 
 {% block beforeContent %}
@@ -19,10 +19,10 @@
 
       <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-l">Enter the carer details</h1>
+        <h1 class="govuk-heading-l">Enter the child details</h1>
 
 
-        <form class="form" action="/childcare/v2/foster/enter-partner-details" method="post" novalidate>
+        <form class="form" action="/childcare/v2/foster/check-details" method="post" novalidate>
 
           {% call govukFieldset({
 
@@ -35,8 +35,8 @@
                 text: "First name",
                 classes: "govuk-label--s"
               },
-              id: "carer-first-name",
-              name: "carer-first-name",
+              id: "child-first-name",
+              name: "child-first-name",
               classes: "govuk-input--width-20"
 
             }) }}
@@ -46,16 +46,16 @@
                 text: "Last name",
                 classes: "govuk-label--s"
               },
-              id: "carer-last-name",
-              name: "carer-last-name",
+              id: "child-last-name",
+              name: "child-last-name",
               classes: "govuk-input--width-20"
 
             }) }}
 
             {{ govukDateInput({
 
-              id: "carer-dob",
-              namePrefix: "carer-dob",
+              id: "child-dob",
+              namePrefix: "child-dob",
 
               fieldset: {
                 legend: {
@@ -70,32 +70,24 @@
             }) }}
 
 
-            {{ govukInput({
-              classes: "govuk-!-width-one-third",
-              label: {
-                text: "National Insurance number",
-                classes: "govuk-fieldset__legend--s"
-              },
-              hint: {
-                text: "For example, ‘QQ 12 34 56 C’"
-              },
-              id: "carer-ni-number",
-              name: "carer-ni-number"
-            }) }}
-
-
-
-
-
           {% endcall %}
 
+          <div>
+            {{ govukButton({
+              text: "Add another child",
+              classes: "govuk-button--secondary govuk-!-margin-bottom-4"
+            }) }}
+          </div>
 
 
-          {% from "govuk/components/button/macro.njk" import govukButton %}
+          <div>
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+          </div>
 
-          {{ govukButton({
-            text: "Continue"
-          }) }}
+
+
 
 
         </form>

@@ -1,7 +1,7 @@
 {% extends "/layouts/childcare/v2/layout-childcare.html" %}
 
 {% block pageTitle %}
-  Enter the carer details
+  Enter the parent details
 {% endblock %}
 
 {% block beforeContent %}
@@ -19,10 +19,10 @@
 
       <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-l">Enter the carer details</h1>
+        <h1 class="govuk-heading-l">Enter the partner details (optional)</h1>
 
 
-        <form class="form" action="/childcare/v2/foster/enter-partner-details" method="post" novalidate>
+        <form class="form" action="/childcare/v2/foster/enter-child-details" method="post" novalidate>
 
           {% call govukFieldset({
 
@@ -35,8 +35,8 @@
                 text: "First name",
                 classes: "govuk-label--s"
               },
-              id: "carer-first-name",
-              name: "carer-first-name",
+              id: "partner-first-name",
+              name: "partner-first-name",
               classes: "govuk-input--width-20"
 
             }) }}
@@ -46,16 +46,16 @@
                 text: "Last name",
                 classes: "govuk-label--s"
               },
-              id: "carer-last-name",
-              name: "carer-last-name",
+              id: "partner-last-name",
+              name: "partner-last-name",
               classes: "govuk-input--width-20"
 
             }) }}
 
             {{ govukDateInput({
 
-              id: "carer-dob",
-              namePrefix: "carer-dob",
+              id: "partner-dob",
+              namePrefix: "partner-dob",
 
               fieldset: {
                 legend: {
@@ -79,8 +79,8 @@
               hint: {
                 text: "For example, ‘QQ 12 34 56 C’"
               },
-              id: "carer-ni-number",
-              name: "carer-ni-number"
+              id: "partner-ni-number",
+              name: "partner-ni-number"
             }) }}
 
 

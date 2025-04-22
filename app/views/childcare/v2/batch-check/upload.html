@@ -30,7 +30,7 @@
       <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
       <strong class="govuk-warning-text__text">
         <span class="govuk-visually-hidden">Warning</span>
-        Your saved file must match the template fields and contain fewer than 100 rows.
+        Your saved file must match the template fields and contain fewer than 250 rows.
       </strong>
     </div>
 
@@ -39,7 +39,7 @@
     <ul>
       <li>last name</li>
       <li>date of birth (format YYYY-MM-DD or DD/MM/YYYY)</li>
-      <li>National Insurance number or asylum support reference number</li>
+      <li>National Insurance number</li>
     </ul>
 
     {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
@@ -59,7 +59,7 @@
     {{ govukButton({
       text: "Run check",
       classes: "govuk-button--primary",
-      href: '/childcare/v2/batch-check/submitting-loader'
+      href: '/childcare/v2/batch-check/submitted-not-started'
     }) }}
 
   </div>
