@@ -17,15 +17,17 @@
   <div class="govuk-grid-column-full">
 
 
-    <h1 class="govuk-heading-l">Manage eligibility codes for foster families</h1>
+    <h1 class="govuk-heading-l">Manage Childcare for working families codes for children in foster care</h1>
 
     {{ govukButton({
       classes: "govuk-!-margin-bottom-9",
-      text: "Add new family",
-      href: "/childcare/v2/foster/enter-carer-details"
+      text: "Add family",
+      href: "/childcare/v2/foster/create/enter-carer-details"
     }) }}
 
-    <h2 class="govuk-heading-m">Eligibility codes for children in foster care</h2>
+    <h2 class="govuk-heading-m">Foster families with eligibility codes</h2>
+
+    <!--
 
     <div class="govuk-form-group">
       <label class="govuk-label" for="sort">
@@ -40,7 +42,7 @@
       </select>
     </div>
 
-    <!--
+
 
     <table class="govuk-table govuk-table--small-text-until-tablet">
       <caption class="govuk-table__caption govuk-table__caption--m"></caption>
@@ -56,10 +58,10 @@
       </thead>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell"><a href="/childcare/v2/foster/family">Jasper Hayes</a> </td>
+          <td class="govuk-table__cell"><a href="/childcare/v2/foster/child/child-grace-period">Jasper Hayes</a> </td>
           <td class="govuk-table__cell">94019283746</td>
-          <td class="govuk-table__cell">Aurora Davies</td>
-          <td class="govuk-table__cell">In grace period</td>
+          <td class="govuk-table__cell">Archana Mistry</td>
+          <td class="govuk-table__cell">Grace period</td>
           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Overdue</strong></td>
 
         </tr>
@@ -74,7 +76,7 @@
         <tr class="govuk-table__row">
           <td class="govuk-table__cell"><a href="">Asher Ellis</a> </td>
           <td class="govuk-table__cell">94987654321</td>
-          <td class="govuk-table__cell">Aurora Davies</td>
+          <td class="govuk-table__cell">Archana Mistry</td>
           <td class="govuk-table__cell">Valid</td>
           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Due now</strong></td>
 
@@ -91,7 +93,7 @@
           <td class="govuk-table__cell"><a href="">Willow Carter</a> </td>
           <td class="govuk-table__cell">94555000123</td>
           <td class="govuk-table__cell">Finnigan Powell</td>
-          <td class="govuk-table__cell">In grace period</td>
+          <td class="govuk-table__cell">Grace period</td>
           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Child too old</strong></td>
 
         </tr>
@@ -106,7 +108,10 @@
       </tbody>
     </table>
 
-    -->
+  -->
+
+
+
 
     <table class="govuk-table govuk-table--small-text-until-tablet">
       <caption class="govuk-table__caption govuk-table__caption--m"></caption>
@@ -122,14 +127,15 @@
       </thead>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <td rowspan="2" class="govuk-table__cell"><a href="/childcare/v2/foster/family">Aurora Davies</a></td>
+          <td class="govuk-table__cell"><a href="/childcare/v2/foster/family/family">Archana Mistry</a></td>
           <td class="govuk-table__cell">94019283746</td>
           <td class="govuk-table__cell">Jasper Hayes</td>
-          <td class="govuk-table__cell">In grace period</td>
-          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Overdue</strong></td>
+          <td class="govuk-table__cell">Valid</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Not due yet</strong></td>
 
         </tr>
         <tr class="govuk-table__row">
+          <td rowspan="2" class="govuk-table__cell"><a href="">Asher Ellis</a></td>
           <td class="govuk-table__cell">94321098765</td>
           <td class="govuk-table__cell">Evelyn Baker</td>
           <td class="govuk-table__cell">Expired</td>
@@ -137,11 +143,18 @@
 
         </tr>
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell"><a href="">Asher Ellis</a> </td>
           <td class="govuk-table__cell">94987654321</td>
           <td class="govuk-table__cell">Lily Nelson</td>
           <td class="govuk-table__cell">Valid</td>
           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Due now</strong></td>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">Samuel Hill</a> </td>
+            <td class="govuk-table__cell">94678901234</td>
+            <td class="govuk-table__cell">Victoria Price</td>
+            <td class="govuk-table__cell">Expired</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Child too old</strong></td>
+
+          </tr>
 
         </tr>
         <tr class="govuk-table__row">
@@ -160,16 +173,11 @@
           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Child too old</strong></td>
 
         </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell"><a href="">Samuel Hill</a> </td>
-          <td class="govuk-table__cell">94678901234</td>
-          <td class="govuk-table__cell">Victoria Price</td>
-          <td class="govuk-table__cell">Expired</td>
-          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Child too old</strong></td>
 
-        </tr>
       </tbody>
     </table>
+
+
 
 
   </div>

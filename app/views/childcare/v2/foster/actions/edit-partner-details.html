@@ -1,7 +1,7 @@
 {% extends "/layouts/childcare/v2/layout-childcare.html" %}
 
 {% block pageTitle %}
-  Enter the carer details
+  Edit the partner details
 {% endblock %}
 
 {% block beforeContent %}
@@ -19,10 +19,10 @@
 
       <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-l">Enter the carer details</h1>
+        <h1 class="govuk-heading-l">Enter the partner details (optional)</h1>
 
 
-        <form class="form" action="/childcare/v2/foster/enter-partner-details" method="post" novalidate>
+        <form class="form" action="/childcare/v2/foster/family/family" method="post" novalidate>
 
           {% call govukFieldset({
 
@@ -35,9 +35,10 @@
                 text: "First name",
                 classes: "govuk-label--s"
               },
-              id: "carer-first-name",
-              name: "carer-first-name",
-              classes: "govuk-input--width-20"
+              id: "partner-first-name",
+              name: "partner-first-name",
+              classes: "govuk-input--width-20",
+              value: "Ajay"
 
             }) }}
 
@@ -46,17 +47,15 @@
                 text: "Last name",
                 classes: "govuk-label--s"
               },
-              id: "carer-last-name",
-              name: "carer-last-name",
-              classes: "govuk-input--width-20"
-
+              id: "partner-last-name",
+              name: "partner-last-name",
+              classes: "govuk-input--width-20",
+              value: "Mistry"
             }) }}
 
             {{ govukDateInput({
-
-              id: "carer-dob",
-              namePrefix: "carer-dob",
-
+              id: "partner-dob",
+              namePrefix: "partner-dob",
               fieldset: {
                 legend: {
                   text: "Date of birth",
@@ -65,9 +64,27 @@
                 }
               },
               hint: {
-                text: "For example, 27 3 1980"
-              }
+                text: "For example, 31 3 1980"
+              },
+              items: [
+                {
+                  name: "day",
+                  classes: "govuk-input--width-2",
+                  value: "27"
+                },
+                {
+                  name: "month",
+                  classes: "govuk-input--width-2",
+                  value: "09"
+                },
+                {
+                  name: "year",
+                  classes: "govuk-input--width-4",
+                  value: "1982"
+                }
+              ]
             }) }}
+
 
 
             {{ govukInput({
@@ -79,8 +96,9 @@
               hint: {
                 text: "For example, ‘QQ 12 34 56 C’"
               },
-              id: "carer-ni-number",
-              name: "carer-ni-number"
+              id: "partner-ni-number",
+              name: "partner-ni-number",
+              value: "PB458673A"
             }) }}
 
 
@@ -94,7 +112,7 @@
           {% from "govuk/components/button/macro.njk" import govukButton %}
 
           {{ govukButton({
-            text: "Continue"
+            text: "Save"
           }) }}
 
 
