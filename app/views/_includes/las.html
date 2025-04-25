@@ -1,0 +1,70 @@
+
+{# <!-- Where this file is includes, set nunjucks variables for countryID, countryName and countryLabelText to change the defaults
+    {% set countryID = "departure-country" %}
+    {% set countryName = "departure-country-name" %}
+    {% set countryLabelText = "Which country did they depart from" %}
+
+    To remove the hint, set countryHint to an empty string
+    {% set countryHint = ""}
+
+    To change the hint, set countryHint to the hint text
+    {% set countryHint = "Type to search for a country" %}
+    --> #}
+
+
+
+      {{ govukSelect({
+        id: "la-picker",
+        name: "la-picker",
+        classes: "govuk-!-width-one-half",
+        label: {
+          text: "Local authority",
+          classes:"govuk-label--s"
+        },
+
+        value: countryValue or data[countryName or countryID or "country"] or "",
+        items: [
+      {
+          value: "",
+          text: ""
+      },
+      { value: "Barnsley Borough Council", text: "Barnsley Borough Council" },
+      { value: "Birmingham City Council", text: "Birmingham City Council" },
+      { value: "Bolton Borough Council", text: "Bolton Borough Council" },
+      { value: "Bradford City Council", text: "Bradford City Council" },
+      { value: "Bury Borough Council", text: "Bury Borough Council" },
+      { value: "Calderdale Borough Council", text: "Calderdale Borough Council" },
+      { value: "Coventry City Council", text: "Coventry City Council" },
+      { value: "Doncaster Borough Council", text: "Doncaster Borough Council" },
+      { value: "Dudley Borough Council", text: "Dudley Borough Council" },
+      { value: "Gateshead Borough Council", text: "Gateshead Borough Council" },
+      { value: "Kirklees Borough Council", text: "Kirklees Borough Council" },
+      { value: "Knowsley Borough Council", text: "Knowsley Borough Council" },
+      { value: "Leeds City Council", text: "Leeds City Council" },
+      { value: "Liverpool City Council", text: "Liverpool City Council" },
+      { value: "Manchester City Council", text: "Manchester City Council" },
+      { value: "North Tyneside Borough Council", text: "North Tyneside Borough Council" },
+      { value: "Newcastle Upon Tyne City Council", text: "Newcastle Upon Tyne City Council" },
+      { value: "Oldham Borough Council", text: "Oldham Borough Council" },
+      { value: "Rochdale Borough Council", text: "Rochdale Borough Council" },
+      { value: "Rotherham Borough Council", text: "Rotherham Borough Council" },
+      { value: "South Tyneside Borough Council", text: "South Tyneside Borough Council" },
+      { value: "Salford City Council", text: "Salford City Council" },
+      { value: "Sandwell Borough Council", text: "Sandwell Borough Council" },
+      { value: "Sefton Borough Council", text: "Sefton Borough Council" },
+      { value: "Sheffield City Council", text: "Sheffield City Council" },
+      { value: "Solihull Borough Council", text: "Solihull Borough Council" },
+      { value: "St Helens Borough Council", text: "St Helens Borough Council" },
+      { value: "Stockport Borough Council", text: "Stockport Borough Council" },
+      { value: "Sunderland City Council", text: "Sunderland City Council" },
+      { value: "Tameside Borough Council", text: "Tameside Borough Council" },
+      { value: "Trafford Borough Council", text: "Trafford Borough Council" },
+      { value: "Wakefield City Council", text: "Wakefield City Council" },
+      { value: "Walsall Borough Council", text: "Walsall Borough Council" },
+      { value: "Wigan Borough Council", text: "Wigan Borough Council" },
+      { value: "Wirral Borough Council", text: "Wirral Borough Council" },
+      { value: "Wolverhampton City Council", text: "Wolverhampton City Council" }
+        ]
+      }) }}
+
+
