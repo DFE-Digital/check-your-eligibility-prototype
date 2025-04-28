@@ -1,20 +1,20 @@
-{% extends "/layouts/FSM/v7-1/layout-dfe-lanav.html" %}
-{% set pageName= "Search all records" %}
+{% extends "/layouts/FSM/v7-1/layout-dfe-support.html" %}
+{% set pageName= "Batch check history" %}
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-l">
-      {{pageName}}
+      {{ pageName }} - {{ "now" | date("d/m/Y")  }}
     </h1>
   </div>
 </div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    {% include "FSM/Private_beta/v7-1/_includes/filter-panel.html" %}
+    <!-- {% include "FSM/Private_beta/v7-1/_includes/filter-panel.html" %} -->
 
     <!--Export and search results section-->
-  </div>
+
   <div class="moj-filter-layout__content">
     <div class="moj-scrollable-pane">
       <div class="govuk-page-header" style="display: flex; align-items: center; justify-content: space-between;">
@@ -37,17 +37,64 @@
 
 
                         <!--sort function -->
-                        <th scope="col" class="govuk-table__header" aria-sort="ascending">Reference</th>
-                        <th scope="col" class="govuk-table__header" aria-sort="none">Child name</th>
-                        <th scope="col" class="govuk-table__header" aria-sort="none">Child dob</th>
-                        <th scope="col" class="govuk-table__header" aria-sort="none">Date submitted</th>
+                        <th scope="col" class="govuk-table__header" aria-sort="ascending">Local Authority</th>
+                        <th scope="col" class="govuk-table__header" aria-sort="none">Batch check reference</th>
+                        <th scope="col" class="govuk-table__header" aria-sort="none">Number of records</th>
+                        <th scope="col" class="govuk-table__header" aria-sort="none">Date uploaded</th>
                         <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
-                        <th scope="col" class="govuk-table__header" aria-sort="none">Eligible from</th>
+                        <th scope="col" class="govuk-table__header" aria-sort="none">Action</th>
                       </tr>
                     </thead>
 
                     <tbody class="govuk-table__body">
-                      {% for application in data.applications %}
+                      <tr class="govuk-table__row matches-filters"
+                        data-status="status-Entitled">
+                        <th scope="row" class="govuk-table__header">
+                          <a href="#" class="govuk-link">Birmingham</a>
+                        </th>
+                        <td class="govuk-table__cell">123456789</td>
+                        <td class="govuk-table__cell">100</td>
+                        <td class="govuk-table__cell">01/01/2023</td>
+                        <td class="govuk-table__cell">
+                          <strong class="govuk-tag govuk-tag--green">Completed</strong>
+                        </td>
+                        <td class="govuk-table__cell">
+                          <a href="#" class="govuk-link">View</a>
+                          <a href="#" class="govuk-link"> </a>
+                      </tr>
+                      <tr class="govuk-table__row matches-filters"
+                        data-status="status-Not-Entitled">
+                        <th scope="row" class="govuk-table__header">
+                          <a href="#" class="govuk-link">Manchester</a>
+                        </th>
+                        <td class="govuk-table__cell">987654321</td>
+                        <td class="govuk-table__cell">50</td>
+                        <td class="govuk-table__cell">02/01/2023</td>
+                        <td class="govuk-table__cell">
+                          <strong class="govuk-tag govuk-tag--red">Failed</strong>
+                        </td>
+                        <td class="govuk-table__cell">
+                          <a href="#" class="govuk-link">View</a>
+                          <a href="#" class="govuk-link">Delete</a>
+
+                      </tr>
+                      <tr class="govuk-table__row matches-filters"
+                        data-status="status-Sent-for-review">
+                        <th scope="row" class="govuk-table__header">
+                          <a href="#" class="govuk-link">Liverpool</a>
+                        </th>
+                        <td class="govuk-table__cell">456789123</td>
+                        <td class="govuk-table__cell">75</td>
+                        <td class="govuk-table__cell">03/01/2023</td>
+                        <td class="govuk-table__cell">
+                          <strong class="govuk-tag govuk-tag--blue">In progress</strong>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                          <a href="#" class="govuk-link">View</a>
+                          <a href="#" class="govuk-link">Delete</a>
+                      </tbody>
+                    <!--  {% for application in data.applications %}
                       <tr class="govuk-table__row matches-filters"
                         data-status="{% if application.status.yes == 'Entitled' %}status-Entitled{% elif application.status.yes == 'Not Entitled' %}status-Not-Entitled{% elif application.status.yes == 'Sent for review' %}status-Sent-for-review{% elif application.status.yes == 'Evidence needed' %}status-Evidence-needed{% endif %}">
                         <th scope="row" class="govuk-table__header">
@@ -73,7 +120,7 @@
                         <td class="govuk-table__cell">{{ application.eligible.date | govukDate("truncate") }}</td>
                       </tr>
                       {% endfor %}
-                    </tbody>
+                    </tbody> -->
 
                 </div>
               </div>
@@ -106,7 +153,6 @@
               ]
             }) }}
           </div>
-
         </div>
       </div>
 
@@ -145,7 +191,6 @@
 <!---------------SCRIPTS------------------>
 
 {% block pageScripts %}
-
 
 
 <!--COUNT RESULTS-->

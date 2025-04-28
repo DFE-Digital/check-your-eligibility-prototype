@@ -65,19 +65,18 @@
 
     <h3 class="govuk-heading-m">Upload an XML or CSV file</h3>
 
-    {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+    {{ govukFileUpload({
+      id: "file-upload-1",
+      name: "fileUpload1",
+      label: {
+        text: "Upload a file"
+      },
+      errorMessage: {
+        text: "The CSV must match the template provided"
+      },
+      javascript: true
+    }) }}
 
-
-{{ govukFileUpload({
-  id: "file-upload-1",
-  name: "fileUpload1",
-  label: {
-    text: "Upload a file"
-  },
-  errorMessage: {
-    text: "The CSV must match the template provided"
-  }
-}) }}
 
     {{ govukButton({
     text: "Upload and run a manual batch check",
