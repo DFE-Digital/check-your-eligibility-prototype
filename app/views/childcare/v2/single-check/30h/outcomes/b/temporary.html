@@ -27,7 +27,7 @@ Code is valid
           Eligibility code
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["30h-code"] or "50879487381" }}
+          {{ data["30h-code"] or "40879487381" }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -52,22 +52,29 @@ Code is valid
 
     <h2 class="govuk-heading-m govuk-!-margin-top-8">Code details</h2>
 
-    <dl class="govuk-summary-list">
+    <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Type
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Temporary code
+        </dd>
+      </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Valid from
         </dt>
         <dd class="govuk-summary-list__value">
-          31 March 2025 (discretionary start date applied)
+          21 February 2025
         </dd>
       </div>
-
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Valid to
         </dt>
         <dd class="govuk-summary-list__value">
-          31 June 2025
+          22 May 2025
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -75,7 +82,7 @@ Code is valid
           Grace period ends
         </dt>
         <dd class="govuk-summary-list__value">
-          31 December 2025
+          31 August 2025
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -93,12 +100,15 @@ Code is valid
 
     </dl>
 
+    {% from "govuk/components/button/macro.njk" import govukButton %}
 
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "View code history"
+      }) }}
 
-    {{ govukButton({
-      text: "View code history",
-      classes: "govuk-!-margin-top-4"
-    }) }}
+    </div>
+
 
 
 
