@@ -1,15 +1,14 @@
-{% extends "/layouts/FSM/v7/layout-dfe-support.html" %}
-{% set pageName="Eligibility checking support service" %}
+{% extends "/layouts/FSM/v7-1/layout-dfe-support.html" %}
+{% set pageName="Supporting the eligibility checking service" %}
 {% block pageTitle %}
-{{ pageName }} - Check a family's eligibility
 {% endblock %}
-
 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
+
         <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
           aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
           <div class="govuk-notification-banner__header">
@@ -23,7 +22,8 @@
             </h3>
           </div>
         </div>
-        <!---
+<!--
+
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-one-quarter">
               <nav class="moj-side-navigation" aria-label="Side navigation">
@@ -49,21 +49,92 @@
                 </ul>
               </nav>
             </div>
-            <div class="govuk-grid-column-three-quarters">
-            -->
-        <!-- <span class="govuk-caption-l">Rodney Lee </span>
-    <h1 class="govuk-heading-l">
-      {{pageName}}
-    </h1> -->
+            <div class="govuk-grid-column-three-quarters"> -->
 
-
-
+       <!--- <span class="govuk-caption-l">Rodney Lee </span>
+      <h1 class="govuk-heading-l">
+        {{pageName}}
+      </h1>
+    -->
+      <h1 class="govuk-heading-l">
+        <!-- Welcome to the DfE {{pageName}} -->
+      </h1>
+      <!-- <p class="govuk-body">Welcome to the DfE eligibility checking service.</p>
+      <p class="govuk-body">You can also run batch checks on behalf of local authorities.</p> -->
+      <div class="govuk-grid-row" style="margin-bottom: 20px;">
+        <div class="govuk-grid-column-one-third">
+          <div class="dfe-card" style="background-color: #5d7490; color: white; pointer-events: none;">
+        <div class="dfe-card-container">
+          <h3 class="govuk-heading-m" style="color: white;">Checks completed</h3>
+          <p class="govuk-heading-xl" style="color: white;">123,456</p>
+        </div>
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <div class="dfe-card" style="background-color: #5d7490; color: white; pointer-events: none;">
+        <div class="dfe-card-container">
+          <h3 class="govuk-heading-m" style="color: white;">Number of applications</h3>
+          <p class="govuk-heading-xl" style="color: white;">119,900</p>
+        </div>
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <div class="dfe-card" style="background-color: #5d7490; color: white; pointer-events: none;">
+        <div class="dfe-card-container">
+          <h3 class="govuk-heading-m" style="color: white;">Number of manual queries</h3>
+          <p class="govuk-heading-xl" style="color: white;">5,432</p>
+        </div>
+          </div>
+        </div>
       </div>
+
+
+
+    <div class="dfe-grid-container">
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h3 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+              href="dfe-batchcheck/batchhistory.html">Batch check history</a>
+            </h2>
+            <p>View a history of batch checks carried out by LAs.</p>
+        </div>
+      </div>
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+              href="school-manage/batch-checking/upload">Run a manual query</a>
+          </h2>
+          <p>Run a manual eligibility check on behalf of a LA.</p>
+        </div>
+      </div>
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+              href=" ">View and create reports</a>
+          </h2>
+          <p>TBC</p>
+        </div>
+      </div>
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+              href=" ">View a list of account users</a>
+          </h2>
+          <p>Manage users on your account.</p>
+      </div>
+      </div>
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+              href=" ">View as a LA user</a>
+          </h2>
+          <p>View the service as a LA user.</p>
+        </div>
     </div>
-
-
-
-
-
 
     {% endblock %}

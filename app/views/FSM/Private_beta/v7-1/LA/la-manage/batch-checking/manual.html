@@ -47,15 +47,18 @@
 
     <h3 class="govuk-heading-m">Upload an XML or CSV file</h3>
 
-    {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="file-upload-1">
+        Upload a file
+      </label>
+      <div
+        class="govuk-drop-zone"
+        data-module="govuk-file-upload">
+        <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+      </div>
+    </div>
 
-    {{ govukFileUpload({
-    id: "file-upload-1",
-    name: "fileUpload1",
-    label: {
-    text: ""
-    }
-    }) }}
+
 
     {{ govukButton({
     text: "Upload and run a manual batch check",

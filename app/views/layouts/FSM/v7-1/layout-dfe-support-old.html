@@ -6,16 +6,57 @@
 
 {# 3 #}
 
+{{ header({
+  "showNav": true,
+  "showSearch": true,
+  "showHeaderActionLinks": true,
+  "logoPath": "public/images",
+  "logoAltText": "Department for Education",
+  "homeHref": "https://gov.uk",
+  "headerActionLinks": [
+      {
+          "url": "/",
+          "label": "My account"
+      },
+      {
+          "url": "/",
+          "label": "Sign out"
+      }
+  ]
+}) }}
+
+{{ govukServiceNavigation({
+  "serviceName": "Service name",
+  "serviceUrl": "/",
+  "navigation": [
+      {
+          "href": "",
+          "text": "Dashboard",
+          "active": false
+      },
+      {
+          "href": "#",
+          "text": "Navigation item 2"
+      },
+      {
+          "href": "#",
+          "text": "Navigation item 3"
+      }
+  ]
+}) }}
+
+<!--
 {% block header %}
 {{ header({
   "showNav": "true",
-  "showSearch": "true",
+  "showSearch": "false",
+  "showPhaseBanner": "true",
   "showHeaderActionLinks": "true",
   "logoPath": "public/images",
   "searchAction": "/search/",
   "searchInputName": "",
   "logoAltText": "Department for Education",
-  "homeHref": "/FSM/Private_beta/v7/dsi-account/dsi-startnow",
+  "homeHref": "/FSM/Private_beta/v7-1/dsi-account/dsi-startnow",
   "selectedNav": "home",
   "service": {
     "name": "Check a family's eligibility",
@@ -23,17 +64,17 @@
   },
   "headerActionLinks": [
     {
-      "url" : "/FSM/Private_beta/v7/dsi-account/dsi-landingpage",
+      "url" : "/FSM/Private_beta/v7-1/dsi-account/dsi-landingpage",
       "label" : "My account"
     },
     {
-      "url" : "/FSM/Private_beta/v7/dsi-account/dsi-startnow",
+      "url" : "/FSM/Private_beta/v7-1/dsi-account/dsi-startnow",
       "label" : "Sign out"
     }
   ],
   "primaryLinks": [
   {
-    "url"  : "/FSM/Private_beta/v7/school/dashboard",
+    "url"  : "/FSM/Private_beta/v7-1/school/dashboard",
     "label" : "Dashboard"
   }, {
     "url"  : "#",
@@ -64,8 +105,6 @@
 </div>
 {% endblock %}
 
-{% block beforeContent %}
-{% endblock %}
 
 {% block footer %}
 {{ govukFooter({
@@ -86,18 +125,16 @@
       {
         href: "../legal/contact",
         text: "Contact us"
-      },
-      {
-        href:"/legal/manage-prototype",
-        text:"Manage your prototype"
-      },
-      {
-        href: "/legal/manage-prototype/clear-data",
-        text: "Clear data"
       }
     ]
   }
-}) }}
+}) }} -->
+
+{% endblock %}
+
+{% block content %}
+
+{% block scripts %}
 <script src="/public/javascripts/dfefrontend.js"></script>
 <script type="text/javascript" src="assets/javascripts/autocomplete.js"></script>
 <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>

@@ -2,11 +2,6 @@
 {% set pageName="Provide details of all children" %}
 {% set saveAndContinueUrl = config.urls.saveAndContinue %}
 
-{% block pageScripts %}
-<script type="text/javascript" src="/public/javascripts/autocomplete.js"></script>
-<!-- <script type="text/javascript" src="/public/javascripts/child-details.js"></script> -->
-{% endblock %}
-
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-half">
@@ -112,6 +107,39 @@
     </div>
   </div>
 </div>
+{% endblock %}
+
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/autocomplete.js"></script>
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    selectElement: document.querySelector('#school-picker')
+  })
+document.addEventListener('DOMContentLoaded', function () {
+
+  var addAnotherButton = document.querySelector('.moj-add-another__add-button');
+  var removeButton = document.querySelectorAll('.moj-add-another__remove-button');
+  removeButton.forEach(function (button){
+    button.addEventListener('click', updateLegends);
+  });
+  addAnotherButton.addEventListener('click', updateLegends);
+  function updateLegends(){
+    setTimeout(() => {
+      const legends = document.querySelectorAll('.moj-add-another__title');
+      legends.forEach(function (legend, index) {
+        legend.innerHTML = `Child ${index + 1}`;
+      });
+      var removeButton = document.querySelectorAll('.moj-add-another__remove-button');
+      removeButton.forEach(function (button){
+        button.addEventListener('click', updateLegends);
+    });
+    }, 50);
+  }
+})
+
+</script>
 {% endblock %}
 
 
