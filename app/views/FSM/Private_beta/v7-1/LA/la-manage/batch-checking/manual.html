@@ -50,11 +50,12 @@
     {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
 
     {{ govukFileUpload({
-    id: "file-upload-1",
-    name: "fileUpload1",
-    label: {
-    text: ""
-    }
+      id: "file-upload-1",
+      name: "fileUpload1",
+      label: {
+        text: "Upload a file"
+      },
+      javascript: true
     }) }}
 
     {{ govukButton({

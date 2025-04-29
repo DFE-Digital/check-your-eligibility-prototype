@@ -68,16 +68,18 @@
     {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
 
 
-{{ govukFileUpload({
-  id: "file-upload-1",
-  name: "fileUpload1",
-  label: {
-    text: "Upload a file"
-  },
+    {{ govukFileUpload({
+      id: "file-upload-1",
+      name: "fileUpload1",
+      label: {
+        text: "Upload a file"
+      },
   errorMessage: {
     text: "The CSV must match the template provided"
-  }
-}) }}
+  },
+      javascript: true
+    }) }}
+
 
     {{ govukButton({
     text: "Upload and run a manual batch check",
