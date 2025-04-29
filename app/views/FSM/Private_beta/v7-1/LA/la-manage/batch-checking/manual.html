@@ -59,6 +59,15 @@
     </div>
 
 
+    {{ govukFileUpload({
+      id: "file-upload-1",
+      name: "fileUpload1",
+      label: {
+        text: "Upload a file"
+      },
+      javascript: true
+    }) }}
+
 
     {{ govukButton({
     text: "Upload and run a manual batch check",
