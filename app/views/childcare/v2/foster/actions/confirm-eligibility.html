@@ -34,13 +34,13 @@
               namePrefix: "submitted-date",
               fieldset: {
                 legend: {
-                  text: "Application submitted",
+                  text: "Application submitted on",
                   isPageHeading: false,
                   classes: "govuk-fieldset__legend--s"
                 }
               },
               hint: {
-                text: "Hint text"
+                text: "For example, 27 3 2025"
               },
               items: [
                 {
@@ -67,13 +67,13 @@
               namePrefix: "confirmed-date",
               fieldset: {
                 legend: {
-                  text: "Eligibility confirmed",
+                  text: "Eligibility confirmed on",
                   isPageHeading: false,
                   classes: "govuk-fieldset__legend--s"
                 }
               },
               hint: {
-                text: "Hint text"
+                text: "May be backdated by up to one month"
               },
               items: [
                 {
@@ -113,7 +113,25 @@
               ]
             }) }}
 
-            <p>By confirming eligibility, you agree to something blah blah blah</p>
+            {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+            {{ govukCheckboxes({
+              name: "eligibility",
+              fieldset: {
+                legend: {
+                  text: "Confirm eligibility",
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
+              items: [
+                {
+                  value: "eligibility",
+                  text: "I have confirmed that the foster carers are in work outside of their foster role and providing Childcare for working families codes is consistent with each child's care plan."
+                }
+              ]
+            }) }}
+
+            <p></p>
 
 
           {% from "govuk/components/button/macro.njk" import govukButton %}
