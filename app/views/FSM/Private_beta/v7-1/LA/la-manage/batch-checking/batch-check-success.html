@@ -7,8 +7,8 @@
     {% set html %}
     <p class="govuk-body">You can now:</p>
 <ul class="govuk-list govuk-list--bullet">
-  <li>apply for free school meals or start an appeal on behalf of the parent</li>
-  <li>notify and ask the parent or guardians to apply or appeal</li>
+  <li>apply for free school meals on behalf of the parent (with evidence if needed)</li>
+  <li>notify and ask the parent or guardians to apply (and ask them to provide evidence if needed)</li>
   <li>remove records that could not be checked or ask the parent or guardian to fix the problem</li>
 </ul>
 
@@ -84,10 +84,10 @@
           <tr class="govuk-table__row">
             <th class="govuk-table__header" scope="col" id="select-all"></th>
             <th scope="col" class="govuk-table__header">Child name</th>
-            <th scope="col" class="govuk-table__header govuk-table__header--date">Child DOB</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--date">Child date of birth</th>
             <th scope="col" class="govuk-table__header">Parent name</th>
-            <th scope="col" class="govuk-table__header">Parent DOB</th>
-            <th scope="col" class="govuk-table__header">National Insurance or <br>asylum support</th>
+            <th scope="col" class="govuk-table__header">Parent date of birth</th>
+            <th scope="col" class="govuk-table__header">National Insurance</th>
             <th scope="col" class="govuk-table__header">Email</th>
             <th scope="col" class="govuk-table__header">Action</th>
             <!-- <th scope="col" class="govuk-table__header">Notify</th> -->
@@ -193,12 +193,12 @@
     <div id="not-eligible-section" class="govuk-table-section">
       <div class="govuk-grid-column-two-thirds">
         <h2 class="govuk-heading-m">Not eligible</h2>
-        <p class="govuk-body">These children may not be eligible. The parent or guardian can appeal but must provide evidence for the school or local authority to make a decision.</p>
+        <p class="govuk-body">These children may not be eligible. The parent or guardian can apply anyway but must provide supporting evidence.</p>
       </div>
        <div class="govuk-grid-column-one-third govuk-text-align-right" style="display: flex; justify-content: flex-end; align-items: right;">
         <div class="govuk-button-group">
           {{ govukButton({
-          text: "Start appeals",
+          text: "Create applications",
           href: '../records/batch-records/not-eligible/batch-confirm-appeal'
           }) }}
           {{ govukButton({
@@ -215,10 +215,10 @@
           <tr class="govuk-table__row">
             <th class="govuk-table__header" scope="col" id="select-all"></th>
             <th scope="col" class="govuk-table__header">Child name</th>
-            <th scope="col" class="govuk-table__header govuk-table__header--date">Child DOB</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--date">Child date of birth</th>
             <th scope="col" class="govuk-table__header">Parent name</th>
-            <th scope="col" class="govuk-table__header">Parent DOB</th>
-            <th scope="col" class="govuk-table__header">National Insurance or <br>asylum support</th>
+            <th scope="col" class="govuk-table__header">Parent date of birth</th>
+            <th scope="col" class="govuk-table__header">National Insurance</th>
             <th scope="col" class="govuk-table__header">Email</th>
 
 
@@ -340,10 +340,10 @@
           <tr class="govuk-table__row">
             <th class="govuk-table__header" scope="col" id="select-all"></th>
             <th scope="col" class="govuk-table__header">Child name</th>
-            <th scope="col" class="govuk-table__header govuk-table__header--date">Child DOB</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--date">Child date of birth</th>
             <th scope="col" class="govuk-table__header">Parent name</th>
-            <th scope="col" class="govuk-table__header">Parent DOB</th>
-            <th scope="col" class="govuk-table__header">National Insurance or <br>asylum support</th>
+            <th scope="col" class="govuk-table__header">Parent date of birth</th>
+            <th scope="col" class="govuk-table__header">National Insurance</th>
             <th scope="col" class="govuk-table__header">Email</th>
 
             <th scope="col" class="govuk-table__header">Reason</th>

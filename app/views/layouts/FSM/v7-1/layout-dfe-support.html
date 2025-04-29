@@ -5,117 +5,240 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 
 {# 3 #}
-
 {% block header %}
+
 {{ header({
   "showNav": "true",
   "showSearch": "false",
   "showHeaderActionLinks": "true",
   "logoPath": "public/images",
-  "searchAction": "/search/",
-  "searchInputName": "",
   "logoAltText": "Department for Education",
   "homeHref": "/FSM/Private_beta/v7-1/dsi-account/dsi-startnow",
-  "selectedNav": "home",
-  "service": {
-    "name": "Check a family's eligibility",
-    "serviceUrl": "/FSM/index-fsm"
-  },
+  "searchAction": "/search/",
+
+    "searchInputName": "q",
   "headerActionLinks": [
-    {
-      "url" : "/FSM/Private_beta/v7-1/dsi-account/dsi-landingpage",
-      "label" : "My account"
-    },
-    {
-      "url" : "/FSM/Private_beta/v7-1/dsi-account/dsi-startnow",
-      "label" : "Sign out"
-    }
-  ],
-  "primaryLinks": [
   {
-    "url"  : "/FSM/Private_beta/v7-1/school/dashboard",
-    "label" : "Dashboard"
-  }, {
-    "url"  : "#",
-    "label" : " "
-  }, {
-    "url"  : "#",
-    "label" : "  "
-  }, {
-    "url"  : "#",
-    "label" : " "
-  }
+    "label": "<strong>Rodney Lee</strong>" | safe
+  },
+  {
+          "url": "/FSM/Private_beta/v7-1/dsi-account/dsi-landingpage",
+          "label": "Manage my account"
+      },
+      {
+        "url": "/FSM/Private_beta/v7-1/dfe/account/messages",
+        "label": "Messages"
+    },
+      {
+          "url": "/FSM/Private_beta/v7-1/dsi-account/dsi-startnow",
+          "label": "Sign out"
+      }
   ]
 }) }}
-{% endblock %}
 
-{% block phaseBanner %}
-<div class="app-phase-banner__wrapper">
-  <div class="govuk-phase-banner app-phase-banner govuk-width-container">
-    <p class="govuk-phase-banner__content">
-      <strong class="govuk-tag govuk-phase-banner__content__tag">
-        beta
-      </strong>
-      <span class="govuk-phase-banner__text"></span>
-        This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-      </span>
-    </p>
+{{ govukServiceNavigation({
+  "serviceName": "Eligibility checking support service",
+  "serviceUrl": "/FSM/index-fsm",
+  "navigation": [
+      {
+          "href": "/FSM/Private_beta/v7-1/dfe/support/dashboard.html",
+          "text": "Dashboard",
+          "isActive": true
+      },
+      {
+        "href": "/FSM/Private_beta/v7-1/dfe/support/dfe-system-status/latest.html",
+        "text": "System status",
+        "isActive": true
+    },
+      {
+          "href": "/FSM/Private_beta/v7-1/dfe/support/dfe-batchcheck/batchhistory.html",
+          "text": "Batch check history",
+          "isActive": true
+      },
+      {
+          "href": "/FSM/Private_beta/v7-1/dfe/support/dfe-reports/report1.html",
+          "text": "View reports",
+          "isActive": true
+      },
+      {
+          "href": "/FSM/Private_beta/v7-1/dfe/support/dfe-singlecheck/manualqueries.html",
+          "text": "Manual queries",
+          "isActive": true
+      },
+      {
+          "href": "/FSM/Private_beta/v7-1/dfe/support/dfe-acting-LA/LA_dashboard.html",
+          "text": "Switch to Local authority view",
+          "isActive": true
+      }
+  ]
+}) }}
+
+<div class="govuk-width-container">
+  <div class="app-phase-banner__wrapper">
+    <div class="govuk-phase-banner app-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+          beta
+        </strong>
+        <span class="govuk-phase-banner__text"></span>
+          This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+
+<!--Correct version--->
+<!-- {{ header({
+"showNav": "true",
+"showSearch": "true",
+"showHeaderActionLinks": "true",
+"logoPath": "public/images",
+"searchAction": "/search/",
+"searchInputName": "",
+"logoAltText": "Department for Education",
+"homeHref": "/FSM/Private_beta/v7-1/dsi-account/dsi-startnow",
+"selectedNav": view,
+"service": {
+"name": "Support the Eligibility checking service",
+"serviceUrl": "/FSM/index-fsm"
+},
+"headerActionLinks": [
+{
+"url" : "/FSM/Private_beta/v7-1/dsi-account/dsi-landingpage",
+"label" : "My account"
+},
+{
+"url" : "/FSM/Private_beta/v7-1/dsi-account/dsi-startnow",
+"label" : "Sign out"
+}
+],
+
+"primaryLinks": [
+{
+"url" : "/FSM/Private_beta/v7-1/dfe/dashboard",
+"label" : "Dashboard"
+}, {
+"url" : "#",
+"label" : "Batch check history"
+}, {
+"href" : "#",
+"label" : "Manual queries"
+}, {
+"url" : "#",
+"label" : "View reports"
+}, {
+"url" : "#",
+"label" : "Switch to Local authority view"
+}
+]
+})
+}} -->
+<!--
+<section class="dfe-page-header govuk-!-padding-bottom-0" style="background-color:#e0f3ff;">
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l govuk-!-margin-top-5">
+          Rodney Lee
+        </span>
+        <h1 class="govuk-heading-l"> {{pageName}}</h1>
+        <div class="govuk-caption-l">
+          <!-- <p class="govuk-body-l"> This is the starting page for the {{ serviceName }} FSM element for Parents, Schools
+            and Local Authorities</p>
+          <hr class="govuk-section-break govuk-section-break--s govuk-section-break"> -->
+
+          <!-- <nav class="app-sub-navigation" aria-label="Application menu">
+            <ul class="app-sub-navigation__list">
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link" aria-current="/FSM/index-fsm" href="/FSM/index-fsm">
+                  Design and Research
+                </a>
+              </li>
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link" aria-current="/FSM/index-fsm-dev" href="/FSM/index-fsm-dev">
+                  Ready for development
+                </a>
+              </li>
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link" aria-current="/FSM/index-fsm-docs" href="/FSM/index-fsm-docs">
+                  Documentation
+                </a>
+              </li>
+            </ul>
+          </nav> -->
+        </div>
+      </div>
+    </div>
+</section>
+
+
+  <!-- <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="moj-organisation-nav" aria-label="Organisation switcher" style="padding-top: 20px;">
+        <strong class="govuk-body govuk-!-font-weight-bold">Rodney Lee</strong>
+        <a href="#" class="govuk-link">Switch to Local Authority view</a>
+      </div> -->
+    </div>
   </div>
 </div>
+<!--
+<div class="moj-organisation-nav" aria-label="Organisation switcher" style="padding-top: 20px;">
+  <strong class="govuk-body govuk-!-font-weight-bold">Bristol (HMP)</strong>
+  <a href="#" class="govuk-link">Change your location</a>
+</div> -->
+
 {% endblock %}
 
-{% block beforeContent %}
-{% endblock %}
 
 {% block footer %}
-{{ govukFooter({
-  meta: {
-    items: [
-      {
-        href: "../legal/privacy",
-        text: "Privacy policy"
-      },
-      {
-        href: "../legal/accessibility",
+ {{ govukFooter({
+   meta: {
+     items: [
+       {
+         href: "../privacy",
+         text: "Privacy policy"
+       },
+       {
+        href: "../accessibility",
         text: "Accessibility"
       },
-      {
-        href: "../legal/cookies",
-        text: "Cookies"
-      },
-      {
-        href: "../legal/contact",
+       {
+         href: "../cookies",
+         text: "Cookies"
+       },
+       {
+        href: "../contact",
         text: "Contact us"
       },
       {
-        href:"/legal/manage-prototype",
+        href:"/manage-prototype",
         text:"Manage your prototype"
       },
-      {
-        href: "/legal/manage-prototype/clear-data",
-        text: "Clear data"
-      }
-    ]
-  }
-}) }}
-<script src="/public/javascripts/dfefrontend.js"></script>
-<script type="text/javascript" src="assets/javascripts/autocomplete.js"></script>
-<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+       {
+         href: "/manage-prototype/clear-data",
+         text: "Clear data"
+       }
+     ],
+     visuallyHiddenTitle: "Footer links"
+   }
+ }) }}
+{% endblock %}
+
+{# 4 #}
+{% block scripts %}
+  {{ super() }}
+  <script src="/public/javascripts/dfefrontend.js"></script>
+  <script type="text/javascript" src="assets/javascripts/autocomplete.js"></script>
+  <link rel="stylesheet" href="assets/css/accessible-autocomplete.min.css" />
+  <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
 <script type="text/javascript">
   if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
-    new MOJFrontend.MultiFileUpload({
-      container: $(".moj-multi-file-upload"),
-      uploadUrl: "/ajax-upload",
-      deleteUrl: "/ajax-delete",
-    });
-  }
+  new MOJFrontend.MultiFileUpload({
+    container: $(".moj-multi-file-upload"),
+    uploadUrl: "/ajax-upload",
+    deleteUrl: "/ajax-delete",
+  });
+}
+
 </script>
-
-
-{{ super() }}
-<script>
- var AppFrontend = {}
-</script>
-<script src="/public/javascripts/components/filter-toggle-button.js"></script>
-
 {% endblock %}

@@ -1,5 +1,5 @@
-{% extends "../../../../../_layouts/layout-dfe-schoolnav.html" %}
-{% set pageName="Multiple appeals created" %}
+{% extends "app/views/layouts/FSM/v7-1/layout-dfe-lanav.html" %}
+{% set pageName="Multiple applications created" %}
 
 {% block content %}
 
@@ -8,14 +8,21 @@
     <div class="govuk-grid-column-full">
       {% set html %}
       <h3 class="govuk-notification-banner__heading">
-        {{pageName}}
+        3 applications for free school meals created.
       </h3>
-      <p class="govuk-body"><b>3</b> appeals due to a not eligible result for Free school meals have been
-        created.
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          You must ask the parents or guardians to provide supporting evidence for these applications.
+        </strong>
+      </div>
         {% endset %}
 
         {{ govukNotificationBanner({
         html: html,
+        titleText: "Multiple applications created",
+        titleHeadingLevel: "1",
         type: "success"
         }) }}
         <!--<h1 class="govuk-heading-xl">Children details added</h1>-->
@@ -35,7 +42,7 @@
             <th scope="col" class="govuk-table__header govuk-table__header--date">Child DOB</th>
             <th scope="col" class="govuk-table__header">Parent name</th>
             <th scope="col" class="govuk-table__header">Parent DOB</th>
-            <th scope="col" class="govuk-table__header">NINo or ASR</th>
+            <th scope="col" class="govuk-table__header">National Insurance</th>
             <th scope="col" class="govuk-table__header">Email</th>
             <th scope="col" class="govuk-table__header">Reference number</th>
 
@@ -50,7 +57,7 @@
             <td class="govuk-table__cell">NW653213B</td>
             <td class="govuk-table__cell">edentesfay@icloud.com</td>
 
-            <td class="govuk-table__cell">44455453</td>
+            <td class="govuk-table__cell"><a href="#">44455453</a></td>
           </tr>
         </tbody>
 
@@ -65,7 +72,7 @@
             <td class="govuk-table__cell">NW653213B</td>
 
             <td class="govuk-table__cell">edentesfay@icloud.com</td>
-            <td class="govuk-table__cell">44455453</td>
+            <td class="govuk-table__cell"><a href="#">44455453</a></td>
           </tr>
         </tbody>
 
@@ -79,7 +86,7 @@
             <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
             <td class="govuk-table__cell">NW653213B</td>
             <td class="govuk-table__cell">edentesfay@icloud.com</td>
-            <td class="govuk-table__cell">44455453</td>
+            <td class="govuk-table__cell"><a href="#">44455453</a></td>
           </tr>
         </tbody>
 
@@ -98,8 +105,8 @@
       <div class="govuk-grid-column-full">
         <h2 class="govuk-heading-m">What to do next</h2>
 
-        <p>Contact the parents for evidence that supports their application
-        <p>You can upload the evidence to their application or send it by email to your Local Authority </p>
+        <p class="govuk-body">Ask the parents or guardians for supporting evidence.</p>
+        <p class="govuk-body">Upload the evidence to their application or send it by email to your local authority </p>
 
       </div>
     </div>

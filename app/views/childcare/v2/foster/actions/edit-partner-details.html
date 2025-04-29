@@ -1,0 +1,127 @@
+{% extends "/layouts/childcare/v2/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Edit the partner details
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">Enter the partner details (optional)</h1>
+
+
+        <form class="form" action="/childcare/v2/foster/family/family" method="post" novalidate>
+
+          {% call govukFieldset({
+
+          }) %}
+
+            {% from "govuk/components/input/macro.njk" import govukInput %}
+
+            {{ govukInput({
+              label: {
+                text: "First name",
+                classes: "govuk-label--s"
+              },
+              id: "partner-first-name",
+              name: "partner-first-name",
+              classes: "govuk-input--width-20",
+              value: "Ajay"
+
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Last name",
+                classes: "govuk-label--s"
+              },
+              id: "partner-last-name",
+              name: "partner-last-name",
+              classes: "govuk-input--width-20",
+              value: "Mistry"
+            }) }}
+
+            {{ govukDateInput({
+              id: "partner-dob",
+              namePrefix: "partner-dob",
+              fieldset: {
+                legend: {
+                  text: "Date of birth",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
+              hint: {
+                text: "For example, 31 3 1980"
+              },
+              items: [
+                {
+                  name: "day",
+                  classes: "govuk-input--width-2",
+                  value: "27"
+                },
+                {
+                  name: "month",
+                  classes: "govuk-input--width-2",
+                  value: "09"
+                },
+                {
+                  name: "year",
+                  classes: "govuk-input--width-4",
+                  value: "1982"
+                }
+              ]
+            }) }}
+
+
+
+            {{ govukInput({
+              classes: "govuk-!-width-one-third",
+              label: {
+                text: "National Insurance number",
+                classes: "govuk-fieldset__legend--s"
+              },
+              hint: {
+                text: "For example, ‘QQ 12 34 56 C’"
+              },
+              id: "partner-ni-number",
+              name: "partner-ni-number",
+              value: "PB458673A"
+            }) }}
+
+
+
+
+
+          {% endcall %}
+
+
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Save"
+          }) }}
+
+
+        </form>
+
+      </div>
+
+    </div>
+
+
+
+{% endblock %}

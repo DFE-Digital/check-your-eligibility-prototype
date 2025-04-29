@@ -4,7 +4,7 @@
   File submitted
 {% endblock %}
 
-{% set dateSubmitted = '2025-03-13' %}
+{% set dateSubmitted = '2025-04-22' %}
 
 
 {% block content %}
@@ -50,7 +50,7 @@
           <td class="govuk-table__cell">{{ dateSubmitted | duration(7, 'days') | govukDate }} {{ "now" | govukTime }}</td>
           <td class="govuk-table__cell">Janet Eccles</td>
           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Not started</strong></td>
-          <td class="govuk-table__cell"><a href="/childcare/v2/batch-check/history/cancel-check">Cancel</a></td>
+          <td class="govuk-table__cell"></td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">2yearold.csv</td>
@@ -58,7 +58,7 @@
           <td class="govuk-table__cell">{{ dateSubmitted | duration(7, 'days') | govukDate }} 8.03am</td>
           <td class="govuk-table__cell">Janet Eccles</td>
           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">In progress</strong></td>
-          <td class="govuk-table__cell"><a href="/childcare/v2/batch-check/history/cancel-check">Cancel</a></td>
+          <td class="govuk-table__cell"></td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">30h-MCC-feb-25.csv</td>
@@ -67,14 +67,6 @@
           <td class="govuk-table__cell">Matty Smith</td>
           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Completed</strong></td>
           <td class="govuk-table__cell"><a href="/public/csv/eypp-2yo-outcomes-v2.csv">Download results</a>  | <a href="/childcare/v2/batch-check/history/delete-file">Delete</a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">batch-eypp-jan-25.csv</td>
-          <td class="govuk-table__cell">Early years pupil premium</td>
-          <td class="govuk-table__cell">{{ dateSubmitted | duration(5, 'days') | govukDate }} 9.03am</td>
-          <td class="govuk-table__cell">Taylor Johnson</td>
-          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Try again</strong></td>
-          <td class="govuk-table__cell"><a href="/childcare/v2/batch-check/upload">Upload file again</a></td>
         </tr>
 
       </tbody>
