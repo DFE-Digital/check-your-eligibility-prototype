@@ -5,11 +5,29 @@
 
 {% block content %}
 
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <span class="govuk-hint"> </span>
+
+    {%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
+
+    {{ mojSubNavigation({
+      label: "Sub navigation",
+      items: [{
+        text: "Design and research",
+        href: "/childcare/index-childcare"
+      }, {
+        text: "Ready for development",
+        href: "/childcare/index-childcare-dev"
+      }, {
+        text: "Documentation",
+        href: "/childcare/index-childcare-doc",
+        active: true
+      }]
+    }) }}
+
     <h1 class="govuk-heading-l govuk-!-margin-bottom-7">
-      <span class="govuk-tag--pink">Documentation</span>
+      Documentation
     </h1>
 
     <h2 class="govuk-heading-m">Design</h2>
@@ -29,6 +47,7 @@
     <h2 class="govuk-heading-m">User research findings</h2>
 
     <ul>
+      <li><a href="https://lucid.app/lucidspark/dbdcd964-bb51-4c4c-b446-46cdbc60ebee/edit?invitationId=inv_e3f97016-6017-4d68-944d-fbe29b7c9aa5&page=0_0#">Childcare usability testing round 2 (Apr 2025)</a></li>
       <li><a href="https://lucid.app/lucidspark/484ad563-f2e4-4ed4-b8c8-2b639d0dce2d/edit?invitationId=inv_e3f97016-6017-4d68-944d-fbe29b7c9aa5&page=0_0#">Childcare usability testing round 1 (Mar 2025)</a></li>
       <li><a href="https://lucid.app/lucidspark/206d2415-9cca-41b0-8aa0-db7d3387ae9c/edit?invitationId=inv_e3f97016-6017-4d68-944d-fbe29b7c9aa5&page=0_0#">Childcare discovery piece (Feb 2025)</a></li>
       <li><a href="https://lucid.app/lucidspark/c3723694-03c6-4a94-9bd4-c116f213a999/edit?invitationId=inv_ba86485b-ee1e-4fb8-9174-365e1251d67c&page=0_0#">Alpha childcare prototype usability testing (Jan 2024)</a></li>
@@ -36,8 +55,13 @@
 
 
 
+
+
+
   </div>
 </div>
+
+
 
 
 {% endblock %}

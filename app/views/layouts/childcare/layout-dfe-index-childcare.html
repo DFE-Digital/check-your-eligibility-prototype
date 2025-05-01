@@ -18,66 +18,49 @@
     "homeHref": "https://gov.uk",
     "selectedNav": view,
     "service": {
-      "name": "Check a family's eligibility",
-      "serviceUrl": "/index"
-    },
-    "headerActionLinks": [
-
-    ],
-    "primaryLinks": [
-        {
-        "url"  : "/FSM/index-fsm",
-        "label" : "Free School meals prototype"
-      },
-      {
-        "url"  : "/childcare/index-childcare",
-        "label" : "Childcare prototype"
-      }
-    ]
+      "name": "",
+      "serviceUrl": ""
+    }
   })
 }}
-<section class="dfe-page-header govuk-!-padding-bottom-0" style="background-color:#e6ebf0;">
+
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{{ govukServiceNavigation({
+  serviceName: "Check a family's eligibility",
+  serviceUrl: "/index",
+  navigation: [
+    {
+      href: "/FSM/index-fsm",
+      text: "Free school meals prototype"
+    },
+    {
+      href: "/childcare/index-childcare",
+      text: "Childcare prototype",
+      active: "true"
+    }
+  ]
+}) }}
+
+<section class="dfe-page-header govuk-!-padding-bottom-0" style="background-color:	#f3f2f1;">
   <div class="govuk-width-container">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl govuk-!-margin-top-7 govuk-!-margin-bottom-5">Childcare prototype</h1>
+        <h1 class="govuk-heading-xl govuk-!-padding-top-5 govuk-!-margin-bottom-3">
+          Childcare prototype
+        </h1>
 
-        <p class="govuk-body-l">Childcare element of the Check a family's eligibility service including: Childcare for working parents, 2 years old early learning and Early Years Pupil Premium</p>
+        <p class="govuk-!-padding-bottom-5">Childcare element of the Check a family's eligibility service including: Childcare for working parents, 2 years old early learning and Early Years Pupil Premium</p>
 
-        <hr class="govuk-section-break govuk-section-break--s govuk-section-break">
-
-        <nav class="app-sub-navigation" aria-label="Application menu">
-          <ul class="app-sub-navigation__list">
-            <li class="app-sub-navigation__item">
-              <a class="app-sub-navigation__link" aria-current="/childcare/index-childcare" href="/childcare/index-childcare">
-                Design and Research
-              </a>
-            </li>
-            <li class="app-sub-navigation__item">
-              <a class="app-sub-navigation__link" aria-current="/childcare/index-childcare-dev" href="/childcare/index-childcare-dev">
-                Ready for development
-              </a>
-            </li>
-            <li class="app-sub-navigation__item">
-              <a class="app-sub-navigation__link" aria-current="/childcare/index-childcare-doc" href="/childcare/index-childcare-doc">
-                Documentation
-              </a>
-            </li>
-          </ul>
-        </nav>
+        </div>
       </div>
     </div>
-  </div>
 </section>
 
 {% endblock %}
 
-{% block beforeContent %}
+{% set mainClasses = "govuk-!-padding-top-3" %}
 
-  {% block backLink %}
-  {% endblock %}
-
-{% endblock %}
 
 {% block footer %}
  {{ govukFooter({
@@ -97,30 +80,3 @@
  }) }}
 {% endblock %}
 
-{# 4 #}
-{% block scripts %}
-  {{ super() }}
-  <script src="/public/javascripts/dfefrontend.js"></script>
-  <script type="text/javascript" src="assets/javascripts/autocomplete.js"></script>
-  <link rel="stylesheet" href="assets/css/accessible-autocomplete.min.css" />
-  <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
-<script type="text/javascript">
-  if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
-  new MOJFrontend.MultiFileUpload({
-    container: $(".moj-multi-file-upload"),
-    uploadUrl: "/ajax-upload",
-    deleteUrl: "/ajax-delete",
-  });
-}
-</script>
-<script src="/assets/js/all.min.js"></script>
-<script src="/assets/js/cookies.min.js"></script>
-<script src="/assets/js/feedback.min.js"></script>
-<script src="/assets/js/dfefrontend.min.js"></script>
-<script type="module" src="/assets/js/govuk/govuk-frontend.min.min.js"></script>
-<script type="module">
-  import { initAll } from '/assets/js/govuk/govuk-frontend.min.min.js'
-  initAll()
-</script>
-
-{% endblock %}

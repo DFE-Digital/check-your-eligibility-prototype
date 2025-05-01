@@ -1,0 +1,50 @@
+{% extends "/layouts/childcare/v3/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Checks completed
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          Checks completed
+        </h3>
+        <p>Now download the checked file to see which parents or guardians are eligible for {{ data['eligibility-type'] }}.</p>
+
+        <p>[type]-outcomes-YYYYMMDD.csv</p>
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+          text: "Download",
+          href: '/public/csv/eypp-2yo-outcomes-v3.csv'
+        }) }}
+
+
+        <p><a href="/childcare/v3/batch-check/history/result-explainer">Get help with check results</a></p>
+      </div>
+    </div>
+
+    <p>You can also <a href="/childcare/v3/batch-check/history/batch-history">download batch check results from the last 7 days</a>.</p>
+
+
+  </div>
+</div>
+
+{% endblock %}
