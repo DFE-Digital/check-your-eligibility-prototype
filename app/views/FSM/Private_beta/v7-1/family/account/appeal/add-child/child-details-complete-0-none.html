@@ -37,7 +37,7 @@
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">Date of birth</dt>
               <dd class="govuk-summary-list__value">
-                {{ data["ch1-day"] }} {{ data["ch1-month"] }} {{ data["ch1-year"] or "01 01 2010"
+                {{ data["ch1-day"] }} {{ data["ch1-month"] }} {{ data["ch1-year"] or "1 January 2010"
                 }}
               </dd>
             </div>
@@ -98,7 +98,7 @@
             <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
             <strong class="govuk-warning-text__text">
               <span class="govuk-visually-hidden">Warning</span>
-              You will not be able to add more children after you have applied.
+              You cannot add more children to this application after you have sent it.
             </strong>
           </div>
 
@@ -106,7 +106,7 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
               <label class="govuk-label govuk-checkboxes__label" for="waste">
-                I have finished adding children or evidence
+                I have finished adding children or evidence to this application
               </label>
             </div>
           </div>
