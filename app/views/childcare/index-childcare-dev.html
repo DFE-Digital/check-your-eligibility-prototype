@@ -7,9 +7,26 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <span class="govuk-hint"> </span>
+
+    {%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
+
+    {{ mojSubNavigation({
+      label: "Sub navigation",
+      items: [{
+        text: "Design and research",
+        href: "/childcare/index-childcare"
+      }, {
+        text: "Ready for development",
+        href: "/childcare/index-childcare-dev",
+        active: true
+      }, {
+        text: "Documentation",
+        href: "/childcare/index-childcare-doc"
+      }]
+    }) }}
+
     <h1 class="govuk-heading-l">
-      <span class="govuk-tag--light-blue">Ready for development</span>
+      Ready for development
     </h1>
 
     <!---dev ready table   -->
@@ -97,13 +114,9 @@
       </tbody>
     </table>
 
-
-
-
-
-
   </div>
 </div>
+
 
 
 {% endblock %}

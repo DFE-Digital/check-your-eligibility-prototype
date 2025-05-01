@@ -1,15 +1,32 @@
 {% extends "layouts/childcare/layout-dfe-index-childcare.html" %}
 {% block pageTitle %}
-  Design and research - Childcare
+  Childcare prototype
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <span class="govuk-hint"> </span>
+
+    {%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
+
+    {{ mojSubNavigation({
+      label: "Sub navigation",
+      items: [{
+        text: "Design and research",
+        href: "/childcare/index-childcare",
+        active: true
+      }, {
+        text: "Ready for development",
+        href: "/childcare/index-childcare-dev"
+      }, {
+        text: "Documentation",
+        href: "/childcare/index-childcare-doc"
+      }]
+    }) }}
+
     <h1 class="govuk-heading-l">
-      <span class="govuk-tag--turquoise">Design and research</span>
+      Design and research
     </h1>
 
     <!---Usability testing details -->
@@ -29,7 +46,6 @@
             <li>Parent's DoB</li>
             <li>Child's DoB</li>
             <li>NI number - [KL 123456]</li>
-            <li>AS reference - [KL 123456]</li>
             <li>Eligibility code - [12345678912]</li>
           </ul>
         </h2>
@@ -49,7 +65,18 @@
       </thead>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <td class="govuk-table__header"> <a href="/childcare/v2/dfe-signin/my-services">v2</a></td>
+          <th scope="row" class="govuk-table__header"><a href="/childcare/v3/dfe-signin/my-services">v3</a></th>
+          <td class="govuk-table__cell">
+            <p>TBC</p>
+          </td>
+          <td class="govuk-table__cell">
+            <p class="govuk-!-margin-bottom-2"><a href="/childcare/v3/dashboard">Dashboard</a></p>
+          </td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Design</strong></td>
+          <td class="govuk-table__cell">1 May 2025</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="/childcare/v2/dfe-signin/my-services">v2</a></th>
           <td class="govuk-table__cell">
             <p>Updated navigation to GOV.UK service navigation component.</p>
             <p>Updates based on round 1 of usability testing: added checked details and print this page to outcomes pages, added more information about entering last name in full, and updated batch error content.</p>
@@ -58,6 +85,7 @@
           </td>
           <td class="govuk-table__cell">
             <p class="govuk-!-margin-bottom-2"><a href="/childcare/v2/dashboard">Dashboard</a></p>
+            <p class="govuk-!-margin-bottom-2"><a href="/childcare/v2/foster/foster">Manage foster families</a></p>
             <p class="govuk-!-margin-bottom-2"><a href="/childcare/v2/single-check/30h/enter-details">Run a Childcare for working families check</a></p>
             <ul class="govuk-!-margin-bottom-2">
               <li><a href="/childcare/v2/single-check/30h/outcomes/b/valid">Valid</a></li>
@@ -72,15 +100,13 @@
               <li><a href="/childcare/v2/single-check/30h/outcomes/b/expired-too-old">Expired - child too old</a></li>
               <li><a href="/childcare/v2/single-check/30h/outcomes/b/could-not-find">Could not find</a></li>
             </ul>
-            <!-- <p class="govuk-!-margin-bottom-2"><a href="https://educationgovuk.sharepoint.com/:x:/r/sites/EligibilityChecking/Content%20design/Error%20scenarios/Childcare/v2%20error%20scenarios.xlsx?d=w9950261a3a0a40c1a23f68edfe4ab7e6&csf=1&web=1&e=MmPqGN&nav=MTVfezBFRUYwRjIwLTk2N0UtNEM4OS04QzI5LTA5QjY4MDZEOURFQn0">Error scenarios - 2YO</a></p>
-            <p class="govuk-!-margin-bottom-2"><a href="https://educationgovuk.sharepoint.com/:x:/r/sites/EligibilityChecking/Content%20design/Error%20scenarios/Childcare/v2%20error%20scenarios.xlsx?d=w9950261a3a0a40c1a23f68edfe4ab7e6&csf=1&web=1&e=pxXtzv&nav=MTVfezM1QjZGQjMyLTgxMzYtNDlFQy05NzEyLTAzMEMxRDA0Q0E4Q30">Error scenarios - EYPP</a></p>
-            -->
+
           </td>
-          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Design</strong></td>
-          <td class="govuk-table__cell">16 April 2025</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Research completed</strong></td>
+          <td class="govuk-table__cell">28 April 2025</td>
         </tr>
         <tr class="govuk-table__row">
-          <td class="govuk-table__header"> <a href="/childcare/v1/dfe-signin/my-services">v1</a></td>
+          <th scope="row" class="govuk-table__header"><a href="/childcare/v2/dfe-signin/my-services">v2</a></th>
           <td class="govuk-table__cell">
             <p>Navigation and homepage for childcare service, single check, batch check, and exploratory design for combined EYPP and 2YO check.</p>
             <p>Note: Childcare for Working parents flows are not included.</p>
@@ -101,13 +127,13 @@
             </ul>
             <p class="govuk-!-margin-bottom-2"><a href="/childcare/v1/multi-check/c/dashboard">Run a combined check</a></p>
           </td>
-          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Research completed</strong></td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Research completed</strong></td>
           <td class="govuk-table__cell">14 March 2025</td>
         </tr>
       </tbody>
     </table>
 
-    <!-- Tabs
+     <!-- Tabs
 
     <div class="govuk-tabs" data-module="govuk-tabs">
       <h2 class="govuk-tabs__title">
@@ -140,6 +166,9 @@
     </div>
 
     -->
+
+
+
 
   </div>
 </div>
