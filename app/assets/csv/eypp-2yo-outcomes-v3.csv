@@ -1,0 +1,11 @@
+Parent Last Name,Parent Date of Birth,Parent National Insurance Number,Parent asylum seeker reference number,Outcome
+Doe,1/1/1970,QQ123456B,,Not eligible
+Mann,2/3/1975,QQ522456B,,Information does not match records
+Smith,15/06/1980,QQ383246C,,Eligible
+Brown,22/09/1965,QQ146397D,,Try again
+Green,12/4/1988,QQ389105B,,Not eligible
+White,5/8/1990,QQ083856C,,Could not check Universal Credit
+Black,7/11/1978,QQ387645B,,Eligible
+Blue,20/12/1966,QQ018274C,,Eligible
+Red,1/3/1985,QQ756385B,,Eligible
+Orange,11/5/1992,QQ235164B,,Eligible

@@ -1,7 +1,7 @@
 {% extends "/layouts/childcare/v3/layout-childcare.html" %}
 
 {% block pageTitle %}
-  Child in foster care: Jasper Hayes
+  Child in foster care: Asher Ellis
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,21 +16,18 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Child in foster care: Jasper Hayes</h1>
-    <p><strong class="govuk-tag govuk-tag--red" style="max-width:100%;">
-      Overdue
-    </strong>
-  </p>
+    <h1 class="govuk-heading-l">Child in foster care: Asher Ellis</h1>
 
-
-    <div class="govuk-button-group govuk-!-margin-bottom-7">
+    <div class="govuk-button-group">
       {{ govukButton({
         text: "Reconfirm eligibility",
-        href: ""
+        href: "/childcare/v3/foster/actions/confirm-eligibility"
       }) }}
+
     </div>
 
-    <div class="govuk-summary-card govuk-!-width-two-thirds">
+
+    <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title">
           Eligibility code
@@ -44,7 +41,7 @@
               Eligibility code
             </dt>
             <dd class="govuk-summary-list__value">
-              94019283746
+              94987654321
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -54,34 +51,22 @@
             <dd class="govuk-summary-list__value">
               Grace period
             </dd>
-
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Term
-            </dt>
-            <dd class="govuk-summary-list__value">
-              -
-            </dd>
-
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Valid from
+              Eligibility confirmed on
             </dt>
             <dd class="govuk-summary-list__value">
               15 January 2025
             </dd>
-
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Valid to
+              Reconfirm between
             </dt>
             <dd class="govuk-summary-list__value">
-              15 April 2025
+              15 March and 15 April 2025
             </dd>
-
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -90,21 +75,30 @@
             <dd class="govuk-summary-list__value">
               31 August 2025
             </dd>
-
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Reconfirmation status
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <strong class="govuk-tag govuk-tag--red">
+                Overdue
+              </strong>
+            </dd>
           </div>
 
         </dl>
       </div>
     </div>
 
-    <div class="govuk-summary-card govuk-!-width-two-thirds">
+    <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title">
-          Child
+          Details
         </h2>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action">
-            <a class="govuk-link" href="">Edit<span class="govuk-visually-hidden">
+            <a class="govuk-link" href="/childcare/v3/foster/actions/edit-child-details">Edit<span class="govuk-visually-hidden">
                 Child details</span></a>
           </li>
         </ul>
@@ -116,7 +110,7 @@
               Full Name
             </dt>
             <dd class="govuk-summary-list__value">
-              Jasper Hayes
+              Asher Ellis
             </dd>
 
           </div>
@@ -133,7 +127,7 @@
       </div>
     </div>
 
-    <div class="govuk-summary-card govuk-!-width-two-thirds">
+    <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title">
           Foster carer
