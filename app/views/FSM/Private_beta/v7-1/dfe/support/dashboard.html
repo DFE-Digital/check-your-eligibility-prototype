@@ -6,8 +6,6 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
 
         <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
           aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
@@ -18,7 +16,10 @@
           </div>
           <div class="govuk-notification-banner__content">
             <h3 class="govuk-notification-banner__heading">
-              There are no issues with the service at the moment.
+                There are no issues with the service.<span> Last updated: {{ "now" | date("d/m/Y H:i") }}</span>
+                <br> <a href="/service-status">View system status</a>
+                <br>
+
             </h3>
           </div>
         </div>
@@ -90,7 +91,7 @@
 
 
     <div class="dfe-grid-container">
-      <div class="dfe-card">
+      <!-- <div class="dfe-card">
         <div class="dfe-card-container">
           <h3 class="govuk-heading-m">
             <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
@@ -98,7 +99,7 @@
             </h2>
             <p>View the system status and update users of potential issues</p>
         </div>
-      </div>
+      </div> -->
       <div class="dfe-card">
         <div class="dfe-card-container">
           <h3 class="govuk-heading-m">
@@ -144,5 +145,14 @@
           <p>View the service as a LA user</p>
         </div>
     </div>
+    <div class="dfe-card">
+      <div class="dfe-card-container">
+        <h2 class="govuk-heading-m">
+          <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+            href=" ">View as a school user</a>
+        </h2>
+        <p>View the service as a school user</p>
+      </div>
+  </div>
 
     {% endblock %}
