@@ -1,7 +1,7 @@
 {% extends "/layouts/childcare/v3/layout-childcare.html" %}
 
 {% block pageTitle %}
-  Enter the carer details
+  Edit the carer details
 {% endblock %}
 
 {% block beforeContent %}
@@ -30,7 +30,7 @@
         </div>
 
 
-        <form class="form" action="/childcare/v3/foster/family/family" method="post" novalidate>
+        <form class="form" action="/childcare/v3/foster/family/family-saved?edit-type=carer" method="post" novalidate>
 
           {% call govukFieldset({
 
