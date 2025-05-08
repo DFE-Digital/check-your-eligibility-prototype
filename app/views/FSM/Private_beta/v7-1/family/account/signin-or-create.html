@@ -1,15 +1,15 @@
-{% extends "layouts/mvp1.html" %}
+{% extends "layouts/FSM/v7-1/gov.html" %}
 
-{% set pageName="Sign in or create a GovUK One Login account" %}
+{% set pageName="Create a GOV.UK One Login or sign in" %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds ">
-      
 
 
-<h1 class="govuk-heading-l govuk-!-margin-top-0 govuk-!-margin-bottom-3">Create a GOV.UK One Login or sign in</h1>
+
+<h1 class="govuk-heading-l govuk-!-margin-top-0 govuk-!-margin-bottom-3">{{pageName}}</h1>
 
 
 <p class="govuk-body">You’ll need:</p>
@@ -23,7 +23,7 @@
 
 <div class="govuk-inset-text">
 
-You can also 
+You can also
 <a href="?lng=cy" class="govuk-link" rel="noreferrer">
 use GOV.UK One Login in Welsh
 <span lang="cy">(Cymraeg)</span></a>.
@@ -36,14 +36,14 @@ use GOV.UK One Login in Welsh
     {{ govukButton({
         text: "Create a GOV.UK One Login",
         href: "#",
-        classes: "govuk-button govuk-!-margin-right-3"    
+        classes: "govuk-button govuk-!-margin-right-3"
       }) }}
-    
+
     {{ govukButton({
       text: "Sign in",
       href: "onegov-signin",
       classes: "govuk-button--secondary"
-    
+
     }) }}
    <!-- <p><a href="../checker-parent/name">Continue without creating an account</a></p>-->
 </form>

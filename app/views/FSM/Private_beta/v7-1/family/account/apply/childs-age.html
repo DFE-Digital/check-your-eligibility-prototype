@@ -1,10 +1,6 @@
-{% extends "/../../../../../../../../../../../../../../../layouts/FSM/v7layout-dfe-schoolnav.html" %}
+{% extends "layouts/FSM/v7-1/layout-dfe-signed-out.html" %}
+{% set pageName="Provide details of your children" %}
 
-{% set pageName="Home" %}
-
-{% block pageScripts %}
-
-{% set pageName="Home" %}
 
 {% block pageScripts %}
 <script type="text/javascript" src="/public/javascripts/autocomplete.js"></script>
@@ -46,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       <div data-module="moj-add-another">
 
-        <h1 class="govuk-heading-l" tabindex="-1">Provide details of your children</h1>
+        <h1 class="govuk-heading-l" tabindex="-1">{{pageName}}</h1>
         <p>Include all your children who are in compulsory education. You can use the add another option, if you have more than one child.</p>
 
         <form method="post">
@@ -87,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
           }) }}
 
 
-          {% include "../../../../_includes/schools.html" %}
+          {% include "_includes/schools.html" %}
 
 
           {{ govukDateInput({
