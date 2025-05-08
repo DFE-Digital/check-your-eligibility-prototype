@@ -20,10 +20,11 @@
 
       <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-l">Confirm eligibility for Archana Mistry</h1>
+        <h1 class="govuk-heading-l">Create an eligibility code for Jasper Hayes</h1>
 
+        <p>You must confirm the foster carer's eligibility to create an eligibility code.</p>
 
-        <form class="form" action="/childcare/v3/foster/actions/code-created" method="post" novalidate>
+        <form class="form" action="/childcare/v3/foster/confirm/code-created" method="post" novalidate>
 
 
             {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -36,7 +37,7 @@
                 legend: {
                   text: "Application submitted on",
                   isPageHeading: false,
-                  classes: "govuk-fieldset__legend--s"
+                  classes: "govuk-fieldset__legend--m"
                 }
               },
               hint: {
@@ -69,7 +70,7 @@
                 legend: {
                   text: "Eligibility confirmed on",
                   isPageHeading: false,
-                  classes: "govuk-fieldset__legend--s"
+                  classes: "govuk-fieldset__legend--m"
                 }
               },
               hint: {
@@ -94,24 +95,7 @@
               ]
             }) }}
 
-            {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
-            {{ govukCheckboxes({
-              name: "children",
-              fieldset: {
-                legend: {
-                  text: "Children to create codes for",
-                  classes: "govuk-fieldset__legend--s"
-                }
-              },
-              items: [
-                {
-                  value: "child 1",
-                  text: "Jasper Hayes",
-                  checked: "true"
-                }
-              ]
-            }) }}
 
             {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
@@ -120,7 +104,7 @@
               fieldset: {
                 legend: {
                   text: "Confirm eligibility",
-                  classes: "govuk-fieldset__legend--s"
+                  classes: "govuk-fieldset__legend--m"
                 }
               },
               items: [
@@ -131,14 +115,13 @@
               ]
             }) }}
 
-            <p></p>
-
-
           {% from "govuk/components/button/macro.njk" import govukButton %}
+
 
           {{ govukButton({
             text: "Confirm eligibility and create codes"
           }) }}
+
 
 
         </form>
