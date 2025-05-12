@@ -1,0 +1,41 @@
+{% extends "layouts/FSM/v7-1/layout-dfe.html" %}
+{% set pageName="Upload your evidence" %}
+
+{%block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds ">
+<h1 class="govuk-heading-l">{{pageName}}</h1>
+<div class="govuk-form-group">
+  <form action="/v7-1-paper" method="post" novalidate>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="file-upload-1">
+        Upload a file
+      </label>
+      <div
+        class="govuk-drop-zone"
+        data-module="govuk-file-upload">
+        <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+      </div>
+    </div>
+
+  <p class="govuk-body">Your file must be:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>a JPG, JPEG, HEIC, HEIF, BMP, PNG, TIF, or PDF</li>
+    <li>smaller than 10MB</li>
+    </ul>
+
+{{ govukButton({
+    text: "Upload and continue",
+    href: "../add-child/child-details-complete-0.html"
+}) }}
+
+<div class="govuk-inset-text">
+  If you have problems uploading your evidence, you can <a href="../evidence/have-evidence.html" class="govuk-link">choose to take it into your children's schools instead</a>.
+</div>
+</div>
+</div>
+</form>
+
+{%endblock %}

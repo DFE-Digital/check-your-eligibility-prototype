@@ -1,0 +1,77 @@
+{% extends "/layouts/FSM/v7-1/layout-dfe-schoolnav.html" %}
+{% set pageName="Confirm you have consent" %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#consent-error">Select if the parent or guardian is with you and has given consent</a>
+            </li></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h1 class="govuk-heading-l">You must get consent</h1>
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        The parent or guardian must be with you and consent for you to apply on their behalf
+      </strong>
+    </div>
+
+
+    <div class="govuk-form-group govuk-form-group--error">
+      <fieldset class="govuk-fieldset" aria-describedby="countries-error">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+          <h2 class="govuk-fieldset__heading">
+            Confirm you have consent
+          </h2>
+        </legend>
+        <div id="consent-hint" class="govuk-hint">
+          Select if the parent or guardian is with you and has given consent
+        </div>
+        <p id="consent-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> Select if the parent or guardian is with you and has given consent
+        </p>
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="british"
+              aria-describedby="nationality-item-hint">
+            <label class="govuk-label govuk-checkboxes__label" for="nationality">
+              They are with me and have given consent
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <!-- <button id="submitButton" class="govuk-button">Button text</button> -->
+
+    <button type="submit" class="govuk-button" id="submitButton" data-module="govuk-button">
+      Confirm consent
+    </button>
+
+    <p><a href="../../../school/dashboard.html">Return to dashboard and do this later</a></p>
+    {% endblock %}
+    {% block pageScripts %}
+    <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+    <script type="text/javascript">
+      document.getElementById('submitButton').addEventListener('click', function(event) {
+        var checkbox = document.getElementById('nationality');
+        if (!checkbox.checked) {
+          event.preventDefault();
+          window.location.href = 'declaration-error.html'; // Redirect to an error page
+        } else {
+          window.location.href = 'checker.html'; // Redirect to checker.html if checkbox is checked
+        }
+      });
+    </script>
+    {% endblock %}
