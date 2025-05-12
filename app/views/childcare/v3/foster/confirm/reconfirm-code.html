@@ -20,11 +20,11 @@
 
       <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-l">Create eligibility code for {{ data['child-name'] }}</h1>
+        <h1 class="govuk-heading-l">Reconfirm eligibility code for {{ data['foster-children'] }}</h1>
 
        <!--<p>You must confirm the foster carer's eligibility by DOING SOMETHING OFFLINE to create an eligibility code.</p> -->
 
-        <form class="form" action="/childcare/v3/foster/confirm/code-created" method="post" novalidate>
+        <form class="form" action="/childcare/v3/foster/confirm/code-reconfirmed" method="post" novalidate>
 
 
             {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -119,7 +119,7 @@
 
 
           {{ govukButton({
-            text: "Confirm eligibility and create code"
+            text: "Reconfirm eligibility"
           }) }}
 
 
