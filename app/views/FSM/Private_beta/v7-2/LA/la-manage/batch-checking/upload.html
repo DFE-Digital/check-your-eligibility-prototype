@@ -1,0 +1,59 @@
+{% extends "/layouts/FSM/v7-1/layout-dfe-lanav.html" %}
+{% set pageName="How do you want to run a batch check?" %}
+{% block content %}
+
+<span class="govuk-caption-l">Run a batch check for multiple parents or guardians</span>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-form-group">
+      <form action="/v7-1-batch-check" method="post">
+        {{ govukRadios({
+        name: "batch-check",
+        fieldset: {
+        legend: {
+
+        text: pageName,
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+        }
+        },
+        hint: {
+        text: "Choose if you want to connect to your school system or run a check manually"
+        },
+        items: [
+        {
+        value: "connect",
+        text: "Connect to your school system",
+        hint: {
+        text: "You’ll need your system login details"
+        }
+        },
+        {
+        value: "manual",
+        text: "Upload a form and run a check manually",
+        hint: {
+        text: " You can use a Common transfer file (CTF) or a CSV file"
+}
+        }
+        ]
+        }) }}
+        <div>
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Select and continue
+          </button>
+      </form>
+    </div>
+    </div>
+    {% endblock %}
+    {% block pageScripts %}
+    <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+    <script type="text/javascript">
+      if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
+        new MOJFrontend.MultiFileUpload({
+          container: $(".moj-multi-file-upload"),
+          uploadUrl: "/ajax-upload",
+          deleteUrl: "/ajax-delete",
+        });
+      }
+    </script>
+    {% endblock %}

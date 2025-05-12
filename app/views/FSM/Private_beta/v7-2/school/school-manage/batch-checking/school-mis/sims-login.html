@@ -1,0 +1,39 @@
+{% extends "layouts/FSM/v7/layout-dfe-schoolnav.html" %}
+{% set pageName="Unable to connect to school system" %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-notification-banner" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+            <div class="govuk-notification-banner__header">
+
+              <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                There is a problem
+              </h2>
+            </div>
+            <div class="govuk-notification-banner__content">
+              <p class="govuk-notification-banner__heading">
+                Unable to connect to your school system.
+              </p>
+            </div>
+          </div>
+
+
+        <h1 class="govuk-heading-l">What to do next</h1>
+
+
+       <p class="govuk-body">Try connecting again, contact your school or run a batch check using a form instead.
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+
+        {% endblock %}

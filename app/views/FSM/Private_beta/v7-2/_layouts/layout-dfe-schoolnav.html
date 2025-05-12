@@ -1,0 +1,136 @@
+{# 1 #}
+{% from 'node_modules/dfe-frontend/packages/components/header/macro.njk' import header %}
+
+{# 2 #}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{# 3 #}
+{% block header %}
+<!--This layout needs to be used for index-->
+{{ header({
+    "showNav": "true",
+    "showSearch": "false",
+    "showHeaderActionLinks": "true",
+    "logoPath": "public/images",
+    "searchAction": "/search/",
+    "searchInputName": "",
+    "logoAltText": "Department for Education",
+    "homeHref": "/FSM/Private_beta/v7/dsi-account/dsi-startnow",
+    "selectedNav": view,
+    "service": {
+      "name": "Check a family's eligibility",
+      "serviceUrl": "/FSM/index-fsm"
+    },
+    "headerActionLinks": [
+      {
+        "url"  : "/FSM/Private_beta/v7/dsi-account/dsi-landingpage",
+        "label" : "My account"
+      },
+      {
+        "url"  : "/FSM/Private_beta/v7/dsi-account/dsi-startnow",
+        "label" : "Sign out"
+      }
+  ],
+    "primaryLinks": [
+    {
+      "url"  : "/FSM/Private_beta/v7/school/dashboard",
+      "label" : "Dashboard"
+    }, {
+      "url"  : "#",
+      "label" : "LALA "
+    }, {
+      "url"  : "#",
+      "label" : "  "
+    }, {
+      "url"  : "#",
+      "label" : " "
+    }
+    ]
+  })
+}}
+<div class="app-phase-banner__wrapper">
+  <div class="govuk-phase-banner app-phase-banner govuk-width-container">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block beforeContent %}
+
+
+  {% block backLink %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+    }) }}
+  {% endblock %}
+
+{% endblock %}
+
+{% block footer %}
+ {{ govukFooter({
+   meta: {
+     items: [
+       {
+         href: "../legal/privacy",
+         text: "Privacy policy"
+       },
+       {
+        href: "../legal/accessibility",
+        text: "Accessibility"
+      },
+       {
+         href: "../legal/cookies",
+         text: "Cookies"
+       },
+       {
+        href: "../legal/contact",
+        text: "Contact us"
+      },
+      {
+        href:"/legal/manage-prototype",
+        text:"Manage your prototype"
+      },
+       {
+         href: "/legalmanage-prototype/clear-data",
+         text: "Clear data"
+       }
+     ],
+     visuallyHiddenTitle: "Footer links"
+   }
+ }) }}
+{% endblock %}
+
+{# 4 #}
+{% block scripts %}
+  {{ super() }}
+  <script src="/public/javascripts/dfefrontend.js"></script>
+  <script type="text/javascript" src="assets/javascripts/autocomplete.js"></script>
+  <link rel="stylesheet" href="assets/css/accessible-autocomplete.min.css" />
+  <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+<script type="text/javascript">
+  if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
+  new MOJFrontend.MultiFileUpload({
+    container: $(".moj-multi-file-upload"),
+    uploadUrl: "/ajax-upload",
+    deleteUrl: "/ajax-delete",
+  });
+}
+
+</script>
+
+{{ super() }}
+<script>
+ var AppFrontend = {}
+</script>
+<script src="/public/javascripts/components/filter-toggle-button.js"></script>
+
+{% endblock %}
