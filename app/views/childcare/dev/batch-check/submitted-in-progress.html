@@ -4,6 +4,13 @@
   File submitted
 {% endblock %}
 
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
 {% set dateSubmitted = '2025-04-22' %}
 
 
