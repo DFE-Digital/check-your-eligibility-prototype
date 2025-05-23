@@ -1,7 +1,7 @@
 {% extends "/layouts/childcare/v3/layout-childcare.html" %}
 
 {% block pageTitle %}
-  Edit the carer details
+  Edit the child details
 {% endblock %}
 
 {% block beforeContent %}
@@ -19,7 +19,7 @@
 
       <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-l">Edit the carer details</h1>
+        <h1 class="govuk-heading-l">Edit the child details</h1>
 
         <div class="govuk-warning-text">
           <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
@@ -30,7 +30,7 @@
         </div>
 
 
-        <form class="form" action="/childcare/v3/foster/family/family-saved?edit-type=carer" method="post" novalidate>
+        <form class="form" action="/childcare/v3/foster/family/saved?edit-type=child 1" method="post" novalidate>
 
           {% call govukFieldset({
 
@@ -41,39 +41,39 @@
             {{ govukInput({
               label: {
                 text: "First name",
-                classes: "govuk-label--s"
+                classes: "govuk-label--m"
               },
-              id: "carer-first-name",
-              name: "carer-first-name",
+              id: "child-first-name",
+              name: "child-first-name",
               classes: "govuk-input--width-20",
-              value: "Archana"
+              value: "Jasper"
 
             }) }}
 
             {{ govukInput({
               label: {
                 text: "Last name",
-                classes: "govuk-label--s"
+                classes: "govuk-label--m"
               },
-              id: "carer-last-name",
-              name: "carer-last-name",
+              id: "child-last-name",
+              name: "child-last-name",
               classes: "govuk-input--width-20",
-              value: "Mistry"
+              value: "Hayes"
 
             }) }}
 
             {{ govukDateInput({
-              id: "carer-dob",
-              namePrefix: "carer-dob",
+              id: "child-dob",
+              namePrefix: "child-dob",
               fieldset: {
                 legend: {
                   text: "Date of birth",
                   isPageHeading: false,
-                  classes: "govuk-fieldset__legend--s"
+                  classes: "govuk-fieldset__legend--m"
                 }
               },
               hint: {
-                text: "For example, 31 3 1980"
+                text: "For example, 31 3 2023"
               },
               items: [
                 {
@@ -84,47 +84,29 @@
                 {
                   name: "month",
                   classes: "govuk-input--width-2",
-                  value: "04"
+                  value: "10"
                 },
                 {
                   name: "year",
                   classes: "govuk-input--width-4",
-                  value: "1984"
+                  value: "2021"
                 }
               ]
             }) }}
-
-
-            {{ govukInput({
-              classes: "govuk-!-width-one-third",
-              label: {
-                text: "National Insurance number",
-                classes: "govuk-fieldset__legend--s"
-              },
-              hint: {
-                text: "For example, ‘QQ 12 34 56 C’"
-              },
-              id: "carer-ni-number",
-              name: "carer-ni-number",
-              value: "PB123456C"
-            }) }}
-
-
-
-
-
 
 
 
           {% endcall %}
 
 
+          <div>
+            {{ govukButton({
+              text: "Save"
+            }) }}
+          </div>
 
-          {% from "govuk/components/button/macro.njk" import govukButton %}
 
-          {{ govukButton({
-            text: "Save"
-          }) }}
+
 
 
         </form>

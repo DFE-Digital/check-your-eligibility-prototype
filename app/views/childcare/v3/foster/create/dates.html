@@ -20,11 +20,13 @@
 
       <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-l">Reconfirm eligibility code for {{ data['foster-children'] }}</h1>
+        <h1 class="govuk-heading-l">Enter code dates</h1>
 
        <!--<p>You must confirm the foster carer's eligibility by DOING SOMETHING OFFLINE to create an eligibility code.</p> -->
 
-        <form class="form" action="/childcare/v3/foster/confirm/code-reconfirmed" method="post" novalidate>
+        <form class="form" action="/childcare/v3/foster/create/check-details" method="post" novalidate>
+
+
 
 
             {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -97,29 +99,23 @@
 
 
 
-            {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Help with code dates
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+             Some words about how code dates impacts term eligibility and reconfirmation dates
+            </div>
+          </details>
 
-            {{ govukCheckboxes({
-              name: "eligibility",
-              fieldset: {
-                legend: {
-                  text: "Confirm eligibility",
-                  classes: "govuk-fieldset__legend--m"
-                }
-              },
-              items: [
-                {
-                  value: "eligibility",
-                  text: "I confirm that the foster carers are in work outside of their foster role and providing Childcare for working families codes is consistent with each child's care plan."
-                }
-              ]
-            }) }}
 
           {% from "govuk/components/button/macro.njk" import govukButton %}
 
 
           {{ govukButton({
-            text: "Reconfirm eligibility"
+            text: "Continue"
           }) }}
 
 

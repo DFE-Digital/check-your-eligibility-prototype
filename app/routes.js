@@ -69,6 +69,7 @@ require('./routes/fsm/private_beta/v7-1/appeal')(router);
 require('./routes/fsm/private_beta/v7-1/betacheck')(router);
 require('./routes/fsm/private_beta/v7-1/softcheck-admin')(router);
 
+
 router.get('*', function (req, res, next) {
 
 
@@ -151,6 +152,25 @@ res.locals.date = function (format = {day: 'numeric', month: 'long', year: 'nume
 //require('./routes/v1');
 //require('./views/v1/_routes');
 module.exports = router;
+
+
+// Childcare routes
+
+// Childcare v3
+
+// Route for create foster family add partner details
+
+router.post('/childcare/v3/foster/create/partner-details', function(req, res) {
+
+var carerPartner = req.session.data['add-partner']
+if (carerPartner == "Yes"){
+    res.redirect("/childcare/v3/foster/create/partner-details")
+}
+
+else {
+    res.redirect("/childcare/v3/foster/create/child-details")
+}
+})
 
 
 ////////////////////////CURRENT//////////////////////////////////

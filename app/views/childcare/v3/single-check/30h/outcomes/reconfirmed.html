@@ -1,7 +1,7 @@
 {% extends "/layouts/childcare/v3/layout-childcare.html" %}
 
 {% block pageTitle %}
-Code expired
+Code is valid
 {% endblock %}
 
 
@@ -10,15 +10,12 @@ Code expired
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7" style="background: 	#f47738;">
-      <h1 class="govuk-panel__title" style="color:#0b0c0c;">
-        Code expired
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
+      <h1 class="govuk-panel__title">
+        Code valid
       </h1>
       <div class="govuk-panel__body">
-        <div class="govuk-panel__body govuk-!-margin-bottom-5" style="color:#0b0c0c;">
-          Expired on 31 March 2025
-        </div>
-        <p class="govuk-body-l govuk-!-margin-bottom-0">Child has reached compulsory school age</p>
+        Can be used for summer term 2025 and autumn term 2025
       </div>
     </div>
 
@@ -46,7 +43,15 @@ Code expired
           Child date of birth
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["dob-day"] or "20" }} {{ data["dob-month"] or "March" }} {{ data["dob-year"] or "2020" }}
+          {{ data["dob-day"] or "10" }} {{ data["dob-month"] or "October" }} {{ data["dob-year"] or "2021" }}
+        </dd>
+      </div>
+       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Child age
+        </dt>
+        <dd class="govuk-summary-list__value">
+          3 years old
         </dd>
       </div>
 
@@ -61,15 +66,23 @@ Code expired
           Eligibility confirmed on
         </dt>
         <dd class="govuk-summary-list__value">
-          20 October 2024
+          21 March 2025
         </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Grace period ended
+          Reconfirm between
         </dt>
         <dd class="govuk-summary-list__value">
-          31 March 2025
+          22 August and 22 September 2025
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Grace period ends
+        </dt>
+        <dd class="govuk-summary-list__value">
+          31 December 2025
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -77,8 +90,8 @@ Code expired
           Reconfirmation status
         </dt>
         <dd class="govuk-summary-list__value">
-          <strong class="govuk-tag govuk-tag--grey" style="max-width:100%;">
-            Child too old
+          <strong class="govuk-tag govuk-tag--green" style="max-width:100%;">
+            Not due yet
           </strong>
         </dd>
       </div>

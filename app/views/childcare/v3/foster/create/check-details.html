@@ -28,7 +28,7 @@
             </h2>
             <ul class="govuk-summary-card__actions">
               <li class="govuk-summary-card__action">
-                <a class="govuk-link" href="/childcare/v3/foster/create/enter-partner-details">Edit<span class="govuk-visually-hidden">Carer details</span></a>
+                <a class="govuk-link" href="/childcare/v3/foster/create/carer-details">Edit<span class="govuk-visually-hidden">Carer details</span></a>
               </li>
             </ul>
           </div>
@@ -52,7 +52,7 @@
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  National insurance number
+                  National Insurance number
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {{ data["carer-ni-number"] or "PB123456C" }}
@@ -69,7 +69,7 @@
             </h2>
             <ul class="govuk-summary-card__actions">
               <li class="govuk-summary-card__action">
-                <a class="govuk-link" href="/childcare/v3/foster/create/enter-partner-details">Edit<span class="govuk-visually-hidden">Carer details</span></a>
+                <a class="govuk-link" href="/childcare/v3/foster/create/partner-details">Edit<span class="govuk-visually-hidden">Carer details</span></a>
               </li>
             </ul>
           </div>
@@ -93,7 +93,7 @@
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  National insurance number
+                  National Insurance number
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {{ data["partner-ni-number"] or "PB458673A" }}
@@ -110,7 +110,7 @@
             </h2>
             <ul class="govuk-summary-card__actions">
               <li class="govuk-summary-card__action">
-                <a class="govuk-link" href="/childcare/v3/foster/create/enter-child-details">Edit<span class="govuk-visually-hidden">Carer details</span></a>
+                <a class="govuk-link" href="/childcare/v3/foster/create/child-details">Edit<span class="govuk-visually-hidden">Carer details</span></a>
               </li>
             </ul>
           </div>
@@ -136,9 +136,49 @@
           </div>
         </div>
 
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              Code dates
+            </h2>
+            <ul class="govuk-summary-card__actions">
+              <li class="govuk-summary-card__action">
+                <a class="govuk-link" href="/childcare/v3/foster/create/dates">Edit<span class="govuk-visually-hidden">eligibility</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Application submitted on
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ "today" | govukDate }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Eligibility confirmed on
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ "today" | govukDate }}
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        <h2 class="govuk-heading-m">Confirm eligibility</h2>
+
+        <p>By submitting this information, you confirm that the foster carer is in work outside of their foster role and providing an eligibility code is consistent with each child's care plan.</p>
+
+
+
+
         {{ govukButton({
-          text: "Create foster family",
-          href: "/childcare/v3/foster/family/family-created"
+          text: "Create foster family and code(s)",
+          href: "/childcare/v3/foster/family/created"
         }) }}
 
       </div>

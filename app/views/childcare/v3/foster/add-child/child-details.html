@@ -1,7 +1,7 @@
 {% extends "/layouts/childcare/v3/layout-childcare.html" %}
 
 {% block pageTitle %}
-  Enter the carer details
+  Enter the child details
 {% endblock %}
 
 {% block beforeContent %}
@@ -19,10 +19,10 @@
 
       <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-l">Enter the carer details</h1>
+        <h1 class="govuk-heading-l">Enter the child details</h1>
 
 
-        <form class="form" action="/childcare/v3/foster/create/enter-partner-details" method="post" novalidate>
+        <form class="form" action="/childcare/v3/foster/add-child/dates" method="post" novalidate>
 
           {% call govukFieldset({
 
@@ -33,10 +33,10 @@
             {{ govukInput({
               label: {
                 text: "First name",
-                classes: "govuk-label--s"
+                classes: "govuk-label--m"
               },
-              id: "carer-first-name",
-              name: "carer-first-name",
+              id: "child-first-name",
+              name: "child-first-name",
               classes: "govuk-input--width-20"
 
             }) }}
@@ -44,24 +44,24 @@
             {{ govukInput({
               label: {
                 text: "Last name",
-                classes: "govuk-label--s"
+                classes: "govuk-label--m"
               },
-              id: "carer-last-name",
-              name: "carer-last-name",
+              id: "child-last-name",
+              name: "child-last-name",
               classes: "govuk-input--width-20"
 
             }) }}
 
             {{ govukDateInput({
 
-              id: "carer-dob",
-              namePrefix: "carer-dob",
+              id: "child-dob",
+              namePrefix: "child-dob",
 
               fieldset: {
                 legend: {
                   text: "Date of birth",
                   isPageHeading: false,
-                  classes: "govuk-fieldset__legend--s"
+                  classes: "govuk-fieldset__legend--m"
                 }
               },
               hint: {
@@ -70,32 +70,17 @@
             }) }}
 
 
-            {{ govukInput({
-              classes: "govuk-!-width-one-third",
-              label: {
-                text: "National Insurance number",
-                classes: "govuk-fieldset__legend--s"
-              },
-              hint: {
-                text: "For example, ‘QQ 12 34 56 C’"
-              },
-              id: "carer-ni-number",
-              name: "carer-ni-number"
-            }) }}
-
-
-
-
-
           {% endcall %}
 
 
+          <div>
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+          </div>
 
-          {% from "govuk/components/button/macro.njk" import govukButton %}
 
-          {{ govukButton({
-            text: "Continue"
-          }) }}
+
 
 
         </form>

@@ -30,7 +30,7 @@
         </div>
 
 
-        <form class="form" action="/childcare/v3/foster/family/family-saved?edit-type=partner" method="post" novalidate>
+        <form class="form" action="/childcare/v3/foster/family/saved?edit-type=partner" method="post" novalidate>
 
           {% call govukFieldset({
 
@@ -41,7 +41,7 @@
             {{ govukInput({
               label: {
                 text: "First name",
-                classes: "govuk-label--s"
+                classes: "govuk-label--m"
               },
               id: "partner-first-name",
               name: "partner-first-name",
@@ -53,7 +53,7 @@
             {{ govukInput({
               label: {
                 text: "Last name",
-                classes: "govuk-label--s"
+                classes: "govuk-label--m"
               },
               id: "partner-last-name",
               name: "partner-last-name",
@@ -68,7 +68,7 @@
                 legend: {
                   text: "Date of birth",
                   isPageHeading: false,
-                  classes: "govuk-fieldset__legend--s"
+                  classes: "govuk-fieldset__legend--m"
                 }
               },
               hint: {
@@ -99,7 +99,7 @@
               classes: "govuk-!-width-one-third",
               label: {
                 text: "National Insurance number",
-                classes: "govuk-fieldset__legend--s"
+                classes: "govuk-fieldset__legend--m"
               },
               hint: {
                 text: "For example, ‘QQ 12 34 56 C’"
