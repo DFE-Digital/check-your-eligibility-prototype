@@ -22,7 +22,7 @@
         <h1 class="govuk-heading-l">Enter the child details</h1>
 
 
-        <form class="form" action="/childcare/v3/foster/family/family-added" method="post" novalidate>
+        <form class="form" action="/childcare/v3/foster/create/dates" method="post" novalidate>
 
           {% call govukFieldset({
 
@@ -33,7 +33,7 @@
             {{ govukInput({
               label: {
                 text: "First name",
-                classes: "govuk-label--s"
+                classes: "govuk-label--m"
               },
               id: "child-first-name",
               name: "child-first-name",
@@ -44,7 +44,7 @@
             {{ govukInput({
               label: {
                 text: "Last name",
-                classes: "govuk-label--s"
+                classes: "govuk-label--m"
               },
               id: "child-last-name",
               name: "child-last-name",
@@ -61,7 +61,7 @@
                 legend: {
                   text: "Date of birth",
                   isPageHeading: false,
-                  classes: "govuk-fieldset__legend--s"
+                  classes: "govuk-fieldset__legend--m"
                 }
               },
               hint: {
@@ -72,10 +72,17 @@
 
           {% endcall %}
 
+          <div>
+            {{ govukButton({
+              text: "Add another child",
+              classes: "govuk-button--secondary govuk-!-margin-bottom-4"
+            }) }}
+          </div>
+
 
           <div>
             {{ govukButton({
-              text: "Add child"
+              text: "Continue"
             }) }}
           </div>
 

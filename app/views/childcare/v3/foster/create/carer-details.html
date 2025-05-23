@@ -1,7 +1,7 @@
 {% extends "/layouts/childcare/v3/layout-childcare.html" %}
 
 {% block pageTitle %}
-  Enter the partner details
+  Enter the carer details
 {% endblock %}
 
 {% block beforeContent %}
@@ -19,10 +19,10 @@
 
       <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-l">Enter the partner details (optional)</h1>
+        <h1 class="govuk-heading-l">Enter the carer details</h1>
 
 
-        <form class="form" action="/childcare/v3/foster/create/enter-child-details" method="post" novalidate>
+        <form class="form" action="/childcare/v3/foster/create/partner-details" method="post" novalidate>
 
           {% call govukFieldset({
 
@@ -33,10 +33,10 @@
             {{ govukInput({
               label: {
                 text: "First name",
-                classes: "govuk-label--s"
+                classes: "govuk-label--m"
               },
-              id: "partner-first-name",
-              name: "partner-first-name",
+              id: "carer-first-name",
+              name: "carer-first-name",
               classes: "govuk-input--width-20"
 
             }) }}
@@ -44,24 +44,24 @@
             {{ govukInput({
               label: {
                 text: "Last name",
-                classes: "govuk-label--s"
+                classes: "govuk-label--m"
               },
-              id: "partner-last-name",
-              name: "partner-last-name",
+              id: "carer-last-name",
+              name: "carer-last-name",
               classes: "govuk-input--width-20"
 
             }) }}
 
             {{ govukDateInput({
 
-              id: "partner-dob",
-              namePrefix: "partner-dob",
+              id: "carer-dob",
+              namePrefix: "carer-dob",
 
               fieldset: {
                 legend: {
                   text: "Date of birth",
                   isPageHeading: false,
-                  classes: "govuk-fieldset__legend--s"
+                  classes: "govuk-fieldset__legend--m"
                 }
               },
               hint: {
@@ -74,21 +74,43 @@
               classes: "govuk-!-width-one-third",
               label: {
                 text: "National Insurance number",
-                classes: "govuk-fieldset__legend--s"
+                classes: "govuk-fieldset__legend--m"
               },
               hint: {
                 text: "For example, ‘QQ 12 34 56 C’"
               },
-              id: "partner-ni-number",
-              name: "partner-ni-number"
+              id: "carer-ni-number",
+              name: "carer-ni-number"
             }) }}
 
 
 
 
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-          {% endcall %}
+          {{ govukRadios({
+            classes: "govuk-radios--inline",
+            name: "add-partner",
+            fieldset: {
+              legend: {
+                text: "Does the carer have a partner?",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              {
+                value: "Yes",
+                text: "Yes"
+              },
+              {
+                value: "No",
+                text: "No"
+              }
+            ]
+          }) }}
 
+           {% endcall %}
 
 
           {% from "govuk/components/button/macro.njk" import govukButton %}
