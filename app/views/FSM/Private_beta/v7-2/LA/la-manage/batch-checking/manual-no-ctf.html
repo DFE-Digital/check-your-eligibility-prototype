@@ -1,5 +1,5 @@
 {% extends "/layouts/FSM/v7-1/layout-dfe-lanav.html" %}
-{% set pageName="Choose how to run a manual batch check" %}
+{% set pageName="Run a manual batch check" %}
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -16,7 +16,7 @@
       <div class="moj-page-header-actions__actions">
         <div class="moj-button-group moj-button-group--inline">
           <a href="./history/batch-history.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-            Batch check history
+            Batch checks status
           </a>
         </div>
 <!--
@@ -30,14 +30,14 @@
     </div>
 
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-column-two-thirds"><!--
     <p class="govuk-body">You can:</p>
     <ul class="govuk-list govuk-list--bullet">
-      <!-- <li>export and upload a CTF from your LA system in XML format</li> -->
+       <li>export and upload a CTF from your LA system in XML format</li>
       <li>complete and upload our CSV template</li>
 
     </ul>
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break">-->
 <!--
     <h2 class="govuk-heading-s">
       Extracting a Common Transfer File (CTF)
@@ -54,10 +54,10 @@
         <li>Save it as an XML file.</li>
       </ol>
       </ul>
-    </div> -->
+    </div>
 
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
-    <h2 class="govuk-heading-s">Uploading our CSV template</h2>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break">-->
+    <h2 class="govuk-heading-m">Upload our CSV template</h2>
     <ol class="govuk-list govuk-list--number">
       <li>Download the <a href="/public/csv/Batch-check-template.csv" download class="govuk-link">batch
           check template (185kb)</a>.</li>
@@ -79,7 +79,7 @@
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
     <!-- <p class="govuk-heading-s">Upload a file</p> -->
 
-    <h3 class="govuk-heading-m">Upload an XML or CSV file</h3>
+    <h3 class="govuk-heading-m">Upload a CSV file</h3>
     <div class="govuk-form-group">
       <label class="govuk-label" for="file-upload-1">
       Upload a file
