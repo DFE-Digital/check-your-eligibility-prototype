@@ -14,9 +14,10 @@ Code is valid
       <h1 class="govuk-panel__title">
         Code valid
       </h1>
-      <div class="govuk-panel__body">
+      <div class="govuk-panel__body govuk-!-margin-bottom-5">
         Can be used for summer term 2025
       </div>
+         <p class="govuk-body-l govuk-!-margin-bottom-0" style="color:white;">Needs to apply for a new code before 31 April 2025</p>
     </div>
 
     <h2 class="govuk-heading-m">Details checked</h2>
@@ -27,7 +28,7 @@ Code is valid
           Eligibility code
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["30h-code"] or "40879487381" }}
+          {{ data["30h-code"] or "11879487381" }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -43,7 +44,7 @@ Code is valid
           Child date of birth
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["dob-day"] or "10" }} {{ data["dob-month"] or "October" }} {{ data["dob-year"] or "2021" }}
+          {{ data["dob-day"] or "26" }} {{ data["dob-month"] or "May" }} {{ data["dob-year"] or "2024" }}
         </dd>
       </div>
 
@@ -61,20 +62,20 @@ Code is valid
           Temporary code
         </dd>
       </div>
-      <div class="govuk-summary-list__row">
+       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Eligibility confirmed on
         </dt>
         <dd class="govuk-summary-list__value">
-          21 March 2025
+          31 January 2025
         </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Reconfirm between
+          Apply for a new code by
         </dt>
         <dd class="govuk-summary-list__value">
-          22 May and 22 June 2025
+          31 April 2025
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -90,12 +91,9 @@ Code is valid
           Reconfirmation status
         </dt>
         <dd class="govuk-summary-list__value">
-          <strong class="govuk-tag govuk-tag--green" style="max-width:100%;">
-            Not due yet
-          </strong>
+          Not applicable
         </dd>
       </div>
-
     </dl>
 
     {% from "govuk/components/button/macro.njk" import govukButton %}
