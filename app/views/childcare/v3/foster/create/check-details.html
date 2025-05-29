@@ -19,7 +19,7 @@
 
       <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-l">Check details</h1>
+        <h1 class="govuk-heading-l">Check family details</h1>
 
         <div class="govuk-summary-card">
           <div class="govuk-summary-card__title-wrapper">
@@ -28,7 +28,7 @@
             </h2>
             <ul class="govuk-summary-card__actions">
               <li class="govuk-summary-card__action">
-                <a class="govuk-link" href="/childcare/v3/foster/create/carer-details">Edit<span class="govuk-visually-hidden">Carer details</span></a>
+                <a class="govuk-link" href="/childcare/v3/foster/create/carer-details">Change<span class="govuk-visually-hidden">Carer details</span></a>
               </li>
             </ul>
           </div>
@@ -36,7 +36,7 @@
             <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Full Name
+                  Full name
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {{ data["carer-first-name"] or "Archana" }} {{ data["carer-last-name"] or "Mistry" }}
@@ -69,7 +69,7 @@
             </h2>
             <ul class="govuk-summary-card__actions">
               <li class="govuk-summary-card__action">
-                <a class="govuk-link" href="/childcare/v3/foster/create/partner-details">Edit<span class="govuk-visually-hidden">Carer details</span></a>
+                <a class="govuk-link" href="/childcare/v3/foster/create/partner-details">Change<span class="govuk-visually-hidden">Carer details</span></a>
               </li>
             </ul>
           </div>
@@ -77,7 +77,7 @@
             <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Full Name
+                  Full name
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {{ data["partner-first-name"] or "Ajay" }} {{ data["partner-last-name"] or "Mistry" }}
@@ -110,7 +110,7 @@
             </h2>
             <ul class="govuk-summary-card__actions">
               <li class="govuk-summary-card__action">
-                <a class="govuk-link" href="/childcare/v3/foster/create/child-details">Edit<span class="govuk-visually-hidden">Carer details</span></a>
+                <a class="govuk-link" href="/childcare/v3/foster/create/child-details">Change<span class="govuk-visually-hidden">Carer details</span></a>
               </li>
             </ul>
           </div>
@@ -118,7 +118,7 @@
             <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Full Name
+                  Full name
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {{ data["child-first-name"] or "Jasper" }} {{ data["child-last-name"] or "Hayes" }}
@@ -143,7 +143,7 @@
             </h2>
             <ul class="govuk-summary-card__actions">
               <li class="govuk-summary-card__action">
-                <a class="govuk-link" href="/childcare/v3/foster/create/dates">Edit<span class="govuk-visually-hidden">eligibility</span></a>
+                <a class="govuk-link" href="/childcare/v3/foster/create/dates">Change<span class="govuk-visually-hidden">eligibility</span></a>
               </li>
             </ul>
           </div>
@@ -169,15 +169,17 @@
           </div>
         </div>
 
-        <h2 class="govuk-heading-m">Confirm eligibility</h2>
+        <h2 class="govuk-heading-m">Confirm this is consistent with a care plan</h2>
 
-        <p>By submitting this information, you confirm that the foster carer is in work outside of their foster role and providing an eligibility code is consistent with each child's care plan.</p>
+        <p class="govuk-body">By submitting this information, you confirm:</p>
 
-
-
+        <ul class="govuk-list govuk-list--bullet">
+          <li>the foster carer works outside of their foster role</li>
+          <li>providing an eligibility code is consistent with each child's care plan</li>
+        </ul>
 
         {{ govukButton({
-          text: "Create foster family and code(s)",
+          text: "Add family and create code (s)",
           href: "/childcare/v3/foster/family/created"
         }) }}
 
