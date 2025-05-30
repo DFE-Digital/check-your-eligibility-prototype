@@ -28,7 +28,7 @@
             </h2>
             <ul class="govuk-summary-card__actions">
               <li class="govuk-summary-card__action">
-                <a class="govuk-link" href="/childcare/v3/foster/reconfim/select-children">Edit<span class="govuk-visually-hidden">Carer details</span></a>
+                <a class="govuk-link" href="/childcare/v3/foster/reconfim/select-children">Change<span class="govuk-visually-hidden">Carer details</span></a>
               </li>
             </ul>
           </div>
@@ -61,7 +61,7 @@
             </h2>
             <ul class="govuk-summary-card__actions">
               <li class="govuk-summary-card__action">
-                <a class="govuk-link" href="/childcare/v3/foster/add-child/dates">Edit<span class="govuk-visually-hidden">eligibility</span></a>
+                <a class="govuk-link" href="/childcare/v3/foster/add-child/dates">Change<span class="govuk-visually-hidden">eligibility</span></a>
               </li>
             </ul>
           </div>
@@ -87,10 +87,14 @@
           </div>
         </div>
 
-        <h2 class="govuk-heading-m">Reconfirm eligibility</h2>
+        <h2 class="govuk-heading-m">Reconfirm this is consistent with a care plan</h2>
 
-        <p>By submitting this information, you confirm that the foster carer is in work outside of their foster role and providing an eligibility code is consistent with each child's care plan.</p>
+        <p class="govuk-body">By submitting this information, you confirm:</p>
 
+        <ul class="govuk-list govuk-list--bullet">
+          <li>the foster carer works outside of their foster role</li>
+          <li>providing an eligibility code is consistent with each child's care plan</li>
+        </ul>
         {{ govukButton({
           text: "Reconfirm code(s)",
           href: "/childcare/v3/foster/family/reconfirmed"
