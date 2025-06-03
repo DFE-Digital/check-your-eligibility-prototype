@@ -1,4 +1,4 @@
-{% extends "/layouts/FSM/v7-1/layout-dfe-lanav-noback.html" %}
+{% extends "/layouts/FSM/v7-2/layout-dfe-lanav-noback.html" %}
 {% set pageName="Choose how to run a manual batch check" %}
 
 {% block beforeContent %}
@@ -10,19 +10,38 @@ href: "javascript:window.history.back()"
 }) }}
 {% endblock %}
 
+{% set breadcrumbs = breadcrumbs or [
+  { text: "Home", href: "/FSM/Private_beta/v7-2/LA/dashboard.html" },
+  { text: "Batch checking", href: "/FSM/Private_beta/v7-2/LA/la-manage/batch-checking/manual.html" },
+  { text: "Batch checks history" }
+] %}
+<!--
+<nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+  <ol class="govuk-breadcrumbs__list">
+    {% for crumb in breadcrumbs %}
+      <li class="govuk-breadcrumbs__list-item">
+        {% if crumb.href and not loop.last %}
+          <a class="govuk-breadcrumbs__link" href="{{ crumb.href }}">{{ crumb.text }}</a>
+        {% else %}
+          {{ crumb.text }}
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ol>
+</nav> -->
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l">Batch checks status</h1>
+    <h1 class="govuk-heading-l">Batch checks history</h1>
 
-    <details class="govuk-details">
+    <!-- <details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
 Get help with check results    </span>
   </summary>
   <div class="govuk-details__text">
 Details need to go in here  </div>
-</details>
+</details> -->
 
     <!-- <p><a href="/batch-checking/history/result-explainer"></a></p> -->
 
