@@ -1,4 +1,4 @@
-{% extends "layouts/FSM/v7-1/layout-dfe-lanav.html" %}
+{% extends "layouts/FSM/v7-2/layout-dfe-lanav.html" %}
 {% set pageName="All checks completed" %}
 
 {% block content %}
@@ -8,8 +8,8 @@
     <p class="govuk-body">You can now:</p>
 <ul class="govuk-list govuk-list--bullet">
   <li>apply for free school meals on behalf of the parent if they are eligible</li>
-  <li>notify and ask the school, parent or guardians to apply and provide evidence if needed</li>
-  <li>review the records that couldn't be checked and fix any errors before trying again</li>
+  <!-- <li>notify and ask the school, parent or guardians to apply and provide evidence if needed</li> -->
+  <li>review the records that couldn't be checked and update any out of date details before trying again</li>
 </ul>
     {% endset %}
 
@@ -70,11 +70,11 @@
           text: "Create applications",
           href: '../records/batch-records/eligible/batch-confirm-eligible'
           }) }}
-          {{ govukButton({
+          <!-- {{ govukButton({
           text: "Notify parent",
           classes: "govuk-button--secondary",
           href: './Private_beta/v7/_emails/batch-check/notify-parent-apply.html'
-          }) }}
+          }) }} -->
         </div>
       </div>
       <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all"
@@ -120,7 +120,7 @@
             <td class="govuk-table__cell govuk-table__cell--date">20 Sep 2012</td>
             <td class="govuk-table__cell">Hilltop Elementary</td>
             <td class="govuk-table__cell">alexjohnson@example.com</td>
-            <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td>
+            <!-- <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td> -->
             </tr>
             <tr class="govuk-table__row govuk-table__row--selected">
             <td class="govuk-table__cell">
@@ -137,7 +137,7 @@
             <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
             <td class="govuk-table__cell">Springfield Primary</td>
             <td class="govuk-table__cell">edentesfay@icloud.com</td>
-            <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td>
+            <!-- <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td> -->
           </tr>
           <tr class="govuk-table__row govuk-table__row--selected">
             <td class="govuk-table__cell">
@@ -155,7 +155,7 @@
             <td class="govuk-table__cell govuk-table__cell--date">15 Feb 2015</td>
             <td class="govuk-table__cell">Greenwood Academy</td>
             <td class="govuk-table__cell">edentesfay@icloud.com</td>
-            <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td>
+            <!-- <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td> -->
           </tr>
         </tbody>
       </table>
@@ -172,15 +172,15 @@
     <div id="not-eligible-section" class="govuk-table-section">
       <div class="govuk-grid-column-two-thirds">
         <h2 class="govuk-heading-m">Not eligible</h2>
-        <p class="govuk-body">These children may not be eligible. The parent or guardian can apply but must provide supporting evidence.</p>
+        <p class="govuk-body">These children may not be eligible. The parent or guardian can still apply but must provide supporting evidence.</p>
       </div>
       <div class="govuk-grid-column-one-third govuk-text-align-right" style="display: flex; justify-content: flex-end; align-items: right;">
         <div class="govuk-button-group">
-          {{ govukButton({
+          <!-- {{ govukButton({
           text: "Notify parent",
           classes: "govuk-button--secondary",
           href: ' '
-          }) }}
+          }) }} -->
         </div>
       </div>
 
@@ -217,7 +217,7 @@
             <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
             <td class="govuk-table__cell">Springfield Primary</td>
             <td class="govuk-table__cell">edentesfay@icloud.com</td>
-            <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td>
+            <!-- <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td> -->
           </tr>
           <tr class="govuk-table__row govuk-table__row--selected">
             <td class="govuk-table__cell">
@@ -235,7 +235,7 @@
             <td class="govuk-table__cell govuk-table__cell--date">15 Feb 2015</td>
             <td class="govuk-table__cell">Greenwood Academy</td>
             <td class="govuk-table__cell">edentesfay@icloud.com</td>
-            <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td>
+            <!-- <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td> -->
           </tr>
           <tr class="govuk-table__row govuk-table__row--selected">
             <td class="govuk-table__cell">
@@ -253,7 +253,7 @@
             <td class="govuk-table__cell govuk-table__cell--date">20 Sep 2012</td>
             <td class="govuk-table__cell">Hilltop Elementary</td>
             <td class="govuk-table__cell">edentesfay@icloud.com</td>
-            <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td>
+            <!-- <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td> -->
           </tr>
         </tbody>
       </table>
