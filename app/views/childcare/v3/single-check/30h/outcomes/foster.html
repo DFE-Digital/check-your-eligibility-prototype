@@ -14,9 +14,10 @@ Code is valid
       <h1 class="govuk-panel__title">
         Code valid
       </h1>
-      <div class="govuk-panel__body">
-        Valid from summer term 2025
+      <div class="govuk-panel__body govuk-!-margin-bottom-5">
+        Valid for summer term 2025
       </div>
+      <p class="govuk-body-l govuk-!-margin-bottom-0" style="color:white;">Needs reconfirming before 22 June 2025</p>
     </div>
 
     <h2 class="govuk-heading-m">Details checked</h2>
@@ -90,8 +91,8 @@ Code is valid
           Reconfirmation status
         </dt>
         <dd class="govuk-summary-list__value">
-          <strong class="govuk-tag govuk-tag--green" style="max-width:100%;">
-            Not due yet
+            <strong class="govuk-tag govuk-tag--yellow" style="max-width:100%;">
+            Due now
           </strong>
         </dd>
       </div>
@@ -104,7 +105,8 @@ Code is valid
 
     <div class="govuk-button-group">
       {{ govukButton({
-        text: "Manage foster family"
+        text: "Manage foster family",
+        href: "/childcare/v3/foster/family/valid"
       }) }}
 
       {{ govukButton({
