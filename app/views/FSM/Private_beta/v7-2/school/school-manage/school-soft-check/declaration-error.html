@@ -12,7 +12,7 @@
         <div class="govuk-error-summary__body">
           <ul class="govuk-list govuk-error-summary__list">
             <li>
-              <a href="#consent-error">Select if the parent or guardian is with you and has given consent</a>
+              <a href="#consent-error">Select if the parent or guardian has given consent</a>
             </li></li>
           </ul>
         </div>
@@ -24,11 +24,14 @@
       <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
       <strong class="govuk-warning-text__text">
         <span class="govuk-visually-hidden">Warning</span>
-        The parent or guardian must be with you and consent for you to apply on their behalf
+        The parent or guardian must consent for you to apply on their behalf
       </strong>
+
+
+
     </div>
 
-
+    <p style="govuk-body">They do not have to be with you, but you must have their constent to apply on their behalf.</p>
     <div class="govuk-form-group govuk-form-group--error">
       <fieldset class="govuk-fieldset" aria-describedby="countries-error">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
@@ -37,17 +40,17 @@
           </h2>
         </legend>
         <div id="consent-hint" class="govuk-hint">
-          Select if the parent or guardian is with you and has given consent
+          Select if the parent or guardian has given consent
         </div>
         <p id="consent-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span> Select if the parent or guardian is with you and has given consent
+          <span class="govuk-visually-hidden">Error:</span> Select if the parent or guardian has given consent
         </p>
         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="british"
               aria-describedby="nationality-item-hint">
             <label class="govuk-label govuk-checkboxes__label" for="nationality">
-              They are with me and have given consent
+              They have given consent
             </label>
           </div>
         </div>
