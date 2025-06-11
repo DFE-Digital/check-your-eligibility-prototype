@@ -1,4 +1,4 @@
-{% extends "/layouts/FSM/v7-1/layout-dfe-lanav.html" %}
+{% extends "layouts/FSM/v7-2/layout-dfe-matnav.html" %}
 {% set pageName= "Search all records" %}
 {% block content %}
 <div class="govuk-grid-row">
@@ -8,10 +8,13 @@
     </h1>
   </div>
 </div>
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    {% include "FSM/Private_beta/v7-1/_includes/filter-panel.html" %}
+    <!-- <p class="govuk-body">Search for a child or parent by name, date of birth, or reference number.</p> -->
+  </div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    {% include "FSM/Private_beta/v7-2/_includes/filter-panel-mat.html" %}
 
     <!--Export and search results section-->
   </div>
