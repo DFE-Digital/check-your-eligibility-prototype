@@ -1,0 +1,234 @@
+{% extends "layouts/FSM/v7/layout-dfe-schoolnav.html" %}
+{% set pageName="Imported records" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-width">
+    <div class="govuk-notification-banner govuk-notification-banner" role="region"
+      aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Imported
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+          40 records are ready to be checked </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+    <div id="ready-section" class="govuk-table-section">
+      <div class="govuk-grid-column-two-thirds">
+        <!-- <h2 class="govuk-heading-l">Ready to check</h2> -->
+      </div>
+      <!-- <div class="govuk-grid-column-one-third govuk-text-align-right govuk-!-padding-right-">
+          <div class="govuk-button-group">
+            {{ govukButton({
+            text: "Notify parents",
+            href: ' '
+            }) }}
+            {{ govukButton({
+            text: "Export results",
+            classes: "govuk-button--secondary",
+            href: ' '
+            }) }}
+          </div> -->
+    </div>
+
+    <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all"
+      data-multi-select-idprefix=" -" data-module="moj-sortable-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <!-- <th class="govuk-table__header" scope="col" id="select-all"></th> -->
+          <th scope="col" class="govuk-table__header">Line</th>
+          <th scope="col" class="govuk-table__header">Parent <br>first name</th>
+          <th scope="col" class="govuk-table__header">Parent last name</th>
+          <th scope="col" class="govuk-table__header">Parent date <br>of birth</th>
+          <th scope="col" class="govuk-table__header">Parent National<br>Insurance number</th>
+          <th scope="col" class="govuk-table__header">Child full name</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--date">Childs date <br>of birth</th>
+          <th scope="col" class="govuk-table__header">Contact email</th>
+
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <!-- <tr class="govuk-table__row govuk-table__row--selected"> -->
+        <!-- <td class="govuk-table__cell">
+            <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+              <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
+              <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
+                <span class="govuk-visually-hidden">Select Aconcagua</span>
+              </label>
+            </div>
+          </td> -->
+        <!-- <tr class="govuk-table__row"> -->
+
+          <td class="govuk-table__cell">1</td>
+        <td class="govuk-table__cell">Eden</td>
+        <td class="govuk-table__cell">Tesfay</td>
+        <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
+        <td class="govuk-table__cell">NW123456b</td>
+        <td class="govuk-table__cell">Samuel Tesfay</td>
+        <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
+        <td class="govuk-table__cell">edentesfay@icloud.com</td>
+        </tr>
+      </tbody>
+      <tbody class="govuk-table__body">
+        <!-- <tr class="govuk-table__row govuk-table__row--selected"> -->
+        <!-- <td class="govuk-table__cell">
+            <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+              <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
+              <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
+                <span class="govuk-visually-hidden">Select Aconcagua</span>
+              </label>
+            </div> -->
+        <!-- </td> -->
+        <td class="govuk-table__cell">2</td>
+        <td class="govuk-table__cell">Eden</td>
+        <td class="govuk-table__cell">Tesfay</td>
+        <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
+        <td class="govuk-table__cell">NW123456b</td>
+        <td class="govuk-table__cell">Samuel Tesfay</td>
+        <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
+        <td class="govuk-table__cell">edentesfay@icloud.com</td>
+
+        </tr>
+      </tbody>
+      <tbody class="govuk-table__body">
+        <!-- <tbody class="govuk-table__body">
+        <tr class="govuk-table__row govuk-table__row--selected">
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+              <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
+              <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
+                <span class="govuk-visually-hidden">Select Aconcagua</span>
+              </label>
+            </div>
+          </td> -->
+          <td class="govuk-table__cell">3</td>
+        <td class="govuk-table__cell">Eden</td>
+        <td class="govuk-table__cell">Tesfay</td>
+        <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
+        <td class="govuk-table__cell">NW123456b</td>
+        <td class="govuk-table__cell">Samuel Tesfay</td>
+        <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
+        <td class="govuk-table__cell">edentesfay@icloud.com</td>
+
+        </tr>
+      </tbody>
+      <td class="govuk-table__cell">4</td>
+      <td class="govuk-table__cell">Eden</td>
+      <td class="govuk-table__cell">Tesfay</td>
+      <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
+      <td class="govuk-table__cell">NW123456b</td>
+      <td class="govuk-table__cell">Samuel Tesfay</td>
+      <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
+      <td class="govuk-table__cell">edentesfay@icloud.com</td>
+
+      </tr>
+    </tbody>
+      <!-- <tr class="govuk-table__row govuk-table__row--selected">
+        <td class="govuk-table__cell">
+          <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+            <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
+            <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
+              <span class="govuk-visually-hidden"> </span>
+            </label>
+          </div>
+        </td> -->
+        <td class="govuk-table__cell">5</td>
+      <td class="govuk-table__cell">Eden</td>
+      <td class="govuk-table__cell">Tesfay</td>
+      <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
+      <td class="govuk-table__cell">NW123456b</td>
+      <td class="govuk-table__cell">Samuel Tesfay</td>
+      <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
+      <td class="govuk-table__cell">edentesfay@icloud.com</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+  <div style="display: flex; justify-content: center; margin-top: 20px;">
+    {{ govukPagination({
+      previous: {
+        href: "#"
+      },
+      next: {
+        href: "#"
+      },
+      items: [
+        {
+          number: 1,
+          href: "#"
+        },
+        {
+          number: 2,
+          current: true,
+          href: "#"
+        },
+        {
+          number: 3,
+          href: "#"
+        }
+      ]
+    }) }}
+  </div>
+
+  <!-- </table> -->
+
+
+{{ govukButton({
+text: "Check eligibility",
+classes: "govuk-button--primary",
+href: '../batch-checking/batch-checking-loader'
+}) }}
+</div>
+
+</div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const navLinks = document.querySelectorAll('.moj-sub-navigation__link');
+    const sections = document.querySelectorAll('.govuk-table-section');
+
+    // Initially hide all sections except the one corresponding to the active link
+    const activeLink = document.querySelector('.moj-sub-navigation__link[aria-current="true"]');
+    const targetId = activeLink ? activeLink.getAttribute('data-section') : 'ready-section';
+
+    sections.forEach(section => {
+      section.style.display = section.id === targetId ? 'block' : 'none';
+    });
+
+    // Add event listeners to handle tab switching
+    navLinks.forEach(link => {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        // Update aria-current for navigation links
+        navLinks.forEach(nav => nav.removeAttribute('aria-current'));
+        this.setAttribute('aria-current', 'true');
+
+        // Show only the corresponding section
+        const newTargetId = this.getAttribute('data-section');
+        sections.forEach(section => {
+          section.style.display = section.id === newTargetId ? 'block' : 'none';
+        });
+      });
+    });
+  });
+</script>
+
+
+{% endblock %}
