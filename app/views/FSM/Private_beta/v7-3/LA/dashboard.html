@@ -1,10 +1,14 @@
-{% extends "layouts/FSM/v7-3/layout-dfe-lanav.html" %}
+{% extends "layouts/FSM/v7-3/layout-dfe-lanav-noback.html" %}
 {% set pageName="Manchester City Council" %}
 {% set parentName="Eden Tesfay" %}
+{% set address="Oasis House, Thorpe Wood, Manchester, M23 4AJ" %}
+
 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
+    <caption>{{address}}</caption>
+<div class="govuk-width-container">
     <h1 class="govuk-heading-l">
       {{pageName}}
     </h1>
@@ -38,7 +42,7 @@
         <div class="dfe-card-container">
           <h2 class="govuk-heading-m">
             <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
-              href="la-manage/decision/pending-list">Pending applications</a>
+              href="la-manage/decision/pending-list">Review evidence</a>
           </h2>
           <p>Check eligibility for children not found in the system.</p>
         </div>
@@ -53,7 +57,6 @@
           <p>Search all pupil free school meal records and export results.</p>
         </div>
       </div>
-
       <div class="dfe-card">
         <div class="dfe-card-container">
           <h2 class="govuk-heading-m">
@@ -62,16 +65,6 @@
           <p>Read guidance on how to review supporting evidence.</p>
         </div>
       </div>
-      <!-- <div class="dfe-card">
-        <div class="dfe-card-container">
-
-          <h2 class="govuk-heading-m">
-            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
-              href="/_offline/fsm-print-version-la.html">Download PDF form</a>
-          </h2>
-          <p>Download an eligibility form for parents to complete.</p>
-        </div>
-      </div> -->
     </div>
   </div>
 </div>

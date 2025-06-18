@@ -1,0 +1,238 @@
+{% extends "layouts/FSM/v7-3/layout-dfe-lanav.html" %}
+
+{% block backLink %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+<!-- {% set SiblingAdded %}
+<h3 class="govuk-notification-banner__heading">
+  Sibling added to record
+  </h3>
+  <p class="govuk-body">
+    You have added sibling details to this record. This will show immediately.
+  </p>
+  <p>Your reference is 1234567</p>
+{% endset %} -->
+
+<!-- The content between the heading 1 and the buttons -->
+
+{% block content %}
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+  <div class="govuk-grid-column-full">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <h1 class="govuk-heading-l" style="margin: 1;">Eden Tesfay</h1>
+      </div>
+       <div class="govuk-button-group" style="display: flex;">
+          {{ govukButton({
+            text: "Download CSV file",
+            classes: 'govuk-button--secondary',
+            href:'/download-csv'
+          }) }}
+  </div>
+      <div style="display: flex;">
+        <div class="govuk-button-group" style="display: flex;">
+             <p><strong class="govuk-tag govuk-tag--red">
+        Review evidence
+      </strong>
+        </div>
+        </div>
+
+  </div>
+</div>
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+{{ govukSummaryList({
+  card: {
+  title: {
+  text: "Child details"
+  },
+  actions: {
+  items: [
+
+  {
+  href: "#",
+  text: "Change",
+  visuallyHiddenText: "from application"
+  }
+  ]
+  }
+  },
+  rows: [
+
+
+    {
+      key: {
+        text: "Reference"
+      },
+      value: {
+        html: "44455453"
+      }
+    },
+
+    {
+      key: {
+        text: "Full name"
+      },
+      value: {
+        html: "Sam Tesfay"
+      }
+    },
+
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        html: "18 November 2018"
+      }
+    }
+
+
+
+
+  ]
+  }) }}
+
+<!-- PERSON -->
+
+
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Parent or guardian"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "of University of Gloucestershire"
+        }
+
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Full name"
+      },
+      value: {
+        html: "Eden Tesfay"
+      }
+    },
+
+    {
+      key: {
+        text: "Relationship"
+      },
+      value: {
+        html: "Parent"
+      }
+    },
+
+
+
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        html: "1 September 1988"
+      }
+    },
+    {
+      key: {
+        text: "National Insurance number"
+      },
+      value: {
+        html: "NJ123456B"
+      }
+    },
+    {
+      key: {
+        text: "Email address"
+      },
+
+
+      value: {
+        html: "edamcheese@hotmail.com"
+      },
+
+
+      value: {
+        html: "edamcheese@hotmail.com"
+      }
+    },
+    {
+      key: {
+      text: "Supporting evidence"
+      },
+      value: {
+      html: '
+        <a href="evidence.html" target="_blank" rel="noopener noreferrer">file.001.jpg</a><br>
+        <a href="evidence.html" target="_blank" rel="noopener noreferrer">file.002.jpg</a>
+      ' | safe
+      }
+    }
+
+  ]
+}) }}
+<div style="height: 32px;"></div>
+{{ govukRadios({
+  name: "record decision",
+  fieldset: {
+    legend: {
+      text: "Record a decision",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "View the supporting evidence before making a decision."
+  },
+  items: [
+    {
+      value: "Approve",
+      text: "Approve application"
+    },
+    {
+      value: "Decline",
+      text: "Decline application"
+    },
+    {
+      value: "Request more evidence",
+      text: "Request more evidence",
+
+      conditional: {
+        html: '<p class="govuk-body">Request more evidence from the parent or guardian .</p>'
+      }
+    }
+  ]
+}) }}
+
+<button type="submit" class="govuk-button" data-module="govuk-button">
+  Save and continue
+</button>
+
+{% endblock %}
+
+{% block buttons %}
+{% endblock %}
+
+{% block pageScripts %}
+<!-- Add any javascript files here. Include javascript files only on the pages
+that need them. Excessive javascript files loaded on other pages may slow down
+the response times of the prototype. -->
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+
+
+{% endblock %}
