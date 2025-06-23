@@ -1,102 +1,64 @@
-{% extends "layouts/FSM/v7-1/layout-dfe-schoolnav.html" %}
-{% set pageName="Finalise applications" %}
-{% set applicationSent %}
-
-<h3 class="govuk-notification-banner__heading">
-  Your application has been sent
-  </h3>
-  <p class="govuk-body">
-    We have sent your application to be processed by your local school. It may take upto 1 week to process.
-  </p>
-  <p>Your reference is 1234567</p>
-{% endset %}
-
+{% extends "layouts/FSM/v7-3/layout-dfe-schoolnav.html" %}
+{% set pageName="Record a decision" %}
 
 {% block content %}
+<div class="govuk-grid-row">
+  <!-- <div class="govuk-grid-column-full">
+  <h1 class="govuk-heading-l">{{pageName}}</h1>
+  </div> -->
 
-<div class="moj-page-header-actions">
-  <div class="moj-page-header-actions__title">
-    <div class=“govuk-grid-column-full”>
+  <h1 class="govuk-heading-l">{{pageName}}
 
+      <span id="notifications" class="moj-notification-badge" style="white-space: nowrap; margin-left: 15px; ">21</span>
 
-      <div class="notifications-container" style="display: flex; justify-content: space-between; align-items: center;">
-        <h1 class="govuk-heading-l" style="margin: 0;">Finalise applications</h1>
-        <span id="notifications" class="moj-notification-badge" style="white-space: nowrap; margin-left: 10px;">13</span>
-    </div>
-
-  </div>
-
-<div class="moj-page-header-actions__title">
-</div>
-</div>
+    </h1>
 
 
-<div>
-  <div class="govuk-!-padding-bottom-3"></div>
-<div class=“govuk-grid-column-full”>
-  <p class="govuk-body-l">All the children in the table on this page are entitled to free school meals. </p>
-</div>
-</div>
 
-<!--<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-
-    {% if data['eligibility-confirmed'] =="yes" %}
-    {{ govukNotificationBanner({
-      html: applicationSent,
-      type: 'success'
-    }) }}
-    {% endif %}
-</div>
-
-<div class=“govuk-!-display-flex govuk-!-align-items-center govuk-!-gap-5>
-  {{ mojNotificationBadge({
-    text: "4"
-  }) }}
-  {{ mojPageHeaderActions({
-  heading: {
-    text: 'Finalise applications',
-    classes:'govuk-heading-l'
-  }
-}) }}
-</div>
-
-<div class="govuk-width-container">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <p class="govuk-body">All the children in the table on this page are entitled to free school meals. Now you should finalise their applications.</p>
     </div>
   </div>
-</div>-->
+</div>
 
-<div class="govuk-!-padding-bottom-3"></div>
+  <div class="govuk-!-padding-bottom-3"></div>
 
-<h2 class="govuk-heading-m">How to finalise an application</h2>
+  <div class="govuk-warning-text">
+    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+    <strong class="govuk-warning-text__text">
+      <span class="govuk-visually-hidden">Warning</span>
+      You must record these decisions in your school system before marking the applications as completed.
+    </strong>
+  </div>
+
+<!--
+  <h2 class="govuk-heading-m">How to record a decision and mark as completed</h2>
 
   <ol>
     <li>Add the details of each application to your own system.</li>
-    <li>Select all the records you've added using the tick boxes and select 'Finalise applications'.</li>
+    <li>Select all the records you've added using the tick boxes and select 'Mark as completed'.</li>
   </ol>
 
   <div class="govuk-inset-text">
-    You can also finalise an individual application by selecting the reference number link.
-  </div>
-  <div class="govuk-!-padding-bottom-3"></div>
+    You can mark an individual application as completed in the record using the reference number link.
+  </div> -->
+  <!-- <div class="govuk-!-padding-bottom-3"></div> -->
 
   <div class="moj-button-action">
 
-  {{ mojButtonMenu({
+    {{ mojButtonMenu({
     items: [{
-      text: 'Finalise applications',
-      href: 'finalise-apps-areyousure.html'
+    text: 'Mark as completed',
+    href: 'finalise-apps-areyousure.html'
     }, {
-      text: "Download all files",
-      href: "#",
-      classes: "govuk-button--secondary"
+    text: "Download list as CSV",
+    href: "#",
+    classes: "govuk-button--secondary"
     }]
-  }) }}
+    }) }}
 
-  <!--
+    <!--
   <div class="moj-button-action">
     {{ govukButton({
       text: 'Finalise applications',
@@ -112,246 +74,167 @@
 <div class="govuk-grid-column-full">
 -->
 
-<div class="govuk-!-padding-bottom-5"></div>
+    <div class="govuk-!-padding-bottom-5"></div>
 
-{% set filterOptionsHtml %}
+    {% set filterOptionsHtml %}
 
-  {{ govukInput({
+    {{ govukInput({
     id: 'keywords',
     name: 'keywords',
     label: {
-      text: 'Keywords',
-      classes: 'govuk-label--m'
+    text: 'Keywords',
+    classes: 'govuk-label--m'
     }
-  }) }}
+    }) }}
 
-  {{ govukCheckboxes({
+    {{ govukCheckboxes({
     idPrefix: 'type',
     name: 'type',
     classes: "govuk-checkboxes--small",
     fieldset: {
-      legend: {
-        text: ' ',
-        classes: 'govuk-fieldset__legend--m'
-      }
+    legend: {
+    text: ' ',
+    classes: 'govuk-fieldset__legend--m'
+    }
     },
     items: [
-      {
-        value: '1',
-        text: 'Yorkshire (18)',
-        checked: true
-      },
+    {
+    value: '1',
+    text: 'Yorkshire (18)',
+    checked: true
+    },
 
-      {
-        value: '2',
-        text: 'Humber (12)',
-        checked: true
-      }
+    {
+    value: '2',
+    text: 'Humber (12)',
+    checked: true
+    }
     ]
-  }) }}
+    }) }}
 
-  {{ govukCheckboxes({
+    {{ govukCheckboxes({
     idPrefix: 'status',
     name: 'status',
     classes: "govuk-checkboxes--small",
     fieldset: {
-      legend: {
-        text: 'Status',
-        classes: 'govuk-fieldset__legend--m'
-      }
+    legend: {
+    text: 'Status',
+    classes: 'govuk-fieldset__legend--m'
+    }
     },
     items: [
-      {
-        value: '1',
-        text: 'Complete (5)',
-        checked: true
-      },
-      {
-        value: '2',
-        text: 'Incomplete (3)',
-        checked: true
-      },
-      {
-        value: '3',
-        text: 'New application (13)',
-        checked: true
-      }
+    {
+    value: '1',
+    text: 'Complete (5)',
+    checked: true
+    },
+    {
+    value: '2',
+    text: 'Incomplete (3)',
+    checked: true
+    },
+    {
+    value: '3',
+    text: 'New application (13)',
+    checked: true
+    }
     ]
-  }) }}
+    }) }}
 
-{% endset %}
+    {% endset %}
 
-<div class="govuk-!-padding-bottom-3"></div>
+    <div class="govuk-!-padding-bottom-3"></div>
 
-<table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
+    <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
 
-      <th class="govuk-table__header" scope="col" id="select-all"></th>
-      <th class="govuk-table__header" scope="col">Reference</th>
-      <th class="govuk-table__header" scope="col">Parent or guardian</th>
-      <th class="govuk-table__header" scope="col">Child</th>
-      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Child date of birth</th>
-      <th class="govuk-table__header" scope="col">Status</th>
-      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Entitled from</th>
-      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Submission date</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row govuk-table__row--selected">
-      <td class="govuk-table__cell">
-        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
-          <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
-            <span class="govuk-visually-hidden">Select</span>
-          </label>
-        </div>
-      </td>
+          <th class="govuk-table__header" scope="col" id="select-all"></th>
+          <th class="govuk-table__header" scope="col">Reference</th>
+          <th class="govuk-table__header" scope="col">Parent or guardian</th>
+          <th class="govuk-table__header" scope="col">Child</th>
+          <th class="govuk-table__header govuk-table__header--numeric" scope="col">Child date of birth</th>
+          <th class="govuk-table__header" scope="col">Decision</th>
 
-      <td class="govuk-table__cell"><a href="../../records/entitled-records/entitled-eden1.html" class="govuk-link">44455453</a></td>
-      <td class="govuk-table__cell">Eden Tesfay</td>
-      <td class="govuk-table__cell">Samual Tesfay</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
-      <td class="govuk-table__cell"> {{ govukTag({
-        text: "Entitled",
-        classes: "govuk-tag--green"
-      }) }}</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">
-        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-denali" value="denali">
-          <label class="govuk-label govuk-checkboxes__label" for="mountain-denali">
-            <span class="govuk-visually-hidden">Select</span>
-          </label>
-        </div>
-      </td>
-      </td>
-      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
-      <td class="govuk-table__cell">Warren Sutton</td>
-      <td class="govuk-table__cell">Lisa Sutton</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
-      <td class="govuk-table__cell"> {{ govukTag({
-        text: "Entitled",
-        classes: "govuk-tag--green"
-      }) }}</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">
-        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-elbrus" value="elbrus">
-          <label class="govuk-label govuk-checkboxes__label" for="mountain-elbrus">
-            <span class="govuk-visually-hidden">Select Elbrus</span>
-          </label>
-        </div>
-      </td>
-      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
-      <td class="govuk-table__cell">Alan Jones</td>
-      <td class="govuk-table__cell">Jack Jones</td>
+          <th class="govuk-table__header govuk-table__header--numeric" scope="col">Submission date</th>
+          <!-- <th class="govuk-table__header govuk-table__header--numeric" scope="col">Entitled from</th> -->
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row govuk-table__row--selected">
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+              <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
+              <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
+                <span class="govuk-visually-hidden">Select</span>
+              </label>
+            </div>
+          </td>
 
-      <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
-      <td class="govuk-table__cell"> {{ govukTag({
-        text: "Entitled",
-        classes: "govuk-tag--green"
-      }) }}</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">
-        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-everest" value="everest">
-          <label class="govuk-label govuk-checkboxes__label" for="mountain-everest">
-            <span class="govuk-visually-hidden">Select Everest</span>
-          </label>
-        </div>
-      </td>
-      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
-      <td class="govuk-table__cell">Eden Tesfay</td>
-      <td class="govuk-table__cell">Samual Tesfay</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
-      <td class="govuk-table__cell"> {{ govukTag({
-        text: "Reviewed Entitled",
-        classes: "govuk-tag--light-blue"
-      }) }}</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">
-        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-kilimanjaro" value="kilimanjaro">
-          <label class="govuk-label govuk-checkboxes__label" for="mountain-kilimanjaro">
-            <span class="govuk-visually-hidden">Select</span>
-          </label>
-        </div>
-      </td>
-      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
-      <td class="govuk-table__cell">Jennifer Langley</td>
-      <td class="govuk-table__cell">Tilly Langley</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
-      <td class="govuk-table__cell"> {{ govukTag({
-        text: "Reviewed Entitled",
-        classes: "govuk-tag--light-blue"
-      }) }}</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">
-        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-puncak-jaya" value="puncak-jaya">
-          <label class="govuk-label govuk-checkboxes__label" for="mountain-puncak-jaya">
-            <span class="govuk-visually-hidden">Select</span>
-          </label>
-        </div>
-      </td>
-      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
-      <td class="govuk-table__cell">Susan Francis</td>
-      <td class="govuk-table__cell">Noah Francis</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
-      <td class="govuk-table__cell"> {{ govukTag({
-        text: "Reviewed Entitled",
-        classes: "govuk-tag--light-blue"
-      }) }}</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">
-        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-vinson" value="vinson">
-          <label class="govuk-label govuk-checkboxes__label" for="mountain-vinson">
-            <span class="govuk-visually-hidden">Select</span>
-          </label>
-        </div>
-      </td>
-      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
-      <td class="govuk-table__cell">John Smith</td>
-      <td class="govuk-table__cell">Jo Smith</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
-      <td class="govuk-table__cell"> {{ govukTag({
-        text: "Reviewed Entitled",
-        classes: "govuk-tag--light-blue"
-      }) }}</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">01 Sep 2023</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
-    </tr>
-  </tbody>
-</table>
+          <td class="govuk-table__cell"><a href="../appeal_statuses/eligible" class="govuk-link">44455456</a></td>
+          <td class="govuk-table__cell">Jim Smith</td>
+          <td class="govuk-table__cell">Arthur Smith</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+          <td class="govuk-table__cell"> {{ govukTag({
+            text: "Eligible after review",
+            classes: "govuk-tag--green"
+            }) }}</td>
 
+          <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
+          <!-- <td class="govuk-table__cell govuk-table__cell--numeric">01 Oct 2023</td> -->
+        </tr>
 
+        <tr class="govuk-table__row govuk-table__row--selected">
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+              <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
+              <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
+                <span class="govuk-visually-hidden">Select</span>
+              </label>
+            </div>
+          </td>
 
+          <td class="govuk-table__cell"><a href="../apply/entitled-rachel" class="govuk-link">44455453</a></td>
+          <td class="govuk-table__cell">Eden Tesfay</td>
+          <td class="govuk-table__cell">Rachel Tesfay</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+          <td class="govuk-table__cell"> {{ govukTag({
+            text: "Eligible",
+            classes: "govuk-tag--green"
+            }) }}</td>
 
+          <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
+          <!-- <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td> -->
+        </tr>
 
-    </div>
+        <tr class="govuk-table__row govuk-table__row--selected">
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+              <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
+              <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
+                <span class="govuk-visually-hidden">Select</span>
+              </label>
+            </div>
+          </td>
 
+          <td class="govuk-table__cell"><a href="../appeal_statuses/emailed-not-eligible"
+              class="govuk-link">44455457</a></td>
+          <td class="govuk-table__cell">Trevor Sinclair</td>
+          <td class="govuk-table__cell">Polly Sinclair</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+          <td class="govuk-table__cell"> {{ govukTag({
+            text: "Not eligible after review",
+            classes: "govuk-tag--red"
+            }) }}</td>
 
+          <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
+          <!-- <td class="govuk-table__cell govuk-table__cell--numeric"></td> -->
+        </tr>
+
+      </tbody>
+    </table>
   </div>
+</div>
 </div>
 
 {% endblock %}
