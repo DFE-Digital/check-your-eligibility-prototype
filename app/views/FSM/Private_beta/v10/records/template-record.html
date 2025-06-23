@@ -1,17 +1,5 @@
 {% extends "layouts/FSM/v7-3/layout-dfe-lanav.html" %}
-{% block backLink %}
-{{ govukBackLink({
-text: "Back",
-href: "javascript:window.history.back()"
-}) }}
-{% endblock %}
 
-{% set childName = "Emily Johnson" %}
-{% set pageName = "Manage pupil record for " ~ childName %}
-
-{% set pageDescription %}
-  View and manage the details of this pupil record.
-{% endset %}
 
 
 {% block content %}
@@ -22,29 +10,29 @@ href: "javascript:window.history.back()"
     <div style="display: flex; justify-content: space-between; align-items: center;">
       <div>
         <span class="govuk-caption-l">44455453</span>
-        <h1 class="govuk-heading-l" style="margin-bottom: 0;">{{childName}}</h1>
-          </div>
-            <div>
-              {{ mojButtonMenu({
-              button: {
-              text: "Manage pupil record"
-              },
-              items: [
-              {
-              text: "Export record as CSV"
-              },
-              {
-              text: "Export record as PDF"
-              },
-              {
-              text: "Archive record"
-              }
-              ]
-              }) }}
-            </div>
-          </div>
+        <h1 class="govuk-heading-l" style="margin-bottom: 0;">Emily Johnson</h1>
+      </div>
+      <div>
+        {{ mojButtonMenu({
+        button: {
+        text: "Manage pupil record"
+        },
+        items: [
+        {
+        text: "Export file as CSV"
+        },
+        {
+        text: "Print record as PDF"
+        },
+        {
+        text: "Archive record"
+        }
+        ]
+        }) }}
       </div>
     </div>
+  </div>
+</div>
 
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
   <div class="govuk-grid-column-full">
@@ -52,19 +40,20 @@ href: "javascript:window.history.back()"
       <div class="govuk-summary-card">
         <div class="govuk-summary-card__title-wrapper">
           <h2 class="govuk-summary-card__title">
-            Application status
+            Record status
           </h2>
         </div>
         <div class="govuk-summary-card__content">
           <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                  <strong class="govuk-tag govuk-tag--grey" style="margin-left: 0px;">
-                    Ready for review
+                  <strong class="govuk-tag govuk-tag--blue">
+                    Active
                 </strong>
+
               </dt>
               <dd class="govuk-summary-list__value">
-              This record is ready for you to review the evidence.
+              This record is currently active and waiting on a review.
               </dd>
             </div>
             <!-- <div class="govuk-summary-list__row">
@@ -94,14 +83,6 @@ href: "javascript:window.history.back()"
   </div>
   <div class="govuk-summary-card__content">
     <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Reference number
-        </dt>
-        <dd class="govuk-summary-list__value">
-          44455453
-        </dd>
-      </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Child Name
@@ -188,17 +169,16 @@ href: "javascript:window.history.back()"
     <h2 class="govuk-summary-card__title">
       Supporting evidence
     </h2>
-    <!-- <ul class="govuk-summary-card__actions">
+    <ul class="govuk-summary-card__actions">
       <li class="govuk-summary-card__action">
-        <a class="govuk-link" href="#">Add evidence<span class="govuk-visually-hidden"> add supporting
+        <a class="govuk-link" href="#">Update evidence<span class="govuk-visually-hidden"> add supporting
             evidence</span></a>
       </li>
-      <li class="govuk-summary-card__action">
+      <!-- <li class="govuk-summary-card__action">
         <a class="govuk-link" href="#">Remove evidence<span class="govuk-visually-hidden"> </span></a>
-      </li>
-    </ul> -->
+      </li> -->
+    </ul>
   </div>
-
   <div class="govuk-summary-card__content">
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
@@ -222,8 +202,8 @@ href: "javascript:window.history.back()"
           Files
         </dt>
         <dd class="govuk-summary-list__value">
-          <a href="#">UC_statement_2023.pdf</a><br>
-          <a href="#"> </a><br>
+          <a href="#">UC statement2.pdf</a><br>
+          <a href="#">UC statement1.pdf</a><br>
         </dd>
       </div>
 
@@ -232,67 +212,36 @@ href: "javascript:window.history.back()"
           Evidence status
         </dt>
         <dd class="govuk-summary-list__value">
-          <strong class="govuk-tag govuk-tag--green" style="margin-left: 0px;">
-            Evidence added
+          <strong class="govuk-tag govuk-tag--yellow" style="margin-left: 0px;">
+            Waiting review
           </strong>
         </dd>
       </div>
   </div>
-  </div>
 
-  <!-- <div class="govuk-!-padding-bottom-3"></div> -->
-
-<div style="height: 32px;"></div>
-{{ govukRadios({
-  name: "record decision",
-  fieldset: {
-    legend: {
-      text: "Record a decision",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  hint: {
-    text: "View the supporting evidence before making a decision."
-  },
-  items: [
-    {
-      value: "Approve",
-      text: "Approve application"
-    },
-    {
-      value: "Decline",
-      text: "Decline application"
-    },
-    {
-      value: "Request more evidence",
-      text: "Request more evidence",
-
-      conditional: {
-        html: '<p class="govuk-body"></p>'
-      }
-    }
-  ]
-}) }}
+  <div class="govuk-!-padding-bottom-3"></div>
 
 
-<div class="govuk-button-group">
-<button type="submit" class="govuk-button" data-module="govuk-button">
-  Save and continue
-</button>
-<a class="govuk-link" href="#">Return to review list</a>
-</div>
+  {% endblock %}
 
-{% endblock %}
+  {% block buttons %}
+  {% endblock %}
 
-{% block buttons %}
-{% endblock %}
-
-{% block pageScripts %}
-<!-- Add any javascript files here. Include javascript files only on the pages
+  {% block pageScripts %}
+  <!-- Add any javascript files here. Include javascript files only on the pages
 that need them. Excessive javascript files loaded on other pages may slow down
 the response times of the prototype. -->
-<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
 
+  <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+  </script>
 
-{% endblock %}
+  <script>
+    $(document).ready(function () {
+      $(".hide").click(function () {
+        $(".moj-banner").hide();
+      });
+    });
+  </script>
+
+  {% endblock %}
