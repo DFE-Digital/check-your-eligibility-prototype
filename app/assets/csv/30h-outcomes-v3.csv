@@ -1,4 +1,4 @@
-Eligibility code,National Insurance number,Child date of birth,Outcome,Eligibility confirmed on,Reconfirm by,Grace period ends,Parent National Insurance number,Parent first name,Parent last name,Parent date of birth,Parter National Insurance number,Partner first name,Partner last name,Partner date of birth,Child forename,Child surname,Child date of birth,Child postcode
+Eligibility code,National Insurance number,Child date of birth,Outcome,Eligibility confirmed on,Reconfirm by,Grace period ends,Parent National Insurance number,Parent first name,Parent last name,Parent date of birth,Partner National Insurance number,Partner first name,Partner last name,Partner date of birth,Child forename,Child surname,Child date of birth,Child postcode
 50012345678,QQ123456A,5/6/2023,Found,1/4/2025,1/7/2025,31/12/2025,QQ123456A,John,Smith,1/2/1989,KK123456A,Jane,Smith,3/4/1987,Jimmy,Smith,5/6/2023,M23 8GH
 50012345679,NN367364A,3/8/2024,Not found or expired,,,,,,,,,,,,,,,
 50012345667,NM367364A,5/6/2023,Not found or expired,12/9/2024,1/2/2025,31/03/2025,NM367364A,John,Smith,1/2/1989,KK123456A,Jane,Smith,3/4/1987,Jimmy,Smith,5/6/2023,M23 8GH
