@@ -1,8 +1,8 @@
-{% extends "/layouts/FSM/v7-1/layout-dfe-mat-nav.html" %}
+{% extends "/layouts/FSM/v7-2/layout-dfe-matnav-noback.html" %}
 {% set pageName="United Learning Trust" %}
 {% set address="Worldwide House, Thorpe Wood, Peterborough, PE3 6SB" %}
 
-{% set parentName="Eden Tesfay" %}
+{% set parentName="Jamie Lee" %}
 {% set view="dashboard" %}
 {% set serviceName="Check a family's eligibility" %}
 {% set serviceUrl="/FSM/index-fsm" %}
@@ -16,6 +16,13 @@
     <h1 class="govuk-heading-l">
       {{pageName}}
     </h1>
+
+    <style>
+      .dashboard-padding-between-headings {
+        margin-bottom: 32px;
+      }
+    </style>
+    <div class="dashboard-padding-between-headings"></div>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
         <h2 class="govuk-heading-m">
@@ -27,7 +34,7 @@
         <div class="dfe-card-container">
           <h3 class="govuk-heading-m">
             <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
-              href="mat-manage/la-soft-check/checker">Run a check for one parent or guardian</a>
+              href="mat-manage/mat-soft-check/checker.html">Run a check for one parent or guardian</a>
             </h2>
             <p>Run an eligibility check for one parent or guardian.</p>
         </div>
@@ -36,7 +43,7 @@
         <div class="dfe-card-container">
           <h2 class="govuk-heading-m">
             <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
-              href="mat-manage/batch-checking/manual">Run a batch check</a>
+              href="mat-manage/batch-checking/manual-no-ctf">Run a batch check</a>
           </h2>
           <p>Run an eligibility check for multiple parents or guardians.</p>
         </div>
@@ -46,9 +53,9 @@
         <div class="dfe-card-container">
           <h2 class="govuk-heading-m">
             <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
-              href="mat-manage/decision/pending-list">Pending applications</a>
+              href="mat-manage/decision/review-appeals">Review evidence</a>
           </h2>
-          <p>Check eligibility for children not found in the system. ???</p>
+          <p>Check eligibility for children not found in the system.</p>
         </div>
       </div>
 
@@ -75,7 +82,7 @@
 
           <h2 class="govuk-heading-m">
             <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
-              href="/_offline/fsm-print-version-mat.html">Download PDF form</a>
+              href="../_offline/fsm-print-version-mat.html">Download PDF form</a>
           </h2>
           <p>Download an eligibility form for parents to complete.</p>
         </div>

@@ -1,0 +1,61 @@
+{% extends "layouts/FSM/v7-3/layout-dfe-lanav.html" %}
+
+{% set pageName="Decline application?" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+
+            <div class="govuk-form-group">
+                <h1 class="govuk-label-wrapper">
+                    <label class="govuk-label govuk-label--m" for="more-detail">
+                        Give a reason for declining the application
+                    </label>
+                </h1>
+                <div id="more-detail-hint" class="govuk-hint">
+                    Do not include personal or financial information, like the child names, parents National Insurance number or
+                    statement details.
+                </div>
+                <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"
+                    aria-describedby="more-detail-hint"></textarea>
+            </div>
+
+            <div class="govuk-warning-text">
+                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                <strong class="govuk-warning-text__text">
+                    <span class="govuk-visually-hidden">Warning</span>
+                    If you decline this application, the parent or guardian will have to start a new application.
+                </strong>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+
+{{ govukButton({
+text: "Yes, decline now",
+href: 'eligibility-confirmed'
+}) }}
+
+{{ govukButton({
+text: "No, return to table",
+classes: "govuk-button--secondary",
+href: '../pending-list'
+}) }}
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+</div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}
