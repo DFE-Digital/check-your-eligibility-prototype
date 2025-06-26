@@ -23,20 +23,20 @@
 
 {{ govukCookieBanner({
   ariaLabel: "Cookies on Manage eligbility for childcare support",
+
   messages: [
     {
+      hidden: true,
       headingText: "Cookies on Manage eligbility for childcare support",
       html: html,
       actions: [
         {
           text: "Accept analytics cookies",
-          type: "button",
-          href: "/childcare/v3/compliance/cookie-banner-accepted"
+          type: "button"
         },
         {
           text: "Reject analytics cookies",
-          type: "button",
-          href: "/childcare/v3/compliance/cookie-banner-rejected"
+          type: "button"
         },
         {
           text: "View cookies",
@@ -58,7 +58,7 @@
     {
       html: rejectHtml,
       role: "alert",
-      hidden: true,
+      hidden: false,
       actions: [
         {
           text: "Hide cookie message",
