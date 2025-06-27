@@ -1,0 +1,73 @@
+{% extends "/layouts/childcare/v4/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Transfer foster family of Archana Mistry
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/autocomplete.js"></script>
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    selectElement: document.querySelector('#la-picker')
+  })
+
+</script>
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">Transfer foster family of Archana Mistry?</h1>
+
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>
+            You will no longer be able to view or edit this foster family.
+          </strong>
+        </div>
+
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              New local authority
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["la-picker"] or "Rochdale Borough Council" }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/childcare/v4/foster/transfer/transfer">Change<span class="govuk-visually-hidden">local authority</span></a>
+            </dd>
+          </div>
+        </dl>
+
+        {{ govukButton({
+          text: "Transfer family",
+          classes: "govuk-button--warning",
+          href: "/childcare/v4/foster/transfer/transferred"
+        }) }}
+
+
+
+
+      </div>
+
+    </div>
+
+
+
+{% endblock %}
