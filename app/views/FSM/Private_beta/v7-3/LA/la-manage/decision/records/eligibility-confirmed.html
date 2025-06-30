@@ -1,10 +1,7 @@
-{% extends "layouts/FSM/v7-3/layout-dfe-lanav.html" %}
-
+{% extends "layouts/FSM/v7-3/layout-dfe-lanav-noback.html" %}
 {% set pageName="Application approved" %}
-
-
-
 {% block content %}
+
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
@@ -22,10 +19,10 @@
               </div>
             </div>
 
-            <h2 class="govuk-heading-m">What to do next</h2>
+            <h2 class="govuk-heading-m">What will happen next</h2>
             <p class="govuk-body">
-              Tell all relevant schools about your decision.
-            </p>
+              The school will receive a notification to finalise the application in their service and in their
+              Management Information System (MIS). </p>
             <p class="govuk-body">
               If you need to find the application again, you can <a href="search">search all records</a>.
             </p>
@@ -34,14 +31,22 @@
             </p>
           </div>
         </div>
+        <br>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-m">Next steps</h2>
+            <p class="govuk-body">
+              <a class="govuk-link" href="../pending-list"> You can now review another application.</a>
+            </p>
+          </div>
       </main>
     </div>
   </div>
-<div class="govuk-button-group">
-  <a class="govuk-link" href="../pending-list">Confirm another application</a>
-  <a class="govuk-link" href="../../../dashboard">Return to dashboard</a>
+
+  <!-- <div class="govuk-button-group"> -->
+  <!-- <a class="govuk-link" href="../pending-list">Review another application</a> -->
+  <!-- <a class="govuk-link" href="../../../dashboard">Return to dashboard</a> -->
 </div>
 
 
 {% endblock %}
-

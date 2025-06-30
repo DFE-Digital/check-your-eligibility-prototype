@@ -1,39 +1,45 @@
 {% extends "layouts/FSM/v7-3/layout-dfe-lanav.html" %}
-
 {% set pageName="Pending applications" %}
-
-{% set applicationSent %}
-<h3 class="govuk-notification-banner__heading">
-  Your application has been sent
-  </h3>
-  <p class="govuk-body">
-    We have sent your application to be processed by your local school. It may take upto 1 week to process.
-  </p>
-  <p>Your reference is 1234567</p>
-{% endset %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
+    <h1 class="govuk-heading-l">{{pageName}}
 
-<h1 class="govuk-heading-l">{{pageName}}
+      <span id="notifications" class="moj-notification-badge" style="white-space: nowrap; margin-left: 15px;">36</span>
 
-  <span id="notifications" class="moj-notification-badge" style="white-space: nowrap; margin-left: 10px;">36</span>
+    </h1>
 
-</h1>
+<div class="govuk-width-container" style="background-color: #e0f3ff; padding: 1em; margin-top: 1em;">
 
+<div class="moj-search">
 
+  <form action="#" method="post">
 
+    <div class="govuk-form-group">
+      <label class="govuk-label moj-search__label govuk-!-font-weight-bold" for="search">
+        Find a pupil
+      </label>
 
+      <div id="search-hint" class="govuk-hint moj-search__hint ">
+        You can search by name, date of birth or National Insurance number
+      </div>
 
-    {% from "govuk/components/details/macro.njk" import govukDetails %}
+      <input class="govuk-input moj-search__input " id="search" name="search" type="search" aria-describedby="search-hint">
 
-    {{ govukDetails({
-      summaryText: "Help with this page",
-      text: "This page contains applications for free school meals that couldn't be found in the system. Review any supporting evidence parents or guardians have provided, then approve or decline to process their applications."
-    }) }}
+    </div>
+
+    <button type="submit" class="govuk-button moj-search__button " data-module="govuk-button">
+      Search
+    </button>
+
+  </form>
+</div>
+
+  </div>
+  <div style="padding-bottom: 2em;"></div>
 
 
 
@@ -65,19 +71,19 @@
     <tr class="govuk-table__row">
 
 
-      <td class="govuk-table__cell"><a href="../decision/records/pending" class="govuk-link">44455453</a></td>
-      <td class="govuk-table__cell">Eden Tesfay <br></td>
-      <td class="govuk-table__cell">18 Sep 1978</td>
-      <td class="govuk-table__cell">Samual Tesfay</td>
-      <td class="govuk-table__cell">St Mary's</td>
+      <td class="govuk-table__cell"><a href="../decision/records/pending_johnson1.html" class="govuk-link">44455453</a></td>
+      <td class="govuk-table__cell">Alex Johnson <br></td>
+      <td class="govuk-table__cell">	15 Mar 1980</td>
+      <td class="govuk-table__cell">Emily Johnson</td>
+      <td class="govuk-table__cell">	Hilltop Elementary</td>
 
 
-      <td class="govuk-table__cell">25 Sep 2023</td>
+      <td class="govuk-table__cell">	20 Sep 2012</td>
     </tr>
     <tr class="govuk-table__row">
 
 
-      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
+      <td class="govuk-table__cell"><a href="../decision/records/pending_sutton1.html" class="govuk-link">44455453</a></td>
       <td class="govuk-table__cell">Warren Sutton</td>
       <td class="govuk-table__cell">18 Sep 1978</td>
       <td class="govuk-table__cell">Lisa Sutton</td>

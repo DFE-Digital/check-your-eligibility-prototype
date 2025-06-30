@@ -1,0 +1,307 @@
+{% extends "layouts/FSM/v7-3/layout-dfe-lanav.html" %}
+{% block backLink %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% set childName = "Lisa Sutton" %}
+{% set childId = "44455466" %}
+{% set parentId = "44455454A" %}
+{% set childDOB = "22 Sep 2012" %}
+{% set schoolName = "St Mary's" %}
+{% set schoolAddress = "Manchester, M4 1AA" %}
+{% set parentDOB = "15 Mar 1980" %}
+{% set parentName = "Warren Sutton" %}
+{% set email = "w.sutton12@icloud.com" %}
+{% set nationalInsurance = "AB123456C" %}
+
+{% set pageName = "Manage pupil record for " ~ childName %}
+
+{% set pageDescription %}
+  View and manage the details of this pupil record.
+{% endset %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+  <div class="govuk-grid-column-full">
+
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <span class="govuk-caption-l">{{childId}}</span>
+        <h1 class="govuk-heading-l" style="margin-bottom: 0;">{{childName}}</h1>
+          </div>
+            <div>
+              {{ mojButtonMenu({
+              button: {
+              text: "Manage child record"
+              },
+              items: [
+              {
+              text: "Export record as CSV"
+              },
+              {
+              text: "Export record as PDF"
+              },
+              {
+              text: "Archive record"
+              }
+              ]
+              }) }}
+            </div>
+          </div>
+      </div>
+    </div>
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-grid-row">
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            Application status
+          </h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  <strong class="govuk-tag govuk-tag--orange" style="margin-left: 0px;">
+                    Waiting for evidence
+                </strong>
+              </dt>
+              <dd class="govuk-summary-list__value">
+              This application is ready for you to review the evidence.
+              </dd>
+            </div>
+            <!-- <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Notes
+              </dt>
+              <dd class="govuk-summary-list__value">
+                This record is currently active and available for review.
+              </dd>
+            </div> -->
+          </dl>
+        </div>
+      </div>
+
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Child details
+    </h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action">
+        <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> name</span></a>
+      </li>
+
+    </ul>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Reference number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{childId}}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Child Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{childName}}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{childDOB}}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          School or Academy
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{schoolName}}<br> {{schoolAddress}}
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Parent or guardian details
+    </h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action">
+        <!-- <a class="govuk-link" href="#">Update details<span class="govuk-visually-hidden"> update parent
+            details</span></a> -->
+      </li>
+      <!-- <li class="govuk-summary-card__action">
+        <a class="govuk-link" href="#">Withdraw<span class="govuk-visually-hidden"> from University of Bristol (University of Bristol)</span></a>
+      </li> -->
+    </ul>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Parent or guardian name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{parentName}}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{parentDOB}}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          National Insurance number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{nationalInsurance}}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{email}}
+        </dd>
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Supporting evidence
+    </h2>
+    <!-- <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action">
+        <a class="govuk-link" href="#">Add evidence<span class="govuk-visually-hidden"> add supporting
+            evidence</span></a>
+      </li>
+      <li class="govuk-summary-card__action">
+        <a class="govuk-link" href="#">Remove evidence<span class="govuk-visually-hidden"> </span></a>
+      </li>
+    </ul> -->
+  </div>
+
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Evidence type
+        </dt>
+        <dd class="govuk-summary-list__value">
+          UC statement
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date uploaded
+        </dt>
+        <dd class="govuk-summary-list__value">
+          20 Sep 2023
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Files
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <a href="#">UC_statement_2023.pdf</a><br>
+          <a href="#"> </a><br>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Evidence status
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <strong class="govuk-tag govuk-tag--yellow" style="margin-left: 0px;">
+            Evidence needed
+          </strong>
+        </dd>
+      </div>
+  </div>
+  </div>
+
+  <!-- <div class="govuk-!-padding-bottom-3"></div> -->
+
+<div style="height: 32px;"></div>
+{{ govukRadios({
+  name: "record decision",
+  fieldset: {
+    legend: {
+      text: "Record a decision",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "View the supporting evidence before making a decision."
+  },
+  items: [
+    {
+      value: "Approve",
+      text: "Approve application"
+    },
+    {
+      value: "Decline",
+      text: "Decline application"
+    },
+    {
+      value: "Request more evidence",
+      text: "Request more evidence",
+
+      conditional: {
+        html: '<p class="govuk-body"></p>'
+      }
+    }
+  ]
+}) }}
+
+
+<div class="govuk-button-group">
+<button type="submit" class="govuk-button" data-module="govuk-button">
+  Save and continue
+</button>
+<a class="govuk-link" href="#">Return to review list</a>
+</div>
+
+{% endblock %}
+
+{% block buttons %}
+{% endblock %}
+
+{% block pageScripts %}
+<!-- Add any javascript files here. Include javascript files only on the pages
+that need them. Excessive javascript files loaded on other pages may slow down
+the response times of the prototype. -->
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+
+
+{% endblock %}
