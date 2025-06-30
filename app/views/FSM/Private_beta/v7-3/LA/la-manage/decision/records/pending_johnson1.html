@@ -5,7 +5,15 @@ text: "Back",
 href: "javascript:window.history.back()"
 }) }}
 {% endblock %}
-
+{% set childId = "44455453" %}
+{% set childDOB = "22 Sep 2012" %}
+{% set schoolName = "Hilltop Elementary" %}
+{% set schoolAddress = "Manchester, M25 1QA" %}
+{% set parentDOB = "15 Mar 1980" %}
+{% set parentName = "Alex Johnson" %}
+{% set email = "alex.johnson@example.com" %}
+{% set nationalInsurance = "AB123456C" %}
+{% set parentId = "44455454A" %}
 {% set childName = "Emily Johnson" %}
 {% set pageName = "Manage pupil record for " ~ childName %}
 
@@ -27,7 +35,7 @@ href: "javascript:window.history.back()"
             <div>
               {{ mojButtonMenu({
               button: {
-              text: "Manage pupil record"
+              text: "Manage child record"
               },
               items: [
               {
@@ -64,7 +72,7 @@ href: "javascript:window.history.back()"
                 </strong>
               </dt>
               <dd class="govuk-summary-list__value">
-              This record is ready for you to review the evidence.
+              This application is ready for you to review the evidence.
               </dd>
             </div>
             <!-- <div class="govuk-summary-list__row">
@@ -99,7 +107,7 @@ href: "javascript:window.history.back()"
           Reference number
         </dt>
         <dd class="govuk-summary-list__value">
-          44455453
+          {{childId}}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -107,7 +115,7 @@ href: "javascript:window.history.back()"
           Child Name
         </dt>
         <dd class="govuk-summary-list__value">
-          Emily Johnson
+          {{childName}}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -115,7 +123,7 @@ href: "javascript:window.history.back()"
           Date of birth
         </dt>
         <dd class="govuk-summary-list__value">
-          20 Sep 2012
+          {{childDOB}}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -123,13 +131,12 @@ href: "javascript:window.history.back()"
           School or Academy
         </dt>
         <dd class="govuk-summary-list__value">
-          Hilltop Elementary<br>Road, City, SW1 1AA
+          {{schoolName}}<br> {{schoolAddress}}
         </dd>
       </div>
     </dl>
   </div>
 </div>
-
 
 <div class="govuk-summary-card">
   <div class="govuk-summary-card__title-wrapper">
@@ -138,8 +145,8 @@ href: "javascript:window.history.back()"
     </h2>
     <ul class="govuk-summary-card__actions">
       <li class="govuk-summary-card__action">
-        <a class="govuk-link" href="#">Update details<span class="govuk-visually-hidden"> update parent
-            details</span></a>
+        <!-- <a class="govuk-link" href="#">Update details<span class="govuk-visually-hidden"> update parent
+            details</span></a> -->
       </li>
       <!-- <li class="govuk-summary-card__action">
         <a class="govuk-link" href="#">Withdraw<span class="govuk-visually-hidden"> from University of Bristol (University of Bristol)</span></a>
@@ -153,7 +160,7 @@ href: "javascript:window.history.back()"
           Parent or guardian name
         </dt>
         <dd class="govuk-summary-list__value">
-          Alex Johnson
+          {{parentName}}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -161,7 +168,7 @@ href: "javascript:window.history.back()"
           Date of birth
         </dt>
         <dd class="govuk-summary-list__value">
-          15 Mar 1980
+          {{parentDOB}}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -169,7 +176,7 @@ href: "javascript:window.history.back()"
           National Insurance number
         </dt>
         <dd class="govuk-summary-list__value">
-          AB123456C
+          {{nationalInsurance}}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -177,7 +184,7 @@ href: "javascript:window.history.back()"
           Email address
         </dt>
         <dd class="govuk-summary-list__value">
-          alexjohnson@icloud.com
+          {{email}}
         </dd>
     </dl>
   </div>
