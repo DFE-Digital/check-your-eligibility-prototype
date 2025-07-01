@@ -1,7 +1,7 @@
-{% extends "/layouts/childcare/v4/layout-childcare.html" %}
+{% extends "/layouts/childcare/v3/layout-childcare.html" %}
 
 {% block pageTitle %}
-Code is valid
+Child is too young
 {% endblock %}
 
 
@@ -10,14 +10,14 @@ Code is valid
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7" style="background:#1d70b8;">
       <h1 class="govuk-panel__title">
-        Foster family code valid
+        Child too young
       </h1>
       <div class="govuk-panel__body govuk-!-margin-bottom-5">
-        Valid for summer term 2025
+        Valid from Autumn term 2025
       </div>
-      <p class="govuk-body-l govuk-!-margin-bottom-0" style="color:white;">Needs reconfirming before 22 June 2025</p>
+       <p class="govuk-body-l govuk-!-margin-bottom-0" style="color:white;">Needs reconfirming before 22 June 2025</p>
     </div>
 
     <h2 class="govuk-heading-m">Details checked</h2>
@@ -28,7 +28,7 @@ Code is valid
           Eligibility code
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["30h-code"] or "40879487381" }}
+          {{ data["30h-code"] or "50879487381" }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -44,7 +44,7 @@ Code is valid
           Child date of birth
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["dob-day"] or "10" }} {{ data["dob-month"] or "October" }} {{ data["dob-year"] or "2021" }}
+          {{ data["dob-day"] or "7" }} {{ data["dob-month"] or "August" }} {{ data["dob-year"] or "2024" }}
         </dd>
       </div>
 
@@ -53,7 +53,7 @@ Code is valid
 
     <h2 class="govuk-heading-m govuk-!-margin-top-8">Code details</h2>
 
-    <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+    <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Eligibility last confirmed on
@@ -75,7 +75,7 @@ Code is valid
           Grace period ends
         </dt>
         <dd class="govuk-summary-list__value">
-          31 December 2025
+          Not applicable
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -93,27 +93,19 @@ Code is valid
 
     </dl>
 
-    {% from "govuk/components/button/macro.njk" import govukButton %}
 
-    <div class="govuk-button-group">
-      {{ govukButton({
-        text: "Manage foster family",
-        href: "/childcare/v4/foster/family/valid"
-      }) }}
 
-      {{ govukButton({
-        text: "View code history",
-        classes: "govuk-button--secondary",
-        href: "/childcare/v4/reports/event-history"
-      }) }}
-    </div>
-
+    {{ govukButton({
+      text: "View code history",
+      classes: "govuk-!-margin-top-4"
+    }) }}
 
 
 
     <p>You can <a href="" class="govuk-link" onclick="printPage()">print this page</a> for the parent or guardian to keep.</p>
 
-       <p><a href="">View Childcare for working families guidance</a> for more information.</p>
+    <p class="govuk-body">View <a href="">guidance for Childcare for working families</a>.</p>
+
 
   </div>
 
