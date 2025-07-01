@@ -12,10 +12,10 @@ Code is valid
 
     <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
       <h1 class="govuk-panel__title">
-        Code valid but cannot be reconfirmed
+        Temporary code valid
       </h1>
       <div class="govuk-panel__body govuk-!-margin-bottom-5">
-        Valid for summer term 2025
+        Only valid for summer term 2025
       </div>
          <p class="govuk-body-l govuk-!-margin-bottom-0" style="color:white;">Apply for a new code before 20 June 2025</p>
     </div>
@@ -54,17 +54,9 @@ Code is valid
     <h2 class="govuk-heading-m govuk-!-margin-top-8">Code details</h2>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-7">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Type
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Temporary code
-        </dd>
-      </div>
        <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Eligibility confirmed on
+          Eligibility last confirmed on
         </dt>
         <dd class="govuk-summary-list__value">
           20 March 2025
@@ -78,7 +70,7 @@ Code is valid
           20 June 2025
         </dd>
       </div>
-      <!--<div class="govuk-summary-list__row">
+      <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Grace period ends
         </dt>
@@ -91,16 +83,20 @@ Code is valid
           Reconfirmation status
         </dt>
         <dd class="govuk-summary-list__value">
-          Not applicable
+          <strong class="govuk-tag govuk-tag--grey" style="max-width:100%;">
+            Not applicable
+          </strong>
         </dd>
-      </div>-->
+      </div>
     </dl>
 
     {% from "govuk/components/button/macro.njk" import govukButton %}
 
     <div class="govuk-button-group">
       {{ govukButton({
-        text: "View code history"
+        text: "View code history",
+        classes: "govuk-!-margin-top-4",
+        href: "/childcare/v4/reports/event-history"
       }) }}
 
     </div>
