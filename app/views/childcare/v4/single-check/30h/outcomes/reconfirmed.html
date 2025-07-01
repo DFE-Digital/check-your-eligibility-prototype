@@ -46,16 +46,6 @@ Code is valid
           {{ data["dob-day"] or "10" }} {{ data["dob-month"] or "October" }} {{ data["dob-year"] or "2021" }}
         </dd>
       </div>
-       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Child age
-        </dt>
-        <dd class="govuk-summary-list__value">
-          3 years old
-        </dd>
-      </div>
-
-
     </dl>
 
     <h2 class="govuk-heading-m govuk-!-margin-top-8">Code details</h2>
@@ -63,7 +53,7 @@ Code is valid
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Eligibility confirmed on
+          Eligibility last confirmed on
         </dt>
         <dd class="govuk-summary-list__value">
           21 March 2025
@@ -104,7 +94,8 @@ Code is valid
 
     {{ govukButton({
       text: "View code history",
-      classes: "govuk-!-margin-top-4"
+      classes: "govuk-!-margin-top-4",
+      href: "/childcare/v4/reports/event-history"
     }) }}
 
 
