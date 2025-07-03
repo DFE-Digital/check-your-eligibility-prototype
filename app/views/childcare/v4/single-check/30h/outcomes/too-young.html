@@ -1,4 +1,4 @@
-{% extends "/layouts/childcare/v3/layout-childcare.html" %}
+{% extends "/layouts/childcare/v4/layout-childcare.html" %}
 
 {% block pageTitle %}
 Child is too young
@@ -67,7 +67,7 @@ Child is too young
           Reconfirm between
         </dt>
         <dd class="govuk-summary-list__value">
-          22 May and 22 June 2025
+          22 May 2025 and 22 June 2025
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -97,7 +97,8 @@ Child is too young
 
     {{ govukButton({
       text: "View code history",
-      classes: "govuk-!-margin-top-4"
+      classes: "govuk-!-margin-top-4",
+        href: "/childcare/v4/reports/event-history"
     }) }}
 
 
