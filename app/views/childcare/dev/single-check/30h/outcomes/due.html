@@ -1,4 +1,4 @@
-{% extends "/layouts/childcare/v4/layout-childcare.html" %}
+{% extends "/layouts/childcare/dev/layout-childcare.html" %}
 
 {% block pageTitle %}
 Code is valid
@@ -17,7 +17,7 @@ Code is valid
       <div class="govuk-panel__body govuk-!-margin-bottom-5">
         Valid for summer term 2025
       </div>
-       <p class="govuk-body-l govuk-!-margin-bottom-0" style="color:white;">Needs reconfirming before 31 June 2025</p>
+      <p class="govuk-body-l govuk-!-margin-bottom-0" style="color:white;">Needs reconfirming before 10 July 2025</p>
     </div>
 
     <h2 class="govuk-heading-m">Details checked</h2>
@@ -44,7 +44,7 @@ Code is valid
           Child date of birth
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["dob-day"] or "26" }} {{ data["dob-month"] or "May" }} {{ data["dob-year"] or "2024" }}
+           {{ data["dob-day"] or "26" }} {{ data["dob-month"] or "May" }} {{ data["dob-year"] or "2024" }}
         </dd>
       </div>
 
@@ -59,16 +59,15 @@ Code is valid
           Eligibility last confirmed on
         </dt>
         <dd class="govuk-summary-list__value">
-          31 March 2025 (discretionary start date applied)
+          10 March 2025
         </dd>
       </div>
-
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Reconfirm between
         </dt>
         <dd class="govuk-summary-list__value">
-          31 May 2025 and 31 June 2025
+          10 June 2025 and 10 July 2025
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -84,7 +83,7 @@ Code is valid
           Reconfirmation status
         </dt>
         <dd class="govuk-summary-list__value">
-           <strong class="govuk-tag govuk-tag--yellow" style="max-width:100%;">
+          <strong class="govuk-tag govuk-tag--yellow" style="max-width:100%;">
             Due now
           </strong>
         </dd>
@@ -95,18 +94,7 @@ Code is valid
     </dl>
 
 
-
-    {{ govukButton({
-      text: "View code history",
-      classes: "govuk-!-margin-top-4",
-      href: "/childcare/v4/reports/event-history"
-    }) }}
-
-
-
     <p>You can <a href="" class="govuk-link" onclick="printPage()">print this page</a> for the parent or guardian to keep.</p>
-
-       <p class="govuk-body">View <a href="">guidance for Childcare for working families</a>.</p>
 
   </div>
 
