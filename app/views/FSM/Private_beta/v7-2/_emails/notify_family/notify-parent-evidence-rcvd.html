@@ -1,17 +1,22 @@
 {% extends "layouts/layout-email.html" %}
-{% set subject = "Free school meals – evidence received – reference [reference]" %}
+{% set subject = "Application for free school meals – evidence sent" %}
 {% set from = "DfE <dfe@gov.uk>" %}
 {% set to = "Eden Tesfay <eden.tesfay@gmail.com>" %}
-  
+
 {% block content %}
-  <p>Dear parent,</p>
-  <p>Your supporting evidence for free school meals has been sent for review.</p>
+  <p>Dear John</p>
 
+  <p>Your supporting evidence for your application for free school meals has been sent for review.</p>
 
-  <p>Once this has been reviewed, we will contact you again to confirm the final decision.</p>
+  <h2 class="govuk-heading-s">Application references</h2>
 
-  <p>This decision will be final, and will not be open for further appeal.</p>
+<p>44455453</p>
 
-  
-  <p>From Department for Education</p>
+<h2 class="govuk-heading-s">What happens next</h2>
+
+<p>We will contact you to confirm the final decision.</p>
+
+<p>You will not be able to apply again unless your circumstances change.</p>
+
+<p>From Department for Education</p>
 {% endblock %}

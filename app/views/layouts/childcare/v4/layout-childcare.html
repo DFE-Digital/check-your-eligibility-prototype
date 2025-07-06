@@ -4,39 +4,6 @@
 {# 2 #}
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 
-{% block bodyStart %}
-  <form action="#" method="post" novalidate>
-    {{ govukCookieBanner({
-      ariaLabel: "Cookies on [name of service]",
-      messages: [
-        {
-          headingText: "Cookies on Manage eligibility for childcare support",
-          html: '<p class="govuk-body">We use some essential cookies to make this service work.</p>
-            <p class="govuk-body">We’d also like to use analytics cookies so we can understand how you use the service and make improvements.</p>',
-          actions: [
-            {
-              text: "Accept analytics cookies",
-              type: "submit",
-              name: "cookies[analytics]",
-              value: "yes"
-            },
-            {
-              text: "Reject analytics cookies",
-              type: "submit",
-              name: "cookies[analytics]",
-              value: "no"
-            },
-            {
-              text: "View cookies",
-              href: "/childcare/v3/compliance/cookies"
-            }
-          ]
-        }
-      ]
-    }) }}
-  </form>
-{% endblock %}
-
 {# 3 #}
 {% block header %}
 
@@ -71,22 +38,25 @@
 
 {{ govukServiceNavigation({
   serviceName: "Manage eligibility for childcare support",
-  serviceUrl: "/childcare/v3/dashboard",
   navigation: [
+  {
+      href: "/childcare/v4/dashboard",
+      text: "Home"
+    },
     {
-      href: "/childcare/v3/single-check/single",
+      href: "/childcare/v4/single-check/single",
       text: "Run a check"
     },
     {
-      href: "/childcare/v3/batch-check/batch",
+      href: "/childcare/v4/batch-check/batch",
       text: "Run a batch check"
     },
     {
-      href: "/childcare/v3/foster/foster",
+      href: "/childcare/v4/foster/foster",
       text: "Manage foster families"
     },
     {
-      href: "#",
+      href: "/childcare/v4/reports/reports",
       text: "Run reports"
     },
     {
@@ -120,7 +90,7 @@
    meta: {
      items: [
        {
-         href: "/childcare/v3/compliance/privacy",
+         href: "https://www.gov.uk/government/organisations/department-for-education/about/personal-information-charter",
          text: "Privacy policy"
        },
        {
@@ -128,11 +98,11 @@
         text: "Accessibility"
       },
        {
-         href: "/childcare/v3/compliance/cookies",
+         href: "/childcare/v4/compliance/cookies",
          text: "Cookies"
        },
        {
-        href: "#",
+        href: "https://forms.office.com.mcas.ms/pages/responsepage.aspx?id=yXfS-grGoU2187O4s0qC-URYbNo1-R1EubHA0gNJis5UNjFaUzRMTEVPTVlaMFNFOVg1Q05PODg3Vi4u&route=shorturl",
         text: "Contact us"
       },
       {

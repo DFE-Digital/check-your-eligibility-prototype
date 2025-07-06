@@ -1,4 +1,4 @@
-{% extends "/layouts/childcare/v3/layout-childcare.html" %}
+{% extends "/layouts/childcare/v4/layout-childcare.html" %}
 
 {% block pageTitle %}
  Event history
@@ -20,7 +20,7 @@
 
     <h1 class="govuk-heading-l">View eligibility code history</h1>
 
-    <form class="form" action="/childcare/v3/single-check/30h/checking-loader" method="post" novalidate>
+    <form class="form" action="/childcare/v4/single-check/30h/checking-loader" method="post" novalidate>
 
           {% call govukFieldset({
 
@@ -63,7 +63,7 @@
 
               fieldset: {
                 legend: {
-                  text: "Child date of birth (optional)",
+                  text: "Child date of birth",
                   isPageHeading: false,
                   classes: "govuk-fieldset__legend--s"
                 }
@@ -88,14 +88,20 @@
 
     </form>
 
-    <p><a href="">Clear filters TBC</a></p>
+    <p><a href="/childcare/v4/reports/search-code">Clear filters</a></p>
 
-    <p>Export options</p>
+    <h2 class="govuk-heading-m" id="event-history">History for eligibility code: 50012345678</h2>
 
-    <div class="govuk-!-padding-4" style="overflow-x:auto; background-color:	#f3f2f1;">
+    {{ govukButton({
+      text: "Download as csv",
+      classes: "govuk-button--secondary",
+      href: ""
+    }) }}
 
-       <table class="govuk-table govuk-table--small-text-until-tablet" id="event-history">
-        <caption class="govuk-table__caption govuk-table__caption--m">History for eligibility code: 50012345678</caption>
+    <div class="govuk-!-padding-4" style="overflow-x:auto; background-color:#f3f2f1;">
+
+       <table class="govuk-table govuk-table--small-text-until-tablet">
+
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header">Event</th>
@@ -147,12 +153,12 @@
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Reconfirmation 1</th>
             <td class="govuk-table__cell">c457459c34f</td>
-            <td class="govuk-table__cell">28 Sep 2024</td>
-            <td class="govuk-table__cell">29 Sep 2024</td>
+            <td class="govuk-table__cell">30 Dec 2024</td>
+            <td class="govuk-table__cell">30 Dec 2024</td>
             <td class="govuk-table__cell">-</td>
-            <td class="govuk-table__cell">29 Sep 2024</td>
-            <td class="govuk-table__cell">29 Dec 2024</td>
-            <td class="govuk-table__cell">31 Mar 2025</td>
+            <td class="govuk-table__cell">30 Dec 2024</td>
+            <td class="govuk-table__cell">29 Mar 2025</td>
+            <td class="govuk-table__cell">31 Aug 2025</td>
             <td class="govuk-table__cell">JJ653456C</td>
             <td class="govuk-table__cell">Nicola</td>
             <td class="govuk-table__cell">Morton</td>

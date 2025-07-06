@@ -174,6 +174,29 @@ router.post('/childcare/v3/foster/create/partner-details', function (req, res) {
   var carerPartner = req.session.data['add-partner']
   if (carerPartner == "Yes") {
     res.redirect("/childcare/v3/foster/create/partner-details")
+
+}
+
+else {
+    res.redirect("/childcare/v3/foster/create/child-details")
+}
+})
+
+// Childcare v4
+
+// Route for create foster family add partner details
+
+router.post('/childcare/v4/foster/create/partner-details', function(req, res) {
+
+var carerPartner = req.session.data['add-partner']
+if (carerPartner == "Yes"){
+    res.redirect("/childcare/v4/foster/create/partner-details")
+}
+
+else {
+    res.redirect("/childcare/v4/foster/create/child-details")
+}
+})
   }
 
   else {
@@ -425,7 +448,6 @@ router.post('/childcare/v3/foster/create/partner-details', function (req, res) {
 // })
 
 
-
 // // NASS number CHECKER
 // router.post('/council-nass-number-answer', function (req, res) {
 
@@ -492,7 +514,6 @@ router.post('/childcare/v3/foster/create/partner-details', function (req, res) {
 // })
 
 // router
-
 
 
 // ////////////////////////////////mvp2///////////////////////////////

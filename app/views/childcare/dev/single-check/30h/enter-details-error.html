@@ -1,0 +1,127 @@
+{% extends "/layouts/childcare/dev/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Enter the eligibility code details
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-error-summary" data-module="govuk-error-summary">
+          <div role="alert">
+            <h2 class="govuk-error-summary__title">
+              There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+              <ul class="govuk-list govuk-error-summary__list">
+                <li>
+                  <a href="#30h-code">Eligibility code must only contain numbers</a>
+                </li>
+                <li>
+                  <a href="#ni-number">Enter a National Insurance number</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <span class="govuk-caption-l">Childcare for working families</span>
+        <h1 class="govuk-heading-l">Enter the eligibility code details</h1>
+
+
+        <form class="form" action="" method="post" novalidate>
+
+          {% call govukFieldset({
+
+          }) %}
+
+            {% from "govuk/components/input/macro.njk" import govukInput %}
+
+            {{ govukInput({
+              label: {
+                text: "Eligibility code",
+                classes: "govuk-label--m",
+                isPageHeading: false
+              },
+
+              hint: {
+                text: "Eligibility code must be 11 digits long"
+              },
+
+               errorMessage: {
+                text: "Eligibility code must only contain numbers"
+              },
+              classes: "govuk-input--width-10 govuk-input--error",
+              id: "30h-code",
+              name: "30h-code"
+            }) }}
+
+            {{ govukInput({
+              classes: "govuk-!-width-one-third govuk-input--error",
+              label: {
+                text: "National Insurance number",
+                classes: "govuk-fieldset__legend--m"
+              },
+              hint: {
+                text: "Can be for a parent, guardian or partner. For example, ‘QQ 12 34 56 C’"
+              },
+               errorMessage: {
+                text: "Enter a National Insurance number"
+              },
+              id: "ni-number",
+              name: "ni-number"
+            }) }}
+
+            {{ govukDateInput({
+
+              id: "dob",
+              namePrefix: "dob",
+
+              fieldset: {
+                legend: {
+                  text: "Child date of birth",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+                text: "For example, 27 3 1980"
+              }
+            }) }}
+
+
+
+          {% endcall %}
+
+
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Run check"
+          }) }}
+
+
+        </form>
+
+
+
+      </div>
+
+    </div>
+
+
+
+{% endblock %}

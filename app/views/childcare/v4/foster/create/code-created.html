@@ -1,0 +1,119 @@
+{% extends "/layouts/childcare/v4/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Eligibility code created
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">
+        Code created
+      </h1>
+      <div class="govuk-panel__body">
+        Can be used for autumn term 2025
+      </div>
+    </div>
+
+
+
+    <div class="govuk-summary-card govuk-!-margin-top-6">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">
+          Code for child 1
+        </h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Child name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Jasper Hayes
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Eligibility code
+            </dt>
+            <dd class="govuk-summary-list__value">
+              40019283746
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Code status
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Valid - autumn term 2025
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Eligibility confirmed on
+            </dt>
+            <dd class="govuk-summary-list__value">
+              24 April 2025
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Reconfirm between
+            </dt>
+            <dd class="govuk-summary-list__value">
+              25 June and 25 July 2025
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Grace period ends
+            </dt>
+            <dd class="govuk-summary-list__value">
+              31 December 2025
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Reconfirmation status
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <strong class="govuk-tag govuk-tag--green">
+                Not due yet
+              </strong>
+            </dd>
+          </div>
+        </dl>
+
+      </div>
+    </div>
+
+
+    <div class="govuk-button-group govuk-!-margin-bottom-7">
+      {{ govukButton({
+        text: "Return to family",
+        href: "/childcare/v4/foster/family/valid"
+      }) }}
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+{% endblock %}
