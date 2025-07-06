@@ -1,6 +1,6 @@
 {% extends "layouts/FSM/v7-3/layout-dfe-lanav.html" %}
-{% set parentName = "Alex Johnson" %}
-{% set pageName="Request more evidence from " ~ parentName %}
+
+{% set pageName="Decline the application?" %}
 
 {% block content %}
 
@@ -9,16 +9,15 @@
         <div class="govuk-grid-column-two-thirds">
             <h1 class="govuk-heading-l">{{pageName}}</h1>
 
-
             <div class="govuk-form-group">
                 <h2 class="govuk-label-wrapper">
                     <label class="govuk-label govuk-label--m" for="more-detail">
-                        Give a reason for requesting more evidence
+                        Give a reason for declining the application
                     </label>
                 </h2>
                 <div id="more-detail-hint" class="govuk-hint">
-                    Do not include personal or financial information, like the child names, parents National Insurance number or
-                    statement details.
+                    Do not include personal or financial information, like the child names, parents National Insurance
+                    number or statement details.
                 </div>
                 <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"
                     aria-describedby="more-detail-hint"></textarea>
@@ -26,9 +25,9 @@
 
             <div class="govuk-warning-text">
                 <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-               <strong class="govuk-warning-text__text">
+                <strong class="govuk-warning-text__text">
                     <span class="govuk-visually-hidden">Warning</span>
-                    If you request more evidence, the parent or guardian will have to provide additional information to their school.
+                    If you decline this application, the parent or guardian will have to start a new application. If you are unsure, return to the record and request more evidence.
                 </strong>
             </div>
         </div>
@@ -39,14 +38,14 @@
 
 
 {{ govukButton({
-text: "Yes, request more evidence",
-href: 'evidence-more'
+text: "Decline now",
+href: 'eligibility-declined'
 }) }}
 
 {{ govukButton({
-text: "No, return to table",
+text: "Return to record",
 classes: "govuk-button--secondary",
-href: '../pending-list'
+href: 'pending_johnson1'
 }) }}
 
 <div class="govuk-!-padding-bottom-3"></div>

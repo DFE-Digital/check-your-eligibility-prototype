@@ -24,13 +24,13 @@
                     aria-describedby="more-detail-hint"></textarea>
             </div>
 
-            <div class="govuk-warning-text">
+            <!-- <div class="govuk-warning-text">
                 <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
                <strong class="govuk-warning-text__text">
                     <span class="govuk-visually-hidden">Warning</span>
                     If you request more evidence, the parent or guardian will have to provide additional information to their school.
                 </strong>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
@@ -39,12 +39,12 @@
 
 
 {{ govukButton({
-text: "Yes, request more evidence",
-href: 'evidence-more'
+text: "Submit request",
+href: 'eligibility-requested'
 }) }}
 
 {{ govukButton({
-text: "No, return to table",
+text: "Return to record",
 classes: "govuk-button--secondary",
 href: '../pending-list'
 }) }}

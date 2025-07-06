@@ -16,9 +16,7 @@ href: "javascript:window.history.back()"
 {% set parentId = "44455454A" %}
 {% set childName = "Emily Johnson" %}
 {% set pageName = "Manage pupil record for " ~ childName %}
-
-{% set pageDescription %}
-  View and manage the details of this pupil record.
+{% set pageDescription %} View and manage the details of this pupil record.
 {% endset %}
 
 
@@ -26,7 +24,6 @@ href: "javascript:window.history.back()"
 
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
   <div class="govuk-grid-column-full">
-
     <div style="display: flex; justify-content: space-between; align-items: center;">
       <div>
         <span class="govuk-caption-l">44455453</span>
@@ -45,6 +42,7 @@ href: "javascript:window.history.back()"
               text: "Export record as PDF"
               },
               {
+              href: "archive-johnson1.html",
               text: "Archive record"
               }
               ]
@@ -250,8 +248,9 @@ href: "javascript:window.history.back()"
   <!-- <div class="govuk-!-padding-bottom-3"></div> -->
 
 <div style="height: 32px;"></div>
+<form method="post" action="/fsm/private_beta/v7-3/appeal-decision/johnson1">
 {{ govukRadios({
-  name: "record decision",
+  name: "decision",
   fieldset: {
     legend: {
       text: "Record a decision",
@@ -264,15 +263,15 @@ href: "javascript:window.history.back()"
   },
   items: [
     {
-      value: "Approve",
+      value: "approve",
       text: "Approve application"
     },
     {
-      value: "Decline",
+      value: "decline",
       text: "Decline application"
     },
     {
-      value: "Request more evidence",
+      value: "pending",
       text: "Request more evidence",
 
       conditional: {
@@ -283,12 +282,13 @@ href: "javascript:window.history.back()"
 }) }}
 
 
-<div class="govuk-button-group">
-<button type="submit" class="govuk-button" data-module="govuk-button">
-  Save and continue
-</button>
-<a class="govuk-link" href="#">Return to review list</a>
-</div>
+  <div class="govuk-button-group">
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Save and continue
+    </button>
+    <a class="govuk-link" href="../pending-list.html">Return to review list</a>
+  </div>
+</form>
 
 {% endblock %}
 

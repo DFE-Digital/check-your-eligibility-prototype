@@ -1,30 +1,32 @@
 {% extends "layouts/FSM/v7-3/layout-dfe-lanav-noback.html" %}
-{% set pageName="Application approved" %}
-{% block content %}
 
+{% set pageName="More evidence requested" %}
+
+
+{% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-
     <div class="govuk-width-container">
       <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
             <div class="govuk-panel govuk-panel--confirmation">
               <h1 class="govuk-panel__title">
-                Application approved
-              </h1>
-
+{{pageName}}              </h1>
               <div class="govuk-panel__body">
                 Application reference number<br><strong>44455453</strong>
+              </div>
+                   <div class="govuk-panel__body">
+                Date requested<br><strong>{{Date}}</strong>
               </div>
             </div>
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
 
             <h2 class="govuk-heading-m">What will happen next</h2>
             <p class="govuk-body">
-              The school will receive a notification to finalise the application and add the details to their
-              Management Information System (MIS). </p>
+              The school will receive a notification that the review needs more evidence to support the application. <br><br>
+            They need to upload the evidence to the pupil record or send it directly to you by email.</p>
             <!-- <p class="govuk-body">
                If you need to find the application again, you can <a href="search">search all records</a>. -->
 
@@ -48,10 +50,31 @@
     </div>
   </div>
 
-  <!-- <div class="govuk-button-group"> -->
-  <!-- <a class="govuk-link" href="../pending-list">Review another application</a> -->
-  <!-- <a class="govuk-link" href="../../../dashboard">Return to dashboard</a> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+    </div>
+
+
+  </div>
 </div>
 
+{% endblock %}
 
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
 {% endblock %}

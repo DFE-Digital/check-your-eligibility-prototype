@@ -28,13 +28,37 @@ View and manage the details of this pupil record.
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
     <div class="govuk-grid-column-full">
 
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <div>
+        <div style="display: flex; justify-content: space-between; align-items: right;"> <div>
                 <span class="govuk-caption-l">44455453</span>
-                <h1 class="govuk-heading-l" style="margin-bottom: 0;">{{childName}}</h1>
+                <h1 class="govuk-heading-l" style="margin-bottom: 0;">{{childName}}</h1></div>
+
+<!--
             </div>
-            <div>
-            </div>
+
+            {{ mojButtonMenu({
+            button: {
+            text: "Manage child record"
+            },
+            alignMenu: "left",
+            items: [
+            {
+            text: "Export record as CSV"
+            },
+            {
+            text: "Export record as PDF"
+            },
+            {
+            text: "Finalise application"
+            },
+            {
+            text: "Archive record"
+            }
+            ]
+            }) }}
+            <div> -->
+              <div class="govuk-grid-row govuk-!-margin-bottom-10">
+
+           </div>
             {{ mojButtonMenu({
             button: {
             text: "Manage child record"
@@ -100,7 +124,7 @@ View and manage the details of this pupil record.
                     </h2>
                     <ul class="govuk-summary-card__actions">
                         <li class="govuk-summary-card__action">
-                            <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> name</span></a>
+                            <a class="govuk-link" href="#">Update childs details<span class="govuk-visually-hidden"> Update child details</span></a>
                         </li>
 
                     </ul>
@@ -150,8 +174,7 @@ View and manage the details of this pupil record.
                     </h2>
                     <ul class="govuk-summary-card__actions">
                         <li class="govuk-summary-card__action">
-                            <!-- <a class="govuk-link" href="#">Update details<span class="govuk-visually-hidden"> update parent
-            details</span></a> -->
+                            <a class="govuk-link" href="#">Update parents details<span class="govuk-visually-hidden"> update parent details </span></a>
                         </li>
                         <!-- <li class="govuk-summary-card__action">
         <a class="govuk-link" href="#">Withdraw<span class="govuk-visually-hidden"> from University of Bristol (University of Bristol)</span></a>
@@ -202,9 +225,8 @@ View and manage the details of this pupil record.
                     </h2>
                     <ul class="govuk-summary-card__actions">
                         <li class="govuk-summary-card__action">
-                            <a class="govuk-link" href="../upload/upload-evidence.html">Update evidence<span
-                                    class="govuk-visually-hidden"> add supporting
-                                    evidence</span></a>
+                            <a class="govuk-link" href="../upload/more-evidence/upload-more-evidence.html">Update evidence<span
+                                    class="govuk-visually-hidden"> add or remove evidence</span></a>
                         </li>
                         <!-- <li class="govuk-summary-card__action">
         <a class="govuk-link" href="#">Remove evidence<span class="govuk-visually-hidden"> </span></a>

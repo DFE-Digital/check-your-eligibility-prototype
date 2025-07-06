@@ -1,5 +1,5 @@
 {% extends "layouts/FSM/v7-3/layout-dfe-lanav.html" %}
-{% set pageName="Review evidence" %}
+{% set pageName="Pending appeals" %}
 
 <!-- {% set applicationSent %}
 <h3 class="govuk-notification-banner__heading">
@@ -13,57 +13,46 @@
 
 {% block content %}
 
+
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
+  <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">{{pageName}}
-
-      <span id="notifications" class="moj-notification-badge" style="white-space: nowrap; margin-left: 15px;">21</span>
-
+      <!-- <span id="notifications" class="moj-notification-badge" style="white-space: nowrap; margin-left: 15px;">21</span> -->
     </h1>
 
-    <!--
     {{ govukDetails({
       summaryText: "Help with this page",
       text: "This page contains applications for free school meals that couldn't be found in the system. Review any supporting evidence parents or guardians have provided, then approve or decline to process their applications."
-    }) }} -->
-
-<div class="govuk-width-container" style="background-color: #e0f3ff; padding: 1em; margin-top: 1em;">
-
-<div class="moj-search">
-
-  <form action="#" method="post">
-
-    <div class="govuk-form-group">
-      <label class="govuk-label moj-search__label govuk-!-font-weight-bold" for="search">
-        Find a pupil
-      </label>
-
-      <div id="search-hint" class="govuk-hint moj-search__hint ">
-        You can search by name, date of birth or National Insurance number
+    }) }}
+    <div class="govuk-width-container" style="background-color: #e0f3ff; padding: 1em; margin-top: 1em;">
+      <div class="moj-search">
+        <form action="#" method="post">
+          <div class="govuk-form-group">
+            <label class="govuk-label moj-search__label govuk-!-font-weight-bold" for="search">
+              Find a pupil
+            </label>
+            <div id="search-hint" class="govuk-hint moj-search__hint ">
+              You can search by name, date of birth or National Insurance number
+            </div>
+            <input class="govuk-input moj-search__input " id="search" name="search" type="search"
+              aria-describedby="search-hint">
+          </div>
+          <button type="submit" class="govuk-button moj-search__button " data-module="govuk-button">
+            Search
+          </button>
+        </form>
       </div>
-
-      <input class="govuk-input moj-search__input " id="search" name="search" type="search" aria-describedby="search-hint">
-
     </div>
-
-    <button type="submit" class="govuk-button moj-search__button " data-module="govuk-button">
-      Search
-    </button>
-
-  </form>
-</div>
-
+    <div style="padding-bottom: 2em;"></div>
   </div>
-  <div style="padding-bottom: 2em;"></div>
+</div>
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
-
         <table class="govuk-table" data-module="moj-sortable-table">
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
-
               <th class="govuk-table__header" scope="col" aria-sort="ascending">Reference</th>
               <th class="govuk-table__header" scope="col" aria-sort="none">Parent or guardian</th>
               <th class="govuk-table__header" scope="col" aria-sort="none">Parent or guardian date of birth</th>
@@ -73,9 +62,6 @@
             </tr>
           </thead>
           <tbody class="govuk-table__body">
-
-
-
             <tr class="govuk-table__row">
               <td class="govuk-table__cell"><a href="../decision/records/pending" class="govuk-link">44455453</a></td>
               <td class="govuk-table__cell">Eden Tesfay</td>

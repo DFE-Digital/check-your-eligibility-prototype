@@ -7,9 +7,9 @@
     {% set html %}
     <p class="govuk-body">You can now:</p>
 <ul class="govuk-list govuk-list--bullet">
-  <li>apply for free school meals on behalf of the parent (with evidence if needed)</li>
-  <li>notify and ask the parent or guardians to apply (and ask them to provide evidence if needed)</li>
-  <li>remove records that could not be checked or ask the parent or guardian to fix the problem</li>
+  <li>update the end date in your Management information system if the child is eligible</li>
+  <li>notify and ask the parent or guardians to apply (and ask them to provide evidence if they are not eligible anymore)</li>
+  <li>ask the parent or guardian to fix the problem or check again if you think the details are correct</li>
 </ul>
 
 
@@ -61,14 +61,14 @@
     <div id="eligible-section" class="govuk-table-section">
       <div class="govuk-grid-column-two-thirds">
         <h2 class="govuk-heading-m">Eligible</h2>
-        <p class="govuk-body">These children are still eligible for free school meals. The parent does not need to do anything.</p>
+        <p class="govuk-body">These children are still eligible for free school meals. The parent does not need to do anything and can continue receiving support.</p>
       </div>
       <div class="govuk-grid-column-one-third govuk-text-align-right" style="display: flex; justify-content: flex-end; align-items: center;">
         <div class="govuk-button-group">
       <!-- <div class="govuk-grid-column-one-third govuk-text-align-right">
         <div class="govuk-button-group style=" display: flex; justify-content: flex-end; align-items: center;> -->
           {{ govukButton({
-          text: "Create applications",
+          text: "Update end date",
           href: '../records/batch-records/eligible/batch-confirm-eligible'
           }) }}
           <!-- {{ govukButton({
@@ -89,6 +89,7 @@
             <th scope="col" class="govuk-table__header">Parent date of birth</th>
             <th scope="col" class="govuk-table__header">National Insurance number</th>
             <th scope="col" class="govuk-table__header">Email</th>
+            <th scope="col" class="govuk-table__header">End date</th>
             <!-- <th scope="col" class="govuk-table__header">Action</th> -->
             <!-- <th scope="col" class="govuk-table__header">Notify</th> -->
           </tr>
@@ -112,6 +113,7 @@
             <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
             <td class="govuk-table__cell">NW653213B</td>
             <td class="govuk-table__cell">edentesfay@icloud.com</td>
+            <td class="govuk-table__cell govuk-table__cell--date">31 Aug 2026</td>
 
             <!-- <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td>
           </tr> -->
@@ -134,7 +136,9 @@
             <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
             <td class="govuk-table__cell">NW653213B</td>
             <td class="govuk-table__cell">edentesfay@icloud.com</td>
-            <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td>
+                        <td class="govuk-table__cell govuk-table__cell--date">31 Aug 2026</td>
+
+            <!-- <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td> -->
           </tr>
         </tbody>
         <tbody class="govuk-table__body">
@@ -156,7 +160,9 @@
             <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
             <td class="govuk-table__cell">NW653213B</td>
             <td class="govuk-table__cell">edentesfay@icloud.com</td>
-            <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td>
+                        <td class="govuk-table__cell govuk-table__cell--date">31 Aug 2026</td>
+
+            <!-- <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td> -->
           </tr>
         </tbody>
         <tr class="govuk-table__row govuk-table__row--selected">
@@ -176,7 +182,9 @@
           <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
           <td class="govuk-table__cell">NW653213B</td>
           <td class="govuk-table__cell">edentesfay@icloud.com</td>
-          <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td>
+                      <td class="govuk-table__cell govuk-table__cell--date">31 Aug 2026</td>
+
+          <!-- <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td> -->
         </tr>
         </tbody>
       </table>
@@ -220,6 +228,7 @@
             <th scope="col" class="govuk-table__header">Parent date of birth</th>
             <th scope="col" class="govuk-table__header">National Insurance number</th>
             <th scope="col" class="govuk-table__header">Email</th>
+            <th scope="col" class="govuk-table__header">End date</th>
 
 
             <th scope="col" class="govuk-table__header"></th>
@@ -244,6 +253,7 @@
             <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
             <td class="govuk-table__cell">NW653213B</td>
             <td class="govuk-table__cell">edentesfay@icloud.com</td>
+            <td class="govuk-table__cell govuk-table__cell--date">31 Aug 2025</td>
 
             <!-- <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Add application</a></td> -->
           <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td>
@@ -267,6 +277,7 @@
             <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
             <td class="govuk-table__cell">NW653213B</td>
             <td class="govuk-table__cell">edentesfay@icloud.com</td>
+            <td class="govuk-table__cell govuk-table__cell--date">31 Aug 2025</td>
             <!-- <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Add application</a></td> -->
             <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td>        </tr>
         </tbody>
@@ -288,6 +299,7 @@
             <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
             <td class="govuk-table__cell">NW653213B</td>
             <td class="govuk-table__cell">edentesfay@icloud.com</td>
+            <td class="govuk-table__cell govuk-table__cell--date">31 Aug 2025</td>
             <!-- <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Add application</a></td> -->
             <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td>       </tr>
         </tbody>
@@ -307,6 +319,8 @@
           <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
           <td class="govuk-table__cell">NW653213B</td>
           <td class="govuk-table__cell">edentesfay@icloud.com</td>
+          <td class="govuk-table__cell govuk-table__cell--date">31 Aug 2025</td>
+
           <!-- <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Add application</a></td> -->
           <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td>        </tr>
         </tbody>
