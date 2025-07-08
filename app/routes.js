@@ -197,12 +197,7 @@ else {
     res.redirect("/childcare/v4/foster/create/child-details")
 }
 })
-  }
-
-  else {
-    res.redirect("/childcare/v3/foster/create/child-details")
-  }
-})
+  
 
 
 // ////////////////////////CURRENT//////////////////////////////////
