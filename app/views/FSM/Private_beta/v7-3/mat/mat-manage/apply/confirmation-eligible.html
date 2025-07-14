@@ -1,18 +1,33 @@
 {% extends "layouts/FSM/v7-3/layout-dfe-matnav.html" %}
 {% set pageName="Children's details added" %}
+{% set childId = "44455453" %}
+{% set childDOB1 = "22 Sep 2021" %}
+{% set childDOB2 = "22 Sep 2018" %}
+{% set schoolName = "Greenwood Primary School" %}
+{% set schoolAddress = "Hoddesdon EN11 8JY" %}
+{% set parentDOB = "15 Mar 1980" %}
+{% set parentFirstname = data["parent-firstname"] or "Alex" %}
+{% set parentSurname = data["parent-surname"] or "Johnson" %}
+{% set email = "alex.johnson@gmail.com" %}
+{% set nationalInsurance = "AB123456C" %}
+{% set parentId = "44455454A" %}
+{% set childName = "Emily Johnson" %}
+{% set childFirstname = data["child-firstname"] or "Emily" %}
+{% set childSurname = data["child-surname"] or "Johnson" %}
+{% set childFirstname2 = data["child-firstname"] or "Rory" %}
+{% set childSurname2 = data["child-surname"] or "Johnson" %}
 
 {% block content %}
 
 <div class="govuk-width-container">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-
       {% set html %}
       <h3 class="govuk-notification-banner__heading">
         {{pageName}}
       </h3>
-      <p class="govuk-body">You've successfully added details to {{ data["parent-firstname"] or "Eden" }} {{
-        data["parent-surname"] or "Tesfay" }} free school meals application record.</p>
+      <p class="govuk-body">You've successfully added details to {{ data["parent-firstname"] or parentFirstname }} {{
+        data["parent-surname"] or parentSurname }} free school meals application.</p>
 
       {% endset %}
 
@@ -21,7 +36,7 @@
       type: "success"
       }) }}
       <!--<h1 class="govuk-heading-xl">Children details added</h1>-->
-      <h3>Application record for {{ data["parent-firstname"] or "Eden" }} {{ data["parent-surname"] or "Tesfay" }}</h3>
+      <h3>Application for {{ data["parent-firstname"] or parentFirstname }} {{ data["parent-surname"] or parentSurname }}</h3>
 
 
     </div>
@@ -39,17 +54,18 @@
         </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"> {{ data["ch1-first-name"] or "Rachel" }} {{ data["ch1-surname"] or
-              data["parent-surname"] or "Tesfay" }} </td>
+            <td class="govuk-table__cell"> {{ data["ch1-first-name"] or childFirstname }} {{ data["ch1-surname"] or
+              data["parent-surname"] or childSurname }} </td>
             <td class="govuk-table__cell">  {{ data["ch1-school"] or "Greenwood Primary School" }}
                Hoddesdon EN11 8JY</td>
             <td class="govuk-table__cell">44455453</td>
           </tr>
 
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"> {{ data["ch2-first-name"] or "Samuel" }} {{ data["ch2-surname"] or
-              data["parent-surname"] or "Tesfay" }} </td>
-            <td class="govuk-table__cell">Watford Grammar School for Boys, Watford WD17 3AA</td>
+            <td class="govuk-table__cell"> {{ data["ch1-first-name"] or childFirstname2 }} {{ data["ch1-surname"] or
+              data["parent-surname"] or childSurname2 }} </td>
+            <td class="govuk-table__cell">  {{ data["ch1-school"] or " Watford Grammar School for Boys" }}
+              Watford WD17 3AA</td>
             <td class="govuk-table__cell">44455699</td>
           </tr>
 

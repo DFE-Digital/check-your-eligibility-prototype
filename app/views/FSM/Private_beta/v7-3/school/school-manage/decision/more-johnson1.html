@@ -7,7 +7,7 @@ href: "javascript:window.history.back()"
 {% endblock %}
 
 {% set childId = "44455453" %}
-{% set childDOB = "22 Sep 2012" %}
+{% set childDOB = "22 Sep 2021" %}
 {% set schoolName = "Hilltop Elementary" %}
 {% set schoolAddress = "Manchester, M25 1QA" %}
 {% set parentDOB = "15 Mar 1980" %}
@@ -26,107 +26,88 @@ View and manage the details of this pupil record.
 {% block content %}
 
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
-    <div class="govuk-grid-column-full">
-
-        <div style="display: flex; justify-content: space-between; align-items: right;"> <div>
-                <span class="govuk-caption-l">44455453</span>
-                <h1 class="govuk-heading-l" style="margin-bottom: 0;">{{childName}}</h1></div>
-
-<!--
+    <div class="govuk-grid-column-full"> <!-- Aligns with the cards -->
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <span class="govuk-caption-l">{{ childId }}</span>
+                <h1 class="govuk-heading-l" style="margin-bottom: 0;">{{ childName }}</h1>
             </div>
+            <div>
+                {{ mojButtonMenu({
+                button: {
+                text: "Manage child record"
+                },
+                alignMenu: "right",
+                items: [
+                { text: "Export record as CSV", href: "#" },
+                { text: "Export record as PDF", href: "#" },
+                { text: "Archive record", href: "#" }
+                ]
+                }) }}
+            </div>
+        </div>
+        <p class="govuk-body">View and manage the details of this pupil record.</p>
 
-            {{ mojButtonMenu({
-            button: {
-            text: "Manage child record"
-            },
-            alignMenu: "left",
-            items: [
-            {
-            text: "Export record as CSV"
-            },
-            {
-            text: "Export record as PDF"
-            },
-            {
-            text: "Finalise application"
-            },
-            {
-            text: "Archive record"
-            }
-            ]
-            }) }}
-            <div> -->
-              <div class="govuk-grid-row govuk-!-margin-bottom-10">
-
-           </div>
-            {{ mojButtonMenu({
-            button: {
-            text: "Manage child record"
-            },
-            alignMenu: "right",
-            items: [
-            {
-            text: "Export record as CSV"
-            },
-            {
-            text: "Export record as PDF"
-            },
-            {
-            text: "Finalise application"
-            },
-            {
-            text: "Archive record"
-            }
-            ]
-            }) }}
+        <div class="govuk-inset-text">
+                <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-top-4">
+                        <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">Application status</dt>
+                                <dd class="govuk-summary-list__value">
+                                        <strong class="govuk-tag govuk-tag--yellow">Evidence needed</strong>
+                                </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">Next task</dt>
+                                <dd class="govuk-summary-list__value">
+                                        <strong class="govuk-tag govuk-tag--grey">Upload evidence</strong>
+                                </dd>
+                        </div>
+                </dl>
         </div>
     </div>
 </div>
 
-<div class="govuk-grid-row govuk-!-margin-bottom-5">
-    <div class="govuk-grid-column-full">
-        <div class="govuk-grid-row">
-            <div class="govuk-summary-card">
-                <div class="govuk-summary-card__title-wrapper">
-                    <h2 class="govuk-summary-card__title">
-                        Application status
-                    </h2>
-                </div>
-                <div class="govuk-summary-card__content">
-                    <dl class="govuk-summary-list">
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                <strong class="govuk-tag govuk-tag--yellow" style="margin-left: 0px;">
-                                    More evidence needed
-                                </strong>
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                This application is waiting for the evidence to be updated. You can request more
-                                evidence from the parent or guardian.
-                            </dd>
-                        </div>
-                        <!-- <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Notes
-              </dt>
-              <dd class="govuk-summary-list__value">
-                This record is currently active and available for review.
-              </dd>
-            </div> -->
-                    </dl>
-                </div>
+    <!-- <div class="govuk-grid-row">
+        <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper">
+                <h2 class="govuk-summary-card__title">
+                    Application status
+                </h2>
+                <ul class="govuk-summary-card__actions">
+                    <li class="govuk-summary-card__action">
+                        <a class="govuk-link" href="#"> <span class="govuk-visually-hidden"> </span></a>
+                    </li>
+                </ul>
             </div>
+            <div class="govuk-summary-card__content">
+                <dl class="govuk-summary-list">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            <strong class="govuk-tag govuk-tag--yellow" style="margin-left: 0px;">
+                                More evidence needed
+                            </strong>
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            This application is waiting for the evidence to be updated. You can request more evidence
+                            from the parent or guardian.
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+            </div> -->
 
-            <div class="govuk-summary-card">
+            <!-- <div class="govuk-grid-column-two-thirds"> Aligns with the cards -->
+            <div class="govuk-summary-card govuk-!-margin-bottom-5">
                 <div class="govuk-summary-card__title-wrapper">
                     <h2 class="govuk-summary-card__title">
                         Child details
                     </h2>
                     <ul class="govuk-summary-card__actions">
                         <li class="govuk-summary-card__action">
-                            <a class="govuk-link" href="#">Update childs details<span class="govuk-visually-hidden"> Update child details</span></a>
+                            <a class="govuk-link" href="#">Update child details<span class="govuk-visually-hidden">
+                                    Update child
+                                    details</span></a>
                         </li>
-
                     </ul>
                 </div>
                 <div class="govuk-summary-card__content">
@@ -174,7 +155,9 @@ View and manage the details of this pupil record.
                     </h2>
                     <ul class="govuk-summary-card__actions">
                         <li class="govuk-summary-card__action">
-                            <a class="govuk-link" href="#">Update parents details<span class="govuk-visually-hidden"> update parent details </span></a>
+                            <a class="govuk-link" href="#">Update parents details<span class="govuk-visually-hidden">
+                                    update parent
+                                    details </span></a>
                         </li>
                         <!-- <li class="govuk-summary-card__action">
         <a class="govuk-link" href="#">Withdraw<span class="govuk-visually-hidden"> from University of Bristol (University of Bristol)</span></a>
@@ -225,8 +208,8 @@ View and manage the details of this pupil record.
                     </h2>
                     <ul class="govuk-summary-card__actions">
                         <li class="govuk-summary-card__action">
-                            <a class="govuk-link" href="../upload/more-evidence/upload-more-evidence.html">Update evidence<span
-                                    class="govuk-visually-hidden"> add or remove evidence</span></a>
+                            <a class="govuk-link" href="../upload/more-evidence/upload-more-evidence.html">Update
+                                evidence<span class="govuk-visually-hidden"> add or remove evidence</span></a>
                         </li>
                         <!-- <li class="govuk-summary-card__action">
         <a class="govuk-link" href="#">Remove evidence<span class="govuk-visually-hidden"> </span></a>
@@ -238,10 +221,30 @@ View and manage the details of this pupil record.
                     <dl class="govuk-summary-list">
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
+                                Evidence status
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <strong class="govuk-tag govuk-tag--yellow" style="margin-left: 0px;">
+                                    Evidence needed
+                                </strong>
+                            </dd>
+                        </div>
+                        <!-- <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
                                 Evidence type
                             </dt>
                             <dd class="govuk-summary-list__value">
                                 UC statement
+                            </dd>
+                        </div> -->
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Files
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <a href="#">UC_statement_2023.pdf</a><br>
+                                <!-- <a href="#"> </a><br> -->
                             </dd>
                         </div>
                         <div class="govuk-summary-list__row">
@@ -252,32 +255,14 @@ View and manage the details of this pupil record.
                                 20 Sep 2023
                             </dd>
                         </div>
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Files
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                <a href="#">UC_statement_2023.pdf</a><br>
-                                <a href="#"> </a><br>
-                            </dd>
-                        </div>
-
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Evidence status
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                <strong class="govuk-tag govuk-tag--yellow" style="margin-left: 0px;">
-                                    Evidence needed
-                                </strong>
-                            </dd>
-                        </div>
+                    </dl>
                 </div>
             </div>
 
+
             <!-- <div class="govuk-!-padding-bottom-3"></div> -->
 
-            <div style="height: 32px;"></div>
+            <!-- <div style="height: 32px;"></div> -->
             <!-- {{ govukRadios({
   name: "record decision",
   fieldset: {
@@ -310,24 +295,21 @@ View and manage the details of this pupil record.
   ]
 }) }} -->
 
-            <!--
-<div class="govuk-button-group">
-<button type="submit" class="govuk-button" data-module="govuk-button">
-  Update pupil record
-</button>
-<a class="govuk-link" href="#">Return to review list</a>
-</div>
+            <div class="govuk-button-group">
+                <button type="submit" class="govuk-button" data-module="govuk-button">
+                    Update pupil record
+                </button>
+                <a class="govuk-link" href="#">Return to review list</a>
+            </div>
+        </div>
+        {% endblock %}
 
-            {% endblock %}
+        {% block buttons %}
+        {% endblock %}
 
-            {% block buttons %}
-            {% endblock %}
+        {% block pageScripts %}
 
-            {% block pageScripts %}
-            <!-- Add any javascript files here. Include javascript files only on the pages
-that need them. Excessive javascript files loaded on other pages may slow down
-the response times of the prototype. -->
-            <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+        <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
 
 
-            {% endblock %}
+        {% endblock %}

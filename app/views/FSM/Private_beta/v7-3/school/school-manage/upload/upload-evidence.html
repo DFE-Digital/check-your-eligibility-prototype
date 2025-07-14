@@ -1,4 +1,4 @@
-{% extends "layouts/FSM/v7/layout-dfe-schoolnav.html" %}
+{% extends "layouts/FSM/v7-3/layout-dfe-schoolnav.html" %}
 {% set pageName="Send supporting evidence" %}
 {% block content %}
 <div class="govuk-width-container">
@@ -12,11 +12,11 @@
           window)</a>.</p>
     </div>
     </div>
-
+<!--
     {%- from "govuk/components/file-upload/macro.njk" import govukFileUpload -%}
     {%- from "govuk/components/button/macro.njk" import govukButton -%}
     {%- from "govuk/components/error-summary/macro.njk" import govukErrorSummary -%}
-    {%- from "moj/components/multi-file-upload/macro.njk" import mojMultiFileUpload -%}
+    {%- from "moj/components/multi-file-upload/macro.njk" import mojMultiFileUpload -%} -->
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
@@ -41,35 +41,7 @@
               <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
             </div>
           </div>
-<!--
-          {% set uploadHtml %}
-          {{ govukFileUpload({
-          id: "documents",
-          name: "documents",
-          classes: 'moj-multi-file-upload__input',
-          label: {
-          text: "Upload a file",
-          classes: 'govuk-label--m'
-          },
-          attributes: { multiple: '' },
-          errorMessage: errorMessage
-          }) }}
 
-          {{govukButton({
-          text: 'Upload file',
-          classes: 'govuk-button--secondary moj-multi-file-upload__button'
-          })}}
-          {% endset %}
-
-          {{ mojMultiFileUpload({
-          uploadedFiles: {
-            heading: { text: 'Files added'},
-
-          items: uploadedFiles
-          },
-          uploadHtml: uploadHtml
-          }) }}
--->
 <div class="govuk-button-group">
 
           {{govukButton({
@@ -77,11 +49,8 @@
           type: 'submit'
           })}}
         </form>
-
           <p class="govuk-body"><a href="../appeal/appeal-check-answers-email" class="govuk-link">Send by email later</a></p>
 </div>
-
-
       </div>
 
       </div>

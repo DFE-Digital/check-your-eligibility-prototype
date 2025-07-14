@@ -78,6 +78,9 @@ require('./routes/fsm/private_beta/v7-3/appeal-decision')(router);
 
 
 
+
+
+
   //////////////////////////////
   // LOCAL FUNCTIONS AND DATA //
   // These functions are available on all pages in the prototype.
@@ -197,12 +200,7 @@ else {
     res.redirect("/childcare/v4/foster/create/child-details")
 }
 })
-  }
 
-  else {
-    res.redirect("/childcare/v3/foster/create/child-details")
-  }
-})
 
 
 // ////////////////////////CURRENT//////////////////////////////////

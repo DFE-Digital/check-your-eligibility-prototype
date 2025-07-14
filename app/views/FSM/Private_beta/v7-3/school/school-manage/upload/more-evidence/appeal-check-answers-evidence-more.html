@@ -1,5 +1,4 @@
-{% extends "layouts/FSM/v7/layout-dfe-schoolnav.html" %}
-
+{% extends "layouts/FSM/v7-3/layout-dfe-schoolnav.html" %}
 {% block content %}
 
 <!-- Ensure moj-badge CSS is loaded -->
@@ -27,11 +26,11 @@
             <dd class="govuk-summary-list__value">
               {% if data["parent-firstname"] %}{{data.parent-firstname}}
               {% else %}
-              Eden
+              Alex
             {% endif %}
             {% if data ["parent-surname"] %}{{data.parent-surname}}
             {% else %}
-            Tesfay
+            Johnson
             {% endif %}
             </dd>
           </div>
@@ -42,7 +41,7 @@
             <dd class="govuk-summary-list__value">
               {% if data ["email"] %}{{data.email}}
               {% else %}
-              eden.tesfay@gmail.com
+              	alex.johnson@example.com
               {% endif %}
             </dd>
           </div>
@@ -53,7 +52,7 @@
             <dd class="govuk-summary-list__value">
               {% if data ["dob"] %}{{ data["dob"] }}
               {% else %}
-              06 Dec 1979
+              15 Mar 1980
               {% endif %}
 
             </dd>
@@ -71,13 +70,13 @@
             {% if data["ni-number"] %}
               {{ data["ni-number"] }}
             {% else %}
-              NW654321C
+              AB123456C
             {% endif %}
           {% else %}
             {% if data["nass-number-entered"] %}
               {{ data["nass-number-entered"] }}
             {% else %}
-              AS1234567
+              AB123456C
             {% endif %}
           {% endif %}
           </dd>
@@ -103,11 +102,11 @@
             <dd class="govuk-summary-list__value" >
               {% if data ["ch1-first-name"] %}{{ data["ch1-first-name"] }}
               {% else %}
-              Samuel
+              Emily
               {% endif %}
               {% if data ["ch1-surname"] %}{{ data["ch1-surname"] }}
               {% else %}
-              Tesfay
+              Johnson
               {% endif %}
             </dd>
           </div>
@@ -116,15 +115,15 @@
             <dd class="govuk-summary-list__value" style="width: 40%;">
               {% if data ["ch1-day"] %} {{ data["ch1-day"] }}
               {% else %}
-              18
+              22
               {% endif %}
               {% if data ["ch1-month"] %} {{ data["ch1-month"] }}
               {% else %}
-              June
+              Sept
               {% endif %}
               {% if data ["ch1-year"] %} {{ data["ch1-year"] }}
               {% else %}
-              2020
+              2021
               {% endif %}
             </dd>
           </div>

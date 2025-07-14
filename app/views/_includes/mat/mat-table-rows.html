@@ -1,0 +1,495 @@
+<!-- <tbody class="govuk-table__body">
+  {% for application in data.applications %}
+    <tr class="govuk-table__row matches-filters"
+      data-status="{% if application.status.yes == 'Entitled' %}status-Entitled{% elif application.status.yes == 'Not Entitled' %}status-Not-Entitled{% elif application.status.yes == 'Sent for review' %}status-Sent-for-review{% elif application.status.yes == 'Evidence needed' %}status-Evidence-needed{% endif %}">
+
+      <th scope="row" class="govuk-table__header">
+        <a href="{{ application.href }}">{{ application.id }}</a>
+      </th>
+      <td class="govuk-table__cell">
+        {{ application.childDetails.firstName }} {{ application.childDetails.lastName }}
+      </td>
+      <td class="govuk-table__cell">
+        {{ application.dob | govukDate("truncate") }}
+      </td>
+      <td class="govuk-table__cell">
+        {{ application.academy or "Not provided" }}
+      </td>
+      <td class="govuk-table__cell">
+        {{ application.submission.date | govukDate("truncate") }}
+      </td>
+      <td class="govuk-table__cell">
+        {% if application.status.yes == "Entitled" %}
+          <strong class="govuk-tag govuk-tag--green">{{ application.status.yes }}</strong>
+        {% elif application.status.yes == "Sent for review" %}
+          <strong class="govuk-tag govuk-tag--blue">{{ application.status.yes }}</strong>
+        {% elif application.status.yes == "Evidence needed" %}
+          <strong class="govuk-tag govuk-tag--turquoise">{{ application.status.yes }}</strong>
+        {% elif application.status.yes == "Not Entitled" %}
+          <strong class="govuk-tag govuk-tag--red">{{ application.status.yes }}</strong>
+        {% else %}
+          <strong class="govuk-tag">{{ application.status.yes }}</strong>
+        {% endif %}
+      </td>
+      <td class="govuk-table__cell">
+        {{ application.eligible.date | govukDate("truncate") }}
+      </td>
+    </tr>
+  {% endfor %}
+</tbody> -->
+
+
+
+<tbody class="govuk-table__body">
+    <tr class="govuk-table__row matches-filters" data-status="status-Evidence-needed">
+        <th scope="row" class="govuk-table__header">
+            <a href="/FSM/Private_beta/v7-3/mat/mat-manage/records/details/99999999">45678765</a>
+        </th>
+        <td class="govuk-table__cell">Alex Johnson</td>
+        <td class="govuk-table__cell">Emily Johnson</td>
+        <!-- <td class="govuk-table__cell"></td> -->
+        <td class="govuk-table__cell">{{ "2018-09-20" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">Oakwood High</td>
+        <td class="govuk-table__cell">{{ "2020-09-25" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--turquoise">Evidence needed</strong>
+        </td>
+        <!-- <td class="govuk-table__cell">1 Sep 2024</td> -->
+    </tr>
+
+   <tr class="govuk-table__row matches-filters" data-status="status-Evidence-needed">
+        <th scope="row" class="govuk-table__header">
+            <a href=”#">45678765</a>
+        </th>
+        <td class="govuk-table__cell">Alex Jones</td>
+        <td class="govuk-table__cell">Theo Jones</td>
+        <td class="govuk-table__cell">{{ "2018-06-10" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">Oakwood High</td>
+        <td class="govuk-table__cell">{{ "2018-09-20" | govukDate("truncate") }}</td>
+</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--turquoise">Evidence needed</strong>
+        </td>
+    </tr>
+
+    <tr class="govuk-table__row matches-filters" data-status="status-Evidence-needed">
+        <th scope="row" class="govuk-table__header">
+            <a href=”#">45678765</a>
+        </th>
+        <td class="govuk-table__cell">Jessica Brown</td>
+        <td class="govuk-table__cell">Rachel Brown</td>
+        <td class="govuk-table__cell">{{ "2018-06-10" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">Springfield Primary</td>
+        <td class="govuk-table__cell">{{ "2018-09-20" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--turquoise">Evidence needed</strong>
+        </td>
+    </tr>
+    <tr class="govuk-table__row matches-filters" data-status="status-Evidence-needed">
+        <th scope="row" class="govuk-table__header">
+    <a href="/FSM/Private_beta/v7-3/mat/mat-manage/records/appeals/not-eligible-mat-langley1.html">44455456</a>
+        </th>
+        <td class="govuk-table__cell">Jennifer Langley</td>
+        <td class="govuk-table__cell">Tilly Langley</td>
+        <td class="govuk-table__cell">{{ "2017-12-03" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">Oakfield Academy</td>
+        <td class="govuk-table__cell">{{ "2023-09-25" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--turquoise">Evidence needed</strong>
+        </td>
+    </tr>
+    <tr class="govuk-table__row matches-filters" data-status="status-Not-Entitled">
+        <th scope="row" class="govuk-table__header">
+            <a href=”#">89009800</a>
+        </th>
+        <td class="govuk-table__cell">Susan Francis</td>
+        <td class="govuk-table__cell">Lincoln Francis</td>
+        <td class="govuk-table__cell">{{ "2017-12-13" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">Springfield Academy</td>
+        <td class="govuk-table__cell">{{ "2023-09-25" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--red">Not Entitled</strong>
+        </td>
+    </tr>
+    <tr class="govuk-table__row matches-filters" data-status="status-Sent-for-review">
+        <th scope="row" class="govuk-table__header">
+            <a href=”#">51876209</a>
+        </th>
+        <td class="govuk-table__cell">Celestine Yundt</td>
+        <td class="govuk-table__cell">Lauren Yundt</td>
+        <td class="govuk-table__cell">{{ "2019-11-04" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">Elmwood Academy</td>
+        <td class="govuk-table__cell">{{ "2024-05-04" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--blue">Sent for review</strong>
+        </td>
+    </tr>
+    <tr class="govuk-table__row matches-filters" data-status="status-Evidence-needed">
+        <th scope="row" class="govuk-table__header">
+            <a href=”#">75878164</a>
+        </th>
+        <td class="govuk-table__cell">Khalid Stracke</td>
+        <td class="govuk-table__cell">Ina Stracke</td>
+        <td class="govuk-table__cell">{{ "2019-12-24" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">Greenfield Academy</td>
+        <td class="govuk-table__cell">{{ "2024-05-30" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--turquoise">Evidence needed</strong>
+        </td>
+    </tr>
+    <tr class="govuk-table__row matches-filters" data-status="status-Sent-for-review">
+        <th scope="row" class="govuk-table__header">
+            <a href=”#">47031485</a>
+        </th>
+        <td class="govuk-table__cell">Martin Gislason</td>
+        <td class="govuk-table__cell">Aleysha Gislason</td>
+        <td class="govuk-table__cell">{{ "2018-12-17" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">Beacon View school</td>
+        <td class="govuk-table__cell">{{ "2024-05-18" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--blue">Sent for review</strong>
+        </td>
+    </tr>
+    <tr class="govuk-table__row matches-filters" data-status="status-Entitled">
+        <th scope="row" class="govuk-table__header">
+            <a href=”#">44398199</a>
+        </th>
+        <td class="govuk-table__cell">Koby Cruickshank</td>
+        <td class="govuk-table__cell">India Cruickshank</td>
+        <td class="govuk-table__cell">{{ "2021-05-26" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">Silver Birch Academy</td>
+        <td class="govuk-table__cell">{{ "2024-05-27" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">Entitled</strong>
+        </td>
+    </tr>
+    <tr class="govuk-table__row matches-filters" data-status="status-Evidence-needed">
+        <th scope="row" class="govuk-table__header">
+            <a href=”#">43923095</a>
+        </th>
+        <td class="govuk-table__cell">Miller Kerluke</td>
+        <td class="govuk-table__cell">Jan Kerluke</td>
+        <td class="govuk-table__cell">{{ "2018-08-02" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">Meadowpark school</td>
+        <td class="govuk-table__cell">{{ "2024-07-13" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--turquoise">Evidence needed</strong>
+        </td>
+    </tr>
+    <tr class="govuk-table__row matches-filters" data-status="status-Not-Entitled">
+        <th scope="row" class="govuk-table__header">
+            <a href=”#">90681766</a>
+        </th>
+        <td class="govuk-table__cell">Jasen Romaguera</td>
+        <td class="govuk-table__cell">Alfonso Romaguera</td>
+        <td class="govuk-table__cell">{{ "2018-05-30" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">Brookside Academy</td>
+        <td class="govuk-table__cell">{{ "2024-05-25" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">Entitled</strong>
+        </td>
+    </tr>
+    <tr class="govuk-table__row matches-filters" data-status="status-Not-Entitled">
+        <th scope="row" class="govuk-table__header">
+            <a href=”#">53652496</a>
+        </th>
+        <td class="govuk-table__cell">Zechariah Gottlieb</td>
+        <td class="govuk-table__cell">Lettita Gottlieb</td>
+        <td class="govuk-table__cell">{{ "2018-12-11" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">Kingsmead High School</td>
+        <td class="govuk-table__cell">{{ "2024-08-10" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">Entitled</strong>
+        </td>
+    </tr>
+    <tr class="govuk-table__row matches-filters" data-status="status-Not-Entitled">
+        <th scope="row" class="govuk-table__header">
+            <a href=”#">61613745</a>
+        </th>
+        <td class="govuk-table__cell">Amina Hassan</td>
+        <td class="govuk-table__cell">Sami Hassan</td>
+        <td class="govuk-table__cell">{{ "2018-11-28" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">Westhaven High</td>
+        <td class="govuk-table__cell">{{ "2024-08-22" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--turquoise">Evidence needed</strong>
+        </td>
+    </tr>
+    <tr class="govuk-table__row matches-filters" data-status="status-Not-Entitled">
+        <th scope="row" class="govuk-table__header">
+            <a href=”#">94726454</a>
+        </th>
+        <td class="govuk-table__cell">Jasmine Brekke</td>
+        <td class="govuk-table__cell">Archie Brekke</td>
+        <td class="govuk-table__cell">{{ "2021-08-06" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">St George's Primary</td>
+        <td class="govuk-table__cell">{{ "2024-05-05" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">Entitled</strong>
+        </td>
+    </tr>
+    <tr class="govuk-table__row matches-filters" data-status="status-Not-Entitled">
+        <th scope="row" class="govuk-table__header">
+            <a href=”#">56000846</a>
+        </th>
+        <td class="govuk-table__cell">Antonio Veum</td>
+        <td class="govuk-table__cell">Layla Veum</td>
+        <td class="govuk-table__cell">{{ "2021-11-06" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">Parklands Junior School</td>
+        <td class="govuk-table__cell">{{ "2024-05-25" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--red">Not Entitled</strong>
+        </td>
+    </tr>
+    <tr class="govuk-table__row matches-filters" data-status="status-Not-Entitled">
+        <th scope="row" class="govuk-table__header">
+            <a href=”#">87606576</a>
+        </th>
+        <td class="govuk-table__cell">Idella Nolan</td>
+        <td class="govuk-table__cell">Christina Nolan</td>
+        <td class="govuk-table__cell">{{ "2020-11-28" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">Southfield Academy</td>
+        <td class="govuk-table__cell">{{ "2024-05-05" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">Entitled</strong>
+        </td>
+    </tr>
+    <tr class="govuk-table__row matches-filters" data-status="status-Not-Entitled">
+        <th scope="row" class="govuk-table__header">
+            <a href=”#">97131159</a>
+        </th>
+        <td class="govuk-table__cell">Derrick Stark</td>
+        <td class="govuk-table__cell">Emily Stark</td>
+        <td class="govuk-table__cell">{{ "2020-07-12" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">Millbridge Academy</td>
+        <td class="govuk-table__cell">{{ "2024-07-03" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">Entitled</strong>
+        </td>
+    </tr>
+    <tr class="govuk-table__row matches-filters" data-status="status-Not-Entitled">
+        <th scope="row" class="govuk-table__header">
+            <a href=”#">76217312</a>
+        </th>
+        <td class="govuk-table__cell">Priya Patel</td>
+        <td class="govuk-table__cell">Asha Patel</td>
+        <td class="govuk-table__cell">{{ "2020-02-15" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">Oakwood High</td>
+        <td class="govuk-table__cell">{{ "2024-03-28" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--turquoise">Evidence needed</strong>
+        </td>
+    </tr>
+    <tr class="govuk-table__row matches-filters" data-status="status-Not-Entitled">
+        <th scope="row" class="govuk-table__header">
+            <a href=”#">82530749</a>
+        </th>
+        <td class="govuk-table__cell">Michael Green</td>
+        <td class="govuk-table__cell">Lucas Green</td>
+        <td class="govuk-table__cell">{{ "2021-01-21" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">Willow Grove Academy</td>
+        <td class="govuk-table__cell">{{ "2024-07-23" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--red">Not Entitled</strong>
+        </td>
+    </tr>
+    <tr class="govuk-table__row matches-filters" data-status="status-Not-Entitled">
+        <th scope="row" class="govuk-table__header">
+            <a href=”#">80891722</a>
+        </th>
+        <td class="govuk-table__cell">Timmy Corwin-O'Conner</td>
+        <td class="govuk-table__cell">Corwin-O'Conner</td>
+        <td class="govuk-table__cell">{{ "2018-04-24" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">Cedar Ridge Academy</td>
+        <td class="govuk-table__cell">{{ "2024-07-17" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--turquoise">Evidence needed</strong>
+        </td>
+    </tr>
+    <tr class="govuk-table__row matches-filters" data-status="status-Not-Entitled">
+        <th scope="row" class="govuk-table__header">
+            <a href=”#">46348196</a>
+        </th>
+        <td class="govuk-table__cell">David Thiel-Hayes</td>
+        <td class="govuk-table__cell">Amelia Thiel-Hayes</td>
+        <td class="govuk-table__cell">{{ "2019-02-26" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">Meadowpark Academy</td>
+        <td class="govuk-table__cell">{{ "2024-07-26" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--turquoise">Evidence needed</strong>
+        </td>
+    </tr>
+    <tr class="govuk-table__row matches-filters" data-status="status-Not-Entitled">
+        <th scope="row" class="govuk-table__header">
+            <a href=”#">90300608</a>
+        </th>
+        <td class="govuk-table__cell">Sophie Smith</td>
+        <td class="govuk-table__cell">Olivia Smith</td>
+        <td class="govuk-table__cell">{{ "2019-03-03" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">Brookside Academy</td>
+        <td class="govuk-table__cell">{{ "2024-06-27" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">Entitled</strong>
+        </td>
+    </tr>
+    <tr class="govuk-table__row matches-filters" data-status="status-Not-Entitled">
+        <th scope="row" class="govuk-table__header">
+            <a href=”#">43346257</a>
+        </th>
+        <td class="govuk-table__cell">Randall Stamm-Feest</td>
+        <td class="govuk-table__cell">Sarah Taylor-Stamm</td>
+        <td class="govuk-table__cell">{{ "2018-11-15" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">Westhaven High</td>
+        <td class="govuk-table__cell">{{ "2024-08-10" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--blue">Sent for review</strong>
+        </td>
+    </tr>
+    <tr class="govuk-table__row matches-filters" data-status="status-Not-Entitled">
+        <th scope="row" class="govuk-table__header">
+            <a href=”#">73070354</a>
+        </th>
+        <td class="govuk-table__cell">Wilbert Gleichner</td>
+        <td class="govuk-table__cell">Maisie Gleichner</td>
+        <td class="govuk-table__cell">{{ "2018-12-24" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">Hilltop Academy</td>
+        <td class="govuk-table__cell">{{ "2024-06-01" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">Entitled</strong>
+        </td>
+    </tr>
+    <tr class="govuk-table__row matches-filters" data-status="status-Not-Entitled">
+        <th scope="row" class="govuk-table__header">
+            <a href=”#">80005194</a>
+        </th>
+        <td class="govuk-table__cell">Hugh Davis</td>
+        <td class="govuk-table__cell">Toby Davis</td>
+        <td class="govuk-table__cell">{{ "2020-05-12" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">Greenfield Academy</td>
+        <td class="govuk-table__cell">{{ "2024-08-12" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--turquoise">Evidence needed</strong>
+        </td>
+    </tr>
+    <tr class="govuk-table__row matches-filters" data-status="status-Not-Entitled">
+        <th scope="row" class="govuk-table__header">
+            <a href=”#">57536463</a>
+        </th>
+        <td class="govuk-table__cell">Casey Ortiz</td>
+        <td class="govuk-table__cell">Olivia Ortiz</td>
+        <td class="govuk-table__cell">{{ "2019-10-19" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">Elmwood Academy</td>
+        <td class="govuk-table__cell">{{ "2024-05-17" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">Entitled</strong>
+        </td>
+    </tr>
+    <tr class="govuk-table__row matches-filters" data-status="status-Not-Entitled">
+        <th scope="row" class="govuk-table__header">
+            <a href=”#">49200033</a>
+        </th>
+        <td class="govuk-table__cell">Steve Lesch-Robel</td>
+        <td class="govuk-table__cell">Dillon Lesch-Robel</td>
+        <td class="govuk-table__cell">{{ "2021-06-18" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">Kingsmead High School</td>
+        <td class="govuk-table__cell">{{ "2024-06-24" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--red">Not Entitled</strong>
+        </td>
+    </tr>
+    <tr class="govuk-table__row matches-filters" data-status="status-Not-Entitled">
+        <th scope="row" class="govuk-table__header">
+            <a href=”#">78712600</a>
+        </th>
+        <td class="govuk-table__cell">Ernie Schmitt</td>
+        <td class="govuk-table__cell">Nathanial Schmitt</td>
+        <td class="govuk-table__cell">{{ "2020-02-20" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">Parklands Junior School</td>
+        <td class="govuk-table__cell">{{ "2024-05-06" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">Entitled</strong>
+        </td>
+    </tr>
+    <tr class="govuk-table__row matches-filters" data-status="status-Not-Entitled">
+        <th scope="row" class="govuk-table__header">
+            <a href=”#">50751828</a>
+        </th>
+        <td class="govuk-table__cell">Libbie Marquardt</td>
+        <td class="govuk-table__cell">Florence Marquardt</td>
+        <td class="govuk-table__cell">{{ "2020-10-22" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">St George's Primary</td>
+        <td class="govuk-table__cell">{{ "2024-07-19" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">Entitled</strong>
+        </td>
+    </tr>
+    <tr class="govuk-table__row matches-filters" data-status="status-Not-Entitled">
+        <th scope="row" class="govuk-table__header">
+            <a href=”#">62146921</a>
+        </th>
+        <td class="govuk-table__cell">Laverna Weber</td>
+        <td class="govuk-table__cell">Hannah Weber</td>
+        <td class="govuk-table__cell">{{ "2021-08-03" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">Southfield Academy</td>
+        <td class="govuk-table__cell">{{ "2024-08-17" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--turquoise">Evidence needed</strong>
+        </td>
+    </tr>
+    <tr class="govuk-table__row matches-filters" data-status="status-Not-Entitled">
+        <th scope="row" class="govuk-table__header">
+            <a href=”#">48470551</a>
+        </th>
+        <td class="govuk-table__cell">Robyn Stamm</td>
+        <td class="govuk-table__cell">Steven Stamm</td>
+        <td class="govuk-table__cell">{{ "2021-05-22" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">Parklands Junior School</td>
+        <td class="govuk-table__cell">{{ "2024-05-18" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">Entitled</strong>
+        </td>
+    </tr>
+    <tr class="govuk-table__row matches-filters" data-status="status-Not-Entitled">
+        <th scope="row" class="govuk-table__header">
+            <a href=”#">54923640</a>
+        </th>
+        <td class="govuk-table__cell">Steve Herman</td>
+        <td class="govuk-table__cell">Paul Herman</td>
+        <td class="govuk-table__cell">{{ "2019-09-04" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">Oakwood High</td>
+        <td class="govuk-table__cell">{{ "2024-07-07" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--turquoise">Evidence needed</strong>
+        </td>
+    </tr>
+    <tr class="govuk-table__row matches-filters" data-status="status-Not-Entitled">
+        <th scope="row" class="govuk-table__header">
+            <a href=”#">92548396</a>
+        </th>
+        <td class="govuk-table__cell">Charles Rothbury</td>
+        <td class="govuk-table__cell">Lydia Rothbury</td>
+        <td class="govuk-table__cell">{{ "2018-01-12" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">Parklands Junior School</td>
+        <td class="govuk-table__cell">{{ "2024-07-31" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--blue">Sent for review</strong>
+        </td>
+    </tr>
+    <tr class="govuk-table__row matches-filters" data-status="status-Not-Entitled">
+        <th scope="row" class="govuk-table__header">
+            <a href=”#">92532308</a>
+        </th>
+        <td class="govuk-table__cell">Bonnie Kuhic</td>
+        <td class="govuk-table__cell">Frankie Kuhic</td>
+        <td class="govuk-table__cell">{{ "2018-12-02" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">Hilltop Academy</td>
+        <td class="govuk-table__cell">{{ "2024-07-09" | govukDate("truncate") }}</td>
+        <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">Entitled</strong>
+        </td>
+    </tr>
+
+</tbody>
+<!-- End of table rows -->
+
+
