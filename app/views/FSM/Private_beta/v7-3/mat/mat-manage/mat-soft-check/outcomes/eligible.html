@@ -1,5 +1,7 @@
 {% extends "layouts/FSM/v7-3/layout-dfe-matnav.html" %}
 {% set pageName="Children eligible" %}
+{% set parentFirstname = data["parent-firstname"] or "Alex" %}
+{% set parentSurname = data["parent-surname"] or "Johnson" %}
 
 {% block content %}
 
@@ -13,9 +15,8 @@
         </h2>
       </div>
       <div class="govuk-notification-banner__content">
-        <h3 class="govuk-notification-banner__heading">
-          The children of {{ data["parent-firstname"] or "Eden" }} {{ data["parent-surname"] or "Tesfay" }} are eligible
-          for free school meals.
+        <h3 class="govuk-notification-banner__heading">The children of {{ parentFirstname }} {{ parentSurname }} are eligible
+  for free school meals.
         </h3>
       </div>
     </div>

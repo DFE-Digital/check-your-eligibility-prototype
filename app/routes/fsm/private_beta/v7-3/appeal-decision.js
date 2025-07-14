@@ -19,6 +19,25 @@ router.post('/fsm/private_beta/v7-3/appeal-decision/johnson1', function (req, re
   }
 });
 
+ //Patel
+
+router.get('/fsm/private_beta/v7-3/test-patel1', function (req, res) {
+  res.send('Route works!');
+});
+
+router.post('/fsm/private_beta/v7-3/appeal-decision/patel1', function (req, res) {
+  const decision = req.session.data['decision-patel'];
+
+  if (decision === 'approve-patel') {
+    res.redirect('/fsm/private_beta/v7-3/mat/mat-manage/records/appeals/approve-patel1');
+  } else if (decision === 'decline-patel') {
+    res.redirect('/fsm/private_beta/v7-3/mat/mat-manage/records/appeals/decline-patel1');
+  } else if (decision === 'pending-patel') {
+    res.redirect('/fsm/private_beta/v7-3/mat/mat-manage/records/appeals/requestmore-patel1');
+  } else {
+    res.redirect('/fsm/private_beta/v7-3/appeal-decision');
+  }
+});
 
 
 };

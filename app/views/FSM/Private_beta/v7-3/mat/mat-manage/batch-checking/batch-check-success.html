@@ -1,27 +1,23 @@
-{% extends "layouts/FSM/v7-3/layout-dfe-matnav.html" %}
+{% extends "layouts/FSM/v7-3/layout-dfe-lanav.html" %}
 {% set pageName="All checks completed" %}
 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    {% set html %}
-    <p class="govuk-body">You can now:</p>
-<ul class="govuk-list govuk-list--bullet">
-  <li>apply for free school meals on behalf of the parent if they are eligible</li>
-  <!-- <li>notify and ask the school, parent or guardians to apply and provide evidence if needed</li> -->
-  <li>review the records that couldn't be checked and update any out of date details before trying again</li>
-</ul>
-    {% endset %}
-
-      {{ govukNotificationBanner({
-      html: html,
-      type: "success",
-      titleText: "All checks completed",
-      titleHeadingLevel: "1"
-      }) }}
-
-
     <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <span class="govuk-caption-l">MAT-autumnterm25.csv</span>
+        <h1 class="govuk-heading-l">16 Batch check results</h1>
+      </div>
+      <div class="govuk-grid-column-two-thirds" style="display: flex; justify-content: flex-end; align-items: center;">
+        <button type="submit" id="exportCsvBtn" class="govuk-button govuk-button--secondary govuk-!-margin-right-15"
+          data-module="govuk-button">
+          Export all results as CSV
+        </button>
+      </div>
+    </div>
+
+    <!-- <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-third">
         <h1 class="govuk-heading-l">Batch check results</h1>
       </div>
@@ -31,7 +27,7 @@
           Export all results
         </button>
       </div>
-    </div>
+    </div>-->
     </div>
 
 
@@ -39,294 +35,131 @@
     <nav class="moj-sub-navigation" aria-label="Sub navigation">
       <ul class="moj-sub-navigation__list">
         <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link" aria-current="true" data-section="eligible-section"
-            href="#eligible"><strong>Eligible</strong></a>
+          <a class="moj-sub-navigation__link" aria-current="true" data-section="eligible-section" href="#" role="button"><strong>Eligible</strong></a>
+
+          <!-- <a class="moj-sub-navigation__link" aria-current="true" data-section="eligible-section"
+            href="#eligible"><strong>Eligible</strong></a> -->
         </li>
         <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link" data-section="not-eligible-section" href="#not-eligible"><strong>Not
-              eligible</strong></a>
+          <a class="moj-sub-navigation__link" data-section="not-eligible-section" href="#" role="button"><strong>Not eligible</strong></a>
+
+          <!-- <a class="moj-sub-navigation__link" data-section="not-eligible-section" href="#not-eligible"><strong>Not
+              eligible</strong></a> -->
         </li>
         <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" data-section="not-checked-section" href="#" role="button"><strong>Could not check</strong></a>
+<!--
           <a class="moj-sub-navigation__link" data-section="not-checked-section" href="#not-checked"><strong>Could not
-              check</strong></a>
+              check</strong></a> -->
         </li>
-        <!-- <li class="moj-sub-navigation__item">
-              <a class="moj-sub-navigation__link" data-section="error-section" href="#errors"><strong>Errors</strong></a>
-            </li> -->
       </ul>
     </nav>
 
 
-    <div id="eligible-section" class="govuk-table-section">
-      <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-m">Eligible</h2>
-        <p class="govuk-body">These children are eligible for free school meals. Create the application with the supplied information or notify the parent they can apply. </p>
-      </div>
-      <div class="govuk-grid-column-one-third govuk-text-align-right" style="display: flex; justify-content: flex-end; align-items: center;">
-        <div class="govuk-button-group">
-      <!-- <div class="govuk-grid-column-one-third govuk-text-align-right">
-        <div class="govuk-button-group style=" display: flex; justify-content: flex-end; align-items: center;> -->
-          {{ govukButton({
-          text: "Create applications",
-          href: '../records/batch-records/eligible/batch-confirm-eligible'
-          }) }}
-          <!-- {{ govukButton({
-          text: "Notify parent",
-          classes: "govuk-button--secondary",
-          href: './Private_beta/v7/_emails/batch-check/notify-parent-apply.html'
-          }) }} -->
-        </div>
-      </div>
-      <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all"
-        data-multi-select-idprefix=" -" data-module="moj-sortable-table">
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header" scope="col" id="select-all"></th>
-            <th scope="col" class="govuk-table__header">Parent name</th>
-            <th scope="col" class="govuk-table__header">Parent date of birth</th>
-            <th scope="col" class="govuk-table__header">National Insurance number</th>
-            <th scope="col" class="govuk-table__header">Child name</th>
-            <th scope="col" class="govuk-table__header govuk-table__header--date">Child date of birth</th>
-            <th scope="col" class="govuk-table__header govuk-table__header--date">Academy</th>
-            <th scope="col" class="govuk-table__header">Email</th>
-            <th scope="col" class="govuk-table__header"> </th>
-          </tr>
-        </thead>
+ <div id="eligible-section" class="govuk-table-section govuk-!-padding-left-0">
 
-        <tbody class="govuk-table__body">
-          <!-- <tr class="govuk-table__row govuk-table__row--selected">
-            <td class="govuk-table__cell">
-              <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-              <input type="checkbox" class="govuk-checkboxes__input" id="edentesfay">
-              <label class="govuk-label govuk-checkboxes__label" for="child-1">
-                <span class="govuk-visually-hidden">Child-1</span>
-              </label>
-              </div>
-            </td>
-            </tr> -->
-            <tr class="govuk-table__row govuk-table__row--selected">
-            <td class="govuk-table__cell">
-              <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-              <input type="checkbox" class="govuk-checkboxes__input" id="child-3">
-              <label class="govuk-label govuk-checkboxes__label" for="child-3">
-                <span class="govuk-visually-hidden">Child-3</span>
-              </label>
-              </div>
-            </td>
-            <td class="govuk-table__cell">Alex Johnson</td>
-            <td class="govuk-table__cell govuk-table__cell--date">15 Mar 1980</td>
-            <td class="govuk-table__cell">AB123456C</td>
-            <td class="govuk-table__cell">Emily Johnson</td>
-            <td class="govuk-table__cell govuk-table__cell--date">20 Sep 2012</td>
-            <td class="govuk-table__cell">Hilltop Elementary</td>
-            <td class="govuk-table__cell">alexjohnson@example.com</td>
-            <!-- <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td> -->
-            </tr>
-            <tr class="govuk-table__row govuk-table__row--selected">
-            <td class="govuk-table__cell">
-              <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                <input type="checkbox" class="govuk-checkboxes__input" id="child-2">
-                <label class="govuk-label govuk-checkboxes__label" for="child-2">
-                  <span class="govuk-visually-hidden">Child-2</span>
-                </label>
-              </div>
-            <td class="govuk-table__cell">Eden Tesfay</td>
-            <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
-            <td class="govuk-table__cell">NW653213B</td>
-            <td class="govuk-table__cell">Rachel Tesfay</td>
-            <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
-            <td class="govuk-table__cell">Springfield Primary</td>
-            <td class="govuk-table__cell">edentesfay@icloud.com</td>
-            <!-- <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td> -->
-          </tr>
-          <tr class="govuk-table__row govuk-table__row--selected">
-            <td class="govuk-table__cell">
-              <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                <input type="checkbox" class="govuk-checkboxes__input" id="child-2">
-                <label class="govuk-label govuk-checkboxes__label" for="child-2">
-                  <span class="govuk-visually-hidden">Child-2</span>
-                </label>
-              </div>
-            </td>
-            <td class="govuk-table__cell">Eden Tesfay</td>
-            <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
-            <td class="govuk-table__cell">NW653213B</td>
-            <td class="govuk-table__cell">Samuel Tesfay</td>
-            <td class="govuk-table__cell govuk-table__cell--date">15 Feb 2015</td>
-            <td class="govuk-table__cell">Greenwood Academy</td>
-            <td class="govuk-table__cell">edentesfay@icloud.com</td>
-            <!-- <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td> -->
-          </tr>
-        </tbody>
-      </table>
+  <!-- Remove inner grid column so it aligns with the table -->
+  <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-padding-left-0">7 eligible results</h2>
 
-<!--pag-->
+  <p class="govuk-body govuk-!-margin-bottom-4 govuk-!-padding-left-0">
+    These children are eligible for free school meals. Create the application with the supplied information or notify the parent they can apply.
+  </p>
 
+  {{ govukButton({
+    text: "Create applications",
+    href: '../records/batch-records/eligible/batch-confirm-eligible'
+  }) }}
 
-
-    </div>
-
-
-
-
-    <div id="not-eligible-section" class="govuk-table-section">
-      <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-m">Not eligible</h2>
-        <p class="govuk-body">These children may not be eligible. The parent or guardian can still apply but must provide supporting evidence.</p>
-      </div>
-      <div class="govuk-grid-column-one-third govuk-text-align-right" style="display: flex; justify-content: flex-end; align-items: right;">
-        <div class="govuk-button-group">
-          <!-- {{ govukButton({
-          text: "Notify parent",
-          classes: "govuk-button--secondary",
-          href: ' '
-          }) }} -->
-        </div>
-      </div>
-
-      <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all"
-        data-multi-select-idprefix=" -" data-module="moj-sortable-table">
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header" scope="col" id="select-all"></th>
-            <th scope="col" class="govuk-table__header">Parent name</th>
-            <th scope="col" class="govuk-table__header">Parent date of birth</th>
-            <th scope="col" class="govuk-table__header">National Insurance number</th>
-            <th scope="col" class="govuk-table__header">Child name</th>
-            <th scope="col" class="govuk-table__header govuk-table__header--date">Child date of birth</th>
-            <th scope="col" class="govuk-table__header govuk-table__header--date">School</th>
-            <th scope="col" class="govuk-table__header">Email</th>
-            <th scope="col" class="govuk-table__header"> </th>
-          </tr>
-        </thead>
-
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row govuk-table__row--selected">
-            <td class="govuk-table__cell">
-              <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                <input type="checkbox" class="govuk-checkboxes__input" id="child-1">
-                <label class="govuk-label govuk-checkboxes__label" for="child-1">
-                  <span class="govuk-visually-hidden">Child-1</span>
-                </label>
-              </div>
-            </td>
-            <td class="govuk-table__cell">Eden Tesfay</td>
-            <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
-            <td class="govuk-table__cell">NW653213B</td>
-            <td class="govuk-table__cell">Rachel Tesfay</td>
-            <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
-            <td class="govuk-table__cell">Springfield Primary</td>
-            <td class="govuk-table__cell">edentesfay@icloud.com</td>
-            <!-- <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td> -->
-          </tr>
-          <tr class="govuk-table__row govuk-table__row--selected">
-            <td class="govuk-table__cell">
-              <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                <input type="checkbox" class="govuk-checkboxes__input" id="child-2">
-                <label class="govuk-label govuk-checkboxes__label" for="child-2">
-                  <span class="govuk-visually-hidden">Child-2</span>
-                </label>
-              </div>
-            </td>
-            <td class="govuk-table__cell">Eden Tesfay</td>
-            <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
-            <td class="govuk-table__cell">NW653213B</td>
-            <td class="govuk-table__cell">Samuel Tesfay</td>
-            <td class="govuk-table__cell govuk-table__cell--date">15 Feb 2015</td>
-            <td class="govuk-table__cell">Greenwood Academy</td>
-            <td class="govuk-table__cell">edentesfay@icloud.com</td>
-            <!-- <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td> -->
-          </tr>
-          <tr class="govuk-table__row govuk-table__row--selected">
-            <td class="govuk-table__cell">
-              <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                <input type="checkbox" class="govuk-checkboxes__input" id="child-3">
-                <label class="govuk-label govuk-checkboxes__label" for="child-3"></label>
-                  <span class="govuk-visually-hidden">Child-3</span>
-                </label>
-              </div>
-            </td>
-            <td class="govuk-table__cell">Eden Tesfay</td>
-            <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
-            <td class="govuk-table__cell">NW653213B</td>
-            <td class="govuk-table__cell">Emily Johnson</td>
-            <td class="govuk-table__cell govuk-table__cell--date">20 Sep 2012</td>
-            <td class="govuk-table__cell">Hilltop Elementary</td>
-            <td class="govuk-table__cell">edentesfay@icloud.com</td>
-            <!-- <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td> -->
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-
-    <div id="not-checked-section" class="govuk-table-section">
-      <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-m">Could not check</h2>
-        <p class="govuk-body">These records could not be checked for the reason stated. You can remove the records, fix the record in the batch check file or notify the parent or guardian.</p>
-      </div>
-      <div class="govuk-grid-column-one-third govuk-text-align-right" style="display: flex; justify-content: flex-end; align-items: right;">
-        <div class="govuk-button-group">
-
-
-        </div>
-      </div>
-      <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all"
-        data-multi-select-idprefix=" -" data-module="moj-sortable-table">
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
+  <table class="govuk-table govuk-!-margin-top-5" data-module="moj-multi-select" data-multi-select-checkbox="#select-all"
+    data-multi-select-idprefix=" -" data-module="moj-sortable-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th class="govuk-table__header" scope="col" id="select-all"></th>
         <th scope="col" class="govuk-table__header">Parent name</th>
-        <th scope="col" class="govuk-table__header">Parent date of birth</th>
+        <th scope="col" class="govuk-table__header">National <br>Insurance number</th>
+        <th scope="col" class="govuk-table__header">Child name</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--date">Child date <br>of birth</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--date">Academy</th>
+        <th scope="col" class="govuk-table__header">Email</th>
+        <th scope="col" class="govuk-table__header"> </th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+    {% include "_includes/mat/batch-check-eligible-mat.html" %}
+        </tbody>
+      </table>
+    </div>
+<div id="not-eligible-section" class="govuk-table-section govuk-!-padding-left-0">
+
+  <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-padding-left-0">5 not eligible results</h2>
+
+  <p class="govuk-body govuk-!-margin-bottom-4 govuk-!-padding-left-0">
+    These children may not be eligible. The parent or guardian can still apply but must provide supporting evidence.
+  </p>
+
+  <div class="govuk-button-group govuk-!-padding-left-0 govuk-!-margin-bottom-4">
+    <!-- Uncomment this button when needed -->
+<!--
+    {{ govukButton({
+      text: "Notify parent",
+      classes: "govuk-button--secondary",
+      href: ' '
+    }) }} -->
+
+  </div>
+
+  <table class="govuk-table govuk-!-margin-top-5" data-module="moj-multi-select" data-multi-select-checkbox="#select-all"
+    data-multi-select-idprefix=" -" data-module="moj-sortable-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Parent name</th>
         <th scope="col" class="govuk-table__header">National Insurance number</th>
         <th scope="col" class="govuk-table__header">Child name</th>
         <th scope="col" class="govuk-table__header govuk-table__header--date">Child date of birth</th>
-        <th scope="col" class="govuk-table__header govuk-table__header--date">School</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--date">Academy</th>
+        <th scope="col" class="govuk-table__header">Email</th>
+        <th scope="col" class="govuk-table__header"> </th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+
+          {% include "_includes/mat/batch-check-not-eligible-mat.html" %}
+
+        </tbody>
+      </table>
+    </div>
+
+<div id="not-checked-section" class="govuk-table-section govuk-!-padding-left-0">
+
+  <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-padding-left-0">4 files that could not be checked</h2>
+
+  <p class="govuk-body govuk-!-margin-bottom-4 govuk-!-padding-left-0">
+    These records could not be checked for the reason stated. You can remove the records, fix the record in the batch check file or notify the parent or guardian.
+  </p>
+
+  <div class="govuk-button-group govuk-!-padding-left-0 govuk-!-margin-bottom-4">
+    <!-- Optional buttons can go here -->
+  </div>
+
+  <table class="govuk-table govuk-!-margin-top-5"
+    data-module="moj-multi-select"
+    data-multi-select-checkbox="#select-all"
+    data-multi-select-idprefix=" -"
+    data-module="moj-sortable-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Parent name</th>
+        <th scope="col" class="govuk-table__header">National Insurance number</th>
+        <th scope="col" class="govuk-table__header">Child name</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--date">Child date of birth</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--date">Academy</th>
         <th scope="col" class="govuk-table__header">Email</th>
         <th scope="col" class="govuk-table__header">Reason</th>
-          </tr>
-        </thead>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+          {% include "_includes/mat/batch-check-not-check-mat.html" %}
 
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Eden Tesfay</td>
-        <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
-        <td class="govuk-table__cell">NW653213B</td>
-        <td class="govuk-table__cell">Rachel Tesfay</td>
-        <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
-        <td class="govuk-table__cell">Springfield Primary</td>
-        <td class="govuk-table__cell">edentesfay@icloud.com</td>
-        <td class="govuk-table__cell"><span class="text-red">Information does not match</span></td>
-          </tr>
-          <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Eden Tesfay</td>
-        <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
-        <td class="govuk-table__cell">NW653213B</td>
-        <td class="govuk-table__cell">Samuel Tesfay</td>
-        <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
-        <td class="govuk-table__cell">Greenwood Academy</td>
-        <td class="govuk-table__cell">edentesfay@icloud.com</td>
-        <td class="govuk-table__cell"><span class="text-red">Could not check <br>Universal Credit</span></td>
-          </tr>
-          <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Eden Tesfay</td>
-        <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
-        <td class="govuk-table__cell">NW653213B</td>
-        <td class="govuk-table__cell">Samuel Tesfay</td>
-        <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
-        <td class="govuk-table__cell">Hilltop Elementary</td>
-        <td class="govuk-table__cell">edentesfay@icloud.com</td>
-        <td class="govuk-table__cell"><span class="text-red">Could not check <br>Universal Credit</span></td>
-          </tr>
-          <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Eden Tesfay</td>
-        <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
-        <td class="govuk-table__cell">NW653213B</td>
-        <td class="govuk-table__cell">Samuel Tesfay</td>
-        <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
-        <td class="govuk-table__cell">Oakwood High</td>
-        <td class="govuk-table__cell">edentesfay@icloud.com</td>
-        <td class="govuk-table__cell"><span class="text-red">Information does not match</span></td>
-          </tr>
         </tbody>
       </table>
         </tbody>
@@ -335,15 +168,10 @@
   </div>
 
 
-
-
-
-
-
   </tbody>
   </table>
 </div>
-<nav class="govuk-pagination" aria-label="Pagination" style="display: flex; justify-content: center;">
+<!-- <nav class="govuk-pagination" aria-label="Pagination" style="display: flex; justify-content: center;">
   <div class="govuk-pagination__prev">
     <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
       <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
@@ -397,7 +225,7 @@
       </svg>
     </a>
   </div>
-</nav>
+</nav> -->
 
   <!-- <nav class="moj-pagination" aria-label="Pagination navigation">
 
@@ -433,11 +261,8 @@
 {% endblock %}
 
 
-
-{% block pageScripts %}
-
-
-
+{% block scripts %}
+{{ super() }}
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const navLinks = document.querySelectorAll('.moj-sub-navigation__link');
@@ -452,20 +277,69 @@
     function updateNavigation(event) {
       event.preventDefault();
       const targetId = this.getAttribute('data-section');
+
+      // Update tab state
       navLinks.forEach(nav => nav.removeAttribute('aria-current'));
       this.setAttribute('aria-current', 'true');
+
+      // Show corresponding section
       showSection(targetId);
-      window.location.hash = targetId;
+
+      // 🚫 Don't update the hash to prevent scroll jump
+      // window.location.hash = targetId;
     }
 
     navLinks.forEach(link => link.addEventListener('click', updateNavigation));
 
+    // On load: show section based on hash (if valid), otherwise default to first tab
     const currentHash = window.location.hash.replace('#', '');
-    if (currentHash) {
-      showSection(currentHash);
-    } else {
-      showSection(navLinks[0].getAttribute('data-section'));
-    }
+    const validSection = [...sections].some(section => section.id === currentHash);
+    const defaultSection = navLinks[0].getAttribute('data-section');
+    showSection(validSection ? currentHash : defaultSection);
   });
 </script>
+
+<script>
+document.getElementById("exportCsvBtn").addEventListener("click", function () {
+  const sections = document.querySelectorAll(".batch-check-section");
+
+  let allRows = [];
+
+  sections.forEach(section => {
+    const rows = section.querySelectorAll("tbody tr");
+    rows.forEach(row => {
+      const cells = Array.from(row.querySelectorAll("td"));
+      const rowData = cells.map(cell => cell.innerText.trim().replace(/"/g, '""'));
+
+      // Add status and (if eligible) end date
+      const status = row.dataset.status || "";
+      const endDate = row.dataset.endDate || "";
+
+      rowData.push(status);
+      rowData.push(endDate);
+
+      allRows.push(rowData);
+    });
+  });
+
+  // Create header
+  const headers = ["Parent name", "NI number", "Child name", "Child DOB", "School", "Email", "Status", "End date"];
+  allRows.unshift(headers);
+
+  // Convert to CSV
+  const csvContent = allRows.map(row => row.map(cell => `"${cell}"`).join(",")).join("\n");
+  const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+
+  // Download
+  const link = document.createElement("a");
+  link.setAttribute("href", url);
+  link.setAttribute("download", "batch-check-results.csv");
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+});
+</script>
+
+
 {% endblock %}

@@ -17,8 +17,7 @@
     {% endfor %}
 
     {% if pageNumber <pageCount %}
-      <li class="moj-pagination__item moj-pagination__item--next">
-        <a class="moj-pagination__link" href="/page={{ pageNumber + 1 }}">Next<span class="govuk-visually-hidden"> page</span></a>
+      <li class="moj-pagination__item moj-pagination__item--next"><a class="moj-pagination__link" href="/page={{ pageNumber + 1 }}">Next<span class="govuk-visually-hidden"> page</span></a>
       </li>
     {% endif %}
   </ul>

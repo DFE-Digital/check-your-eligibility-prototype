@@ -1,6 +1,16 @@
 {% extends "layouts/FSM/v7-3/layout-dfe-matnav.html" %}
 {% set pageName="Provide details of all children" %}
 {% set saveAndContinueUrl = config.urls.saveAndContinue %}
+{% set childId = "44455453" %}
+{% set childDOB = "22 Sep 2012" %}
+{% set schoolName = "Hilltop Elementary" %}
+{% set schoolAddress = "Manchester, M25 1QA" %}
+{% set parentDOB = "15 Mar 1980" %}
+{% set parentName = "Alex Johnson" %}
+{% set email = "alex.johnson@example.com" %}
+{% set nationalInsurance = "AB123456C" %}
+{% set parentId = "44455454A" %}
+{% set childName = "Emily Johnson" %}
 
 {% block content %}
 <div class="govuk-grid-row">
@@ -100,7 +110,7 @@
         <div class="moj-button-action">
           {{ govukButton({
             text: 'Save and continue',
-            href: '../apply/la-check-answers.html'
+            href: '../apply/mat-check-answers.html'
           }) }}
         </div>
       </form>
