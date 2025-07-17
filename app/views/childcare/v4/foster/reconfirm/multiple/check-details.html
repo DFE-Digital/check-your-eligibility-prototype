@@ -28,7 +28,7 @@
             </h2>
             <ul class="govuk-summary-card__actions">
               <li class="govuk-summary-card__action">
-                <a class="govuk-link" href="/childcare/v4/foster/reconfim/select-children">Change<span class="govuk-visually-hidden">Carer details</span></a>
+                <a class="govuk-link" href="/childcare/v4/foster/reconfirm/multiple/select-children">Change<span class="govuk-visually-hidden">Carer details</span></a>
               </li>
             </ul>
           </div>
@@ -61,7 +61,7 @@
             </h2>
             <ul class="govuk-summary-card__actions">
               <li class="govuk-summary-card__action">
-                <a class="govuk-link" href="/childcare/v4/foster/add-child/dates">Change<span class="govuk-visually-hidden">eligibility</span></a>
+                <a class="govuk-link" href="/childcare/v4/foster/reconfirm/multiple/dates">Change<span class="govuk-visually-hidden">eligibility</span></a>
               </li>
             </ul>
           </div>
@@ -77,7 +77,7 @@
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Eligibility confirmed on
+                  Eligibility reconfirmed on
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {{ "today" | govukDate }}
@@ -97,7 +97,7 @@
         </ul>
         {{ govukButton({
           text: "Reconfirm codes",
-          href: "/childcare/v4/foster/reconfirm/reconfirmed"
+          href: "/childcare/v4/foster/reconfirm/multiple/reconfirmed"
         }) }}
 
       </div>

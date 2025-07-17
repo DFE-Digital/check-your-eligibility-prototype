@@ -1,0 +1,63 @@
+{% extends "/layouts/childcare/v4/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Family added and codes created
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">
+        Child added and code created
+      </h1>
+      <div class="govuk-panel__body">
+        Eligibility code <br> <strong>40019283754</strong>
+      </div>
+    </div>
+
+    <p class="govuk-!-margin-top-6">Send the eligibility code to the social worker. The foster family will need to  give the code to the childcare provider.</p>
+
+    <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m"></caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Child name</th>
+            <th scope="col" class="govuk-table__header">Eligibility code</th>
+            <th scope="col" class="govuk-table__header">Code status</th>
+            <th scope="col" class="govuk-table__header">Reconfirm between</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Lisa Worthington</td>
+            <td class="govuk-table__cell">40019283754</td>
+            <td class="govuk-table__cell">Valid for autumn term 2025</td>
+            <td class="govuk-table__cell">25 June and 25 July 2025</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+    <div class="govuk-button-group govuk-!-margin-bottom-7">
+      {{ govukButton({
+        text: "View foster family",
+        href: "/childcare/v4/foster/family/added"
+      }) }}
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+{% endblock %}
