@@ -6,14 +6,17 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-l">{{ pageName }}</h1>
-  </div>
+    </div>
+    </div>
+    <div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <p class="govuk-body">Use the filters below to search for records.</p>
+
+    {% include "FSM/Private_beta/v7-3/_includes/filter-panel-mat-top-2.html" %}
+</div>
 </div>
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full govuk-!-margin-bottom-6">
-    {% include "FSM/Private_beta/v7-3/_includes/filter-panel-mat.html" %}
-  </div>
-</div>
+
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
@@ -24,13 +27,10 @@
       <button id="export" class="govuk-button govuk-button--secondary">Export as CSV</button>
     </div>
 
-    <!-- Table and pagination goes here -->
-
-
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
-                <div class="moj-scrollable-pane">
-                  <div class="moj-scrollable-pane">
+                <div class="moj-scrollable-panel">
+                  <div class="moj-scrollable-panel">
                     <table class="govuk-table" id="resultsTable" data-module="moj-sortable-table">
                       <thead class="govuk-table__head">
                         <tr class="govuk-table__row">
