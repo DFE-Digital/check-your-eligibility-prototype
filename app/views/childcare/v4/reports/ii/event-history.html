@@ -19,44 +19,17 @@
 
 
     <h1 class="govuk-heading-l">History for eligibility code 50012345678</h1>
-    <!--
-
-    <dl class="govuk-summary-list govuk-!-width-two-thirds">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Eligibility code
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data["30h-code"] or "50879487381" }}
-        </dd>
+     <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Report explainer
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p><mark class="ho-highlight"><strong>Highlighted text</strong></mark> - shows where parent, partner or child personal information has changed.</p>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          National Insurance number
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data["ni-number"] or "PB123456C" }}
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Child date of birth
-        </dt>
-        <dd class="govuk-summary-list__value">
-           {{ data["dob-day"] or "26" }} {{ data["dob-month"] or "May" }} {{ data["dob-year"] or "2024" }}
-        </dd>
-      </div>
-    </dl>
-
-     -->
-
-         <p class="govuk-!-margin-top-6"><mark class="ho-highlight"><strong>Highlighted text in the table</strong></mark> shows where parent, partner or child personal information has changed.</p>
-
-
-
+    </details>
     <form class="form" action="" method="post" novalidate>
-
-
     {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 
@@ -222,20 +195,10 @@
 
 
 
-    <!--
-    <details class="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          Report explainer
-        </span>
-      </summary>
-      <div class="govuk-details__text">
+    <!---->
 
-    <p class="govuk-!-margin-top-6"><mark class="ho-highlight"><strong>Highlighted text</strong></mark> - shows where parent, partner or child personal information has changed.</p>
-      </div>
-    </details>
 
-    -->
+
 
 
   </div>

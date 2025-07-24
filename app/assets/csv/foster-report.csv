@@ -1,0 +1,8 @@
+Child name,Child date of birth,Eligibility code,Carer name,Code status,Reconfirmation status,Eligibility last confirmed on,Reconfirm by,Grace period ends
+Yeong Park,25/06/2023,94019283746,Evelyn Baker,Expired,Overdue,24/04/2024,25/07/2024,31/12/2024
+Lily Nelson,14/08/2022,94321098765,Evelyn Baker,Expired,Overdue,24/04/2024,25/07/2024,31/12/2024
+Willow Carter,08/07/2023,94555000123,Finnigan Powell,In grace period,Overdue,18/02/2025,18/05/2025,31/08/2025
+Asher Ellis,01/03/2024,94987654321,Matthew Higgins,Valid for summer term 2025,Due now,08/05/2025,08/08/2025,31/12/2025
+Theodore Reed,29/12/2023,94123456789,Parker Coop,"Valid for summer term 2025 and
+autumn term 2025",Not due yet,21/06/2025,22/09/2025,31/12/2025
+John Thompson,13/02/2024,94019283746,Arthur Bryne,Valid for autumn term 2025,Not due yet,21/06/2025,22/09/2025,31/12/2025
