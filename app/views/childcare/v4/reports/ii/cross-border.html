@@ -1,0 +1,76 @@
+{% extends "/layouts/childcare/v4/layout-childcare.html" %}
+
+{% block pageTitle %}
+ Eligibility codes checked by other local authorities
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+    <h1 class="govuk-heading-l">Eligibility codes checked by other local authorities</h1>
+
+    <p>This report shows last 6 months / this term, codes Manchester City Council has checked, which have also been checked by other las...</p>
+    <p>Use this report to check for fraudulent activity! <a href="">guidance on fraud</a></p>
+
+
+
+
+    {{ govukButton({
+      text: "Download as csv",
+      classes: "govuk-button--secondary",
+      href: ""
+    }) }}
+
+
+
+       <table class="govuk-table govuk-table--small-text-until-tablet">
+
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Eligibility code</th>
+            <th scope="col" class="govuk-table__header">Last checked on</th>
+            <th scope="col" class="govuk-table__header">Total other checks</th>
+            <th scope="col" class="govuk-table__header">Code checked by</th>
+            <th scope="col" class="govuk-table__header">Code checked on</th>
+
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header" rowspan="3">50078937411</th>
+            <td class="govuk-table__cell" rowspan="3">22 April 2025 9.14am</td>
+            <td class="govuk-table__cell" rowspan="3">3</td>
+            <td class="govuk-table__cell">Bury Council</td>
+            <td class="govuk-table__cell">29 June 2025 9.53am</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Bolton Council</td>
+            <td class="govuk-table__cell">25 June 2025 4.37pm</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Salford Council</td>
+            <td class="govuk-table__cell">23 May 2025 12.45pm</td>
+          </tr>
+        </tbody>
+        </table>
+
+
+  </div>
+
+</div>
+
+
+
+
+{% endblock %}

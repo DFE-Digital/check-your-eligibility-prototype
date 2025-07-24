@@ -20,7 +20,7 @@
 
     <h1 class="govuk-heading-l">View eligibility code history</h1>
 
-    <form class="form" action="/childcare/v4/single-check/30h/checking-loader" method="post" novalidate>
+    <form class="form" action="/childcare/v4/reports/i/event-history" method="post" novalidate>
 
           {% call govukFieldset({
 
@@ -88,7 +88,7 @@
 
     </form>
 
-    <p><a href="/childcare/v4/reports/search-code">Clear search</a></p>
+    <p><a href="/childcare/v4/reports/i/search-code">Clear filters</a></p>
 
     <h2 class="govuk-heading-m" id="event-history">History for eligibility code: 50012345678</h2>
 
@@ -97,8 +97,6 @@
       classes: "govuk-button--secondary",
       href: ""
     }) }}
-
-    <p>Highlighted text shows changes in parent, partner or child personal information.</p>
 
     <div class="govuk-!-padding-4" style="overflow-x:auto; background-color:#f3f2f1;">
 

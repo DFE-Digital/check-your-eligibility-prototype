@@ -21,10 +21,82 @@
 
         <h1 class="govuk-heading-l">Enter the child details</h1>
 
-        <h2 class="govuk-heading-m">Child 1</h2>
+
 
 
         <form class="form" action="/childcare/v4/foster/create/dates" method="post" novalidate>
+
+          <h2 class="govuk-heading-m">Child 1</h2>
+
+          {% call govukFieldset({
+
+          }) %}
+
+            {% from "govuk/components/input/macro.njk" import govukInput %}
+
+            {{ govukInput({
+              label: {
+                text: "First name",
+                classes: "govuk-label--m"
+              },
+              id: "child-first-name",
+              name: "child-first-name",
+              classes: "govuk-input--width-20"
+
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Last name",
+                classes: "govuk-label--m"
+              },
+              id: "child-last-name",
+              name: "child-last-name",
+              classes: "govuk-input--width-20"
+
+            }) }}
+
+            {{ govukDateInput({
+
+              id: "child-dob",
+              namePrefix: "child-dob",
+
+              fieldset: {
+                legend: {
+                  text: "Date of birth",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+                text: "For example, 27 3 1980"
+              }
+            }) }}
+
+             {{ govukInput({
+              label: {
+                text: "Postcode",
+                classes: "govuk-label--m"
+              },
+              id: "child-postcode",
+              name: "child-postcode",
+              classes: "govuk-input--width-10"
+
+            }) }}
+
+
+          {% endcall %}
+
+          <div class="govuk-grid-row govuk-!-margin-top-6">
+            <div class="govuk-grid-column-one-half">
+              <h2 class="govuk-heading-m govuk-!-margin-top-1" id="child-2">Child 2</h2>
+
+            </div>
+            <div class="govuk-grid-column-one-half">
+              <a class="govuk-button govuk-button--secondary" style="float:right;" href="/childcare/v4/foster/create/child-details">Remove</a>
+            </div>
+          </div>
+
 
           {% call govukFieldset({
 
@@ -88,8 +160,7 @@
           <div>
             {{ govukButton({
               text: "Add another child",
-              classes: "govuk-button--secondary govuk-!-margin-bottom-4",
-              href: "/childcare/v4/foster/create/child-2#child-2"
+              classes: "govuk-button--secondary govuk-!-margin-bottom-4"
             }) }}
           </div>
 
@@ -100,14 +171,9 @@
             }) }}
           </div>
 
-
-
-
-
         </form>
 
       </div>
-
     </div>
 
 
