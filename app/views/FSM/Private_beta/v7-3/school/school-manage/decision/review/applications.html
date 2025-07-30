@@ -1,6 +1,6 @@
 {% extends "layouts/FSM/v7-3/layout-dfe-schoolnav-noback.html" %}
-{% set pageName="Manage applications" %}
 {% set applications = 6 %}
+{% set pageName = "Manage " ~ applications ~ " applications" %}
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
@@ -8,13 +8,14 @@
       <div class="moj-page-header-actions__title">
         <h1 class="govuk-heading-l">
           {{ pageName }}
-          <span id="notifications" class="moj-notification-badge" style="white-space: nowrap; margin-left: 15px;"></span>
+          <!-- <span id="notifications" class="moj-notification-badge" style="white-space: nowrap; margin-left: 15px;"></span> -->
         </h1>
       </div>
+      <!-- </div> -->
       <div class="moj-page-header-actions__actions">
         <div class="moj-button-group moj-button-group--inline">
           <div class="moj-button-menu" data-module="moj-button-menu" data-button-text="Record a decision"
-            data-button-classes="govuk-button--secondary" data-align-menu="right">
+            data-button-classes="govuk-button" data-align-menu="right">
             <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
               Finalise applications
             </a>
@@ -28,14 +29,12 @@
         </div>
       </div>
       <div class="moj-page-header-actions__description">
-        <p class="govuk-body">You have {{ applications }} applications to review.</p>
+        <!-- <p class="govuk-body">You have {{ applications }} applications to review.</p> -->
         <p class="govuk-body">You can review an individual application for a pupil or manage multiple records.</p>
       </div>
     </div>
-  </div>
-</div>
-
-<div class="govuk-width-container" style="background-color: #e0f3ff; padding: 1em; margin-top: 1em;">
+  <!-- </div> -->
+<!-- <div class="govuk-width-container" style="background-color: #e0f3ff; padding: 1em; margin-top: 1em;">
   <div class="moj-search">
     <form action="#" method="post">
       <div class="govuk-form-group">
@@ -52,7 +51,48 @@
       </button>
     </form>
   </div>
-</div>
+</div> -->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<div class="govuk-width-container  padding: 1em; margin-top: 1em;">
+      <div class="moj-search">
+<form action="#" method="post">
+  <div class="govuk-form-group">
+    <label class="govuk-label govuk-!-font-weight-bold" for="search">
+      Find a child
+    </label>
+    <div id="search-hint" class="govuk-hint">
+      You can search by name, date of birth or National Insurance number
+    </div>
+
+    <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 5px;">
+      <input class="govuk-input" id="search" name="search" type="search"
+        aria-describedby="search-hint"
+        style="flex: 1; min-width: 250px; margin-bottom: 0;">
+
+      <button type="submit" class="govuk-button" data-module="govuk-button" style="margin-bottom: 0;">
+        Search
+      </button>
+
+      <button type="button" class="govuk-button govuk-button--secondary" style="margin-bottom: 0;" onclick="
+        document.getElementById('search').value = '';
+        document.querySelectorAll('.appeal-row').forEach(r => r.style.display = '');
+      ">
+        Clear search
+      </button>
+    </div>
+  </div>
+</form>
+      </div>
+    </div>
+    <div style="padding-bottom: 2em;"></div>
+  </div>
+<!-- </div> -->
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
 
 <div class="govuk-!-padding-bottom-3"></div>
 <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
