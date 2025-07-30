@@ -39,7 +39,7 @@
         classes: "govuk-!-margin-bottom-0"
       },
       classes: "govuk-radios--inline govuk-radios--small",
-      name: "showInfo",
+      name: "showInfo-2",
       fieldset: {
         legend: {
           text: "Show personal information",
@@ -73,13 +73,12 @@
     </form>
 
 
-    {% if (data['showInfo'] == "no") %}
+    {% if (data['showInfo-2'] == "no") %}
 
       <div class="govuk-!-padding-4" style="overflow-x:auto; background-color:#f3f2f1;">
 
         <table class="govuk-table govuk-table--small-text-until-tablet">
           <caption class="govuk-table__caption govuk-table__caption--m">History for eligibility code 50012345678</caption>
-
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
               <th scope="col" class="govuk-table__header">Event</th>
