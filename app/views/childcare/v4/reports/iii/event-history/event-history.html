@@ -22,101 +22,36 @@
      <details class="govuk-details">
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
-          Report explainer
+          Help with the report
         </span>
       </summary>
       <div class="govuk-details__text">
-        <p><mark class="ho-highlight"><strong>Highlighted text</strong></mark> - shows where parent, partner or child personal information has changed.</p>
+        <p class="govuk-!-margin-top-3"><mark class="ho-highlight"><strong>Highlighted text</strong></mark> - shows where parent, partner or child personal information has changed.</p>
       </div>
     </details>
-    <form class="form"  method="post" novalidate>
-    {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="hide-info-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset__heading">
+            Personal information
+          </h2>
+        </legend>
+        <div id="hide-info-hint" class="govuk-hint">
+          Select to hide parent, partner and child information
+        </div>
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="hide-info" name="hide-info" type="checkbox" value="hide" onclick="myFunction()">
+            <label class="govuk-label govuk-checkboxes__label" for="hide-info">
+              Hide
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
 
-
-    {{ govukRadios({
-      formGroup: {
-        classes: "govuk-!-margin-bottom-0"
-      },
-      classes: "govuk-radios--inline govuk-radios--small",
-      name: "showInfo-2",
-      fieldset: {
-        legend: {
-          text: "Show personal information",
-          isPageHeading: false,
-          classes: "govuk-fieldset__legend--m"
-        }
-      },
-      hint: {
-        text: "Parent, partner and child personal information",
-        classes: "govuk-!-margin-bottom-1"
-      },
-      items: [
-        {
-          value: "yes",
-          text: "Show",
-          checked: "true"
-        },
-        {
-          value: "no",
-          text: "Hide"
-        }
-      ]
-    }) }}
-
-    {% from "govuk/components/button/macro.njk" import govukButton %}
-
-          {{ govukButton({
-            text: "Update display"
-          }) }}
-
-    </form>
-
-
-    {% if (data['showInfo-2'] == "no") %}
-
-      <div class="govuk-!-padding-4" style="overflow-x:auto; background-color:#f3f2f1;">
-
-        <table class="govuk-table govuk-table--small-text-until-tablet">
-          <caption class="govuk-table__caption govuk-table__caption--m">History for eligibility code 50012345678</caption>
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header">Event</th>
-              <th scope="col" class="govuk-table__header">Event ID</th>
-              <th scope="col" class="govuk-table__header">Submitted on</th>
-              <th scope="col" class="govuk-table__header">Discretionary start date</th>
-              <th scope="col" class="govuk-table__header">Eligibility confirmed on</th>
-              <th scope="col" class="govuk-table__header">Reconfirm by</th>
-              <th scope="col" class="govuk-table__header">Grace period ends</th>
-            </tr>
-          </thead>
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Application</th>
-              <td class="govuk-table__cell">cs5745uendd5</td>
-              <td class="govuk-table__cell">28 Sep 2024</td>
-              <td class="govuk-table__cell">-</td>
-              <td class="govuk-table__cell">29 Sep 2024</td>
-              <td class="govuk-table__cell">29 Dec 2024</td>
-              <td class="govuk-table__cell">31 Mar 2025</td>
-
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Reconfirmation 1</th>
-              <td class="govuk-table__cell">c457459c34f</td>
-              <td class="govuk-table__cell">30 Dec 2024</td>
-              <td class="govuk-table__cell">-</td>
-              <td class="govuk-table__cell">30 Dec 2024</td>
-              <td class="govuk-table__cell">29 Mar 2025</td>
-              <td class="govuk-table__cell">31 Aug 2025</td>
-            </tr>
-          </tbody>
-          </table>
-
-      </div>
-
-    {% else %}
-
+    <div id="shown">
       <div class="govuk-!-padding-4" style="overflow-x:auto; background-color:#f3f2f1;">
 
         <table class="govuk-table govuk-table--small-text-until-tablet">
@@ -192,8 +127,53 @@
           </table>
 
       </div>
+    </div>
 
-    {% endif %}
+
+    <div id="hidden" style="display:none">
+      <div class="govuk-!-padding-4" style="overflow-x:auto; background-color:#f3f2f1;">
+
+        <table class="govuk-table govuk-table--small-text-until-tablet">
+          <caption class="govuk-table__caption govuk-table__caption--m">History for eligibility code 50012345678</caption>
+
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Event</th>
+              <th scope="col" class="govuk-table__header">Event ID</th>
+              <th scope="col" class="govuk-table__header">Submitted on</th>
+              <th scope="col" class="govuk-table__header">Discretionary start date</th>
+              <th scope="col" class="govuk-table__header">Eligibility confirmed on</th>
+              <th scope="col" class="govuk-table__header">Reconfirm by</th>
+              <th scope="col" class="govuk-table__header">Grace period ends</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Application</th>
+              <td class="govuk-table__cell">cs5745uendd5</td>
+              <td class="govuk-table__cell">28 Sep 2024</td>
+              <td class="govuk-table__cell">-</td>
+              <td class="govuk-table__cell">29 Sep 2024</td>
+              <td class="govuk-table__cell">29 Dec 2024</td>
+              <td class="govuk-table__cell">31 Mar 2025</td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Reconfirmation 1</th>
+              <td class="govuk-table__cell">c457459c34f</td>
+              <td class="govuk-table__cell">30 Dec 2024</td>
+              <td class="govuk-table__cell">-</td>
+              <td class="govuk-table__cell">30 Dec 2024</td>
+              <td class="govuk-table__cell">29 Mar 2025</td>
+              <td class="govuk-table__cell">31 Aug 2025</td>
+            </tr>
+          </tbody>
+          </table>
+
+      </div>
+    </div>
+
+
 
     <p class="govuk-!-margin-top-7"><a href="">Download as CSV file (19 KB)</a></p>
 
@@ -201,7 +181,24 @@
 
 </div>
 
+<script>
+  function myFunction() {
+  // Get the checkbox
+  var hideInfo = document.getElementById("hide-info");
+  // Get the output text
+  var shown = document.getElementById("shown");
+  var hidden = document.getElementById("hidden");
 
+  // If the checkbox is checked, display the output text
+  if (hideInfo.checked == true){
+    hidden.style.display = "block";
+    shown.style.display = "none";
+  } else {
+    shown.style.display = "block";
+    hidden.style.display = "none";
+  }
+}
+</script>
 
 
 {% endblock %}
