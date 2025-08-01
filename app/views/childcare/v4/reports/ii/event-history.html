@@ -31,31 +31,73 @@
     </details>
 
     <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" aria-describedby="hide-info-hint">
+      <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
           <h2 class="govuk-fieldset__heading">
-            Personal information
+            Personal details
           </h2>
         </legend>
-        <div id="hide-info-hint" class="govuk-hint">
-          Select to hide parent, partner and child information
-        </div>
         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="hide-info" name="hide-info" type="checkbox" value="hide" onclick="myFunction()">
             <label class="govuk-label govuk-checkboxes__label" for="hide-info">
-              Hide
+              Select to show parent, partner and child details
             </label>
           </div>
         </div>
       </fieldset>
     </div>
 
-    <div id="shown">
+
+
+
+    <div id="hidden">
+
+
+        <table class="govuk-table govuk-table--small-text-until-tablet">
+          <caption class="govuk-table__caption govuk-table__caption--m">Code history</caption>
+
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Event</th>
+              <th scope="col" class="govuk-table__header">Event ID</th>
+              <th scope="col" class="govuk-table__header">Submitted on</th>
+              <th scope="col" class="govuk-table__header">Discretionary start date</th>
+              <th scope="col" class="govuk-table__header">Eligibility confirmed on</th>
+              <th scope="col" class="govuk-table__header">Reconfirm by</th>
+              <th scope="col" class="govuk-table__header">Grace period ends</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Application</th>
+              <td class="govuk-table__cell">cs5745uendd5</td>
+              <td class="govuk-table__cell">28 Sep 2024</td>
+              <td class="govuk-table__cell">-</td>
+              <td class="govuk-table__cell">29 Sep 2024</td>
+              <td class="govuk-table__cell">29 Dec 2024</td>
+              <td class="govuk-table__cell">31 Mar 2025</td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Reconfirmation 1</th>
+              <td class="govuk-table__cell">c457459c34f</td>
+              <td class="govuk-table__cell">30 Dec 2024</td>
+              <td class="govuk-table__cell">-</td>
+              <td class="govuk-table__cell">30 Dec 2024</td>
+              <td class="govuk-table__cell">29 Mar 2025</td>
+              <td class="govuk-table__cell">31 Aug 2025</td>
+            </tr>
+          </tbody>
+          </table>
+
+    </div>
+
+    <div id="shown" style="display:none">
       <div style="overflow-x:auto;">
 
         <table class="govuk-table govuk-table--small-text-until-tablet">
-          <caption class="govuk-table__caption govuk-table__caption--m">History for eligibility code 50012345678</caption>
+          <caption class="govuk-table__caption govuk-table__caption--m">Code history</caption>
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
               <th scope="col" class="govuk-table__header">Event</th>
@@ -130,49 +172,6 @@
     </div>
 
 
-    <div id="hidden" style="display:none">
-
-
-        <table class="govuk-table govuk-table--small-text-until-tablet">
-          <caption class="govuk-table__caption govuk-table__caption--m">History for eligibility code 50012345678</caption>
-
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header">Event</th>
-              <th scope="col" class="govuk-table__header">Event ID</th>
-              <th scope="col" class="govuk-table__header">Submitted on</th>
-              <th scope="col" class="govuk-table__header">Discretionary start date</th>
-              <th scope="col" class="govuk-table__header">Eligibility confirmed on</th>
-              <th scope="col" class="govuk-table__header">Reconfirm by</th>
-              <th scope="col" class="govuk-table__header">Grace period ends</th>
-            </tr>
-          </thead>
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Application</th>
-              <td class="govuk-table__cell">cs5745uendd5</td>
-              <td class="govuk-table__cell">28 Sep 2024</td>
-              <td class="govuk-table__cell">-</td>
-              <td class="govuk-table__cell">29 Sep 2024</td>
-              <td class="govuk-table__cell">29 Dec 2024</td>
-              <td class="govuk-table__cell">31 Mar 2025</td>
-
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Reconfirmation 1</th>
-              <td class="govuk-table__cell">c457459c34f</td>
-              <td class="govuk-table__cell">30 Dec 2024</td>
-              <td class="govuk-table__cell">-</td>
-              <td class="govuk-table__cell">30 Dec 2024</td>
-              <td class="govuk-table__cell">29 Mar 2025</td>
-              <td class="govuk-table__cell">31 Aug 2025</td>
-            </tr>
-          </tbody>
-          </table>
-
-    </div>
-
-
 
     <p class="govuk-!-margin-top-7"><a href="">Download as CSV file (19 KB)</a></p>
 
@@ -190,11 +189,12 @@
 
   // If the checkbox is checked, display the output text
   if (hideInfo.checked == true){
-    hidden.style.display = "block";
-    shown.style.display = "none";
-  } else {
     shown.style.display = "block";
     hidden.style.display = "none";
+
+  } else {
+    hidden.style.display = "block";
+    shown.style.display = "none";
   }
 }
 </script>
