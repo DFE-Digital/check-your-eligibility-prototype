@@ -24,9 +24,21 @@
         </h2>
       </div>
       <div class="govuk-notification-banner__content">
-        <h3 class="govuk-notification-banner__heading">
-          Changes to {{ data['edit-type'] }} saved
-        </h3>
+
+
+        {% if (data['remove-partner'] == "removed") %}
+
+            <h3 class="govuk-notification-banner__heading">
+              Partner added
+            </h3>
+
+        {% else %}
+
+            <h3 class="govuk-notification-banner__heading">
+              Changes to {{ data['edit-type'] }} saved
+            </h3>
+
+        {% endif %}
       </div>
     </div>
 
