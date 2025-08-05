@@ -1,7 +1,5 @@
 {% extends "layouts/FSM/v7-3/layout-dfe-lanav.html" %}
-
 {% set pageName="Decline the application?" %}
-
 {% block content %}
 
 <div class="govuk-width-container">
@@ -17,24 +15,32 @@
                 </h2>
                 <div id="more-detail-hint" class="govuk-hint">
                     Do not include personal or financial information like the child's name, parent's National Insurance
-                    number or statement details.
+                    number or statement details.  <!--<br><br>Parent and guardians can request access to the reasons for declining the application, for example as
+                    a Freedom of Information request. -->
                 </div>
                 <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"
                     aria-describedby="more-detail-hint"></textarea>
             </div>
+            <!-- <p class="govuk-body">
+Parent and guardians can request access to the reasons for declining the application, for example as a Freedom of Information request.
+</p> -->
 
             <div class="govuk-warning-text">
                 <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
                 <strong class="govuk-warning-text__text">
                     <span class="govuk-visually-hidden">Warning</span>
-                    If you decline this application, the parent or guardian will have to start a new application. If you are unsure, return to the record and request more evidence.
+                    Parents and guardians can request access to the reason for declining their application as
+                    part of a Freedom of Information request.
                 </strong>
             </div>
-        </div>
-    </div>
+
+<div class="govuk-inset-text">
+    If you decline this application, the parent or guardian will have to start a new application. If
+    you are unsure, return to the record and request more evidence.
 </div>
 
 <div class="govuk-!-padding-bottom-3"></div>
+
 
 
 {{ govukButton({
@@ -49,9 +55,8 @@ href: 'pending_johnson1'
 }) }}
 
 <div class="govuk-!-padding-bottom-3"></div>
+</div>
 
-</div>
-</div>
 
 {% endblock %}
 

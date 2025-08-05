@@ -1,5 +1,17 @@
 {% extends "layouts/FSM/v7-3/layout-dfe-schoolnav.html" %}
 {% set pageName="Send supporting evidence" %}
+
+{% set childId = "44455453" %}
+{% set childDOB = "22 Sep 2021" %}
+{% set schoolName = "Hilltop Elementary" %}
+{% set schoolAddress = "Manchester, M25 1QA" %}
+{% set parentDOB = "15 Mar 1980" %}
+{% set parentName = "Alex Johnson" %}
+{% set email = "alex.johnson@example.com" %}
+{% set nationalInsurance = "AB123456C" %}
+{% set parentId = "44455454A" %}
+{% set childName = "Emily Johnson" %}
+
 {% block content %}
 <div class="govuk-width-container">
   <div class="govuk-grid-row">
@@ -81,16 +93,16 @@
         <a href="#" class="govuk-link">Remove</a>
       </td>
     </tr>
-    <!-- <tr class="govuk-table__row">
-      <td class="govuk-table__cell">UC_statement_2022a.pdf</td>
-      <td class="govuk-table__cell">2MB</td>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">New_UC_statement.pdf</td>
+      <td class="govuk-table__cell">586kb</td>
       <td class="govuk-table__cell">
-        <strong class="govuk-tag govuk-tag--red">Failed</strong>
+        <strong class="govuk-tag govuk-tag--green">Uploaded</strong>
       </td>
       <td class="govuk-table__cell">
         <a href="#" class="govuk-link">Remove</a>
       </td>
-    </tr> -->
+    </tr>
 
   </tbody>
 </table>
@@ -116,10 +128,10 @@
           {{govukButton({
           text: 'Attach evidence',
           type: 'submit',
-          href: 'upload-more-evidence-added.html'
+          href: 'appeal-check-answers-evidence-more.html'
           })}}
         </form>
-          <p class="govuk-body"><a href="../appeal/appeal-check-answers-email" class="govuk-link">Send by email later</a></p>
+          <p class="govuk-body"><a href="../../appeal/appeal-check-answers-email" class="govuk-link">Send by email later</a></p>
 </div>
       </div>
 
