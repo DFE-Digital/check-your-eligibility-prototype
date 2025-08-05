@@ -1,5 +1,16 @@
 {% extends "layouts/FSM/v7/layout-dfe-schoolnav.html" %}
 
+{% set childId = "44455453" %}
+{% set childDOB = "22 Sep 2021" %}
+{% set schoolName = "Hilltop Elementary" %}
+{% set schoolAddress = "Manchester, M25 1QA" %}
+{% set parentDOB = "15 Mar 1980" %}
+{% set parentName = "Alex Johnson" %}
+{% set email = "alex.johnson@example.com" %}
+{% set nationalInsurance = "AB123456C" %}
+{% set parentId = "44455454A" %}
+{% set childName = "Emily Johnson" %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -24,11 +35,10 @@
             <dd class="govuk-summary-list__value">
               {% if data["parent-firstname"] %}{{data.parent-firstname}}
               {% else %}
-              Eden
+              {{parentName}}
             {% endif %}
             {% if data ["parent-surname"] %}{{data.parent-surname}}
             {% else %}
-            Tesfay
             {% endif %}
             </dd>
           </div>
@@ -39,7 +49,7 @@
             <dd class="govuk-summary-list__value">
               {% if data ["email"] %}{{data.email}}
               {% else %}
-              eden.tesfay@gmail.com
+              	{{email}}
               {% endif %}
             </dd>
           </div>
@@ -50,7 +60,7 @@
             <dd class="govuk-summary-list__value">
               {% if data ["dob"] %}{{ data["dob"] }}
               {% else %}
-              06 Dec 1979
+              {{parentDOB}}
               {% endif %}
 
             </dd>
@@ -68,13 +78,19 @@
             {% if data["ni-number"] %}
               {{ data["ni-number"] }}
             {% else %}
-              NW654321C
+              {{nationalInsurance}}
+            {% endif %}
+
+            {% if data["nass-number-entered"] %}
+              {{ data["nass-number-entered"] }}
+            {% else %}
+              {{nationalInsurance}}
             {% endif %}
           {% else %}
             {% if data["nass-number-entered"] %}
               {{ data["nass-number-entered"] }}
             {% else %}
-              AS1234567
+              {{nationalInsurance}}
             {% endif %}
           {% endif %}
           </dd>
@@ -100,11 +116,11 @@
             <dd class="govuk-summary-list__value" >
               {% if data ["ch1-first-name"] %}{{ data["ch1-first-name"] }}
               {% else %}
-              Samuel
+              {{childName}}
               {% endif %}
               {% if data ["ch1-surname"] %}{{ data["ch1-surname"] }}
               {% else %}
-              Tesfay
+              {{childSurname}}
               {% endif %}
             </dd>
           </div>
@@ -113,15 +129,15 @@
             <dd class="govuk-summary-list__value" style="width: 40%;">
               {% if data ["ch1-day"] %} {{ data["ch1-day"] }}
               {% else %}
-              18
+              22
               {% endif %}
               {% if data ["ch1-month"] %} {{ data["ch1-month"] }}
               {% else %}
-              June
+              Sept
               {% endif %}
               {% if data ["ch1-year"] %} {{ data["ch1-year"] }}
               {% else %}
-              2020
+              2021
               {% endif %}
             </dd>
           </div>

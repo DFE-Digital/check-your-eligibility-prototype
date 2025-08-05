@@ -1,5 +1,5 @@
 {% extends "layouts/FSM/v7-3/layout-dfe-lanav.html" %}
-{% set parentName="Eden Tesfay" %}
+{% set parentName="Alex Johnson" %}
 {% set parentId="123456789" %}
 {% set reference="44455453" %}
 {% set pageName="Supporting evidence for " ~ parentName%}
@@ -13,10 +13,10 @@
 {% endblock %}
 <!----fudged the code for the back link as it wouldnt work with the zoom function on the evidence-->
 {% block beforeContent %}
-{{ govukBackLink({
-  text: "Back",
-  href: "pending.html"
-}) }}
+ {{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+    }) }}
 {% endblock %}
 {% block content %}
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
