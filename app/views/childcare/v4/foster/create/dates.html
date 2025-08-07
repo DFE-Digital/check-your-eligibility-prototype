@@ -22,7 +22,9 @@
 
         <h1 class="govuk-heading-l">Enter eligibility code dates</h1>
 
-       <!--<p>You must confirm the foster carer's eligibility by DOING SOMETHING OFFLINE to create an eligibility code.</p> -->
+        <p class="govuk-hint">Dates may be backdated by up to one month</p>
+
+
 
         <form class="form" action="/childcare/v4/foster/create/check-details" method="post" novalidate>
 
@@ -76,7 +78,7 @@
                 }
               },
               hint: {
-                text: "May be backdated by up to one month"
+                text: "For example, 27 3 2025"
               },
               items: [
                 {

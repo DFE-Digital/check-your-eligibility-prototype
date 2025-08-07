@@ -202,6 +202,21 @@ else {
 })
 
 
+// Route for showing application submitted on date in foster family code creation
+router.post('/childcare/v4/foster/create/submitted-date', function(req, res) {
+var confirmDateDay = req.session.data['confirmed-date-day']
+var confirmDateMonth = req.session.data['confirmed-date-month']
+
+if (confirmDateDay >= 1 && confirmDateDay <= 14) {
+    res.redirect("/childcare/v4/foster/create/submitted-date")
+}
+else {
+    res.redirect("/childcare/v4/foster/create/check-details")
+}
+})
+
+
+
 
 // ////////////////////////CURRENT//////////////////////////////////
 

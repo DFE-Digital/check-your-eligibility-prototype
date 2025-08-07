@@ -1,7 +1,7 @@
 {% extends "/layouts/childcare/v4/layout-childcare.html" %}
 
 {% block pageTitle %}
-  Edit the partner details
+  Edit the child details
 {% endblock %}
 
 {% block beforeContent %}
@@ -19,7 +19,9 @@
 
       <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-l">Enter the partner details</h1>
+        <h1 class="govuk-heading-l">Edit the child details</h1>
+
+        <p><a href="/chilcare/v4/foster/guidance/edit-guidance">Guidance on changing foster family details </a></p>
 
         <div class="govuk-warning-text">
           <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
@@ -30,7 +32,7 @@
         </div>
 
 
-        <form class="form" action="/childcare/v4/foster/family/saved?edit-type=partner" method="post" novalidate>
+        <form class="form" action="" method="post" novalidate>
 
           {% call govukFieldset({
 
@@ -43,10 +45,10 @@
                 text: "First name",
                 classes: "govuk-label--m"
               },
-              id: "partner-first-name",
-              name: "partner-first-name",
+              id: "child-first-name",
+              name: "child-first-name",
               classes: "govuk-input--width-20",
-              value: "Ajay"
+              value: "Jasper"
 
             }) }}
 
@@ -55,15 +57,16 @@
                 text: "Last name",
                 classes: "govuk-label--m"
               },
-              id: "partner-last-name",
-              name: "partner-last-name",
+              id: "child-last-name",
+              name: "child-last-name",
               classes: "govuk-input--width-20",
-              value: "Mistry"
+              value: "Hayes"
+
             }) }}
 
             {{ govukDateInput({
-              id: "partner-dob",
-              namePrefix: "partner-dob",
+              id: "child-dob",
+              namePrefix: "child-dob",
               fieldset: {
                 legend: {
                   text: "Date of birth",
@@ -72,60 +75,52 @@
                 }
               },
               hint: {
-                text: "For example, 31 3 1980"
+                text: "For example, 31 3 2023"
               },
               items: [
                 {
                   name: "day",
                   classes: "govuk-input--width-2",
-                  value: "27"
+                  value: "10"
                 },
                 {
                   name: "month",
                   classes: "govuk-input--width-2",
-                  value: "09"
+                  value: "10"
                 },
                 {
                   name: "year",
                   classes: "govuk-input--width-4",
-                  value: "1982"
+                  value: "2021"
                 }
               ]
             }) }}
 
-
-
-            {{ govukInput({
-              classes: "govuk-!-width-one-third",
+             {{ govukInput({
               label: {
-                text: "National Insurance number",
-                classes: "govuk-fieldset__legend--m"
+                text: "Postcode",
+                classes: "govuk-label--m"
               },
-              hint: {
-                text: "For example, ‘QQ 12 34 56 C’"
-              },
-              id: "partner-ni-number",
-              name: "partner-ni-number",
-              value: "PB458673A"
+              id: "child-postcode",
+              name: "child-postcode",
+              classes: "govuk-input--width-10",
+              value: "M20 7GF"
+
             }) }}
-
-
 
 
 
           {% endcall %}
 
-           <div class="govuk-inset-text">
-           After an eligibility code has been issued, you can correct mistakes to a partner’s name, date of birth, postcode or National Insurance number. If the carer’s partner changes, you should remove the partner and add a new one. You cannot swap the identity of a partner to that of the carer.
+
+          <div>
+            {{ govukButton({
+              text: "Save"
+            }) }}
           </div>
 
 
 
-          {% from "govuk/components/button/macro.njk" import govukButton %}
-
-          {{ govukButton({
-            text: "Save"
-          }) }}
 
 
         </form>
