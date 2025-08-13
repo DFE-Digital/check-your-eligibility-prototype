@@ -1,0 +1,127 @@
+{# 1 #}
+{% from 'node_modules/dfe-frontend/packages/components/header/macro.njk' import header %}
+
+{# 2 #}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{# 3 #}
+{% block header %}
+
+
+
+{{ header({
+  "showNav": "true",
+  "showSearch": "false",
+  "showHeaderActionLinks": "true",
+  "logoPath": "public/images",
+  "logoAltText": "Department for Education",
+  "homeHref": "/childcare/index-childcare",
+  "searchAction": "/search/",
+  "searchInputName": "q",
+  "service": {
+    "name": "",
+    "serviceUrl": ""
+  },
+  "headerActionLinks": [
+
+    {
+      "url"  : "#",
+      "label" : "Sign out"
+    }
+  ]
+
+
+})
+}}
+
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{{ govukServiceNavigation({
+  serviceName: "Manage eligibility for childcare support",
+  navigation: [
+  {
+      href: "/childcare/v5/dashboard",
+      text: "Home"
+    },
+    {
+      href: "/childcare/v5/single-check/single",
+      text: "Run a check"
+    },
+    {
+      href: "/childcare/v5/batch-check/batch",
+      text: "Run a batch check"
+    },
+    {
+      href: "/childcare/v5/foster/foster",
+      text: "Manage foster families"
+    },
+    {
+      href: "/childcare/v5/reports/i/reports",
+      text: "Run reports"
+    },
+    {
+      href: "#",
+      text: "Guidance"
+    }
+  ]
+}) }}
+
+<div class="app-phase-banner__wrapper govuk-!-margin-top-2">
+
+  <div class="govuk-phase-banner app-phase-banner govuk-width-container">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+
+</div>
+
+{% endblock %}
+
+
+
+{% block footer %}
+ {{ govukFooter({
+   meta: {
+     items: [
+       {
+         href: "https://www.gov.uk/government/organisations/department-for-education/about/personal-information-charter",
+         text: "Privacy"
+       },
+       {
+         href: "/childcare/v5/compliance/cookies",
+         text: "Cookies"
+       },
+       {
+        href: "#",
+        text: "Accessibility statement"
+      },
+
+       {
+        href: "https://forms.office.com.mcas.ms/pages/responsepage.aspx?id=yXfS-grGoU2187O4s0qC-URYbNo1-R1EubHA0gNJis5UNjFaUzRMTEVPTVlaMFNFOVg1Q05PODg3Vi4u&route=shorturl",
+        text: "Contact us"
+      },
+      {
+        href:"/manage-prototype",
+        text:"Manage your prototype"
+      },
+       {
+         href: "/manage-prototype/clear-data",
+         text: "Clear data"
+       }
+     ],
+     visuallyHiddenTitle: "Footer links"
+   }
+ }) }}
+{% endblock %}
+
+{# 4 #}
+{% block scripts %}
+  {{ super() }}
+
+{% endblock %}

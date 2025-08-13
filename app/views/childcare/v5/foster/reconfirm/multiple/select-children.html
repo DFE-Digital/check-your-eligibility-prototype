@@ -1,0 +1,68 @@
+{% extends "/layouts/childcare/v5/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Select which children to reconfirm eligibility codes for
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+    <div class="govuk-grid-row">
+
+
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <form class="form" action="/childcare/v5/foster/reconfirm/multiple/dates" method="post" novalidate>
+
+
+            {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+            {{ govukCheckboxes({
+              name: "foster-children",
+              fieldset: {
+                legend: {
+                  text: "Select which children to reconfirm eligibility codes for",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--l"
+                }
+              },
+              items: [
+                {
+                  value: "Yeong Park",
+                  text: "Yeong Park"
+                },
+
+                {
+                  value: "Lily Nelson",
+                  text: "Lily Nelson"
+                }
+              ]
+            }) }}
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+
+
+        </form>
+
+      </div>
+
+    </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "/layouts/childcare/v5/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Delete file
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Delete batch file 30h-MCC-feb-25.csv?</h1>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        You will no longer be able to view or download results.
+      </strong>
+    </div>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Delete file",
+      classes: "govuk-button--warning",
+      href: "/childcare/v5/batch-check/history/file-deleted"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}

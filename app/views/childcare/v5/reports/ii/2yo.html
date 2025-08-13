@@ -1,0 +1,168 @@
+{% extends "/layouts/childcare/v5/layout-childcare.html" %}
+
+{% block pageTitle %}
+ 2 years early learning and Early years pupil premium dashboard
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">2 years old early learning dashboard</h1>
+
+
+      <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+           <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Summer term 2025 </h2>
+
+
+      </div>
+      <div class="govuk-grid-column-one-third">
+
+          <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="float:right;">
+            View previous terms
+          </button>
+      </div>
+    </div>
+
+    <!--overview-->
+
+    <h3 class="govuk-heading-s">Overview</h3>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-quarter">
+        <div class="metrics-card">
+          <div class="metrics-card-content">
+            <h3 class="govuk-!-font-size-48 govuk-!-margin-bottom-1">16,000</h3>
+            <p class="govuk-!-margin-bottom-0">Checks completed</p>
+          </div>
+        </div>
+      </div>
+      <div class="govuk-grid-column-one-quarter">
+        <div class="metrics-card">
+          <div class="metrics-card-content">
+            <h3 class="govuk-!-font-size-48 govuk-!-margin-bottom-1">45%</h3>
+            <p class="govuk-!-margin-bottom-0">Eligible</p>
+          </div>
+        </div>
+      </div>
+      <div class="govuk-grid-column-one-quarter">
+        <div class="metrics-card">
+          <div class="metrics-card-content">
+            <h3 class="govuk-!-font-size-48 govuk-!-margin-bottom-1">50%</h3>
+            <p class="govuk-!-margin-bottom-0">May not be eligible</p>
+          </div>
+        </div>
+      </div>
+       <div class="govuk-grid-column-one-quarter">
+        <div class="metrics-card">
+          <div class="metrics-card-content">
+            <h3 class="govuk-!-font-size-48 govuk-!-margin-bottom-1">5%</h3>
+            <p class="govuk-!-margin-bottom-0">Not found</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <!--code status-->
+
+    <h3 class="govuk-heading-s">Parents or guardians checked</h3>
+
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-one-third">
+        <div class="metrics-card">
+          <div class="metrics-card-content">
+            <h3 class="govuk-!-font-size-48 govuk-!-margin-bottom-1">13,000</h3>
+            <p class="govuk-!-margin-bottom-0">Parents checked</p>
+          </div>
+        </div>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <div class="metrics-card">
+          <div class="metrics-card-content">
+            <h3 class="govuk-!-font-size-48 govuk-!-margin-bottom-1">1.7</h3>
+            <p class="govuk-!-margin-bottom-0">Avg. checks per parent</p>
+          </div>
+        </div>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <div class="metrics-card">
+          <div class="metrics-card-content">
+            <h3 class="govuk-!-font-size-48 govuk-!-margin-bottom-1">1,000</h3>
+            <p class="govuk-!-margin-bottom-0">Outcome changed</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--
+
+
+
+     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+    <h3 class="govuk-heading-s govuk-!-margin-top-6">Applicant type</h3>
+
+    <table class="govuk-table govuk-!-width-two-thirds">
+      <caption class="govuk-table__caption govuk-table__caption--s"></caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Identifier used</th>
+          <th scope="col" class="govuk-table__header">Eligible</th>
+          <th scope="col" class="govuk-table__header">May not be eligible</th>
+          <th scope="col" class="govuk-table__header">Not found</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">National insurance number</th>
+          <td class="govuk-table__cell">7,000</td>
+          <td class="govuk-table__cell">5,000</td>
+          <td class="govuk-table__cell">30</td>
+
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Asylum support reference number</th>
+          <td class="govuk-table__cell">100</td>
+          <td class="govuk-table__cell">37</td>
+          <td class="govuk-table__cell">2</td>
+
+        </tr>
+      </tbody>
+    </table>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+          <p><a href="">Download as CSV file (19 KB)</a></p>
+      </div>
+      <div class="govuk-grid-column-one-half">
+            <p class="govuk-body-s govuk-!-text-align-right">Last updated: 31 July 2025 11.55pm</p>
+      </div>
+    </div>
+
+-->
+
+
+
+
+  </div>
+</div>
+
+{% endblock %}
