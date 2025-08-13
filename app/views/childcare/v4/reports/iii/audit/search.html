@@ -20,14 +20,16 @@
 
     <h1 class="govuk-heading-l">Search check history</h1>
 
-     <form class="form" action="/childcare/v4/reports/iii/audit/audit-history" method="post" novalidate>
+    <form class="form" action="/childcare/v4/reports/iii/audit/audit-history#search-results" method="post" novalidate>
+
+            <!--
 
             {% from "govuk/components/input/macro.njk" import govukInput %}
 
             {{ govukInput({
               label: {
-                text: "User email address, eligibility code (optional)",
-                classes: "govuk-label--s",
+                text: "Check ran by or eligibility code",
+                classes: "govuk-label--xs",
                 isPageHeading: false
               },
 
@@ -36,15 +38,18 @@
               name: "search-audit"
             }) }}
 
+             -->
+
             {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
             {{ govukCheckboxes({
               name: "eligibilityType",
+              classes: "govuk-checkboxes--small",
               fieldset: {
                 legend: {
-                  text: "Eligibility type (optional)",
+                  text: "Eligibility type",
                   isPageHeading: false,
-                  classes: "govuk-fieldset__legend--s"
+                  classes: "govuk-fieldset__legend--m"
                 }
               },
               items: [
@@ -60,19 +65,65 @@
                   value: "eypp",
                   text: "Early years pupil premium"
                 }
+
               ]
             }) }}
 
+            <!--
+
+             {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+            {{ govukCheckboxes({
+              name: "outcomeType",
+              classes: "govuk-checkboxes--small",
+              fieldset: {
+                legend: {
+                  text: "Outcome",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--xs"
+                }
+              },
+              items: [
+                {
+                  value: "eligible",
+                  text: "Eligible"
+                },
+                {
+                  value: "not-eligible",
+                  text: "May not be eligible"
+                },
+                {
+                  value: "valid",
+                  text: "Code valid"
+                },
+                {
+                  value: "expired",
+                  text: "Code expired"
+                },
+                {
+                  value: "not-found",
+                  text: "Information does not match records"
+                },
+                {
+                  value: "error",
+                  text: "Technical error"
+                }
+
+              ]
+            }) }}
+
+            -->
 
             {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
             {{ govukRadios({
               name: "searchDates",
+              classes: "govuk-radios--small",
               fieldset: {
                 legend: {
                   text: "Date range",
                   isPageHeading: false,
-                  classes: "govuk-fieldset__legend--s"
+                  classes: "govuk-fieldset__legend--m"
                 }
               },
               items: [
@@ -107,9 +158,6 @@
               ]
             }) }}
 
-
-
-
           {% from "govuk/components/button/macro.njk" import govukButton %}
 
           {{ govukButton({
@@ -117,7 +165,7 @@
           }) }}
 
 
-        </form>
+    </form>
 
 
 
