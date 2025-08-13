@@ -1,0 +1,89 @@
+{% extends "/layouts/childcare/v5/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Run a batch check for multiple eligibility codes
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#file-upload-1">The selected file must be a CSV</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <span class="govuk-caption-l">{{ data['eligibility-type'] }}</span>
+
+    <h1 class="govuk-heading-l">Run a batch check</h1>
+
+    <ol class="govuk-list govuk-list--number">
+      <li>Download the <a href="/assets/csv/eypp-2yo-batch-template.csv" download class="govuk-link">batch
+          check template (1.3kb)</a>.</li>
+      <li>Add the details of the {{ data['check-type'] }} you need to check.</li>
+     <li> Save it as a CSV file.</li>
+    </ol>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        Your saved file must match the template fields and contain fewer than 100 rows.
+      </strong>
+    </div>
+
+    <p>You must include:</p>
+
+    <ul>
+      <li>last name</li>
+      <li>date of birth (format DD/MM/YYYY or YYYY-MM-DD)</li>
+      <li>National Insurance number or asylum support reference number</li>
+    </ul>
+
+
+    {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+    {{ govukFileUpload({
+      id: "cc-batch-upload",
+      name: "cc-batch-upload",
+      label: {
+        classes: "govuk-label--m",
+        text: "Upload a file"
+      },
+      javascript: true,
+      errorMessage: {
+        text: "The selected file must be a CSV"
+      }
+    }) }}
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Run check",
+      classes: "govuk-button--primary",
+      href: '#'
+    }) }}
+
+
+  </div>
+</div>
+
+{% endblock %}

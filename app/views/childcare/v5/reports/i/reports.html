@@ -1,0 +1,72 @@
+{% extends "/layouts/childcare/v5/layout-childcare.html" %}
+
+{% block pageTitle %}
+ Run reports
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">Run reports</h1>
+
+    <h2 class="govuk-heading-m">Childcare for working families</h2>
+
+
+    <div class="dfe-grid-container">
+
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/childcare/v5/reports/i/event-history/search-code">View eligibility code history</a>
+          </h2>
+          <p>View application and reconfirmation history for an eligibility code.</p>
+        </div>
+      </div>
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/childcare/v5/reports/i/cross-border">Eligibility codes checked by other local authorities</a>
+          </h2>
+          <p>View eligibility codes checked by other local authorities in the last 6 months.</p>
+        </div>
+      </div>
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/childcare/v5/reports/i/foster-care">Foster care report</a>
+          </h2>
+          <p>Some words.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <h2 class="govuk-heading-m">All eligibilities</h2>
+
+      <div class="dfe-grid-container">
+
+        <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/childcare/v5/reports/i/audit/search">Search check history</a>
+            </h2>
+            <p>Search check history by date, user and eligibility.</p>
+          </div>
+        </div>
+
+
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
