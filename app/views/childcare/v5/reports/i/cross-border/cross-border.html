@@ -1,0 +1,61 @@
+{% extends "/layouts/childcare/v5/layout-childcare.html" %}
+
+{% block pageTitle %}
+ Title
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+    <h1 class="govuk-heading-l">Title</h1>
+
+     <div class="govuk-grid-row" style="align-items: stretch;">
+      <div class="govuk-grid-column-one-third">
+        <div class="metrics-card">
+          <div class="metrics-card-content">
+            <h3 class="govuk-!-font-size-48 govuk-!-margin-bottom-1">98</h3>
+            <p>Codes in your postcode area checked by other local authorities</p>
+            <p class="govuk-!-margin-bottom-0"><a href="">View codes</a> </p>
+          </div>
+        </div>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <div class="metrics-card">
+          <div class="metrics-card-content">
+            <h3 class="govuk-!-font-size-48 govuk-!-margin-bottom-1">120</h3>
+            <p>Codes checked by you in other postcode areas</p>
+            <p class="govuk-!-margin-bottom-0"><a href="">View codes</a> </p>
+          </div>
+        </div>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <div class="metrics-card">
+          <div class="metrics-card-content">
+            <h3 class="govuk-!-font-size-48 govuk-!-margin-bottom-1">2</h3>
+            <p >Codes checked by you and by other local authorities</p>
+            <p class="govuk-!-margin-bottom-0"><a href="/childcare/v5/reports/i/cross-border/double-checks">View codes</a> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>
+
+
+
+
+{% endblock %}
