@@ -7,7 +7,6 @@
 </div>
 
 <div id="filter-wrapper" class="govuk-!-margin-bottom-3 govuk-!-padding-4" style="border: 2px solid #b1b4b6; background: #f3f2f1;">
-
   <div class="govuk-form-group" id="filter-container">
 
     <!-- Search bar -->
@@ -22,11 +21,9 @@
 
       <!-- Date range -->
       <div class="govuk-grid-column-one-quarter" style="padding-left: 5px; padding-right: 5px;">
-  <div class="govuk-form-group" style="background: white; padding: 15px; min-height: 260px;">
-    <fieldset class="govuk-fieldset">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Submission date range</legend>
-      <!-- <p class="govuk-hint govuk-hint--s">Select one</p> -->
-
+        <div class="govuk-form-group" style="background: white; padding: 15px; min-height: 260px;">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Submission date range</legend>
             <div class="govuk-radios govuk-radios--small">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="range-1" name="dateRange" type="radio" value="Last month">
@@ -50,12 +47,11 @@
       </div>
 
       <!-- Phase of education -->
-<div class="govuk-grid-column-one-quarter" style="padding-left: 5px; padding-right: 5px;">
-  <div class="govuk-form-group" style="background: white; padding: 15px; min-height: 260px;">
-    <fieldset class="govuk-fieldset">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Phase of education</legend>
-      <p class="govuk-hint govuk-hint--s">Select all that apply</p>
-      <div class="govuk-checkboxes govuk-checkboxes--small">
+      <div class="govuk-grid-column-one-quarter" style="padding-left: 5px; padding-right: 5px;">
+        <div class="govuk-form-group" style="background: white; padding: 15px; min-height: 260px;">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Phase of education</legend>
+            <p class="govuk-hint govuk-hint--s">Select all that apply</p>
             <div class="govuk-checkboxes govuk-checkboxes--small">
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="phase-nursery" name="phase" type="checkbox" value="Nursery">
@@ -79,11 +75,11 @@
       </div>
 
       <!-- Status -->
-<div class="govuk-grid-column-one-half" style="padding-left: 5px; padding-right: 5px;">
-  <div class="govuk-form-group" style="background: white; padding: 15px; min-height: 260px;">
-    <fieldset class="govuk-fieldset">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Status</legend>
-      <p class="govuk-hint govuk-hint--s">Select all that apply</p>
+      <div class="govuk-grid-column-one-half" style="padding-left: 5px; padding-right: 5px;">
+        <div class="govuk-form-group" style="background: white; padding: 15px; min-height: 260px;">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Status</legend>
+            <p class="govuk-hint govuk-hint--s">Select all that apply</p>
             <div class="govuk-grid-row" style="margin-left: -5px; margin-right: -5px;">
               <div class="govuk-grid-column-one-half" style="padding-left: 3px; padding-right: 3px;">
                 <div class="govuk-checkboxes govuk-checkboxes--small">
@@ -117,7 +113,7 @@
                   </div>
                   <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="status-funding-confirmed" name="status" type="checkbox" value="Funding confirmed">
-                    <label class="govuk-label govuk-checkboxes__label" for="status-funding-confirmed">Funding confirmed</label>
+                    <label class="govuk-label govuk-checkboxes__label" for="status-funding-confirmed">FSM Confirmed</label>
                   </div>
                 </div>
               </div>
@@ -129,11 +125,10 @@
     </div>
 
     <!-- Filter actions -->
-<div class="govuk-button-group govuk-!-margin-top-3 govuk-!-margin-bottom-0" style="margin-bottom: 0;">
-  <button class="govuk-button" id="apply-filters" type="button">Apply filters</button>
-  <a href="#" class="govuk-link" id="clear-filters">Clear filters</a>
-</div>
-
+    <div class="govuk-button-group govuk-!-margin-top-3 govuk-!-margin-bottom-0" style="margin-bottom: 0;">
+      <button class="govuk-button" id="apply-filters" type="button">Apply filters</button>
+      <a href="#" class="govuk-link" id="clear-filters">Clear filters</a>
+    </div>
 
   </div>
 </div>

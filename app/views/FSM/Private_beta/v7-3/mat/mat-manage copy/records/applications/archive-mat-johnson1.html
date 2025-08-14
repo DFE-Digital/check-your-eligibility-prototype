@@ -1,0 +1,64 @@
+{% extends "layouts/FSM/v7-3/layout-dfe-matnav.html" %}
+{% block backLink %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+{% set childId = "44455453" %}
+{% set childDOB = "22 Sep 2012" %}
+{% set schoolName = "Hilltop Elementary" %}
+{% set schoolAddress = "Manchester, M25 1QA" %}
+{% set parentDOB = "15 Mar 1980" %}
+{% set parentName = "Alex Johnson" %}
+{% set email = "alex.johnson@example.com" %}
+{% set nationalInsurance = "AB123456C" %}
+{% set parentId = "44455454A" %}
+{% set childName = "Emily Johnson" %}
+{% set pageName = "Manage pupil record for " ~ childName %}
+{% set pageDescription %} View and manage the details of this pupil record.
+{% endset %}
+
+{% set pageName="Archive this application?" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+  </div>
+</div>
+
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    You cannot view this application once you have archived it.
+  </strong>
+</div>
+<div class="govuk-!-padding-bottom-3"></div>
+
+
+{{ govukButton({
+text: "Archive now",
+href: '#'
+}) }}
+
+{{ govukButton({
+text: "Cancel archive",
+classes: "govuk-button--secondary",
+href: 'pending_johnson1'
+}) }}
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+</div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}

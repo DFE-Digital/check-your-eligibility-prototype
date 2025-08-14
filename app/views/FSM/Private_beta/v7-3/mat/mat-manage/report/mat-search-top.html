@@ -11,7 +11,6 @@
     <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <p class="govuk-body">Use the filters below to search for records.</p>
-
     {% include "FSM/Private_beta/v7-3/_includes/filter-panel-mat-top-2.html" %}
 </div>
 </div>
@@ -33,20 +32,20 @@
                   <div class="moj-scrollable-panel">
                     <table class="govuk-table" id="resultsTable" data-module="moj-sortable-table">
                       <thead class="govuk-table__head">
+
+
                         <tr class="govuk-table__row">
 
-                          <!--sort function -->
                           <th scope="col" class="govuk-table__header" aria-sort="ascending">Reference</th>
                           <th scope="col" class="govuk-table__header" aria-sort="none">Parent name</th>
-                          <!-- <th scope="col" class="govuk-table__header" aria-sort="none">Parents National Insurance number</th> -->
-                          <!-- <th scope="col" class="govuk-table__header" aria-sort="none">Parents dob</th> -->
-                          <th scope="col" class="govuk-table__header" aria-sort="none">Child name</th>
+                           <th scope="col" class="govuk-table__header" aria-sort="none">Child name</th>
                           <th scope="col" class="govuk-table__header" aria-sort="none">Child dob</th>
                           <th scope="col" class="govuk-table__header" aria-sort="none">Academy</th>
                           <th scope="col" class="govuk-table__header" aria-sort="none">Date submitted</th>
                           <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
-                          <!-- <th scope="col" class="govuk-table__header" aria-sort="none">Eligible from</th> -->
                         </tr>
+
+
                       </thead>
 {% include "_includes/mat/mat-table-rows.html" %}
 
@@ -199,7 +198,7 @@
 
 <!--not working-->
 <!--<script src="../components/filter.js"></script> -->
-
+<!--
 <script>
   function filterResults() {
 
@@ -400,6 +399,105 @@
       });
     });
   });
+</script> -->
+
+<script>
+  const $ = (sel, root=document) => root.querySelector(sel);
+  const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
+  function normalise(s){ return (s||'').toString().trim().toLowerCase(); }
+  function selectedValues(name){
+    return $$('#filter-container input[name="'+name+'"]:checked').map(el => el.value);
+  }
+  function checkDateRange(isoStr, range){
+    if (!range) return true;
+    if (!isoStr) return false;
+    const d = new Date(isoStr);
+    if (isNaN(d)) return false;
+    const today = new Date();
+    const startOfMonth = (y,m)=>new Date(y,m,1);
+    switch (range){
+      case 'Last month':     return d >= startOfMonth(today.getFullYear(), today.getMonth()-1);
+      case 'Last 3 months':  return d >= startOfMonth(today.getFullYear(), today.getMonth()-2);
+      case 'Last 6 months':  return d >= startOfMonth(today.getFullYear(), today.getMonth()-5);
+      case 'Last 12 months': return d >= startOfMonth(today.getFullYear(), today.getMonth()-11);
+      default: return true;
+    }
+  }
+
+  function filterResults(){
+    const keyword = normalise($('#keywords').value);
+    const chosenDate = $('input[name="dateRange"]:checked')?.value || null;
+    const phases  = selectedValues('phase').map(normalise);
+    const statuses= selectedValues('status').map(normalise);
+
+    const rows = $$('#resultsTable tbody tr');
+    let visible = 0;
+
+    rows.forEach(row => {
+      const rowStatus = normalise(row.dataset.status);
+      const rowPhase  = normalise(row.dataset.phase);
+      const rowDate   = row.dataset.submissionDate;
+
+      const textMatch   = !keyword || normalise(row.innerText).includes(keyword);
+      const phaseMatch  = phases.length === 0 || phases.includes(rowPhase);
+      const statusMatch = statuses.length === 0 || statuses.includes(rowStatus);
+      const dateMatch   = checkDateRange(rowDate, chosenDate);
+
+      const show = textMatch && phaseMatch && statusMatch && dateMatch;
+
+      row.style.display = show ? '' : 'none';
+      row.classList.toggle('matches-filters', show);
+      if (show) visible++;
+    });
+
+    // visible count
+    $('#resultCount').innerText = visible;
+
+    // re-paginate if available
+    if (typeof paginate === 'function') paginate(1);
+
+    updateAppliedCount();
+  }
+
+  function clearFilters(e){
+    if (e) e.preventDefault();
+    $('#keywords').value = '';
+    $$('#filter-container input[type="checkbox"], #filter-container input[type="radio"]').forEach(el => el.checked = false);
+    filterResults();
+  }
+
+  function updateAppliedCount(){
+    const kw = $('#keywords').value.trim() ? 1 : 0;
+    const checks = $$('#filter-container input[type="checkbox"]:checked').length;
+    const radios = $$('#filter-container input[type="radio"]:checked').length;
+    const total = kw + checks + radios;
+    const btn = $('#toggle-filters-btn');
+    if (!btn) return;
+    if ($('#filter-wrapper').style.display === 'none'){
+      btn.textContent = total ? `Filter (${total} applied)` : 'Filter';
+    } else {
+      btn.textContent = 'Hide filters';
+    }
+  }
+
+  function toggleFilters(){
+    const wrap = $('#filter-wrapper');
+    const isHidden = wrap.style.display === 'none';
+    wrap.style.display = isHidden ? '' : 'none';
+    updateAppliedCount();
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    $('#apply-filters').addEventListener('click', filterResults);
+    $('#clear-filters').addEventListener('click', clearFilters);
+    $('#keywords').addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); filterResults(); }});
+    $('#toggle-filters-btn')?.addEventListener('click', toggleFilters);
+    $$('#filter-container input[type="checkbox"], #filter-container input[type="radio"]').forEach(el => {
+      el.addEventListener('change', filterResults);
+    });
+    filterResults(); // initial
+  });
 </script>
+
 
 {% endblock %}

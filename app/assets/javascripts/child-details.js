@@ -63,18 +63,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
-</script>
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-half">
-        <div data-module="moj-add-another">
-            <h1 class="govuk-heading-l" tabindex="-1">Provide details of your children</h1>
-            <form method="post">
-                {% call govukFieldset({
-                    classes: 'moj-add-another__item'
-                }) %}
-            </form>
-                <!-- Server-side templating syntax should remain outside JavaScript -->
-                {% call govukFieldset({
-                    classes: 'moj-add-another__item'
-                }) %}
-{% endblock %}
+
+// child-details.js
+const remainder = 10 % 3; // remainder will be 1
+console.log(remainder);
+// This file contains JavaScript specific to the child details page.

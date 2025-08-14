@@ -1,0 +1,422 @@
+{% extends "layouts/FSM/v7-3/layout-dfe-matnav.html" %}
+{% set pageName="All checks completed" %}
+{% set schoolName1 = "Hilltop Elementary" %}
+{% set schoolName2 = "Springfield Primary" %}
+{% set schoolName3 = "Greenwood Academy" %}
+{% set schoolName4 = "Oakwood High" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <h1 class="govuk-heading-l">10 Batch check results</h1>
+      </div>
+      <div class="govuk-grid-column-two-thirds" style="display: flex; justify-content: flex-end; align-items: center;">
+        <button type="submit" class="govuk-button govuk-button--secondary govuk-!-margin-right-15"
+          data-module="govuk-button">
+          Export all results
+        </button>
+      </div>
+    </div>
+
+
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+  <ul class="moj-sub-navigation__list">
+    <li class="moj-sub-navigation__item">
+      <a class="moj-sub-navigation__link" data-section="eligible-section" href="#eligible-section">Eligible</a>
+    </li>
+    <li class="moj-sub-navigation__item">
+      <a class="moj-sub-navigation__link" data-section="not-eligible-section" href="#not-eligible-section">Not eligible</a>
+    </li>
+    <li class="moj-sub-navigation__item">
+      <a class="moj-sub-navigation__link" data-section="not-checked-section" href="#not-checked-section">Could not check</a>
+    </li>
+  </ul>
+</nav>
+
+<!--
+  <div class="govuk-grid-column-full">
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" aria-current="true" data-section="eligible-section" href="#eligible-section"><strong>Eligible</strong></a>
+          </li>
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" data-section="not-eligible-section" href="#not-eligible-section"><strong>Not eligible</strong></a>
+          </li>
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" data-section="not-checked-section" href="#not-checked-section"><strong>Could not check</strong></a>
+              </strong></a>
+        </li>
+      </ul>
+    </nav> -->
+
+
+<div id="eligible-section" class="govuk-table-section">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">3 eligible checks</h2>
+    <p class="govuk-body">These children are eligible for free school meals. Create the application with the supplied information or notify the parent they can apply.</p>
+  </div>
+  <div class="govuk-grid-column-one-third govuk-text-align-right" style="display: flex; justify-content: flex-end; align-items: center;">
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Create applications",
+        href: '../records/batch-records/eligible/batch-confirm-eligible'
+      }) }}
+    </div>
+  </div>
+</div>
+      <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all"
+        data-multi-select-idprefix=" -" data-module="moj-sortable-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col" id="select-all"></th>
+            <th scope="col" class="govuk-table__header">Parent name</th>
+            <th scope="col" class="govuk-table__header">Parent date of birth</th>
+            <th scope="col" class="govuk-table__header">National Insurance number</th>
+            <th scope="col" class="govuk-table__header">Child name</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--date">Child date of birth</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--date">Academy</th>
+            <th scope="col" class="govuk-table__header">Email</th>
+            <th scope="col" class="govuk-table__header"> </th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row govuk-table__row--selected">
+            <td class="govuk-table__cell">
+              <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+              <input type="checkbox" class="govuk-checkboxes__input" id="child-3">
+              <label class="govuk-label govuk-checkboxes__label" for="child-3">
+                <span class="govuk-visually-hidden">Child-3</span>
+              </label>
+              </div>
+            </td>
+            <td class="govuk-table__cell">Alex Johnson</td>
+            <td class="govuk-table__cell govuk-table__cell--date">15 Mar 1980</td>
+            <td class="govuk-table__cell">AB123456C</td>
+            <td class="govuk-table__cell">Emily Johnson</td>
+            <td class="govuk-table__cell govuk-table__cell--date">20 Sep 2012</td>
+            <td class="govuk-table__cell">{{ schoolName1 }}</td>
+            <td class="govuk-table__cell">alexjohnson@example.com</td>
+            <!-- <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td> -->
+            </tr>
+            <tr class="govuk-table__row govuk-table__row--selected">
+            <td class="govuk-table__cell">
+              <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                <input type="checkbox" class="govuk-checkboxes__input" id="child-2">
+                <label class="govuk-label govuk-checkboxes__label" for="child-2">
+                  <span class="govuk-visually-hidden">Child-2</span>
+                </label>
+              </div>
+            <td class="govuk-table__cell">Jessica Brown</td>
+            <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
+            <td class="govuk-table__cell">NW653213B</td>
+            <td class="govuk-table__cell">Rachel Brown</td>
+            <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
+            <td class="govuk-table__cell">Springfield Primary</td>
+            <td class="govuk-table__cell">edentesfay@icloud.com</td>
+            <!-- <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td> -->
+          </tr>
+          <tr class="govuk-table__row govuk-table__row--selected">
+            <td class="govuk-table__cell">
+              <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                <input type="checkbox" class="govuk-checkboxes__input" id="child-2">
+                <label class="govuk-label govuk-checkboxes__label" for="child-2">
+                  <span class="govuk-visually-hidden">Child-2</span>
+                </label>
+              </div>
+            </td>
+            <td class="govuk-table__cell">Sophie Smith</td>
+            <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
+            <td class="govuk-table__cell">NW653213B</td>
+            <td class="govuk-table__cell">Olivia Smith</td>
+            <td class="govuk-table__cell govuk-table__cell--date">15 Feb 2015</td>
+            <td class="govuk-table__cell">Greenwood Academy</td>
+            <td class="govuk-table__cell">edentesfay@icloud.com</td>
+            <!-- <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td> -->
+          </tr>
+        </tbody>
+      </table>
+
+</div>
+</div>
+
+    <div id="not-eligible-section" class="govuk-table-section" style="display: none;">
+      <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">5 not eligible checks</h2>
+        <p class="govuk-body">These children may not be eligible. The parent or guardian can still apply but must provide supporting evidence.</p>
+  </div>
+  <div class="govuk-grid-column-one-third govuk-text-align-right" style="display: flex; justify-content: flex-end; align-items: center;">
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Notify parent",
+        classes: "govuk-button--secondary"
+      }) }}
+    </div>
+  </div>
+</div>
+      <!-- <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m">5 not eligible checks</h2>
+        <p class="govuk-body">These children may not be eligible. The parent or guardian can still apply but must provide supporting evidence.</p>
+      </div>
+      <div class="govuk-grid-column-one-third govuk-text-align-right" style="display: flex; justify-content: flex-end; align-items: right;">
+        <div class="govuk-button-group">
+     {{ govukButton({
+          text: "Notify parent",
+          classes: "govuk-button--secondary",
+          href: ' '
+          }) }}
+        </div>
+      </div> -->
+      <table class="govuk-table" data-module="moj-sortable-table">
+        <thead class="govuk-table__head"></thead>
+          <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Parent name</th>
+        <!-- <th scope="col" class="govuk-table__header">Parent date of birth</th> -->
+        <th scope="col" class="govuk-table__header">National Insurance number</th>
+        <th scope="col" class="govuk-table__header">Child name</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--date">Child date of birth</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--date">School</th>
+        <th scope="col" class="govuk-table__header">Email</th>
+        <th scope="col" class="govuk-table__header"> </th>
+          </tr>
+        <tr class="govuk-table__row govuk-table__row--selected">
+        <td class="govuk-table__cell">Michael Evans</td>
+        <!-- <td class="govuk-table__cell govuk-table__cell--date">12 Feb 1975</td> -->
+        <td class="govuk-table__cell">QQ123456A</td>
+        <td class="govuk-table__cell">Lucas Evans</td>
+        <td class="govuk-table__cell govuk-table__cell--date">05 May 2013</td>
+        <td class="govuk-table__cell">Springfield Primary</td>
+        <td class="govuk-table__cell">michael.evans@email.com</td>
+        <!-- <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td> -->
+          </tr>
+          <tr class="govuk-table__row govuk-table__row--selected">
+        <td class="govuk-table__cell">Sarah Lee</td>
+        <!-- <td class="govuk-table__cell govuk-table__cell--date">03 Aug 1982</td> -->
+        <td class="govuk-table__cell">ZZ987654B</td>
+        <td class="govuk-table__cell">Ella Lee</td>
+        <td class="govuk-table__cell govuk-table__cell--date">22 Nov 2014</td>
+        <td class="govuk-table__cell">Greenwood Academy</td>
+        <td class="govuk-table__cell">sarah.lee@email.com</td>
+        <!-- <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td> -->
+          </tr>
+        <tr class="govuk-table__row govuk-table__row--selected">
+        <td class="govuk-table__cell">Amina Hassan</td>
+        <!-- <td class="govuk-table__cell govuk-table__cell--date">19 Jun 1978</td> -->
+        <td class="govuk-table__cell">YY112233C</td>
+        <td class="govuk-table__cell">Sami Hassan</td>
+        <td class="govuk-table__cell govuk-table__cell--date">30 Mar 2011</td>
+        <td class="govuk-table__cell">Hilltop Elementary</td>
+        <td class="govuk-table__cell">amina.hassan@email.com</td>
+        <!-- <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td> -->
+          </tr>
+          <tr class="govuk-table__row govuk-table__row--selected">
+        <td class="govuk-table__cell">Rajesh Patel</td>
+        <!-- <td class="govuk-table__cell govuk-table__cell--date">11 Dec 1972</td> -->
+        <td class="govuk-table__cell">PP445566D</td>
+        <td class="govuk-table__cell">Priya Patel</td>
+        <td class="govuk-table__cell govuk-table__cell--date">17 Jul 2012</td>
+        <td class="govuk-table__cell">Oakwood High</td>
+        <td class="govuk-table__cell">rajesh.patel@email.com</td>
+        <!-- <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td> -->
+          </tr>
+          <tr class="govuk-table__row govuk-table__row--selected">
+        <td class="govuk-table__cell">Chen Wang</td>
+        <!-- <td class="govuk-table__cell govuk-table__cell--date">05 May 1980</td> -->
+        <td class="govuk-table__cell">CC778899E</td>
+        <td class="govuk-table__cell">Lily Wang</td>
+        <td class="govuk-table__cell govuk-table__cell--date">09 Sep 2015</td>
+        <td class="govuk-table__cell">Greenwood Academy</td>
+        <td class="govuk-table__cell">chen.wang@email.com</td>
+        <!-- <td class="govuk-table__cell"><a href="childs-age.html" class="govuk-link">Notify parent</a></td> -->
+          </tr>
+        </tbody>
+      </table>
+        </div>
+
+
+    <div id="not-checked-section" class="govuk-table-section" style="display: none;">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m">4 could not be checked</h2>
+        <p class="govuk-body">These records could not be checked for the reason stated. You can remove the records, fix the record in the batch check file or notify the parent or guardian.</p>
+      </div>
+      <div class="govuk-grid-column-one-third govuk-text-align-right" style="display: flex; justify-content: flex-end; align-items: right;">
+        <div class="govuk-button-group">
+
+
+        </div>
+      </div>
+      <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all"
+        data-multi-select-idprefix=" -" data-module="moj-sortable-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Parent name</th>
+        <th scope="col" class="govuk-table__header">Parent date of birth</th>
+        <th scope="col" class="govuk-table__header">National Insurance number</th>
+        <th scope="col" class="govuk-table__header">Child name</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--date">Child date of birth</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--date">School</th>
+        <th scope="col" class="govuk-table__header">Email</th>
+        <th scope="col" class="govuk-table__header">Reason</th>
+          </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Eden Tesfay</td>
+        <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
+        <td class="govuk-table__cell">NW653213B</td>
+        <td class="govuk-table__cell">Rachel Tesfay</td>
+        <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
+        <td class="govuk-table__cell">Springfield Primary</td>
+        <td class="govuk-table__cell">edentesfay@icloud.com</td>
+        <td class="govuk-table__cell"><span class="text-red">Information does not match</span></td>
+          </tr>
+          <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Eden Tesfay</td>
+        <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
+        <td class="govuk-table__cell">NW653213B</td>
+        <td class="govuk-table__cell">Samuel Tesfay</td>
+        <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
+        <td class="govuk-table__cell">Greenwood Academy</td>
+        <td class="govuk-table__cell">edentesfay@icloud.com</td>
+        <td class="govuk-table__cell"><span class="text-red">Could not check <br>Universal Credit</span></td>
+          </tr>
+          <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Eden Tesfay</td>
+        <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
+        <td class="govuk-table__cell">NW653213B</td>
+        <td class="govuk-table__cell">Samuel Tesfay</td>
+        <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
+        <td class="govuk-table__cell">Hilltop Elementary</td>
+        <td class="govuk-table__cell">edentesfay@icloud.com</td>
+        <td class="govuk-table__cell"><span class="text-red">Could not check <br>Universal Credit</span></td>
+          </tr>
+          <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Eden Tesfay</td>
+        <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td>
+        <td class="govuk-table__cell">NW653213B</td>
+        <td class="govuk-table__cell">Samuel Tesfay</td>
+        <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
+        <td class="govuk-table__cell">Oakwood High</td>
+        <td class="govuk-table__cell">edentesfay@icloud.com</td>
+        <td class="govuk-table__cell"><span class="text-red">Information does not match</span></td>
+          </tr>
+        </tbody>
+      </table>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  </tbody>
+  </table>
+</div>
+<nav class="govuk-pagination" aria-label="Pagination" style="display: flex; justify-content: center;">
+  <div class="govuk-pagination__prev">
+    <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+      <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+      </svg>
+      <span class="govuk-pagination__link-title">
+        Previous<span class="govuk-visually-hidden"> page</span>
+      </span>
+    </a>
+  </div>
+  <ul class="govuk-pagination__list">
+    <li class="govuk-pagination__item govuk-pagination__item--current">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
+        1
+      </a>
+    </li>
+    <li class="govuk-pagination__item govuk-pagination__item--ellipses">
+      &ctdot;
+    </li>
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 6">
+        6
+      </a>
+    </li>
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 7" aria-current="page">
+        7
+      </a>
+    </li>
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 8">
+        8
+      </a>
+    </li>
+    <li class="govuk-pagination__item govuk-pagination__item--ellipses">
+      &ctdot;
+    </li>
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 42">
+        42
+      </a>
+    </li>
+  </ul>
+  <div class="govuk-pagination__next">
+    <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+      <span class="govuk-pagination__link-title">
+        Next<span class="govuk-visually-hidden"> page</span>
+      </span>
+      <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+      </svg>
+    </a>
+  </div>
+</nav>
+
+</div>
+</div>
+
+{% endblock %}
+
+
+{% block pageScripts %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const navLinks = document.querySelectorAll('.moj-sub-navigation__link');
+    const sections = document.querySelectorAll('.govuk-table-section');
+
+    function showSection(targetId) {
+      sections.forEach(section => {
+        section.style.display = section.id === targetId ? 'block' : 'none';
+      });
+
+      navLinks.forEach(link => {
+        const linkTarget = link.getAttribute('data-section');
+        if (linkTarget === targetId) {
+          link.setAttribute('aria-current', 'true');
+        } else {
+          link.removeAttribute('aria-current');
+        }
+      });
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const sectionId = this.getAttribute('data-section');
+        showSection(sectionId);
+      });
+    });
+
+    // Default to first tab (Eligible) if no hash
+    const defaultSection = 'eligible-section';
+    const hash = window.location.hash.replace('#', '');
+    const initialSection = hash || defaultSection;
+    showSection(initialSection);
+  });
+</script>
+{% endblock %}

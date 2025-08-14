@@ -1,0 +1,111 @@
+{% extends "layouts/FSM/v7-3/layout-dfe-matnav.html" %}
+{% set pageName="Children's details added" %}
+{% set childId = "44455453" %}
+{% set childDOB1 = "22 Sep 2021" %}
+{% set childDOB2 = "22 Sep 2018" %}
+{% set schoolName = "Greenwood Primary School" %}
+{% set schoolAddress = "Hoddesdon EN11 8JY" %}
+{% set parentDOB = "15 Mar 1980" %}
+{% set parentFirstname = data["parent-firstname"] or "Alex" %}
+{% set parentSurname = data["parent-surname"] or "Johnson" %}
+{% set email = "alex.johnson@gmail.com" %}
+{% set nationalInsurance = "AB123456C" %}
+{% set parentId = "44455454A" %}
+{% set childName = "Emily Johnson" %}
+{% set childFirstname = data["child-firstname"] or "Emily" %}
+{% set childSurname = data["child-surname"] or "Johnson" %}
+{% set childFirstname2 = data["child-firstname"] or "Rory" %}
+{% set childSurname2 = data["child-surname"] or "Johnson" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      {% set html %}
+      <h3 class="govuk-notification-banner__heading">
+        {{pageName}}
+      </h3>
+      <p class="govuk-body">You've successfully added details to {{ data["parent-firstname"] or parentFirstname }} {{
+        data["parent-surname"] or parentSurname }} free school meals application.</p>
+
+      {% endset %}
+
+      {{ govukNotificationBanner({
+      html: html,
+      type: "success"
+      }) }}
+      <!--<h1 class="govuk-heading-xl">Children details added</h1>-->
+      <h3>Application for {{ data["parent-firstname"] or parentFirstname }} {{ data["parent-surname"] or parentSurname }}</h3>
+
+
+    </div>
+  </div>
+
+  <div class="govuk-width-container">
+    <div class="govuk-grid-column-full-width">
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header">Child</th>
+            <th class="govuk-table__header">School</th>
+            <th class="govuk-table__header">Reference</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"> {{ data["ch1-first-name"] or childFirstname }} {{ data["ch1-surname"] or
+              data["parent-surname"] or childSurname }} </td>
+            <td class="govuk-table__cell">  {{ data["ch1-school"] or "Greenwood Primary School" }}
+               Hoddesdon EN11 8JY</td>
+            <td class="govuk-table__cell">44455453</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"> {{ data["ch1-first-name"] or childFirstname2 }} {{ data["ch1-surname"] or
+              data["parent-surname"] or childSurname2 }} </td>
+            <td class="govuk-table__cell">  {{ data["ch1-school"] or " Watford Grammar School for Boys" }}
+              Watford WD17 3AA</td>
+            <td class="govuk-table__cell">44455699</td>
+          </tr>
+
+          <!-- {% if data['child-2'] == 'Yes' %} {% endif %}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"> {{ data["ch1-first-name"] or "Samuel" }} {{ data["surname"]or data["parent-surname"] }}</td>
+          <td class="govuk-table__cell">44455454</td>
+        </tr> -->
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m">What to do next</h2>
+
+        <p> <a href="" class="govuk-link" onclick="printPage()"> Print this page</a> to give to the parent or guardian
+          as a record of the reference numbers. </p>
+        <p> <a href="../mat-soft-check/checker" class="govuk-button" role="button" data-module="govuk-button">Do another
+            check</a> </p>
+      </div>
+    </div>
+  </div>
+  <div class="govuk-!-padding-bottom-3"></div>
+
+</div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+
+<script>
+  function printPage() {
+    window.print();  // This will open the print dialog
+  }
+</script>
+
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}
