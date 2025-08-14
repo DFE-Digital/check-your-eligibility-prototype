@@ -21,8 +21,8 @@
 
     <div class="govuk-button-group">
       {{ govukButton({
-        text: "Reconfirm eligibility codes",
-        href: "/childcare/v5/foster/reconfirm/multiple/select-children"
+        text: "Reconfirm eligibility code",
+        href: "/childcare/v5/foster/reconfirm/single/dates"
       }) }}
     </div>
 
@@ -115,14 +115,11 @@
     <div class="govuk-summary-card" id="child-1">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title">
-          Child 1
+          Child
         </h2>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action">
             <a class="govuk-link" href="/childcare/v5/foster/edit/child-details">Change<span class="govuk-visually-hidden">child details</span></a>
-          </li>
-          <li class="govuk-summary-card__action">
-            <a class="govuk-link" href="/childcare/v5/foster/edit/archive-child">Archive<span class="govuk-visually-hidden">child</span></a>
           </li>
         </ul>
       </div>
@@ -218,119 +215,11 @@
       </div>
     </div>
 
-    <div class="govuk-summary-card" id="child-2">
-      <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">
-          Child 2
-        </h2>
-        <ul class="govuk-summary-card__actions">
-          <li class="govuk-summary-card__action">
-            <a class="govuk-link" href="/childcare/v5/foster/edit/child-details">Change<span class="govuk-visually-hidden">child details</span></a>
-          </li>
-          <li class="govuk-summary-card__action">
-            <a class="govuk-link" href="/childcare/v5/foster/edit/archive-child">Archive<span class="govuk-visually-hidden">child</span></a>
-          </li>
-        </ul>
-      </div>
-      <div class="govuk-summary-card__content">
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Full name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Lily Nelson
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Date of birth
-            </dt>
-            <dd class="govuk-summary-list__value">
-              27 April 2023
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Postcode
-            </dt>
-            <dd class="govuk-summary-list__value">
-              M20 7GF
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Eligibility code
-            </dt>
-            <dd class="govuk-summary-list__value">
-              40321098765
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Code status
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Expired
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Eligibility last confirmed on
-            </dt>
-            <dd class="govuk-summary-list__value">
-              24 April 2024
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Reconfirm between
-            </dt>
-            <dd class="govuk-summary-list__value">
-              25 June and 25 July 2024
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Grace period ends
-            </dt>
-            <dd class="govuk-summary-list__value">
-              31 December 2024
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Reconfirmation status
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <strong class="govuk-tag govuk-tag--red">
-                Overdue
-              </strong>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-        </dl>
-      </div>
-    </div>
+
 
 
 
     <div class="govuk-button-group govuk-!-margin-bottom-7">
-      {{ govukButton({
-        text: "Add a child",
-        href: "/childcare/v5/foster/add-child/child-details"
-      }) }}
 
       {{ govukButton({
         text: "Transfer this family",
