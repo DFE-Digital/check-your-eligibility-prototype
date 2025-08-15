@@ -1,7 +1,8 @@
 {% extends "/layouts/FSM/v7-3/layout-dfe-matnav-noback.html" %}
 {% set pageName="United Learning Trust" %}
 {% set address="Worldwide House, Thorpe Wood, Peterborough, PE3 6SB" %}
-
+{% set Service="Free school meals" %}
+{% set view="dashboard" %}
 {% set parentName="Jamie Lee" %}
 {% set view="dashboard" %}
 {% set serviceName="Check a family's eligibility" %}
@@ -11,10 +12,10 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <caption>{{address}}</caption>
-
+        <span class="govuk-caption-l">{{pageName}}</span>
+<div class="govuk-width-container">
     <h1 class="govuk-heading-l">
-      {{pageName}}
+      {{Service}}
     </h1>
 
     <style>
@@ -25,9 +26,6 @@
     <div class="dashboard-padding-between-headings"></div>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
-        <h2 class="govuk-heading-m">
-          Free school meals
-        </h2>
 
     <div class="dfe-grid-container">
       <div class="dfe-card">

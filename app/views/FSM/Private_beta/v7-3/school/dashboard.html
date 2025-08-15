@@ -1,18 +1,16 @@
 {% extends "layouts/FSM/v7-3/layout-dfe-schoolnav-noback.html" %}
-
+{% set Service="Free school meals" %}
+{% set view="dashboard" %}
 {% set pageName="Bramhope Primary School" %}
 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
+     <span class="govuk-caption-l">{{pageName}}</span>
+<!-- <div class="govuk-width-container"> -->
     <h1 class="govuk-heading-l">
-      {{pageName}}
+      {{Service}}
     </h1>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
-        <h2 class="govuk-heading-m">
-          Free School Meals
-        </h2>
 
         <div class="dfe-grid-container">
           <div class="dfe-card">
