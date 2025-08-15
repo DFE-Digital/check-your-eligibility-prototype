@@ -5,7 +5,6 @@
         <h2 class="govuk-heading-m">Filter</h2>
       </div>
 
-
       <div class="moj-filter__content">
         <div class="moj-filter__selected">
           <div class="moj-filter__selected-heading">
@@ -44,7 +43,7 @@
 
 
           <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--m" for="keywords">Keyword</label>
+            <label class="govuk-label govuk-label--m" for="keywords">Search by child</label>
             <input class="govuk-input" id="keywords" name="keywords" type="text">
           </div>
 
@@ -61,8 +60,8 @@
           },
           items: [
           {
-          value: "Current month to date",
-          text: "Current month to date"
+          value: "Last month",
+          text: "Last month"
           },
           {
           value: "Last 3 months",
@@ -111,24 +110,29 @@
           },
           {
           value: "status-Reviewed-not-eligible",
-          text: "Reviewed - Not Eligible"
+          text: "Not eligible after review"
           },
           {
           value: "status-Reviewed-eligible",
-          text: "Reviewed - Eligible"
+          text: "Eligible after review"
           },
           {
-          value: "status-Funding-confirmed",
-          text: "Funding confirmed"
+          value: "status-FSM-confirmed",
+          text: "FSM confirmed"
+          },
+          {
+          value: "status-Archive",
+          text: "Archived"
           }
           ]
           }) }}
 
-          <div style="padding-bottom: 20px;">
-            <button type="submit" class="govuk-button" data-module="govuk-button" onclick="filterResults()">
+          <div style="padding-bottom: 0px;">
+            <button type="button" class="govuk-button" data-module="govuk-button" id="applyFilter">
               Apply filters
             </button>
           </div>
+
         </div>
       </div>
     </div>

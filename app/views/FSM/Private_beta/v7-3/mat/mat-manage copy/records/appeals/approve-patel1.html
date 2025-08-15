@@ -1,0 +1,41 @@
+{% extends "layouts/FSM/v7-3/layout-dfe-matnav.html" %}
+{% set pageName="Approve application?" %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Approve this application?</h1>
+        <p class="govuk-body">
+          The parent or guardian will receive support towards Free school meals if you approve this application. </p>
+      </div>
+    </div>
+
+
+<div class="govuk-!-padding-bottom-3"></div>
+{{ govukButton({
+text: "Approve now",
+href: 'eligibility-confirmed'
+}) }}
+
+{{ govukButton({
+text: "Review later",
+classes: "govuk-button--secondary",
+href: 'not-eligible-mat-patel1'
+}) }}
+<!--
+<p class="govuk-body">
+  <a href="../pending-list" class="govuk-link">Review another application</a>
+</p> -->
+
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+</div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}
