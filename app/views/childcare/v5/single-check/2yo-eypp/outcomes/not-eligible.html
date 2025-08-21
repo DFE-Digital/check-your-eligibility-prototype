@@ -59,7 +59,19 @@
 
     <p class="govuk-body">If the parent or guardian provides supporting evidence, you'll need to review it and decide if they're eligible.</p>
 
-    <p class="govuk-body"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="#">See a complete list of acceptable evidence (opens in new tab)</a>.</p>
+
+
+
+
+    {% if (data['eligibility-type'] == "2 years old early learning") %}
+
+    <p class="govuk-body"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="/childcare/v5/single-check/2yo-eypp/2yo-evidence">See a complete list of acceptable evidence (opens in new tab)</a>.</p>
+
+    {% else %}
+
+      <p class="govuk-body"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="/childcare/v5/single-check/2yo-eypp/eypp-evidence">See a complete list of acceptable evidence (opens in new tab)</a>.</p>
+
+    {% endif %}
 
 
     {% from "govuk/components/button/macro.njk" import govukButton %}
@@ -69,17 +81,6 @@
         href: '/childcare/v5/single-check/single'
       }) }}
 
-    <!--
-    <h3 class="govuk-heading-s">If you have not received any evidence</h3>
-    <p class="govuk-body">You can either contact:</p>
-
-
-    <ul class="govuk-list govuk-list--bullet">
-      <li>the relevant childcare provider to ask them to collect it from the parent or guardian</li>
-      <li>the <a href="#">Department for Education support desk</a> to request a separate check</li>
-    </ul>
-
-  -->
 
 
   </div>
