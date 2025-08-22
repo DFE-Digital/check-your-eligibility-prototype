@@ -1,0 +1,79 @@
+{% extends "layouts/FSM/v7-3/layout-dfe-lanav-noback.html" %}
+{% set pageName="Manchester City Council" %}
+{% set Service="Free school meals" %}
+{% set view="dashboard" %}
+{% set address="Oasis House, Thorpe Wood, Manchester, M23 4AJ" %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+        <span class="govuk-caption-l">{{pageName}}</span>
+<div class="govuk-width-container">
+    <h1 class="govuk-heading-l">
+      {{Service}}
+    </h1>
+    <div class="dfe-grid-container">
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h3 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+              href="la-manage/la-soft-check/checker">Run a check for one parent or guardian</a>
+            </h2>
+            <p>Run an eligibility check for one parent or guardian.</p>
+        </div>
+      </div>
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+              href="la-manage/batch-checking/manual">Run a batch check</a>
+          </h2>
+          <p>Run an eligibility check for multiple parents or guardians.</p>
+        </div>
+      </div>
+
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+              href="la-manage/decision/pending-list">Pending applications</a>
+          </h2>
+          <p>Check eligibility for children not found in the system.</p>
+        </div>
+      </div>
+
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+              href="la-manage/report/search.html">Search all records</a>
+          </h2>
+          <p>Search all pupil free school meal records and export results.</p>
+        </div>
+      </div>
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="guidance.html">Guidance</a>
+          </h2>
+          <p>Read guidance on how to review supporting evidence.</p>
+        </div>
+      </div>
+           <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="la-manage/report/archive.html">Archived records</a>
+          </h2>
+          <p>View and restore archived records.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+{% endblock %}

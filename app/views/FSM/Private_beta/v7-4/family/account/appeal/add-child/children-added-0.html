@@ -1,0 +1,135 @@
+{% extends "layouts/FSM/v7-1/layout-dfe-noback.html" %}
+{% set pageName="Add your children's details" %}
+{%block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Application and evidence sent</h1>
+        <div class="govuk-panel__body">
+          Submitted on<br /><strong><span id="todays-date"></span></strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="govuk-section-break govuk-section-break--m">
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds"><table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--m">
+      We have sent appeal details for:
+    </caption>
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header app-custom-class">Name</th>
+        <th scope="col" class="govuk-table__header app-custom-class">School</th>
+        <th scope="col" class="govuk-table__header app-custom-class">
+          Reference
+        </th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Samual Tesfay</th>
+        <td class="govuk-table__cell">St Kings Primary School</td>
+        <td class="govuk-table__cell">44455453</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Thomas Tesfay</th>
+        <td class="govuk-table__cell">St Kings Primary School</td>
+        <td class="govuk-table__cell">44455454</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Rachel Tesfay</th>
+        <td class="govuk-table__cell">Bramhope Primary School</td>
+        <td class="govuk-table__cell">44455455</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr class="govuk-section-break govuk-section-break--m">
+  <table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--m">
+      We have sent the following evidence:
+    </caption>
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header app-custom-class">Evidence</th>
+
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell"><a href="#">eden_tesfay_ucstatement.pdf</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell"><a href="#">edentesfay_bank_statement.doc</a></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+
+  <h2 class="govuk-heading-m">What happens next</h2>
+
+  <p>
+    Each school will contact you with a decision when your evidence has been reviewed.</p>
+    <p>This usually takes about 1 week, but if you do not receive an update contact your school administrator.</p>
+
+  <p>
+    <a href="">What did you think about this service?</a> (takes 30 seconds)
+  </p>
+
+
+
+  {{ govukButton({
+    text: "Finish and leave service",
+    href: '../../../start-now'
+    }) }}
+
+
+  {% endblock %}
+  {% block pageScripts %}
+
+  <script>
+    // Function to format date and time in 12-hour format with AM/PM
+    function formatDateTime(date) {
+      const options = { day: 'numeric', month: 'long', year: 'numeric' };
+      const formattedDate = date.toLocaleDateString('en-GB', options);
+
+      let hours = date.getHours();
+      let minutes = date.getMinutes().toString().padStart(2, '0'); // Ensure two-digit minutes
+      let ampm = hours >= 12 ? 'pm' : 'am';
+      hours = hours % 12 || 12; // Convert 24-hour to 12-hour format
+
+      const formattedTime = `${hours}:${minutes} ${ampm}`;
+
+      return `${formattedDate} at ${formattedTime}`;
+    }
+
+    // Get today's date and time
+    const today = new Date();
+
+    // Insert formatted date and time into the page
+    document.getElementById('todays-date').textContent = formatDateTime(today);
+  </script>
+
+  <!-- <script>
+    // Function to format date and time (for example: 8 March 2025, 14:30)
+    function formatDateTime(date) {
+      const options = { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' };
+      return date.toLocaleDateString('en-GB', options) + ', ' + date.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+    }
+
+    // Get today's date and time
+    const today = new Date();
+
+    // Insert formatted date and time into the page
+    document.getElementById('todays-date').textContent = formatDateTime(today);
+  </script> -->
+
+  <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+</div>
+{% endblock %}

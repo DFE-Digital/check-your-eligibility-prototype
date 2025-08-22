@@ -1,0 +1,38 @@
+{% extends "layouts/layout-email.html" %}
+{% set subject = "Notification email" %}
+{% set from = "GOV.UK <example@gov.uk>" %}
+{% set to = "West Kirby Primary School <west-kirby-primary.edu.org>" %}
+
+{% block content %}
+<p>Dear school administrator, </p>
+
+<p>We need additional evidence to make a decision on this application for free school meals.</p>
+
+<h2 class="govuk-heading-m">Application reference</h2>
+<strong class="govuk-tag govuk-tag--blue">44455453</strong></p>
+<h3 class="govuk-heading-m">Reason</h3>
+<p class="govuk-body">We can't view the total take home pay in the image that has been uploaded.</p>
+
+<h4 class="govuk-heading-m">What to ask for</h4>
+<p class="govuk-body">Make sure the additional evidence takes into account the reason listed above.</p>
+<br>
+
+<p class="govuk-body">You must ask the parent to provide:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>up to three of your latest Universal Credit statements</li>
+  <li>your latest tax credit statement form TC602A (Award Notices) or TC603R (Auto Renewal) showing you are receiving Working Tax Credit run-on</li>
+  <li>your latest tax credit statement form TC602A (Award Notices) or TC603R (Auto Renewal), showing you are receiving Child Tax Credit</li>
+  <li>a letter of Entitlement for Income Support</li>
+  <li>a letter of Entitlement for income-based Jobseeker's Allowance</li>
+  <li>a letter of Entitlement for the guaranteed element of Pension Credit</li>
+  <li>documents showing you are receiving relevant support under part VI of the Immigration and Asylum Act 1999</li>
+</ul>
+
+</p>
+<h5 class="govuk-heading-m">How to send it</h5>
+<p class="govuk-body">Upload it to the <a href="../../school/school-manage/decision/more-johnson1.html">Emily Johnson child's record</a> in Check a family's eligibility.</p>
+
+<p>
+
+  <p>From Department for Education</p>
+{% endblock %}

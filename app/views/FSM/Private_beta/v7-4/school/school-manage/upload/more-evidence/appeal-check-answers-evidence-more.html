@@ -1,0 +1,224 @@
+{% extends "layouts/FSM/v7-3/layout-dfe-schoolnav.html" %}
+
+{% set childId = "44455453" %}
+{% set childDOB = "22 Sep 2021" %}
+{% set schoolName = "Hilltop Elementary" %}
+{% set schoolAddress = "Manchester, M25 1QA" %}
+{% set parentDOB = "15 Mar 1980" %}
+{% set parentName = "Alex Johnson" %}
+{% set email = "alex.johnson@example.com" %}
+{% set nationalInsurance = "AB123456C" %}
+{% set parentId = "44455454A" %}
+{% set childName = "Emily Johnson" %}
+
+{% block content %}
+
+<!-- Ensure moj-badge CSS is loaded -->
+<link rel="stylesheet" href="/public/stylesheets/moj-badge.css">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l"></span>
+    <h1 class="govuk-heading-l">Check your answers</h1>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Parent or guardian details</h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action">
+            <a class="govuk-link" href="../school-soft-check/checker.html"
+              > <span class="govuk-visually-hidden">Parent or guardian details</span></a>
+          </li>
+        </ul>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Full name</dt>
+            <dd class="govuk-summary-list__value">
+              {% if data["parent-firstname"] %}{{data.parent-firstname}}
+              {% else %}
+              Alex
+            {% endif %}
+            {% if data ["parent-surname"] %}{{data.parent-surname}}
+            {% else %}
+            Johnson
+            {% endif %}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Email address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data ["email"] %}{{data.email}}
+              {% else %}
+              	alex.johnson@example.com
+              {% endif %}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data ["dob"] %}{{ data["dob"] }}
+              {% else %}
+              15 Mar 1980
+              {% endif %}
+
+            </dd>
+          </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            {% if data['ni-number-entered'] == 'yes' %}
+              National Insurance number
+            {% else %}
+              Asylum support <br>reference number
+            {% endif %}
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['ni-number-entered'] == 'yes' %}
+            {% if data["ni-number"] %}
+              {{ data["ni-number"] }}
+            {% else %}
+              AB123456C
+            {% endif %}
+          {% else %}
+            {% if data["nass-number-entered"] %}
+              {{ data["nass-number-entered"] }}
+            {% else %}
+              AB123456C
+            {% endif %}
+          {% endif %}
+          </dd>
+        </div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Child 1</h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action">
+            <a class="govuk-link" href="childs-age.html">Change<span class="govuk-visually-hidden">Child details</span></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" >Child name</dt>
+            <dd class="govuk-summary-list__value" >
+              {% if data ["ch1-first-name"] %}{{ data["ch1-first-name"] }}
+              {% else %}
+              Emily
+              {% endif %}
+              {% if data ["ch1-surname"] %}{{ data["ch1-surname"] }}
+              {% else %}
+              Johnson
+              {% endif %}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width: 30%;">Child date of birth</dt>
+            <dd class="govuk-summary-list__value" style="width: 30%;">
+              {% if data ["ch1-day"] %} {{ data["ch1-day"] }}
+              {% else %}
+              22
+              {% endif %}
+              {% if data ["ch1-month"] %} {{ data["ch1-month"] }}
+              {% else %}
+              Sept
+              {% endif %}
+              {% if data ["ch1-year"] %} {{ data["ch1-year"] }}
+              {% else %}
+              2021
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__value" style="width: 30%;"></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    {% if data['child-2'] == 'Yes' %} {% endif %}
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+      <h2 class="govuk-summary-card__title">Evidence</h2>
+      <ul class="govuk-summary-card__actions">
+        <li class="govuk-summary-card__action">
+        <a class="govuk-link" href="../upload/upload-evidence.html"
+          >Change<span class="govuk-visually-hidden">Evidence</span></a>
+        </li>
+      </ul>
+      </div>
+      <div class="govuk-summary-card__content">
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">File 1</dt>
+        <dd class="govuk-summary-list__value">
+          {% if data ["filename-1"] %}{{ data["filename-1"] }}
+          {% else %}
+          UC_statement_2023.pdf
+          {% endif %}
+          <!-- <span class="moj-badge moj-badge--green" style="display: inline-block; margin-left: 10px;"> </span> -->
+        </dd>
+        <dd>
+          1.2mb
+        </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">File 2</dt>
+        <dd class="govuk-summary-list__value">
+          {% if data ["filename-2"] %}{{ data["filename-2"] }}
+          {% else %}
+          New_UC_statement.pdf
+          {% endif %}
+          </dd>
+        <dd>
+          586kb
+            <span style="flex: 1;"></span>
+            <span class="moj-badge moj-badge--green" style="float: right;">New evidence</span>
+          <!-- <span class="moj-badge moj-badge--green">New evidence</span> -->
+        </dd>
+
+        </div>
+      </dl>
+      </div>
+    </div>
+
+    <h2 class="govuk-heading-m">Confirm and update application</h2>
+    <p class="govuk-body">By sending this information, you confirm that, to the best of your knowledge, the details are correct.</p>
+
+    <form action="application-sent" method="post" novalidate>
+      <input type="hidden" name="answers-checked" value="true" />
+    </form>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %} {{
+    govukButton({ text: "Send application", href:
+    'confirmation-appeal-with-evidence-more' }) }}
+  </div>
+</div>
+
+
+  <form action="eligible" method="post" novalidate>
+
+    <input type="hidden" name="answers-checked" value="true">
+
+    <div class="govuk-!-padding-bottom-2"></div>
+
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+
+  </form>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,142 @@
+{% extends "layouts/FSM/v7-3/layout-dfe-matnav.html" %}
+{% set pageName="Choose how to run a manual batch check" %}
+
+{% block beforeContent %}
+
+  {% block backLink %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+    }) }}
+  {% endblock %}
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l">Batch checks status</h1>
+
+        <!-- <p><a href="/batch-checking/history/result-explainer">Get help with check results</a></p> -->
+
+        <table class="govuk-table govuk-table--small-text-until-tablet">
+            <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-4">Showing 0 batch files uploaded in the last 7 days</caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Filename</th>
+                    <th class="govuk-table__cell">Number <br>of records</th>
+                    <th class="govuk-table__cell">Final name <br>in check<br></th>
+                    <th scope="col" class="govuk-table__header">Date submitted</th>
+                   <th scope="col" class="govuk-table__header">Submitted by</th>
+                    <th scope="col" class="govuk-table__header">Status</th>
+                    <th scope="col" class="govuk-table__header">  </th>
+                    <th scope="col" class="govuk-table__header"></th>
+
+                  </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"> </td>
+                    <td class="govuk-table__cell"> </td>
+                    <td class="govuk-table__cell"> </td>
+                    <td class="govuk-table__cell">No batch checks completed</td>
+                    <td class="govuk-table__cell"> </td>
+                    <td class="govuk-table__cell"> </td>
+                    <td class="govuk-table__cell"> </td>
+                              <td class="govuk-table__cell"><a href=""> </a></td>
+
+                </tr>
+
+            </tbody>
+        </table>
+
+        <div style="display: flex; justify-content: center; margin-top: 20px;">
+            {{ govukPagination({
+              previous: {
+                href: "#"
+              },
+              next: {
+                href: "#"
+              },
+              items: [
+                {
+                  number: 1,
+                  href: "#"
+                },
+                {
+                  number: 2,
+                  current: true,
+                  href: "#"
+                },
+                {
+                  number: 3,
+                  href: "#"
+                }
+              ]
+            }) }}
+          </div>
+
+        <!-- <nav class="govuk-pagination" aria-label="Pagination">
+            <ul class="govuk-pagination__list">
+                <li class="govuk-pagination__item govuk-pagination__item--current">
+                    <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+                        1
+                    </a>
+                </li>
+                <li class="govuk-pagination__item">
+                    <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+                        2
+                    </a>
+                </li>
+            </ul>
+            <div class="govuk-pagination__next">
+                <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+                    <span class="govuk-pagination__link-title">
+                        Next<span class="govuk-visually-hidden"> page</span>
+                    </span>
+                    <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v3h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                    </svg>
+                </a>
+            </div>
+        </nav> -->
+
+
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+
+{% block pageScripts %}
+
+<script>
+  var total_count = Math.floor(Math.random() * 250) + 1; // Ensure at least 1 record
+  document.getElementById("total-count").textContent = total_count;
+  document.getElementById("dynamic-total-count").textContent = total_count;
+
+  const intervalId = setInterval(() => {
+    var countElement = document.getElementById("counter");
+    var progressBar = document.getElementById("progress");
+
+    var currentCount = parseInt(countElement.textContent);
+    var newCount = currentCount + 1;
+
+    if (newCount >= total_count) {
+      clearInterval(intervalId);
+      newCount = total_count; // Stop at total_count
+      // document.location = 'batch-check-success.html';
+    }
+
+    countElement.textContent = newCount;
+
+    // Update progress bar
+    var percentage = (newCount / total_count) * 100;
+    progressBar.style.width = percentage + "%";
+  }, 100);
+</script>
+
+
+{% endblock %}

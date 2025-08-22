@@ -1,0 +1,67 @@
+{% extends "layouts/layout-dfe-signed-out.html" %}
+{% set pageName="Home" %}
+{% block content %}
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-full">
+  <h1 class="govuk-heading-l">Your children are entitled to free school meals</h1>
+
+<h2 class="govuk-heading-m">What to do next</h2>
+
+    <p>To get free school meals for your children, follow these steps online. This usually takes a few minutes.</p>
+      
+   <!--- <ol>
+      <li>Create or sign into your GOV.UK One Login account.</li>
+      <li>Enter the details of your children and their school.</li>
+      <li>These will be sent on to the school, which will arrange free school meals.</li>
+      </ol>-->
+
+      <ol>
+        <li>
+          Sign in or create a GOV.UK One Login account.       
+         </li>
+        <li>
+          Enter the details of all your children and their schools. 
+        </li>
+        <li>
+          Submit your application to send it to your school.
+        </li>
+        <li>
+          We'll send you an email to the one you registered with to let you know it has been completed. 
+        </li>
+        <li>
+          Your childrens school will arrange the free school meals. 
+        </li>
+      </ol>
+
+      {{ govukDetails({
+        summaryText: "About GOV.UK One Login",
+        text: "GOV.UK One Login lets you sign in and prove your identity quickly and easily. You can use the same account for some other government services."
+      }) }}
+
+<form action="../../account/signin-or-create" method="post" novalidate>
+  <button class="govuk-button govuk-!-margin-top-5" data-module="govuk-button">
+    Continue to GOV.UK One Login
+    </button>
+</form>
+</div>
+</div>
+
+<hr class="govuk-section-break govuk-section-break govuk-section-break--l">
+
+<h2 class="govuk-heading-m">Further guidance and other ways to apply</h2>
+<p>If you need further support, <a target="_blank" href="../checker/parent-guidance.html">check the more detailed guidance</a>  for parents and guardians.</p>
+<p>If you cannot apply online, you can fill in <a href="fsm-print-version">the 'Free school meals entitlement checker' form</a> and give it to your children's school. </p>
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+{{ govukInsetText({
+  text: "It takes longer to apply through your school than it does online."
+}) }}
+
+</div>
+</div>
+
+{% endblock %}
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}

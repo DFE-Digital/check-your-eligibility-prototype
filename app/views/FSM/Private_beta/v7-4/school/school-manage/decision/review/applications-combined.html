@@ -1,0 +1,235 @@
+{% extends "layouts/FSM/v7-3/layout-dfe-schoolnav-noback.html" %}
+{% set applications = 6 %}
+{% set pageName = "Review " ~ applications ~ " applications" %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="moj-page-header-actions">
+      <div class="moj-page-header-actions__title">
+        <h1 class="govuk-heading-l">
+          {{ pageName }}
+          <!-- <span id="notifications" class="moj-notification-badge" style="white-space: nowrap; margin-left: 15px;"></span> -->
+        </h1>
+      </div>
+      <!-- </div> -->
+      <div class="moj-page-header-actions__actions">
+        <div class="moj-button-group moj-button-group--inline">
+          <div class="moj-button-menu" data-module="moj-button-menu" data-button-text="Record a decision"
+            data-button-classes="govuk-button" data-align-menu="right">
+            <a href="#" role="button" draggable="false"
+              class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
+              Finalise applications
+            </a>
+            <a href="#" role="button" draggable="false"
+              class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
+              Request a review
+            </a>
+            <a href="#" role="button" draggable="false"
+              class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
+              Archive applications
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="moj-page-header-actions__description">
+        <!-- <p class="govuk-body">You have {{ applications }} applications to review.</p> -->
+        <p class="govuk-body">You can review an individual application for a child or manage multiple records.</p>
+      </div>
+    </div>
+    <!-- </div> -->
+    <!-- <div class="govuk-width-container" style="background-color: #e0f3ff; padding: 1em; margin-top: 1em;">
+  <div class="moj-search">
+    <form action="#" method="post">
+      <div class="govuk-form-group">
+        <label class="govuk-label moj-search__label govuk-!-font-weight-bold" for="search">
+          Find a pupil
+        </label>
+        <div id="search-hint" class="govuk-hint moj-search__hint">
+          You can search by application reference number, parent or child's name or their date of birth
+        </div>
+        <input class="govuk-input moj-search__input" id="search" name="search" type="search" aria-describedby="search-hint">
+      </div>
+      <button type="submit" class="govuk-button moj-search__button" data-module="govuk-button">
+        Search
+      </button>
+    </form>
+  </div> -->
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-width-container  padding: 1em; margin-top: 1em;">
+          <div class="moj-search">
+            <form action="#" method="post">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-weight-bold" for="search">
+                  Find a child
+                </label>
+                <div id="search-hint" class="govuk-hint">
+                  You can search by name, date of birth or National Insurance number
+                </div>
+
+                <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 5px;">
+                  <input class="govuk-input" id="search" name="search" type="search" aria-describedby="search-hint"
+                    style="flex: 1; min-width: 250px; margin-bottom: 0;">
+
+                  <button type="submit" class="govuk-button" data-module="govuk-button" style="margin-bottom: 0;">
+                    Search
+                  </button>
+
+                  <button type="button" class="govuk-button govuk-button--secondary" style="margin-bottom: 0;" onclick="
+        document.getElementById('search').value = '';
+        document.querySelectorAll('.appeal-row').forEach(r => r.style.display = '');
+      ">
+                    Clear search
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div style="padding-bottom: 2em;"></div>
+      </div>
+      <!-- </div> -->
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <div class="govuk-!-padding-bottom-3"></div>
+          <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="col" id="select-all"></th>
+                <th class="govuk-table__header" scope="col">Reference</th>
+                <th class="govuk-table__header" scope="col">Parent or guardian</th>
+                <th class="govuk-table__header" scope="col">Child name</th>
+                <th class="govuk-table__header govuk-table__header--numeric" scope="col">Child date of birth</th>
+                <th class="govuk-table__header" scope="col">Decision</th>
+                <th class="govuk-table__header govuk-table__header--numeric" scope="col">Submission date</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row govuk-table__row--selected">
+                <td class="govuk-table__cell">
+                  <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                    <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua-1">
+                    <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua-1">
+                      <span class="govuk-visually-hidden">Select</span>
+                    </label>
+                  </div>
+                </td>
+                <td class="govuk-table__cell"><a href="../appeal_statuses/eligible" class="govuk-link">44455456</a></td>
+                <td class="govuk-table__cell">Jim Smith</td>
+                <td class="govuk-table__cell">Arthur Smith</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+                <td class="govuk-table__cell">
+                  {{ govukTag({ text: "Finalise application", classes: "govuk-tag--green" }) }}
+                </td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">25 Sep 2023</td>
+              </tr>
+              <tr class="govuk-table__row govuk-table__row--selected">
+                <td class="govuk-table__cell">
+                  <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                    <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua-2">
+                    <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua-2">
+                      <span class="govuk-visually-hidden">Select</span>
+                    </label>
+                  </div>
+                </td>
+                <td class="govuk-table__cell"><a href="../apply/entitled-rachel" class="govuk-link">44455453</a></td>
+                <td class="govuk-table__cell">Eden Tesfay</td>
+                <td class="govuk-table__cell">Rachel Tesfay</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+                <td class="govuk-table__cell">
+                  {{ govukTag({ text: "Finalise application", classes: "govuk-tag--green" }) }}
+                </td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">26 Sep 2023</td>
+              </tr>
+              <tr class="govuk-table__row govuk-table__row--selected">
+                <td class="govuk-table__cell">
+                  <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                    <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua-3">
+                    <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua-3">
+                      <span class="govuk-visually-hidden">Select</span>
+                    </label>
+                  </div>
+                </td>
+                <td class="govuk-table__cell"><a href="../more-johnson1.html" class="govuk-link">44455453</a></td>
+                <td class="govuk-table__cell">Alex Johnson</td>
+                <td class="govuk-table__cell">Emily Johnson</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+                <td class="govuk-table__cell">
+                  {{ govukTag({ text: "More evidence needed", classes: "govuk-tag--yellow" }) }}
+                </td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">27 Sep 2023</td>
+              </tr>
+              <tr class="govuk-table__row govuk-table__row--selected">
+                <td class="govuk-table__cell">
+                  <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                    <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua-4">
+                    <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua-4">
+                      <span class="govuk-visually-hidden">Select</span>
+                    </label>
+                  </div>
+                </td>
+                <td class="govuk-table__cell"><a href="../appeal_statuses/emailed-not-eligible"
+                    class="govuk-link">44455457</a></td>
+                <td class="govuk-table__cell">Trevor Sinclair</td>
+                <td class="govuk-table__cell">Polly Sinclair</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">18 Sep 2017</td>
+                <td class="govuk-table__cell">
+                  {{ govukTag({ text: "Waiting on review", classes: "govuk-tag--orange" }) }}
+                </td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">28 Sep 2023</td>
+              </tr>
+              <tr class="govuk-table__row govuk-table__row--selected">
+                <td class="govuk-table__cell">
+                  <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                    <input type="checkbox" class="govuk-checkboxes__input" id="mountain-ben-nevis-1">
+                    <label class="govuk-label govuk-checkboxes__label" for="mountain-ben-nevis-1">
+                      <span class="govuk-visually-hidden">Select</span>
+                    </label>
+                  </div>
+                </td>
+                <td class="govuk-table__cell"><a href="../appeal_statuses/emailed-not-eligible"
+                    class="govuk-link">55566789</a></td>
+                <td class="govuk-table__cell">Sophie Turner</td>
+                <td class="govuk-table__cell">Lucas Turner</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">12 Mar 2016</td>
+                <td class="govuk-table__cell">
+                  {{ govukTag({ text: "Review overdue", classes: "govuk-tag--pink" }) }}
+                </td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">30 Sep 2023</td>
+              </tr>
+              <tr class="govuk-table__row govuk-table__row--selected">
+                <td class="govuk-table__cell">
+                  <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                    <input type="checkbox" class="govuk-checkboxes__input" id="mountain-ben-nevis-2">
+                    <label class="govuk-label govuk-checkboxes__label" for="mountain-ben-nevis-2">
+                      <span class="govuk-visually-hidden">Select</span>
+                    </label>
+                  </div>
+                </td>
+                <td class="govuk-table__cell"><a href="../appeal_statuses/emailed-not-eligible"
+                    class="govuk-link">55566789</a></td>
+                <td class="govuk-table__cell">James Carter</td>
+                <td class="govuk-table__cell">Olivia Carter</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">12 Mar 2016</td>
+                <td class="govuk-table__cell">
+                  {{ govukTag({ text: "Declined", classes: "govuk-tag--red" }) }}
+                </td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">30 Sep 2023</td>
+              </tr>
+            </tbody>
+          </table>
+          {% endblock %}
+
+          {% block scripts %}
+          {{ super() }}
+          <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              var table = document.querySelector('.govuk-table tbody');
+              var count = table ? table.querySelectorAll('tr').length : 0;
+              document.getElementById('notifications').textContent = count;
+            });
+          </script>
+          {% endblock %}

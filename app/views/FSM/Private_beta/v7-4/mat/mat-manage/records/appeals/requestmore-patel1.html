@@ -1,0 +1,52 @@
+{% extends "layouts/FSM/v7-3/layout-dfe-matnav.html" %}
+{% set parentName = "Rajesh Patel" %}
+{% set pageName="Request more evidence from " ~ parentName %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+
+            <div class="govuk-form-group">
+                <h2 class="govuk-label-wrapper">
+                    <label class="govuk-label govuk-label--m" for="more-detail">
+                        Give a reason for requesting more evidence
+                    </label>
+                </h2>
+                <div id="more-detail-hint" class="govuk-hint">
+                    Do not include personal or financial information, like the Child names, parents National Insurance number or
+                    statement details.
+                </div>
+                <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"
+                    aria-describedby="more-detail-hint"></textarea>
+            </div>
+    </div>
+</div>
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+
+{{ govukButton({
+text: "Submit request",
+href: 'eligibility-requested'
+}) }}
+
+{{ govukButton({
+text: "Return to record",
+classes: "govuk-button--secondary",
+href: './not-eligible-mat-patel1.html'
+}) }}
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+</div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}

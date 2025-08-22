@@ -1,0 +1,41 @@
+{% extends "layouts/FSM/v7-3/layout-dfe-lanav.html" %}
+{% set pageName= "Archived records" %}
+{% set recordsCount = 3 %}
+{% set pageDescription %} View and manage the details of archived records.
+{% endset %}
+{% block content %}
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+    </div>
+  </div>
+            <div class="govuk-!-padding-bottom-10"></div>
+
+  <div class="govuk-grid-row govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-table-wrapper">
+        <table class="govuk-table">
+        <!-- <caption class="govuk-table__caption padding-bottom-5">
+            List of {{ recordsCount }} archived records
+        </caption> -->
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Reference</th>
+              <th scope="col" class="govuk-table__header">Child name</th>
+              <th scope="col" class="govuk-table__header">Child date of birth</th>
+              <th scope="col" class="govuk-table__header">School</th>
+              <th scope="col" class="govuk-table__header">Parent name</th>
+              <th scope="col" class="govuk-table__header">Archived date</th>
+              <th scope="col" class="govuk-table__header">Deletion date</th>
+              <th scope="col" class="govuk-table__header">Action</th>
+              <th scope="col" class="govuk-table__header"></th>
+            </tr>
+          </thead>
+          {% include "_includes/la/archivedRecords.html" %}
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

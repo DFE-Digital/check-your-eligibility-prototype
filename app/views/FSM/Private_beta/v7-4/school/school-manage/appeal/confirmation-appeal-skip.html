@@ -1,0 +1,102 @@
+{% extends "layouts/FSM/v7/layout-dfe-schoolnav.html" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-width-container"></div><span class="govuk-caption-l">Appeal a free school meals outcome</span>
+
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+        aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Submitted
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+            Children's details added
+          </h3>
+          <p class="govuk-body">You've successfully added details to Eden Tesfays free school meals application record.
+          </p>
+        </div>
+      </div>
+
+      <h1 class="govuk-heading-m">Application record for Eden Tesfay</h1>
+    </div>
+  </div>
+</div>
+<div class="govuk-width-container">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" style="width: 40%;">Child</th>
+          <th class="govuk-table__header" style="width: 40%;">Reference</th>
+          <th class="govuk-table__header" style="width: 20%;"></th>
+
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" style="width: 40%;">Samual Tesfay</td>
+          <td class="govuk-table__cell" style="width: 40%;">44455453</td>
+          <td class="govuk-table__cell" style="width: 20%;"></td>
+
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Thomas Tesfay</td>
+          <td class="govuk-table__cell">44455454</td>
+          <td class="govuk-table__cell"></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Rachel Tesfay</td>
+          <td class="govuk-table__cell">44455455</td>
+          <td class="govuk-table__cell"><span class="moj-badge moj-badge--large moj-badge--green">New record</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+<div class="govuk-!-padding-bottom-3"></div>
+
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m">What to do next</h2>
+
+       <p><a href="" class="govuk-link" onclick="printPage()">Print this page</a> for the parents to keep.</p>
+
+        <p>You’ll need to upload or send supporting evidence to your local authority for review in support of the appeal. You can upload the evidence through the Process appeals page at any point. </p>
+        <p>Go to <a target="_blank" href="guidance"> guidance for reviewing evidence</a> to see a complete list of
+        acceptable evidence types.</p>
+
+        <p>After you have uploaded or sent the evidence to the local authority go to <a href="../checker/process-appeals"
+        class="govuk-link">Process appeals</a> and follow the instructions. </p>
+      </div>
+    </div>
+  </div>
+
+
+<div class="govuk-!-padding-bottom-3"></div>
+<p><a href="../checker/dashboard">Return to dashboard</a></p>
+</div>
+</div>
+{% endblock %}
+
+
+{% block pageScripts %}
+
+<script>
+  function printPage() {
+      window.print();  // This will open the print dialog
+  }
+  </script>
+
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}

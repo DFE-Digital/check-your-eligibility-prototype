@@ -1,0 +1,123 @@
+{% extends "layouts/FSM/v7-1/layout-dfe.html" %}
+{% set pageName="Check your answers before sending the application" %}
+{%block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="/v7-1-success-none" method="post" novalidate>
+      <div class="govuk-heading-l">
+        {{pageName}}
+      </div>
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">Child 1</h2>
+          <ul class="govuk-summary-card__actions">
+            <li class="govuk-summary-card__action">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">Child details</span></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row"></div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Name</dt>
+              <dd class="govuk-summary-list__value">
+                {{ data["ch1-first-name"] }} {{ data["ch1-surname"] or "Rachel Tesfay" }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">School</dt>
+              <dd class="govuk-summary-list__value">
+                {{ data["school-picker"] or "Kingsway Park school" }}
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Date of birth</dt>
+              <dd class="govuk-summary-list__value">
+                {{ data["ch1-day"] }} {{ data["ch1-month"] }} {{ data["ch1-year"] or "1 January 2010"
+                }}
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+<!--
+       <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Evidence</h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">Child details</span></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row"></div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Evidence 1</dt>
+            <dd class="govuk-summary-list__value">
+              <a href="#">eden_tesfay_ucstatement.pdf</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Evidence 2</dt>
+            <dd class="govuk-summary-list__value">
+             <a href="#">edentesfay_bank_statement.doc</a>
+            </dd>
+          </div>
+        </dl>
+      </div> -->
+
+      <hr class="govuk-section-break govuk-section-break--m">
+
+      <p class="govuk-heading-m">Confirm details and send to the school</p>
+
+      <p class="govuk-body">
+        By sending this information to the school you confirm that to the best
+        of your knowledge, it is correct.
+      </p>
+
+      <p class="govuk-body">
+        We'll use the email address from your GOV.UK One Login to confirm we've received your application, and to send
+        you additional progress updates.</p>
+      <input type="hidden" name="answers-checked" value="true" />
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+          <!-- <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h2 class="govuk-heading-m">
+              Have you finished adding ?
+            </h2>
+          </legend> -->
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-visually-hidden">Warning</span>
+              You cannot add more children to this application after you have sent it.
+            </strong>
+          </div>
+
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                I have finished adding children or evidence to this application
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+      text: "Confirm details and send application",
+      type: "submit"
+      }) }}
+    </form>
+  </div>
+</div>
+{% endblock %}
