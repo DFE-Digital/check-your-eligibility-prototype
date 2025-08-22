@@ -1,9 +1,24 @@
 {% extends "layouts/FSM/research/LA/layout-dfe-lanav-noback.html" %}
-{%set childName = "Emily Johnson" %}
-{% set Date = "22 Sep 2025" %}
+{% set childName = "Mia Evans" %}
+{% set childId = "44455455" %}
+{% set childDOB = "22 Aug 2019" %}
+{% set schoolName = "Riverside Academy" %}
+{% set schoolAddress = "Manchester, M25 1QA" %}
+{% set parentDOB = "18 Sept 1978" %}
+{% set parentName = "Rachel Evans" %}
+{% set email = "rachel.evans@example.com" %}
+{% set nationalInsurance = "AB123456C" %}
+{% set statusTagClass = {
+  "Needs evidence": "govuk-tag--yellow",
+  "Approved": "govuk-tag--green",
+  "Declined": "govuk-tag--red",
+  "Pending": "govuk-tag--yellow"
+}[applicationStatus] or "govuk-tag--yellow" %}
+{% set applicationStatus = "Needs evidence" %}
+{% set parentId = "44455455A" %}
+{% set childName = "Mia Evans" %}
+{% set Date = "28 Aug 2025" %}
 {% set pageName = "Archive this record?" %}
-
-
 {% set pageName=" " ~ childName ~ " " %}
 
 {% block content %}

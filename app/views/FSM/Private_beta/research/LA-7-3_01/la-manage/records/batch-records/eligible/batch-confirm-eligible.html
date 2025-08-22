@@ -1,0 +1,126 @@
+{% extends "layouts/FSM/research/LA/layout-dfe-lanav.html" %}
+{% set pageName="Multiple applications created" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      {% set html %}
+      <h3 class="govuk-notification-banner__heading">
+        3 eligible applications for free school meals created.
+      </h3>
+      <!-- <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          The applications are not complete until the school has added them into their own MIS</a>.
+        </strong>
+      </div> -->
+
+      <!-- <p class="govuk-body">You can view the selecting the reference link.</p> -->
+
+      {% endset %}
+
+      {{ govukNotificationBanner({
+      html: html,
+      titleText: "Multiple applications created",
+      titleHeadingLevel: "1",
+      type: "success"
+      }) }}
+      <!--<h1 class="govuk-heading-xl">Children details added</h1>-->
+      <!-- <h3>Application record for {{ data["parent-firstname"] or "Eden" }} {{ data["parent-surname"] or "Tesfay" }}</h3> -->
+    </div>
+  </div>
+  <div class="govuk-width-container">
+    <div class="govuk-grid-column-full-width">
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Parent name</th>
+            <th scope="col" class="govuk-table__header">Parent <br>date of birth</th>
+            <th scope="col" class="govuk-table__header">National Insurance</th>
+            <th scope="col" class="govuk-table__header">Child name</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--date">Child date <br>of birth</th>
+           <th scope="col" class="govuk-table__header">School</th>
+            <th scope="col" class="govuk-table__header">Email</th>
+            <th scope="col" class="govuk-table__header">Reference</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Alex Johnson</td>
+            <td class="govuk-table__cell govuk-table__cell--date">15 Mar 1980</td>
+            <td class="govuk-table__cell">AB123456C</td>
+            <td class="govuk-table__cell">Emily Johnson</td>
+            <td class="govuk-table__cell govuk-table__cell--date">20 Sep 2012</td>
+            <td class="govuk-table__cell">Hilltop Elementary</td>
+            <td class="govuk-table__cell">alexjohnson@example.com</td>
+            <td class="govuk-table__cell govuk-link"><b><a href="../../entitled-records/entitled-alexjohnson.html">44455453</a></b></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Eden Tesfay</td>
+            <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
+            <td class="govuk-table__cell">NW653213B</td>
+            <td class="govuk-table__cell">Rachel Tesfay</td>
+            <td class="govuk-table__cell govuk-table__cell--date">15 Feb 2015</td>
+            <td class="govuk-table__cell">Springfield High School</td>
+            <td class="govuk-table__cell">edentesfay@icloud.com</td>
+            <td class="govuk-table__cell govuk-link"><b><a href="../../entitled-records/entitled-eden1.html">44455454</a></b></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Eden Tesfay</td>
+            <td class="govuk-table__cell govuk-table__cell--date">27 April 1973</td>
+            <td class="govuk-table__cell">NW653213B</td>
+            <td class="govuk-table__cell">Michael Tesfay</td>
+            <td class="govuk-table__cell govuk-table__cell--date">10 Oct 2010</td>
+            <td class="govuk-table__cell">Hilltop Academy</td>
+            <td class="govuk-table__cell">edentesfay@icloud.com</td>
+            <td class="govuk-table__cell govuk-link"><b><a href="">44455455</a></b></td>
+          </tr>
+        </tbody>
+
+        <!-- {% if data['child-2'] == 'Yes' %} {% endif %}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"> {{ data["ch1-first-name"] or "Samuel" }} {{ data["surname"]or data["parent-surname"] }}</td>
+          <td class="govuk-table__cell">44455454</td>
+        </tr> -->
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="govuk-!-padding-bottom-3"></div>
+
+  <!-- <p><a href="../../dashboard" class="govuk-link">Return to dashboard</p> -->
+</div>
+</div>
+</div>
+</div>
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+
+</div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+
+<script>
+  function printPage() {
+    window.print();  // This will open the print dialog
+  }
+</script>
+
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}

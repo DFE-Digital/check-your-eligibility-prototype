@@ -1,7 +1,16 @@
 {% extends "layouts/FSM/research/LA/layout-dfe-lanav.html" %}
-{% set childName = "Emily Johnson" %}
-{% set pageName = "Archive this record?" %}
-{% set pageName=" Archive record for " ~ childName ~ ""%}
+{% set childName = "Mia Evans" %}
+{% set childId = "44455455" %}
+{% set childDOB = "22 Aug 2019" %}
+{% set schoolName = "Riverside Academy" %}
+{% set schoolAddress = "Manchester, M25 1QA" %}
+{% set parentDOB = "18 Sept 1978" %}
+{% set parentName = "Rachel Evans" %}
+{% set email = "rachel.evans@example.com" %}
+{% set nationalInsurance = "AB123456C" %}
+{% set parentId = "44455455A" %}
+{% set childName = "Mia Evans" %}{% set pageName = "Restore this record?" %}
+{% set pageName=" Restore record for " ~ childName ~ ""%}
 {% block content %}
 
 <div class="govuk-width-container">
@@ -19,22 +28,22 @@
   <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
   <strong class="govuk-warning-text__text">
     <span class="govuk-visually-hidden">Warning</span>
-    Your organisation will no longer be able to edit this record if you archive it.
+    Your organisation will be able to edit this record if you restore it.
   </strong>
 </div>
 <div class="govuk-!-padding-bottom-3"></div>
 
 
   {{ govukButton({
-    text: "Archive now",
-    href: 'archive-confirmed-johnson1'
+    text: "Restore now",
+    href: '/FSM/Private_beta/v7-3/LA/la-manage/decision/pending-list-restored.html'
   }) }}
 
 
 {{ govukButton({
-text: "Cancel archive",
+text: "Return to archived records",
 classes: "govuk-button--secondary",
-href: 'pending_johnson1'
+href: '/FSM/Private_beta/v7-3/LA/la-manage/report/archive.html'
 }) }}
 
 <div class="govuk-!-padding-bottom-3"></div>
