@@ -1,10 +1,25 @@
 {% extends "layouts/FSM/v7-3/layout-dfe-lanav.html" %}
-{% set restoredName = "Mia Evans" %}
+{% if query.restored == "true" and query.child %}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+  data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title">Record restored</h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      The record for {{ query.child }} has been restored.
+    </p>
+    {# Optional: show the reference too #}
+    {% if query.ref %}<p>Reference: {{ query.ref }}</p>{% endif %}
+  </div>
+</div>
+{% endif %}
 {% set pageName="pending applications" %}
 
 {% block content %}
 
-<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+  aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
     <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
       Record restored
@@ -12,32 +27,34 @@
   </div>
   <div class="govuk-notification-banner__content">
     <h3 class="govuk-notification-banner__heading">
-      The record for <strong>{{restoredName}}</strong> has been restored.
+      The record for <strong>{{ query.child or 'Mia Evans' }}</strong> has been restored.
     </h3>
     <!-- <p class="govuk-body">Contact <a class="govuk-notification-banner__link" href="#">example@department.gov.uk</a> if you think there’s a problem.</p> -->
   </div>
 </div>
 
 <div class="govuk-grid-row">
-   <div class="govuk-grid-column-full">
+  <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-l" id="pending-applications-heading">
       <span id="row-count"></span> {{ pageName }}
     </h1>
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-      var table = document.querySelector('.govuk-table tbody');
-      var rowCount = table ? table.querySelectorAll('tr').length : 0;
-      document.getElementById('row-count').textContent = rowCount + 15;
+      document.addEventListener('DOMContentLoaded', function () {
+        var table = document.querySelector('.govuk-table tbody');
+        var rowCount = table ? table.querySelectorAll('tr').length : 0;
+        document.getElementById('row-count').textContent = rowCount + 15;
       });
     </script>
 
-      <!-- <span id="notifications" class="moj-notification-badge" style="white-space: nowrap; margin-left: 15px;">36</span> -->
+
+
+    <!-- <span id="notifications" class="moj-notification-badge" style="white-space: nowrap; margin-left: 15px;">36</span> -->
 
     </h1>
     <div class="govuk-grid-column-two-thirds govuk-!-padding-0 padding: 1em; margin-top: 1em;">
 
-    <!-- style="background-color: #e0f3ff; padding: 1em; margin-top: 1em;"> -->
-<hr class="govuk-section-break govuk-section-break--s govuk-section-break">
+      <!-- style="background-color: #e0f3ff; padding: 1em; margin-top: 1em;"> -->
+      <hr class="govuk-section-break govuk-section-break--s govuk-section-break">
 
       <div class="moj-search">
 
@@ -51,7 +68,8 @@
             <div id="search-hint" class="govuk-hint moj-search__hint ">
               You can search by name, date of birth or National Insurance number
             </div>
-            <input class="govuk-input moj-search__input " id="search" name="search" type="search" aria-describedby="search-hint">
+            <input class="govuk-input moj-search__input " id="search" name="search" type="search"
+              aria-describedby="search-hint">
           </div>
           <button type="submit" class="govuk-button moj-search__button " data-module="govuk-button">
             Search
@@ -61,196 +79,226 @@
     </div>
 
   </div>
-     <div class="govuk-grid-column-full">
+  <div class="govuk-grid-column-full">
 
-  <div style="padding-bottom: 2em;"></div>
+    <div style="padding-bottom: 2em;"></div>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
-<hr class="govuk-section-break govuk-section-break--s govuk-section-break">
-    <div class="govuk-grid-column-full govuk-!-padding-0 padding: 1em; margin-top: 1em;">
+        <hr class="govuk-section-break govuk-section-break--s govuk-section-break">
+        <div class="govuk-grid-column-full govuk-!-padding-0 padding: 1em; margin-top: 1em;">
 
 
-<table class="govuk-table" data-module="moj-sortable-table">
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th class="govuk-table__header" scope="col" aria-sort="ascending">Reference</th>
-      <th class="govuk-table__header" scope="col" aria-sort="none">Parent or guardian</th>
-      <th class="govuk-table__header" scope="col" aria-sort="none">Parent or guardian date of birth</th>
-      <th class="govuk-table__header" scope="col" aria-sort="none">Child name</th>
-      <th class="govuk-table__header" scope="col" aria-sort="none">School</th>
-      <th class="govuk-table__header" scope="col" aria-sort="none">Date submitted</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><a href="../decision/records/pending_johnson1.html" class="govuk-link">44455452</a></td>
-      <td class="govuk-table__cell">Alex Johnson <br></td>
-      <td class="govuk-table__cell">15 Mar 1980</td>
-      <td class="govuk-table__cell">Emily Johnson</td>
-      <td class="govuk-table__cell">Hilltop Elementary</td>
-      <td class="govuk-table__cell">20 Sep 2012</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><a href="../decision/records/pending_sutton1.html" class="govuk-link">44455453</a></td>
-      <td class="govuk-table__cell">Warren Sutton</td>
-      <td class="govuk-table__cell">18 Sep 1978</td>
-      <td class="govuk-table__cell">Lisa Sutton</td>
-      <td class="govuk-table__cell">St Mary's</td>
-      <td class="govuk-table__cell">25 Sep 2023</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
-      <td class="govuk-table__cell">Alan Jones</td>
-      <td class="govuk-table__cell">18 Sep 1978</td>
-      <td class="govuk-table__cell">Jack Jones</td>
-      <td class="govuk-table__cell">Greenfield Primary</td>
-      <td class="govuk-table__cell">25 Sep 2023</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
-      <td class="govuk-table__cell">Rachel Evans</td>
-      <td class="govuk-table__cell">22 Jul 1982</td>
-      <td class="govuk-table__cell">Mia Evans</td>
-      <td class="govuk-table__cell">Riverside Academy</td>
-      <td class="govuk-table__cell">25 Sep 2023</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
-      <td class="govuk-table__cell">Jennifer Langley</td>
-      <td class="govuk-table__cell">18 Sep 1978</td>
-      <td class="govuk-table__cell">Tilly Langley</td>
-      <td class="govuk-table__cell">Oakwood School</td>
-      <td class="govuk-table__cell">25 Sep 2023</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
-      <td class="govuk-table__cell">Susan Francis</td>
-      <td class="govuk-table__cell">18 Sep 1978</td>
-      <td class="govuk-table__cell">Noah Francis</td>
-      <td class="govuk-table__cell">Maple Grove</td>
-      <td class="govuk-table__cell">25 Sep 2023</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
-      <td class="govuk-table__cell">John Smith</td>
-      <td class="govuk-table__cell">18 Sep 1978</td>
-      <td class="govuk-table__cell">Jo Smith</td>
-      <td class="govuk-table__cell">Sunnydale High</td>
-      <td class="govuk-table__cell">25 Sep 2023</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><a href="../records/new-appeal" class="govuk-link">44455453</a></td>
-      <td class="govuk-table__cell">Rachel Evans</td>
-      <td class="govuk-table__cell">22 Jul 1982</td>
-      <td class="govuk-table__cell">Mia Evans</td>
-      <td class="govuk-table__cell">Willow Park</td>
-      <td class="govuk-table__cell">25 Sep 2023</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
-      <td class="govuk-table__cell">Warren Sutton</td>
-      <td class="govuk-table__cell">18 Sep 1978</td>
-      <td class="govuk-table__cell">Lisa Sutton</td>
-      <td class="govuk-table__cell">Elm Tree Primary</td>
-      <td class="govuk-table__cell">25 Sep 2023</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
-      <td class="govuk-table__cell">Alan Jones</td>
-      <td class="govuk-table__cell">18 Sep 1978</td>
-      <td class="govuk-table__cell">Jack Jones</td>
-      <td class="govuk-table__cell">Cedar Hill School</td>
-      <td class="govuk-table__cell">25 Sep 2023</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
-      <td class="govuk-table__cell">Rachel Evans</td>
-      <td class="govuk-table__cell">22 Jul 1982</td>
-      <td class="govuk-table__cell">Mia Evans</td>
-      <td class="govuk-table__cell">Lakeside Academy</td>
-      <td class="govuk-table__cell">25 Sep 2023</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
-      <td class="govuk-table__cell">Jennifer Langley</td>
-      <td class="govuk-table__cell">18 Sep 1978</td>
-      <td class="govuk-table__cell">Tilly Langley</td>
-      <td class="govuk-table__cell">Birchwood School</td>
-      <td class="govuk-table__cell">25 Sep 2023</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
-      <td class="govuk-table__cell">Susan Francis</td>
-      <td class="govuk-table__cell">18 Sep 1978</td>
-      <td class="govuk-table__cell">Noah Francis</td>
-      <td class="govuk-table__cell">Redwood Academy</td>
-      <td class="govuk-table__cell">25 Sep 2023</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455453</a></td>
-      <td class="govuk-table__cell">John Smith</td>
-      <td class="govuk-table__cell">18 Sep 1978</td>
-      <td class="govuk-table__cell">Jo Smith</td>
-      <td class="govuk-table__cell">Pinecrest High</td>
-      <td class="govuk-table__cell">25 Sep 2023</td>
-    </tr>
-  </tbody>
-</table>
+          <table class="govuk-table" data-module="moj-sortable-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="col" aria-sort="ascending">Reference</th>
+                <th class="govuk-table__header" scope="col" aria-sort="none">Parent or guardian</th>
+                <th class="govuk-table__header" scope="col" aria-sort="none">Parent or guardian date of birth</th>
+                <th class="govuk-table__header" scope="col" aria-sort="none">Child name</th>
+                <th class="govuk-table__header" scope="col" aria-sort="none">School</th>
+                <th class="govuk-table__header" scope="col" aria-sort="none">Date submitted</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="../decision/records/pending_johnson1.html"
+                    class="govuk-link">44455452</a></td>
+                <td class="govuk-table__cell">Alex Johnson <br></td>
+                <td class="govuk-table__cell">15 Mar 1980</td>
+                <td class="govuk-table__cell">Emily Johnson</td>
+                <td class="govuk-table__cell">Hilltop Elementary</td>
+                <td class="govuk-table__cell">02 Jun 2025</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="../decision/records/pending_sutton1.html"
+                    class="govuk-link">44455453</a></td>
+                <td class="govuk-table__cell">Warren Sutton</td>
+                <td class="govuk-table__cell">18 Sep 1978</td>
+                <td class="govuk-table__cell">Lisa Sutton</td>
+                <td class="govuk-table__cell">St Mary's</td>
+                <td class="govuk-table__cell">15 Jun 2025</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="../decision/records/pending_Jones1.html"
+                    class="govuk-link">44455454</a></td>
+                <td class="govuk-table__cell">Alan Jones</td>
+                <td class="govuk-table__cell">18 Sep 1978</td>
+                <td class="govuk-table__cell">Jack Jones</td>
+                <td class="govuk-table__cell">Greenfield Primary</td>
+                <td class="govuk-table__cell">31 May 2025</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="../decision/records/pending_evans1.html"
+                    class="govuk-link">44455455</a></td>
+                <td class="govuk-table__cell">Rachel Evans</td>
+                <td class="govuk-table__cell">22 Jul 1982</td>
+                <td class="govuk-table__cell">Mia Evans</td>
+                <td class="govuk-table__cell">Riverside Academy</td>
+                <td class="govuk-table__cell">07 Jul 2025</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="../decision/records/pending_Langley1.html"
+                    class="govuk-link">44455456</a></td>
+                <td class="govuk-table__cell">Jennifer Langley</td>
+                <td class="govuk-table__cell">09 Nov 1979</td>
+                <td class="govuk-table__cell">Tilly Langley</td>
+                <td class="govuk-table__cell">Oakwood School</td>
+                <td class="govuk-table__cell">22 Aug 2025</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="../decision/records/pending_Francis1.html"
+                    class="govuk-link">44455457</a></td>
+                <td class="govuk-table__cell">Susan Francis</td>
+                <td class="govuk-table__cell">27 May 1981</td>
+                <td class="govuk-table__cell">Noah Francis</td>
+                <td class="govuk-table__cell">Maple Grove</td>
+                <td class="govuk-table__cell">15 Jun 2025</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455458</a></td>
+                <td class="govuk-table__cell">John Smith</td>
+                <td class="govuk-table__cell">14 Dec 1977</td>
+                <td class="govuk-table__cell">Jo-anna Smith</td>
+                <td class="govuk-table__cell">Sunnydale High</td>
+                <td class="govuk-table__cell">02 Jun 2025</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="../records/new-appeal" class="govuk-link">44455459</a></td>
+                <td class="govuk-table__cell">Helen Carter</td>
+                <td class="govuk-table__cell">23 Feb 1984</td>
+                <td class="govuk-table__cell">Mia Evans</td>
+                <td class="govuk-table__cell">Willow Park</td>
+                <td class="govuk-table__cell">07 Jul 2025</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455460</a></td>
+                <td class="govuk-table__cell">Martin Lee</td>
+                <td class="govuk-table__cell">02 Apr 1976</td>
+                <td class="govuk-table__cell">Lisa Sutton</td>
+                <td class="govuk-table__cell">Elm Tree Primary</td>
+                <td class="govuk-table__cell">31 Aug 2025</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455461</a></td>
+                <td class="govuk-table__cell">Alan Green</td>
+                <td class="govuk-table__cell">30 Aug 1974</td>
+                <td class="govuk-table__cell">Jack Jones</td>
+                <td class="govuk-table__cell">Cedar Hill School</td>
+                <td class="govuk-table__cell">22 Aug 2025</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455462</a></td>
+                <td class="govuk-table__cell">Sandeep Patel</td>
+                <td class="govuk-table__cell">19 Mar 1977</td>
+                <td class="govuk-table__cell">Mia Evans</td>
+                <td class="govuk-table__cell">Lakeside Academy</td>
+                <td class="govuk-table__cell">31 May 2025</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455463</a></td>
+                <td class="govuk-table__cell">Jennifer Brown</td>
+                <td class="govuk-table__cell">05 Oct 1978</td>
+                <td class="govuk-table__cell">Tilly Langley</td>
+                <td class="govuk-table__cell">Birchwood School</td>
+                <td class="govuk-table__cell">15 Jun 2025</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455464</a></td>
+                <td class="govuk-table__cell">Laila Ahmed</td>
+                <td class="govuk-table__cell">21 Jun 1980</td>
+                <td class="govuk-table__cell">Noah Francis</td>
+                <td class="govuk-table__cell">Redwood Academy</td>
+                <td class="govuk-table__cell">31 Aug 2025</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455465</a></td>
+                <td class="govuk-table__cell">Peter Grant</td>
+                <td class="govuk-table__cell">22 Jul 1982</td>
+                <td class="govuk-table__cell">Jo Smith</td>
+                <td class="govuk-table__cell">Pinecrest High</td>
+                <td class="govuk-table__cell">07 Jul 2025</td>
+              </tr>
+            </tbody>
+          </table>
 
-<!-------pagination------->
-<div style="display: flex; justify-content: center; width: 100%;">
-  <div style="width: fit-content;">
-{% from "govuk/components/pagination/macro.njk" import govukPagination %}
+          <!-------pagination------->
+          <div style="display: flex; justify-content: center; width: 100%;">
+            <div style="width: fit-content;">
+              {% from "govuk/components/pagination/macro.njk" import govukPagination %}
 
-{{ govukPagination({
-  previous: {
-    href: "#"
-  },
-  next: {
-    href: "#"
-  },
-  items: [
-    {
-      number: 1,
-      href: "#"
-    },
-    {
-      ellipsis: true
-    },
-    {
-      number: 6,
-      href: "#"
-    },
-    {
-      number: 7,
-      current: true,
-      href: "#"
-    },
-    {
-      number: 8,
-      href: "#"
-    },
-    {
-      ellipsis: true
-    },
-    {
-      number: 12,
-      href: "#"
-    }
-  ]
-}) }}
-  </div>
-</div>
+              {{ govukPagination({
+
+              next: {
+              href: "#"
+              },
+              items: [
+              {
+              number: 1,
+              current: true,
+              href: "#"
+              },
+              {
+              ellipsis: true
+              },
+              {
+              number: 6,
+              href: "#"
+              },
+              {
+              number: 7,
+              href: "#"
+              },
+              {
+              number: 8,
+              href: "#"
+              },
+              {
+              ellipsis: true
+              },
+              {
+              number: 12,
+              href: "#"
+              }
+              ]
+              }) }}
+            </div>
+          </div>
 
 
 
 
 
 
+        </div>
+
+
+      </div>
     </div>
 
+    {% endblock %}
 
-  </div>
-</div>
+    {% block scripts %}
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+  const table = document.querySelector('.govuk-table');
+  const tbody = table.querySelector('tbody');
+  const referenceHeader = table.querySelector('th[scope="col"]');
 
+  referenceHeader.style.cursor = 'pointer';
+  referenceHeader.title = 'Sort by Reference';
+
+  referenceHeader.addEventListener('click', function () {
+    let rows = Array.from(tbody.querySelectorAll('tr'));
+    let sortedRows = rows.sort((a, b) => {
+      let refA = parseInt(a.cells[0].textContent.trim(), 10);
+      let refB = parseInt(b.cells[0].textContent.trim(), 10);
+      return refA - refB;
+    });
+    // Remove existing rows
+    while (tbody.firstChild) tbody.removeChild(tbody.firstChild);
+    // Append sorted rows
+    sortedRows.forEach(row => tbody.appendChild(row));
+  });
+});
+</script>
 {% endblock %}
