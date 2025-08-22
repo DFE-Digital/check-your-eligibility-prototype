@@ -237,3 +237,30 @@
 </div>
 
 {% endblock %}
+
+
+    {% block scripts %}
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+  const table = document.querySelector('.govuk-table');
+  const tbody = table.querySelector('tbody');
+  const referenceHeader = table.querySelector('th[scope="col"]');
+
+  referenceHeader.style.cursor = 'pointer';
+  referenceHeader.title = 'Sort by Reference';
+
+  referenceHeader.addEventListener('click', function () {
+    let rows = Array.from(tbody.querySelectorAll('tr'));
+    let sortedRows = rows.sort((a, b) => {
+      let refA = parseInt(a.cells[0].textContent.trim(), 10);
+      let refB = parseInt(b.cells[0].textContent.trim(), 10);
+      return refA - refB;
+    });
+    // Remove existing rows
+    while (tbody.firstChild) tbody.removeChild(tbody.firstChild);
+    // Append sorted rows
+    sortedRows.forEach(row => tbody.appendChild(row));
+  });
+});
+</script>
+{% endblock %}
