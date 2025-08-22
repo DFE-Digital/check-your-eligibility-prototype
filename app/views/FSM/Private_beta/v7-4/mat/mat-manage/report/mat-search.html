@@ -1,0 +1,331 @@
+{% extends "layouts/FSM/v7-3/layout-dfe-matnav.html" %}
+{% set pageName= "Search all records" %}
+{% set version = "v7-3" %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">
+      {{pageName}}
+    </h1>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <!-- <p class="govuk-body">Search for a child or parent by name, date of birth, or reference number.</p> -->
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          {% include "FSM/Private_beta/v7-3/_includes/filter-panel-mat.html" %}
+        </div>
+        <div class="govuk-grid-column-three-quarters">
+          <!--Export and search results section-->
+          <div class="moj-filter-layout__content">
+            <div class="moj-scrollable-pane">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Export and search results section-->
+    </div>
+    <div class="moj-filter-layout__content">
+      <div class="moj-scrollable-pane">
+        <div class="govuk-page-header" style="display: flex; align-items: center; justify-content: space-between;">
+          <h2 class="govuk-heading-m" style="margin: 0;">
+            Showing <span id="resultCount">0</span> of <span id="totalResults">36</span> results
+          </h2>
+          <button id="export" class="govuk-button govuk-button--secondary">Export as CSV</button>
+        </div>
+        <!--Table-->
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <div class="moj-filter-layout">
+              <div class="moj-filter-layout__content">
+                <div class="moj-scrollable-pane">
+                  <div class="moj-scrollable-pane">
+                    <table class="govuk-table" id="resultsTable" data-module="moj-sortable-table">
+                      <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+
+                          <!--sort function -->
+                          <th scope="col" class="govuk-table__header" aria-sort="ascending">Reference</th>
+                          <th scope="col" class="govuk-table__header" aria-sort="none">Parent name</th>
+                          <!-- <th scope="col" class="govuk-table__header" aria-sort="none">Parents National Insurance number</th> -->
+                          <!-- <th scope="col" class="govuk-table__header" aria-sort="none">Parents dob</th> -->
+                          <th scope="col" class="govuk-table__header" aria-sort="none">Child name</th>
+                          <th scope="col" class="govuk-table__header" aria-sort="none">Child dob</th>
+                          <th scope="col" class="govuk-table__header" aria-sort="none">Academy</th>
+                          <th scope="col" class="govuk-table__header" aria-sort="none">Date submitted</th>
+                          <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
+                          <!-- <th scope="col" class="govuk-table__header" aria-sort="none">Action</th>  -->
+                        </tr>
+                      </thead>
+                      {% include "_includes/mat/mat-table-rows.html" %}
+
+                  </div>
+                </div>
+                </table>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: center; margin-top: 20px;">
+              {{ govukPagination({
+              previous: {
+              href: "#"
+              },
+              next: {
+              href: "#"
+              },
+              items: [
+              {
+              number: 1,
+              href: "#"
+              },
+              {
+              number: 2,
+              current: true,
+              href: "#"
+              },
+              {
+              number: 3,
+              href: "#"
+              }
+              ]
+              }) }}
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ROW 3-->
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter">
+            <form action="eligible-list" method="post" novalidate>
+          </div>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<!--END SHOW/HIDE -->
+
+</div>
+
+<!-- END CARD // SEARCH BAR -->
+
+</div>
+</div>
+
+<!--FOOTER -->
+
+
+{% endblock %}
+
+
+
+<!--FILTER TOGGLE-->
+<!---------------SCRIPTS------------------>
+{% block pageScripts %}
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const ROWS_PER_PAGE = 10;
+
+  const table = document.getElementById('resultsTable');
+  const resultCountEl = document.getElementById('resultCount');
+
+  const keywordsInput = document.getElementById('keywords');
+  const applyBtn = document.getElementById('applyFilter');
+  const clearLink = document.querySelector('.govuk-link--no-visited-state');
+
+  // Optional “selected filters” tags
+  const tagEls = {
+    kwWrap: document.getElementById('selected-keyword-container'),
+    kwList: document.getElementById('selected-keyword'),
+    dateWrap: document.getElementById('selected-submission-date-range-container'),
+    dateList: document.getElementById('selected-submission-date-range'),
+    stWrap: document.getElementById('selected-status-container'),
+    stList: document.getElementById('selected-status')
+  };
+
+  // Map between your checkbox values and the words in your <tr data-status="...">
+  // Checkboxes use codes like "status-Not-Entitled"; rows use words like "Not eligible".
+  const statusCodeToWord = {
+    'status-Entitled': 'Eligible',
+    'status-Not-Entitled': 'Not eligible',
+    'status-Evidence-needed': 'Evidence needed',
+    'status-Sent-for-review': 'Sent for review',
+    'status-Reviewed-not-eligible': 'Not eligible after review',
+    'status-Reviewed-eligible': 'Eligible after review',
+    'status-FSM-confirmed': 'FSM confirmed',
+    'status-Archive': 'Archived'
+  };
+
+  let currentPage = 1;
+
+  function getFilters() {
+    const keyword = (keywordsInput?.value || '').trim().toLowerCase();
+    const dateRadio = document.querySelector('input[name="date range"]:checked');
+    const dateRange = dateRadio ? dateRadio.value : null;
+    const statuses = Array.from(document.querySelectorAll('input[name="status"]:checked')).map(el => el.value);
+    return { keyword, dateRange, statuses };
+  }
+
+  // Accept either data-submitted or data-submission-date
+  function getRowISODate(row) {
+    return row.getAttribute('data-submitted') || row.getAttribute('data-submission-date') || '';
+  }
+
+  // Compare against "last N days"
+  function inDateRange(iso, range) {
+    if (!range) return true;
+    if (!iso) return false;
+    const days = {
+      'Last month': 30,
+      'Last 3 months': 90,
+      'Last 6 months': 180,
+      'Last 12 months': 365
+    }[range];
+    if (!days) return true;
+
+    const submitted = new Date(iso + 'T00:00:00');
+    const today = new Date();
+    const cutoff = new Date(today.getFullYear(), today.getMonth(), today.getDate() - days);
+    return submitted >= cutoff;
+  }
+
+  function rowMatches(row, { keyword, dateRange, statuses }) {
+    // Keyword: search whole row (th + tds)
+    if (keyword) {
+      const text = row.innerText.toLowerCase();
+      if (!text.includes(keyword)) return false;
+    }
+
+    // Status: your rows store the human word in data-status
+    if (statuses.length) {
+      const rowWord = (row.getAttribute('data-status') || '').trim();
+      // If any checked status code maps to this row's word, it matches
+      const matchStatus = statuses.some(code => statusCodeToWord[code] === rowWord);
+      if (!matchStatus) return false;
+    }
+
+    // Date
+    const iso = getRowISODate(row);
+    if (!inDateRange(iso, dateRange)) return false;
+
+    return true;
+  }
+
+  function updateTags({ keyword, dateRange, statuses }) {
+    // Reset
+    if (tagEls.kwList) tagEls.kwList.innerHTML = '';
+    if (tagEls.dateList) tagEls.dateList.innerHTML = '';
+    if (tagEls.stList) tagEls.stList.innerHTML = '';
+    if (tagEls.kwWrap) tagEls.kwWrap.style.display = 'none';
+    if (tagEls.dateWrap) tagEls.dateWrap.style.display = 'none';
+    if (tagEls.stWrap) tagEls.stWrap.style.display = 'none';
+
+    // Keyword tag
+    if (keyword && tagEls.kwList && tagEls.kwWrap) {
+      tagEls.kwList.innerHTML = `<li><button class="app-filter__tag" type="button" onclick="__clearTag__('keyword')">
+        <span class="govuk-visually-hidden">Remove this filter</span>${keyword}</button></li>`;
+      tagEls.kwWrap.style.display = 'block';
+    }
+    // Date tag
+    if (dateRange && tagEls.dateList && tagEls.dateWrap) {
+      tagEls.dateList.innerHTML = `<li><button class="app-filter__tag" type="button" onclick="__clearTag__('date')">
+        <span class="govuk-visually-hidden">Remove this filter</span>${dateRange}</button></li>`;
+      tagEls.dateWrap.style.display = 'block';
+    }
+    // Status tags (show the human words to match your UI)
+    if (statuses.length && tagEls.stList && tagEls.stWrap) {
+      statuses.forEach(code => {
+        const label = statusCodeToWord[code] || code;
+        tagEls.stList.innerHTML += `<li><button class="app-filter__tag" type="button" onclick="__clearTag__('${code}')">
+          <span class="govuk-visually-hidden">Remove this filter</span>${label}</button></li>`;
+      });
+      tagEls.stWrap.style.display = 'block';
+    }
+  }
+
+  function render({ page = 1 } = {}) {
+    const rows = Array.from(table.querySelectorAll('tbody tr'));
+    const filters = getFilters();
+    updateTags(filters);
+
+    // Filter rows
+    const matched = [];
+    rows.forEach(r => {
+      if (rowMatches(r, filters)) {
+        r.classList.add('matches-filters');
+        matched.push(r);
+      } else {
+        r.classList.remove('matches-filters');
+      }
+    });
+
+    // Pagination
+    currentPage = page;
+    const start = (currentPage - 1) * ROWS_PER_PAGE;
+    const end = currentPage * ROWS_PER_PAGE;
+
+    matched.forEach((row, idx) => {
+      row.style.display = (idx >= start && idx < end) ? '' : 'none';
+    });
+    rows.filter(r => !matched.includes(r)).forEach(r => r.style.display = 'none');
+
+    // Count = visible on this page (keeps your current behaviour)
+    const visibleNow = Math.min(ROWS_PER_PAGE, Math.max(0, matched.length - start));
+    if (resultCountEl) resultCountEl.textContent = visibleNow;
+
+    // Hook GOV.UK pagination buttons (if present)
+    document.querySelectorAll('.govuk-pagination__item a').forEach(link => {
+      link.onclick = (e) => {
+        e.preventDefault();
+        const n = parseInt(link.textContent.trim(), 10);
+        if (!Number.isNaN(n)) render({ page: n });
+      };
+    });
+  }
+
+  // Expose helper for the little “selected filter” tags
+  window.__clearTag__ = (which) => {
+    if (which === 'keyword') {
+      if (keywordsInput) keywordsInput.value = '';
+    } else if (which === 'date') {
+      document.querySelectorAll('input[name="date range"]').forEach(r => r.checked = false);
+    } else {
+      // it's a status code like "status-Not-Entitled"
+      const cb = document.querySelector(`input[name="status"][value="${which}"]`);
+      if (cb) cb.checked = false;
+    }
+    render({ page: 1 });
+  };
+
+  function clearAll() {
+    if (keywordsInput) keywordsInput.value = '';
+    document.querySelectorAll('input[name="date range"]').forEach(r => r.checked = false);
+    document.querySelectorAll('input[name="status"]').forEach(c => c.checked = false);
+    render({ page: 1 });
+  }
+
+  applyBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    render({ page: 1 });
+  });
+
+  clearLink?.addEventListener('click', (e) => {
+    e.preventDefault();
+    clearAll();
+  });
+
+  // Initial
+  render({ page: 1 });
+});
+</script>
+{% endblock %}

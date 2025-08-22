@@ -1,0 +1,292 @@
+{% extends "layouts/FSM/v7-3/layout-dfe-lanav.html" %}
+
+{% block backLink %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% set SiblingAdded %}
+<h3 class="govuk-notification-banner__heading">
+  Sibling added to record
+</h3>
+<p class="govuk-body">
+  You have added sibling details to this record. This will show immediately.
+</p>
+<p>Your reference is 1234567</p>
+{% endset %}
+
+<!-- The content between the heading 1 and the buttons -->
+
+{% block content %}
+
+
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+  <div class="govuk-grid-column-full">
+
+    {% if data['sibling-added'] =="true" %}
+    <div class="moj-banner moj-banner--success" role="region" aria-label="Success">
+
+      <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false"
+        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+        <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
+      </svg>
+
+      <div class="moj-banner__message">
+        <h2 class="govuk-heading-l">Sibling added to record</h2>
+
+        <p class="govuk-body">
+          You have added sibling details to this record. This will show immediately.
+        </p>
+
+
+
+      </div>
+
+    </div>
+    {% endif %}
+
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <h1 class="govuk-heading-l" style="margin: 1;">Eden Tesfay</h1>
+      <div style="display: flex;">
+        <div class="govuk-button-group" style="display: flex;">
+          {{ govukButton({
+          text: "Approve application",
+          href:'../records/pending-approve-areyousure'
+          }) }}
+          {{ govukButton({
+          text: "Decline application",
+          classes: 'govuk-button--secondary',
+          href:'../records/pending-decline-areyousure'
+          }) }}
+        </div>
+      </div>
+    </div>
+
+    <!---
+<h1 class="govuk-heading-l"> Pupil name </h1>
+  <div style="float: right;">
+  <div class="govuk-button-group">
+
+  {{ govukButton({
+    text: "Approve application"
+  }) }}
+
+  {{ govukButton({
+    text: "Decline application",
+    classes: "govuk-button--secondary"
+  }) }}
+</div>
+</div>
+<!---
+{{ mojButtonMenu({
+  heading: {
+    text: 'Pupil name'
+  },
+  items: [{
+    text: "Primary action",
+    href: "#"
+  }, {
+    text: "Second action",
+    href: "#",
+    classes: "govuk-button--secondary"
+  }]
+}) }}-->
+
+    <!---
+{{ mojPageHeaderActions({
+  heading: {
+    text: 'Pupil name'
+  },
+  items: [
+
+    {
+      text: 'Approve application',
+      href:'../records/pending-approve-areyousure'
+
+    },
+
+    {
+      text: 'Decline application',
+      classes: 'govuk-button--secondary',
+      href:'../records/pending-decline-areyousure'
+    }
+  ]
+}) }}
+-->
+
+  </div>
+
+</div>
+
+{{ govukSummaryList({
+card: {
+title: {
+text: "Child details"
+},
+actions: {
+items: [
+
+
+{
+href: "#",
+text: "Change",
+visuallyHiddenText: "from application"
+}
+]
+}
+},
+rows: [
+
+
+
+{
+key: {
+text: "Reference"
+},
+value: {
+html: "44455453"
+}
+},
+
+{
+key: {
+text: "Full name"
+},
+value: {
+html: "Sam Tesfay"
+}
+},
+
+{
+key: {
+text: "Date of birth"
+},
+value: {
+html: "18 November 2018"
+}
+}
+
+
+
+
+]
+}) }}
+
+<!-- PERSON -->
+
+
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{{ govukSummaryList({
+card: {
+title: {
+text: "Parent or guardian"
+},
+actions: {
+items: [
+{
+href: "#",
+text: "Change",
+visuallyHiddenText: "of University of Gloucestershire"
+}
+
+]
+}
+},
+rows: [
+
+
+
+{
+key: {
+text: "Full name"
+},
+value: {
+html: "Eden Tesfay"
+}
+},
+
+{
+key: {
+text: "Relationship"
+},
+value: {
+html: "Parent"
+}
+},
+
+
+
+{
+key: {
+text: "Date of birth"
+},
+value: {
+html: "1 September 1988"
+}
+},
+{
+key: {
+text: "National Insurance number"
+},
+value: {
+html: "098765432211"
+}
+},
+{
+key: {
+text: "Email address"
+},
+
+
+value: {
+html: "edamcheese@hotmail.com"
+},
+
+
+value: {
+html: "edamcheese@hotmail.com"
+}
+},
+{
+key: {
+text: "Supporting evidence"
+},
+value: {
+html: '
+<a href="evidence.html" target="_blank" rel="noopener noreferrer">file.001.jpg</a><br>
+<a href="evidence.html" target="_blank" rel="noopener noreferrer">file.002.jpg</a>
+' | safe
+}
+}
+
+
+
+]
+}) }}
+
+
+{% endblock %}
+
+{% block buttons %}
+{% endblock %}
+
+{% block pageScripts %}
+<!-- Add any javascript files here. Include javascript files only on the pages
+that need them. Excessive javascript files loaded on other pages may slow down
+the response times of the prototype. -->
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+<script>
+  new MOJFrontend.ButtonMenu({
+    container: $(".moj-button-menu"),
+    mq: "(min-width: 200em)",
+    buttonText: "Task actions",
+    buttonClasses:
+      "",
+  });
+</script>
+
+{% endblock %}

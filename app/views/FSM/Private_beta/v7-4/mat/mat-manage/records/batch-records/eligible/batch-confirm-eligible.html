@@ -1,0 +1,170 @@
+{% extends "layouts/FSM/v7-3/layout-dfe-matnav-noback.html" %}
+{% set caption="Multiple applications created" %}
+{% set pageName="7 eligible applications for free school meals created" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      {% set html %}
+      <h3 class="govuk-notification-banner__heading">
+        {{pageName}}
+      </h3>
+
+      {% endset %}
+
+       {{ govukNotificationBanner({
+      html: html,
+      titleText: "Multiple applications created",
+      titleHeadingLevel: "1",
+      type: "success"
+      }) }}
+    <h1 class="govuk-heading-m">Applications created</h1>
+    </div>
+
+  </div>
+
+</div>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Reference</th>
+            <th scope="col" class="govuk-table__header">Parent name</th>
+            <!-- <th scope="col" class="govuk-table__header">Parent date of birth</th> -->
+            <th scope="col" class="govuk-table__header">National Insurance number</th>
+            <th scope="col" class="govuk-table__header">Child name</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--date">Child date of birth</th>
+            <th scope="col" class="govuk-table__header">Academy</th>
+            <th scope="col" class="govuk-table__header">Email</th>
+            <th scope="col" class="govuk-table__header">End date</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-link"><b><a href="../../applications/eligible-mat-johnson1.html">44455453</a></b></td>
+            <td class="govuk-table__cell">Alex Johnson</td>
+            <!-- <td class="govuk-table__cell govuk-table__cell--date">15 Mar 1980</td> -->
+            <td class="govuk-table__cell">AB123456C</td>
+            <td class="govuk-table__cell">Emily Johnson</td>
+            <td class="govuk-table__cell govuk-table__cell--date">20 Sep 2012</td>
+            <td class="govuk-table__cell">Hilltop Elementary</td>
+            <td class="govuk-table__cell">alexjohnson@example.com</td>
+            <td class="govuk-table__cell govuk-table__cell--date">31 Aug 2026</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-link"><b><a href="../../applications/eligible-mat-brown1.html">44455454</a></b></td>
+            <td class="govuk-table__cell">Jessica Brown</td>
+            <!-- <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td> -->
+            <td class="govuk-table__cell">NW653213B</td>
+            <td class="govuk-table__cell">Rachel Brown</td>
+            <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
+            <td class="govuk-table__cell">Springfield Academy</td>
+            <td class="govuk-table__cell">superbrown1982@gmail.com</td>
+            <td class="govuk-table__cell govuk-table__cell--date">31 Aug 2026</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-link"><b><a href="../../applications/eligible-mat-smith1.html">44455455</a></b></td>
+            <td class="govuk-table__cell">Sophie Smith</td>
+            <!-- <td class="govuk-table__cell govuk-table__cell--date">27 Apr 1973</td> -->
+            <td class="govuk-table__cell">NW653213B</td>
+            <td class="govuk-table__cell">Olivia Smith</td>
+            <td class="govuk-table__cell govuk-table__cell--date">15 Feb 2015</td>
+            <td class="govuk-table__cell">Greenwood Academy</td>
+            <td class="govuk-table__cell">ss1234email@systemsahead.com</td>
+            <td class="govuk-table__cell govuk-table__cell--date">31 Aug 2026</td>
+
+            <tr class="govuk-table__row">
+  <td class="govuk-table__cell govuk-link"><b><a href="../../applications/eligible-mat-green1.html">44455456</a></b></td>
+  <td class="govuk-table__cell">Michael Green</td>
+  <!-- <td class="govuk-table__cell govuk-table__cell--date">02 Jun 1981</td> -->
+  <td class="govuk-table__cell">JK987654A</td>
+  <td class="govuk-table__cell">Lucas Green</td>
+  <td class="govuk-table__cell govuk-table__cell--date">03 May 2013</td>
+  <td class="govuk-table__cell">Riverside School</td>
+  <td class="govuk-table__cell">michael.green@email.com</td>
+  <td class="govuk-table__cell govuk-table__cell--date">31 Aug 2026</td>
+</tr>
+
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell govuk-link"><b><a href="../../applications/eligible-mat-patel1.html">44455457</a></b></td>
+  <td class="govuk-table__cell">Priya Patel</td>
+  <!-- <td class="govuk-table__cell govuk-table__cell--date">10 Dec 1982</td> -->
+  <td class="govuk-table__cell">PP112233D</td>
+  <td class="govuk-table__cell">Asha Patel</td>
+  <td class="govuk-table__cell govuk-table__cell--date">09 Nov 2014</td>
+  <td class="govuk-table__cell">Elmwood Primary</td>
+  <td class="govuk-table__cell">priya.patel@email.com</td>
+  <td class="govuk-table__cell govuk-table__cell--date">31 Aug 2026</td>
+</tr>
+
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell govuk-link"><b><a href="../../applications/eligible-mat-lee1.html">44455458</a></b></td>
+  <td class="govuk-table__cell">Sarah Lee</td>
+  <!-- <td class="govuk-table__cell govuk-table__cell--date">22 Jan 1979</td> -->
+  <td class="govuk-table__cell">SL445566E</td>
+  <td class="govuk-table__cell">Ethan Lee</td>
+  <td class="govuk-table__cell govuk-table__cell--date">22 Jul 2011</td>
+  <td class="govuk-table__cell">Maple Grove School</td>
+  <td class="govuk-table__cell">sarah.lee@email.com</td>
+  <td class="govuk-table__cell govuk-table__cell--date">31 Aug 2026</td>
+</tr>
+
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell govuk-link"><b><a href="../../applications/eligible-mat-wright1.html">44455459</a></b></td>
+  <td class="govuk-table__cell">David Wright</td>
+  <!-- <td class="govuk-table__cell govuk-table__cell--date">14 Apr 1975</td> -->
+  <td class="govuk-table__cell">DW778899F</td>
+  <td class="govuk-table__cell">Mia Wright</td>
+  <td class="govuk-table__cell govuk-table__cell--date">30 Dec 2016</td>
+  <td class="govuk-table__cell">Sunnydale Academy</td>
+  <td class="govuk-table__cell">david.wright@email.com</td>
+  <td class="govuk-table__cell govuk-table__cell--date">31 Aug 2026</td>
+</tr>
+
+
+          </tr>
+        </tbody>
+
+        <!-- {% if data['child-2'] == 'Yes' %} {% endif %}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"> {{ data["ch1-first-name"] or "Samuel" }} {{ data["surname"]or data["parent-surname"] }}</td>
+          <td class="govuk-table__cell">44455454</td>
+        </tr> -->
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="govuk-!-padding-bottom-3"></div>
+
+  <!-- <p><a href="../../dashboard" class="govuk-link">Return to dashboard</p> -->
+</div>
+</div>
+</div>
+</div>
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+
+</div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+
+<script>
+  function printPage() {
+    window.print();  // This will open the print dialog
+  }
+</script>
+
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}

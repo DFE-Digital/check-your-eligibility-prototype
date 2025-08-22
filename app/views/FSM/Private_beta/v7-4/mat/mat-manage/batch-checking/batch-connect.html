@@ -1,0 +1,33 @@
+{% extends "layouts/FSM/v7-3/layout-dfe-matnav.html" %}
+
+{% set pageName="Connect to your school management information system (MIS)" %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+    <p class="govuk-body">Connect to your MIS and fetch the data for running a batch check.</p>
+    </p>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+    text: "Connect to your MIS",
+    classes: "govuk-button--primary",
+    href: '../batch-checking/school-mis/select-mis'
+    }) }}
+
+
+    {% endblock %}
+    {% block pageScripts %}
+    <!-- Add any javascript files here.
+
+Include javascript files only on the pages
+that need them. Excessive javascript files loaded on other pages may slow down
+the response times of the prototype. -->
+
+
+    {% endblock %}
