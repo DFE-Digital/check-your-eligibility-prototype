@@ -1,0 +1,73 @@
+{% extends "layouts/FSM/v7-3/layout-dfe-lanav-noback.html" %}
+{% set childName = "Mia Evans" %}
+{% set childId = "44455455" %}
+{% set childDOB = "22 Aug 2019" %}
+{% set schoolName = "Riverside Academy" %}
+{% set schoolAddress = "Manchester, M25 1QA" %}
+{% set parentDOB = "18 Sept 1978" %}
+{% set parentName = "Rachel Evans" %}
+{% set email = "rachel.evans@example.com" %}
+{% set nationalInsurance = "AB123456C" %}
+{% set statusTagClass = {
+  "Needs evidence": "govuk-tag--yellow",
+  "Approved": "govuk-tag--green",
+  "Declined": "govuk-tag--red",
+  "Pending": "govuk-tag--yellow"
+}[applicationStatus] or "govuk-tag--yellow" %}
+{% set applicationStatus = "Needs evidence" %}
+{% set parentId = "44455455A" %}
+{% set childName = "Mia Evans" %}
+{% set Date = "28 Aug 2025" %}
+{% set pageName = "Archive this record?" %}
+{% set pageName=" " ~ childName ~ " " %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+   <div class="govuk-panel govuk-panel--confirmation">
+              <h1 class="govuk-panel__title">
+               Record for {{pageName}} has been archived
+              </h1>
+
+              <div class="govuk-panel__body">
+                Application reference number<br> 44455453
+              </div>
+              <br>
+                <div class="govuk-panel__body">
+                Archived on {{Date}}
+              </div>
+            </div>
+
+            <!-- <h1 class="govuk-heading-l">{{pageName}}</h1> -->
+
+
+  </div>
+</div>
+<p class="govuk-body">
+  Your organisation can no longer edit this record.
+  Go to <a href="/FSM/Private_beta/v7-3/LA/la-manage/report/archive.html">archived records</a> to view or restore this record.
+</p>
+<div class="govuk-!-padding-bottom-3"></div>
+
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+<strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    This record will be deleted after 6 months if it is not restored.
+  </strong>
+</div>
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+</div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<!-- <script type="text/javascript" src="/public/javascripts/moj/all.js"></script> -->
+{% endblock %}

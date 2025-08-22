@@ -7,7 +7,6 @@
 {# 3 #}
 {% block header %}
 <!--Correct version--->
-
 {{ header({
     "showNav": "true",
     "showSearch": "false",
@@ -33,66 +32,93 @@
       }
   ],
     "primaryLinks": [
-    {
-      "url"  : "/FSM/Private_beta/v7-3/LA/dashboard",
-      "label" : "Dashboard"
-    }, {
-      "url"  : "#",
-      "label" : " "
-    }, {
-      "url"  : "#",
-      "label" : "  "
-    }, {
-      "url"  : "#",
-      "label" : " "
-    }
     ]
   })
 }}
 
-<div class="app-phase-banner__wrapper">
+<!--
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{{ govukServiceNavigation({
+  serviceName: "Manage eligibility for free school meal support",
+  navigation: [
+  {
+      href: "/FSM/v7-3/LA/dashboard",
+      text: "Dashboard"
+    },
+    {
+      href: " ",
+      text: " "
+    },
+    {
+      href: " ",
+      text: ""
+    },
+    {
+      href: " ",
+      text: "   "
+    },
+    {
+      href: "/ ",
+      text: " "
+    },
+    {
+      href: "#",
+      text: ""
+    }
+  ]
+}) }} -->
+
+<!-- <div class="app-phase-banner__wrapper govuk-!-margin-top-2"> -->
+<!--
+  <div class="govuk-phase-banner app-phase-banner govuk-width-container">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+
+</div> -->
+
+{% endblock %}
+
+{% block beforeContent %}
 
   <div class="govuk-phase-banner app-phase-banner govuk-width-container">
     <p class="govuk-phase-banner__content">
       <strong class="govuk-tag govuk-phase-banner__content__tag">
         beta
       </strong>
-
       <span class="govuk-phase-banner__text">
-        This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.</span>
+        This is a new service - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
     </p>
-    </div>
-
-<div>
-
-</div>
-</div>
-
+  </div>
 
 {% endblock %}
-
-
-
-
 
 {% block footer %}
  {{ govukFooter({
    meta: {
      items: [
        {
-         href: "../privacy",
+         href: "/General/v3/privacy",
          text: "Privacy policy"
        },
        {
-        href: "../accessibility",
+        href: "/General/v3/accessibility",
         text: "Accessibility"
       },
        {
-         href: "../cookies",
+         href: "/General/v3/cookies",
          text: "Cookies"
        },
        {
-        href: "../contact",
+        href: "/General/v3/contact",
         text: "Contact us"
       },
       {
@@ -124,6 +150,12 @@
     deleteUrl: "/ajax-delete",
   });
 }
-
 </script>
+
+{{ super() }}
+<script>
+ var AppFrontend = {}
+</script>
+<script src="/public/javascripts/components/filter-toggle-button.js"></script>
+
 {% endblock %}
