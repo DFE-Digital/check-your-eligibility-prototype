@@ -7,8 +7,7 @@
     },
     "dob": "2017-01-12",
     "school": {
-      "name": "Brookside Academy",
-      "urn": "12345678"
+
     },
     "status": {
       "yes": "Entitled"
@@ -28,8 +27,7 @@
     },
     "dob": "2017-01-10",
      "school": {
-      "name": "Brookside Academy",
-      "urn": "12345678"
+
     },
     "status": {
       "yes": "Not Entitled"
