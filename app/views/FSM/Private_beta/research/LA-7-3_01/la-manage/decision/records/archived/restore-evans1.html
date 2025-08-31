@@ -34,16 +34,19 @@
 <div class="govuk-!-padding-bottom-3"></div>
 
 
-  {{ govukButton({
-    text: "Restore now",
-    href: '/FSM/Private_beta/v7-3/LA/la-manage/decision/pending-list-restored.html'
-  }) }}
+{{ govukButton({
+  text: "Restore now",
+  href: '../../../decision/pending-list-restored?restored=true&child='
+        ~ ('Mia Evans' | urlencode)
+        ~ '&slug=evans1&ref=44455455'
+}) }}
+
 
 
 {{ govukButton({
 text: "Return to archived records",
 classes: "govuk-button--secondary",
-href: '/FSM/Private_beta/v7-3/LA/la-manage/report/archive.html'
+href: '../report/archive.html'
 }) }}
 
 <div class="govuk-!-padding-bottom-3"></div>

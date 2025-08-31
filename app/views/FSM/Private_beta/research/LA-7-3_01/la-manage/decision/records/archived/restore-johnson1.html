@@ -1,5 +1,8 @@
 {% extends "layouts/FSM/research/LA/layout-dfe-lanav.html" %}
 {% set childName = "Emily Johnson" %}
+{% set slug = "johnson1" %}
+{% set ref = "44455452" %}
+
 {% set pageName = "Restore this record?" %}
 {% set pageName=" Restore record for " ~ childName ~ ""%}
 {% block content %}
@@ -25,10 +28,12 @@
 <div class="govuk-!-padding-bottom-3"></div>
 
 
-  {{ govukButton({
-    text: "Restore now",
-    href: '/FSM/Private_beta/v7-3/LA/la-manage/decision/pending-list-restored.html'
-  }) }}
+{{ govukButton({
+  text: "Restore now",
+  href: '../../../decision/pending-list-restored.html?restored=1&child='
+        ~ ('Emily Johnson' | urlencode)
+        ~ '&slug=johnson1&ref=44455452'
+}) }}
 
 
 {{ govukButton({

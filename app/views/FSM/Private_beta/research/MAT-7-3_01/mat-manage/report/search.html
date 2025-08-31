@@ -3,15 +3,6 @@
 {% set version = "v7-3" %}
 {% block content %}
 
-<p>Loaded applications: {{ data.applications.length }}</p>
-<p>Test academy: {{ data.applications[0].academy }}</p>
-<p>Total applications: {{ data.applications.length }}</p>
-<p>First name of first child: {{ data.applications[0].childDetails.firstName }}</p>
-
-
-<p style="color: red">🔍 This is the correct template</p>
-<p>🧪 First record name passed into Nunjucks: {{ data.applications[0].childDetails.firstName }}</p>
-
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">

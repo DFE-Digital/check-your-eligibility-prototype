@@ -1,37 +1,31 @@
 {% extends "layouts/FSM/research/LA/layout-dfe-lanav.html" %}
-{% if query.restored == "true" and query.child %}
-<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-  data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title">Record restored</h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <p class="govuk-notification-banner__heading">
-      The record for {{ query.child }} has been restored.
-    </p>
-    {# Optional: show the reference too #}
-    {% if query.ref %}<p>Reference: {{ query.ref }}</p>{% endif %}
-  </div>
-</div>
-{% endif %}
+
 {% set pageName="pending applications" %}
 
 {% block content %}
 
-<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-  aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      Record restored
-    </h2>
+  {% if query.restored and query.child %}
+  <div class="govuk-notification-banner govuk-notification-banner--success"
+       role="alert" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title">Record restored</h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+      <p class="govuk-notification-banner__heading">
+        The record for
+        {% if query.slug %}
+          <a class="govuk-notification-banner__link" href="records/pending_{{ query.slug }}">
+            {{ query.child }}
+          </a>
+        {% else %}
+          <strong>{{ query.child }}</strong>
+        {% endif %}
+        has been restored.
+      </p>
+      {% if query.ref %}<p>Reference: {{ query.ref }}</p>{% endif %}
+    </div>
   </div>
-  <div class="govuk-notification-banner__content">
-    <h3 class="govuk-notification-banner__heading">
-      The record for <strong>{{ query.child or 'Mia Evans' }}</strong> has been restored.
-    </h3>
-    <!-- <p class="govuk-body">Contact <a class="govuk-notification-banner__link" href="#">example@department.gov.uk</a> if you think there’s a problem.</p> -->
-  </div>
-</div>
+  {% endif %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
@@ -46,14 +40,23 @@
       });
     </script>
 
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Record restored
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      The record for Emily Johnson has been restored.
+    </h3>
+  </div>
+</div>
 
-
-    <!-- <span id="notifications" class="moj-notification-badge" style="white-space: nowrap; margin-left: 15px;">36</span> -->
 
     </h1>
     <div class="govuk-grid-column-two-thirds govuk-!-padding-0 padding: 1em; margin-top: 1em;">
 
-      <!-- style="background-color: #e0f3ff; padding: 1em; margin-top: 1em;"> -->
       <hr class="govuk-section-break govuk-section-break--s govuk-section-break">
 
       <div class="moj-search">
