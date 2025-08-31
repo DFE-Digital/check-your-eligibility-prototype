@@ -41,6 +41,7 @@
                         <th scope="col" class="govuk-table__header" aria-sort="ascending">Reference</th>
                         <th scope="col" class="govuk-table__header" aria-sort="none">Child name</th>
                         <th scope="col" class="govuk-table__header" aria-sort="none">Child dob</th>
+                        <!-- <th scope="col" class="govuk-table__header" aria-sort="none">School</th> -->
                         <th scope="col" class="govuk-table__header" aria-sort="none">Date submitted</th>
                         <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
                         <th scope="col" class="govuk-table__header" aria-sort="none">Eligible from</th>
@@ -57,7 +58,9 @@
                         <td class="govuk-table__cell">{{ application.childDetails.firstName }} {{
                           application.childDetails.lastName }}</td>
                         <td class="govuk-table__cell">{{ application.dob | govukDate("truncate") }}</td>
-                        <!-- <td class="govuk-table__cell">{{ application.school.name }}</td> -->
+<!-- <td class="govuk-table__cell">
+  {{ application.school.name | default("Oakhill Primary school") }}
+</td> -->
                         <td class="govuk-table__cell">{{ application.submission.date | govukDate("truncate") }}</td>
                         <td class="govuk-table__cell">
                           {% if application.status.yes == "Entitled" %}
@@ -325,7 +328,6 @@
     console.log('updating selected filters');
 
   }
-
 
 
   const applyFilterButton = document.getElementById('applyFilter');

@@ -1,6 +1,5 @@
-{% extends "layouts/FSM/v7-3/layout-dfe-matnav.html" %}
+{% extends "layouts/FSM/research/LA/layout-dfe-lanav.html" %}
 {% set pageName= "Search all records" %}
-{% set version = "v7-3" %}
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -10,13 +9,20 @@
     </h1>
   </div>
 </div>
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <!-- <p class="govuk-body">Search for a child or parent by name, date of birth, or reference number.</p> -->
-  </div>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      {% include "FSM/Private_beta/v7-3/_includes/filter-panel-mat.html" %}
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          {% include "_includes/la/filter-panel-la.html" %}
+        </div>
+        <div class="govuk-grid-column-three-quarters">
+          <!--Export and search results section-->
+          <div class="moj-filter-layout__content">
+            <div class="moj-scrollable-pane">
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!--Export and search results section-->
     </div>
@@ -24,7 +30,7 @@
       <div class="moj-scrollable-pane">
         <div class="govuk-page-header" style="display: flex; align-items: center; justify-content: space-between;">
           <h2 class="govuk-heading-m" style="margin: 0;">
-            Showing <span id="resultCount">0</span> results
+            Showing <span id="resultCount">0</span> of <span id="totalResults">36</span> results
           </h2>
           <button id="export" class="govuk-button govuk-button--secondary">Export as CSV</button>
         </div>
@@ -50,88 +56,44 @@
                           <th scope="col" class="govuk-table__header" aria-sort="none">Academy</th>
                           <th scope="col" class="govuk-table__header" aria-sort="none">Date submitted</th>
                           <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
-                          <!-- <th scope="col" class="govuk-table__header" aria-sort="none">Eligible from</th> -->
+                          <!-- <th scope="col" class="govuk-table__header" aria-sort="none">Action</th>  -->
                         </tr>
-                      </thead>
-{% include "_includes/mat/mat-table-rows.html" %}
+                    </thead>
+
+{% include "_includes/la/la-table-rows-research.html" %}
 
 
-                      <!-- <tbody class="govuk-table__body">
-                        {% for application in data.applications %}
-                        <tr class="govuk-table__row matches-filters"
-                          data-status="{% if application.status.yes == 'Entitled' %}status-Entitled{% elif application.status.yes == 'Not Entitled' %}status-Not-Entitled{% elif application.status.yes == 'Sent for review' %}status-Sent-for-review{% elif application.status.yes == 'Evidence needed' %}status-Evidence-needed{% endif %}">
-
-                          <th scope="row" class="govuk-table__header">
-                            <a href="{{ application.href }}">{{ application.id }}</a></th>
-                          <td class="govuk-table__cell">{{ application.childDetails.firstName }} {{
-                            application.childDetails.lastName }}</td>
-                          <td class="govuk-table__cell">{{ application.dob | govukDate("truncate") }}</td>
-
-                          <td class="govuk-table__cell">{{ application.academy or "Not provided"}}</td>
-
-                          <td class="govuk-table__cell">{{ application.submission.date | govukDate("truncate") }}</td>
-                          <td class="govuk-table__cell">
-                            {% if application.status.yes == "Entitled" %}
-                            <strong class="govuk-tag govuk-tag--green">{{ application.status.yes }}</strong>
-                            {% elif application.status.yes == "Sent for review" %}
-                            <strong class="govuk-tag govuk-tag--blue">{{ application.status.yes }}</strong>
-                            {% elif application.status.yes == "Evidence needed" %}
-                            <strong class="govuk-tag govuk-tag--turquoise">{{ application.status.yes }}</strong>
-                            {% elif application.status.yes == "Not Entitled" %}
-                            <strong class="govuk-tag govuk-tag--red">{{ application.status.yes }}</strong>
-                            {% else %}
-                            <strong class="govuk-tag">{{ application.status.yes }}</strong>
-                            {% endif %}
-                          </td>
-                          <td class="govuk-table__cell">{{ application.eligible.date | govukDate("truncate") }}</td>
-
-                        </tr>
-                        {% endfor %}
-                      </tbody>
-                  </div>
                 </div>
-                </table>
               </div>
+              </table>
             </div>
-            <div style="display: flex; justify-content: center; margin-top: 20px;">
-              {{ govukPagination({
-              previous: {
-              href: "#"
-              },
-              next: {
-              href: "#"
-              },
-              items: [
-              {
-              number: 1,
-              href: "#"
-              },
-              {
-              number: 2,
-              current: true,
-              href: "#"
-              },
-              {
-              number: 3,
-              href: "#"
-              }
-              ]
-              }) }}
-            </div>
-
           </div>
-        </div>
 
-        <!-- ROW 3-->
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-one-quarter">
-            <form action="eligible-list" method="post" novalidate>
+          <div style="display: flex; justify-content: center; margin-top: 20px;">
+           {{ govukPagination({ attributes:
+            { id: "pager" },
+            items: [
+            { number: 1, current: false, href: "#" },
+            { number: 2, current: false, href: "#" },
+            { number: 3, current: false, href: "#" }
+            ]
+          }) }}
           </div>
-          </fieldset>
+
         </div>
+      </div>
+
+      <!-- ROW 3-->
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          <form action="eligible-list" method="post" novalidate>
+        </div>
+        </fieldset>
       </div>
     </div>
   </div>
+
+</div>
 </div>
 </div>
 </div>
@@ -149,11 +111,6 @@
 
 {% endblock %}
 
-
-
-<!--FILTER TOGGLE-->
-<!---------------SCRIPTS------------------>
-
 {% block pageScripts %}
 
 
@@ -162,8 +119,8 @@
 
 <script>
 
-  //pagination
-  function paginate(page = 1) {
+ //pagination
+ function paginate(page = 1) {
     const visibleRows = Array.from(document.querySelectorAll('#resultsTable tbody tr.matches-filters'));
     console.log(visibleRows);
     // Limit the number of visible rows to a maximum of 10
@@ -171,7 +128,7 @@
       let count = 0;
       visibleRows.forEach(row => {
         row.style.display = 'none'; // Hide all rows initially
-        const min = 0 + ((page - 1) * 10);
+        const min = 0 + ((page-1) * 10);
         const max = 10 * page;
         if (count > min && count < max) {
           row.style.display = 'table-row'; // Hide excess rows
@@ -181,8 +138,6 @@
       });
     }
   }
-
-
 
   const updateVisibleRowCount = () => {
     const table = document.getElementById("resultsTable");
@@ -249,7 +204,7 @@
         .replace('status-', '')
         .replace(/-/g, ' ')
         .replace('Sent-for-review', 'Sent for review');
-      const selected_status = `<li><button class="app-filter__tag" onclick="clearFilters('${status}')"><span class="govuk-visually-hidden">Remove this filter</span>
+        const selected_status = `<li><button class="app-filter__tag" onclick="clearFilters('${status}')"><span class="govuk-visually-hidden">Remove this filter</span>
       ${status_label}</button></li>`;
       document.getElementById('selected-status').innerHTML += selected_status;
       document.getElementById('selected-status-container').style.display = 'block';
@@ -327,7 +282,7 @@
       else {
         document.getElementById('keywords').value = '';
       }
-    }
+   }
     // Refresh results after clearing filters
     filterResults();
   }
@@ -349,63 +304,5 @@
   document.querySelector('.govuk-link--no-visited-state').addEventListener('click', clearFilters);
 </script>
 
-
-<script>
-  let currentPage = 1;
-  const rowsPerPage = 10;
-
-  function paginate(page = 1) {
-    currentPage = page;
-    const rows = Array.from(document.querySelectorAll('#resultsTable tbody tr.matches-filters'));
-
-    rows.forEach((row, index) => {
-      if (index >= (page - 1) * rowsPerPage && index < page * rowsPerPage) {
-        row.style.display = '';
-      } else {
-        row.style.display = 'none';
-      }
-    });
-
-    updateVisibleRowCount(); // update the count display
-    updatePaginationLinks(); // highlight active page
-  }
-
-  function updateVisibleRowCount() {
-    const rows = document.querySelectorAll('#resultsTable tbody tr.matches-filters');
-    const visibleRows = Array.from(rows).filter(row => row.style.display !== 'none');
-    document.getElementById('resultCount').innerText = visibleRows.length;
-  }
-
-  function updatePaginationLinks() {
-    // Optional: highlight current page number or regenerate pagination dynamically
-    const pages = document.querySelectorAll('.govuk-pagination__item');
-    pages.forEach(link => {
-      const pageNumber = parseInt(link.textContent.trim());
-      if (!isNaN(pageNumber)) {
-        if (pageNumber === currentPage) {
-          link.classList.add('govuk-pagination__item--current');
-        } else {
-          link.classList.remove('govuk-pagination__item--current');
-        }
-      }
-    });
-  }
-
-  // Initial call
-  document.addEventListener('DOMContentLoaded', () => {
-    paginate(1);
-
-    // Hook up pagination buttons
-    document.querySelectorAll('.govuk-pagination__item a').forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const page = parseInt(link.textContent.trim());
-        if (!isNaN(page)) {
-          paginate(page);
-        }
-      });
-    });
-  });
-</script>
 
 {% endblock %}

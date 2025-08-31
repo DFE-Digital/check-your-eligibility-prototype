@@ -1,6 +1,5 @@
-{% extends "layouts/FSM/v7-3/layout-dfe-matnav.html" %}
+{% extends "layouts/FSM/research/LA/layout-dfe-lanav.html" %}
 {% set pageName= "Search all records" %}
-{% set version = "v7-3" %}
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -10,12 +9,11 @@
     </h1>
   </div>
 </div>
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-quarter">
-          {% include "FSM/Private_beta/v7-3/_includes/filter-panel-mat.html" %}
+          {% include "_includes/la/filter-panel-la.html" %}
         </div>
         <div class="govuk-grid-column-three-quarters">
           <!--Export and search results section-->
@@ -25,9 +23,9 @@
           </div>
         </div>
       </div>
-   </div>
-      <!--Export and search results section-->
 
+      <!--Export and search results section-->
+    </div>
     <div class="moj-filter-layout__content">
       <div class="moj-scrollable-pane">
         <div class="govuk-page-header" style="display: flex; align-items: center; justify-content: space-between;">
@@ -60,53 +58,42 @@
                           <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
                           <!-- <th scope="col" class="govuk-table__header" aria-sort="none">Action</th>  -->
                         </tr>
-                      </thead>
-                      {% include "_includes/mat/mat-table-rows.html" %}
+                    </thead>
 
-                  </div>
+{% include "_includes/la/la-table-rows-research.html" %}
+
+
                 </div>
-                </table>
               </div>
+              </table>
             </div>
-            <div style="display: flex; justify-content: center; margin-top: 20px;">
-              {{ govukPagination({
-              previous: {
-              href: "#"
-              },
-              next: {
-              href: "#"
-              },
-              items: [
-              {
-              number: 1,
-              href: "#"
-              },
-              {
-              number: 2,
-              current: true,
-              href: "#"
-              },
-              {
-              number: 3,
-              href: "#"
-              }
-              ]
-              }) }}
-            </div>
-
           </div>
-        </div>
 
-        <!-- ROW 3-->
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-one-quarter">
-            <form action="eligible-list" method="post" novalidate>
+          <div style="display: flex; justify-content: center; margin-top: 20px;">
+           {{ govukPagination({ attributes:
+            { id: "pager" },
+            items: [
+            { number: 1, current: false, href: "#" },
+            { number: 2, current: false, href: "#" },
+            { number: 3, current: false, href: "#" }
+            ]
+          }) }}
           </div>
-          </fieldset>
+
         </div>
+      </div>
+
+      <!-- ROW 3-->
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          <form action="eligible-list" method="post" novalidate>
+        </div>
+        </fieldset>
       </div>
     </div>
   </div>
+
+</div>
 </div>
 </div>
 </div>
@@ -124,17 +111,15 @@
 
 {% endblock %}
 
+{% block scripts %}
 
-
-<!--FILTER TOGGLE-->
-<!---------------SCRIPTS------------------>
-{% block pageScripts %}
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const ROWS_PER_PAGE = 15;
 
   const table = document.getElementById('resultsTable');
   const resultCountEl = document.getElementById('resultCount');
+  const totalResultsEl = document.getElementById('totalResults');
 
   const keywordsInput = document.getElementById('keywords');
   const applyBtn = document.getElementById('applyFilter');
@@ -153,14 +138,16 @@ document.addEventListener('DOMContentLoaded', () => {
   // Map between your checkbox values and the words in your <tr data-status="...">
   // Checkboxes use codes like "status-Not-Entitled"; rows use words like "Not eligible".
   const statusCodeToWord = {
-    'status-Entitled': 'Eligible',
-    'status-Not-Entitled': 'Not eligible',
+    'status-Eligible': 'Eligible',
+    'status-Not-eligible': 'Not eligible',
     'status-Evidence-needed': 'Evidence needed',
     'status-Sent-for-review': 'Sent for review',
-    'status-Reviewed-not-eligible': 'Not eligible after review',
-    'status-Reviewed-eligible': 'Eligible after review',
+    'status-Ready-for-review': 'Ready for review',
+    'status-Reviewed-not-eligible': 'Reviewed not eligible',
+    'status-Reviewed-eligible': 'Reviewed eligible',
     'status-FSM-confirmed': 'FSM confirmed',
-    'status-Archive': 'Archived'
+    'status-Archive': 'Archived',
+    'status-Expired': 'Expired'
   };
 
   let currentPage = 1;
@@ -269,16 +256,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // Pagination
     currentPage = page;
     const start = (currentPage - 1) * ROWS_PER_PAGE;
-    const end = currentPage * ROWS_PER_PAGE;
+    const end = Math.min(currentPage * ROWS_PER_PAGE, matched.length);
 
     matched.forEach((row, idx) => {
       row.style.display = (idx >= start && idx < end) ? '' : 'none';
     });
     rows.filter(r => !matched.includes(r)).forEach(r => r.style.display = 'none');
 
-    // Count = visible on this page (keeps your current behaviour)
-    const visibleNow = Math.min(ROWS_PER_PAGE, Math.max(0, matched.length - start));
-    if (resultCountEl) resultCountEl.textContent = visibleNow;
+    // Update blue box: show range
+    if (resultCountEl && totalResultsEl) {
+      if (matched.length === 0) {
+        resultCountEl.textContent = '0';
+        totalResultsEl.textContent = '0';
+      } else {
+        resultCountEl.textContent = `${start + 1}–${end}`;
+        totalResultsEl.textContent = matched.length;
+      }
+    }
 
     // Hook GOV.UK pagination buttons (if present)
     document.querySelectorAll('.govuk-pagination__item a').forEach(link => {

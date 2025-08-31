@@ -23,7 +23,7 @@
             <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Keyword</h3>
             <ul class="moj-filter-tags" id="selected-keyword">
             </ul>
-         </div>
+          </div>
 
 
           <div id="selected-submission-date-range-container" style="display: none;">
@@ -40,12 +40,10 @@
         </div>
 
         <div class="moj-filter__options">
-          <button type="submit" class="govuk-button" data-module="govuk-button" onclick="filterResults()">
-            Apply filters
-          </button>
+
 
           <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--m" for="keywords">Keywords</label>
+            <label class="govuk-label govuk-label--m" for="keywords">Search by child</label>
             <input class="govuk-input" id="keywords" name="keywords" type="text">
           </div>
 
@@ -62,8 +60,8 @@
           },
           items: [
           {
-          value: "Current month to date",
-          text: "Current month to date"
+          value: "Last month",
+          text: "Last month"
           },
           {
           value: "Last 3 months",
@@ -95,27 +93,49 @@
           },
           items: [
           {
-          value: "status-Entitled",
-          text: "Entitled"
+          value: "status-Eligible",
+          text: "Eligible"
           },
           {
-          value: "status-Not-Entitled",
-          text: "Not Entitled"
+          value: "status-Not-eligible",
+          text: "Not eligible"
           },
           {
           value: "status-Evidence-needed",
           text: "Evidence needed"
           },
           {
-          value: "status-Sent-for-review",
-          text: "Sent for review"
+          value: "status-Ready-for-review",
+          text: "Ready for review"
+          },
+          {
+          value: "status-Reviewed-eligible",
+          text: "Reviewed eligible"
+          },
+          {
+          value: "status-Reviewed-not-eligible",
+          text: "Reviewed not eligible"
           },
           {
           value: "status-FSM-confirmed",
           text: "FSM confirmed"
+          },
+          {
+          value: "status-Archive",
+          text: "Archived"
+          },
+          {
+          value: "status-Expired",
+          text: "Expired"
           }
           ]
           }) }}
+
+          <div style="padding-bottom: 0px;">
+            <button type="button" class="govuk-button" data-module="govuk-button" id="applyFilter">
+              Apply filters
+            </button>
+          </div>
 
         </div>
       </div>

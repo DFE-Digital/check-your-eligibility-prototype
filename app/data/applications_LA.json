@@ -27,10 +27,6 @@
       "lastName": "Sutton"
     },
     "dob": "2017-01-10",
-     "school": {
-      "name": "Brookside Academy",
-      "urn": "12345678"
-    },
     "status": {
       "yes": "Not Entitled"
     },
