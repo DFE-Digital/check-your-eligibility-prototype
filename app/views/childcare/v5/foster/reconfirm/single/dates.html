@@ -22,10 +22,12 @@
 
        <h1 class="govuk-heading-l">Enter eligibilty code dates</h1>
 
+         <p class="govuk-hint">Dates may be backdated by up to one month</p>
+
 
         <form class="form" action="/childcare/v5/foster/reconfirm/single/check-details" method="post" novalidate>
 
-            {% from "govuk/components/input/macro.njk" import govukInput %}
+              {% from "govuk/components/input/macro.njk" import govukInput %}
 
 
             {{ govukDateInput({
@@ -66,13 +68,13 @@
               namePrefix: "confirmed-date",
               fieldset: {
                 legend: {
-                  text: "Eligibility reconfirmed on",
+                  text: "Eligibility confirmed on",
                   isPageHeading: false,
                   classes: "govuk-fieldset__legend--m"
                 }
               },
               hint: {
-                text: "May be backdated by up to one month"
+                text: "For example, 27 3 2025"
               },
               items: [
                 {
