@@ -1,0 +1,305 @@
+{% extends "/layouts/childcare/v6/layout-childcare.html" %}
+
+{% block pageTitle %}
+ Search check history
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <!--
+
+
+    <div class="moj-filter" data-module="moj-filter">
+
+      <div class="moj-filter__header">
+
+        <div class="moj-filter__header-title">
+          <h2 class="govuk-heading-m">Filter</h2>
+        </div>
+
+        <div class="moj-filter__header-action">
+        </div>
+
+      </div>
+
+      <div class="moj-filter__content">
+
+        <div class="moj-filter__selected">
+          <div class="moj-filter__selected-heading">
+            <div class="moj-filter__heading-title">
+              <h2 class="govuk-heading-m">Selected filters</h2>
+            </div>
+            <div class="moj-filter__heading-action">
+              <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
+            </div>
+          </div>
+          <div style="display:none;">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Keyword</h3>
+            <ul class="moj-filter-tags">
+              <li><a class="moj-filter__tag" href=""><span class="govuk-visually-hidden">Remove this filter</span>Jon Cunningham</a></li>
+            </ul>
+          </div>
+          <div style="display:none;">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Eligibility type</h3>
+            <ul class="moj-filter-tags">
+              <li><a class="moj-filter__tag" href=""><span class="govuk-visually-hidden">Remove this filter</span>Childcare for working families</a></li>
+            </ul>
+          </div>
+          <div style="display:none;">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Outcome</h3>
+            <ul class="moj-filter-tags">
+              <li><a class="moj-filter__tag" href=""><span class="govuk-visually-hidden">Remove this filter</span>Code valid</a></li>
+            </ul>
+          </div>
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Date range</h3>
+          <ul class="moj-filter-tags">
+            <li><a class="moj-filter__tag" href=""><span class="govuk-visually-hidden">Remove this filter</span> Today</a></li>
+          </ul>
+        </div>
+
+        <div class="moj-filter__options">
+
+          {% from "govuk/components/input/macro.njk" import govukInput %}
+
+            {{ govukInput({
+              label: {
+                text: "Check ran by or eligibility code",
+                classes: "govuk-label--m",
+                isPageHeading: false
+              },
+
+              classes: "govuk-!-width-one-half",
+              id: "search-audit",
+              name: "search-audit"
+            }) }}
+
+          {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+            {{ govukCheckboxes({
+              name: "eligibilityType",
+              classes: "govuk-checkboxes--small",
+              fieldset: {
+                legend: {
+                  text: "Eligibility type",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              items: [
+                {
+                  value: "30h",
+                  text: "Childcare for working families"
+                },
+                {
+                  value: "2yo",
+                  text: "2 years old early learning"
+                },
+                {
+                  value: "eypp",
+                  text: "Early years pupil premium"
+                }
+
+              ]
+            }) }}
+
+          {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+            {{ govukCheckboxes({
+              name: "outcomeType",
+              classes: "govuk-checkboxes--small",
+              fieldset: {
+                legend: {
+                  text: "Outcome",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              items: [
+                {
+                  value: "eligible",
+                  text: "Eligible"
+                },
+                {
+                  value: "not-eligible",
+                  text: "May not be eligible"
+                },
+                {
+                  value: "valid",
+                  text: "Code valid"
+                },
+                {
+                  value: "expired",
+                  text: "Code expired"
+                },
+                {
+                  value: "not-found",
+                  text: "Information does not match records"
+                },
+                {
+                  value: "error",
+                  text: "Technical error"
+                }
+
+              ]
+            }) }}
+
+
+            {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+            {{ govukRadios({
+              name: "searchDates",
+              classes: "govuk-radios--small",
+              fieldset: {
+                legend: {
+                  text: "Date range",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              items: [
+                {
+                  value: "today",
+                  text: "Today",
+                  label: {
+                    classes: "govuk-!-margin-bottom-0"
+                  }
+                },
+                {
+                  value: "week",
+                  text: "Current week to date",
+                  label: {
+                    classes: "govuk-!-margin-bottom-0"
+                  }
+                },
+                {
+                  value: "7",
+                  text: "Last 7 days",
+                  label: {
+                    classes: "govuk-!-margin-bottom-0"
+                  }
+                },
+                {
+                  value: "month",
+                  text: "Last month",
+                  label: {
+                    classes: "govuk-!-margin-bottom-0"
+                  }
+                }
+              ]
+            }) }}
+
+
+
+           <button type="submit" class="govuk-button govuk-!-margin-top-5" data-module="govuk-button" data-test-id="submit-button">
+            Apply filters
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    -->
+
+
+     <h1 class="govuk-heading-l">Search check history</h1>
+
+
+
+
+    <table id="search-results" class="govuk-table govuk-table--small-text-until-tablet govuk-!-margin-top-7">
+      <caption class="govuk-table__caption govuk-table__caption--m">Showing 4 results for 'today'</caption>
+
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Eligibiilty type</th>
+          <th scope="col" class="govuk-table__header">Parent National insurance number</th>
+          <th scope="col" class="govuk-table__header">Parent date of birth</th>
+          <th scope="col" class="govuk-table__header">Parent last name</th>
+          <th scope="col" class="govuk-table__header">Eligibility code</th>
+          <th scope="col" class="govuk-table__header">Child date of birth</th>
+          <th scope="col" class="govuk-table__header">Outcome</th>
+          <th scope="col" class="govuk-table__header">Check ran at</th>
+
+          <th scope="col" class="govuk-table__header">Check ran by</th>
+          <th scope="col" class="govuk-table__header">Source</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Childcare for working families</td>
+          <td class="govuk-table__cell">QQ123456C</td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">54123456789</td>
+          <td class="govuk-table__cell">27 Mar 2024</td>
+          <td class="govuk-table__cell">Code valid</td>
+          <td class="govuk-table__cell">13 Aug 2025 9.04am</td>
+          <td class="govuk-table__cell">Jon Cunningham</td>
+          <td class="govuk-table__cell">API</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">2 years old early learning</td>
+          <td class="govuk-table__cell">PN123456C</td>
+          <td class="govuk-table__cell">23 Sep 1999</td>
+          <td class="govuk-table__cell">Smith</td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">May not be eligible</td>
+          <td class="govuk-table__cell">13 Aug 2025 8.57am</td>
+          <td class="govuk-table__cell">Jon Cunningham</td>
+          <td class="govuk-table__cell">Browser</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Childcare for working families</td>
+          <td class="govuk-table__cell">NN123456C</td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">57987654321</td>
+          <td class="govuk-table__cell">18 Jul 2024</td>
+          <td class="govuk-table__cell">Code expired</td>
+          <td class="govuk-table__cell">13 Aug 2025 8.36am</td>
+          <td class="govuk-table__cell">Lisa Webster</td>
+          <td class="govuk-table__cell">Browser</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Early years pupil premium</td>
+          <td class="govuk-table__cell">KL123456C</td>
+          <td class="govuk-table__cell">1 April 1987</td>
+          <td class="govuk-table__cell">Mistry</td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">Eligible</td>
+          <td class="govuk-table__cell">13 Aug 2025 8.15am</td>
+          <td class="govuk-table__cell">Jon Cunningham</td>
+          <td class="govuk-table__cell">API</td>
+        </tr>
+
+      </tbody>
+    </table>
+
+
+
+
+    <p class="govuk-!-margin-top-7"><a href="">Download as CSV file</a></p>
+
+  </div>
+
+</div>
+
+
+
+{% endblock %}

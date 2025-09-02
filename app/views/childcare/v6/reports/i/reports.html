@@ -1,0 +1,68 @@
+{% extends "/layouts/childcare/v6/layout-childcare.html" %}
+
+{% block pageTitle %}
+ Run reports
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">Run reports</h1>
+
+    <div class="dfe-grid-container">
+
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/childcare/v6/reports/i/event-history/search-code">View eligibility code history</a>
+          </h2>
+          <p>View the event listing for a code, showing application and reconfirmation history.</p>
+          <p class="govuk-body-s">Childcare for working families</p>
+        </div>
+      </div>
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/childcare/v6/reports/i/cross-border/cross-border">Cross-local authority checks </a>
+          </h2>
+          <p>View eligibility codes checked by your local authority and other local authorities.</p>
+          <p class="govuk-body-s">Childcare for working families</p>
+        </div>
+      </div>
+      <!--
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/childcare/v6/reports/i/foster-care">Foster care report</a>
+          </h2>
+          <p>View eligibility code statuses and dates for foster families.</p>
+          <p class="govuk-body-s">Childcare for working families</p>
+        </div>
+      </div>
+
+      -->
+      <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="#">Check history</a>
+            </h2>
+            <p>Search all checks carried out by your local authority in the last 3 months.</p>
+              <p class="govuk-body-s">All childcare types</p>
+          </div>
+        </div>
+
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,179 @@
+{% extends "/layouts/childcare/v6/layout-childcare.html" %}
+
+{% block pageTitle %}
+ Search check history
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+    <h1 class="govuk-heading-l">Search check history</h1>
+
+    <form class="form" action="/childcare/v6/reports/i/audit/audit-history" method="post" novalidate>
+
+            <!--
+
+            {% from "govuk/components/input/macro.njk" import govukInput %}
+
+            {{ govukInput({
+              label: {
+                text: "Check ran by or eligibility code",
+                classes: "govuk-label--xs",
+                isPageHeading: false
+              },
+
+              classes: "govuk-!-width-one-half",
+              id: "search-audit",
+              name: "search-audit"
+            }) }}
+
+             -->
+
+            {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+            {{ govukCheckboxes({
+              name: "eligibilityType",
+              classes: "govuk-checkboxes--small",
+              fieldset: {
+                legend: {
+                  text: "Eligibility type",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              items: [
+                {
+                  value: "30h",
+                  text: "Childcare for working families"
+                },
+                {
+                  value: "2yo",
+                  text: "2 years old early learning"
+                },
+                {
+                  value: "eypp",
+                  text: "Early years pupil premium"
+                }
+
+              ]
+            }) }}
+
+            <!--
+
+             {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+            {{ govukCheckboxes({
+              name: "outcomeType",
+              classes: "govuk-checkboxes--small",
+              fieldset: {
+                legend: {
+                  text: "Outcome",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--xs"
+                }
+              },
+              items: [
+                {
+                  value: "eligible",
+                  text: "Eligible"
+                },
+                {
+                  value: "not-eligible",
+                  text: "May not be eligible"
+                },
+                {
+                  value: "valid",
+                  text: "Code valid"
+                },
+                {
+                  value: "expired",
+                  text: "Code expired"
+                },
+                {
+                  value: "not-found",
+                  text: "Information does not match records"
+                },
+                {
+                  value: "error",
+                  text: "Technical error"
+                }
+
+              ]
+            }) }}
+
+            -->
+
+            {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+            {{ govukRadios({
+              name: "searchDates",
+              classes: "govuk-radios--small",
+              fieldset: {
+                legend: {
+                  text: "Date range",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              items: [
+                {
+                  value: "today",
+                  text: "Today",
+                  label: {
+                    classes: "govuk-!-margin-bottom-0"
+                  }
+                },
+                {
+                  value: "week",
+                  text: "Current week to date",
+                  label: {
+                    classes: "govuk-!-margin-bottom-0"
+                  }
+                },
+                {
+                  value: "7",
+                  text: "Last 7 days",
+                  label: {
+                    classes: "govuk-!-margin-bottom-0"
+                  }
+                },
+                {
+                  value: "month",
+                  text: "Last month",
+                  label: {
+                    classes: "govuk-!-margin-bottom-0"
+                  }
+                }
+              ]
+            }) }}
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Search check history"
+          }) }}
+
+
+    </form>
+
+
+
+  </div>
+
+</div>
+
+
+
+
+{% endblock %}
