@@ -1,4 +1,4 @@
-{% extends "/layouts/childcare/v5/layout-childcare.html" %}
+{% extends "/layouts/childcare/dev/layout-childcare.html" %}
 
 {% block pageTitle %}
   Manage foster families
@@ -16,21 +16,22 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-      <div class="govuk-notification-banner__header">
-        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          Success
-        </h2>
-      </div>
-      <div class="govuk-notification-banner__content">
-        <h3 class="govuk-notification-banner__heading">
-          Foster family of Archana Mistry transferred to  {{ data["la-picker"] or "Rochdale Borough Council" }}
-        </h3>
-      </div>
-    </div>
+
+    <h1 class="govuk-heading-l">Manage foster families</h1>
+
+    <p>Manage foster families claiming Childcare for working families.</p>
+
+    {{ govukButton({
+      classes: "govuk-!-margin-bottom-9",
+      text: "Add a family",
+      href: "/childcare/dev/foster/create/carer-details"
+    }) }}
 
 
-   <h2 class="govuk-heading-m">Children and eligibility codes</h2>
+     <h2 class="govuk-heading-m">Children and eligibility codes</h2>
+
+     <!--
+
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="sort">
@@ -46,6 +47,7 @@
           </select>
         </div>
 
+      -->
 
         <table class="govuk-table govuk-table--small-text-until-tablet">
           <caption class="govuk-table__caption govuk-table__caption--m"></caption>
@@ -61,7 +63,7 @@
           </thead>
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="/childcare/v5/foster/family/expired">Yeong Park</a> </td>
+              <td class="govuk-table__cell"><a href="/childcare/dev/foster/family/expired">Yeong Park</a> </td>
                <td class="govuk-table__cell">25 June 2023</td>
               <td class="govuk-table__cell">40019283746</td>
               <td class="govuk-table__cell">Evelyn Baker</td>
@@ -70,7 +72,7 @@
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Overdue</strong></td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="/childcare/v5/foster/family/grace-period">Willow Carter</a> </td>
+              <td class="govuk-table__cell"><a href="/childcare/dev/foster/family/grace-period">Willow Carter</a> </td>
                <td class="govuk-table__cell">8 July 2023</td>
               <td class="govuk-table__cell">40019283746</td>
               <td class="govuk-table__cell">Finnigan Powell</td>
@@ -94,7 +96,7 @@
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Not due yet</strong></td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="/childcare/v5/foster/family/valid">John Thompson</a></td>
+              <td class="govuk-table__cell"><a href="/childcare/dev/foster/family/valid">John Thompson</a></td>
                <td class="govuk-table__cell">13 February 2024</td>
               <td class="govuk-table__cell">40019283746</td>
               <td class="govuk-table__cell">Arthur Bryne </td>
@@ -102,7 +104,7 @@
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Not due yet</strong></td>
             </tr>
              <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="/childcare/v5/foster/family/too-old">Samuel Hill</a></td>
+              <td class="govuk-table__cell"><a href="/childcare/dev/foster/family/too-old">Samuel Hill</a></td>
               <td class="govuk-table__cell">6 September 2019</td>
               <td class="govuk-table__cell">40678901234</td>
               <td class="govuk-table__cell">Victoria Price</td>
@@ -113,7 +115,6 @@
         </table>
 
         <p class="govuk-!-margin-bottom-1"><a href="/public/csv/foster-report.csv">Download as CSV file</a> - the file also includes eligibility code dates.</p>
-
 
   </div>
 </div>
