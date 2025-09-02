@@ -1,4 +1,4 @@
-{% extends "/layouts/childcare/v5/layout-childcare.html" %}
+{% extends "/layouts/childcare/dev/layout-childcare.html" %}
 
 {% block pageTitle %}
   Foster family: Archana Mistry
@@ -7,7 +7,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "javascript:window.history.back()"
+  href: "/childcare/dev/foster/foster"
 }) }}
 {% endblock %}
 
@@ -16,9 +16,34 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Foster family of Archana Mistry</h1>
 
-    <p class="govuk-caption-l govuk-!-margin-bottom-7">Transferred from Rochdale Borough Council</p>
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+
+
+        {% if (data['remove-partner'] == "removed") %}
+
+            <h3 class="govuk-notification-banner__heading">
+              Partner added
+            </h3>
+
+        {% else %}
+
+            <h3 class="govuk-notification-banner__heading">
+              Changes to {{ data['edit-type'] }} saved
+            </h3>
+
+        {% endif %}
+      </div>
+    </div>
+
+    <h1 class="govuk-heading-l">Foster family of Archana Mistry</h1>
+
 
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
@@ -27,7 +52,7 @@
         </h2>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action">
-            <a class="govuk-link" href="/childcare/v5/foster/edit/carer-details">Change<span class="govuk-visually-hidden">Carer details</span></a>
+            <a class="govuk-link" href="/childcare/dev/foster/edit/carer-details">Change<span class="govuk-visually-hidden">Carer details</span></a>
           </li>
         </ul>
       </div>
@@ -68,10 +93,10 @@
         </h2>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action">
-            <a class="govuk-link" href="/childcare/v5/foster/edit/partner-details">Change<span class="govuk-visually-hidden">partner details</span></a>
+            <a class="govuk-link" href="/childcare/dev/foster/edit/partner-details">Change<span class="govuk-visually-hidden">partner details</span></a>
           </li>
           <li class="govuk-summary-card__action">
-            <a class="govuk-link" href="/childcare/v5/foster/edit/remove-partner">Remove<span class="govuk-visually-hidden">partner details</span></a>
+            <a class="govuk-link" href="/childcare/dev/foster/edit/remove-partner">Remove<span class="govuk-visually-hidden">partner details</span></a>
           </li>
         </ul>
       </div>
@@ -112,7 +137,7 @@
         </h2>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action">
-            <a class="govuk-link" href="/childcare/v5/foster/edit/child-details">Change<span class="govuk-visually-hidden">child details</span></a>
+            <a class="govuk-link" href="/childcare/dev/foster/edit/child-details">Change<span class="govuk-visually-hidden">child details</span></a>
           </li>
         </ul>
       </div>
@@ -208,14 +233,17 @@
       </div>
     </div>
 
+
+
     <div class="govuk-button-group govuk-!-margin-bottom-7">
 
       {{ govukButton({
         text: "Transfer this family",
         classes: "govuk-button--secondary",
-        href: "/childcare/v5/foster/transfer/transfer"
+        href: "/childcare/dev/foster/transfer/transfer"
       }) }}
     </div>
+
 
 
 
