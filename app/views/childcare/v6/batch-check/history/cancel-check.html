@@ -1,0 +1,44 @@
+{% extends "/layouts/childcare/v6/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Cancel check?
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-l">Cancel check on batch file 30h-MCC-feb-25.csv?</h1>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        The check will not be processed and you will not be able to download results.
+      </strong>
+    </div>
+
+
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Cancel check",
+      classes: "govuk-button--warning",
+      href: "/childcare/v6/batch-check/history/check-cancelled"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}

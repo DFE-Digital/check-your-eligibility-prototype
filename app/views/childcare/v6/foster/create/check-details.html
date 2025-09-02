@@ -1,0 +1,200 @@
+{% extends "/layouts/childcare/v6/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Check details
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">Check family details</h1>
+
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              Carer
+            </h2>
+            <ul class="govuk-summary-card__actions">
+              <li class="govuk-summary-card__action">
+                <a class="govuk-link" href="/childcare/v6/foster/create/carer-details">Change<span class="govuk-visually-hidden">Carer details</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Full name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data["carer-first-name"] or "Archana" }} {{ data["carer-last-name"] or "Mistry" }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date of birth
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data["carer-dob-day"] or "10" }} {{ data["carer-dob-month"] or "April" }} {{ data["carer-dob-year"] or "1984" }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  National Insurance number
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data["carer-ni-number"] or "PB123456C" }}
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              Partner
+            </h2>
+            <ul class="govuk-summary-card__actions">
+              <li class="govuk-summary-card__action">
+                <a class="govuk-link" href="/childcare/v6/foster/create/partner-details">Change<span class="govuk-visually-hidden">Carer details</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Full name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data["partner-first-name"] or "Ajay" }} {{ data["partner-last-name"] or "Mistry" }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date of birth
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data["partner-dob-day"] or "27" }} {{ data["partner-dob-month"] or "September" }} {{ data["partner-dob-year"] or "1982" }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  National Insurance number
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data["partner-ni-number"] or "PB458673A" }}
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              Child
+            </h2>
+            <ul class="govuk-summary-card__actions">
+              <li class="govuk-summary-card__action">
+                <a class="govuk-link" href="/childcare/v6/foster/create/child-details">Change<span class="govuk-visually-hidden">Carer details</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Full name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data["child-first-name"] or "Jasper" }} {{ data["child-last-name"] or "Hayes" }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date of birth
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data["child-dob-day"] or "10" }} {{ data["child-dob-month"] or "October" }} {{ data["child-dob-year"] or "2021" }}
+                </dd>
+              </div>
+               <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Postcode
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data["child-postcode"] or "M20 7GF" }}
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              Eligibility code dates
+            </h2>
+            <ul class="govuk-summary-card__actions">
+              <li class="govuk-summary-card__action">
+                <a class="govuk-link" href="/childcare/v6/foster/create/dates">Change<span class="govuk-visually-hidden">eligibility</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Application submitted on
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ "today" | govukDate }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Eligibility confirmed on
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ "today" | govukDate }}
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        <h2 class="govuk-heading-m">Confirm this is consistent with a care plan</h2>
+
+        <p class="govuk-body">By submitting this information, you confirm:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>the foster carer works outside of their foster role</li>
+          <li>providing an eligibility code is consistent with the child's care plan</li>
+        </ul>
+
+        {{ govukButton({
+          text: "Add family and create code",
+          href: "/childcare/v6/foster/create/created"
+        }) }}
+
+      </div>
+
+    </div>
+
+
+
+{% endblock %}

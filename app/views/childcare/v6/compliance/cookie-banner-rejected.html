@@ -1,0 +1,137 @@
+{% extends "/layouts/childcare/v6/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Childcare
+{% endblock %}
+
+{% block bodyStart %}
+
+  {% from "govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
+
+{% set html %}
+  <p class="govuk-body">We use some essential cookies to make this service work.</p>
+  <p class="govuk-body">We’d also like to use analytics cookies so we can understand how you use the service and make improvements.</p>
+{% endset %}
+
+{% set acceptHtml %}
+  <p class="govuk-body">You’ve accepted analytics cookies. You can <a class="govuk-link" href="/childcare/v6/compliance/cookies">change your cookie settings</a> at any time.</p>
+{% endset %}
+
+{% set rejectHtml %}
+  <p class="govuk-body">You’ve rejected analytics cookies. You can <a class="govuk-link" href="/childcare/v6/compliance/cookies">change your cookie settings</a> at any time.</p>
+{% endset %}
+
+{{ govukCookieBanner({
+  ariaLabel: "Cookies on Manage eligbility for childcare support",
+
+  messages: [
+    {
+      hidden: true,
+      headingText: "Cookies on Manage eligbility for childcare support",
+      html: html,
+      actions: [
+        {
+          text: "Accept analytics cookies",
+          type: "button"
+        },
+        {
+          text: "Reject analytics cookies",
+          type: "button"
+        },
+        {
+          text: "View cookies",
+          href: "/childcare/v6/compliance/cookies"
+        }
+      ]
+    },
+    {
+      html: acceptHtml,
+      role: "alert",
+      hidden: true,
+      actions: [
+        {
+          text: "Hide cookie message",
+          type: "button"
+        }
+      ]
+    },
+    {
+      html: rejectHtml,
+      role: "alert",
+      hidden: false,
+      actions: [
+        {
+          text: "Hide cookie message",
+          type: "button"
+        }
+      ]
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-l">Manchester City Council</span>
+    <h1 class="govuk-heading-l">Manage eligibility for childcare support</h1>
+
+
+    <div class="dfe-grid-container">
+
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/childcare/v6/single-check/single">Run a check</a>
+          </h2>
+          <p>Run an eligibility check for one parent or guardian.</p>
+        </div>
+      </div>
+
+
+        <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/childcare/v6/batch-check/batch">Run a batch check</a>
+            </h2>
+            <p>Run an eligibility check for multiple parents or guardians.</p>
+          </div>
+        </div>
+
+        <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/childcare/v6/foster/foster">Manage foster families</a>
+            </h2>
+            <p>Manage Childcare for working families codes for foster families.</p>
+          </div>
+        </div>
+
+
+        <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="#">Run reports</a>
+            </h2>
+            <p>Run and export reports on all applications for childcare.</p>
+          </div>
+        </div>
+
+        <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="#">Guidance</a>
+            </h2>
+            <p>Read guidance on eligibility criteria and acceptable forms of evidence for processing appeals.</p>
+          </div>
+        </div>
+
+    </div>
+
+
+  </div>
+</div>
+
+{% endblock %}
