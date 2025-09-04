@@ -121,7 +121,7 @@
                   Full name
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data["child-first-name"] or "Jasper" }} {{ data["child-last-name"] or "Hayes" }}
+                  {{ data["child-first-name"] or "Casper" }} {{ data["child-last-name"] or "Hayes" }}
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -129,7 +129,7 @@
                   Date of birth
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data["child-dob-day"] or "10" }} {{ data["child-dob-month"] or "October" }} {{ data["child-dob-year"] or "2021" }}
+                  {{ data["child-dob-day"] or "24" }} {{ data["child-dob-month"] or "December" }} {{ data["child-dob-year"] or "2023" }}
                 </dd>
               </div>
                <div class="govuk-summary-list__row">
@@ -188,7 +188,7 @@
 
         {{ govukButton({
           text: "Add family and create code",
-          href: "/childcare/v6/foster/create/created"
+          href: "/childcare/v6/foster/create/created?foster-code=created"
         }) }}
 
       </div>
