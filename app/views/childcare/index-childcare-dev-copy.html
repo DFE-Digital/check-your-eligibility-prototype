@@ -28,10 +28,39 @@
       Ready for development
     </h1>
 
+    <p>Contents</p>
+
+    <ul>
+      <li>
+        <a href="#dfe-sign-in">DfE sign in</a>
+      </li>
+       <li>
+        <a href="#dashboard">Dashboard</a>
+      </li>
+      <li>
+        <a href="#single-check">Run a single check</a>
+      </li>
+      <li>
+        <a href="#batch-check">Run a batch check</a>
+      </li>
+      <li>
+        <a href="#foster">Manage foster families</a>
+      </li>
+      <li>
+        <a href="#service-error">Service error pages</a>
+      </li>
+       <li>
+        <a href="#error-messages">Error messaging</a>
+      </li>
+    </ul>
+
+
     <!--dfe sign in-->
 
+    <h2 id="dfe-sign-in">DfE sign in</h2>
+
     <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-table__caption--m govuk-!-margin-bottom-2">DfE sign in</caption>
+
 
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
@@ -44,9 +73,9 @@
 
       <!--dashboard-->
 
-      <table class="govuk-table">
-        <caption class="govuk-table__caption govuk-table__caption--m govuk-!-margin-bottom-2">Dashboard</caption>
+      <h2 id="dashboard">Dashboard</h2>
 
+      <table class="govuk-table ">
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="/childcare/dev/dashboard">Dashboard</a></td>
@@ -59,21 +88,24 @@
 
        <!--run a single check 2yo eypp-->
 
-       <table class="govuk-table">
-        <caption class="govuk-table__caption govuk-table__caption--m govuk-!-margin-bottom-2">Run a check</caption>
+       <h2 id="single-check">Run a single check</h2>
 
+      <table class="govuk-table">
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="/childcare/dev/single-check/single">Run a check</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right">Ready for development</td>
           </tr>
-           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/single-check/2yo-eypp/checking-loader">Checking loader</a></td>
-            <td class="govuk-table__cell govuk-!-text-align-right">Ready for development</td>
-          </tr>
-           <tr class="govuk-table__row">
-            <th scope="row" colspan="2" class="govuk-table__header">Early learning for 2-year-olds and Early years pupil premium</th>
-          </tr>
+
+        </tbody>
+      </table>
+
+      <h3>EYPP and 2YO</h3>
+
+      <h4>Enter details</h4>
+
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="/childcare/dev/single-check/2yo-eypp/enter-details?eligibility-type=Early years pupil premium">Enter parent details (EYPP)</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right">Ready for development</td>
@@ -86,7 +118,17 @@
             <td class="govuk-table__cell"><a href="/childcare/dev/single-check/2yo-eypp/enter-details-error?eligibility-type=Early years pupil premium">Enter parent details - error summary and error message display</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right">Ready for development</td>
           </tr>
+           <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/childcare/dev/single-check/2yo-eypp/checking-loader">Checking loader</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right">Ready for development</td>
+          </tr>
+        </tbody>
+      </table>
 
+      <h4 class=" govuk-!-margin-bottom-2">Outcomes</h4>
+
+      <table class="govuk-table gov-uk-!-margin-top-0">
+        <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="/childcare/dev/single-check/2yo-eypp/outcomes/eligible">Eligible</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right">Ready for development</td>
@@ -100,16 +142,22 @@
             <td class="govuk-table__cell govuk-!-text-align-right">Ready for development</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/single-check/2yo-eypp/outcomes/could-not-find-pending">Could not check Universal Credit</a></td>
-            <td class="govuk-table__cell govuk-!-text-align-right">Ready for development</td>
-          </tr>
-          <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="/childcare/dev/single-check/2yo-eypp/outcomes/technical-error">Technical error</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right">Ready for development</td>
           </tr>
-             <tr class="govuk-table__row">
-            <th scope="row" colspan="2" class="govuk-table__header">Childcare for working families</th>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/childcare/dev/single-check/2yo-eypp/outcomes/could-not-find-pending">Could not check Universal Credit</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
           </tr>
+        </tbody>
+      </table>
+
+      <h3>Childcare for working families</h3>
+
+      <h4>Enter details</h4>
+
+       <table class="govuk-table">
+        <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="/childcare/dev/single-check/30h/enter-details">Enter eligibility code details</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right">Ready for development</td>
@@ -118,6 +166,17 @@
             <td class="govuk-table__cell"><a href="/childcare/dev/single-check/30h/enter-details-error">Enter eligibility code details - error summary and error message display</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right">Ready for development</td>
           </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/childcare/dev/single-check/30h/checking-loader">Checking loader</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right">Ready for development</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>Outcomes</h4>
+
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="/childcare/dev/single-check/30h/outcomes/could-not-find">Could not find</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right">Ready for development</td>
@@ -185,14 +244,22 @@
 
        <!--batch check-->
 
-       <table class="govuk-table">
-        <caption class="govuk-table__caption govuk-table__caption--m govuk-!-margin-bottom-2">Run a batch check</caption>
+      <h2 id="batch-check">Run a batch check</h2>
 
+       <table class="govuk-table">
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="/childcare/dev/batch-check/batch">Run a batch check</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right">Ready for development</td>
           </tr>
+        </tbody>
+      </table>
+
+
+        <h3>EYPP and 2YO</h3>
+
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="/childcare/dev/batch-check/upload?check-type=parents or guardians&eligibility-type=Early years pupil premium">Upload file (EYPP)</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right">Ready for development</td>
@@ -218,6 +285,17 @@
             <td class="govuk-table__cell govuk-!-text-align-right">Ready for development</td>
           </tr>
           <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/public/csv/eypp-2yo-outcomes-dev.csv">Batch check outcomes csv (EYPP and 2YO)</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right">Ready for development</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>File submitted banners</h3>
+
+       <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="/childcare/dev/batch-check/submitted-not-started">File submitted - not started</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right">Ready for development</td>
           </tr>
@@ -226,17 +304,22 @@
             <td class="govuk-table__cell"><a href="/childcare/dev/batch-check/submitted-in-progress">File submitted - in progress</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right">Ready for development</td>
           </tr>
+          -->
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="/childcare/dev/batch-check/submitted-completed">File submitted - completed</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right">Ready for development</td>
           </tr>
-          -->
+        </tbody>
+      </table>
+
+
+
+      <h3>Batch checks status</h3>
+
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="/childcare/dev/batch-check/history/batch-history">Batch checks status</a></td>
-            <td class="govuk-table__cell govuk-!-text-align-right">Ready for development</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/public/csv/eypp-2yo-outcomes-dev.csv">Batch check outcomes csv (EYPP and 2YO)</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right">Ready for development</td>
           </tr>
           <tr class="govuk-table__row">
@@ -255,13 +338,14 @@
       </table>
 
 
+
+
+
         <!--foster families-->
 
-      <h2></h2>
+      <h2 id="foster">Manage foster families</h2>
 
       <table class="govuk-table">
-        <caption class="govuk-table__caption govuk-table__caption--m"></caption>
-
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="/childcare/dev/foster/foster">Manage foster families</a></td>
@@ -275,104 +359,144 @@
             <td class="govuk-table__cell"><a href="/public/csv/foster-report.csv">Manage foster families - report CSV</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
           </tr>
+        </tbody>
+      </table>
+
+      <h3>Create code</h3>
+
+
+       <table class="govuk-table">
+        <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/foster/create/carer-details">Create code - enter carer details</a></td>
+            <td class="govuk-table__cell"><a href="/childcare/dev/foster/create/carer-details">Enter carer details</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/foster/create/partner-details">Create code - enter partner details </a></td>
+            <td class="govuk-table__cell"><a href="/childcare/dev/foster/create/partner-details">Enter partner details </a></td>
             <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/foster/create/child-details">Create code - enter child details</a></td>
+            <td class="govuk-table__cell"><a href="/childcare/dev/foster/create/child-details">Enter child details</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/foster/create/dates">Create code - enter code dates</a></td>
+            <td class="govuk-table__cell"><a href="/childcare/dev/foster/create/dates">Enter code dates</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/foster/create/check-details">Create code - check details</a></td>
+            <td class="govuk-table__cell"><a href="/childcare/dev/foster/create/check-details">Check details</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/foster/create/created">Create code - code created</a></td>
+            <td class="govuk-table__cell"><a href="/childcare/dev/foster/create/created">Code created</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>View foster family record</h3>
+
+        <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/childcare/dev/foster/family/valid">Valid</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/foster/family/valid">View family - valid</a></td>
+            <td class="govuk-table__cell"><a href="/childcare/dev/foster/family/grace-period">Grace period</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/foster/family/grace-period">View family - grace period</a></td>
+            <td class="govuk-table__cell"><a href="/childcare/dev/foster/family/expired">Expired</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/foster/family/expired">View family - expired</a></td>
+            <td class="govuk-table__cell"><a href="/childcare/dev/foster/family/too-old">Child too old</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/foster/family/too-old">View family - child too old</a></td>
+            <td class="govuk-table__cell"><a href="/childcare/dev/foster/family/transferred">Transferred</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <h3>Reconfirm code</h3>
+
+        <table class="govuk-table">
+        <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/childcare/dev/foster/reconfirm/dates">Enter code dates</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/foster/family/transferred">View family - transferred</a></td>
+            <td class="govuk-table__cell"><a href="/childcare/dev/foster/reconfirm/check-details">Check details</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/foster/reconfirm/dates">Reconfirm code - enter code dates</a></td>
+            <td class="govuk-table__cell"><a href="/childcare/dev/foster/reconfirm/reconfirmed">Code reconfirmed</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <h3>Transfer family</h3>
+
+        <table class="govuk-table">
+        <tbody class="govuk-table__body">
+           <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/childcare/dev/foster/transfer/transfer">Select local authority</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/foster/reconfirm/check-details">Reconfirm code - check details</a></td>
+            <td class="govuk-table__cell"><a href="/childcare/dev/foster/transfer/transfer-check">Confirm transfer</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/foster/reconfirm/reconfirmed">Reconfirm code - code reconfirmed</a></td>
+            <td class="govuk-table__cell"><a href="/childcare/dev/foster/transfer/transferred">Family transferred</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <h3>Edit family details</h3>
+
+        <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/childcare/dev/foster/edit/child-details">Edit child details</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/childcare/dev/foster/edit/child-details">Edit carer details</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/childcare/dev/foster/edit/partner-details">Edit partner details</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/childcare/dev/foster/family/saved?edit-type=partner">Changes saved</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/childcare/dev/foster/edit/remove-partner">Remove partner</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
           </tr>
            <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/foster/transfer/transfer">Transfer family - select local authority</a></td>
+            <td class="govuk-table__cell"><a href="/childcare/dev/foster/family/removed">Partner removed</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/foster/transfer/transfer-check">Transfer family - confirm transfer</a></td>
+            <td class="govuk-table__cell"><a href="/childcare/dev/foster/edit/partner-details?remove-partner=removed">Add partner</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/foster/transfer/transferred">Transfer family - family transferred</a></td>
-            <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/foster/edit/child-details">Edit family - enter child details</a></td>
-            <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/foster/edit/child-details">Edit family - enter carer details</a></td>
-            <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/foster/edit/partner-details">Edit family - enter partner details</a></td>
-            <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/foster/family/saved?edit-type=partner">Edit family - changes saved</a></td>
-            <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/foster/edit/remove-partner">Edit family - remove partner</a></td>
-            <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
-          </tr>
-           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/foster/family/removed">Edit family - partner removed</a></td>
-            <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/foster/edit/partner-details?remove-partner=removed">Edit family - add partner</a></td>
-            <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/foster/family/saved?remove-partner=removed">Edit family - partner added</a></td>
+            <td class="govuk-table__cell"><a href="/childcare/dev/foster/family/saved?remove-partner=removed">Partner added</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right">Design signed off</td>
           </tr>
         </tbody>
@@ -380,9 +504,9 @@
 
         <!--error pages-->
 
-      <table class="govuk-table">
-        <caption class="govuk-table__caption govuk-table__caption--m govuk-!-margin-bottom-2">Service error pages</caption>
+      <h2 id="service-error">Service error pages</h2>
 
+      <table class="govuk-table">
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="/childcare/dev/errors/page-not-found">Page not found</a></td>
@@ -408,8 +532,9 @@
 
       <!--error messages-->
 
+      <h2 id="error-messages">Error messages</h2>
+
       <table class="govuk-table">
-        <caption class="govuk-table__caption govuk-table__caption--m govuk-!-margin-bottom-2">Error messages</caption>
 
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
