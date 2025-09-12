@@ -1,0 +1,76 @@
+{# 1 #}
+{% from 'node_modules/dfe-frontend/packages/components/header/macro.njk' import header %}
+
+{# 2 #}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{# 3 #}
+{% block header %}
+
+
+
+{{ header({
+  "showNav": "false",
+  "showSearch": "false",
+  "showHeaderActionLinks": "true",
+  "logoPath": "public/images",
+  "logoAltText": "Department for Education",
+  "homeHref": "/childcare/index",
+  "searchAction": "/search/",
+  "searchInputName": "q",
+  "service": {
+    "name": "",
+    "serviceUrl": ""
+  },
+  "headerActionLinks": [
+
+    {
+      "url"  : "#",
+      "label" : "Sign out"
+    }
+  ]
+
+
+})
+}}
+
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{{ govukServiceNavigation({
+  serviceName: "Support name",
+  navigation: [
+  {
+      href: "/childcare/v6/dashboard",
+      text: "Home"
+    }
+  ]
+}) }}
+
+
+{% endblock %}
+
+
+
+{% block footer %}
+ {{ govukFooter({
+   meta: {
+     items: [
+      {
+        href:"/manage-prototype",
+        text:"Manage your prototype"
+      },
+       {
+         href: "/manage-prototype/clear-data",
+         text: "Clear data"
+       }
+     ],
+     visuallyHiddenTitle: "Footer links"
+   }
+ }) }}
+{% endblock %}
+
+{# 4 #}
+{% block scripts %}
+  {{ super() }}
+
+{% endblock %}
