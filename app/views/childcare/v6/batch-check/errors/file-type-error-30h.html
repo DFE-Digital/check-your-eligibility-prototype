@@ -24,20 +24,19 @@
         <div class="govuk-error-summary__body">
           <ul class="govuk-list govuk-error-summary__list">
             <li>
-              <a href="#cc-batch-upload">The column headings in the selected file must exactly match the template</a>
+              <a href="#cc-batch-upload">The selected file must be a CSV</a>
             </li>
           </ul>
         </div>
       </div>
     </div>
 
-    <span class="govuk-caption-l">{{ data['eligibility-type'] }}</span>
+    <span class="govuk-caption-l">Childcare for working families</span>
 
     <h1 class="govuk-heading-l">Run a batch check</h1>
 
     <ol class="govuk-list govuk-list--number">
-      <li>Download the <a href="/assets/csv/eypp-2yo-batch-template.csv" download class="govuk-link">batch
-          check template (1.3kb)</a>.</li>
+      <li>Download the <a href="/public/csv/30h-batch-template.csv">batch check template (CSV, 0.13KB)</a>.</li>
       <li>Add the details of the {{ data['check-type'] }} you need to check.</li>
      <li> Save it as a CSV file.</li>
     </ol>
@@ -50,14 +49,14 @@
       </strong>
     </div>
 
-     <p>For each parent or guardian you need to check, you must include their:</p>
+    <p>For each eligibility code you need to check, you must include:</p>
 
     <ul>
-      <li>last name</li>
-      <li>date of birth (format DD/MM/YYYY or YYYY-MM-DD)</li>
-      <li>National Insurance number</li>
-    </ul>
+      <li>the eligibility code</li>
+      <li>a National Insurance number (can be for a parent, guardian or partner)</li>
+      <li>the child's date of birth (format DD/MM/YYYY or YYYY-MM-DD)</li>
 
+    </ul>
 
     {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
 
@@ -69,8 +68,8 @@
         text: "Upload a file"
       },
       javascript: true,
-      errorMessage: {
-        text: "The column headings in the selected file must exactly match the template"
+       errorMessage: {
+        text: "The selected file must be a CSV"
       }
     }) }}
 
@@ -81,7 +80,6 @@
       classes: "govuk-button--primary",
       href: '#'
     }) }}
-
 
   </div>
 </div>
