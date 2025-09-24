@@ -1,4 +1,4 @@
-{% extends "../../../_layouts/layout-dfe-schoolnav.html" %}
+{% extends "layouts/FSM/v7-4/layout-dfe-schoolnav-noback.html" %}
 {% set pageName="Children's details added" %}
 
 {% block content %}
@@ -20,7 +20,7 @@
   type: "success"
 }) }}
         <!--<h1 class="govuk-heading-xl">Children details added</h1>-->
-        <h3>Application record for {{ data["parent-firstname"] or "Eden" }} {{ data["parent-surname"] or "Tesfay" }}</h3>
+        <h3>Application record for {{ data["parent-firstname"] or "Rachel" }} {{ data["parent-surname"] or "Evans" }}</h3>
 
 
       </div>
@@ -37,7 +37,7 @@
       </thead>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell"> {{ data["ch1-first-name"] or "Rachel" }} {{ data["ch1-surname"] or data["parent-surname"] }} </td>
+          <td class="govuk-table__cell"> {{ data["ch1-first-name"] or "Mia" }} {{ data["ch1-surname"] or data["parent-surname"] }} </td>
           <td class="govuk-table__cell">44455453</td>
         </tr>
 
