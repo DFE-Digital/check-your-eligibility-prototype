@@ -1,0 +1,46 @@
+{% extends "layouts/FSM/v7-4/layout-dfe-lanav.html" %}
+{% set pageName="350 applications to be rechecked" %}
+{% set currentAcademicYear="2025" %}
+{% set nextAcademicYear="2026" %}
+{% set currentAcademicYearStart="2025" %}
+{% set nextAcademicYearStart="2026" %}
+{% set date=currentAcademicYearStart %}
+{% set nextDate=nextAcademicYearStart %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l govuk-!-text-align-left">{{pageName}}</h1>
+      <div class="moj-page-header-actions__description govuk-!-text-align-left">
+        <p class="govuk-body">Recheck children's eligibility for free school meals for the academic year {{date}} to
+          {{nextDate}}.</p>
+      </div>
+
+
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          Rechecking all the records might take quite a bit of time.
+        </strong>
+      </div>
+
+
+
+      <div class="govuk-button-group">
+        <a href="recheck-all-warning.html" role="button" draggable="false" class="govuk-button"
+          data-module="govuk-button">
+          Recheck all records
+        </a>
+        <a href="how-recheck" role="button" draggable="false" class="govuk-button govuk-button--secondary"
+          data-module="govuk-button--secondary">
+          Refine selection
+        </a>
+        <a href="#recheck-copy" class="govuk-link">Return to recheck list</a>
+
+      </div>
+
+      {% endblock %}

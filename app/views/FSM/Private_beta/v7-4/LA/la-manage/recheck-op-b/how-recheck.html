@@ -1,0 +1,164 @@
+{% extends "layouts/FSM/v7-4/layout-dfe-lanav.html" %}
+{% set pageName="Refine the applications to be rechecked" %}
+{% set currentAcademicYear="2025" %}
+{% set nextAcademicYear="2026" %}
+{% set currentAcademicYearStart="2025" %}
+{% set nextAcademicYearStart="2026" %}
+{% set date=currentAcademicYearStart %}
+{% set nextDate=nextAcademicYearStart %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <!-- <h1 class="govuk-heading-l govuk-!-text-align-left">{{pageName}}</h1>
+      <div class="moj-page-header-actions__description govuk-!-text-align-left">
+        <p class="govuk-body">Recheck children's eligibility for free school meals for the academic year {{date}} to
+          {{nextDate}}.</p> -->
+      </div>
+<!-- <div>
+         Choose one or more of the following options to refine the applications to be rechecked.
+
+</div> -->
+
+  <!-- <hr class="govuk-section-break govuk-section-break--l govuk-section-break"> -->
+
+
+
+     <form class="form" action="/#" method="post" novalidate>
+
+          {% call govukFieldset({
+
+          }) %}
+
+            <!-- {% from "govuk/components/input/macro.njk" import govukInput %}
+
+            {{ govukInput({
+              label: {
+                text: "School name",
+                classes: "govuk-label--s",
+                isPageHeading: false
+              },
+              hint: {
+                text: "School name must be in full"
+              },
+              classes: "govuk-input--width-20",
+              id: "recheck-school",
+              name: "recheck-school"
+            }) }}
+
+            {{ govukInput({
+              classes: "govuk-!-width-one-third",
+              label: {
+                text: "Number of records to be rechecked",
+                classes: "govuk-fieldset__legend--s"
+              },
+              hint: {
+                text: "Must be a number"
+              },
+              id: "recheck-records",
+              name: "recheck-records"
+            }) }} -->
+
+
+
+{% set schoolNameHtml %}
+{{ govukInput({
+  id: "schoolNameHtml",
+  name: "schoolName",
+  type: "text",
+  autocomplete: "off",
+  spellcheck: false,
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "School name or URN"
+  }
+}) }}
+{% endset -%}
+
+{% set recordsHtml %}
+{{ govukInput({
+  id: "recordsHtml",
+  name: "records",
+  type: "number",
+  autocomplete: "off",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Maximum number of records to be rechecked"
+  }
+}) }}
+
+{% endset -%}
+
+{{ govukRadios({
+  name: "refineSelection",
+  fieldset: {
+    legend: {
+      text: "Refine the applications to be rechecked",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "Select one option"
+  },
+  items: [
+    {
+      value: "School name",
+      text: "School",
+      conditional: {
+        html: schoolNameHtml
+      }
+    },
+    {
+      value: "Number of records",
+      text: "Number of records",
+      conditional: {
+        html: recordsHtml
+      }
+    },
+    {
+      value: "Multiple characteristics",
+      text: "Multiple characteristics"
+
+    }
+  ]
+}) }}
+
+          {% endcall %}
+
+
+          {{ govukButton({
+            text: "View updated list",
+            href: "recheck-refined"
+          }) }}
+
+
+        </form>
+
+
+<!--
+     <div class="govuk-form-group">
+  <label class="govuk-label" for="width-20">
+   School name
+  </label>
+  <input class="govuk-input govuk-input--width-20" id="width-20" name="width20" type="text">
+</div>
+<div class="govuk-form-group">
+  <label class="govuk-label" for="width-10">
+   No of applications
+  </label>
+  <input class="govuk-input govuk-input--width-10" id="width-10" name="width10" type="text"> -->
+<!-- </div>
+<div class="govuk-form-group">
+  <label class="govuk-label" for="width-5">
+    5 character width
+  </label>
+  <input class="govuk-input govuk-input--width-5" id="width-5" name="width5" type="text">
+</div> -->
+
+
+
+    {% endblock %}

@@ -1,4 +1,4 @@
-{% extends "layouts/FSM/v7/layout-dfe-schoolnav-noback.html" %}
+{% extends "layouts/FSM/v7-4/layout-dfe-schoolnav-noback.html" %}
 {% set pageName="Check your answers before submitting" %}
 {% block content %}
 
@@ -100,7 +100,7 @@
           Name
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["ch1-first-name"] or "Rachel" }} {{ data["ch1-surname"] or data["parent-surname"] }}
+          {{ data["ch1-first-name"] or "Mia" }} {{ data["ch1-surname"] or data["parent-surname"] or "Evans" }}
 
         </dd>
 
