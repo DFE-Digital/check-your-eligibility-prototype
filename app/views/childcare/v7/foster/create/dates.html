@@ -1,0 +1,133 @@
+{% extends "/layouts/childcare/v7/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Enter eligibility code dates
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+    <div class="govuk-grid-row">
+
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">Enter eligibility code dates</h1>
+
+        <p class="govuk-hint">Dates may be backdated by up to one month</p>
+
+
+
+        <form class="form" action="/childcare/v7/foster/create/check-details" method="post" novalidate>
+
+
+
+
+            {% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+            {{ govukDateInput({
+              id: "submitted-date",
+              namePrefix: "submitted-date",
+              fieldset: {
+                legend: {
+                  text: "Application submitted on",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+                text: "For example, 27 3 2025"
+              },
+              items: [
+                {
+                  name: "day",
+                  classes: "govuk-input--width-2",
+                  value: "30"
+                },
+                {
+                  name: "month",
+                  classes: "govuk-input--width-2",
+                  value: "9"
+                },
+                {
+                  name: "year",
+                  classes: "govuk-input--width-4",
+                  value: "2025"
+                }
+              ]
+            }) }}
+
+
+            {{ govukDateInput({
+              id: "confirmed-date",
+              namePrefix: "confirmed-date",
+              fieldset: {
+                legend: {
+                  text: "Eligibility confirmed on",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+                text: "For example, 27 3 2025"
+              },
+              items: [
+                {
+                  name: "day",
+                  classes: "govuk-input--width-2",
+                  value: "30"
+                },
+                {
+                  name: "month",
+                  classes: "govuk-input--width-2",
+                  value: "9"
+                },
+                {
+                  name: "year",
+                  classes: "govuk-input--width-4",
+                  value: "2025"
+                }
+              ]
+            }) }}
+
+
+
+          <!--<details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Help with code dates
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+             Some words about how code dates impacts term eligibility and reconfirmation dates
+            </div>
+          </details> -->
+
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+
+
+        </form>
+
+      </div>
+
+    </div>
+
+
+
+{% endblock %}

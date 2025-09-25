@@ -1,0 +1,41 @@
+{% extends "/layouts/childcare/v7/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Remove partner
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Remove Ajay Mistry as a partner?</h1>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        New or reconfirmed eligibility codes will no longer be linked to this partner.
+      </strong>
+    </div>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Remove partner",
+      classes: "govuk-button--warning",
+      href: "/childcare/v7/foster/family/removed"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
