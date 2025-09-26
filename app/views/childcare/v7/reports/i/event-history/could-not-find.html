@@ -14,15 +14,15 @@
     <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
       <div class="govuk-notification-banner__header">
         <h1 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          Check failed
+          No matching results
         </h1>
       </div>
       <div class="govuk-notification-banner__content">
-        <p class="govuk-notification-banner__heading">The personal information you entered does not match departmental records.</p>
+        <p class="govuk-notification-banner__heading">No eligibility code history found</p>
       </div>
     </div>
 
-    <h2 class="govuk-heading-m">Details checked</h2>
+    <h2 class="govuk-heading-m">Code details you entered</h2>
 
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
@@ -57,14 +57,12 @@
 
     <p>Check that you entered the details correctly.</p>
 
-    <p> If this keeps happening, <a href="" class="govuk-link" onclick="printPage()">print this page</a> for the parent or guardian to check their details.</p>
-
 
     {% from "govuk/components/button/macro.njk" import govukButton %}
 
     {{ govukButton({
       text: "Try again",
-      href: '/childcare/v7/single-check/2yo-eypp/enter-details'
+      href: '/childcare/v7/reports/i/event-history/search-code'
     }) }}
 
   </div>

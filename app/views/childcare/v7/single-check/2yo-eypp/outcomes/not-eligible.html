@@ -60,7 +60,7 @@
     <p class="govuk-body">If the parent or guardian provides supporting evidence, you'll need to review it and decide if they're eligible.</p>
 
 
-
+    <h2 class="govuk-heading-m">Guidance</h2>
 
 
     {% if (data['eligibility-type'] == "Early learning for 2-year-olds") %}
@@ -78,7 +78,8 @@
 
       {{ govukButton({
         text: "Run another check",
-        href: '/childcare/v7/single-check/single'
+        href: '/childcare/v7/single-check/single',
+        classes: 'govuk-!-margin-top-6'
       }) }}
 
 
