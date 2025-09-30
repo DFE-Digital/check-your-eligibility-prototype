@@ -1,0 +1,52 @@
+{% extends "/layouts/support/v1/layout-support.html" %}
+
+{% block pageTitle %}
+  Upload file
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-l">Upload temporary code file</h1>
+
+    <p>Something about getting file from HMRC secure data exchange.</p>
+
+    <p>Must not edit / alter file?</p>
+
+    <p>File format? x</p>
+
+
+    {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+    {{ govukFileUpload({
+      id: "temp-code-upload",
+      name: "temp-code-upload",
+      label: {
+        classes: "govuk-label--m",
+        text: "Upload a file"
+      },
+      javascript: true
+    }) }}
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Continue",
+      classes: "govuk-button--primary",
+      href: '/support/v1/temp-code/import'
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
