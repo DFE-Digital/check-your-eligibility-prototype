@@ -1,0 +1,71 @@
+{% extends "/layouts/support/v1/layout-support.html" %}
+
+{% block pageTitle %}
+  Upload file
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#">The selected file has already been submitted</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <h1 class="govuk-heading-l">Upload temporary code file</h1>
+
+    <p>Something about getting file from HMRC secure data exchange.</p>
+
+    <p>Must not edit / alter file?</p>
+
+    <p>File format? x</p>
+
+
+    {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+    {{ govukFileUpload({
+      id: "temp-code-upload",
+      name: "temp-code-upload",
+      label: {
+        classes: "govuk-label--m",
+        text: "Upload a file"
+      },
+      javascript: true,
+      errorMessage: {
+        text: "The selected file has already been submitted"
+      }
+    }) }}
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Continue",
+      classes: "govuk-button--primary",
+      href: '/support/v1/temp-code/import'
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
