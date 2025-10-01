@@ -1,7 +1,7 @@
 {% extends "/layouts/support/v1/layout-support.html" %}
 
 {% block pageTitle %}
-  Upload file
+  Upload temporary code file
 {% endblock %}
 
 {% block beforeContent %}
@@ -19,11 +19,9 @@
 
     <h1 class="govuk-heading-l">Upload temporary code file</h1>
 
-    <p>Something about getting file from HMRC secure data exchange.</p>
+    <p>Upload the .xlsm file you have downloaded from HMRC secure data exchange.</p>
 
-    <p>Must not edit / alter file?</p>
-
-    <p>File format? x</p>
+    <p>Do not edit the file before uploading.</p>
 
 
     {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
