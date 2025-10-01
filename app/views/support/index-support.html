@@ -1,0 +1,54 @@
+{% extends "layouts/support/layout-index-support.html" %}
+{% block pageTitle %}
+  Childcare prototype
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l govuk-!-margin-top-5">
+      Design and research
+    </h1>
+
+    <!---Usability testing details -->
+
+
+    <h2 class="govuk-heading-m">Versions</h2>
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Version</th>
+          <th scope="col" class="govuk-table__header">Research</th>
+          <th scope="col" class="govuk-table__header">Description</th>
+          <th scope="col" class="govuk-table__header">Links</th>
+          <th scope="col" class="govuk-table__header">Status</th>
+          <th scope="col" class="govuk-table__header">Last updated</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+         <!--v1-->
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="/support/v1/dashboard">v1</a></th>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">
+            <p>Manage temporary codes</p>
+          </td>
+          <td class="govuk-table__cell">
+            <p class="govuk-!-margin-bottom-2"><a href="/support/v1/dashboard">Dashboard</a></p>
+          </td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Design</strong></td>
+          <td class="govuk-table__cell">1 October 2025</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+  </div>
+</div>
+
+
+{% endblock %}
