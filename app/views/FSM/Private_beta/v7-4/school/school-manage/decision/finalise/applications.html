@@ -3,18 +3,21 @@
 
 {% block content %}
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-l">{{pageName}}</h1>
     <p class="govuk-body">
       All the children in the table on this page are entitled to free school meals. Now you should finalise their applications.
     </p>
 
+      <div class="govuk-grid-column-two-thirds">
     <h2 class="govuk-heading-m">How to finalise</h2>
     <ol>
       <li>Add the details of each application to your own system.</li>
       <li>Select all the records you've added using the tick boxes.</li>
-      <li>Click the 'Mark as completed' button.</li>
+      <li>Click the 'Mark as finalised' button.</li>
     </ol>
+
+        <div class="govuk-!-padding-bottom-5"></div>
 
     <div class="govuk-button-group">
   <a href="./finalise-apps-areyousure.html" class="govuk-button" data-module="govuk-button">
@@ -25,7 +28,7 @@
   </button>
 </div>
 
-    <div class="govuk-!-padding-bottom-5"></div>
+    <!-- <div class="govuk-!-padding-bottom-5"></div> -->
 
     {% set filterOptionsHtml %}
       {{ govukInput({

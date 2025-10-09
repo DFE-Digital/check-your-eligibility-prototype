@@ -32,7 +32,24 @@ View and manage the details of this pupil record.
                 <span class="govuk-caption-l">{{ childId }}</span>
                 <h1 class="govuk-heading-l" style="margin-bottom: 0;">{{ childName }}</h1>
             </div>
-            <div>
+
+
+        <div class="moj-page-header-actions__actions">
+          <div class="moj-button-group moj-button-group--inline">
+            <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+             Export as CSV
+            </button>
+
+             <a href="archive-johnson1.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+             Archive record
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+            <!-- <div>
+
                 {{ mojButtonMenu({
                 button: {
                 text: "Manage child record"
@@ -46,7 +63,7 @@ View and manage the details of this pupil record.
                 ]
                 }) }}
             </div>
-        </div>
+        </div> -->
         <p class="govuk-body">View and manage the details of this child record.</p>
 
         <!-- <div class="govuk-inset-text">

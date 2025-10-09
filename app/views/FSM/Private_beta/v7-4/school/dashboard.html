@@ -2,15 +2,18 @@
 {% set Service="Free school meals" %}
 {% set view="dashboard" %}
 {% set pageName="St Mary's Primary School" %}
-
 {% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-     <span class="govuk-caption-l">{{pageName}}</span>
-<!-- <div class="govuk-width-container"> -->
-    <h1 class="govuk-heading-l">
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--m">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l">{{pageName}}</span>
+         <h1 class="govuk-heading-l">
       {{Service}}
     </h1>
+      </div>
+    </div>
 
         <div class="dfe-grid-container">
           <div class="dfe-card">
@@ -22,7 +25,7 @@
                 <p>Run an eligibility check for one parent or guardian.</p>
             </div>
           </div>
-          <!-- <div class="dfe-card">
+          <div class="dfe-card">
             <div class="dfe-card-container">
               <h2 class="govuk-heading-m">
                 <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
@@ -30,7 +33,7 @@
               </h2>
               <p>Run an eligibility check for multiple parents or guardians.</p>
             </div>
-          </div> -->
+          </div>
             <!-- <div class="dfe-card">
             <div class="dfe-card-container">
               <h2 class="govuk-heading-m">
@@ -94,6 +97,7 @@
 
         </div>
       </div>
-
+ </main>
+</div>
 
       {% endblock %}

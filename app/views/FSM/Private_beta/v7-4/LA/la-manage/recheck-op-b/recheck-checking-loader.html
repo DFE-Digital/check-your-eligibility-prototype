@@ -44,15 +44,15 @@
 {% block pageScripts %}
 <script>
   // ----- CONFIG -----
-  const secondsPerRecord = 3;   // each record takes 6 seconds
-  const tickEveryMs = 1000;     // update UI every 1 second
+  const secondsPerRecord = 3;   // each record takes 3 seconds
+  const tickEveryMs = 250;     // update UI every 0.5 second
   const redirectUrl = 'recheck-success.html'; // fixed destination
 
   // ----- INIT -----
   const total_count = Math.floor(Math.random() * 100) + 5; // demo: 5–124 records
   document.getElementById('total-count').textContent = total_count;
 
-  const totalDurationMs = total_count * secondsPerRecord * 1000;
+  const totalDurationMs = total_count * secondsPerRecord * 500;
   document.getElementById('processing-time').textContent =
     formatDurationWords(totalDurationMs); // nicer than raw minutes only
 
@@ -71,7 +71,7 @@
     // Move to next record once its 6s slice has elapsed
     if (now >= nextThresholdTime && currentCount < total_count) {
       currentCount++;
-      nextThresholdTime += (secondsPerRecord * 1000);
+      nextThresholdTime += (secondsPerRecord * 20);
     }
 
     // Clamp
