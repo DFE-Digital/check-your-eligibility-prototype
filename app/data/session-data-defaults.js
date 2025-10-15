@@ -11,10 +11,4 @@ applications
     'Status': '',
     'entitled-date': ''*/
 }
-
-module.exports = {
-
-  'showInfo': 'yes'
-
-}
 //

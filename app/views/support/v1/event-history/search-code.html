@@ -1,0 +1,99 @@
+{% extends "/layouts/support/v1/layout-support.html" %}
+
+{% block pageTitle %}
+ Event history
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+    <h1 class="govuk-heading-l">View eligibility code history</h1>
+
+     <form class="form" action="/support/v1/event-history/event-history" method="post" novalidate>
+
+          {% call govukFieldset({
+
+          }) %}
+
+            {% from "govuk/components/input/macro.njk" import govukInput %}
+
+            {{ govukInput({
+              label: {
+                text: "Eligibility code",
+                classes: "govuk-label--m",
+                isPageHeading: false
+              },
+              hint: {
+                text: "Eligibility code must be 11 digits long"
+              },
+              classes: "govuk-input--width-10",
+              id: "30h-code",
+              name: "30h-code"
+            }) }}
+
+            {{ govukInput({
+              classes: "govuk-!-width-one-third",
+              label: {
+                text: "National Insurance number",
+                classes: "govuk-fieldset__legend--m"
+              },
+              hint: {
+                text: "Can be for a parent, guardian or partner. For example, ‘QQ 12 34 56 C’"
+              },
+              id: "ni-number",
+              name: "ni-number"
+            }) }}
+
+            {{ govukDateInput({
+
+              id: "dob",
+              namePrefix: "dob",
+
+              fieldset: {
+                legend: {
+                  text: "Child date of birth",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+                text: "For example, 27 3 1980"
+              }
+            }) }}
+
+
+
+          {% endcall %}
+
+
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "View code history"
+          }) }}
+
+
+        </form>
+
+
+
+  </div>
+
+</div>
+
+
+
+
+{% endblock %}
