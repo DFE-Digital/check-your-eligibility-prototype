@@ -1,0 +1,83 @@
+{% extends "/layouts/mvp3/layout-dfe.html" %}
+{% set firstName = data["ch1-first-name"] or "the child" %}
+{% set pageName = "Find " ~ firstName ~ "'s school" %}
+{%block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="/mvp3-school" method="post" novalidate>
+
+    <div class="govuk-heading-l">
+      {{pageName}}
+    </div>
+
+{{ govukInput({
+  id: "school name",
+  name: "school name",
+  label: {
+    text: "School name",
+    classes: "govuk-label--s govuk-!-width-one-half"
+  },
+  value: data.schoolName
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "School postcode",
+    classes: "govuk-label--s"
+
+  },
+  hint: {
+    text: "You can find this on any letters from the school or on their website"
+  },
+  classes: "govuk-input--width-10",
+  id: "address-postcode",
+  name: "addressPostcode",
+  autocomplete: "postal-code"
+}) }}
+
+
+    {{ govukDateInput({
+      id: "start-date",
+      fieldset: {
+        legend: {
+          text: "When did " ~ (data["ch1-first-name"] or "the child") ~ " start this school",
+          classes: "govuk-input--width-6",
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {
+        text: "For example, 09 2024"
+      },
+      items: [
+
+        {
+          id: "start-month",
+          name: "start-month",
+          label: "Month",
+          classes: "govuk-input--width-2",
+          attributes: {
+            'data-name': 'start[month]',
+            'data-id': 'start[month]'
+          }
+        },
+        {
+          id: "start-year",
+          name: "start-year",
+          label: "Year",
+          classes: "govuk-input--width-4",
+          attributes: {
+            'data-name': 'start[year]',
+            'data-id': 'start[year]'
+          }
+        }
+      ]
+    }) }}
+
+
+  {{ govukButton({
+  text: "Find this child's school"
+  }) }}
+
+</div>
+{% endblock %}

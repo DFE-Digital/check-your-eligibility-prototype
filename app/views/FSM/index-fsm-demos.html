@@ -1,0 +1,211 @@
+{% extends "layouts/fsm/layout-dfe-index-fsm.html" %}
+{% set pageName=" Eligibility checker prototype" %}
+{% set selectedNav = "Demo links" %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-hint"> </span>
+    <h1 class="govuk-heading-l">
+      <span class="govuk-tag--pink">Private beta demos</span>
+    </h1>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break">
+
+Tab headers
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <h2 class="govuk-tabs__title">
+        Contents
+      </h2>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#Demo">
+            Demo link
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#research">
+            Research
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#sharepoint">
+            Sharepoint links
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#archive">
+            Archive
+          </a>
+        </li>
+      </ul>
+
+<!--Demo Table-->
+      <div class="govuk-tabs__panel" id="demo">
+        <h2 class="govuk-heading-m">Demos</h2>
+        <p>Links to Lucid boards supporting the prototypes</p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Title</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date last updated</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <!-- <td class="govuk-table__header"><a
+                  href="https://lucid.app/lucidspark/7bfb84e0-27ee-4e9c-b4a4-f30efbbe829c/edit?invitationId=inv_ba08c3b6-b88c-409c-b971-8fee8f5fbb21&page=0_0#"
+                  class="govuk-link">Service Blueprint</a></td>
+              <td class="govuk-table__cell">Granular level as-is blueprint showing starting point prior to Private beta.
+              </td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Updated</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">31 Jan 25</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="#" class="govuk-link">Service on a page</a></td>
+              <td class="govuk-table__cell">Updated content </td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--orange">Ongoing</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">31 Jan 25</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a
+                  href="https://lucid.app/lucidspark/a236f1a6-6520-45a3-b877-f58bb8be4f72/edit?page=0_0&invitationId=inv_75e06e3f-a47b-47fc-84c2-1f7a05e49f3d#"
+                  class="govuk-link">Beta Eco-system</a></td>
+              <td class="govuk-table__cell">Eco-system of stakeholders and how the roles change over the course <br>of
+                the improvements. Latest addition is MSE added to influencers.</td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Updated</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">22 Feb 25</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a
+                  href="https://lucid.app/lucidspark/ded7543b-3c15-4316-aa1d-2caf62cdfb0f/edit?invitationId=inv_6b3baccf-b803-4f4e-b2f7-dcc87c703d56"
+                  class="govuk-link">Beta stage user journeys</a></td>
+              <td class="govuk-table__cell">User flows for all features (Main board). <br></td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Updated</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">22 Feb 25</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a
+                  href="https://lucid.app/lucidspark/ded7543b-3c15-4316-aa1d-2caf62cdfb0f/edit?invitationId=inv_6b3baccf-b803-4f4e-b2f7-dcc87c703d56"
+                  class="govuk-link">School iterations</a></td>
+              <td class="govuk-table__cell">Design iterations - batch check (breakout board). <br></td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Updated</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">22 Feb 25</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a
+                  href="https://lucid.app/lucidspark/a236f1a6-6520-45a3-b877-f58bb8be4f72/edit?view_items=wk4UP9hBD9mN&invitationId=inv_75e06e3f-a47b-47fc-84c2-1f7a05e49f3d"
+                  class="govuk-link">Eligibility decision tree</a></td>
+              <td class="govuk-table__cell">Main pathways for eligibility within childcare and fsm - does not include outliers.</td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--red">Review</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">22 Feb 25</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a
+                  href=" https://lucid.app/lucidspark/e7afc074-3761-4107-addf-ab01b03ffa85/edit?beaconFlowId=9CC13F811D25D4F4&invitationId=inv_8a34bac6-d0b5-4f2a-8430-e018d1e54219&page=0_0#"
+                  class="govuk-link">Schooluser design crit</a></td>
+              <td class="govuk-table__cell">Team design crit and actions to be carried forward for prototype.</td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--red">Review</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">22 Feb 25</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a
+                  href="https://lucid.app/lucidspark/8fa47033-ce42-4a07-8d94-a36551b7410f/edit?invitationId=inv_48c6285e-a605-4f01-bca3-a50fbe546b6d&page=0_0#"
+                  class="govuk-link">Hertfordshire release stages</a></td>
+              <td class="govuk-table__cell">Rapid release for Private beta participants wanting to incorporate the parent journey where others have not.</td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--pink">Signed off</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">26 March 25</td> -->
+            </tr>
+          </tbody>
+        </table>
+      </div>
+<!--------Research documents------------------->
+      <div class="govuk-tabs__panel" id="research">
+        <h2 class="govuk-heading-m">Research</h2>
+        <p>Links to Research playbacks and documentation</p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Title</th>
+              <th scope="col" class="govuk-table__header">Insights</th>
+              <th scope="col" class="govuk-table__header">User group</th>
+              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date completed</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="#" class="govuk-link">Research title</a></td>
+              <td class="govuk-table__cell">Summary of insights from round</td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Schools</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">31 Jan 25</td>
+            </tr>
+            <!-- <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="#" class="govuk-link">Research title</a></td>
+              <td class="govuk-table__cell">Summary of insights from round</td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Schools</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">31 Jan 25</td>
+            </tr> -->
+            <!-- <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="#" class="govuk-link">Research title</a></td>
+              <td class="govuk-table__cell">Summary of insights from round</td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Schools</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">31 Jan 25</td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+ <!-------------Sharepoint links--------------------------------->
+      <div class="govuk-tabs__panel" id="sharepoint">
+        <h2 class="govuk-heading-m">Sharepoint documents</h2>
+        <p>Links to Sharepoint supporting documents</p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Title</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date last updated</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="#" class="govuk-link"> title</a></td>
+              <td class="govuk-table__cell">Description of document</td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Status</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">31 Jan 25</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+<!-----Archived documents-->
+      <div class="govuk-tabs__panel" id="archive">
+        <h2 class="govuk-heading-m">Archive</h2>
+        <p>Links to archived documents from previous phases</p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Title</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header">Stage</th>
+              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date last updated</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="#" class="govuk-link"> title</a></td>
+              <td class="govuk-table__cell">Description of document</td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">Alpha</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">31 Jan 25</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+<!--table ended--->
+    </div>
+  </div>
+  {% endblock %}
