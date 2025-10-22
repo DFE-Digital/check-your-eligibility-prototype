@@ -1,0 +1,843 @@
+
+{# <!-- Where this file is includes, set nunjucks variables for countryID, countryName and countryLabelText to change the defaults
+    {% set countryID = "departure-country" %}
+    {% set countryName = "departure-country-name" %}
+    {% set countryLabelText = "Which country did they depart from" %}
+
+    To remove the hint, set countryHint to an empty string
+    {% set countryHint = ""}
+
+    To change the hint, set countryHint to the hint text
+    {% set countryHint = "Type to search for a country" %}
+    --> #}
+
+<!-- 
+<div class="moj-search">
+  <form action="#" method="post">
+    <div class="govuk-form-group">
+      <label class="govuk-label moj-search__label govuk-!-font-weight-bold" for="search">
+        Search a school
+      </label>
+      <div id="search-hint" class="govuk-hint moj-search__hint ">
+        You can search by name, postcode or town.
+      </div>
+      <input class="govuk-input moj-search__input " id="search" name="search" type="search" aria-describedby="search-hint">
+    </div>
+    <button type="submit" class="govuk-button moj-search__button " data-module="govuk-button">
+      Search
+    </button>
+  </form>
+</div>
+
+
+    <div class="govuk-form-group">
+ -->
+
+<!-- 
+      {{ govukSelect({
+        id: "school-picker",
+        name: "school-picker",
+        classes:"govuk-input--width-20",
+        label: {
+          text: "Select a school",
+          classes:"govuk-!-font-weight-bold",
+          name:"school-picker"
+        },
+        hint: {
+          text: countryHint | default("", false)
+        },
+
+        value: countryValue or data[countryName or countryID or "country"] or "",
+        items: [
+      {
+          value: "",
+          text: ""
+      },
+      {
+        value: "Abbey Hey Primary Academy",
+        text: "Abbey Hey Primary Academy, Gorton, Manchester, M18 8RL"
+      },
+      {
+        value: "Abbott Community Primary School",
+        text: "Abbott Community Primary School, Manchester, M12 5NF"
+      },
+      {
+        value: "Abraham Moss Community School",
+        text: "Abraham Moss Community School, Manchester, M9 5AF"
+      },
+      {
+        value: "Acacias Community Primary School",
+        text: "Acacias Community Primary School, Manchester, M12 5NF"
+      },
+      {
+        value: "All Saints CofE Primary School",
+        text: "All Saints CofE Primary School, Ilkley, LS29 8QH"
+      },
+      {
+        value: "All Saints Primary School",
+        text: "All Saints Primary School, Ilkley, LS29 8QH"
+      },
+      {
+        value: "Alma Park Primary School",
+        text: "Alma Park Primary School, Manchester, M12 5NF"
+      },
+      {
+        value: "Armitage CofE Primary School",
+        text: "Armitage CofE Primary School, Manchester, M12 5NF"
+      },
+      {
+        value: "Ashbury Meadow Primary School",
+        text: "Ashbury Meadow Primary School, Manchester, M12 5NF"
+      },
+      {
+        value: "Baguley Hall Primary School",
+        text: "Baguley Hall Primary School, Manchester, M23 1JH"
+      },
+      {
+        value: "Barlow Hall Primary School",
+        text: "Barlow Hall Primary School, Manchester, M21 7GZ"
+      },
+      {
+        value: "Beaver Road Primary School",
+        text: "Beaver Road Primary School, Manchester, M19 2HQ"
+      },
+      {
+        value: "Benchill Primary School",
+        text: "Benchill Primary School, Manchester, M22 8EJ"
+      },
+      {
+        value: "Birchfields Primary School",
+        text: "Birchfields Primary School, Manchester, M13 0XH"
+      },
+      {
+        value: "Bowker Vale Primary School",
+        text: "Bowker Vale Primary School, Manchester, M9 5BF"
+      },
+      {
+        value: "Briscoe Lane Academy",
+        text: "Briscoe Lane Academy, Manchester, M11 3BS"
+      },
+      {
+        value: "Broad Oak Primary School",
+        text: "Broad Oak Primary School, Manchester, M11 4PT"
+      },
+      {
+        value: "Brookburn Primary School",
+        text: "Brookburn Primary School, Manchester, M21 8HA"
+      },
+      {
+        value: "Burnage Academy for Boys",
+        text: "Burnage Academy for Boys, Manchester, M19 1FS"
+      },
+      {
+        value: "Button Lane Primary School",
+        text: "Button Lane Primary School, Manchester, M19 2HQ"
+      },
+      {
+        value: "Cavendish Primary School",
+        text: "Cavendish Primary School, Manchester, M14 6XH"
+      },
+      {
+        value: "Cedar Mount Academy",
+        text: "Cedar Mount Academy, Manchester, M12 5NF"
+      },
+      {
+        value: "Chapel Street Community Primary School",
+        text: "Chapel Street Community Primary School, Manchester, M3 5JZ"
+      },
+      {
+        value: "Charlestown Primary School",
+        text: "Charlestown Primary School, Manchester, M9 7ED"
+      },
+      {
+        value: "Cheetham CofE Community Academy",
+        text: "Cheetham CofE Community Academy, Manchester, M8 0AD"
+      },
+      {
+        value: "Cheetwood Primary School",
+        text: "Cheetwood Primary School, Manchester, M8 0AD"
+      },
+      {
+        value: "Chorlton CofE Primary School",
+        text: "Chorlton CofE Primary School, Manchester, M21 8HA"
+      },
+      {
+        value: "Chorlton High School",
+        text: "Chorlton High School, Manchester, M21 8HA"
+      },
+      {
+        value: "Chorlton Park Primary School",
+        text: "Chorlton Park Primary School, Manchester, M21 8HA"
+      },
+      {
+        value: "Christ the King RC Primary School",
+        text: "Christ the King RC Primary School, Manchester, M14 6XH"
+      },
+      {
+        value: "CHS South",
+        text: "CHS South, Manchester, M15 5PB"
+      },
+      {
+        value: "Claremont Primary School",
+        text: "Claremont Primary School, Manchester, M14 6XH"
+      },
+      {
+        value: "Co-op Academy Belle Vue",
+        text: "Co-op Academy Belle Vue, Manchester, M12 5NF"
+      },
+      {
+        value: "Co-op Academy Broadhurst",
+        text: "Co-op Academy Broadhurst, Manchester, M14 6XH"
+      },
+      {
+        value: "Co-op Academy Manchester",
+        text: "Co-op Academy Manchester, Manchester, M12 5NF"
+      },
+      {
+        value: "Co-op Academy New Islington",
+        text: "Co-op Academy New Islington, Manchester, M4 6BF"
+      },
+      {
+        value: "Co-op Academy North Manchester",
+        text: "Co-op Academy North Manchester, Manchester, M9 5BF"
+      },
+      {
+        value: "CofE School of the Resurrection",
+        text: "CofE School of the Resurrection, Manchester, M14 6XH"
+      },
+      {
+        value: "Crab Lane Primary School",
+        text: "Crab Lane Primary School, Manchester, M9 4AF"
+      },
+      {
+        value: "Cravenwood Primary Academy",
+        text: "Cravenwood Primary Academy, Manchester, M9 4AF"
+      },
+      {
+        value: "Cringle Brook Primary School",
+        text: "Cringle Brook Primary School, Manchester, M9 4AF"
+      },
+      {
+        value: "Crossacres Primary Academy",
+        text: "Crossacres Primary Academy, Manchester, M22 5HQ"
+      },
+      {
+        value: "Crosslee Community Primary School",
+        text: "Crosslee Community Primary School, Manchester, M22 5HQ"
+      },
+      {
+        value: "Crowcroft Park Primary School",
+        text: "Crowcroft Park Primary School, Manchester, M12 5NF"
+      },
+      {
+        value: "Crown Street Primary School (proposed opening for September 2024)",
+        text: "Crown Street Primary School (proposed opening for September 2024)"
+      },
+      {
+        value: "Crumpsall Lane Primary School",
+        text: "Crumpsall Lane Primary School, Manchester, M8 5AF"
+      },
+      {
+        value: "Dean Trust Ardwick",
+        text: "Dean Trust Ardwick, Manchester, M12 6FZ"
+      },
+      {
+        value: "Didsbury CofE Primary School",
+        text: "Didsbury CofE Primary School, Manchester, M20 2RQ"
+      },
+      {
+        value: "Didsbury High School",
+        text: "Didsbury High School, Manchester, M20 2RQ"
+      },
+      {
+        value: "Dixons Brooklands Academy (previously known as Manchester Health Academy)",
+        text: "Dixons Brooklands Academy (previously known as Manchester Health Academy), Manchester, M40 1NY"
+      },
+      {
+        value: "Dixons Newall Green Academy",
+        text: "Dixons Newall Green Academy, Manchester, M23 2SX"
+      },
+      {
+        value: "E-ACT Blackley Academy",
+        text: "E-ACT Blackley Academy, Manchester, M9 8AE"
+      },
+      {
+        value: "Eden Boys' Leadership Academy",
+        text: "Eden Boys' Leadership Academy, Manchester, M9 5BF"
+      },
+      {
+        value: "Eden Girls' Leadership Academy",
+        text: "Eden Girls' Leadership Academy, Manchester, M9 5BF"
+      },
+      {
+        value: "Gorton Primary School",
+        text: "Gorton Primary School, Manchester, M18 7HD"
+      },
+      {
+        value: "Green End Primary School",
+        text: "Green End Primary School, Manchester, M18 7HD"
+      },
+      {
+        value: "Haveley Hey Community School",
+        text: "Haveley Hey Community School, Manchester, M18 7HD"
+      },
+      {
+        value: "Heald Place Primary School",
+        text: "Heald Place Primary School, Manchester, M14 6XH"
+      },
+      {
+        value: "Higher Openshaw Community School",
+        text: "Higher Openshaw Community School, Manchester, M11 1PL"
+      },
+      {
+        value: "Holy Name RC Primary School",
+        text: "Holy Name RC Primary School, Manchester, M14 6XH"
+      },
+      {
+        value: "Holy Trinity CofE Primary School",
+        text: "Holy Trinity CofE Primary School, Manchester, M14 6XH"
+      },
+      {
+        value: "Irk Valley Community School",
+        text: "Irk Valley Community School, Manchester, M40 8NT"
+      },
+      {
+        value: "King David Primary School",
+        text: "King David Primary School, Manchester, M14 5LE"
+      },
+      {
+        value: "Ladybarn Primary School",
+        text: "Ladybarn Primary School, Manchester, M14 6XH"
+      },
+      {
+        value: "Levenshulme High School",
+        text: "Levenshulme High School, Manchester, M19 2HQ"
+      },
+      {
+        value: "Lily Lane Primary School",
+        text: "Lily Lane Primary School, Manchester, M9 5BF"
+      },
+      {
+        value: "Longsight Community Primary",
+        text: "Longsight Community Primary, Manchester, M13 0XH"
+      },
+      {
+        value: "Loreto High School",
+        text: "Loreto High School, Manchester, M14 6XH"
+      },
+      {
+        value: "Manchester Academy",
+        text: "Manchester Academy, Manchester, M13 0XH"
+      },
+      {
+        value: "Manchester Communication Academy",
+        text: "Manchester Communication Academy, Manchester, M13 0XH"
+      },
+      {
+        value: "Manchester Communication Primary Academy",
+        text: "Manchester Communication Primary Academy, Manchester, M13 0XH"
+      },
+      {
+        value: "Manchester Enterprise Academy",
+        text: "Manchester Enterprise Academy, Manchester, M12 5RT"
+      },
+      {
+        value: "Manchester Enterprise Academy (MEA) Central",
+        text: "Manchester Enterprise Academy (MEA) Central, Manchester, M12 5RT"
+      },
+      {
+        value: "Manley Park Primary School",
+        text: "Manley Park Primary School, Manchester, M19 1EH"
+      },
+      {
+        value: "Mauldeth Road Primary School",
+        text: "Mauldeth Road Primary School, Manchester, M19 1EH"
+      },
+      {
+        value: "Medlock Primary School",
+        text: "Medlock Primary School, Manchester, M13 0XH"
+      },
+      {
+        value: "Moston Fields Primary School",
+        text: "Moston Fields Primary School, Manchester, M40 9EA"
+      },
+      {
+        value: "Moston Lane Community Primary School",
+        text: "Moston Lane Community Primary School, Manchester, M40 9EA"
+      },
+      {
+        value: "Mount Carmel RC Primary School - Infants",
+        text: "Mount Carmel RC Primary School - Infants, Manchester, M13 0XH"
+      },
+      {
+        value: "New Moston Primary School",
+        text: "New Moston Primary School, Manchester, M40 9EA"
+      },
+      {
+        value: "Newall Green Primary School",
+        text: "Newall Green Primary School, Manchester, M23 2SX"
+      },
+      {
+        value: "Northenden Community School",
+        text: "Northenden Community School, Manchester, M22 4HH"
+      },
+      {
+        value: "Oasis Academy Aspinal",
+        text: "Oasis Academy Aspinal, Manchester, M12 5RT"
+      },
+      {
+        value: "Oasis Academy Harpur Mount",
+        text: "Oasis Academy Harpur Mount, Manchester, M12 5RT"
+      },
+      {
+        value: "Oasis Academy Temple",
+        text: "Oasis Academy Temple, Manchester, M12 5RT"
+      },
+      {
+        value: "Old Hall Drive Academy",
+        text: "Old Hall Drive Academy, Manchester, M14 6XH"
+      },
+      {
+        value: "Old Moat Primary School",
+        text: "Old Moat Primary School, Manchester, M19 1EH"
+      },
+      {
+        value: "Oswald Road Primary School",
+        text: "Oswald Road Primary School, Manchester, M14 5LE"
+      },
+      {
+        value: "Our Lady's RC Primary School",
+        text: "Our Lady's RC Primary School, Manchester, M14 6XH"
+      },
+      {
+        value: "Our Lady's RC High School",
+        text: "Our Lady's RC High School, Manchester, M14 6XH"
+      },
+      {
+        value: "Park View Community School",
+        text: "Park View Community School, Manchester, M12 5RT"
+      },
+      {
+        value: "Parrs Wood High School",
+        text: "Parrs Wood High School, Manchester, M20 5PG"
+      },
+      {
+        value: "Peel Hall Primary School",
+        text: "Peel Hall Primary School, Manchester, M22 5RG"
+      },
+      {
+        value: "Pike Fold Community Primary School",
+        text: "Pike Fold Community Primary School, Manchester, M25 0EG"
+      },
+      {
+        value: "Plymouth Grove Primary School",
+        text: "Plymouth Grove Primary School, Manchester, M13 0XH"
+      },
+      {
+        value: "Rack House Primary School",
+        text: "Rack House Primary School, Manchester, M13 0XH"
+      },
+      {
+        value: "Ravensbury Community School",
+        text: "Ravensbury Community School, Manchester, M18 7HD"
+      },
+      {
+        value: "Ringway Primary School",
+        text: "Ringway Primary School, Manchester, M22 4HH"
+      },
+      {
+        value: "Rolls Crescent Primary School",
+        text: "Rolls Crescent Primary School, Manchester, M40 1QH"
+      },
+      {
+        value: "Rushbrook Primary Academy",
+        text: "Rushbrook Primary Academy, Manchester, M12 5RT"
+      },
+      {
+        value: "Sacred Heart Catholic Primary School (Baguley)",
+        text: "Sacred Heart Catholic Primary School (Baguley), Manchester, M23 1EH"
+      },
+      {
+        value: "Sacred Heart RC Primary School (Gorton)",
+        text: "Sacred Heart RC Primary School (Gorton), Manchester, M18 7HD"
+      },
+      {
+        value: "Sandilands Primary School",
+        text: "Sandilands Primary School, Manchester, M23 2SX"
+      },
+      {
+        value: "Saviour CofE Primary School",
+        text: "Saviour CofE Primary School, Manchester, M12 5RT"
+      },
+      {
+        value: "Seymour Road Academy",
+        text: "Seymour Road Academy, Manchester, M14 6XH"
+      },
+      {
+        value: "St Agnes CofE Primary School",
+        text: "St Agnes CofE Primary School, Manchester, M14 6XH"
+      },
+      {
+        value: "St Aidan's Catholic Primary School",
+        text: "St Aidan's Catholic Primary School, Manchester, M14 6XH"
+      },
+      {
+        value: "St Ambrose RC Primary School",
+        text: "St Ambrose RC Primary School, Manchester, M14 6XH"
+      },
+      {
+        value: "St Andrew's CofE Primary School",
+        text: "St Andrew's CofE Primary School, Manchester, M14 6XH"
+      },
+      {
+        value: "St Anne's RC Primary School (Ancoats)",
+        text: "St Anne's RC Primary School (Ancoats), Manchester, M4 6BF"
+      },
+      {
+        value: "St Anne's RC Primary School (Crumpsall)",
+        text: "St Anne's RC Primary School (Crumpsall), Manchester, M8 5SX"
+      },
+      {
+        value: "St Anthony's Catholic Primary School",
+        text: "St Anthony's Catholic Primary School, Manchester, M12 5RT"
+      },
+      {
+        value: "St Augustine's CofE Primary School",
+        text: "St Augustine's CofE Primary School, Manchester, M14 6XH"
+      },
+      {
+        value: "St Barnabas' CofE Primary Academy",
+        text: "St Barnabas' CofE Primary Academy, Manchester, M14 6XH"
+      },
+      {
+        value: "St Bernard's RC Primary School",
+        text: "St Bernard's RC Primary School, Manchester, M8 5SX"
+      },
+      {
+        value: "St Brigid's RC Primary School",
+        text: "St Brigid's RC Primary School, Manchester, M13 0XH"
+      },
+      {
+        value: "St Catherine's RC Primary School",
+        text: "St Catherine's RC Primary School, Manchester, M14 6XH"
+      },
+      {
+        value: "St Chad's RC Primary School",
+        text: "St Chad's RC Primary School, Manchester, M9 4GP"
+      },
+      {
+        value: "St Chrysostom's CofE Primary School",
+        text: "St Chrysostom's CofE Primary School, Manchester, M14 6XH"
+      },
+      {
+        value: "St Clare's RC Primary School",
+        text: "St Clare's RC Primary School, Manchester, M14 6XH"
+      },
+      {
+        value: "St Clement's CofE Primary School",
+        text: "St Clement's CofE Primary School, Manchester, M14 6XH"
+      },
+      {
+        value: "St Cuthbert's RC Primary School",
+        text: "St Cuthbert's RC Primary School, Manchester, M14 6XH"
+      },
+      {
+        value: "St Dunstan's RC Primary School",
+        text: "St Dunstan's RC Primary School, Manchester, M14 6XH"
+      },
+      {
+        value: "St Edmund's RC Primary School",
+        text: "St Edmund's RC Primary School, Manchester, M14 6XH"
+      },
+      {
+        value: "St Elizabeth's Catholic Primary School",
+        text: "St Elizabeth's Catholic Primary School, Manchester, M14 6XH"
+      },
+      {
+        value: "St Francis RC Primary School",
+        text: "St Francis RC Primary School, Manchester, M14 6XH"
+      },
+      {
+        value: "St James' CofE Primary School (Gorton)",
+        text: "St James' CofE Primary School (Gorton), Manchester, M18 8EH"
+      },
+      {
+        value: "St James' CofE Primary School (Rusholme)",
+        text: "St James' CofE Primary School (Rusholme), Manchester, M14 5NP"
+      },
+      {
+        value: "St John Bosco RC Primary School",
+        text: "St John Bosco RC Primary School, Manchester, M12 5RT"
+      },
+      {
+        value: "St John Fisher and St Thomas More Catholic Primary School",
+        text: "St John Fisher and St Thomas More Catholic Primary School, Manchester, M12 5RT"
+      },
+      {
+        value: "St John's CofE Primary School",
+        text: "St John's CofE Primary School, Manchester, M14 5NP"
+      },
+      {
+        value: "St John's RC Primary School",
+        text: "St John's RC Primary School, Manchester, M14 5NP"
+      },
+      {
+        value: "St Joseph's RC Primary School",
+        text: "St Joseph's RC Primary School, Manchester, M12 5RT"
+      },
+      {
+        value: "St Kentigern's RC Primary School",
+        text: "St Kentigern's RC Primary School, Manchester, M14 6XH"
+      },
+      {
+        value: "St Luke's CofE Primary School",
+        text: "St Luke's CofE Primary School, Manchester, M14 6XH"
+      },
+      {
+        value: "St Malachy's RC Primary School",
+        text: "St Malachy's RC Primary School, Manchester, M14 6XH"
+      },
+      {
+        value: "St Margaret Mary's RC Primary School",
+        text: "St Margaret Mary's RC Primary School, Manchester, M14 6XH"
+      },
+      {
+        value: "St Margaret's CofE Primary School (Whalley Range)",
+        text: "St Margaret's CofE Primary School (Whalley Range), Manchester, M16 8GW"
+      },
+      {
+        value: "St Mary's CofE Primary School (Moss Side)",
+        text: "St Mary's CofE Primary School (Moss Side), Manchester, M14 4QG"
+      },
+      {
+        value: "St Mary's CofE Primary School (Moston)",
+        text: "St Mary's CofE Primary School (Moston), Manchester, M40 9BX"
+      },
+      {
+        value: "St Mary's RC Primary School (Levenshulme)",
+        text: "St Mary's RC Primary School (Levenshulme), Manchester, M19 2HQ"
+      },
+      {
+        value: "St Matthew's RC High School",
+        text: "St Matthew's RC High School, Manchester, M14 5NP"
+      },
+      {
+        value: "St Patrick's RC Primary School",
+        text: "St Patrick's RC Primary School, Manchester, M12 5RT"
+      }
+        ]
+      }) }}
+    </div>
+    </div>
+ -->
+
+ {# views/your-page.njk #}
+<form action="./beta-school-check-show" method="post" class="govuk-!-margin-bottom-6">
+
+  <div class="app-inline">
+    {# 1) School autocomplete (fallback = select) #}
+    <div class="govuk-form-group govuk-!-margin-bottom-0">
+      {{ govukSelect({
+        id: "school-picker",
+        name: "school-picker",
+        classes:"govuk-input--width-20",
+        label: {
+          text: "Select a school",
+          classes:"govuk-!-font-weight-bold"
+        },
+        hint: {
+          text: countryHint | default("", false)
+        },
+        value: countryValue or data[countryName or countryID or "country"] or "",
+        items: [
+          { value: "", text: "" },
+          { value: "Abbey Hey Primary Academy", text: "Abbey Hey Primary Academy, Gorton, Manchester, M18 8RL" },
+          { value: "Abbott Community Primary School", text: "Abbott Community Primary School, Manchester, M12 5NF" },
+          { value: "Abraham Moss Community School", text: "Abraham Moss Community School, Manchester, M9 5AF" },
+          { value: "Acacias Community Primary School", text: "Acacias Community Primary School, Manchester, M12 5NF" },
+          { value: "All Saints CofE Primary School", text: "All Saints CofE Primary School, Ilkley, LS29 8QH" },
+          { value: "All Saints Primary School", text: "All Saints Primary School, Ilkley, LS29 8QH" },
+          { value: "Alma Park Primary School", text: "Alma Park Primary School, Manchester, M12 5NF" },
+          { value: "Armitage CofE Primary School", text: "Armitage CofE Primary School, Manchester, M12 5NF" },
+          { value: "Ashbury Meadow Primary School", text: "Ashbury Meadow Primary School, Manchester, M12 5NF" },
+          { value: "Baguley Hall Primary School", text: "Baguley Hall Primary School, Manchester, M23 1JH" },
+          { value: "Barlow Hall Primary School", text: "Barlow Hall Primary School, Manchester, M21 7GZ" },
+          { value: "Beaver Road Primary School", text: "Beaver Road Primary School, Manchester, M19 2HQ" },
+          { value: "Benchill Primary School", text: "Benchill Primary School, Manchester, M22 8EJ" },
+          { value: "Birchfields Primary School", text: "Birchfields Primary School, Manchester, M13 0XH" },
+          { value: "Bowker Vale Primary School", text: "Bowker Vale Primary School, Manchester, M9 5BF" },
+          { value: "Briscoe Lane Academy", text: "Briscoe Lane Academy, Manchester, M11 3BS" },
+          { value: "Broad Oak Primary School", text: "Broad Oak Primary School, Manchester, M11 4PT" },
+          { value: "Brookburn Primary School", text: "Brookburn Primary School, Manchester, M21 8HA" },
+          { value: "Burnage Academy for Boys", text: "Burnage Academy for Boys, Manchester, M19 1FS" },
+          { value: "Button Lane Primary School", text: "Button Lane Primary School, Manchester, M19 2HQ" },
+          { value: "Cavendish Primary School", text: "Cavendish Primary School, Manchester, M14 6XH" },
+          { value: "Cedar Mount Academy", text: "Cedar Mount Academy, Manchester, M12 5NF" },
+          { value: "Chapel Street Community Primary School", text: "Chapel Street Community Primary School, Manchester, M3 5JZ" },
+          { value: "Charlestown Primary School", text: "Charlestown Primary School, Manchester, M9 7ED" },
+          { value: "Cheetham CofE Community Academy", text: "Cheetham CofE Community Academy, Manchester, M8 0AD" },
+          { value: "Cheetwood Primary School", text: "Cheetwood Primary School, Manchester, M8 0AD" },
+          { value: "Chorlton CofE Primary School", text: "Chorlton CofE Primary School, Manchester, M21 8HA" },
+          { value: "Chorlton High School", text: "Chorlton High School, Manchester, M21 8HA" },
+          { value: "Chorlton Park Primary School", text: "Chorlton Park Primary School, Manchester, M21 8HA" },
+          { value: "Christ the King RC Primary School", text: "Christ the King RC Primary School, Manchester, M14 6XH" },
+          { value: "CHS South", text: "CHS South, Manchester, M15 5PB" },
+          { value: "Claremont Primary School", text: "Claremont Primary School, Manchester, M14 6XH" },
+          { value: "Co-op Academy Belle Vue", text: "Co-op Academy Belle Vue, Manchester, M12 5NF" },
+          { value: "Co-op Academy Broadhurst", text: "Co-op Academy Broadhurst, Manchester, M14 6XH" },
+          { value: "Co-op Academy Manchester", text: "Co-op Academy Manchester, Manchester, M12 5NF" },
+          { value: "Co-op Academy New Islington", text: "Co-op Academy New Islington, Manchester, M4 6BF" },
+          { value: "Co-op Academy North Manchester", text: "Co-op Academy North Manchester, Manchester, M9 5BF" },
+          { value: "CofE School of the Resurrection", text: "CofE School of the Resurrection, Manchester, M14 6XH" },
+          { value: "Crab Lane Primary School", text: "Crab Lane Primary School, Manchester, M9 4AF" },
+          { value: "Cravenwood Primary Academy", text: "Cravenwood Primary Academy, Manchester, M9 4AF" },
+          { value: "Cringle Brook Primary School", text: "Cringle Brook Primary School, Manchester, M9 4AF" },
+          { value: "Crossacres Primary Academy", text: "Crossacres Primary Academy, Manchester, M22 5HQ" },
+          { value: "Crosslee Community Primary School", text: "Crosslee Community Primary School, Manchester, M22 5HQ" },
+          { value: "Crowcroft Park Primary School", text: "Crowcroft Park Primary School, Manchester, M12 5NF" },
+          { value: "Crown Street Primary School (proposed opening for September 2024)", text: "Crown Street Primary School (proposed opening for September 2024)" },
+          { value: "Crumpsall Lane Primary School", text: "Crumpsall Lane Primary School, Manchester, M8 5AF" },
+          { value: "Dean Trust Ardwick", text: "Dean Trust Ardwick, Manchester, M12 6FZ" },
+          { value: "Didsbury CofE Primary School", text: "Didsbury CofE Primary School, Manchester, M20 2RQ" },
+          { value: "Didsbury High School", text: "Didsbury High School, Manchester, M20 2RQ" },
+          { value: "Dixons Brooklands Academy (previously known as Manchester Health Academy)", text: "Dixons Brooklands Academy (previously known as Manchester Health Academy), Manchester, M40 1NY" },
+          { value: "Dixons Newall Green Academy", text: "Dixons Newall Green Academy, Manchester, M23 2SX" },
+          { value: "E-ACT Blackley Academy", text: "E-ACT Blackley Academy, Manchester, M9 8AE" },
+          { value: "Eden Boys' Leadership Academy", text: "Eden Boys' Leadership Academy, Manchester, M9 5BF" },
+          { value: "Eden Girls' Leadership Academy", text: "Eden Girls' Leadership Academy, Manchester, M9 5BF" },
+          { value: "Gorton Primary School", text: "Gorton Primary School, Manchester, M18 7HD" },
+          { value: "Green End Primary School", text: "Green End Primary School, Manchester, M18 7HD" },
+          { value: "Haveley Hey Community School", text: "Haveley Hey Community School, Manchester, M18 7HD" },
+          { value: "Heald Place Primary School", text: "Heald Place Primary School, Manchester, M14 6XH" },
+          { value: "Higher Openshaw Community School", text: "Higher Openshaw Community School, Manchester, M11 1PL" },
+          { value: "Holy Name RC Primary School", text: "Holy Name RC Primary School, Manchester, M14 6XH" },
+          { value: "Holy Trinity CofE Primary School", text: "Holy Trinity CofE Primary School, Manchester, M14 6XH" },
+          { value: "Irk Valley Community School", text: "Irk Valley Community School, Manchester, M40 8NT" },
+          { value: "King David Primary School", text: "King David Primary School, Manchester, M14 5LE" },
+          { value: "Ladybarn Primary School", text: "Ladybarn Primary School, Manchester, M14 6XH" },
+          { value: "Levenshulme High School", text: "Levenshulme High School, Manchester, M19 2HQ" },
+          { value: "Lily Lane Primary School", text: "Lily Lane Primary School, Manchester, M9 5BF" },
+          { value: "Longsight Community Primary", text: "Longsight Community Primary, Manchester, M13 0XH" },
+          { value: "Loreto High School", text: "Loreto High School, Manchester, M14 6XH" },
+          { value: "Manchester Academy", text: "Manchester Academy, Manchester, M13 0XH" },
+          { value: "Manchester Communication Academy", text: "Manchester Communication Academy, Manchester, M13 0XH" },
+          { value: "Manchester Communication Primary Academy", text: "Manchester Communication Primary Academy, Manchester, M13 0XH" },
+          { value: "Manchester Enterprise Academy", text: "Manchester Enterprise Academy, Manchester, M12 5RT" },
+          { value: "Manchester Enterprise Academy (MEA) Central", text: "Manchester Enterprise Academy (MEA) Central, Manchester, M12 5RT" },
+          { value: "Manley Park Primary School", text: "Manley Park Primary School, Manchester, M19 1EH" },
+          { value: "Mauldeth Road Primary School", text: "Mauldeth Road Primary School, Manchester, M19 1EH" },
+          { value: "Medlock Primary School", text: "Medlock Primary School, Manchester, M13 0XH" },
+          { value: "Moston Fields Primary School", text: "Moston Fields Primary School, Manchester, M40 9EA" },
+          { value: "Moston Lane Community Primary School", text: "Moston Lane Community Primary School, Manchester, M40 9EA" },
+          { value: "Mount Carmel RC Primary School - Infants", text: "Mount Carmel RC Primary School - Infants, Manchester, M13 0XH" },
+          { value: "New Moston Primary School", text: "New Moston Primary School, Manchester, M40 9EA" },
+          { value: "Newall Green Primary School", text: "Newall Green Primary School, Manchester, M23 2SX" },
+          { value: "Northenden Community School", text: "Northenden Community School, Manchester, M22 4HH" },
+          { value: "Oasis Academy Aspinal", text: "Oasis Academy Aspinal, Manchester, M12 5RT" },
+          { value: "Oasis Academy Harpur Mount", text: "Oasis Academy Harpur Mount, Manchester, M12 5RT" },
+          { value: "Oasis Academy Temple", text: "Oasis Academy Temple, Manchester, M12 5RT" },
+          { value: "Old Hall Drive Academy", text: "Old Hall Drive Academy, Manchester, M14 6XH" },
+          { value: "Old Moat Primary School", text: "Old Moat Primary School, Manchester, M19 1EH" },
+          { value: "Oswald Road Primary School", text: "Oswald Road Primary School, Manchester, M14 5LE" },
+          { value: "Our Lady's RC Primary School", text: "Our Lady's RC Primary School, Manchester, M14 6XH" },
+          { value: "Our Lady's RC High School", text: "Our Lady's RC High School, Manchester, M14 6XH" },
+          { value: "Park View Community School", text: "Park View Community School, Manchester, M12 5RT" },
+          { value: "Parrs Wood High School", text: "Parrs Wood High School, Manchester, M20 5PG" },
+          { value: "Peel Hall Primary School", text: "Peel Hall Primary School, Manchester, M22 5RG" },
+          { value: "Pike Fold Community Primary School", text: "Pike Fold Community Primary School, Manchester, M25 0EG" },
+          { value: "Plymouth Grove Primary School", text: "Plymouth Grove Primary School, Manchester, M13 0XH" },
+          { value: "Rack House Primary School", text: "Rack House Primary School, Manchester, M13 0XH" },
+          { value: "Ravensbury Community School", text: "Ravensbury Community School, Manchester, M18 7HD" },
+          { value: "Ringway Primary School", text: "Ringway Primary School, Manchester, M22 4HH" },
+          { value: "Rolls Crescent Primary School", text: "Rolls Crescent Primary School, Manchester, M40 1QH" },
+          { value: "Rushbrook Primary Academy", text: "Rushbrook Primary Academy, Manchester, M12 5RT" },
+          { value: "Sacred Heart Catholic Primary School (Baguley)", text: "Sacred Heart Catholic Primary School (Baguley), Manchester, M23 1EH" },
+          { value: "Sacred Heart RC Primary School (Gorton)", text: "Sacred Heart RC Primary School (Gorton), Manchester, M18 7HD" },
+          { value: "Sandilands Primary School", text: "Sandilands Primary School, Manchester, M23 2SX" },
+          { value: "Saviour CofE Primary School", text: "Saviour CofE Primary School, Manchester, M12 5RT" },
+          { value: "Seymour Road Academy", text: "Seymour Road Academy, Manchester, M14 6XH" },
+          { value: "St Agnes CofE Primary School", text: "St Agnes CofE Primary School, Manchester, M14 6XH" },
+          { value: "St Aidan's Catholic Primary School", text: "St Aidan's Catholic Primary School, Manchester, M14 6XH" },
+          { value: "St Ambrose RC Primary School", text: "St Ambrose RC Primary School, Manchester, M14 6XH" },
+          { value: "St Andrew's CofE Primary School", text: "St Andrew's CofE Primary School, Manchester, M14 6XH" },
+          { value: "St Anne's RC Primary School (Ancoats)", text: "St Anne's RC Primary School (Ancoats), Manchester, M4 6BF" },
+          { value: "St Anne's RC Primary School (Crumpsall)", text: "St Anne's RC Primary School (Crumpsall), Manchester, M8 5SX" },
+          { value: "St Anthony's Catholic Primary School", text: "St Anthony's Catholic Primary School, Manchester, M12 5RT" },
+          { value: "St Augustine's CofE Primary School", text: "St Augustine's CofE Primary School, Manchester, M14 6XH" },
+          { value: "St Barnabas' CofE Primary Academy", text: "St Barnabas' CofE Primary Academy, Manchester, M14 6XH" },
+          { value: "St Bernard's RC Primary School", text: "St Bernard's RC Primary School, Manchester, M8 5SX" },
+          { value: "St Catherine's RC Primary School", text: "St Catherine's RC Primary School, Manchester, M14 6XH" },
+          { value: "St Chad's RC Primary School", text: "St Chad's RC Primary School, Manchester, M9 4GP" },
+          { value: "St Chrysostom's CofE Primary School", text: "St Chrysostom's CofE Primary School, Manchester, M14 6XH" },
+          { value: "St Clare's RC Primary School", text: "St Clare's RC Primary School, Manchester, M14 6XH" },
+          { value: "St Clement's CofE Primary School", text: "St Clement's CofE Primary School, Manchester, M14 6XH" },
+          { value: "St Cuthbert's RC Primary School", text: "St Cuthbert's RC Primary School, Manchester, M14 6XH" },
+          { value: "St Dunstan's RC Primary School", text: "St Dunstan's RC Primary School, Manchester, M14 6XH" },
+          { value: "St Edmund's RC Primary School", text: "St Edmund's RC Primary School, Manchester, M14 6XH" },
+          { value: "St Elizabeth's Catholic Primary School", text: "St Elizabeth's Catholic Primary School, Manchester, M14 6XH" },
+          { value: "St Francis RC Primary School", text: "St Francis RC Primary School, Manchester, M14 6XH" },
+          { value: "St James' CofE Primary School (Gorton)", text: "St James' CofE Primary School (Gorton), Manchester, M18 8EH" },
+          { value: "St James' CofE Primary School (Rusholme)", text: "St James' CofE Primary School (Rusholme), Manchester, M14 5NP" },
+          { value: "St John Bosco RC Primary School", text: "St John Bosco RC Primary School, Manchester, M12 5RT" },
+          { value: "St John Fisher and St Thomas More Catholic Primary School", text: "St John Fisher and St Thomas More Catholic Primary School, Manchester, M12 5RT" },
+          { value: "St John's CofE Primary School", text: "St John's CofE Primary School, Manchester, M14 5NP" },
+          { value: "St John's RC Primary School", text: "St John's RC Primary School, Manchester, M14 5NP" },
+          { value: "St Joseph's RC Primary School", text: "St Joseph's RC Primary School, Manchester, M12 5RT" },
+          { value: "St Kentigern's RC Primary School", text: "St Kentigern's RC Primary School, Manchester, M14 6XH" },
+          { value: "St Luke's CofE Primary School", text: "St Luke's CofE Primary School, Manchester, M14 6XH" },
+          { value: "St Malachy's RC Primary School", text: "St Malachy's RC Primary School, Manchester, M14 6XH" },
+          { value: "St Margaret Mary's RC Primary School", text: "St Margaret Mary's RC Primary School, Manchester, M14 6XH" },
+          { value: "St Margaret's CofE Primary School (Whalley Range)", text: "St Margaret's CofE Primary School (Whalley Range), Manchester, M16 8GW" },
+          { value: "St Mary's CofE Primary School (Moss Side)", text: "St Mary's CofE Primary School (Moss Side), Manchester, M14 4QG" },
+          { value: "St Mary's CofE Primary School (Moston)", text: "St Mary's CofE Primary School (Moston), Manchester, M40 9BX" },
+          { value: "St Mary's RC Primary School (Levenshulme)", text: "St Mary's RC Primary School (Levenshulme), Manchester, M19 2HQ" },
+          { value: "St Matthew's RC High School", text: "St Matthew's RC High School, Manchester, M14 5NP" },
+          { value: "St Patrick's RC Primary School", text: "St Patrick's RC Primary School, Manchester, M12 5RT" }
+        ]
+      }) }}
+    </div>
+    </div>
+<!-- 
+
+    {# 3) Submit button right next to input #}
+    <div class="govuk-!-margin-bottom-0">
+      {{ govukButton({
+        text: "Search",
+        type: "submit"
+      }) }}
+    </div>
+  </div>
+</form>
+
+{# --- Minimal inline CSS to put fields + button on one line accessibly --- #}
+<style>
+  .app-inline{
+    display:flex; gap: 12px; align-items:flex-end; flex-wrap:wrap;
+  }
+  .app-inline .govuk-form-group{ margin-bottom:0 }
+</style>
+
+{# --- Progressive enhancement: turn select into an autocomplete --- #}
+<link rel="stylesheet" href="/public/stylesheets/accessible-autocomplete.min.css">
+<script src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<script>
+  (function () {
+    var selectEl = document.querySelector('#school-picker');
+    if (!selectEl) return;
+
+    accessibleAutocomplete.enhanceSelectElement({
+      selectElement: selectEl,
+      showAllValues: true,         // allows dropdown of all schools
+      autoselect: true,            // picks first match on Enter
+      confirmOnBlur: false,        // prevents accidental selections
+      defaultValue: '{{ data["school-picker"] | default("") | escape }}',
+      name: 'school-picker'        // keep the posted field name the same
+    });
+
+    // Optional: keep original label targeting the new input for a11y
+    // Accessible Autocomplete inserts an input after the select with id `${select.id}-autocomplete`
+    var aaInput = document.getElementById('school-picker__autocomplete');
+    var label = document.querySelector('label[for="school-picker"]');
+    if (aaInput && label) label.setAttribute('for', aaInput.id);
+  })();
+</script> -->
