@@ -1,7 +1,74 @@
 {% extends "/layouts/childcare/dev/layout-childcare.html" %}
 
 {% block pageTitle %}
- Event history
+  Childcare
+{% endblock %}
+
+{% block bodyStart %}
+
+  {% from "govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
+
+{% set html %}
+  <p class="govuk-body">We use some essential cookies to make this service work.</p>
+  <p class="govuk-body">We’d also like to use analytics cookies so we can understand how you use the service and make improvements.</p>
+{% endset %}
+
+{% set acceptHtml %}
+  <p class="govuk-body">You’ve accepted analytics cookies. You can <a class="govuk-link" href="/childcare/dev/compliance/cookies">change your cookie settings</a> at any time.</p>
+{% endset %}
+
+{% set rejectHtml %}
+  <p class="govuk-body">You’ve rejected analytics cookies. You can <a class="govuk-link" href="/childcare/dev/compliance/cookies">change your cookie settings</a> at any time.</p>
+{% endset %}
+
+{{ govukCookieBanner({
+  ariaLabel: "Cookies on Manage eligbility for childcare support",
+
+  messages: [
+    {
+      hidden: true,
+      headingText: "Cookies on Manage eligbility for childcare support",
+      html: html,
+      actions: [
+        {
+          text: "Accept analytics cookies",
+          type: "button"
+        },
+        {
+          text: "Reject analytics cookies",
+          type: "button"
+        },
+        {
+          text: "View cookies",
+          href: "/childcare/dev/compliance/cookies"
+        }
+      ]
+    },
+    {
+      html: acceptHtml,
+      role: "alert",
+      hidden: false,
+      actions: [
+        {
+          text: "Hide cookie message",
+          type: "button"
+        }
+      ]
+    },
+    {
+      html: rejectHtml,
+      role: "alert",
+      hidden: true,
+      actions: [
+        {
+          text: "Hide cookie message",
+          type: "button"
+        }
+      ]
+    }
+  ]
+}) }}
+
 {% endblock %}
 
 {% block beforeContent %}
@@ -11,16 +78,14 @@
 }) }}
 {% endblock %}
 
-
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+      <h1 class="govuk-heading-l">View eligibility code history</h1>
 
-    <h1 class="govuk-heading-l">View eligibility code history</h1>
-
-      <form class="form" action="/childcare/dev/reports/event-history/event-history" method="post" novalidate>
+      <form class="form" action="#" method="post" novalidate>
 
           {% call govukFieldset({
 
@@ -87,13 +152,7 @@
 
       </form>
 
-
-
   </div>
-
 </div>
-
-
-
 
 {% endblock %}

@@ -1,0 +1,96 @@
+{% extends "/layouts/childcare/v8/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Childcare for working families eligibility checks: guidance on outcome pages
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-l">Childcare for working families eligibility checks: guidance on outcome pages</h1>
+
+    <p>This guidance explains the validity outcomes, statuses and terminology used after a check has been carried out. </p>
+
+    <h2 class="govuk-heading-m">Term dates and eligibility code validity </h2>
+
+    <p>The term dates for using eligibility codes are: </p>
+
+    <ul>
+      <li>1 January to 31 March – Spring term </li>
+      <li>1 April to 31 August – Summer term </li>
+      <li>1 September to 31 December – Autumn term</li>
+    </ul>
+
+    <p>An eligibility code can be used in the next term after the eligibility confirmed on date. For example, if the eligibility confirmed on date is 21 February, then the code can be used in the summer term.</p>
+
+    <div class="govuk-inset-text">
+      The eligibility confirmed on date is sometimes called the validity start date.
+    </div>
+
+    <p>Parents can apply for 30 hours of free childcare from when their child is 23 weeks old. There is <a href="https://www.gov.uk/free-childcare-if-working/when-to-apply">guidance for parents on when to apply and when they can get their hours</a>, as this depends on the date the child turns 9 months old. Eligibility codes can be used the term after the child turns 9 months.  </p>
+
+    <p>When you run a check, the outcome page tells you what term or terms a code is valid for.</p>
+
+    <h2 class="govuk-heading-m">Discretionary start dates</h2>
+
+    <p>When a parent applies before the start of a term, but HMRC confirms their eligibility after that term has started, then the system sets a discretionary start date. This is based on the application submitted on date.</p>
+
+    <p>A discretionary start date is only applied when the eligibility confirmed on date is between 1st and 14th of the first month in the current term (January, April or September) and the application submitted on date is from the previous term. When the discretionary start date is applied, the code can be used in the current term. </p>
+
+    <p>For example, if the eligibility confirmed on date is 4 April (summer term) and the application submitted on date is 23 March (spring term), then a discretionary start date is applied, and the code can be used in the summer term.</p>
+
+    <p>When you run a check, the outcome page will include a ‘discretionary start date applied’ tag to the ‘eligibility last confirmed on’ field.  </p>
+
+    <h2 class="govuk-heading-m">Grace periods</h2>
+
+    <p>If a parent is no longer eligible for 30 hours of free childcare - either due to a change in circumstances or because they miss the reconfirmation date - a grace period applies if their child already has a childcare place. The child can continue in their current place for a short period, during which parents should submit another application or reconfirm their code. </p>
+
+    <p>Section A1.22 to A1.31 of the statutory guidance on GOV.UK provides <a href="https://www.gov.uk/government/publications/early-education-and-childcare--2/early-education-and-childcare-effective-from-1-april-2025?">detailed guidance for local authorities on grace periods</a>. This includes guidance on notifying parents and grace period end dates. </p>
+
+    <p>When you run a check, the outcome page tells you whether a code is in the grace period and what the grace period end date is. </p>
+
+    <h2 class="govuk-heading-m">Temporary codes </h2>
+
+    <p>Temporary codes are generated when there is an issue that prevents the parent from completing an application online, or there is a data issue that is incorrectly preventing them being made eligible. Temporary codes start with 11, can only be used once and cannot be reconfirmed. </p>
+
+    <p>A parent with a temporary code can apply for a permanent code at any time. If the pervious issues have been resolved, they will receive a permanent eligibility code (starting with 500 or 501). If there is another issue, they will receive another temporary code. </p>
+
+    <p>Temporary codes are not linked to permanent codes. HMRC do add a note to a parent's contact history when a temporary code has been issued. </p>
+
+    <p>It is possible for a temporary code to have overlapping validity dates with a permanent code. In this case, it's important to give the childcare provider the correct code. </p>
+
+    <p>Grace periods apply to temporary codes. </p>
+
+    <p>When you run a check, the outcome page tells you whether a code is a temporary code. If it is, the reconfirmation status will be 'Not applicable.' </p>
+
+    <h2 class="govuk-heading-m">Child age and compulsory school age</h2>
+
+    <p>Parents can be eligible for 30 hours of free childcare if their child is aged 9 months to 4 years old. They can apply from when their child is 23 weeks old. </p>
+
+    <h3 class="govuk-heading-s">Child too young</h3>
+
+    <p>Sections A.1.10 of the statutory guidance on GOV.UK provide <a href="https://www.gov.uk/government/publications/early-education-and-childcare--2/early-education-and-childcare-effective-from-1-april-2025?">information on the date when a child can take up their place</a>.</p>
+
+    <p>When you run a check, the outcome page tells you if a child is too young to use their code or whether the code cannot be used until the following term.  </p>
+
+    <h3 class="govuk-heading-s">Child too old </h3>
+
+    <p>Parents are not eligible for 30 hours of free childcare when the child reaches compulsory school age. There is guidance on GOV.UK on <a href="https://www.gov.uk/schools-admissions/school-starting-age">when a child has reached compulsory school age</a>. </p>
+
+    <p>When you a run a check, the outcome page tells you if the child has reached compulsory school age. </p>
+
+  </div>
+</div>
+
+{% endblock %}

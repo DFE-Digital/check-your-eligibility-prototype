@@ -1,8 +1,9 @@
-{% extends "/layouts/childcare/dev/layout-childcare.html" %}
+{% extends "/layouts/childcare/v8/layout-childcare.html" %}
 
 {% block pageTitle %}
-  May not be eligible
+  Check failed
 {% endblock %}
+
 
 {% block content %}
 
@@ -12,14 +13,12 @@
     <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
       <div class="govuk-notification-banner__header">
         <h1 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          May not be eligible
+          Check failed
         </h1>
       </div>
       <div class="govuk-notification-banner__content">
-        <h3 class="govuk-notification-banner__heading">
-          The children of this parent or guardian may not be eligible for {{ data['eligibility-type'] }}.
-        </h3>
-        <p class="govuk-body">They'll need to provide supporting evidence if they think they're eligible.</p>
+        <p class="govuk-notification-banner__heading">Universal Credit statements needed to perform the check may not be currently available.</p>
+        <p>This could change in as little as 1 working day – keep checking for 4 to 6 weeks.</p>
       </div>
     </div>
 
@@ -54,29 +53,13 @@
 
     <h2 class="govuk-heading-m govuk-!-margin-top-8">What to do next</h2>
 
+    <p>You could ask for the parent or guardian's latest Universal Credit statements (up to 3), then <a target="_blank" href="">review them as evidence</a>.</p>
+
     <p>You can <a href="" class="govuk-link" onclick="printPage()">print this page</a> for the parent or guardian to keep.</p>
 
+    <h3 class="govuk-heading-s">If the check keeps failing</h3>
+    <p>If the check still fails after 6 weeks, contact the <a href="https://forms.office.com.mcas.ms/pages/responsepage.aspx?id=yXfS-grGoU2187O4s0qC-URYbNo1-R1EubHA0gNJis5UNjFaUzRMTEVPTVlaMFNFOVg1Q05PODg3Vi4u&route=shorturl" class="gov-link"> Department for Education support desk</a>.</p>
 
-    <p class="govuk-body">If the parent or guardian provides supporting evidence, you'll need to review it and decide if they're eligible.</p>
-
-
-   {% if (data['eligibility-type'] == "Early learning for 2-year-olds") %}
-
-    <p class="govuk-body"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="/childcare/dev/guidance/2yo-evidence">See a complete list of acceptable evidence (opens in new tab)</a>.</p>
-
-    {% else %}
-
-      <p class="govuk-body"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="/childcare/dev/guidance/eypp-evidence">See a complete list of acceptable evidence (opens in new tab)</a>.</p>
-
-    {% endif %}
-
-
-    {% from "govuk/components/button/macro.njk" import govukButton %}
-
-      {{ govukButton({
-        text: "Run another check",
-        href: '/childcare/dev/single-check/single'
-      }) }}
 
   </div>
 </div>

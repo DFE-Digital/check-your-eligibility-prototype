@@ -1,4 +1,4 @@
-{% extends "/layouts/childcare/dev/layout-childcare.html" %}
+{% extends "/layouts/childcare/v8/layout-childcare.html" %}
 
 {% block pageTitle %}
   May not be eligible
@@ -60,13 +60,16 @@
     <p class="govuk-body">If the parent or guardian provides supporting evidence, you'll need to review it and decide if they're eligible.</p>
 
 
-   {% if (data['eligibility-type'] == "Early learning for 2-year-olds") %}
+    <h2 class="govuk-heading-m">Guidance</h2>
 
-    <p class="govuk-body"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="/childcare/dev/guidance/2yo-evidence">See a complete list of acceptable evidence (opens in new tab)</a>.</p>
+
+    {% if (data['eligibility-type'] == "Early learning for 2-year-olds") %}
+
+    <p class="govuk-body"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="/childcare/v8/guidance/2yo-evidence">See a complete list of acceptable evidence (opens in new tab)</a>.</p>
 
     {% else %}
 
-      <p class="govuk-body"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="/childcare/dev/guidance/eypp-evidence">See a complete list of acceptable evidence (opens in new tab)</a>.</p>
+      <p class="govuk-body"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="/childcare/v8/guidance/eypp-evidence">See a complete list of acceptable evidence (opens in new tab)</a>.</p>
 
     {% endif %}
 
@@ -75,8 +78,11 @@
 
       {{ govukButton({
         text: "Run another check",
-        href: '/childcare/dev/single-check/single'
+        href: '/childcare/v8/single-check/single',
+        classes: 'govuk-!-margin-top-6'
       }) }}
+
+
 
   </div>
 </div>

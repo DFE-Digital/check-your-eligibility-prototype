@@ -1,0 +1,158 @@
+{% extends "/layouts/childcare/dev/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Childcare
+{% endblock %}
+
+{% block bodyStart %}
+
+  {% from "govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
+
+{% set html %}
+  <p class="govuk-body">We use some essential cookies to make this service work.</p>
+  <p class="govuk-body">We’d also like to use analytics cookies so we can understand how you use the service and make improvements.</p>
+{% endset %}
+
+{% set acceptHtml %}
+  <p class="govuk-body">You’ve accepted analytics cookies. You can <a class="govuk-link" href="/childcare/dev/compliance/cookies">change your cookie settings</a> at any time.</p>
+{% endset %}
+
+{% set rejectHtml %}
+  <p class="govuk-body">You’ve rejected analytics cookies. You can <a class="govuk-link" href="/childcare/dev/compliance/cookies">change your cookie settings</a> at any time.</p>
+{% endset %}
+
+{{ govukCookieBanner({
+  ariaLabel: "Cookies on Manage eligbility for childcare support",
+  messages: [
+    {
+      headingText: "Cookies on Manage eligbility for childcare support",
+      html: html,
+      actions: [
+        {
+          text: "Accept analytics cookies",
+          type: "button",
+          href: "/childcare/dev/compliance/cookie-banner-accepted"
+        },
+        {
+          text: "Reject analytics cookies",
+          type: "button",
+          href: "/childcare/dev/compliance/cookie-banner-rejected"
+        },
+        {
+          text: "View cookies",
+          href: "/childcare/dev/compliance/cookies"
+        }
+      ]
+    },
+    {
+      html: acceptHtml,
+      role: "alert",
+      hidden: true,
+      actions: [
+        {
+          text: "Hide cookie message",
+          type: "button"
+        }
+      ]
+    },
+    {
+      html: rejectHtml,
+      role: "alert",
+      hidden: true,
+      actions: [
+        {
+          text: "Hide cookie message",
+          type: "button"
+        }
+      ]
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+     <h1 class="govuk-heading-l">View eligibility code history</h1>
+
+      <form class="form" action="#" method="post" novalidate>
+
+          {% call govukFieldset({
+
+          }) %}
+
+            {% from "govuk/components/input/macro.njk" import govukInput %}
+
+            {{ govukInput({
+              label: {
+                text: "Eligibility code",
+                classes: "govuk-label--m",
+                isPageHeading: false
+              },
+              hint: {
+                text: "Eligibility code must be 11 digits long"
+              },
+              classes: "govuk-input--width-10",
+              id: "30h-code",
+              name: "30h-code"
+            }) }}
+
+            {{ govukInput({
+              classes: "govuk-!-width-one-third",
+              label: {
+                text: "National Insurance number",
+                classes: "govuk-fieldset__legend--m"
+              },
+              hint: {
+                text: "Can be for a parent, guardian or partner. For example, ‘QQ 12 34 56 C’"
+              },
+              id: "ni-number",
+              name: "ni-number"
+            }) }}
+
+            {{ govukDateInput({
+
+              id: "dob",
+              namePrefix: "dob",
+
+              fieldset: {
+                legend: {
+                  text: "Child date of birth",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+                text: "For example, 27 3 1980"
+              }
+            }) }}
+
+
+
+          {% endcall %}
+
+
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "View code history"
+          }) }}
+
+
+      </form>
+
+  </div>
+</div>
+
+{% endblock %}
