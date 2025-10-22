@@ -1,8 +1,10 @@
-{% extends "/layouts/childcare/dev/layout-childcare.html" %}
+{% extends "/layouts/childcare/v8/layout-childcare.html" %}
 
 {% block pageTitle %}
-  May not be eligible
+  Check failed
 {% endblock %}
+
+
 
 {% block content %}
 
@@ -12,14 +14,11 @@
     <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
       <div class="govuk-notification-banner__header">
         <h1 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          May not be eligible
+          Check failed
         </h1>
       </div>
       <div class="govuk-notification-banner__content">
-        <h3 class="govuk-notification-banner__heading">
-          The children of this parent or guardian may not be eligible for {{ data['eligibility-type'] }}.
-        </h3>
-        <p class="govuk-body">They'll need to provide supporting evidence if they think they're eligible.</p>
+        <p class="govuk-notification-banner__heading">The personal information you entered does not match departmental records.</p>
       </div>
     </div>
 
@@ -54,29 +53,24 @@
 
     <h2 class="govuk-heading-m govuk-!-margin-top-8">What to do next</h2>
 
-    <p>You can <a href="" class="govuk-link" onclick="printPage()">print this page</a> for the parent or guardian to keep.</p>
+    <!--
+    <p class="govuk-body"><a href="/childcare/v8/single-check/2yo-eypp/enter-details">Try again</a>, ensuring you've entered the parent or guardian details accurately.</p>
+    -->
 
+    <p>Check that you entered the parent or guardian last name in full and that all other details are correct.</p>
 
-    <p class="govuk-body">If the parent or guardian provides supporting evidence, you'll need to review it and decide if they're eligible.</p>
-
-
-   {% if (data['eligibility-type'] == "Early learning for 2-year-olds") %}
-
-    <p class="govuk-body"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="/childcare/dev/guidance/2yo-evidence">See a complete list of acceptable evidence (opens in new tab)</a>.</p>
-
-    {% else %}
-
-      <p class="govuk-body"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="/childcare/dev/guidance/eypp-evidence">See a complete list of acceptable evidence (opens in new tab)</a>.</p>
-
-    {% endif %}
+    <p> If this keeps happening, <a href="" class="govuk-link" onclick="printPage()">print this page</a> for the parent or guardian to check their details.</p>
 
 
     {% from "govuk/components/button/macro.njk" import govukButton %}
 
-      {{ govukButton({
-        text: "Run another check",
-        href: '/childcare/dev/single-check/single'
-      }) }}
+    {{ govukButton({
+      text: "Try again",
+      href: '/childcare/v8/single-check/2yo-eypp/enter-details'
+    }) }}
+
+
+
 
   </div>
 </div>

@@ -1,0 +1,48 @@
+{% extends "/layouts/childcare/v8/layout-childcare.html" %}
+
+{% block pageTitle %}
+ Guidance
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Guidance</h1>
+
+    <h2 class="govuk-heading-m">Run a check</h2>
+
+    <p><a href="/childcare/v8/guidance/30h-outcomes">Childcare for working families eligibility checks: guidance on outcome pages</a></p>
+
+    <p><a href="/childcare/v8/guidance/2yo-evidence">Early learning for 2-year-olds guidance for reviewing evidence</a></p>
+
+     <p><a href="/childcare/v8/guidance/eypp-evidence">Early years pupil premium guidance for reviewing evidence</a></p>
+
+    <p></p>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <h2 class="govuk-heading-m">Run a batch check</h2>
+
+    <p><a href="/childcare/v8/guidance/batch-result-explainer">Batch check result explainer</a></p>
+
+       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+     <h2 class="govuk-heading-m">Manage foster families</h2>
+
+    <p><a href="https://www.gov.uk/government/publications/30-hours-free-childcare-la-and-early-years-provider-guide">30 hours free childcare for foster children aged 9 months and above</a></p>
+
+
+
+  </div>
+</div>
+
+{% endblock %}

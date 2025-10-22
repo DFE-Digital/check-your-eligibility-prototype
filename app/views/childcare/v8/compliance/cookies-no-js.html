@@ -1,0 +1,126 @@
+{% extends "/layouts/childcare/v8/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Cookies
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Cookies</h1>
+
+    <p>Cookies are small files saved on your phone, tablet or computer when you visit a website.</p>
+    <p>We use cookies to make this service work and collect information about how you use it.</p>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-6">Essential cookies</h2>
+
+    <p class="govuk-body">These essential cookies:</p>
+    <ul class="govuk-list govuk-list--bullet">
+    <li>keep your information secure while you use this service</li>
+    <li>temporarily store the selections you make</li>
+    <li>remember what notifications you've seen, so you're not shown them more than once</li>
+    </ul>
+    <p>We do not need to ask permission to use them.</p>
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Name</th>
+          <th scope="col" class="govuk-table__header">Purpose</th>
+          <th scope="col" class="govuk-table__header">Expires</th>
+      </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+              <td class="govuk-table__cell">.AspNetCore.Antiforgery</td>
+              <td class="govuk-table__cell">Prevents forgery by ensuring details are entered by an actual person</td>
+              <td class="govuk-table__cell">At the end of your browser session</td>
+          </tr>
+          <tr class="govuk-table__row">
+              <td class="govuk-table__cell">AspNetCore.Mvc.CookieTempDataProvider</td>
+              <td class="govuk-table__cell">Stores temporary data so we can display the right messages and screens when you move through the service</td>
+              <td class="govuk-table__cell">At the end of your browser session</td>
+          </tr>
+          <tr class="govuk-table__row">
+              <td class="govuk-table__cell">.AspNetCore.Session</td>
+              <td class="govuk-table__cell">Keeps your data secure and stable as you move through the service</td>
+              <td class="govuk-table__cell">At the end of your browser session</td>
+          </tr>
+
+      </tbody>
+    </table>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-6">Analytics cookies (optional)</h2>
+    <p>We use Microsoft Clarity to collect data about how you use and interact with this service. This information helps us to improve our service.</p>
+    <p>Microsoft Clarity stores anonymised information about:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>how you got to this service</li>
+      <li>the pages you visit on this service and how long you spend on them</li>
+      <li>any errors you see while using this service</li>
+    </ul>
+
+    <table class="govuk-table" aria-label="Cookies that measure website usage">
+      <thead class="govuk-table__head">
+      <tr>
+          <th scope="col" class="govuk-table__header">
+              Name
+          </th>
+          <th scope="col" class="govuk-table__header">
+              Purpose
+          </th>
+          <th scope="col" class="govuk-table__header">
+              Expires
+          </th>
+      </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+         <tr class="govuk-table__row">
+              <td class="govuk-table__cell">_clck</td>
+              <td class="govuk-table__cell">Clarity User ID. Allows Microsoft Clarity to collect unique analytics across the service</td>
+              <td class="govuk-table__cell">1 year</td>
+          </tr>
+          <tr class="govuk-table__row">
+              <td class="govuk-table__cell">_clsk</td>
+              <td class="govuk-table__cell">Helps Microsoft Clarity track your navigation through the service during your browser session</td>
+              <td class="govuk-table__cell">Daily or at the end of your session</td>
+          </tr>
+          <tr class="govuk-table__row">
+              <td class="govuk-table__cell">CLID</td>
+              <td class="govuk-table__cell">Starts the tracking process for Microsoft Clarity so we can collect analytics data as you move through the service</td>
+              <td class="govuk-table__cell">1 year</td>
+          </tr>
+          <tr class="govuk-table__row">
+              <td class="govuk-table__cell">MUID</td>
+              <td class="govuk-table__cell">Microsoft User ID. Allows Microsoft to collect analytics accross their services</td>
+              <td class="govuk-table__cell">1 year</td>
+          </tr>
+
+      </tbody>
+    </table>
+
+    <h2 class="govuk-heading-l">Change your cookie settings</h2>
+    <p class="govuk-body">We cannot change your cookie settings at the moment because JavaScript is not running in your browser. To fix this, try:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>turning on JavaScript in your browser settings</li>
+      <li>reloading this page</li>
+    </ul>
+
+
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}
