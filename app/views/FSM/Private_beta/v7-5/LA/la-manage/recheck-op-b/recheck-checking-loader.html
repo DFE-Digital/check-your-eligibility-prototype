@@ -1,0 +1,124 @@
+{% extends "layouts/FSM/v7-4/layout-dfe-lanav.html" %}
+{% set pageName="Rechecking eligibility" %}
+
+{% block content %}
+
+{% set title="Exporting" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="flex-container">
+      <div class="container">
+        <h1 class="govuk-heading-l">{{ pageName }}</h1>
+        <p class="govuk-body-l">You can close this page and return to the recheck history for results</p>
+
+        <div class="govuk-progress-bar"
+             id="progressbar"
+             aria-labelledby="progress-bar-label"
+             aria-valuemin="0"
+             aria-valuemax="100"
+             aria-valuenow="0"
+             role="progressbar"
+             style="height:42px; background-color:#f3f2f1; border-radius:4px; overflow:hidden;">
+          <div id="progress"
+               style="height:100%; width:0%; background-color:#347CA9; transition:width 0.3s ease;"></div>
+        </div>
+
+        <div style="padding-top:10px;"></div>
+
+        <p id="progress-bar-label" class="govuk-heading-m">
+          <span id="counter">0</span> / <span id="total-count"></span>
+        </p>
+
+        <p class="govuk-heading-s">
+          Estimated total time: <span id="processing-time"></span>
+        </p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+  // ----- CONFIG -----
+  const secondsPerRecord = 3;   // each record takes 3 seconds
+  const tickEveryMs = 250;     // update UI every 0.5 second
+  const redirectUrl = 'recheck-success.html'; // fixed destination
+
+  // ----- INIT -----
+  const total_count = Math.floor(Math.random() * 100) + 5; // demo: 5–124 records
+  document.getElementById('total-count').textContent = total_count;
+
+  const totalDurationMs = total_count * secondsPerRecord * 500;
+  document.getElementById('processing-time').textContent =
+    formatDurationWords(totalDurationMs); // nicer than raw minutes only
+
+  const countEl = document.getElementById('counter');
+  const barEl   = document.getElementById('progress');
+  const barWrap = document.getElementById('progressbar');
+  const etaEl   = document.getElementById('eta');
+
+  let currentCount = 0;
+  const startTime = Date.now();
+  let nextThresholdTime = startTime + (secondsPerRecord * 1000);
+
+  const intervalId = setInterval(() => {
+    const now = Date.now();
+
+    // Move to next record once its 6s slice has elapsed
+    if (now >= nextThresholdTime && currentCount < total_count) {
+      currentCount++;
+      nextThresholdTime += (secondsPerRecord * 20);
+    }
+
+    // Clamp
+    if (currentCount >= total_count) {
+      currentCount = total_count;
+    }
+
+    // Update UI
+    countEl.textContent = currentCount;
+    const percentage = (currentCount / total_count) * 100;
+    barEl.style.width = percentage.toFixed(2) + '%';
+
+    // Update ARIA
+    barWrap.setAttribute('aria-valuemax', String(total_count));
+    barWrap.setAttribute('aria-valuenow', String(currentCount));
+    barWrap.setAttribute('aria-valuetext', `${currentCount} of ${total_count}`);
+
+    // ETA
+    const elapsed = now - startTime;
+    const remainingMs = Math.max(0, totalDurationMs - elapsed);
+    if (etaEl) etaEl.textContent = 'Estimated time remaining: ' + formatDuration(remainingMs);
+
+    // Finish + short delay before redirect
+    if (currentCount >= total_count) {
+      clearInterval(intervalId);
+      if (etaEl) etaEl.textContent = 'Estimated time remaining: less than 1s';
+      setTimeout(() => { document.location = redirectUrl; }, 1000);
+    }
+  }, tickEveryMs);
+
+  function formatDuration(ms) {
+    const totalSeconds = Math.ceil(ms / 1000);
+    const h = Math.floor(totalSeconds / 3600);
+    const m = Math.floor((totalSeconds % 3600) / 60);
+    const s = totalSeconds % 60;
+    if (h > 0) return `${h}h ${m}m`;
+    if (m > 0) return `${m}m ${s}s`;
+    return `${s}s`;
+  }
+
+  function formatDurationWords(ms) {
+    const totalSeconds = Math.ceil(ms / 1000);
+    const m = Math.floor(totalSeconds / 60);
+    const s = totalSeconds % 60;
+    if (m > 0 && s > 0) return `${m} minutes ${s} seconds`;
+    if (m > 0) return `${m} minutes`;
+    return `${s} seconds`;
+  }
+</script>
+{% endblock %}
