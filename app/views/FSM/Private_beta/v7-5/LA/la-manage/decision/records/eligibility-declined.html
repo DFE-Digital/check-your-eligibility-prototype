@@ -1,0 +1,82 @@
+{% extends "layouts/FSM/v7-4/layout-dfe-lanav-noback.html" %}
+{% set Date = "22 Sep 2025" %}
+
+{% set pageName="Application declined" %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <div class="govuk-width-container">
+      <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-panel govuk-panel--confirmation">
+              <h1 class="govuk-panel__title">
+                Application declined
+              </h1>
+              <div class="govuk-panel__body">
+                Application reference number<br><strong>44455453</strong>
+              </div>
+              <br>
+                <div class="govuk-panel__body">
+                Declined on {{Date}}
+              </div>
+            </div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+            <h2 class="govuk-heading-m">What happens next</h2>
+            <p class="govuk-body">
+              The school will receive a notification that the child is not eligible after your review. </p>
+            <!-- <p class="govuk-body">
+               If you need to find the application again, you can <a href="search">search all records</a>. -->
+
+          </div>
+        </div>
+        <br>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <p class="govuk-body">
+              <a class="govuk-link" href="../pending-list"> Review more applications.</a>
+            </p>
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break">
+         <h2 class="govuk-heading-s">We want to get your feedback</h2>
+
+            <p class="govuk-body">
+              <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+            </p>
+            </div>
+      </main>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}
