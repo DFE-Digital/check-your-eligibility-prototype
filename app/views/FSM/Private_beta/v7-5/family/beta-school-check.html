@@ -1,5 +1,5 @@
 {% extends "layouts/FSM/v7-5/layout-dfe-signed-out.html" %}
-{% set pageName="Find schools included in this test service" %}
+{% set pageName="Find out if a school is included" %}
 
 
 {% block pageScripts %}
@@ -53,15 +53,14 @@
         <p class="govuk-notification-banner__heading">
           Not all schools are included in this test service.
         </p>
-        <p class="govuk-body">This is a new service that is being tested with some Local Authorities. They will be able
-          to tell you if they are part of it.</p>
+        <p class="govuk-body">This is a new service that is being tested in some local authorities.</p>
 
       </div>
   </div>
 
 
   <h1 class="govuk-heading-l">{{pageName}}</h1>
-  <p>Use the school picker to find your child's school to see if they are taking part in the testing.</p>
+  <p>Use the school picker to see if your child's school is included in the test service.</p>
 
   {% include "../../../../_includes/schools-beta.html" %}
   </select>
@@ -70,7 +69,7 @@
     <form action="beta-school-check-show" method="post">
       <div style="padding-bottom: 24px;"></div>
       {{ govukButton({
-        text: "Search",
+        text: "Continue",
         isStartButton: false
       }) }}
     </form>
