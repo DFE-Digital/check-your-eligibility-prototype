@@ -1,5 +1,5 @@
 {% extends "layouts/FSM/v7-5/layout-dfe.html" %}
-{% set pageName="Find schools included in this test service" %}
+{% set pageName="You cannot use this test service" %}
 
 
 {% block pageScripts %}
@@ -41,39 +41,18 @@ document.addEventListener('DOMContentLoaded', function () {
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
    
-    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
-      data-module="govuk-notification-banner">
-      <div class="govuk-notification-banner__header">
-        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          Important
-        </h2>
-      </div> 
-
-      <div class="govuk-notification-banner__content">
-        <p class="govuk-notification-banner__heading">
-          Not all schools are included in this test service.
-        </p>
-        <p class="govuk-body">This is a new service that is being tested with a small selection of schools.</p>
-      </div>
-
-    </div>
  
     <h1 class="govuk-heading-l">{{pageName}}</h1>
     <!-- <p>Use the school picker to find your child's school to see if they are taking part in the testing.</p> -->
 
     <!-- Add a form tag with the correct action -->
     <form id="schoolForm" action="parent-soft-check/check" method="get">
-      <div class="govuk-inset-text">
-        
-        <b>You cannot use this service.</b>
-        <br>
-        <p class="govuk-body">The school you selected is not part of this test service. 
-          <br>
+        <p class="govuk-body">The school you selected is not included in the test service.</p>
 
-You can <a href="fsm-apply"></a>apply now using the existing process</a>.
-
-Apply for free school meals - GOV.UK</p>
+<p class="govuk-body">You can <a href="https://www.gov.uk/apply-free-school-meals">apply now using the existing process</a>.</p>
         <br>
+              <div class="govuk-inset-text">
+
    All Saints CofE Primary School<br>
    Ilkley<br>
    LS29 8QH

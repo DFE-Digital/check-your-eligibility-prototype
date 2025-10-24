@@ -1,5 +1,5 @@
 {% extends "layouts/FSM/v7-5/layout-dfe-signed-out.html" %}
-{% set pageName="Find schools included in this test service" %}
+{% set pageName="You can use this test service" %}
 
 
 {% block pageScripts %}
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-   
+<!--    
     <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
       data-module="govuk-notification-banner">
       <div class="govuk-notification-banner__header">
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
           Not all schools are included in this test service.
         </p>
         <p class="govuk-body">This is a new service that is being tested with a small selection of schools.</p>
-      </div>
+      </div> -->
 
     </div>
  
@@ -63,10 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     <!-- Add a form tag with the correct action -->
     <form id="schoolForm" action="parent-soft-check/check" method="get">
-      
-        <b>Your school is taking part in our test service.</b>
-        <br>
-        <br>
+      <p class="govuk-body-l">The school you selected is included in the test service.</p>
         <div class="govuk-inset-text">
    All Saints CofE Primary School<br>
    Ilkley<br>
