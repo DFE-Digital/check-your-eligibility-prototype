@@ -1,0 +1,308 @@
+{% extends "layouts/FSM/v7-5/welsh/layout-dfe-welshnav.html" %}
+{% set pageName="Choose how to run a manual batch check" %}
+
+{% block beforeContent %}
+
+{% block backLink %}
+{% include "_includes/layouts/back_link.html" %}
+{% endblock %}
+
+{% set breadcrumbs = breadcrumbs or [
+  { text: "Home", href: "/FSM/Private_beta/v7-5/LA/dashboard.html" },
+  { text: "Batch checking", href: "/FSM/Private_beta/v7-5/LA/la-manage/batch-checking/manual-no-ctf.html" },
+  { text: "Batch checks history" }
+] %}
+<!--
+<nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+  <ol class="govuk-breadcrumbs__list">
+    {% for crumb in breadcrumbs %}
+      <li class="govuk-breadcrumbs__list-item">
+        {% if crumb.href and not loop.last %}
+          <a class="govuk-breadcrumbs__link" href="{{ crumb.href }}">{{ crumb.text }}</a>
+        {% else %}
+          {{ crumb.text }}
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ol>
+</nav> -->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">Batch checks history</h1>
+
+    <!-- <details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+Get help with check results    </span>
+  </summary>
+  <div class="govuk-details__text">
+Details need to go in here  </div>
+</details> -->
+
+    <!-- <p><a href="/batch-checking/history/result-explainer"></a></p> -->
+
+    <table class="govuk-table govuk-table--small-text-until-tablet">
+      <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-4">Showing 12 batch files
+        uploaded in the last 7 days</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Filename</th>
+          <th class="govuk-table__cell">Number <br>of records</th>
+          <th class="govuk-table__cell">Final name <br>in check<br></th>
+          <th scope="col" class="govuk-table__header">Date submitted</th>
+          <th scope="col" class="govuk-table__header">Submitted by</th>
+          <th scope="col" class="govuk-table__header">Status</th>
+          <th scope="col" class="govuk-table__header"> </th>
+          <th scope="col" class="govuk-table__header"></th>
+
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">school-ctf-Feb25.csv</td>
+          <td class="govuk-table__cell">25</td>
+          <td class="govuk-table__cell">Smith</td>
+          <td class="govuk-table__cell">{{ "2023-03-01" | duration(7, 'days') | govukDate }} 10:15am</td>
+          <td class="govuk-table__cell">Janet Eccles</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Not started</strong></td>
+          <td class="govuk-table__cell"><a href=""> Delete</a></td>
+          <td class="govuk-table__cell"><a href=""> </a></td>
+
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">school-data.csv</td>
+          <td class="govuk-table__cell">50</td>
+          <td class="govuk-table__cell">Johnson</td>
+          <td class="govuk-table__cell">{{ "2023-03-02" | duration(7, 'days') | govukDate }} 3:12pm</td>
+          <td class="govuk-table__cell">Oliver Brown</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">In progress</strong></td>
+          <td class="govuk-table__cell">
+            <div class="govuk-progress-bar" aria-labelledby="progress-bar-label-1" aria-valuemin="0" aria-valuemax="100"
+              aria-valuenow="0" role="progressbar" style="height: 26px; background-color: 	#f3f2f1;">
+              <div class="progress-bar" style="height: 100%; width: 0%; background-color: #347CA9;"></div>
+            </div>
+          </td>
+          <td class="govuk-table__cell">
+            <p id="progress-bar-label-1" class="govuk-body-s" style="margin-top: 5px;">
+              <span class="counter">0</span> / <span class="total-count"></span>
+            </p>
+          </td>
+
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">school-March24.csv</td>
+          <td class="govuk-table__cell">75</td>
+          <td class="govuk-table__cell">Brown</td>
+          <td class="govuk-table__cell">{{ "2023-03-03" | duration(7, 'days') | govukDate }} 11:47am</td>
+          <td class="govuk-table__cell">Sophia Green</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">In progress</strong></td>
+          <td class="govuk-table__cell">
+            <div class="govuk-progress-bar" aria-labelledby="progress-bar-label-2" aria-valuemin="0" aria-valuemax="100"
+              aria-valuenow="0" role="progressbar" style="height: 26px; background-color: 	#f3f2f1;">
+              <div class="progress-bar" style="height: 100%; width: 0%; background-color: #347CA9;"></div>
+            </div>
+          </td>
+          <td class="govuk-table__cell">
+            <p id="progress-bar-label-2" class="govuk-body-s" style="margin-top: 5px;">
+              <span class="counter">0</span> / <span class="total-count"></span>
+            </p>
+          </td>
+          <!-- <td class="govuk-table__cell">75% complete
+            <div class="govuk-progress-bar" aria-labelledby="progress-bar-label" aria-valuemin="0" aria-valuemax="100" aria-valuenow="75" role="progressbar" style="height: 20px; background-color: #f3f2f1; margin-top: 10px; width: 75%;"></div>
+            </td> -->
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">batch-school-Jan25.csv</td>
+          <td class="govuk-table__cell">100</td>
+          <td class="govuk-table__cell">Taylor</td>
+          <td class="govuk-table__cell">{{ "2023-03-04" | duration(7, 'days') | govukDate }} 1:33pm</td>
+          <td class="govuk-table__cell">Liam Johnson</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Completed</strong></td>
+          <td class="govuk-table__cell">
+            <a href="/public/csv/school-outcomes-v3.csv">View results</a>
+          <td class="govuk-table__cell"><a href=""> </a></td>
+
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">upload-final-school.csv</td>
+          <td class="govuk-table__cell">120</td>
+          <td class="govuk-table__cell">Williams</td>
+          <td class="govuk-table__cell">{{ "2023-03-05" | duration(7, 'days') | govukDate }} 4:58pm</td>
+          <td class="govuk-table__cell">Charlotte Davis</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Completed</strong></td>
+          <td class="govuk-table__cell"><a href="">View results</a></td>
+          <td class="govuk-table__cell"><a href=""> </a></td>
+
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">school-headcount.csv</td>
+          <td class="govuk-table__cell">80</td>
+          <td class="govuk-table__cell">Davis</td>
+          <td class="govuk-table__cell">{{ "2023-03-06" | duration(7, 'days') | govukDate }} 9:22am</td>
+          <td class="govuk-table__cell">James Walker</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Completed</strong></td>
+          <td class="govuk-table__cell"><a href="">View results</a> </td>
+          <td class="govuk-table__cell"><a href=""> </a></td>
+
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">recheck-school-term.csv</td>
+          <td class="govuk-table__cell">70</td>
+          <td class="govuk-table__cell">Evans</td>
+          <td class="govuk-table__cell">{{ "2023-03-09" | duration(7, 'days') | govukDate }} 7:15pm</td>
+          <td class="govuk-table__cell">Amelia Evans</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Completed</strong></td>
+          <td class="govuk-table__cell"><a href="">View results</a> </td>
+                    <td class="govuk-table__cell"><a href=""> </a></td>
+
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">school-Feb-final.csv</td>
+          <td class="govuk-table__cell">85</td>
+          <td class="govuk-table__cell">Walker</td>
+          <td class="govuk-table__cell">{{ "2023-03-10" | duration(7, 'days') | govukDate }} 8:03am</td>
+          <td class="govuk-table__cell">Isabella Wallace</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Completed</strong></td>
+          <td class="govuk-table__cell"><a href="">View results</a></td>
+          <td class="govuk-table__cell"><a href=""> </a>
+          </td>
+
+          </td>
+        </tr>
+        <td class="govuk-table__cell">Greenwoodprim25.xml</td>
+        <td class="govuk-table__cell">456</td>
+        <td class="govuk-table__cell">Gallagher</td>
+        <td class="govuk-table__cell">{{ dateSubmitted | duration(6, 'days') | govukDate }} 11.54am</td>
+        <td class="govuk-table__cell">Matthew Smith</td>
+        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Completed</strong></td>
+        <td class="govuk-table__cell"><a href="./batch-check-success">View results</a>
+        <td class="govuk-table__cell"><a href=""> </a></td>
+
+        </td>
+      </tbody>
+    </table>
+
+    <div style="display: flex; justify-content: center; margin-top: 20px;">
+      {{ govukPagination({
+      previous: {
+      href: "#"
+      },
+      next: {
+      href: "#"
+      },
+      items: [
+      {
+      number: 1,
+      href: "#"
+      },
+      {
+      number: 2,
+      current: true,
+      href: "#"
+      },
+      {
+      number: 3,
+      href: "#"
+      }
+      ]
+      }) }}
+    </div>
+
+    <!-- <nav class="govuk-pagination" aria-label="Pagination">
+            <ul class="govuk-pagination__list">
+                <li class="govuk-pagination__item govuk-pagination__item--current">
+                    <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+                        1
+                    </a>
+                </li>
+                <li class="govuk-pagination__item">
+                    <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+                        2
+                    </a>
+                </li>
+            </ul>
+            <div class="govuk-pagination__next">
+                <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+                    <span class="govuk-pagination__link-title">
+                        Next<span class="govuk-visually-hidden"> page</span>
+                    </span>
+                    <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v3h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                    </svg>
+                </a>
+            </div>
+        </nav> -->
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}
+
+
+{% block pageScripts %}
+<script>
+  // For each progress bar row, animate the progress and update the numbers
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('tr').forEach(function (row, idx) {
+      const progressBar = row.querySelector('.progress-bar');
+      const counter = row.querySelector('.counter');
+      const totalCount = row.querySelector('.total-count');
+      const recordCell = row.querySelector('td:nth-child(2)');
+      if (progressBar && counter && totalCount && recordCell) {
+        // Use the number of records from the table cell
+        const total = parseInt(recordCell.textContent.trim(), 10) || 0;
+        totalCount.textContent = total;
+        let current = 0;
+        const interval = setInterval(() => {
+          current++;
+          if (current >= total) {
+            current = total;
+            clearInterval(interval);
+          }
+          counter.textContent = current;
+          progressBar.style.width = (current / total * 100) + '%';
+        }, 100 + idx * 50); // Stagger for demo
+      }
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const navLinks = document.querySelectorAll('.moj-sub-navigation__link');
+    const sections = document.querySelectorAll('.govuk-table-section');
+
+    // Initially hide all sections except the one corresponding to the active link
+    const activeLink = document.querySelector('.moj-sub-navigation__link[aria-current="true"]');
+    const targetId = activeLink ? activeLink.getAttribute('data-section') : 'ready-section';
+
+    sections.forEach(section => {
+      section.style.display = section.id === targetId ? 'block' : 'none';
+    });
+
+    // Add event listeners to handle tab switching
+    navLinks.forEach(link => {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        // Update aria-current for navigation links
+        navLinks.forEach(nav => nav.removeAttribute('aria-current'));
+        this.setAttribute('aria-current', 'true');
+
+        // Show only the corresponding section
+        const newTargetId = this.getAttribute('data-section');
+        sections.forEach(section => {
+          section.style.display = section.id === newTargetId ? 'block' : 'none';
+        });
+      });
+    });
+  });
+</script>
+
+{% endblock %}

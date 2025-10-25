@@ -1,0 +1,91 @@
+{% extends "layouts/FSM/v8-0/layout-dfe.html" %}
+{% set pageName="You cannot use this test service" %}
+
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/autocomplete.js"></script>
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    selectElement: document.querySelector('#school-picker')
+  })
+document.addEventListener('DOMContentLoaded', function () {
+
+  var addAnotherButton = document.querySelector('.moj-add-another__add-button');
+  var removeButton = document.querySelectorAll('.moj-add-another__remove-button');
+  removeButton.forEach(function (button){
+    button.addEventListener('click', updateLegends);
+  });
+  addAnotherButton.addEventListener('click', updateLegends);
+  function updateLegends(){
+    setTimeout(() => {
+      const legends = document.querySelectorAll('.moj-add-another__title');
+      legends.forEach(function (legend, index) {
+        legend.innerHTML = `Child ${index + 1}`;
+      });
+      var removeButton = document.querySelectorAll('.moj-add-another__remove-button');
+      removeButton.forEach(function (button){
+        button.addEventListener('click', updateLegends);
+    });
+    }, 50);
+  }
+})
+
+</script>
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+   
+ 
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+    <!-- <p>Use the school picker to find your child's school to see if they are taking part in the testing.</p> -->
+
+    <!-- Add a form tag with the correct action -->
+    <form id="schoolForm" action="parent-soft-check/check" method="get">
+        <p class="govuk-body">The school you selected is not included in the test service.</p>
+
+<p class="govuk-body">You can <a href="https://www.gov.uk/apply-free-school-meals">apply now using the existing process</a>.</p>
+        <br>
+              <div class="govuk-inset-text">
+
+   All Saints CofE Primary School<br>
+   Ilkley<br>
+   LS29 8QH
+      </div>
+
+      <div class="govuk-button-group">
+        <!-- <button type="submit" class="govuk-button" data-module="govuk-button">
+          Check your eligibility
+        </button> -->
+        <a class="govuk-link" href="beta-school-check">Check another school</a>
+      </div>
+    </form>
+
+    <!-- Remove the JS that overrides the submit event -->
+    <!--
+<script>
+  const allowedSchools = [
+    "All Saints CofE Primary School",
+    "Abbey Hey Primary Academy",
+    "Burnage Academy for Boys",
+    "Eden Girls' Leadership Academy",
+  ];
+  document.getElementById('schoolForm').addEventListener('submit', function(e) {
+    const selectedSchool = document.getElementById('school-picker').value;
+    if (!allowedSchools.includes(selectedSchool)) {
+      e.preventDefault();
+      window.location.href = 'beta-school-check-no.html';
+    }
+  });
+</script>
+-->
+
+  </div>
+</div> 
+
+{% endblock %}

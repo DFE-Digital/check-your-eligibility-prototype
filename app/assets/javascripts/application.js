@@ -51,3 +51,7 @@
 // app.listen(PORT, () => {
 //   console.log(`Server is running on port ${PORT}`);
 // });
+document.addEventListener('DOMContentLoaded', function () {
+  if (window.GOVUKFrontend?.initAll) GOVUKFrontend.initAll();
+  if (window.HMRCFrontend?.initAll) HMRCFrontend.initAll();
+});

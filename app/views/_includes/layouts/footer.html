@@ -1,0 +1,17 @@
+{% block footer %}
+{{ govukFooter({
+  rebrand: "true",
+  meta: {
+    items: [
+      { href:"/FSM/index-fsm", text:"Return to FSM index" },
+      { href:"/manage-prototype", text:"Manage your prototype" },
+      { href: "/manage-prototype/clear-data", text: "Clear data" },
+      { href: "../privacy", text: "Privacy policy" },
+      { href: "../accessibility", text: "Accessibility" },
+      { href: "../cookies", text: "Cookies" },
+      { href: "../contact", text: "Contact us" }
+    ],
+    visuallyHiddenTitle: "Footer links"
+  }
+}) }}
+{% endblock %}

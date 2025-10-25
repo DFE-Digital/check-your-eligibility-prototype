@@ -1,0 +1,85 @@
+{% extends "/layouts/FSM/v8-0/layout-dfe-matnav.html" %}
+{% set pageName="Download a Free school meal form" %}
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="gem-c-title govuk-!-margin-top-0 govuk-!-margin-bottom-8">
+
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+      <p class="govuk-body">Download this form for the parents to complete if you do not have their details before
+        checking free school meal entitlement online.
+      </p>
+    </div>
+    <section>
+      <div class="govuk-grid-column-one-quarter">
+        <a target="_self" tabindex="-1" aria-hidden="true" href="/public/pdf/fsm-application.pdf">
+          <img alt="" class="" src="/public/images/fsm-form-thumbnail.png">
+        </a>
+      </div>
+      <div class="govuk-grid-column-three-quarters">
+        <h2 class="govuk-heading-m">
+          <a target="_blank" href="/public/pdf/fsm_application-2024.pdf">Free School Meals claim form</a>
+        </h2>
+        <p>Ref: FSM2024</p>
+        <p><span><abbr title="Portable Document Format">PDF</abbr></span>, <span>430 KB</span>, <span>4 pages</span></p>
+        <p>This file may not be suitable for users of assistive technology.</p>
+      </div>
+    </section>
+
+  </div>
+</div>
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Request an accessible form
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    If you use assistive technology (such as a screen reader) and need a version of this document in a more
+    accessible format, <br>please email <a href="different.format@hmrc.gov.uk">different.format@hmrc.gov.uk</a>. Please
+    tell us what format you need. It will help us if you say what assistive technology you use.
+  </div>
+</details>
+
+<div class="govuk-!-padding-bottom-5">
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m">What to do</h2>
+
+        <!-- {{ govukWarningText({
+        text: "You will need to complete a separate form for each academy.",
+        iconFallbackText: "Warning"
+        }) }} -->
+        <p><b>You have access to a printer</b></p>
+        <ol>
+          <li>Download, print off and fill in the 'Free school meals claim form'.</li>
+          <li>Give to the parent to fill in with their details along with any evidence they have that they are entitled.
+          </li>
+          <li>As a school administrator you can <a href="../school/school-manage/school-soft-check/checker">run a check for one
+              parent or guardian</a> to check their eligibility.</li>
+        </ol>
+        <br>
+        <!-- <p><b>You do not have access to a printer</b></p>
+        <ol>
+          <li>Ask your academy to download the 'Free school meals claim form' and post it to the parent.</li>
+          <li>Ask the parent to complete the paper form and return it to the academy.</li>
+          <li>Run the check as normal.</li> -->
+          <!-- <li>A school administrator will process your claim form and contact you if you need to do anything else.</li>
+          <li>A school administrator will process your claim form and contact you.</li> -->
+        </ol>
+        <br>
+        <hr class="govuk-section-break govuk-section-break govuk-section-break--l">
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+{% endblock %}

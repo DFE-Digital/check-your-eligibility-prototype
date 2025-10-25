@@ -6,36 +6,44 @@
 
 {# 3 #}
 {% block header %}
-
-
+<!--Correct version--->
 {{ header({
-  "showNav": "false",
-  "showSearch": "false",
-  "showHeaderActionLinks": "true",
-  "logoPath": "public/images",
-  "searchAction": "/search/",
-  "searchInputName": "q",
-  "service": {
-    "name": "Check a family's eligibility"
-  },
-  "headerActionLinks": [
-    {
-      "url"  : "/",
-      "label" : "My account"
+    "showNav": "true",
+    "showSearch": "false",
+    "showHeaderActionLinks": "true",
+    "logoPath": "public/images",
+    "searchAction": "/search/",
+    "searchInputName": "",
+    "logoAltText": "Department for Education",
+    "homeHref": "/FSM/Private_beta/v7-4/dsi-account/dsi-startnow",
+    "selectedNav": view,
+    "service": {
+      "name": "CManage eligibility for free school meal support",
+      "serviceUrl": "/FSM/index-fsm"
     },
-    {
-      "url"  : "../../",
-      "label" : "Sign out"
-    }
+    "headerActionLinks": [
+      {
+        "url"  : "/FSM/Private_beta/v7-4/dsi-account/dsi-landingpage",
+        "label" : "My account"
+      },
+      {
+        "url"  : "/FSM/Private_beta/v7-4/dsi-account/dsi-startnow",
+        "label" : "Sign out"
+      }
   ],
     "primaryLinks": [
-        {
-        "url"  : "dashboard",
-        "label" : "Dashboard"
-      }
+{
+      "url"  : "#",
+      "label" : " "
+    }, {
+      "url"  : "#",
+      "label" : "  "
+    }, {
+      "url"  : "#",
+      "label" : " "
+    }
     ]
-
-})
+  })
 }}
 
 <div class="app-phase-banner__wrapper">
@@ -50,7 +58,6 @@
       </span>
     </p>
   </div>
-
 </div>
 
 {% endblock %}
@@ -71,19 +78,19 @@
    meta: {
      items: [
        {
-         href: "../privacy",
+         href: "/General/v3/privacy",
          text: "Privacy policy"
        },
        {
-        href: "../accessibility",
+        href: "/General/v3/accessibility",
         text: "Accessibility"
       },
        {
-         href: "../cookies",
+         href: "/General/v3/cookies",
          text: "Cookies"
        },
        {
-        href: "../contact",
+        href: "/General/v3/contact",
         text: "Contact us"
       },
       {
@@ -117,4 +124,11 @@
 }
 
 </script>
+
+{{ super() }}
+<script>
+ var AppFrontend = {}
+</script>
+<script src="/public/javascripts/components/filter-toggle-button.js"></script>
+
 {% endblock %}

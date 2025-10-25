@@ -1,0 +1,93 @@
+{% extends "/layouts/mvp3/layout-dfe.html" %}
+{% set pageName="Add a child's details" %}
+
+{%block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="/mvp3-child-1" method="post" novalidate>
+
+    <div class="govuk-heading-l">
+      {{pageName}}
+    </div>
+
+
+    {{ govukInput({
+      id: 'ch-first-name',
+      name: 'ch-first-name',
+      label: {
+        html: 'First name',
+        classes: 'govuk-!-font-weight-bold'
+      },
+      attributes: {
+        'data-name': 'child[first_name]',
+        'data-id': 'child[first_name]'
+      }
+    }) }}
+
+    {{ govukInput({
+      id: 'ch-surname',
+      name: 'ch-surname',
+      label: {
+        html: 'Last name',
+        classes: 'govuk-!-font-weight-bold'
+      },
+      attributes: {
+        'data-name': 'child[last_name]',
+        'data-id': 'child[last_name]'
+      }
+    }) }}
+
+
+    {{ govukDateInput({
+      id: "ch-date-of-birth",
+      fieldset: {
+        legend: {
+          text: "Date of birth",
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {
+        text: "For example, 31 3 1980"
+      },
+      items: [
+        {
+          id: "ch2-day",
+          name: "ch2-day",
+          label: "Day",
+          classes: "govuk-input--width-2",
+          attributes: {
+            'data-name': 'child[dob][day]',
+            'data-id': 'child[dob][day]'
+          }
+        },
+        {
+          id: "ch2-month",
+          name: "ch2-month",
+          label: "Month",
+          classes: "govuk-input--width-2",
+          attributes: {
+            'data-name': 'child[dob][month]',
+            'data-id': 'child[dob][month]'
+          }
+        },
+        {
+          id: "ch2-year",
+          name: "ch2-year",
+          label: "Year",
+          classes: "govuk-input--width-4",
+          attributes: {
+            'data-name': 'child[dob][year]',
+            'data-id': 'child[dob][year]'
+          }
+        }
+      ]
+    }) }}
+
+
+  {{ govukButton({
+  text: "Continue to add a school"
+  }) }}
+</form>
+</div>
+{% endblock %}

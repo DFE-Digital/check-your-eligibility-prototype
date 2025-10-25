@@ -6,13 +6,22 @@
 
 {% set govukRebrand = true %}
 
+{# ------------- #}
+{% set VERSION = "v7-6" %}
+{% set ROOT = "/FSM/Private_beta/" + VERSION %}
+{# ------------------------- #}
+
+{# include the per-version file so this layout knows its own ROOT #}
+{% include "./_version.njk" %}
+
+
 {# 3 #}
 {% block header %}
 
 <header class="govuk-header" data-module="govuk-header">
   <div class="govuk-header__container govuk-width-container">
       <div class="govuk-header__logo">
-        <a href="/FSM/Private_beta/v7-5/dsi-account/dsi-startnow" class="govuk-header__link govuk-header__link--homepage">
+        <a href="/FSM/Private_beta/{VERSION}/dsi-account/dsi-startnow" class="govuk-header__link govuk-header__link--homepage">
             <img src="/public/images/department-for-education_white.png" alt="Department for Education" class="govuk-header__logotype">
         </a>
       </div>
@@ -32,10 +41,7 @@
 {{ govukServiceNavigation({
   serviceName: "Manage eligibility for free school meals",
   navigation: [
-  {
-      href: "/FSM/Private_beta/v7-5/LA/dashboard",
-      text: "Home"
-    }
+     { href: ROOT + "/LA/dashboard", text: "Home" }
   ]
 }) }}
 
@@ -43,7 +49,7 @@
 {% endblock %}
 
 
-
+{# 4 #}
 {% block footer %}
  {{ govukFooter({
   rebrand: "true",
