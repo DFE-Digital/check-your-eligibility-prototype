@@ -1,0 +1,15 @@
+{% extends "layouts/FSM/v7-4/layout-dfe-lanav.html" %}
+{% set pageName="35 applications to be rechecked" %}
+{% set currentAcademicYear="2025" %}
+{% set nextAcademicYear="2026" %}
+{% set currentAcademicYearStart="2025" %}
+{% set nextAcademicYearStart="2026" %}
+{% set date=currentAcademicYearStart %}
+{% set nextDate=nextAcademicYearStart %}
+
+{% block content %}
+
+
+
+
+{% endblock %}

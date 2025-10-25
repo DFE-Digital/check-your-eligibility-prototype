@@ -1,0 +1,96 @@
+{% extends "layouts/FSM/v8-0/welsh/layout-dfe-welshnav.html" %}
+{% set pageName="Run a manual batch check" %}
+
+{% block beforeContent %}
+{% include "_includes/layouts/back_link.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    <div class="moj-page-header-actions">
+      <div class="moj-page-header-actions__title">
+        <span class="govuk-caption-l">Run a batch check for multiple parents or guardians</span>
+        <h1 class="govuk-heading-l">{{pageName}}</h1>
+      </div>
+      <div class="moj-page-header-actions__actions">
+        <div class="moj-button-group moj-button-group--inline">
+          <a href="./history/batch-history.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Batch checks history
+          </a>
+        </div>
+      </div>
+    </div>
+
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">Upload our CSV template</h2>
+    <ol class="govuk-list govuk-list--number">
+      <li>Download the <a href="/public/csv/Batch-check-template.csv" download class="govuk-link">batch check template (185kb)</a>.</li><li>
+        Add the details of the {{ data['check-type'] }} you need to check as well as the children who will be added to the application.</li>
+      <li>Make sure you include:
+        <ul class="govuk-list govuk-list--bullet">
+          <li>last name</li>
+          <li>date of birth (format DD/MM/YYYY or YYYY-MM-DD)</li>
+          <li>National Insurance number</li>
+          <!-- <li>Childs name</li>
+          <li>Childs date of birth (format DD/MM/YYYY or YYYY-MM-DD)</li>
+          <li>School the child attends on a full time basis</li> -->
+        </ul>
+      </li>
+      <li> Save it as a CSV file.</li>
+    </ol>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+    <h3 class="govuk-heading-m">Upload a CSV file</h3>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="file-upload-1">
+      Upload a file
+      </label>
+    <div class="govuk-drop-zone" data-module="govuk-file-upload"> <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+    </div>
+
+    </div>
+
+    <a id="upload-button" class="govuk-button govuk-button--primary" role="button">
+      Run a batch check
+    </a>
+
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+</div>
+    {% endblock %}
+
+
+
+    {% block pageScripts %}
+    <script>
+      // Randomly select one of the three links
+      const links = [
+        '../batch-checking/submitted-not-started',
+        '../batch-checking/submitted-in-progress',
+        '../batch-checking/submitted-completed',
+      ];
+      const randomLink = links[Math.floor(Math.random() * links.length)];
+      document.addEventListener("DOMContentLoaded", function () {
+        const uploadButton = document.getElementById("upload-button");
+        if (uploadButton) {
+          uploadButton.setAttribute("href", randomLink);
+        }
+      });
+    </script>
+
+      <!-- // Multi file upload script -->
+
+    <script type="text/javascript">
+      if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
+        new MOJFrontend.MultiFileUpload({
+          container: $(".moj-multi-file-upload"),
+          uploadUrl: "/ajax-upload",
+          deleteUrl: "/ajax-delete",
+        });
+      }
+    </script>
+
+    {% endblock %}

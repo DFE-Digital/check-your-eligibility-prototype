@@ -1,0 +1,61 @@
+{# 1 #}
+{% from 'node_modules/dfe-frontend/packages/components/header/macro.njk' import header %}
+
+{# 2 #}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+{% set govukRebrand = true %}
+
+{# ------------- #}
+{% set VERSION = "v8-0" %}
+{% set ROOT = "/FSM/Private_beta/" + VERSION %}
+{# ------------------------- #}
+
+{# --- Single source of truth for this version --- #}
+{% set ROOT = "/FSM/Private_beta/v8-0" %}
+
+
+{# 3 #}
+{% block header %}
+<header class="govuk-header" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__logo">
+      <a href="/FSM/index-fsm" class="govuk-header__link govuk-header__link--homepage">
+        <img src="/public/images/department-for-education_white.png" alt="Department for Education" class="govuk-header__logotype">
+      </a>
+    </div>
+    <div class="dfe-header__content" id="content-header">
+      <ul class="dfe-header__action-links govuk-!-margin-top-3">
+        <li><a href="{{ ROOT }}/dsi-account/dsi-startnow" class="govuk-link govuk-link--inverse">Sign out</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+{{ govukServiceNavigation({
+  serviceName: "Manage eligibility for free school meals",
+  serviceUrl: ROOT + "/school/dashboard",
+  navigation: [
+    { href: ROOT + "/school/school-manage/school-soft-check/checker.html", text: "Run a check" },
+    { href: ROOT + "/school/school-manage/batch-checking/manual-no-ctf.html", text: "Run batch check" },
+    { href: ROOT + "/school/school-manage/decision/pending-list", text: "Review applications" },
+    { href: ROOT + "/school/school-manage/search2.html", text: "Search records"},
+    { href: ROOT + "/school/school-manage/guidance.html", text: "Guidance" },
+    { href: ROOT + "/school/school-manage/decision/records/archived.html", text: "Archived" }
+  ]
+}) }}
+
+
+<div class="app-phase-banner__wrapper">
+  <div class="govuk-phase-banner app-phase-banner govuk-width-container">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">Private beta</strong>
+      <span class="govuk-phase-banner__text">
+        This is a Prototype used to test the service.
+      </span>
+    </p>
+  </div>
+  <div class="govuk-width-container govuk-!-margin-top-1">
+  </div>
+</div>
+{% endblock %}

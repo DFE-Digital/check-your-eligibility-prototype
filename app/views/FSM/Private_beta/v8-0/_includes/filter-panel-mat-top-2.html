@@ -1,0 +1,134 @@
+<div class="govuk-grid-row govuk-!-margin-bottom-2" style="justify-content: flex-end;">
+  <div class="govuk-grid-column-full" style="display: flex; align-items: center; justify-content: flex-end;">
+    <button type="button" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" id="toggle-filters-btn">
+      Hide filters
+    </button>
+  </div>
+</div>
+
+<div id="filter-wrapper" class="govuk-!-margin-bottom-3 govuk-!-padding-4" style="border: 2px solid #b1b4b6; background: #f3f2f1;">
+  <div class="govuk-form-group" id="filter-container">
+
+    <!-- Search bar -->
+    <div class="govuk-!-margin-bottom-5">
+      <label class="govuk-label govuk-label--m" for="keywords">Search by pupil</label>
+      <p class="govuk-hint">Enter a name or reference, for example Patel, 2019, Oakwood High or 445566</p>
+      <input class="govuk-input" id="keywords" name="keywords" type="text">
+    </div>
+
+    <!-- Filters row -->
+    <div class="govuk-grid-row govuk-!-margin-bottom-4" style="margin-left: -5px; margin-right: -5px;">
+
+      <!-- Date range -->
+      <div class="govuk-grid-column-one-quarter" style="padding-left: 5px; padding-right: 5px;">
+        <div class="govuk-form-group" style="background: white; padding: 15px; min-height: 260px;">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Submission date range</legend>
+            <div class="govuk-radios govuk-radios--small">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="range-1" name="dateRange" type="radio" value="Last month">
+                <label class="govuk-label govuk-radios__label" for="range-1">Last month</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="range-2" name="dateRange" type="radio" value="Last 3 months">
+                <label class="govuk-label govuk-radios__label" for="range-2">Last 3 months</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="range-3" name="dateRange" type="radio" value="Last 6 months">
+                <label class="govuk-label govuk-radios__label" for="range-3">Last 6 months</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="range-4" name="dateRange" type="radio" value="Last 12 months">
+                <label class="govuk-label govuk-radios__label" for="range-4">Last 12 months</label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+
+      <!-- Phase of education -->
+      <div class="govuk-grid-column-one-quarter" style="padding-left: 5px; padding-right: 5px;">
+        <div class="govuk-form-group" style="background: white; padding: 15px; min-height: 260px;">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Phase of education</legend>
+            <p class="govuk-hint govuk-hint--s">Select all that apply</p>
+            <div class="govuk-checkboxes govuk-checkboxes--small">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="phase-nursery" name="phase" type="checkbox" value="Nursery">
+                <label class="govuk-label govuk-checkboxes__label" for="phase-nursery">Nursery</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="phase-primary" name="phase" type="checkbox" value="Primary">
+                <label class="govuk-label govuk-checkboxes__label" for="phase-primary">Primary</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="phase-junior" name="phase" type="checkbox" value="Junior">
+                <label class="govuk-label govuk-checkboxes__label" for="phase-junior">Junior</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="phase-secondary" name="phase" type="checkbox" value="Secondary">
+                <label class="govuk-label govuk-checkboxes__label" for="phase-secondary">Secondary</label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+
+      <!-- Status -->
+      <div class="govuk-grid-column-one-half" style="padding-left: 5px; padding-right: 5px;">
+        <div class="govuk-form-group" style="background: white; padding: 15px; min-height: 260px;">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Status</legend>
+            <p class="govuk-hint govuk-hint--s">Select all that apply</p>
+            <div class="govuk-grid-row" style="margin-left: -5px; margin-right: -5px;">
+              <div class="govuk-grid-column-one-half" style="padding-left: 3px; padding-right: 3px;">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="status-eligible" name="status" type="checkbox" value="Eligible">
+                    <label class="govuk-label govuk-checkboxes__label" for="status-eligible">Eligible</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="status-not-eligible" name="status" type="checkbox" value="Not eligible">
+                    <label class="govuk-label govuk-checkboxes__label" for="status-not-eligible">Not eligible</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="status-evidence" name="status" type="checkbox" value="Evidence needed">
+                    <label class="govuk-label govuk-checkboxes__label" for="status-evidence">Evidence needed</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="status-review" name="status" type="checkbox" value="Sent for review">
+                    <label class="govuk-label govuk-checkboxes__label" for="status-review">Sent for review</label>
+                  </div>
+                </div>
+              </div>
+              <div class="govuk-grid-column-one-half" style="padding-left: 3px; padding-right: 3px;">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="status-reviewed-eligible" name="status" type="checkbox" value="Reviewed eligible">
+                    <label class="govuk-label govuk-checkboxes__label" for="status-reviewed-eligible">Reviewed eligible</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="status-reviewed-not-eligible" name="status" type="checkbox" value="Reviewed not eligible">
+                    <label class="govuk-label govuk-checkboxes__label" for="status-reviewed-not-eligible">Reviewed not eligible</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="status-funding-confirmed" name="status" type="checkbox" value="Funding confirmed">
+                    <label class="govuk-label govuk-checkboxes__label" for="status-funding-confirmed">FSM Confirmed</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Filter actions -->
+    <div class="govuk-button-group govuk-!-margin-top-3 govuk-!-margin-bottom-0" style="margin-bottom: 0;">
+      <button class="govuk-button" id="apply-filters" type="button">Apply filters</button>
+      <a href="#" class="govuk-link" id="clear-filters">Clear filters</a>
+    </div>
+
+  </div>
+</div>

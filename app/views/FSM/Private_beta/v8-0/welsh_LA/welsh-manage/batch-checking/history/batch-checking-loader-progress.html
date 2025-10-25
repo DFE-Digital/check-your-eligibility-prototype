@@ -1,0 +1,57 @@
+{% extends "layouts/FSM/v8-0/welsh/layout-dfe-welshnav.html" %}
+{% set pageName="Checking for you" %}
+
+{% block content %}
+
+{% set title="Exporting" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="flex-container">
+      <div class="container">
+        <h1 class="govuk-heading-l">
+          <!-- Checking eligibility -->
+        </h1>
+        <p class="govuk-body-l">Check in progress</p>
+
+        <div class="govuk-progress-bar" aria-labelledby="progress-bar-label" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" role="progressbar" style="height: 42px; background-color: 	#f3f2f1;">
+          <div id="progress" style="height: 100%; width: 0%; background-color: #347CA9;"></div>
+        </div>
+        <div style="padding-top: 10px;"></div>
+        <p id="progress-bar-label" class="govuk-body-l">Processing records: <span id="counter">0</span> / <span id="total-count"></span></p>
+
+        <script>
+          var total_count = Math.floor(Math.random() * 250) + 1; // Ensure at least 1 record
+          document.getElementById("total-count").textContent = total_count;
+
+          const intervalId = setInterval(() => {
+            var countElement = document.getElementById("counter");
+            var progressBar = document.getElementById("progress");
+
+            var currentCount = parseInt(countElement.textContent);
+            var newCount = currentCount + 1;
+
+            if (newCount >= total_count) {
+              clearInterval(intervalId);
+              newCount = total_count; // Stop at total_count
+              document.location = '../batch-check-success.html';
+            }
+
+            countElement.textContent = newCount;
+
+            // Update progress bar
+            var percentage = (newCount / total_count) * 100;
+            progressBar.style.width = percentage + "%";
+          }, 100);
+        </script>
+
+        <!-- Link to batch history -->
+        <!-- <div style="margin-top: 50px; text-align: left;"></div>
+          <a href="batch-history.html" class="govuk-link">Back to batch history</a>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

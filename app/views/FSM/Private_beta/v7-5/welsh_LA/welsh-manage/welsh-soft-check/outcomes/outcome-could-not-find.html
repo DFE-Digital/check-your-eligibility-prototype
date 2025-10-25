@@ -1,0 +1,28 @@
+{% extends "layouts/FSM/v7-5/welsh/layout-dfe-welshnav.html" %}
+{% set pageName="Outcome not eligible" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Check failed
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">The personal information you entered does not match departmental records.</p>
+
+      </div>
+    </div>
+
+    <h1 class="govuk-heading-l">Check the details and try again</h1>
+
+    <p class="govuk-body"><a href="../checker">Try again</a>, ensuring you’ve entered the parent or guardian details accurately.</p>
+
+  </div>
+</div>
+
+{% endblock %}
