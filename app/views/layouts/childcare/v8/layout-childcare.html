@@ -4,39 +4,34 @@
 {# 2 #}
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 
+{% set govukRebrand = true %}
+
 {# 3 #}
 {% block header %}
 
 
 
-{{ header({
-  "showNav": "false",
-  "showSearch": "false",
-  "showHeaderActionLinks": "true",
-  "logoPath": "public/images",
-  "logoAltText": "Department for Education",
-  "homeHref": "/childcare/index-childcare",
-  "searchAction": "/search/",
-  "searchInputName": "q",
-  "service": {
-    "name": "",
-    "serviceUrl": ""
-  },
-  "headerActionLinks": [
-
-    {
-      "url"  : "#",
-      "label" : "Sign out"
-    }
-  ]
-
-
-})
-}}
+<header class="govuk-header" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+      <div class="govuk-header__logo">
+        <a href="/childcare/index-childcare" class="govuk-header__link govuk-header__link--homepage">
+            <img src="/public/images/department-for-education_white.png" alt="Department for Education" class="govuk-header__logotype">
+        </a>
+      </div>
+      <div class="dfe-header__content" id="content-header">
+        <ul class="dfe-header__action-links govuk-!-margin-top-3">
+            <li>
+                <a href="#" class="govuk-link govuk-link--inverse ">Sign out</a>
+            </li>
+        </ul>
+      </div>
+  </div>
+</header>
 
 {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
 {{ govukServiceNavigation({
+  rebrand: "true",
   serviceName: "Manage eligibility for childcare support",
   navigation: [
   {
@@ -87,6 +82,7 @@
 
 {% block footer %}
  {{ govukFooter({
+   rebrand: "true",
    meta: {
      items: [
        {

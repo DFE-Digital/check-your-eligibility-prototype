@@ -18,7 +18,7 @@
   <div class="govuk-grid-column-full">
 
 
-    <h1 class="govuk-heading-l">Search for an eligibility code</h1>
+    <h1 class="govuk-heading-l">Search for an eligibility code event</h1>
 
      <form class="form" action="/support/v1/corrections/code" method="post" novalidate>
 
@@ -27,6 +27,19 @@
           }) %}
 
             {% from "govuk/components/input/macro.njk" import govukInput %}
+
+             {{ govukInput({
+              classes: "govuk-!-width-one-third",
+              label: {
+                text: "Event ID",
+                classes: "govuk-fieldset__legend--m"
+              },
+              hint: {
+                text: "Something about event listing"
+              },
+              id: "event-id",
+              name: "event-id"
+            }) }}
 
             {{ govukInput({
               label: {
@@ -42,36 +55,6 @@
               name: "30h-code"
             }) }}
 
-            {{ govukInput({
-              classes: "govuk-!-width-one-third",
-              label: {
-                text: "National Insurance number (optional)",
-                classes: "govuk-fieldset__legend--m"
-              },
-              hint: {
-                text: "Can be for a parent, guardian or partner. For example, ‘QQ 12 34 56 C’"
-              },
-              id: "ni-number",
-              name: "ni-number"
-            }) }}
-
-            {{ govukDateInput({
-
-              id: "dob",
-              namePrefix: "dob",
-
-              fieldset: {
-                legend: {
-                  text: "Child date of birth (optional)",
-                  isPageHeading: false,
-                  classes: "govuk-fieldset__legend--m"
-                }
-              },
-              hint: {
-                text: "For example, 27 3 1980"
-              }
-            }) }}
-
 
 
           {% endcall %}
@@ -81,7 +64,7 @@
           {% from "govuk/components/button/macro.njk" import govukButton %}
 
           {{ govukButton({
-            text: "Find code"
+            text: "Find eligibility event"
           }) }}
 
 
