@@ -9,7 +9,52 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <p class="govuk-!-margin-bottom-1"><strong class="govuk-tag govuk-tag--green long-tag">System working normally</strong></p>
+    <!--  <p class="govuk-!-margin-bottom-1"><strong class="govuk-tag govuk-tag--green long-tag">System working normally</strong></p> -->
+
+    <!--
+     <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Important
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+          Processing limit reached
+        </p>
+        <p>Over 50,000 checks are queued. Batch checks may take longer to start processing.</p>
+      </div>
+    </div>
+
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" style="border: 5px solid #d4351c; background-color: #d4351c;">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Important
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+          Service is unavailable
+        </p>
+        <p>some words. <a href="">View more information</a>.</p>
+      </div>
+    </div>
+
+      <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" style="border: 5px solid 	#f47738; background-color: 	#f47738;">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title" style="color:#0b0c0c;">
+          Important
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+          There is a problem with the HMRC API
+        </p>
+        <p>some words. <a href="">View more information</a>.</p>
+      </div>
+    </div>
+
+    -->
 
     <h1 class="govuk-heading-l">Eligibility checking engine support</h1>
 
@@ -19,7 +64,7 @@
       <div class="dfe-card">
         <div class="dfe-card-container">
           <h2 class="govuk-heading-m">
-              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="">Run a check</a>
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/support/v1/single-check/single">Run a check</a>
           </h2>
           <p>Run an eligiblity check for one parent or guardian</p>
         </div>
@@ -28,7 +73,7 @@
       <div class="dfe-card">
         <div class="dfe-card-container">
           <h2 class="govuk-heading-m">
-              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/support/v1/batch/queue">Batch checks queue</a>
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/support/v1/batch/i/queue">Batch checks queue</a>
           </h2>
           <p>View the status of batch checks.</p>
         </div>
@@ -37,16 +82,7 @@
       <div class="dfe-card">
         <div class="dfe-card-container">
           <h2 class="govuk-heading-m">
-              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="">System status</a>
-          </h2>
-          <p>View the status of the system</p>
-        </div>
-      </div>
-
-      <div class="dfe-card">
-        <div class="dfe-card-container">
-          <h2 class="govuk-heading-m">
-              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="">Test environments</a>
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/support/v1/sandpit/sandpit">Test environments</a>
           </h2>
           <p>View test environments for free school meals and early years.</p>
         </div>

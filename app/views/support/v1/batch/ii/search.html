@@ -1,0 +1,96 @@
+{% extends "/layouts/support/v1/layout-support.html" %}
+
+{% block pageTitle %}
+  Batch checks queue
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">Find a batch check</h1>
+
+      <div class="govuk-form-group govuk-!-width-one-half">
+        <label class="govuk-label govuk-label--s" for="queue-search">
+          Email address
+        </label>
+        <input class="govuk-input" id="queue-search" name="queue-search" type="text">
+      </div>
+
+      {% include "../../../../_includes/childcare/las.html" %}
+
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+      {{ govukCheckboxes({
+        name: "elig-type",
+        classes: "govuk-checkboxes--small",
+        fieldset: {
+          legend: {
+            text: "Eligibility type",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "fsm",
+            text: "Free school meals"
+          },
+          {
+            value: "30h",
+            text: "Childcare for working families"
+          },
+          {
+            value: "2yo",
+            text: "Early learning for 2-year-olds"
+          },
+          {
+            value: "eypp",
+            text: "Early years pupil premium"
+          }
+        ]
+      }) }}
+
+      {{ govukCheckboxes({
+        name: "method",
+        classes: "govuk-checkboxes--small",
+        fieldset: {
+          legend: {
+            text: "Method",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "api",
+            text: "API"
+          },
+          {
+            value: "web",
+            text: "Web"
+          }
+        ]
+      }) }}
+
+
+         {{ govukButton({
+          text: "Search",
+          href: "/support/v1/batch/ii/results#sort"
+        }) }}
+
+
+
+  </div>
+</div>
+
+{% endblock %}
