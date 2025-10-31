@@ -1,0 +1,357 @@
+{% extends "layouts/FSM/v8-0/layout-dfe-lanav.html" %}
+{% set pageName="35 applications to be rechecked" %}
+{% set currentAcademicYear="2025" %}
+{% set nextAcademicYear="2026" %}
+{% set currentAcademicYearStart="2025" %}
+{% set nextAcademicYearStart="2026" %}
+{% set date=currentAcademicYearStart %}
+{% set nextDate=nextAcademicYearStart %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l govuk-!-text-align-left">{{pageName}}</h1>
+      <div class="moj-page-header-actions__description govuk-!-text-align-left">
+        <p class="govuk-body">Recheck children's eligibility for free school meals for the academic year {{date}} to
+          {{nextDate}}.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-text-align-left">
+      <div
+        class="govuk-grid-column-two-thirds govuk-!-margin-top-4 govuk-!-margin-bottom-4 govuk-section-break govuk-section-break"
+        style="padding-left:0;">
+        <div class="moj-search">
+          <form action="#" method="post">
+            <div class="govuk-form-group">
+              <label class="govuk-label moj-search__label govuk-!-font-weight-bold" for="search">
+                Find a child
+              </label>
+              <div id="search-hint" class="govuk-hint moj-search__hint">
+                Search by reference number, or by parent or child name or date of birth
+              </div>
+              <input class="govuk-input moj-search__input" id="search" name="search" type="search"
+                aria-describedby="search-hint">
+            </div>
+            <button type="submit" class="govuk-button moj-search__button" data-module="govuk-button">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-text-align-left">
+      <div class="govuk-button-group">
+        <a href="recheck-checking-loader" role="button" draggable="false" class="govuk-button"
+          data-module="govuk-button">
+          Recheck applications
+        </a>
+
+        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          View recheck history
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="govuk-!-margin-top-4 govuk-!-margin-bottom-4 govuk-section-break govuk-section-break">
+    <div class="govuk-width-container">
+      <table class="govuk-table moj-sortable-table" data-module="moj-sortable-table" data-id-prefix=" -"
+        style="width:100%;">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col" id="mountains-select-all" style="padding: 0; width: 48px;">
+              <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                <input type="checkbox" class="govuk-checkboxes__input moj-multi-select__check-all" id="select-all">
+                <label class="govuk-label govuk-checkboxes__label" for="select-all">
+                  <span class="govuk-visually-hidden">Select all</span>
+                </label>
+              </div>
+    </div>
+    </th>
+    <th class="govuk-table__header" scope="col" aria-sort="ascending" data-sortable="true">Reference number </th>
+    <th class="govuk-table__header" scope="col" aria-sort="none" data-sortable="true">Parent or guardian </th>
+    <th class="govuk-table__header" scope="col" aria-sort="none" data-sortable="true">Parent or guardian date of birth</th>
+    <th class="govuk-table__header" scope="col" aria-sort="none" data-sortable="true"> National insurance<br> number</th>
+    <th class="govuk-table__header" scope="col" aria-sort="none" data-sortable="true">Child name</th>
+    <th class="govuk-table__header" scope="col" aria-sort="none" data-sortable="true">School</th>
+    <th class="govuk-table__header" scope="col" aria-sort="none" data-sortable="true">End date</th>
+    <th class="govuk-table__header" scope="col" aria-sort="none" data-sortable="true">Status</th>
+<!--
+    </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+            <input type="checkbox" class="govuk-checkboxes__input" id="row1">
+            <label class="govuk-label govuk-checkboxes__label" for="row1">
+              <span class="govuk-visually-hidden">Select</span>
+            </label>
+          </div>
+        </td>
+        <td class="govuk-table__cell"><a href="../decision/records/pending_johnson1.html"
+            class="govuk-link">44455453</a>
+        </td>
+        <td class="govuk-table__cell">Alex Johnson <br></td>
+        <td class="govuk-table__cell">15 Mar 1980</td>
+        <td class="govuk-table__cell">AB123456C</td>
+        <td class="govuk-table__cell">Emily Johnson</td>
+        <td class="govuk-table__cell">Hilltop Elementary</td>
+        <td class="govuk-table__cell">01 Sep 2025</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+            <input type="checkbox" class="govuk-checkboxes__input" id="row2">
+            <label class="govuk-label govuk-checkboxes__label" for="row2">
+              <span class="govuk-visually-hidden">Select</span>
+            </label>
+          </div>
+        </td>
+        <td class="govuk-table__cell"><a href="../decision/records/pending_sutton1.html" class="govuk-link">44455454</a>
+        </td>
+        <td class="govuk-table__cell">Warren Sutton</td>
+        <td class="govuk-table__cell">18 Sep 1978</td>
+        <td class="govuk-table__cell">CD987654E</td>
+        <td class="govuk-table__cell">Lisa Sutton</td>
+        <td class="govuk-table__cell">Greenfield Academy</td>
+        <td class="govuk-table__cell">01 Sep 2025</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+            <input type="checkbox" class="govuk-checkboxes__input" id="row3">
+            <label class="govuk-label govuk-checkboxes__label" for="row3">
+              <span class="govuk-visually-hidden">Select</span>
+            </label>
+          </div>
+        </td>
+        <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455455</a></td>
+        <td class="govuk-table__cell">Alan Jones</td>
+        <td class="govuk-table__cell">22 Jul 1975</td>
+        <td class="govuk-table__cell">EF123456G</td>
+        <td class="govuk-table__cell">Jack Jones</td>
+        <td class="govuk-table__cell">Riverside Primary</td>
+        <td class="govuk-table__cell">01 Sep 2025</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+            <input type="checkbox" class="govuk-checkboxes__input" id="row4">
+            <label class="govuk-label govuk-checkboxes__label" for="row4">
+              <span class="govuk-visually-hidden">Select</span>
+            </label>
+          </div>
+        </td>
+        <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455456</a></td>
+        <td class="govuk-table__cell">Eden Tesfay</td>
+        <td class="govuk-table__cell">03 Feb 1982</td>
+        <td class="govuk-table__cell">GH654321H</td>
+        <td class="govuk-table__cell">Samual Tesfay</td>
+        <td class="govuk-table__cell">Oakwood School</td>
+        <td class="govuk-table__cell">01 Sep 2025</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+            <input type="checkbox" class="govuk-checkboxes__input" id="row5">
+            <label class="govuk-label govuk-checkboxes__label" for="row5">
+              <span class="govuk-visually-hidden">Select</span>
+            </label>
+          </div>
+        </td>
+        <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455457</a></td>
+        <td class="govuk-table__cell">Jennifer Langley</td>
+        <td class="govuk-table__cell">09 Nov 1979</td>
+        <td class="govuk-table__cell">IJ987654K</td>
+        <td class="govuk-table__cell">Tilly Langley</td>
+        <td class="govuk-table__cell">Sunnydale Academy</td>
+        <td class="govuk-table__cell">01 Sep 2025</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+            <input type="checkbox" class="govuk-checkboxes__input" id="row6">
+            <label class="govuk-label govuk-checkboxes__label" for="row6">
+              <span class="govuk-visually-hidden">Select</span>
+            </label>
+          </div>
+        </td>
+        <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455458</a></td>
+        <td class="govuk-table__cell">Susan Francis</td>
+        <td class="govuk-table__cell">27 May 1981</td>
+        <td class="govuk-table__cell">KL123456M</td>
+        <td class="govuk-table__cell">Noah Francis</td>
+        <td class="govuk-table__cell">Maple Grove School</td>
+        <td class="govuk-table__cell">01 Sep 2025</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+            <input type="checkbox" class="govuk-checkboxes__input" id="row7">
+            <label class="govuk-label govuk-checkboxes__label" for="row7">
+              <span class="govuk-visually-hidden">Select</span>
+            </label>
+          </div>
+        </td>
+        <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455459</a></td>
+        <td class="govuk-table__cell">John Smith</td>
+        <td class="govuk-table__cell">14 Dec 1977</td>
+        <td class="govuk-table__cell">MN987654N</td>
+        <td class="govuk-table__cell">Jo Smith</td>
+        <td class="govuk-table__cell">Willow Park School</td>
+        <td class="govuk-table__cell">01 Sep 2025</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+            <input type="checkbox" class="govuk-checkboxes__input" id="row8">
+            <label class="govuk-label govuk-checkboxes__label" for="row8">
+              <span class="govuk-visually-hidden">Select</span>
+            </label>
+          </div>
+        </td>
+        <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455461</a></td>
+        <td class="govuk-table__cell">Warren Sutton</td>
+        <td class="govuk-table__cell">02 Apr 1976</td>
+        <td class="govuk-table__cell">OP123456Q</td>
+        <td class="govuk-table__cell">Lisa Sutton</td>
+        <td class="govuk-table__cell">Cedar Hill School</td>
+        <td class="govuk-table__cell">01 Sep 2025</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+            <input type="checkbox" class="govuk-checkboxes__input" id="row9">
+            <label class="govuk-label govuk-checkboxes__label" for="row9">
+              <span class="govuk-visually-hidden">Select</span>
+            </label>
+          </div>
+        </td>
+        <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455462</a></td>
+        <td class="govuk-table__cell">Alan Jones</td>
+        <td class="govuk-table__cell">30 Aug 1974</td>
+        <td class="govuk-table__cell">QR987654S</td>
+        <td class="govuk-table__cell">Jack Jones</td>
+        <td class="govuk-table__cell">Birchwood Academy</td>
+        <td class="govuk-table__cell">01 Sep 2025</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+            <input type="checkbox" class="govuk-checkboxes__input" id="row10">
+            <label class="govuk-label govuk-checkboxes__label" for="row10">
+              <span class="govuk-visually-hidden">Select</span>
+            </label>
+          </div>
+        </td>
+        <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455463</a></td>
+        <td class="govuk-table__cell">Eden Tesfay</td>
+        <td class="govuk-table__cell">21 Jun 1980</td>
+        <td class="govuk-table__cell">ST123456T</td>
+        <td class="govuk-table__cell">Samual Tesfay</td>
+        <td class="govuk-table__cell">Redwood Primary</td>
+        <td class="govuk-table__cell">01 Sep 2025</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+            <input type="checkbox" class="govuk-checkboxes__input" id="row11">
+            <label class="govuk-label govuk-checkboxes__label" for="row11">
+              <span class="govuk-visually-hidden">Select</span>
+            </label>
+          </div>
+        </td>
+        <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455464</a></td>
+        <td class="govuk-table__cell">Jennifer Langley</td>
+        <td class="govuk-table__cell">05 Oct 1978</td>
+        <td class="govuk-table__cell">UV987654W</td>
+        <td class="govuk-table__cell">Tilly Langley</td>
+        <td class="govuk-table__cell">Pinecrest School</td>
+        <td class="govuk-table__cell">01 Sep 2025</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+            <input type="checkbox" class="govuk-checkboxes__input" id="row12">
+            <label class="govuk-label govuk-checkboxes__label" for="row12">
+              <span class="govuk-visually-hidden">Select</span>
+            </label>
+          </div>
+        </td>
+        <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455465</a></td>
+        <td class="govuk-table__cell">Susan Francis</td>
+        <td class="govuk-table__cell">19 Mar 1977</td>
+        <td class="govuk-table__cell">XY123456Z</td>
+        <td class="govuk-table__cell">Noah Francis</td>
+        <td class="govuk-table__cell">Ashfield Academy</td>
+        <td class="govuk-table__cell">01 Sep 2025</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+            <input type="checkbox" class="govuk-checkboxes__input" id="row13">
+            <label class="govuk-label govuk-checkboxes__label" for="row13">
+              <span class="govuk-visually-hidden">Select</span>
+            </label>
+          </div>
+        </td>
+        <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455466</a></td>
+        <td class="govuk-table__cell">John Smith</td>
+        <td class="govuk-table__cell">23 Feb 1984</td>
+        <td class="govuk-table__cell">AB987654C</td>
+        <td class="govuk-table__cell">Jo Smith</td>
+        <td class="govuk-table__cell">Lakeside School</td>
+        <td class="govuk-table__cell">01 Sep 2025</td>
+      </tr>
+    </tbody>
+    </table>
+  </div> -->
+
+
+  {% block pageScripts %}
+  <script src="/static/js/moj-sortable-table.js"></script>
+  <script src="/static/js/govuk-file-upload.js"></script>
+  <script src="/static/js/govuk-button.js"></script>
+  <script src="/static/js/moj-multi-file-upload.js"></script>
+  <script src="/static/js/govuk-checkboxes.js"></script>
+  <script src="/static/js/govuk-notification-badge.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const selectAll = document.getElementById('select-all');
+      const checkboxes = document.querySelectorAll('.govuk-checkboxes__input:not(#select-all)');
+
+      if (selectAll) {
+        selectAll.addEventListener('change', function () {
+          checkboxes.forEach(function (cb) {
+            cb.checked = selectAll.checked;
+          });
+        });
+
+        // Optional: Uncheck "select all" if any box is unchecked
+        checkboxes.forEach(function (cb) {
+          cb.addEventListener('change', function () {
+            if (!cb.checked) {
+              selectAll.checked = false;
+            } else if ([...checkboxes].every(c => c.checked)) {
+              selectAll.checked = true;
+            }
+          });
+        });
+      }
+    });
+  </script>
+  {% endblock %}
+
+  {% endblock %}

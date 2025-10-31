@@ -1,0 +1,232 @@
+{% extends "/layouts/FSM/v8-0/layout-dfe-matnav.html" %}
+{% set pageName="Check your answers before submitting" %}
+{% set childId = "44455453" %}
+{% set childDOB1 = "22 Sep 2021" %}
+{% set childDOB2 = "08 Jan 2018" %}
+{% set schoolName1 = "	Greenwood Primary School" %}
+{% set schoolAddress = " Hoddesdon EN11 8JY" %}
+{% set schoolName2 = "Watford Grammar School for Boys" %}
+{% set schoolAddress2 = "Watford WD17 3AA" %}
+{% set parentDOB = "15 Mar 1980" %}
+{% set parentFirstname = data["parent-firstname"] or "Alex" %}
+{% set parentSurname = data["parent-surname"] or "Johnson" %}
+{% set email = "alex.johnson@gmail.com" %}
+{% set nationalInsurance = "AB123456C" %}
+{% set parentId = "44455454A" %}
+{% set childName = "Emily Johnson" %}
+{% set childFirstname = data["child-firstname"] or "Emily" %}
+{% set childSurname = data["child-surname"] or "Johnson" %}
+{% set childFirstname2 = data["child-firstname"] or "Rory" %}
+{% set childSurname2 = data["child-surname"] or "Johnson" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+    </div>
+  </div>
+</div>
+
+<div class="govuk-!-padding-bottom-2"></div>
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Parent or guardian details
+    </h2>
+
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action">
+        <a class="govuk-link" href="../school-soft-check/checker">Edit details<span class="govuk-visually-hidden">
+            Parent details</span></a>
+
+      </li>
+    </ul>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ parentFirstname }} {{ parentSurname }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["dob-day"] or "10" }} {{ data["dob-month"] or "04" }} {{ data["dob-year"] or "1984" }}
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["email"] or email }}
+        </dd>
+      </div>
+
+      {% if data['ni-number-entered'] == 'yes' %}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">National Insurance number</dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["ni-number-entered"] or "NW123456B" }}
+        </dd>
+      </div>
+      {% else %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Asylum support reference number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["asr-number-entered"] or "98340001A" }}
+        </dd>
+      </div>
+      {% endif %}
+      </dt>
+  </div>
+
+
+  <div>
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Child 1 details
+    </h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action">
+        <a class="govuk-link" href="outcome-eligible-childs-age.html">Edit details<span class="govuk-visually-hidden">
+            Child 1 details</span></a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+{{ data["ch1-first-name"] or childFirstname }} {{ data["ch1-surname"] or childSurname }}
+
+        </dd>
+
+      </div>
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+            {{ (data["ch1-dob-day"] and data["ch1-dob-month"] and data["ch1-dob-year"])
+            and (data["ch1-dob-day"] ~ ' ' ~ data["ch1-dob-month"] ~ ' ' ~ data["ch1-dob-year"])
+            or childDOB1 }}
+          </dd>
+      </div>
+
+      {% if data['child-2'] == 'Yes' %}
+
+      {% endif %}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          School
+        </dt>
+        <dd class="govuk-summary-list__value">
+            {{ data["ch1-school"] or schoolName1 }}
+        </dd>
+      </div>
+    </div>
+    </div>
+
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Child 2 details
+    </h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action">
+        <a class="govuk-link" href="outcome-eligible-childs-age.html">Edit details<span class="govuk-visually-hidden">
+            Child 2 details</span></a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+{{ data["ch1-first-name"] or childFirstname2 }} {{ data["ch1-surname"] or childSurname2 }}
+
+        </dd>
+
+      </div>
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+  {{ (data["ch1-dob-day"] and data["ch1-dob-month"] and data["ch1-dob-year"])
+            and (data["ch1-dob-day"] ~ ' ' ~ data["ch1-dob-month"] ~ ' ' ~ data["ch1-dob-year"])
+            or childDOB2 }}      </div>
+
+      {% if data['child-2'] == 'Yes' %}
+
+      {% endif %}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          School
+        </dt>
+        <dd class="govuk-summary-list__value">
+            {{ data["ch1-school"] or schoolName2 }}
+        </dd>
+      </div>
+    </div>
+
+  </div>
+
+<h2 class="govuk-heading-l">Confirm and add children details</h2>
+
+<p class="govuk-body">By submitting this information, you confirm that, to the best of your knowledge, the details are
+  correct.</p>
+
+
+<form action="eligible" method="post" novalidate>
+
+  <input type="hidden" name="answers-checked" value="true">
+
+  <div class="govuk-!-padding-bottom-2"></div>
+
+  {{ govukButton({
+  text: "Save details",
+  classes: "govuk-button--primary",
+  href: '../apply/confirmation-eligible.html'
+  }) }}
+
+
+</form>
+
+</div>
+</div>
+
+{% endblock %}

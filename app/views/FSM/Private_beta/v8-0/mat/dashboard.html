@@ -1,0 +1,95 @@
+{% extends "/layouts/FSM/v8-0/layout-dfe-matnav.html" %}
+{% set pageName="United Learning Trust" %}
+{% set address="Worldwide House, Thorpe Wood, Peterborough, PE3 6SB" %}
+{% set Service="Manage eligibility for free school meals" %}
+{% set view="dashboard" %}
+{% set parentName="Jamie Lee" %}
+{% set view="dashboard" %}
+{% set serviceName="Check a family's eligibility" %}
+{% set serviceUrl="/FSM/index-fsm" %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <span class="govuk-caption-l">{{pageName}}</span>
+      <h1 class="govuk-heading-l">{{Service}}</h1>
+    </div>
+</div>
+
+    <style>
+      .dashboard-padding-between-headings {
+        margin-bottom: 25px;
+      }
+    </style>
+    <div class="dashboard-padding-between-headings"></div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+    <div class="dfe-grid-container">
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h3 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+              href="mat-manage/mat-soft-check/checker.html">Run a check for one parent or guardian</a>
+            </h2>
+            <p>Run an eligibility check for one parent or guardian.</p>
+        </div>
+      </div>
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+              href="mat-manage/batch-checking/manual-no-ctf">Run a batch check</a>
+          </h2>
+          <p>Run an eligibility check for multiple parents or guardians.</p>
+        </div>
+      </div>
+
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+              href="mat-manage/decision/review-appeals.html">Pending appeals</a>
+          </h2>
+          <p>Check eligibility for children not found in the system.</p>
+        </div>
+      </div>
+
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+              href="mat-manage/report/mat-search.html">Search all records</a>
+          </h2>
+          <p>Search all pupil free school meal records and export results from the Trust.</p>
+        </div>
+      </div>
+
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="guidance.html">Guidance</a>
+          </h2>
+          <p>Read guidance on how to review supporting evidence.</p>
+        </div>
+      </div>
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+              href="../_offline/fsm-print-version-mat.html">Download PDF form</a>
+          </h2>
+          <p>Download an eligibility form for parents to complete.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+{% endblock %}
