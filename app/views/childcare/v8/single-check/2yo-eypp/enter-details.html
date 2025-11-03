@@ -75,8 +75,15 @@
             }) }}
 
 
-            <p><a href="/childcare/v8/guidance/eypp-evidence#asylum-seekers">Parent or guardian is an asylum seeker</a></p>
+             {% if (data['eligibility-type'] == "Early learning for 2-year-olds") %}
 
+              <p class="govuk-body"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="/childcare/v8/guidance/2yo-evidence#nrpf">Parent or guardian is an asylum seeker</a></p>
+
+              {% else %}
+
+                <p class="govuk-body"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="/childcare/v8/guidance/eypp-evidence#asylum-seekers">Parent or guardian is an asylum seeker</a></p>
+
+              {% endif %}
 
 
           {% from "govuk/components/button/macro.njk" import govukButton %}
