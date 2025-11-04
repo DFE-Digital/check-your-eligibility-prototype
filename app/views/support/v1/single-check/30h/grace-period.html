@@ -1,4 +1,4 @@
-{% extends "/layouts/childcare/dev/layout-childcare.html" %}
+{% extends "/layouts/support/v1/layout-support.html" %}
 
 {% block pageTitle %}
 Code in grace period
@@ -12,13 +12,13 @@ Code in grace period
 
     <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7" style="background:#ffdd00;">
       <h1 class="govuk-panel__title" style="color:#0b0c0c;">
-        Temporary code in grace period
+        Code in grace period
       </h1>
       <div class="govuk-panel__body">
         <div class="govuk-panel__body govuk-!-margin-bottom-5" style="color:#0b0c0c;">
           Expires on 31 August 2025
         </div>
-
+        <p class="govuk-body-l govuk-!-margin-bottom-0" >Needs reconfirming now</p>
       </div>
     </div>
 
@@ -66,10 +66,10 @@ Code in grace period
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Apply for a new code by
+          Reconfirm between
         </dt>
         <dd class="govuk-summary-list__value">
-          15 April 2025
+          15 March 2025 and 15 April 2025
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -85,8 +85,8 @@ Code in grace period
           Reconfirmation status
         </dt>
         <dd class="govuk-summary-list__value">
-          <strong class="govuk-tag govuk-tag--grey" style="max-width:100%;">
-            Not applicable
+          <strong class="govuk-tag govuk-tag--red" style="max-width:100%;">
+            Overdue
           </strong>
         </dd>
       </div>
@@ -96,13 +96,20 @@ Code in grace period
     </dl>
 
 
+
+    {{ govukButton({
+      text: "View code history",
+      classes: "govuk-!-margin-top-4",
+      href: "/support/v1/event-history/event-history"
+    }) }}
+
+
+
     <p>You can <a href="" class="govuk-link" onclick="printPage()">print this page</a> for the parent or guardian to keep.</p>
 
+    <h2 class="govuk-heading-m">Guidance</h2>
 
-      <h2 class="govuk-heading-m">Guidance</h2>
-
-    <p class="govuk-body">View <a href="/childcare/dev/guidance/30h-outcomes">guidance for childcare for working families</a>.</p>
-
+    <p class="govuk-body">View <a href="">guidance for childcare for working families</a>.</p>
 
 
   </div>
