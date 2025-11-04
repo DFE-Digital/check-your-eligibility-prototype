@@ -4,35 +4,64 @@
 {# 2 #}
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 
+{% set govukRebrand = true %}
+
 {# 3 #}
 {% block header %}
 
 
 
-{{ header({
-  "showNav": "false",
-  "showSearch": "false",
-  "showHeaderActionLinks": "true",
-  "logoPath": "public/images",
-  "logoAltText": "Department for Education",
-  "homeHref": "/childcare/index-childcare-dev",
-  "searchAction": "/search/",
-  "searchInputName": "q",
-  "service": {
-    "name": "Manage eligibility for childcare support",
-    "serviceUrl": "/childcare/dev/dashboard"
-  },
-  "headerActionLinks": [
+<header class="govuk-header" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+      <div class="govuk-header__logo">
+        <a href="/childcare/index-childcare-dev" class="govuk-header__link govuk-header__link--homepage">
+            <img src="/public/images/department-for-education_white.png" alt="Department for Education" class="govuk-header__logotype">
+        </a>
+      </div>
+      <div class="dfe-header__content" id="content-header">
+        <ul class="dfe-header__action-links govuk-!-margin-top-3">
+            <li>
+                <a href="#" class="govuk-link govuk-link--inverse ">Sign out</a>
+            </li>
+        </ul>
+      </div>
+  </div>
+</header>
 
+
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{{ govukServiceNavigation({
+  rebrand: "true",
+  serviceName: "Manage eligibility for childcare support",
+  navigation: [
+  {
+      href: "/childcare/dev/dashboard",
+      text: "Home"
+    },
     {
-      "url"  : "#",
-      "label" : "Sign out"
+      href: "/childcare/dev/single-check/single",
+      text: "Run a check"
+    },
+    {
+      href: "/childcare/dev/batch-check/batch",
+      text: "Run a batch check"
+    },
+    {
+      href: "/childcare/dev/foster/foster",
+      text: "Manage foster families"
+    },
+    {
+      href: "/childcare/dev/reports/reports",
+      text: "Run reports"
+    },
+    {
+      href: "/childcare/dev/guidance/guidance",
+      text: "Guidance"
     }
   ]
+}) }}
 
-
-})
-}}
 
 
 
@@ -43,6 +72,7 @@
 
 {% block footer %}
  {{ govukFooter({
+  rebrand: "true",
    meta: {
      items: [
       {
