@@ -1,0 +1,56 @@
+{% extends "/layouts/support/v2/layout-support.html" %}
+
+{% block pageTitle %}
+ Test environments
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Test environments</h1>
+
+    <p>View the service as different user types.</p>
+
+    <p>You will need a <a href="">DfE sign in account</a> to use these test environments.</p>
+
+
+    <h2 class="govuk-heading-m">Free school meals user types</h2>
+
+    <p><a href="">Local authority portal</a></p>
+
+    <p><a href="">School portal</a></p>
+
+    <p><a href="">Multi academy trust portal</a></p>
+
+    <p><a href="">Parent check and apply</a></p>
+
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <h2 class="govuk-heading-m">Childcare support user types</h2>
+
+    <p><a href="">Local authority portal</a></p>
+
+
+     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <h2 class="govuk-heading-m">Test data</h2>
+
+    <p><a href="">View test data</a></p>
+
+
+
+
+  </div>
+</div>
+
+{% endblock %}

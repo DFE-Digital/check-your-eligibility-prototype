@@ -1,0 +1,123 @@
+{% extends "/layouts/support/v2/layout-support.html" %}
+
+{% block pageTitle %}
+  Temporary code upload history
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-l">290925 manual eligibility events.xlsm</h1>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Number of codes
+        </dt>
+        <dd class="govuk-summary-list__value">
+          133
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Code range
+        </dt>
+        <dd class="govuk-summary-list__value">
+          11123456300 to 11123456633
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date uploaded
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ "today" | govukDate }} {{ "now" | govukTime }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Imported by
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Sally Smith
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Status
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <strong class="govuk-tag govuk-tag--green">Completed</strong>
+        </dd>
+      </div>
+    </dl>
+
+
+
+    <table class="govuk-table govuk-table--small-text-until-tablet">
+      <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-4">Temporary codes imported</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Line</th>
+          <th scope="col" class="govuk-table__header">Temporary code</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+         <tr class="govuk-table__row">
+          <td class="govuk-table__cell">1</td>
+          <td class="govuk-table__cell">11123456789</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">2</td>
+          <td class="govuk-table__cell">11123456790</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">3</td>
+          <td class="govuk-table__cell">11123456791</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">4</td>
+          <td class="govuk-table__cell">11123456792</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">5</td>
+          <td class="govuk-table__cell">11123456793</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">6</td>
+          <td class="govuk-table__cell">11123456794</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">7</td>
+          <td class="govuk-table__cell">11123456795</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">8</td>
+          <td class="govuk-table__cell">11123456796</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">9</td>
+          <td class="govuk-table__cell">11123456797</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">10</td>
+          <td class="govuk-table__cell">11123456798</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </div>
+</div>
+
+{% endblock %}

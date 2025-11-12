@@ -1,0 +1,82 @@
+{% extends "/layouts/support/v2/layout-support.html" %}
+
+{% block pageTitle %}
+ Event history
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+    <h1 class="govuk-heading-l">Search for an eligibility code event</h1>
+
+     <form class="form" action="/support/v2/corrections/code" method="post" novalidate>
+
+          {% call govukFieldset({
+
+          }) %}
+
+            {% from "govuk/components/input/macro.njk" import govukInput %}
+
+             {{ govukInput({
+              classes: "govuk-!-width-one-third",
+              label: {
+                text: "Event ID",
+                classes: "govuk-fieldset__legend--m"
+              },
+              hint: {
+                text: "Something about event listing"
+              },
+              id: "event-id",
+              name: "event-id"
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Eligibility code",
+                classes: "govuk-label--m",
+                isPageHeading: false
+              },
+              hint: {
+                text: "Eligibility code must be 11 digits long"
+              },
+              classes: "govuk-input--width-10",
+              id: "30h-code",
+              name: "30h-code"
+            }) }}
+
+
+
+          {% endcall %}
+
+
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Find eligibility event"
+          }) }}
+
+
+        </form>
+
+
+
+  </div>
+
+</div>
+
+
+
+
+{% endblock %}

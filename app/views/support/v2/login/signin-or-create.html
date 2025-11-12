@@ -1,0 +1,49 @@
+{% extends "layouts/support/v2/layout-gov.html" %}
+
+{% set pageName="Create your GOV.UK One Login or sign in" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l govuk-!-margin-top-0 govuk-!-margin-bottom-3">{{pageName}}</h1>
+    <p>You can use your GOV.UK One Login to access some government services.</p>
+
+    <p>In the future, you’ll be able to use it to access all services on GOV.UK.</p>
+
+    <p class="govuk-body">You’ll need:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>an email address</li>
+      <li>a way to get security codes - this can be a mobile phone number or an authenticator app</li>
+    </ul>
+
+
+    <div class="govuk-inset-text">
+      You can also <a href="">use GOV.UK One Login in Welsh <span lang="cy">(Cymraeg)</span></a>.
+    </div>
+
+
+        {{ govukButton({
+            text: "Create your GOV.UK One Login",
+            href: "#",
+            classes: "govuk-button govuk-!-margin-right-3"
+          }) }}
+
+          <br>
+
+        {{ govukButton({
+          text: "Sign in",
+          href: "/support/v2/login/email-address",
+          classes: "govuk-button--secondary"
+
+        }) }}
+
+      <p><a href="">Service you can use with GOV.UK One Login (opens in a new tab)</a></p>
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
