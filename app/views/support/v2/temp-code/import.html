@@ -1,0 +1,55 @@
+{% extends "/layouts/support/v2/layout-support.html" %}
+
+{% block pageTitle %}
+  Import temporary codes
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-l">Import temporary codes</h1>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Total codes to import
+        </dt>
+        <dd class="govuk-summary-list__value">
+          133
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Code range
+        </dt>
+        <dd class="govuk-summary-list__value">
+          11123456300 to 11123456633
+        </dd>
+      </div>
+    </dl>
+
+    <p>Local authority users will be able to validate temporary codes after they have been imported.</p>
+
+
+        {{ govukButton({
+            text: "Import codes",
+            href: "/support/v2/temp-code/import-loader"
+          }) }}
+
+
+
+
+  </div>
+</div>
+
+{% endblock %}

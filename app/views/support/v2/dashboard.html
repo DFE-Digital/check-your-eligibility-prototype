@@ -1,4 +1,4 @@
-{% extends "/layouts/support/v1/layout-support.html" %}
+{% extends "/layouts/support/v2/layout-support.html" %}
 
 {% block pageTitle %}
   Support
@@ -10,7 +10,7 @@
   <div class="govuk-grid-column-full">
 
     <!--  <p class="govuk-!-margin-bottom-1"><strong class="govuk-tag govuk-tag--green long-tag">System working normally</strong></p> -->
-
+    <!--
 
      <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
       <div class="govuk-notification-banner__header">
@@ -26,7 +26,7 @@
       </div>
     </div>
 
-        <!--
+
 
     <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" style="border: 5px solid #d4351c; background-color: #d4351c;">
       <div class="govuk-notification-banner__header">
@@ -69,7 +69,7 @@
       <div class="dfe-card">
         <div class="dfe-card-container">
           <h2 class="govuk-heading-m">
-              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/support/v1/single-check/single">Run a check</a>
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/support/v2/single-check/single">Run a check</a>
           </h2>
           <p>Run an eligiblity check for one parent or guardian</p>
         </div>
@@ -78,7 +78,7 @@
       <div class="dfe-card">
         <div class="dfe-card-container">
           <h2 class="govuk-heading-m">
-              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/support/v1/batch/i/queue">Batch checks queue</a>
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/support/v2/batch/search">Find a batch check</a>
           </h2>
           <p>View the status of batch checks.</p>
         </div>
@@ -87,7 +87,7 @@
       <div class="dfe-card">
         <div class="dfe-card-container">
           <h2 class="govuk-heading-m">
-              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/support/v1/sandpit/sandpit">Test environments</a>
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/support/v2/sandpit/sandpit">Test environments</a>
           </h2>
           <p>View test environments for free school meals and early years.</p>
         </div>
@@ -97,7 +97,7 @@
       <div class="dfe-card">
         <div class="dfe-card-container">
           <h2 class="govuk-heading-m">
-              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/support/v1/event-history/search-code">View eligibility code history</a>
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/support/v2/event-history/search-code">View eligibility code history</a>
           </h2>
           <p>View the event listing for a working families code, showing application and reconfirmation history.</p>
         </div>
@@ -106,9 +106,18 @@
        <div class="dfe-card">
         <div class="dfe-card-container">
           <h2 class="govuk-heading-m">
-              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/support/v1/temp-code/temp-code">Manage temporary codes</a>
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/support/v2/temp-code/temp-code">Import temporary codes</a>
           </h2>
           <p>Import childcare for working families temporary code files provided by HMRC and view history.</p>
+        </div>
+      </div>
+
+       <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="">Guidance</a>
+          </h2>
+          <p>TBC</p>
         </div>
       </div>
 
@@ -116,7 +125,7 @@
       <div class="dfe-card">
         <div class="dfe-card-container">
           <h2 class="govuk-heading-m">
-              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/support/v1/corrections/search-code">Edit eligibility code data</a>
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/support/v2/corrections/search-code">Edit eligibility code data</a>
           </h2>
           <p>Correct errors in working families code data.</p>
         </div>
@@ -126,7 +135,6 @@
 
     </div>
 
-    <p><a href="">View ECE support team guidance (opens in new tab)</a></p>
   </div>
 </div>
 

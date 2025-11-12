@@ -1,0 +1,83 @@
+{% extends "/layouts/support/v2/layout-support.html" %}
+
+{% block pageTitle %}
+  Edit the child date of birth
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+
+
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <form class="form" action="/support/v2/corrections/audit" method="post" novalidate>
+
+          {% call govukFieldset({
+
+          }) %}
+
+            {% from "govuk/components/input/macro.njk" import govukInput %}
+
+            {{ govukDateInput({
+              id: "child-dob",
+              namePrefix: "child-dob",
+              fieldset: {
+                legend: {
+                  text: "Edit the child date of birth",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--l"
+                }
+              },
+              hint: {
+                text: "For example, 31 3 2023"
+              },
+              items: [
+                {
+                  name: "day",
+                  classes: "govuk-input--width-2",
+                  value: "10"
+                },
+                {
+                  name: "month",
+                  classes: "govuk-input--width-2",
+                  value: "10"
+                },
+                {
+                  name: "year",
+                  classes: "govuk-input--width-4",
+                  value: "2021"
+                }
+              ]
+            }) }}
+
+          {% endcall %}
+
+          <div>
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+          </div>
+
+
+
+
+
+        </form>
+
+      </div>
+
+    </div>
+
+
+
+{% endblock %}

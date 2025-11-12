@@ -1,0 +1,50 @@
+{% extends "/layouts/support/v2/layout-support.html" %}
+
+{% block pageTitle %}
+  Upload temporary code file
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-l">Upload temporary code file</h1>
+
+    <p>Upload the .xlsm file you have downloaded from HMRC secure data exchange.</p>
+
+    <!-- <p>Do not edit the file before uploading.</p> -->
+
+
+    {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+    {{ govukFileUpload({
+      id: "temp-code-upload",
+      name: "temp-code-upload",
+      label: {
+        classes: "govuk-label--m",
+        text: "Upload a file"
+      },
+      javascript: true
+    }) }}
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Continue",
+      classes: "govuk-button--primary",
+      href: '/support/v2/temp-code/password'
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
