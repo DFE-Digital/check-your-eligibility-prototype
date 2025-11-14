@@ -1,0 +1,108 @@
+//eligible
+
+{ "ref":"44455453","parent":"Alex Johnson","pdob":"15 Mar 1980","ni":"AB123456C","child":"Emily Johnson","school":"Hilltop Elementary","end":"01 Sep 2026","status":{ "text":"Newly eligible","classes":"govuk-tag--yellow" } },
+{ "ref":"44455456","parent":"Eden Tesfay","pdob":"03 Feb 1982","ni":"GH654321H","child":"Samual Tesfay","school":"Oakwood School","end":"01 Sep 2026","status":{ "text":"Eligible","classes":"govuk-tag--green" } },
+{ "ref":"44455457","parent":"Jennifer Langley","pdob":"09 Nov 1979","ni":"IJ987654K","child":"Tilly Langley","school":"Sunnydale Academy","end":"01 Sep 2026","status":{ "text":"Newly eligible","classes":"govuk-tag--yellow" } },
+  { "ref":"44455458","parent":"Susan Francis","pdob":"27 May 1981","ni":"KL123456M","child":"Noah Francis","school":"Maple Grove School","end":"01 Sep 2026","status":{ "text":"Eligible","classes":"govuk-tag--green" } },
+  { "ref":"44455459","parent":"John Smith","pdob":"14 Dec 1977","ni":"MN987654N","child":"Jo Smith","school":"Willow Park School","end":"01 Sep 2026","status":{ "text":"Eligible","classes":"govuk-tag--green" } },
+  { "ref":"44455461","parent":"Claire Sutton","pdob":"02 Apr 1976","ni":"OP123456Q","child":"Maya Sutton","school":"Cedar Hill School","end":"01 Sep 2026","status":{ "text":"Eligible","classes":"govuk-tag--green" } },
+  { "ref":"44455462","parent":"George Jones","pdob":"30 Aug 1974","ni":"QR987654S","child":"Ella Jones","school":"Birchwood Academy","end":"01 Sep 2026","status":{ "text":"Eligible","classes":"govuk-tag--green" } },
+  { "ref":"44455463","parent":"Eden Rahman","pdob":"21 Jun 1980","ni":"ST123456T","child":"Leila Rahman","school":"Redwood Primary","end":"01 Sep 2026","status":{ "text":"Newly eligible","classes":"govuk-tag--yellow" } },
+  { "ref":"44455464","parent":"Jennifer Patel","pdob":"05 Oct 1978","ni":"UV987654W","child":"Ava Patel","school":"Pinecrest School","end":"01 Sep 2026","status":{ "text":"Eligible","classes":"govuk-tag--green" } },
+  { "ref":"44455465","parent":"Susan Brown","pdob":"19 Mar 1977","ni":"XY123456Z","child":"Noah Brown","school":"Ashfield Academy","end":"01 Sep 2026","status":{ "text":"Eligible","classes":"govuk-tag--green" } },
+ { "ref":"44455466","parent":"James Carter","pdob":"23 Feb 1984","ni":"AB987654C","child":"Ruby Carter","school":"Lakeside School","end":"01 Sep 2026","status":{ "text":"Eligible","classes":"govuk-tag--green" } },
+
+
+//not eligible
+
+ {% set notEligible = [
+{
+    "ref": "44455453",
+    "child": "Rachel Evans",
+    "cdob": "12 Jan 2017",
+    "parent": "Mia Evans",
+    "pdob": "27 Apr 1973",
+    "ni": "NW653213B",
+    "email": "revans@icloud.com",
+    "school": "Hilltop Elementary"
+  },
+  {
+    "ref": "44455454",
+    "child": "Alex Johnson",
+    "cdob": "12 Jan 2017",
+    "parent": "Emily Johnson",
+    "pdob": "27 Apr 1973",
+    "ni": "NW653213B",
+    "email": "edentesfay@icloud.com",
+    "school": "Greenfield Academy"
+  },
+  {
+    "ref": "44455455",
+    "child": "David Rutherford",
+    "cdob": "12 Jan 2017",
+    "parent": "Alyiana Rutherford",
+    "pdob": "27 Apr 1973",
+    "ni": "NW653213B",
+    "email": "rutherford@icloud.com",
+    "school": "Riverside Primary"
+  },
+  {
+    "ref": "44455456",
+    "child": "Theo Jones",
+    "cdob": "12 Jan 2017",
+    "parent": "Eden Jones",
+    "pdob": "27 Apr 1973",
+    "ni": "NW653213B",
+    "email": "Jonestheos@icloud.com",
+    "school": "Oakwood School"
+  },
+  {
+    "ref": "44455457",
+    "child": "Liam Smith",
+    "cdob": "12 Jan 2017",
+    "parent": "Olivia Smith",
+    "pdob": "27 Apr 1973",
+    "ni": "NW653213B",
+    "email": "revans@icloud.com",
+    "school": "Sunnydale Academy"
+  },
+  {
+    "ref": "44455458",
+    "child": "Alex Johnson",
+    "cdob": "12 Jan 2017",
+    "parent": "Emily Johnson",
+    "pdob": "27 Apr 1973",
+    "ni": "NW653213B",
+    "email": "edentesfay@icloud.com",
+    "school": "Cedar Hill School"
+  },
+  {
+    "ref": "44455459",
+    "child": "David Rutherford",
+    "cdob": "12 Jan 2017",
+    "parent": "Alyiana Rutherford",
+    "pdob": "27 Apr 1973",
+    "ni": "NW653213B",
+    "email": "rutherford@icloud.com",
+    "school": "Maple Grove School"
+  },
+  {
+    "ref": "44455460",
+    "child": "Theo Jones",
+    "cdob": "12 Jan 2017",
+    "parent": "Eden Jones",
+    "pdob": "27 Apr 1973",
+    "ni": "NW653213B",
+    "email": "Jonestheos@icloud.com",
+    "school": "Birchwood Academy"
+  }
+] %}
+
+  { "ref": "44455453", "child": "Rachel Evans", "cdob": "12 Jan 2017", "parent": "Mia Evans", "pdob": "27 Apr 1973", "ni": "NW653213B", "email": "revans@icloud.com", "school": "Hilltop Elementary" },
+  { "ref": "44455455", "child": "David Rutherford", "cdob": "12 Jan 2017", "parent": "Alyiana Rutherford", "pdob": "27 Apr 1973", "ni": "NW653213B", "email": "rutherford@icloud.com", "school": "Riverside Primary" },
+  { "ref": "44455456", "child": "Theo Jones", "cdob": "12 Jan 2017", "parent": "Eden Jones", "pdob": "27 Apr 1973", "ni": "NW653213B", "email": "Jonestheos@icloud.com", "school": "Oakwood School" },
+  { "ref": "44455457", "child": "Liam Smith", "cdob": "12 Jan 2017", "parent": "Olivia Smith", "pdob": "27 Apr 1973", "ni": "NW653213B", "email": "revans@icloud.com", "school": "Sunnydale Academy" },
+  { "ref": "44455458", "child": "Alex Johnson", "cdob": "12 Jan 2017", "parent": "Emily Johnson", "pdob": "27 Apr 1973", "ni": "NW653213B", "email": "edentesfay@icloud.com", "school": "Cedar Hill School" },
+
+  { "ref": "44455459", "child": "David Rutherford", "cdob": "12 Jan 2017", "parent": "Alyiana Rutherford", "pdob": "27 Apr 1973", "ni": "NW653213B", "email": "rutherford@icloud.com", "school": "Maple Grove School" },
+  { "ref": "44455460", "child": "Theo Jones", "cdob": "12 Jan 2017", "parent": "Eden Jones", "pdob": "27 Apr 1973", "ni": "NW653213B", "email": "Jonestheos@icloud.com", "school": "Birchwood Academy" },

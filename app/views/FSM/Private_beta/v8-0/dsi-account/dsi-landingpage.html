@@ -1,4 +1,4 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/FSM/v8-0/layout-dfe.html" %}
 
 {% block pageTitle %}
   Start page template – {{ serviceName }} – GOV.UK Prototype Kit
@@ -56,20 +56,13 @@
           ],
           [
             {
-              html: '<a href="../_LA/dashboard.html">FSM Eligibility checking - Local Authority</a>'
+              html: '<a href="../../v8-0/LA/dashboard.html">FSM Eligibility checking - Local Authority</a>'
             },
             {
               text: "FSM Eligibility checking - Local Authority"
             }
-          ],
-          [
-            {
-              html: '<a href="../dashboard">FSM Eligibility checking - Schools</a>'
-            },
-            {
-              text: "FSM Eligibility checking - Schools"
-            }
           ]
+
         ]
       }) }}
 

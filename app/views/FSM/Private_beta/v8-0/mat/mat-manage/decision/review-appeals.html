@@ -1,0 +1,138 @@
+{% extends "/layouts/FSM/v8-0/layout-dfe-matnav.html" %}
+{% set pageName="Pending appeals" %}
+
+<!-- {% set applicationSent %}
+<h3 class="govuk-notification-banner__heading">
+  Your application has been sent
+  </h3>
+  <p class="govuk-body">
+    We have sent your application to be processed by your local school. It may take upto 1 week to process.
+  </p>
+  <p>Your reference is 1234567</p>
+{% endset %} -->
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">{{pageName}}
+      <!-- <span id="notifications" class="moj-notification-badge" style="white-space: nowrap; margin-left: 15px;">21</span> -->
+    </h1>
+
+    {{ govukDetails({
+    summaryText: "Help with this page",
+    text: "This page contains applications for free school meals that couldn't be found in the system. Review any
+    supporting evidence parents or guardians have provided, then approve or decline to process their applications."
+    }) }}
+    <div class="govuk-width-container  padding: 1em; margin-top: 1em;">
+      <div class="moj-search">
+<form action="#" method="post">
+  <div class="govuk-form-group">
+    <label class="govuk-label govuk-!-font-weight-bold" for="search">
+      Find a child
+    </label>
+    <div id="search-hint" class="govuk-hint">
+      You can search by name, date of birth or National Insurance number
+    </div>
+
+    <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 5px;">
+      <input class="govuk-input" id="search" name="search" type="search"
+        aria-describedby="search-hint"
+        style="flex: 1; min-width: 250px; margin-bottom: 0;">
+
+      <button type="submit" class="govuk-button" data-module="govuk-button" style="margin-bottom: 0;">
+        Search
+      </button>
+
+      <button type="button" class="govuk-button govuk-button--secondary" style="margin-bottom: 0;" onclick="
+        document.getElementById('search').value = '';
+        document.querySelectorAll('.appeal-row').forEach(r => r.style.display = '');
+      ">
+        Clear search
+      </button>
+    </div>
+  </div>
+</form>
+
+
+      </div>
+    </div>
+    <div style="padding-bottom: 2em;"></div>
+  </div>
+</div>
+{% include "_includes/mat/review-appeals.html" %}
+
+
+{%- from "moj/components/pagination/macro.njk" import mojPagination -%}
+
+{{ mojPagination({
+items: [{
+text: '1',
+href: '/page=1'
+}, {
+text: '2',
+href: '/page=2',
+selected: true
+}, {
+text: '3',
+href: '/page=3'
+}, {
+type: 'dots'
+}, {
+text: '5',
+href: '/page=5'
+}],
+results: {
+count: 36,
+from: 1,
+to: 14,
+text: 'records'
+},
+previous: {
+text: 'Previous',
+href: ''
+},
+next: {
+text: 'Next',
+href: ''
+}
+}) }}
+
+
+
+
+
+
+</div>
+
+
+</div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const searchInput = document.getElementById('search');
+    const form = searchInput.closest('form');
+    const tableRows = document.querySelectorAll('.appeal-row');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault(); // Stop the form from reloading the page
+
+      const searchTerm = searchInput.value.trim().toLowerCase();
+
+      tableRows.forEach(row => {
+        const rowText = row.textContent.toLowerCase();
+        const match = rowText.includes(searchTerm);
+        row.style.display = match ? '' : 'none';
+      });
+    });
+  });
+</script>
+
+{% endblock %}

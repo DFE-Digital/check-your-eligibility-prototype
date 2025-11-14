@@ -1,0 +1,36 @@
+
+
+{% set notEligible = [
+  { "ref": "44455454", "parent": "Warren Sutton", "pdob": "18 Sep 1978", "ni": "CD987654E", "child": "Lisa Sutton", "school": "Greenfield Academy", "end": "01 Sep 2026", "status": { "text": "Eligible", "classes": "govuk-tag--green" } },
+  { "ref": "44455455", "parent": "Alan Parker", "pdob": "22 Jul 1975", "ni": "EF123456G", "child": "Jack Parker", "school": "Greenfield Academy", "end": "01 Sep 2026", "status": { "text": "Eligible", "classes": "govuk-tag--green" } },
+  { "ref": "44455467", "parent": "Priya Shah", "pdob": "11 Jan 1983", "ni": "BA112233A", "child": "Asha Shah", "school": "Greenfield Academy", "end": "01 Sep 2026", "status": { "text": "Newly eligible", "classes": "govuk-tag--yellow" } },
+  { "ref": "44455468", "parent": "Mark Turner", "pdob": "08 Mar 1976", "ni": "CB223344B", "child": "Elliot Turner", "school": "Greenfield Academy", "end": "01 Sep 2026", "status": { "text": "Eligible", "classes": "govuk-tag--green" } },
+  { "ref": "44455469", "parent": "Hannah Patel", "pdob": "29 Aug 1981", "ni": "DC334455C", "child": "Maya Patel", "school": "Greenfield Academy", "end": "01 Sep 2026", "status": { "text": "Eligible", "classes": "govuk-tag--green" } },
+  { "ref": "44455470", "parent": "Peter Clark", "pdob": "17 May 1979", "ni": "ED445566D", "child": "Oliver Clark", "school": "Greenfield Academy", "end": "01 Sep 2026", "status": { "text": "Newly eligible", "classes": "govuk-tag--yellow" } },
+  { "ref": "44455471", "parent": "Laura Bennett", "pdob": "02 Dec 1985", "ni": "FE556677E", "child": "Grace Bennett", "school": "Greenfield Academy", "end": "01 Sep 2026", "status": { "text": "Eligible", "classes": "govuk-tag--green" } },
+  { "ref": "44455472", "parent": "Daniel Murphy", "pdob": "24 Apr 1977", "ni": "GF667788F", "child": "Finn Murphy", "school": "Greenfield Academy", "end": "01 Sep 2026", "status": { "text": "Eligible", "classes": "govuk-tag--green" } },
+  { "ref": "44455473", "parent": "Amelia Roberts", "pdob": "09 Sep 1982", "ni": "HG778899G", "child": "Iris Roberts", "school": "Greenfield Academy", "end": "01 Sep 2026", "status": { "text": "Newly eligible", "classes": "govuk-tag--yellow" } },
+  { "ref": "44455474", "parent": "Thomas White", "pdob": "13 Jul 1978", "ni": "JH889900H", "child": "Leo White", "school": "Greenfield Academy", "end": "01 Sep 2026", "status": { "text": "Eligible", "classes": "govuk-tag--green" } },
+  { "ref": "44455475", "parent": "Sophie Brown", "pdob": "21 Feb 1986", "ni": "KI990011I", "child": "Isla Brown", "school": "Greenfield Academy", "end": "01 Sep 2026", "status": { "text": "Eligible", "classes": "govuk-tag--green" } }
+  ] %}
+
+
+
+
+        <tbody class="govuk-table__body">
+          {% for row in notEligible %}
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <a href="../decision/records/pending_{{ row.ref }}.html" class="govuk-link">{{ row.ref }}</a>
+            </td>
+            <td class="govuk-table__cell">{{ row.parent }}</td>
+            <td class="govuk-table__cell govuk-table__cell--date">{{ row.pdob }}</td>
+            <td class="govuk-table__cell">{{ row.ni }}</td>
+            <td class="govuk-table__cell">{{ row.child }}</td>
+            <td class="govuk-table__cell">{{ row.school }}</td>
+            <!-- <td class="govuk-table__cell">{{ row.email }}</td> -->
+                        <td class="govuk-table__cell">{{ row.end}}</td>
+
+          </tr>
+          {% endfor %}
+        </tbody>

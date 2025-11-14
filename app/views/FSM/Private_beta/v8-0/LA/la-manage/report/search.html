@@ -1,6 +1,7 @@
-{% extends "layouts/FSM/v7-4/layout-dfe-lanav.html" %}
+{% extends "layouts/FSM/v8-0/layout-dfe-lanav.html" %}
 {% set pageName= "Search all records" %}
 {% block content %}
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-l">
@@ -8,74 +9,59 @@
     </h1>
   </div>
 </div>
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    {% include "FSM/Private_beta/v7-3/_includes/filter-panel.html" %}
-    <!--Export and search results section-->
-  </div>
-  <div class="moj-filter-layout__content">
-    <div class="moj-scrollable-pane">
-      <div class="govuk-page-header" style="display: flex; align-items: center; justify-content: space-between;">
-        <h2 class="govuk-heading-m" style="margin: 0;">
-          Showing <span id="resultCount">0</span> results
-        </h2>
-        <!-- <div class="govuk-button-group">
-        <button id="export" class="govuk-button govuk-button--secondary">Archive history</button> -->
-        <button id="export" class="govuk-button govuk-button--secondary">Export as CSV</button>
-      </div>
-      <!--Table-->
-
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
       <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
-          <div class="moj-filter-layout">
-            <div class="moj-filter-layout__content">
-              <div class="moj-scrollable-pane">
+        <div class="govuk-grid-column-one-quarter">
+          {% include "_includes/la/filter-panel-la.html" %}
+        </div>
+        <div class="govuk-grid-column-three-quarters">
+          <!--Export and search results section-->
+          <div class="moj-filter-layout__content">
+            <div class="moj-scrollable-pane">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Export and search results section-->
+    </div>
+    <div class="moj-filter-layout__content">
+      <div class="moj-scrollable-pane">
+        <div class="govuk-page-header" style="display: flex; align-items: center; justify-content: space-between;">
+          <h2 class="govuk-heading-m" style="margin: 0;">
+            Showing <span id="resultCount">0</span> of <span id="totalResults">36</span> results
+          </h2>
+          <button id="export" class="govuk-button govuk-button--secondary">Export as CSV</button>
+        </div>
+        <!--Table-->
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <div class="moj-filter-layout">
+              <div class="moj-filter-layout__content">
                 <div class="moj-scrollable-pane">
-                  <table class="govuk-table" id="resultsTable" data-module="moj-sortable-table">
-                    <thead class="govuk-table__head">
-                      <tr class="govuk-table__row">
+                  <div class="moj-scrollable-pane">
+                    <table class="govuk-table" id="resultsTable" data-module="moj-sortable-table">
+                      <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
 
-
-                        <!--sort function -->
-                        <th scope="col" class="govuk-table__header" aria-sort="ascending">Reference</th>
-                        <th scope="col" class="govuk-table__header" aria-sort="none">Child name</th>
-                        <th scope="col" class="govuk-table__header" aria-sort="none">Child dob</th>
-                        <th scope="col" class="govuk-table__header" aria-sort="none">Date submitted</th>
-                        <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
-                        <th scope="col" class="govuk-table__header" aria-sort="none">Eligible from</th>
-                      </tr>
+                          <!--sort function -->
+                          <th scope="col" class="govuk-table__header" aria-sort="ascending">Reference</th>
+                          <th scope="col" class="govuk-table__header" aria-sort="none">Parent name</th>
+                          <!-- <th scope="col" class="govuk-table__header" aria-sort="none">Parents National Insurance number</th> -->
+                          <!-- <th scope="col" class="govuk-table__header" aria-sort="none">Parents dob</th> -->
+                          <th scope="col" class="govuk-table__header" aria-sort="none">Child name</th>
+                          <th scope="col" class="govuk-table__header" aria-sort="none">Child dob</th>
+                          <th scope="col" class="govuk-table__header" aria-sort="none">School</th>
+                          <th scope="col" class="govuk-table__header" aria-sort="none">Date submitted</th>
+                          <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
+                          <!-- <th scope="col" class="govuk-table__header" aria-sort="none">Action</th>  -->
+                        </tr>
                     </thead>
 
-                    <tbody class="govuk-table__body">
-                      {% for application in data.applications %}
-                      <tr class="govuk-table__row matches-filters"
-                        data-status="{% if application.status.yes == 'Entitled' %}status-Entitled{% elif application.status.yes == 'Not Entitled' %}status-Not-Entitled{% elif application.status.yes == 'Sent for review' %}status-Sent-for-review{% elif application.status.yes == 'Evidence needed' %}status-Evidence-needed{% endif %}">
-                        <th scope="row" class="govuk-table__header">
-                          <a href="#" class="govuk-link">{{ application.id }}</a>
-                        </th>
-                        <td class="govuk-table__cell">{{ application.childDetails.firstName }} {{
-                          application.childDetails.lastName }}</td>
-                        <td class="govuk-table__cell">{{ application.dob | govukDate("truncate") }}</td>
-                        <!-- <td class="govuk-table__cell">{{ application.school.name }}</td> -->
-                        <td class="govuk-table__cell">{{ application.submission.date | govukDate("truncate") }}</td>
-                        <td class="govuk-table__cell">
-                          {% if application.status.yes == "Entitled" %}
-                          <strong class="govuk-tag govuk-tag--green">{{ application.status.yes }}</strong>
-                          {% elif application.status.yes == "Sent for review" %}
-                          <strong class="govuk-tag govuk-tag--blue">{{ application.status.yes }}</strong>
-                          {% elif application.status.yes == "Evidence needed" %}
-                          <strong class="govuk-tag govuk-tag--turquoise">{{ application.status.yes }}</strong>
-                          {% elif application.status.yes == "Not Entitled" %}
-                          <strong class="govuk-tag govuk-tag--red">{{ application.status.yes }}</strong>
-                          {% else %}
-                          <strong class="govuk-tag">{{ application.status.yes }}</strong>
-                          {% endif %}
-                        </td>
-                        <td class="govuk-table__cell">{{ application.eligible.date | govukDate("truncate") }}</td>
-                      </tr>
-                      {% endfor %}
-                    </tbody>
+{% include "_includes/la/la-table-rows-research.html" %}
+
 
                 </div>
               </div>
@@ -84,29 +70,14 @@
           </div>
 
           <div style="display: flex; justify-content: center; margin-top: 20px;">
-            {{ govukPagination({
-              previous: {
-                href: "#"
-              },
-              next: {
-                href: "#"
-              },
-              items: [
-                {
-                  number: 1,
-                  href: "#"
-                },
-                {
-                  number: 2,
-                  current: true,
-                  href: "#"
-                },
-                {
-                  number: 3,
-                  href: "#"
-                }
-              ]
-            }) }}
+           {{ govukPagination({ attributes:
+            { id: "pager" },
+            items: [
+            { number: 1, current: false, href: "#" },
+            { number: 2, current: false, href: "#" },
+            { number: 3, current: false, href: "#" }
+            ]
+          }) }}
           </div>
 
         </div>
@@ -140,203 +111,212 @@
 
 {% endblock %}
 
-
-
-<!--FILTER TOGGLE-->
-<!---------------SCRIPTS------------------>
-
-{% block pageScripts %}
-
-
-
-<!--COUNT RESULTS-->
+{% block scripts %}
 
 <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const ROWS_PER_PAGE = 15;
 
- //pagination
- function paginate(page = 1) {
-    const visibleRows = Array.from(document.querySelectorAll('#resultsTable tbody tr.matches-filters'));
-    console.log(visibleRows);
-    // Limit the number of visible rows to a maximum of 10
-    if (visibleRows.length > 10) {
-      let count = 0;
-      visibleRows.forEach(row => {
-        row.style.display = 'none'; // Hide all rows initially
-        const min = 0 + ((page-1) * 10);
-        const max = 10 * page;
-        if (count > min && count < max) {
-          row.style.display = 'table-row'; // Hide excess rows
+  const table = document.getElementById('resultsTable');
+  const resultCountEl = document.getElementById('resultCount');
+  const totalResultsEl = document.getElementById('totalResults');
 
-        }
-        count++; // Increment count for visible rows
-      });
-    }
-  }
+  const keywordsInput = document.getElementById('keywords');
+  const applyBtn = document.getElementById('applyFilter');
+  const clearLink = document.querySelector('.govuk-link--no-visited-state');
 
-  const updateVisibleRowCount = () => {
-    const table = document.getElementById("resultsTable");
-    const rows = table.querySelectorAll("tbody tr");
-    const visibleRows = Array.from(rows).filter(row => row.style.display !== "none");
-
-    // Update the visible row count display
-    document.getElementById("resultCount").innerText = visibleRows.length;
-
-    // Update the pagination
-    paginate();
+  // Optional “selected filters” tags
+  const tagEls = {
+    kwWrap: document.getElementById('selected-keyword-container'),
+    kwList: document.getElementById('selected-keyword'),
+    dateWrap: document.getElementById('selected-submission-date-range-container'),
+    dateList: document.getElementById('selected-submission-date-range'),
+    stWrap: document.getElementById('selected-status-container'),
+    stList: document.getElementById('selected-status')
   };
 
-  // To update the count (e.g., after filtering)
-  updateVisibleRowCount();
+  // Map between your checkbox values and the words in your <tr data-status="...">
+  // Checkboxes use codes like "status-Not-Entitled"; rows use words like "Not eligible".
+  const statusCodeToWord = {
+    'status-Eligible': 'Eligible',
+    'status-Not-eligible': 'Not eligible',
+    'status-Evidence-needed': 'Evidence needed',
+    'status-Sent-for-review': 'Sent for review',
+    'status-Ready-for-review': 'Ready for review',
+    'status-Reviewed-not-eligible': 'Reviewed not eligible',
+    'status-Reviewed-eligible': 'Reviewed eligible',
+    'status-FSM-confirmed': 'FSM confirmed',
+    'status-Archive': 'Archived',
+    'status-Expired': 'Expired'
+  };
 
-</script>
+  let currentPage = 1;
 
-<!------FILTERS------->
+  function getFilters() {
+    const keyword = (keywordsInput?.value || '').trim().toLowerCase();
+    const dateRadio = document.querySelector('input[name="date range"]:checked');
+    const dateRange = dateRadio ? dateRadio.value : null;
+    const statuses = Array.from(document.querySelectorAll('input[name="status"]:checked')).map(el => el.value);
+    return { keyword, dateRange, statuses };
+  }
 
-<!--not working-->
-<!--<script src="../components/filter.js"></script> -->
+  // Accept either data-submitted or data-submission-date
+  function getRowISODate(row) {
+    return row.getAttribute('data-submitted') || row.getAttribute('data-submission-date') || '';
+  }
 
-<script>
-  function filterResults() {
+  // Compare against "last N days"
+  function inDateRange(iso, range) {
+    if (!range) return true;
+    if (!iso) return false;
+    const days = {
+      'Last month': 30,
+      'Last 3 months': 90,
+      'Last 6 months': 180,
+      'Last 12 months': 365
+    }[range];
+    if (!days) return true;
 
-    const keyword = document.getElementById('keywords').value.toLowerCase();
-    const table = document.getElementById('resultsTable');
-    const rows = table.querySelectorAll('tbody tr');
+    const submitted = new Date(iso + 'T00:00:00');
+    const today = new Date();
+    const cutoff = new Date(today.getFullYear(), today.getMonth(), today.getDate() - days);
+    return submitted >= cutoff;
+  }
 
-    let visibleCount = 0;
-
-    // Get selected submission date range
-    const dateRange = document.querySelector('input[name="date range"]:checked');
-    const selectedDateRange = dateRange ? dateRange.value : null;
-
-    // Get selected statuses
-    const selectedStatuses = Array.from(document.querySelectorAll('input[name="status"]:checked')).map(checkbox => checkbox.value);
-
-    //update selected filters
-    console.log(document.getElementById('selected-keyword'))
-    document.getElementById('selected-keyword').innerHTML = '';
-    document.getElementById('selected-keyword-container').style.display = 'none';
-    document.getElementById('selected-submission-date-range').innerHTML = '';
-    document.getElementById('selected-submission-date-range-container').style.display = 'none';
-    document.getElementById('selected-status').innerHTML = '';
-    document.getElementById('selected-status-container').style.display = 'none';
-
-    if (keyword != '') {
-      const selected_keyword = `<li><button class="app-filter__tag" onclick="clearFilters('${keyword}')"><span class="govuk-visually-hidden">Remove this filter</span>
-        ${keyword}</button></li>`;
-      document.getElementById('selected-keyword').innerHTML = selected_keyword;
-      document.getElementById('selected-keyword-container').style.display = 'block';
+  function rowMatches(row, { keyword, dateRange, statuses }) {
+    // Keyword: search whole row (th + tds)
+    if (keyword) {
+      const text = row.innerText.toLowerCase();
+      if (!text.includes(keyword)) return false;
     }
 
-    if (selectedDateRange != null) {
-      const selected_submission_date = `<li><button class="app-filter__tag" onclick="clearFilters('${selectedDateRange}')"><span class="govuk-visually-hidden">Remove this filter</span>
-        ${selectedDateRange}</button></li>`;
-      document.getElementById('selected-submission-date-range').innerHTML = selected_submission_date;
-      document.getElementById('selected-submission-date-range-container').style.display = 'block';
+    // Status: your rows store the human word in data-status
+    if (statuses.length) {
+      const rowWord = (row.getAttribute('data-status') || '').trim();
+      // If any checked status code maps to this row's word, it matches
+      const matchStatus = statuses.some(code => statusCodeToWord[code] === rowWord);
+      if (!matchStatus) return false;
     }
-    selectedStatuses.forEach(status => {
-      status_label = status
-        .replace('status-', '')
-        .replace(/-/g, ' ')
-        .replace('Sent-for-review', 'Sent for review');
-        const selected_status = `<li><button class="app-filter__tag" onclick="clearFilters('${status}')"><span class="govuk-visually-hidden">Remove this filter</span>
-      ${status_label}</button></li>`;
-      document.getElementById('selected-status').innerHTML += selected_status;
-      document.getElementById('selected-status-container').style.display = 'block';
 
-    });
+    // Date
+    const iso = getRowISODate(row);
+    if (!inDateRange(iso, dateRange)) return false;
 
-    rows.forEach(row => {
-      const cells = row.getElementsByTagName('td');
-      let match = false;
+    return true;
+  }
 
-      // Check if row matches the keyword
-      for (let cell of cells) {
-        if (cell.textContent.toLowerCase().includes(keyword)) {
-          match = true;
-          break;
-        }
-      }
+  function updateTags({ keyword, dateRange, statuses }) {
+    // Reset
+    if (tagEls.kwList) tagEls.kwList.innerHTML = '';
+    if (tagEls.dateList) tagEls.dateList.innerHTML = '';
+    if (tagEls.stList) tagEls.stList.innerHTML = '';
+    if (tagEls.kwWrap) tagEls.kwWrap.style.display = 'none';
+    if (tagEls.dateWrap) tagEls.dateWrap.style.display = 'none';
+    if (tagEls.stWrap) tagEls.stWrap.style.display = 'none';
 
+    // Keyword tag
+    if (keyword && tagEls.kwList && tagEls.kwWrap) {
+      tagEls.kwList.innerHTML = `<li><button class="app-filter__tag" type="button" onclick="__clearTag__('keyword')">
+        <span class="govuk-visually-hidden">Remove this filter</span>${keyword}</button></li>`;
+      tagEls.kwWrap.style.display = 'block';
+    }
+    // Date tag
+    if (dateRange && tagEls.dateList && tagEls.dateWrap) {
+      tagEls.dateList.innerHTML = `<li><button class="app-filter__tag" type="button" onclick="__clearTag__('date')">
+        <span class="govuk-visually-hidden">Remove this filter</span>${dateRange}</button></li>`;
+      tagEls.dateWrap.style.display = 'block';
+    }
+    // Status tags (show the human words to match your UI)
+    if (statuses.length && tagEls.stList && tagEls.stWrap) {
+      statuses.forEach(code => {
+        const label = statusCodeToWord[code] || code;
+        tagEls.stList.innerHTML += `<li><button class="app-filter__tag" type="button" onclick="__clearTag__('${code}')">
+          <span class="govuk-visually-hidden">Remove this filter</span>${label}</button></li>`;
+      });
+      tagEls.stWrap.style.display = 'block';
+    }
+  }
 
-      // Check if row matches selected status
-      const status = row.getAttribute('data-status'); // Assuming you store status in the data-status attribute
-      const matchesStatus = selectedStatuses.length === 0 || selectedStatuses.some(selectedStatus => status.includes(selectedStatus));
+  function render({ page = 1 } = {}) {
+    const rows = Array.from(table.querySelectorAll('tbody tr'));
+    const filters = getFilters();
+    updateTags(filters);
 
-      // Check if row matches the submission date range
-      const submissionDate = new Date(row.cells[3].textContent); // Assuming the submission date is in the 4th column
-      let matchesDateRange = true;
-
-      if (selectedDateRange) {
-        const today = new Date();
-        if (selectedDateRange === "Current month to date") {
-          matchesDateRange = submissionDate >= new Date(today.getFullYear(), today.getMonth(), 1);
-        } else if (selectedDateRange === "Last 3 months") {
-          matchesDateRange = submissionDate >= new Date(today.getFullYear(), today.getMonth() - 2, 1);
-        } else if (selectedDateRange === "Last 6 months") {
-          matchesDateRange = submissionDate >= new Date(today.getFullYear(), today.getMonth() - 5, 1);
-        } else if (selectedDateRange === "Last 12 months") {
-          matchesDateRange = submissionDate >= new Date(today.getFullYear(), today.getMonth() - 11, 1);
-        }
-      }
-
-      // Show or hide row based on all match conditions
-      if (match && matchesStatus && matchesDateRange) {
-        row.style.display = ''; // Show row
-        row.classList.add('matches-filters')
-        visibleCount++;
+    // Filter rows
+    const matched = [];
+    rows.forEach(r => {
+      if (rowMatches(r, filters)) {
+        r.classList.add('matches-filters');
+        matched.push(r);
       } else {
-        row.style.display = 'none'; // Hide row
-        row.classList.remove('matches-filters')
+        r.classList.remove('matches-filters');
       }
     });
 
-    paginate();
+    // Pagination
+    currentPage = page;
+    const start = (currentPage - 1) * ROWS_PER_PAGE;
+    const end = Math.min(currentPage * ROWS_PER_PAGE, matched.length);
 
-    // Update the visible row count
-    document.getElementById('resultCount').innerText = visibleCount;
-    updateSelectedFilters();
-  }
+    matched.forEach((row, idx) => {
+      row.style.display = (idx >= start && idx < end) ? '' : 'none';
+    });
+    rows.filter(r => !matched.includes(r)).forEach(r => r.style.display = 'none');
 
-  function clearFilters(filter = null) {
-    if (filter == null) {
-      // Reset input fields and checkboxes
-      document.getElementById('keywords').value = '';
-
-      const radios = document.getElementsByName('date range');
-      radios.forEach(radio => radio.checked = false);
-
-      const checkboxes = document.getElementsByName('status');
-      checkboxes.forEach(checkbox => checkbox.checked = false);
+    // Update blue box: show range
+    if (resultCountEl && totalResultsEl) {
+      if (matched.length === 0) {
+        resultCountEl.textContent = '0';
+        totalResultsEl.textContent = '0';
+      } else {
+        resultCountEl.textContent = `${start + 1}–${end}`;
+        totalResultsEl.textContent = matched.length;
+      }
     }
-    else {
-      const filterElement = document.querySelector(`input[value="${filter}"]`);
-      if (filterElement) {
-        filterElement.checked = false;
-      }
-      else {
-        document.getElementById('keywords').value = '';
-      }
-   }
-    // Refresh results after clearing filters
-    filterResults();
+
+    // Hook GOV.UK pagination buttons (if present)
+    document.querySelectorAll('.govuk-pagination__item a').forEach(link => {
+      link.onclick = (e) => {
+        e.preventDefault();
+        const n = parseInt(link.textContent.trim(), 10);
+        if (!Number.isNaN(n)) render({ page: n });
+      };
+    });
   }
 
-  function updateSelectedFilters() {
-    console.log('updating selected filters');
+  // Expose helper for the little “selected filter” tags
+  window.__clearTag__ = (which) => {
+    if (which === 'keyword') {
+      if (keywordsInput) keywordsInput.value = '';
+    } else if (which === 'date') {
+      document.querySelectorAll('input[name="date range"]').forEach(r => r.checked = false);
+    } else {
+      // it's a status code like "status-Not-Entitled"
+      const cb = document.querySelector(`input[name="status"][value="${which}"]`);
+      if (cb) cb.checked = false;
+    }
+    render({ page: 1 });
+  };
 
+  function clearAll() {
+    if (keywordsInput) keywordsInput.value = '';
+    document.querySelectorAll('input[name="date range"]').forEach(r => r.checked = false);
+    document.querySelectorAll('input[name="status"]').forEach(c => c.checked = false);
+    render({ page: 1 });
   }
 
+  applyBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    render({ page: 1 });
+  });
 
+  clearLink?.addEventListener('click', (e) => {
+    e.preventDefault();
+    clearAll();
+  });
 
-  const applyFilterButton = document.getElementById('applyFilter');
-  const clearFiltersLink = document.querySelector('.govuk-link--no-visited-state');
-  if (clearFiltersLink) {
-    clearFiltersLink.addEventListener('click', clearFilters);
-  }
-  applyFilterButton.addEventListener('click', filterResults);
-
-  document.querySelector('.govuk-link--no-visited-state').addEventListener('click', clearFilters);
+  // Initial
+  render({ page: 1 });
+});
 </script>
-
-
 {% endblock %}

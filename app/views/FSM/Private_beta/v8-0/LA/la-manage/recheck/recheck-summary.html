@@ -1,0 +1,245 @@
+{% extends "layouts/FSM/v8-0/layout-dfe-lanav.html" %}
+{% set pageName="Recheck summary" %}
+
+{% block beforeContent %}
+
+{% block backLink %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+<!--
+{% set breadcrumbs = breadcrumbs or [
+  { text: "Home", href: "/FSM/Private_beta/v7-3/LA/dashboard.html" },
+  { text: "Batch checking", href: "/FSM/Private_beta/v7-3/LA/la-manage/batch-checking/manual.html" },
+  { text: "Batch checks history" }
+] %} -->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">{{ pageName }}</h1>
+    <p class="govuk-body">Rechecks confirm child eligibility for the next academic year. This summary shows a record of all rechecks completed by your local authority.</p>
+    <!-- <details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+Get help with check results    </span>
+  </summary>
+  <div class="govuk-details__text">
+Details need to go in here  </div>
+</details> -->
+
+    <!-- <p><a href="/batch-checking/history/result-explainer"></a></p> -->
+
+    <table class="govuk-table govuk-table--small-text-until-tablet">
+      <!-- <caption class="govuk-table__caption govuk-table__caption govuk-!-margin-bottom-4"> </caption> -->
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Academic year</th>
+          <th scope="col" class="govuk-table__header">Submitted date</th>
+          <th scope="col" class="govuk-table__header">Submitted by</th>
+          <th scope="col" class="govuk-table__header">Eligible</th>
+          <th scope="col" class="govuk-table__header">Not eligible</th>
+          <th scope="col" class="govuk-table__header">Could not check</th>
+          <th scope="col" class="govuk-table__header">Results summary</th>
+          <th scope="col" class="govuk-table__header">  </th>
+          <th scope="col" class="govuk-table__header">  </th>
+
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">2025-2026</td>
+          <td class="govuk-table__cell">{{ "2025-03-01" | duration(7, 'days') | govukDate }} 10:15am</td>
+          <td class="govuk-table__cell">Janet Eccles</td>
+          <td class="govuk-table__cell"> </td>
+          <td class="govuk-table__cell"> </td>
+          <td class="govuk-table__cell">  </td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Not started</strong></td>
+          <td class="govuk-table__cell"><a href=""> </a></td>
+          <td class="govuk-table__cell"><a href=""> </a></td>
+
+        </tr>
+
+        <tr class="govuk-table__row">
+          <!-- <td class="govuk-table__cell">school-March24.csv</td> -->
+          <td class="govuk-table__cell">2025-2026</td>
+          <td class="govuk-table__cell">{{ "2025-03-03" | duration(7, 'days') | govukDate }} 11:47am</td>
+          <td class="govuk-table__cell">Sophia Green</td>
+          <td class="govuk-table__cell">  </td>
+          <td class="govuk-table__cell"> </td>
+          <td class="govuk-table__cell">  </td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">In progress</strong></td>
+          <td class="govuk-table__cell">Processing</a>
+          <td class="govuk-table__cell"><a href=""></a></td>
+
+          </td>
+
+          </td>
+          <!-- <td class="govuk-table__cell">75% complete
+            <div class="govuk-progress-bar" aria-labelledby="progress-bar-label" aria-valuemin="0" aria-valuemax="100" aria-valuenow="75" role="progressbar" style="height: 20px; background-color: #f3f2f1; margin-top: 10px; width: 75%;"></div>
+            </td> -->
+        </tr>
+        <tr class="govuk-table__row">
+          <!-- <td class="govuk-table__cell">batch-school-Jan25.csv</td> -->
+          <td class="govuk-table__cell">2025-2026</td>
+          <td class="govuk-table__cell">{{ "2025-03-04" | duration(7, 'days') | govukDate }} 1:33pm</td>
+          <td class="govuk-table__cell">Julia Dalton</td>
+          <td class="govuk-table__cell">15</td>
+          <td class="govuk-table__cell">8</td>
+          <td class="govuk-table__cell">5 </td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Completed</strong></td>
+          <td class="govuk-table__cell"><a href="./recheck-success.html">View results</a>
+          <td class="govuk-table__cell"><a href="">Download CSV </a></td>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <!-- <td class="govuk-table__cell">upload-final-school.csv</td> -->
+          <td class="govuk-table__cell">2025-2026</td>
+          <td class="govuk-table__cell">{{ "2025-03-05" | duration(7, 'days') | govukDate }} 4:58pm</td>
+          <td class="govuk-table__cell">Charlotte Johnson</td>
+          <td class="govuk-table__cell">821</td>
+          <td class="govuk-table__cell">432</td>
+          <td class="govuk-table__cell">47</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Completed</strong></td>
+          <td class="govuk-table__cell"><a href="">View results</a></td>
+          <td class="govuk-table__cell"><a href="">Download CSV</a></td>
+
+        </tr>
+        <tr class="govuk-table__row">
+          <!-- <td class="govuk-table__cell">school-headcount.csv</td> -->
+          <td class="govuk-table__cell">2025-2026</td>
+          <!-- <td class="govuk-table__cell">Davis</td> -->
+          <td class="govuk-table__cell">{{ "2025-03-06" | duration(7, 'days') | govukDate }} 9:22am</td>
+          <td class="govuk-table__cell">James Walker</td>
+          <td class="govuk-table__cell">600</td>
+          <td class="govuk-table__cell">300</td>
+          <td class="govuk-table__cell">30</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Completed</strong></td>
+          <td class="govuk-table__cell"><a href="">View results</a> </td>
+          <td class="govuk-table__cell"><a href="">Download CSV</a></td>
+
+        </tr>
+
+      </tbody>
+    </table>
+
+    <div style="display: flex; justify-content: center; margin-top: 20px;">
+      {{ govukPagination({
+
+      next: {
+      href: "#"
+      },
+      items: [
+      {
+      number: 1,
+      current: true,
+      href: "#"
+      },
+      {
+      number: 2,
+      href: "#"
+      },
+      {
+      number: 3,
+      href: "#"
+      }
+      ]
+      }) }}
+    </div>
+
+    <!-- <nav class="govuk-pagination" aria-label="Pagination">
+            <ul class="govuk-pagination__list">
+                <li class="govuk-pagination__item govuk-pagination__item--current">
+                    <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+                        1
+                    </a>
+                </li>
+                <li class="govuk-pagination__item">
+                    <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+                        2
+                    </a>
+                </li>
+            </ul>
+            <div class="govuk-pagination__next">
+                <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+                    <span class="govuk-pagination__link-title">
+                        Next<span class="govuk-visually-hidden"> page</span>
+                    </span>
+                    <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v3h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                    </svg>
+                </a>
+            </div>
+        </nav> -->
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}
+
+
+{% block pageScripts %}
+<script>
+  // For each progress bar row, animate the progress and update the numbers
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('tr').forEach(function (row, idx) {
+      const progressBar = row.querySelector('.progress-bar');
+      const counter = row.querySelector('.counter');
+      const totalCount = row.querySelector('.total-count');
+      const recordCell = row.querySelector('td:nth-child(2)');
+      if (progressBar && counter && totalCount && recordCell) {
+        // Use the number of records from the table cell
+        const total = parseInt(recordCell.textContent.trim(), 10) || 0;
+        totalCount.textContent = total;
+        let current = 0;
+        const interval = setInterval(() => {
+          current++;
+          if (current >= total) {
+            current = total;
+            clearInterval(interval);
+          }
+          counter.textContent = current;
+          progressBar.style.width = (current / total * 100) + '%';
+        }, 100 + idx * 50); // Stagger for demo
+      }
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const navLinks = document.querySelectorAll('.moj-sub-navigation__link');
+    const sections = document.querySelectorAll('.govuk-table-section');
+
+    // Initially hide all sections except the one corresponding to the active link
+    const activeLink = document.querySelector('.moj-sub-navigation__link[aria-current="true"]');
+    const targetId = activeLink ? activeLink.getAttribute('data-section') : 'ready-section';
+
+    sections.forEach(section => {
+      section.style.display = section.id === targetId ? 'block' : 'none';
+    });
+
+    // Add event listeners to handle tab switching
+    navLinks.forEach(link => {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        // Update aria-current for navigation links
+        navLinks.forEach(nav => nav.removeAttribute('aria-current'));
+        this.setAttribute('aria-current', 'true');
+
+        // Show only the corresponding section
+        const newTargetId = this.getAttribute('data-section');
+        sections.forEach(section => {
+          section.style.display = section.id === newTargetId ? 'block' : 'none';
+        });
+      });
+    });
+  });
+</script>
+
+{% endblock %}

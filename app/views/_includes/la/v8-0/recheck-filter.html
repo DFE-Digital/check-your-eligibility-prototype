@@ -1,0 +1,131 @@
+
+
+<div class="govuk-grid-row govuk-!-margin-bottom-2" style="justify-content: flex-end;">
+  <div class="govuk-grid-column-full" style="display: flex; align-items: center; justify-content: flex-end;">
+    <button id="toggle-filters-btn" type="button" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" aria-expanded="true">
+      Hide filters
+    </button>
+  </div>
+</div>
+
+
+<div id="filter-wrapper" class="govuk-!-margin-bottom-3 govuk-!-padding-4" style="border: 2px solid #b1b4b6; background: #eaeaea;">
+  <div class="govuk-form-group" id="filter-container">
+
+
+
+
+      <!-- Phase of education -->
+      <div class="govuk-grid-column-one-quarter" style="padding-left: 5px; padding-right: 5px;">
+        <div class="govuk-form-group" style="background: white; padding: 15px; min-height: 260px;">
+          <fieldset class="govuk-fieldset">
+            <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="application">Find an application</label>
+          <span id="application-hint" class="govuk-hint govuk-hint--s">For example 44455453 or a parent name</span>
+
+            <input class="govuk-input" id="application" name="application" type="text">
+          </div>
+          </fieldset>
+        </div>
+      </div>
+
+       <!-- Search bar -->
+
+    <!-- Search bar -->
+       <div class="govuk-grid-column-one-quarter" style="padding-left: 5px; padding-right: 5px;">
+        <div class="govuk-form-group" style="background: white; padding: 15px; min-height: 260px;">
+          <fieldset class="govuk-fieldset">
+            <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="school">School</label>
+            <span id="school-hint" class="govuk-hint govuk-hint--s">For example, St George's primary school</span>
+
+            <input class="govuk-input" id="school" name="school" type="text">
+          </div>
+          </fieldset>
+        </div>
+      </div>
+          <!-- Search bar -->
+    <div class="govuk-grid-column-one-quarter" style="padding-left: 5px; padding-right: 5px;">
+        <div class="govuk-form-group" style="background: white; padding: 15px; min-height: 260px;">
+            <fieldset class="govuk-fieldset" aria-describedby="number-of-records-hint">
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--s" for="number-of-records">Number of records</label>
+                    <span id="number-of-records-hint" class="govuk-hint govuk-hint--s">Selects the number of records in reference number order</span>
+                    <input class="govuk-input govuk-input--width-5" id="number-of-records" name="number-of-records" type="number" inputmode="numeric" min="0" aria-describedby="number-of-records-hint">
+                </div>
+            </fieldset>
+        </div>
+    </div>
+
+
+      <!-- Phase of education -->
+   <!-- <div class="govuk-grid-column-one-quarter" style="padding-left: 5px; padding-right: 5px;">
+        <div class="govuk-form-group" style="background: white; padding: 15px; min-height: 260px;">
+   <fieldset class="govuk-fieldset">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Status of application</legend>
+  <p class="govuk-hint govuk-hint--s">Select all that apply</p>
+  <div class="govuk-checkboxes">
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="status-recheck"   name="status" type="checkbox" value="Recheck">
+      <label class="govuk-label govuk-checkboxes__label" for="status-ready">Recheck</label>
+    </div>
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="status-checking" name="status" type="checkbox" value="Checking">
+      <label class="govuk-label govuk-checkboxes__label" for="status-checking">Checking</label>
+    </div> -->
+    <!-- <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="status-noteligible" name="status" type="checkbox" value="Not eligible recheck">
+      <label class="govuk-label govuk-checkboxes__label" for="status-noteligible">Not eligible recheck</label>
+    </div>
+  </div>
+</fieldset>
+        </div>
+      </div>-->
+      <!-- Phase of education -->
+      <div class="govuk-grid-column-one-quarter" style="padding-left: 5px; padding-right: 5px;">
+        <div class="govuk-form-group" style="background: white; padding: 15px; min-height: 260px;">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Phase of education</legend>
+            <p class="govuk-hint govuk-hint--s">Select all that apply</p>
+            <div class="govuk-checkboxes govuk-checkboxes">
+
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="phase-nursery" name="phase" type="checkbox" value="Nursery">
+                <label class="govuk-label govuk-checkboxes__label" for="phase-nursery">Nursery</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="phase-primary" name="phase" type="checkbox" value="Primary">
+                <label class="govuk-label govuk-checkboxes__label" for="phase-primary">Primary</label>
+              </div>
+              <!-- <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="phase-junior" name="phase" type="checkbox" value="Junior">
+                <label class="govuk-label govuk-checkboxes__label" for="phase-junior">11-14 yrs Junior</label>
+              </div> -->
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="phase-secondary" name="phase" type="checkbox" value="Secondary">
+                <label class="govuk-label govuk-checkboxes__label" for="phase-secondary">Secondary</label>
+              </div>
+               <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="phase-further" name="phase" type="checkbox" value="Further">
+                <label class="govuk-label govuk-checkboxes__label" for="phase-further">16+ Further education</label>
+              </div>
+               <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="phase-allthrough" name="phase" type="checkbox" value="Allthrough">
+                <label class="govuk-label govuk-checkboxes__label" for="phase-allthrough">Allthrough</label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+
+
+    </div>
+
+    <!-- Filter actions -->
+    <div class="govuk-button-group govuk-!-margin-top-3 govuk-!-margin-bottom-0" style="margin-bottom: 0;">
+      <button class="govuk-button" id="apply-filters" type="button">Apply filters</button>
+      <a href="#" class="govuk-link" id="clear-filters">Clear filters</a>
+    </div>
+
+  </div>
+</div>

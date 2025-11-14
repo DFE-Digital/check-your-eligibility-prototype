@@ -1,0 +1,274 @@
+{% extends "layouts/FSM/v8-0/layout-dfe-lanav.html" %}
+{% set pageName = "1350 applications to be rechecked" %}
+{% set currentAcademicYear = "2025" %}
+{% set nextAcademicYear = "2026" %}
+
+{% block beforeContent %}
+  {% include "_includes/layouts/back_link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-notification-banner govuk-notification-banner--info" role="region" aria-labelledby="govuk-notification-banner-title">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Annual recheck ({{ currentAcademicYear }}–{{ nextAcademicYear }})
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-body">
+            Each year, schools and trusts must confirm whether children remain eligible for free school meals for the next academic year. You can recheck all applications or filter by school.
+          </p>
+          <p class="govuk-body govuk-!-margin-bottom-0">
+            <a class="govuk-link govuk-link--no-visited-state" href="../../guidance/recheck-guidance" target="_blank" rel="noopener noreferrer"
+   data-no-router>
+              Guidance for rechecks (opens in a new tab)
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div class="moj-page-header-actions govuk-!-margin-bottom-5">
+        <div class="moj-page-header-actions__title">
+          <h1 class="govuk-heading-l govuk-!-margin-bottom-0">{{ pageName }}</h1>
+        </div>
+
+
+<!-- <style>
+  .app-page-header{display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .app-actions{display:flex;align-items:flex-end;gap:10px}
+  .app-actions .govuk-form-group{margin-bottom:0}   /* kill default spacing */
+  .app-actions .govuk-input{margin-bottom:0}        /* ensure bottoms align */
+  @media (max-width:40.0625em){
+    .app-page-header{flex-direction:column;align-items:stretch}
+    .app-actions{justify-content:space-between}
+  }
+</style>
+
+<div class="govuk-grid-row govuk-!-margin-bottom-3">
+  <div class="govuk-grid-column-full">
+    <div class="app-page-header">
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-0">{{ pageName }}</h1>
+
+      <div class="app-actions">
+        <form method="get" action="" style="display:flex;align-items:flex-end;gap:10px;">
+          {{ govukInput({
+            id: "search-input",
+            name: "q",
+            label: { text: "Find an application", classes: "govuk-label--s govuk-!-margin-bottom-1" },
+            classes: "govuk-input--width-one-third",
+            value: data.q
+          }) }}
+          {{ govukButton({ text: "Search", type: "submit" }) }}
+        </form>
+
+        {{ govukButton({
+          text: "Hide filters",
+          classes: "govuk-button--secondary",
+          attributes: { id: "toggle-filters" },
+          type: "button"
+        }) }}
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+      {% include "_includes/la/v8-0/recheck-filter.html" %}
+
+      <div class="govuk-!-margin-bottom-3">
+        <div class="govuk-button-group">
+          <a href="recheck-checking-loader" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+            Recheck applications
+          </a>
+          <a href="recheck-summary" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            View recent rechecks
+          </a>
+        </div>
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <!-- <p class="govuk-body govuk-!-margin-bottom-2">
+        Showing <strong id="resultCount">0</strong> applications
+      </p> -->
+
+      <table id="resultsTable" class="govuk-table moj-sortable-table" data-module="moj-sortable-table" data-id-prefix="-">
+        <!-- <caption class="govuk-table__caption govuk-table__caption--m">Applications due for recheck</caption> -->
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header" aria-sort="ascending" data-sortable="true">Reference number</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none" data-sortable="true">Parent or guardian</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none" data-sortable="true">Parent or guardian date of birth</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none" data-sortable="true">National Insurance <br>number</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none" data-sortable="true">Child name</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none" data-sortable="true">School</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none" data-sortable="true">End date</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none" data-sortable="true">Status</th>
+            <!-- <th scope="col" class="govuk-table__header"></th> -->
+
+          </tr>
+        </thead>
+
+        {% include "_includes/la/v8-0/recheck-table.html" %}
+      </table>
+</div>
+</div>
+<div style="display:flex;justify-content:center;margin-top:20px;">
+  {{ govukPagination({
+    next: { href: "#" },
+    items: [
+      { number: 1, current: true, href: "#" },
+      { number: 2, href: "#" },
+      { number: 3, href: "#" }
+    ]
+  }) }}
+</div>
+    </div>
+  </div>
+</div>
+
+{% block pageScripts %}
+<script>
+  // ---------- Pagination + count ----------
+  function paginate(page = 1) {
+    const rows = Array.from(document.querySelectorAll('#resultsTable tbody tr.matches-filters'));
+    rows.forEach(r => r.style.display = 'none');
+    if (!rows.length) { updateVisibleRowCount(); return; }
+
+    const perPage = 25;
+    const start = (page - 1) * perPage;
+    const end   = Math.min(start + perPage, rows.length);
+    for (let i = start; i < end; i++) rows[i].style.display = 'table-row';
+    updateVisibleRowCount();
+  }
+
+  function updateVisibleRowCount() {
+    const table = document.getElementById('resultsTable');
+    if (!table) return;
+    const visible = Array.from(table.querySelectorAll('tbody tr'))
+      .filter(r => r.style.display !== 'none');
+    const el = document.getElementById('resultCount');
+    if (el) el.textContent = visible.length;
+  }
+
+  // ---------- Page IIFE ----------
+  (function () {
+    const table = document.getElementById('resultsTable');
+    if (!table) return;
+
+    const els = {
+      wrapper:   document.getElementById('filter-wrapper'),
+      toggleBtn: document.getElementById('toggle-filters-btn'),
+      applyBtn:  document.getElementById('apply-filters'),
+      clearLink: document.getElementById('clear-filters'),
+      applicationInput: document.getElementById('application'),
+      schoolInput:      document.getElementById('school'),
+      numberInput:      document.getElementById('number-of-records'),
+      phaseChecks: Array.from(document.querySelectorAll('input[name="phase"]')),
+    };
+
+    const COL = { application: 0, parent: 1, school: 5, status: 7, phase: 6 };
+    const rows = Array.from(table.querySelectorAll('tbody tr'));
+
+    function cellText(row, idx) {
+      const tds = row.querySelectorAll('td');
+      return (tds[idx]?.textContent || '').trim();
+    }
+    function valFrom(row, key, fallbackIdx) {
+      const v = row.dataset?.[key];
+      if (v !== undefined) return String(v).trim();
+      return (typeof fallbackIdx === 'number') ? cellText(row, fallbackIdx) : '';
+    }
+    function selectedValues(inputs) {
+      return inputs.filter(i => i.checked).map(i => i.value);
+    }
+
+    // ---------- Filters (Apply / Clear) ----------
+    function applyFilters() {
+      const appQ    = (els.applicationInput?.value || '').trim().toLowerCase();
+      const schoolQ = (els.schoolInput?.value || '').trim().toLowerCase();
+      const limit   = parseInt(els.numberInput?.value, 10);
+      const phases  = selectedValues(els.phaseChecks);
+
+      let matches = [];
+      rows.forEach(row => {
+        const application = (valFrom(row, 'application', COL.application) + ' ' + valFrom(row, 'parent', COL.parent)).toLowerCase();
+        const school      = valFrom(row, 'school', COL.school).toLowerCase();
+        const phase       = (row.dataset?.phase || valFrom(row, 'phase', COL.phase)).trim();
+
+        const appOk    = !appQ    || application.includes(appQ);
+        const schoolOk = !schoolQ || school.includes(schoolQ);
+        const phaseOk  = phases.length === 0 || (phase && phases.includes(phase));
+
+        const ok = appOk && schoolOk && phaseOk;
+        row.classList.toggle('matches-filters', ok);
+        if (!ok) row.style.display = 'none';
+        if (ok)  matches.push(row);
+      });
+
+      if (!isNaN(limit) && limit > 0) {
+        matches.forEach((row, i) => row.classList.toggle('matches-filters', i < limit));
+        matches = matches.slice(0, limit);
+      }
+
+      paginate(1);
+    }
+
+    function clearFilters(e) {
+      e?.preventDefault?.();
+      if (els.applicationInput) els.applicationInput.value = '';
+      if (els.schoolInput) els.schoolInput.value = '';
+      if (els.numberInput) els.numberInput.value = '';
+      els.phaseChecks.forEach(i => i.checked = false);
+      rows.forEach(r => r.classList.add('matches-filters'));
+      paginate(1);
+    }
+
+    // ---------- Toggle (working version) ----------
+    function countAppliedFilters() {
+      // Optional: return a number to show "Filter (X applied)" when closed.
+      // For now, keep 0 so the button shows "Show filters" when closed.
+      return 0;
+    }
+    function setToggleUI(open) {
+      if (!els.toggleBtn) return;
+      els.toggleBtn.textContent = open
+        ? 'Hide filters'
+        : (countAppliedFilters() ? `Filter (${countAppliedFilters()} applied)` : 'Show filters');
+      els.toggleBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    function toggleFilters() {
+      if (!els.wrapper) return;
+      const willOpen = (els.wrapper.style.display === 'none');
+      els.wrapper.style.display = willOpen ? '' : 'none';
+      setToggleUI(willOpen);
+    }
+
+    // ---------- Init ----------
+    function init() {
+      rows.forEach(r => r.classList.add('matches-filters'));
+      paginate(1);
+
+      els.applyBtn?.addEventListener('click', applyFilters);
+      els.clearLink?.addEventListener('click', clearFilters);
+
+      // init toggle UI from current DOM and bind click
+      const initiallyOpen = !(els.wrapper && els.wrapper.style.display === 'none');
+      setToggleUI(initiallyOpen);
+      els.toggleBtn?.addEventListener('click', toggleFilters);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>
+{% endblock %}
+
+
+{% endblock %}

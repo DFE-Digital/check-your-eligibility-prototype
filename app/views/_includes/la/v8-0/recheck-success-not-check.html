@@ -1,0 +1,23 @@
+{% set noCheck = [
+  { "ref": "44455471", "parent": "Maya Patel", "pdob": "27 Apr 1973", "ni": "NW653213B", "child": "Anita Patel", "school": "Greenfield Academy", "email": "patel@icloud.com", "reason": "Information does not match", "end": "01 Sep 2026" },
+  { "ref": "44455472", "parent": "Tilly Langley", "pdob": "27 Apr 1973", "ni": "NW653213B", "child": "Jennifer Langley", "school": "Greenfield Academy", "email": "langley@highgrove.co.uk", "reason": "Could not check Universal Credit", "end": "01 Sep 2026" },
+  { "ref": "44455473", "parent": "Eden Tesfay", "pdob": "27 Apr 1973", "ni": "NW653213B", "child": "Samuel Tesfay", "school": "Greenfield Academy", "email": "edentesfay@icloud.com", "reason": "Technical error", "end": "01 Sep 2026" }
+] %}
+
+
+  <tbody class="govuk-table__body">
+    {% for row in noCheck %}
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="../decision/records/pending_{{ row.ref }}.html" class="govuk-link">{{ row.ref }}</a></td>
+      <td class="govuk-table__cell">{{ row.parent }}</td>
+      <td class="govuk-table__cell govuk-table__cell--date">{{ row.pdob }}</td>
+      <td class="govuk-table__cell">{{ row.ni }}</td>
+      <td class="govuk-table__cell">{{ row.child }}</td>
+      <td class="govuk-table__cell">{{ row.school }}</td>
+      <!-- <td class="govuk-table__cell">{{ row.email }}</td> -->
+      <td class="govuk-table__cell">{{ row.end }}</td>
+      <td class="govuk-table__cell"><span class="govuk-!-color-red">{{ row.reason | safe }}</span></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>

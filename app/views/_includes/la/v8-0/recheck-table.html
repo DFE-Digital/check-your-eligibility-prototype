@@ -1,0 +1,48 @@
+{% set rows = [
+  { "ref":"44455504","parent":"Abdul Rahman","pdob":"14 Apr 1978","ni":"EE556677F","child":"Hana Rahman","school":"Oakwood Academy","phase":"Primary","status":"Recheck" },
+  { "ref":"44455454","parent":"Warren Sutton","pdob":"18 Sep 1978","ni":"CD987654E","child":"Lisa Sutton","school":"Greenfield Academy","phase":"Secondary","status":"Recheck" },
+  { "ref":"44455503","parent":"Kirsty Hale","pdob":"05 May 1985","ni":"DD445566E","child":"Luca Hale","school":"Brookside Secondary","phase":"Secondary","status":"Recheck" },
+  { "ref":"44455506","parent":"Marcus Lee","pdob":"07 Jul 1980","ni":"GG778899H","child":"Eden Lee","school":"Riverside High","phase":"Secondary","status":"Recheck" },
+  { "ref":"44455467","parent":"Priya Shah","pdob":"11 Jan 1983","ni":"BA112233A","child":"Asha Shah","school":"Greenfield Academy","phase":"Primary","status":"Checking" },
+  { "ref":"44455508","parent":"Tomos Davies","pdob":"18 Dec 1977","ni":"JJ990011K","child":"Cai Davies","school":"Highgrove College","phase":"16+ Further education","status":"Recheck" },
+  { "ref":"44455455","parent":"Alan Parker","pdob":"22 Jul 1975","ni":"EF123456G","child":"Jack Parker","school":"Greenfield Academy","phase":"All-through","status":"Recheck" },
+  { "ref":"44455501","parent":"Sophie Doran","pdob":"08 Aug 1983","ni":"BB223344C","child":"Evan Doran","school":"Hilltop School","phase":"Primary","status":"Recheck" },
+  { "ref":"44455509","parent":"Rosie McKenna","pdob":"26 Jan 1986","ni":"KK101112L","child":"Jamie McKenna","school":"Brookside Secondary","phase":"Secondary","status":"Recheck" },
+  { "ref":"44455500","parent":"Jonny Keane","pdob":"12 Feb 1979","ni":"AA112233B","child":"Maya Keane","school":"Riverside High","phase":"Secondary","status":"Recheck" },
+  { "ref":"44455473","parent":"Amelia Roberts","pdob":"09 Sep 1982","ni":"HG778899G","child":"Iris Roberts","school":"Greenfield Academy","phase":"Secondary","status":"Recheck" },
+  { "ref":"44455507","parent":"Mina Kapoor","pdob":"03 Mar 1984","ni":"HH889900J","child":"Nikhil Kapoor","school":"Hilltop School","phase":"Primary","status":"Checking" },
+  { "ref":"44455470","parent":"Peter Clark","pdob":"17 May 1979","ni":"ED445566D","child":"Oliver Clark","school":"Greenfield Academy","phase":"Secondary","status":"Checking" },
+  { "ref":"44455502","parent":"Nathan Cole","pdob":"23 Nov 1976","ni":"CC334455D","child":"Aoife Cole","school":"Highgrove College","phase":"16+ Further education","status":"Recheck" },
+  { "ref":"44455469","parent":"Hannah Patel","pdob":"29 Aug 1981","ni":"DC334455C","child":"Maya Patel","school":"Greenfield Academy","phase":"Primary","status":"Recheck" },
+  { "ref":"44455474","parent":"Thomas White","pdob":"13 Jul 1978","ni":"JH889900H","child":"Leo White","school":"Greenfield Academy","phase":"Secondary","status":"Recheck" },
+  { "ref":"44455471","parent":"Laura Bennett","pdob":"02 Dec 1985","ni":"FE556677E","child":"Grace Bennett","school":"Greenfield Academy","phase":"All-through","status":"Recheck" },
+  { "ref":"44455505","parent":"Lena Moroz","pdob":"29 Sep 1982","ni":"FF667788G","child":"Oskar Moroz","school":"Greenfield Academy","phase":"Nursery","status":"Recheck" },
+  { "ref":"44455468","parent":"Mark Turner","pdob":"08 Mar 1976","ni":"CB223344B","child":"Elliot Turner","school":"Greenfield Academy","phase":"Secondary","status":"Recheck" },
+  { "ref":"44455472","parent":"Daniel Murphy","pdob":"24 Apr 1977","ni":"GF667788F","child":"Finn Murphy","school":"Greenfield Academy","phase":"Primary","status":"Recheck" }
+] %}
+
+
+
+<tbody class="govuk-table__body">
+  {% for row in rows %}
+  <tr class="govuk-table__row matches-filters"
+      data-school="{{ row.school }}"
+      data-status="{{ row.status }}"
+      data-phase="{{ row.phase }}">
+    <td class="govuk-table__cell"><a href="../decision/records/pending_{{ row.ref }}.html" class="govuk-link">{{ row.ref }}</a></td>
+    <td class="govuk-table__cell">{{ row.parent }}</td>
+    <td class="govuk-table__cell">{{ row.pdob }}</td>
+    <td class="govuk-table__cell">{{ row.ni }}</td>
+    <td class="govuk-table__cell">{{ row.child }}</td>
+    <td class="govuk-table__cell">{{ row.school }}</td>
+    <td class="govuk-table__cell">01 Sep 2025</td>
+    <td class="govuk-table__cell">
+      {% if row.status == "Checking" %}
+        <span class="govuk-tag govuk-tag--blue">Checking</span>
+      {% else %}
+        <span class="govuk-tag govuk-tag--pink">Recheck</span>
+      {% endif %}
+    </td>
+  </tr>
+  {% endfor %}
+</tbody>

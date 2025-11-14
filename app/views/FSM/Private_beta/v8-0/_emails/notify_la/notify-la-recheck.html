@@ -1,0 +1,12 @@
+{% extends "layouts/FSM/v8-0/layout-email.html" %}
+{% set subject = "Notification email" %}
+{% set from = "GOV.UK <example@gov.uk>" %}
+{% set to = "Calderdale Council <calderdale.tesfay@gmail.com>" %}
+
+{% block content %}
+  <p>Dear Julia,</p>
+  <p>Your rechecks have been completed and you can view the results.</p>
+  <p>To view the results, please <a href="../../dsi-account/dsi-signin.html">sign in to your local authority portal</a> and go to the rechecks section.</p>
+
+  <p>From Department for Education</p>
+{% endblock %}
