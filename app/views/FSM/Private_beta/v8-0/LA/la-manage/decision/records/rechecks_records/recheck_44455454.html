@@ -6,6 +6,8 @@ href: "javascript:window.history.back()"
 }) }}
 {% endblock %}
 {% set childId = "44455453" %}
+{% set appStatus = "Recheck" %}
+
 {% set childDOB = "22 Sep 2012" %}
 {% set schoolName = "Hilltop Elementary" %}
 {% set schoolAddress = "Manchester, M25 1QA" %}
@@ -39,7 +41,7 @@ href: "javascript:window.history.back()"
               text: "Export record as CSV"
               },
               {
-              text: "Export record as PDF"
+              text: "Recheck eligibility"
               },
               {
               href: "archive-johnson1.html",
@@ -65,12 +67,12 @@ href: "javascript:window.history.back()"
           <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                  <strong class="govuk-tag govuk-tag--grey" style="margin-left: 0px;">
-                    Ready for review
+                  <strong class="govuk-tag govuk-tag--pink" style="margin-left: 0px;">
+                   Recheck
                 </strong>
               </dt>
               <dd class="govuk-summary-list__value">
-              This application is ready for you to review the evidence.
+              This application needs to have its eligibility rechecked.
               </dd>
             </div>
             <!-- <div class="govuk-summary-list__row">
@@ -245,7 +247,7 @@ href: "javascript:window.history.back()"
   </div>
 
   <!-- <div class="govuk-!-padding-bottom-3"></div> -->
-
+<!--
 <div style="height: 32px;"></div>
 <form method="post" action="/fsm/private_beta/v8-0/appeal-decision/johnson1">
 {{ govukRadios({
@@ -287,7 +289,7 @@ href: "javascript:window.history.back()"
     </button>
     <a class="govuk-link" href="../pending-list.html">Return to review list</a>
   </div>
-</form>
+</form> -->
 
 {% endblock %}
 

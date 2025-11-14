@@ -16,10 +16,10 @@
 <div class="govuk-width-container">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-l govuk-!-text-align-left">{{pageName}}</h1>
-      <div class="moj-page-header-actions__description govuk-!-text-align-left">
-        <!-- <p class="govuk-body">Recheck children's eligibility for free school meals for the academic year {{date}} to
-          {{nextDate}}.</p> -->
+
+      <!-- <h1 class="govuk-heading-l govuk-!-text-align-left">{{pageName}}</h1>
+      <div class="moj-page-header-actions__description govuk-!-text-align-left"> -->
+
       </div>
     </div>
   </div>
@@ -29,41 +29,37 @@
     <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Annual recheck (2025–2026)</h2>
   </div>
   <div class="govuk-notification-banner__content">
-    <p class="govuk-body">Each year, schools and trusts must confirm whether pupils remain eligible for free school meals for the next academic year. You can recheck all applications or filter by school.</p>
-    <p class="govuk-body govuk-!-margin-bottom-0"><a href="#">Learn how rechecks work</a></p>
+    <p class="govuk-body">Each year, schools and trusts must confirm whether children remain eligible for free school meals for the next academic year. You can recheck all applications or filter by school.</p>
+    <p class="govuk-body govuk-!-margin-bottom-0"><a href="../../guidance/recheck-guidance">Guidance for rechecks (opens in a new tab)</a></p>
   </div>
 </div>
 
 
-  <!-- <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full govuk-!-text-align-left">
-      <div
-        class="govuk-grid-column-two-thirds govuk-!-margin-top-4 govuk-!-margin-bottom-4 govuk-section-break govuk-section-break"
-        style="padding-left:0;">
-        <div class="moj-search">
-          <form action="#" method="post">
-            <div class="govuk-form-group">
-              <label class="govuk-label moj-search__label govuk-!-font-weight-bold" for="search">
-                Find a child
-              </label>
-              <div id="search-hint" class="govuk-hint moj-search__hint">
-                Search by reference number, or by parent or child name or date of birth
-              </div>
-              <input class="govuk-input moj-search__input" id="search" name="search" type="search"
-                aria-describedby="search-hint">
-            </div>
-            <button type="submit" class="govuk-button moj-search__button" data-module="govuk-button">
-              Search
-            </button>
-          </form>
-        </div>
+
+
+<div class="moj-page-header-actions govuk-!-margin-bottom-5">
+  <div class="moj-page-header-actions__title">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-0">{{ pageName }}</h1>
+  </div>
+</div>
+  <div class="moj-page-header-actions__actions">
+    <form action="#" method="post" role="search" class="moj-search moj-page-header-actions__action">
+      <div class="govuk-form-group">
+         <label class="govuk-label moj-search__label govuk-!-font-weight-bold" for="search">
+                Find an application</label>
+                          <span id="application-hint" class="govuk-hint govuk-hint--s">For example, 44455453 or a parent name</span>
+
+        <input class="govuk-input moj-search__input" id="search" name="search" type="search"
+               placeholder=" ">
       </div>
-    </div>
-  </div> -->
+      <button type="submit" class="govuk-button moj-search__button" data-module="govuk-button">Search</button>
+    </form>
+  </div>
 
-      {% include "_includes/la/v8-0/filter-temp.html" %}
+      {% include "_includes/la/v8-0/recheck-filter.html" %}
 
 
+<div class="govuk-width-container">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full govuk-!-text-align-left">
       <div class="govuk-button-group">
@@ -77,6 +73,8 @@
       </div>
     </div>
   </div>
+</div>
+
 
 
 
@@ -86,20 +84,13 @@
         style="width:100%;">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <!-- <th class="govuk-table__header" scope="col" id="mountains-select-all" style="padding: 0; width: 48px;"> -->
-              <!-- <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                <input type="checkbox" class="govuk-checkboxes__input moj-multi-select__check-all" id="select-all">
-                <label class="govuk-label govuk-checkboxes__label" for="select-all">
-                  <span class="govuk-visually-hidden">Select all</span>
-                </label>
-              </div> -->
-    </div>
+
     </th>
     <th class="govuk-table__header" scope="col" aria-sort="ascending" data-sortable="true">Reference number </th>
     <th class="govuk-table__header" scope="col" aria-sort="none" data-sortable="true">Parent or guardian </th>
     <th class="govuk-table__header" scope="col" aria-sort="none" data-sortable="true">Parent or guardian date of birth
     </th>
-    <th class="govuk-table__header" scope="col" aria-sort="none" data-sortable="true"> National insurance<br> number
+    <th class="govuk-table__header" scope="col" aria-sort="none" data-sortable="true"> National Insurance<br> number
     </th>
     <th class="govuk-table__header" scope="col" aria-sort="none" data-sortable="true">Child name</th>
     <th class="govuk-table__header" scope="col" aria-sort="none" data-sortable="true">School</th>
@@ -117,12 +108,9 @@
 <!---------pagescripts--------->
   {% block pageScripts %}
   <script src="/static/js/moj-sortable-table.js"></script>
-  <script src="/static/js/govuk-file-upload.js"></script>
   <script src="/static/js/govuk-button.js"></script>
-  <script src="/static/js/moj-multi-file-upload.js"></script>
-  <script src="/static/js/govuk-checkboxes.js"></script>
   <script src="/static/js/govuk-notification-badge.js"></script>
-
+<!--
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const selectAll = document.getElementById('select-all');
@@ -147,7 +135,7 @@
         });
       }
     });
-  </script>
+  </script> -->
 
 
 

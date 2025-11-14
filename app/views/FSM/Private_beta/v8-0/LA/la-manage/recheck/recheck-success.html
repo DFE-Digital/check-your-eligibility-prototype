@@ -1,0 +1,278 @@
+{% extends "layouts/FSM/v8-0/layout-dfe-lanav.html" %}
+{% set pageName = "Result of rechecks" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {% set html %}
+    <p class="govuk-body">
+      14 applications no longer eligible, 10 still eligible and 3 could not be checked for 2025 to 2026.
+    </p>
+    <p class="govuk-body">
+      View more results in the <a href="recheck-summary" class="govuk-link">recheck summary</a>.
+    </p>
+    {% endset %}
+
+    {{ govukNotificationBanner({
+    html: html,
+    type: "success",
+    titleText: "Rechecks completed",
+    titleHeadingLevel: "1"
+    }) }}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <h1 class="govuk-heading-l">{{ pageName }}</h1>
+      </div>
+      <div class="govuk-grid-column-two-thirds" style="display:flex;justify-content:flex-end;align-items:center;">
+        {{ govukButton({
+        text: "Export all results",
+        classes: "govuk-button--secondary",
+        href: "#"
+        }) }}
+      </div>
+    </div>
+
+  </div>
+
+  <div class="govuk-grid-column-full">
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" aria-current="true" data-section="eligible-section"
+            href="#eligible-section"><strong>Eligible</strong></a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" data-section="not-eligible-section"
+            href="#not-eligible-section"><strong>Not eligible</strong></a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" data-section="not-checked-section"
+            href="#not-checked-section"><strong>Could not check</strong></a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Eligible -->
+    <section id="eligible-section" class="govuk-table-section is-active">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Eligible</h2>
+          <p class="govuk-body govuk-!-margin-bottom-5">
+            You can now update end dates in your Management Information System (MIS).
+          </p>
+        </div>
+
+        <!--
+        <div class="govuk-grid-column-one-third" style="display:flex;justify-content:flex-end;align-items:center;">
+          <div style="display:flex;justify-content:flex-end;gap:1rem;align-items:flex-end;">
+            <div style="min-width:200px;">
+              {{ govukSelect({
+                id: "filter-school",
+                name: "school",
+                label: { text: "School", classes: "govuk-visually-hidden" },
+                items: [
+                  { text: "All schools", value: "" },
+                  { text: "Hilltop Elementary", value: "Hilltop Elementary" },
+                  { text: "Greenfield Academy", value: "Greenfield Academy" },
+                  { text: "Riverside Primary", value: "Riverside Primary" },
+                  { text: "Oakwood School", value: "Oakwood School" },
+                  { text: "Sunnydale Academy", value: "Sunnydale Academy" },
+                  { text: "Maple Grove School", value: "Maple Grove School" },
+                  { text: "Willow Park School", value: "Willow Park School" },
+                  { text: "Cedar Hill School", value: "Cedar Hill School" },
+                  { text: "Birchwood Academy", value: "Birchwood Academy" },
+                  { text: "Redwood Primary", value: "Redwood Primary" },
+                  { text: "Pinecrest School", value: "Pinecrest School" },
+                  { text: "Ashfield Academy", value: "Ashfield Academy" },
+                  { text: "Lakeside School", value: "Lakeside School" }
+                ]
+              }) }}
+            </div>
+
+            <div style="min-width:200px;">
+              {{ govukSelect({
+                id: "filter-phase",
+                name: "phase",
+                label: { text: "Phase of education", classes: "govuk-visually-hidden" },
+                items: [
+                  { text: "All phases", value: "" },
+                  { text: "Primary", value: "Primary" },
+                  { text: "Secondary", value: "Secondary" },
+                  { text: "Sixth form / FE", value: "Sixth form / FE" },
+                  { text: "Other", value: "Other" }
+                ]
+              }) }}
+            </div>
+          </div>
+        </div>
+        -->
+
+      </div>
+
+      <table class="govuk-table" data-module="moj-sortable-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Reference number</th>
+            <th scope="col" class="govuk-table__header">Parent or guardian</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--date">Parent or guardian date of birth</th>
+            <th scope="col" class="govuk-table__header">National Insurance number</th>
+            <th scope="col" class="govuk-table__header">Child name</th>
+            <th scope="col" class="govuk-table__header">School</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--date">End date</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--date">Status</th>
+          </tr>
+        </thead>
+
+      {% include "_includes/la/v8-0/recheck-success-eligible.html" %}
+
+      </table>
+    </section>
+
+    <!-- Not eligible -->
+    <section id="not-eligible-section" class="govuk-table-section">
+       <div class="govuk-grid-row govuk-!-margin-bottom-2">
+        <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-heading-m">Not eligible</h2>
+          <p class="govuk-body">
+            These children may no longer be eligible for free school meals. You can request evidence from their parents or guardians to confirm their eligibility.
+          </p>
+        </div>
+        <div class="govuk-grid-column-one-third" style="display:flex;justify-content:flex-end;align-items:center;">
+          <div class="govuk-button-group">
+            <!-- {{ govukButton({
+            text: "Recheck records",
+            classes: "govuk-button--primary",
+            href: ""
+            }) }} -->
+              {{ govukButton({
+            text: "Request evidence",
+            classes: "govuk-button--secondary",
+            href: ""
+            }) }}
+          </div>
+
+        </div>
+      </div>
+
+      <table class="govuk-table" data-module="moj-sortable-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Reference number</th>
+            <th scope="col" class="govuk-table__header">Parent or guardian</th>
+            <th scope="col" class="govuk-table__header">Parent or guardian <br>date of birth</th>
+            <th scope="col" class="govuk-table__header">National Insurance<br> number</th>
+            <th scope="col" class="govuk-table__header">Child name</th>
+            <th scope="col" class="govuk-table__header">School</th>
+                        <th scope="col" class="govuk-table__header">End date</th>
+
+            <!-- <th scope="col" class="govuk-table__header">Email</th> -->
+          </tr>
+        </thead>
+
+              {% include "_includes/la/v8-0/recheck-success-not-eligible.html" %}
+
+      </table>
+    </section>
+
+
+    <!-- Could not check -->
+    <section id="not-checked-section" class="govuk-table-section">
+      <div class="govuk-grid-row govuk-!-margin-bottom-2">
+        <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-heading-m">Could not check</h2>
+          <p class="govuk-body">
+            These records could not be checked. You can recheck the information with the parent or guardian before
+            continuing.
+          </p>
+        </div>
+        <div class="govuk-grid-column-one-third" style="display:flex;justify-content:flex-end;align-items:center;">
+          <!-- Intentionally left blank; action buttons could go here -->
+        </div>
+      </div>
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Reference number</th>
+            <th scope="col" class="govuk-table__header">Parent or guardian</th>
+            <th scope="col" class="govuk-table__header">Parent or guardian date of birth</th>
+            <th scope="col" class="govuk-table__header">National Insurance number</th>
+            <th scope="col" class="govuk-table__header">Child name</th>
+                        <th scope="col" class="govuk-table__header">School</th>
+            <!-- <th scope="col" class="govuk-table__header">Email</th> -->
+            <th scope="col" class="govuk-table__header">End date</th>
+            <th scope="col" class="govuk-table__header">Reason</th>
+          </tr>
+        </thead>
+
+                      {% include "_includes/la/v8-0/recheck-success-not-check.html" %}
+
+
+      </table>
+    </section>
+
+  </div>
+</div>
+
+<div style="display:flex;justify-content:center;margin-top:20px;">
+  {{ govukPagination({
+  previous: { href: "#" },
+  next: { href: "#" },
+  items: [
+  { number: 1, href: "#" },
+  { number: 2, current: true, href: "#" },
+  { number: 3, href: "#" }
+  ]
+  }) }}
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+<style>
+  .govuk-table-section {
+    display: none;
+  }
+
+  .govuk-table-section.is-active {
+    display: block;
+  }
+
+  .text-red {
+    color: #d4351c;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const navLinks = document.querySelectorAll('.moj-sub-navigation__link');
+    const sections = document.querySelectorAll('.govuk-table-section');
+
+    function showSection(targetId) {
+      sections.forEach(s => s.classList.toggle('is-active', s.id === targetId));
+      navLinks.forEach(a => a.removeAttribute('aria-current'));
+      const activeLink = Array.from(navLinks).find(a => a.dataset.section === targetId);
+      if (activeLink) activeLink.setAttribute('aria-current', 'true');
+    }
+
+    // Click handling
+    navLinks.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const id = this.getAttribute('data-section');
+        showSection(id);
+        history.replaceState(null, '', '#' + id);
+      });
+    });
+
+    // Initial state from hash (or default to first)
+    const hash = (window.location.hash || '').replace('#', '');
+    if (hash && document.getElementById(hash)) {
+      showSection(hash);
+    } else if (navLinks[0]) {
+      showSection(navLinks[0].getAttribute('data-section'));
+    }
+  });
+</script>
+{% endblock %}

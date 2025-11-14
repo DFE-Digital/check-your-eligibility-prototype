@@ -1,277 +1,48 @@
+{% set rows = [
+  { "ref":"44455504","parent":"Abdul Rahman","pdob":"14 Apr 1978","ni":"EE556677F","child":"Hana Rahman","school":"Oakwood Academy","phase":"Primary","status":"Recheck" },
+  { "ref":"44455454","parent":"Warren Sutton","pdob":"18 Sep 1978","ni":"CD987654E","child":"Lisa Sutton","school":"Greenfield Academy","phase":"Secondary","status":"Recheck" },
+  { "ref":"44455503","parent":"Kirsty Hale","pdob":"05 May 1985","ni":"DD445566E","child":"Luca Hale","school":"Brookside Secondary","phase":"Secondary","status":"Recheck" },
+  { "ref":"44455506","parent":"Marcus Lee","pdob":"07 Jul 1980","ni":"GG778899H","child":"Eden Lee","school":"Riverside High","phase":"Secondary","status":"Recheck" },
+  { "ref":"44455467","parent":"Priya Shah","pdob":"11 Jan 1983","ni":"BA112233A","child":"Asha Shah","school":"Greenfield Academy","phase":"Primary","status":"Checking" },
+  { "ref":"44455508","parent":"Tomos Davies","pdob":"18 Dec 1977","ni":"JJ990011K","child":"Cai Davies","school":"Highgrove College","phase":"16+ Further education","status":"Recheck" },
+  { "ref":"44455455","parent":"Alan Parker","pdob":"22 Jul 1975","ni":"EF123456G","child":"Jack Parker","school":"Greenfield Academy","phase":"All-through","status":"Recheck" },
+  { "ref":"44455501","parent":"Sophie Doran","pdob":"08 Aug 1983","ni":"BB223344C","child":"Evan Doran","school":"Hilltop School","phase":"Primary","status":"Recheck" },
+  { "ref":"44455509","parent":"Rosie McKenna","pdob":"26 Jan 1986","ni":"KK101112L","child":"Jamie McKenna","school":"Brookside Secondary","phase":"Secondary","status":"Recheck" },
+  { "ref":"44455500","parent":"Jonny Keane","pdob":"12 Feb 1979","ni":"AA112233B","child":"Maya Keane","school":"Riverside High","phase":"Secondary","status":"Recheck" },
+  { "ref":"44455473","parent":"Amelia Roberts","pdob":"09 Sep 1982","ni":"HG778899G","child":"Iris Roberts","school":"Greenfield Academy","phase":"Secondary","status":"Recheck" },
+  { "ref":"44455507","parent":"Mina Kapoor","pdob":"03 Mar 1984","ni":"HH889900J","child":"Nikhil Kapoor","school":"Hilltop School","phase":"Primary","status":"Checking" },
+  { "ref":"44455470","parent":"Peter Clark","pdob":"17 May 1979","ni":"ED445566D","child":"Oliver Clark","school":"Greenfield Academy","phase":"Secondary","status":"Checking" },
+  { "ref":"44455502","parent":"Nathan Cole","pdob":"23 Nov 1976","ni":"CC334455D","child":"Aoife Cole","school":"Highgrove College","phase":"16+ Further education","status":"Recheck" },
+  { "ref":"44455469","parent":"Hannah Patel","pdob":"29 Aug 1981","ni":"DC334455C","child":"Maya Patel","school":"Greenfield Academy","phase":"Primary","status":"Recheck" },
+  { "ref":"44455474","parent":"Thomas White","pdob":"13 Jul 1978","ni":"JH889900H","child":"Leo White","school":"Greenfield Academy","phase":"Secondary","status":"Recheck" },
+  { "ref":"44455471","parent":"Laura Bennett","pdob":"02 Dec 1985","ni":"FE556677E","child":"Grace Bennett","school":"Greenfield Academy","phase":"All-through","status":"Recheck" },
+  { "ref":"44455505","parent":"Lena Moroz","pdob":"29 Sep 1982","ni":"FF667788G","child":"Oskar Moroz","school":"Greenfield Academy","phase":"Nursery","status":"Recheck" },
+  { "ref":"44455468","parent":"Mark Turner","pdob":"08 Mar 1976","ni":"CB223344B","child":"Elliot Turner","school":"Greenfield Academy","phase":"Secondary","status":"Recheck" },
+  { "ref":"44455472","parent":"Daniel Murphy","pdob":"24 Apr 1977","ni":"GF667788F","child":"Finn Murphy","school":"Greenfield Academy","phase":"Primary","status":"Recheck" }
+] %}
+
+
+
 <tbody class="govuk-table__body">
-  <tr class="govuk-table__row">
-    <!-- <td class="govuk-table__cell">
-          <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-            <input type="checkbox" class="govuk-checkboxes__input" id="row1">
-            <label class="govuk-label govuk-checkboxes__label" for="row1">
-              <span class="govuk-visually-hidden">Select</span>
-            </label>
-          </div>
-        </td> -->
-    <td class="govuk-table__cell"><a href="../decision/records/pending_johnson1.html" class="govuk-link">44455453</a>
+  {% for row in rows %}
+  <tr class="govuk-table__row matches-filters"
+      data-school="{{ row.school }}"
+      data-status="{{ row.status }}"
+      data-phase="{{ row.phase }}">
+    <td class="govuk-table__cell"><a href="../decision/records/pending_{{ row.ref }}.html" class="govuk-link">{{ row.ref }}</a></td>
+    <td class="govuk-table__cell">{{ row.parent }}</td>
+    <td class="govuk-table__cell">{{ row.pdob }}</td>
+    <td class="govuk-table__cell">{{ row.ni }}</td>
+    <td class="govuk-table__cell">{{ row.child }}</td>
+    <td class="govuk-table__cell">{{ row.school }}</td>
+    <td class="govuk-table__cell">01 Sep 2025</td>
+    <td class="govuk-table__cell">
+      {% if row.status == "Checking" %}
+        <span class="govuk-tag govuk-tag--blue">Checking</span>
+      {% else %}
+        <span class="govuk-tag govuk-tag--pink">Recheck</span>
+      {% endif %}
     </td>
-    <td class="govuk-table__cell">Alex Johnson <br></td>
-    <td class="govuk-table__cell">15 Mar 1980</td>
-    <td class="govuk-table__cell">AB123456C</td>
-    <td class="govuk-table__cell">Emily Johnson</td>
-    <td class="govuk-table__cell">Hilltop Elementary</td>
-    <td class="govuk-table__cell">01 Sep 2025</td>
-    <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--pink">Recheck</span></td>
-    <!-- <td class="govuk-table__cell"><a href="#" class="govuk-link">Recheck</a></td> -->
-
-
   </tr>
-  <tr class="govuk-table__row">
-    <!-- <td class="govuk-table__cell">
-          <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-            <input type="checkbox" class="govuk-checkboxes__input" id="row2">
-            <label class="govuk-label govuk-checkboxes__label" for="row2">
-              <span class="govuk-visually-hidden">Select</span>
-            </label>
-          </div>
-        </td> -->
-    <td class="govuk-table__cell"><a href="../decision/records/pending_sutton1.html" class="govuk-link">44455454</a>
-    </td>
-    <td class="govuk-table__cell">Warren Sutton</td>
-    <td class="govuk-table__cell">18 Sep 1978</td>
-    <td class="govuk-table__cell">CD987654E</td>
-    <td class="govuk-table__cell">Lisa Sutton</td>
-    <td class="govuk-table__cell">Greenfield Academy</td>
-    <td class="govuk-table__cell">01 Sep 2025</td>
-    <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--pink">Recheck</span></td>
-        <!-- <td class="govuk-table__cell"><a href="#" class="govuk-link">Recheck</a></td> -->
-
-
-  </tr>
-  <tr class="govuk-table__row">
-    <!-- <td class="govuk-table__cell">
-          <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-            <input type="checkbox" class="govuk-checkboxes__input" id="row3">
-            <label class="govuk-label govuk-checkboxes__label" for="row3">
-              <span class="govuk-visually-hidden">Select</span>
-            </label>
-          </div>
-        </td> -->
-    <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455455</a></td>
-    <td class="govuk-table__cell">Alan Jones</td>
-    <td class="govuk-table__cell">22 Jul 1975</td>
-    <td class="govuk-table__cell">EF123456G</td>
-    <td class="govuk-table__cell">Jack Jones</td>
-    <td class="govuk-table__cell">Riverside Primary</td>
-    <td class="govuk-table__cell">01 Sep 2025</td>
-    <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">Checking</span></td>
-        <!-- <td class="govuk-table__cell"><a href="#" class="govuk-link">Recheck</a></td> -->
-
-
-  </tr>
-  <tr class="govuk-table__row">
-    <!-- <td class="govuk-table__cell">
-          <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-            <input type="checkbox" class="govuk-checkboxes__input" id="row4">
-            <label class="govuk-label govuk-checkboxes__label" for="row4">
-              <span class="govuk-visually-hidden">Select</span>
-            </label>
-          </div>
-        </td> -->
-    <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455456</a></td>
-    <td class="govuk-table__cell">Eden Tesfay</td>
-    <td class="govuk-table__cell">03 Feb 1982</td>
-    <td class="govuk-table__cell">GH654321H</td>
-    <td class="govuk-table__cell">Samual Tesfay</td>
-    <td class="govuk-table__cell">Oakwood School</td>
-    <td class="govuk-table__cell">01 Sep 2025</td>
-    <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">Checking</span></td>
-        <!-- <td class="govuk-table__cell"><a href="#" class="govuk-link">Recheck</a></td> -->
-
-
-  </tr>
-  <tr class="govuk-table__row">
-    <!-- <td class="govuk-table__cell">
-          <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-            <input type="checkbox" class="govuk-checkboxes__input" id="row5">
-            <label class="govuk-label govuk-checkboxes__label" for="row5">
-              <span class="govuk-visually-hidden">Select</span>
-            </label>
-          </div>
-        </td> -->
-    <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455457</a></td>
-    <td class="govuk-table__cell">Jennifer Langley</td>
-    <td class="govuk-table__cell">09 Nov 1979</td>
-    <td class="govuk-table__cell">IJ987654K</td>
-    <td class="govuk-table__cell">Tilly Langley</td>
-    <td class="govuk-table__cell">Sunnydale Academy</td>
-    <td class="govuk-table__cell">01 Sep 2025</td>
-    <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">Checking</span></td>
-        <!-- <td class="govuk-table__cell"><a href="#" class="govuk-link">Recheck</a></td> -->
-
-
-  </tr>
-  <tr class="govuk-table__row">
-    <!-- <td class="govuk-table__cell">
-          <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-            <input type="checkbox" class="govuk-checkboxes__input" id="row6">
-            <label class="govuk-label govuk-checkboxes__label" for="row6">
-              <span class="govuk-visually-hidden">Select</span>
-            </label>
-          </div>
-        </td> -->
-    <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455458</a></td>
-    <td class="govuk-table__cell">Susan Francis</td>
-    <td class="govuk-table__cell">27 May 1981</td>
-    <td class="govuk-table__cell">KL123456M</td>
-    <td class="govuk-table__cell">Noah Francis</td>
-    <td class="govuk-table__cell">Maple Grove School</td>
-    <td class="govuk-table__cell">01 Sep 2025</td>
-    <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--pink">Recheck</span></td>
-        <!-- <td class="govuk-table__cell"><a href="#" class="govuk-link">Recheck</a></td> -->
-
-
-  </tr>
-  <tr class="govuk-table__row">
-    <!-- <td class="govuk-table__cell">
-          <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-            <input type="checkbox" class="govuk-checkboxes__input" id="row7">
-            <label class="govuk-label govuk-checkboxes__label" for="row7">
-              <span class="govuk-visually-hidden">Select</span>
-            </label>
-          </div>
-        </td> -->
-    <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455459</a></td>
-    <td class="govuk-table__cell">John Smith</td>
-    <td class="govuk-table__cell">14 Dec 1977</td>
-    <td class="govuk-table__cell">MN987654N</td>
-    <td class="govuk-table__cell">Jo Smith</td>
-    <td class="govuk-table__cell">Willow Park School</td>
-    <td class="govuk-table__cell">01 Sep 2025</td>
-    <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--pink">Recheck</span></td>
-        <!-- <td class="govuk-table__cell"><a href="#" class="govuk-link">Recheck</a></td> -->
-
-
-  </tr>
-  <tr class="govuk-table__row">
-    <!-- <td class="govuk-table__cell">
-          <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-            <input type="checkbox" class="govuk-checkboxes__input" id="row8">
-            <label class="govuk-label govuk-checkboxes__label" for="row8">
-              <span class="govuk-visually-hidden">Select</span>
-            </label>
-          </div>
-        </td> -->
-    <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455461</a></td>
-    <td class="govuk-table__cell">Warren Sutton</td>
-    <td class="govuk-table__cell">02 Apr 1976</td>
-    <td class="govuk-table__cell">OP123456Q</td>
-    <td class="govuk-table__cell">Lisa Sutton</td>
-    <td class="govuk-table__cell">Cedar Hill School</td>
-    <td class="govuk-table__cell">01 Sep 2025</td>
-    <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--pink">Recheck</span></td>
-        <!-- <td class="govuk-table__cell"><a href="#" class="govuk-link">Recheck</a></td> -->
-
-
-  </tr>
-  <tr class="govuk-table__row">
-    <!-- <td class="govuk-table__cell">
-          <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-            <input type="checkbox" class="govuk-checkboxes__input" id="row9">
-            <label class="govuk-label govuk-checkboxes__label" for="row9">
-              <span class="govuk-visually-hidden">Select</span>
-            </label>
-          </div>
-        </td> -->
-    <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455462</a></td>
-    <td class="govuk-table__cell">Alan Jones</td>
-    <td class="govuk-table__cell">30 Aug 1974</td>
-    <td class="govuk-table__cell">QR987654S</td>
-    <td class="govuk-table__cell">Jack Jones</td>
-    <td class="govuk-table__cell">Birchwood Academy</td>
-    <td class="govuk-table__cell">01 Sep 2025</td>
-    <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--pink">Recheck</span></td>
-        <!-- <td class="govuk-table__cell"><a href="#" class="govuk-link">Recheck</a></td> -->
-
-
-  </tr>
-  <tr class="govuk-table__row">
-    <!-- <td class="govuk-table__cell">
-          <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-            <input type="checkbox" class="govuk-checkboxes__input" id="row10">
-            <label class="govuk-label govuk-checkboxes__label" for="row10">
-              <span class="govuk-visually-hidden">Select</span>
-            </label>
-          </div>
-        </td> -->
-    <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455463</a></td>
-    <td class="govuk-table__cell">Eden Tesfay</td>
-    <td class="govuk-table__cell">21 Jun 1980</td>
-    <td class="govuk-table__cell">ST123456T</td>
-    <td class="govuk-table__cell">Samual Tesfay</td>
-    <td class="govuk-table__cell">Redwood Primary</td>
-    <td class="govuk-table__cell">01 Sep 2025</td>
-    <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--pink">Recheck</span></td>
-        <!-- <td class="govuk-table__cell"><a href="#" class="govuk-link">Recheck</a></td> -->
-
-
-  </tr>
-  <tr class="govuk-table__row">
-    <!-- <td class="govuk-table__cell">
-          <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-            <input type="checkbox" class="govuk-checkboxes__input" id="row11">
-            <label class="govuk-label govuk-checkboxes__label" for="row11">
-              <span class="govuk-visually-hidden">Select</span>
-            </label>
-          </div>
-        </td> -->
-    <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455464</a></td>
-    <td class="govuk-table__cell">Jennifer Langley</td>
-    <td class="govuk-table__cell">05 Oct 1978</td>
-    <td class="govuk-table__cell">UV987654W</td>
-    <td class="govuk-table__cell">Tilly Langley</td>
-    <td class="govuk-table__cell">Pinecrest School</td>
-    <td class="govuk-table__cell">01 Sep 2025</td>
-    <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--pink">Recheck</span></td>
-        <!-- <td class="govuk-table__cell"><a href="#" class="govuk-link">Recheck</a></td> -->
-
-  </tr>
-  <tr class="govuk-table__row">
-    <!-- <td class="govuk-table__cell">
-          <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-            <input type="checkbox" class="govuk-checkboxes__input" id="row12">
-            <label class="govuk-label govuk-checkboxes__label" for="row12">
-              <span class="govuk-visually-hidden">Select</span>
-            </label>
-          </div>
-        </td> -->
-    <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455465</a></td>
-    <td class="govuk-table__cell">Susan Francis</td>
-    <td class="govuk-table__cell">19 Mar 1977</td>
-    <td class="govuk-table__cell">XY123456Z</td>
-    <td class="govuk-table__cell">Noah Francis</td>
-    <td class="govuk-table__cell">Ashfield Academy</td>
-    <td class="govuk-table__cell">01 Sep 2025</td>
-    <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--pink">Recheck</span></td>
-        <!-- <td class="govuk-table__cell"><a href="#" class="govuk-link">Recheck</a></td> -->
-
-  </tr>
-  <tr class="govuk-table__row">
-    <!-- <td class="govuk-table__cell">
-          <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-            <input type="checkbox" class="govuk-checkboxes__input" id="row13">
-            <label class="govuk-label govuk-checkboxes__label" for="row13">
-              <span class="govuk-visually-hidden">Select</span>
-            </label>
-          </div>
-        </td> -->
-    <td class="govuk-table__cell"><a href="../records/approved" class="govuk-link">44455466</a></td>
-    <td class="govuk-table__cell">John Smith</td>
-    <td class="govuk-table__cell">23 Feb 1984</td>
-    <td class="govuk-table__cell">AB987654C</td>
-    <td class="govuk-table__cell">Jo Smith</td>
-    <td class="govuk-table__cell">Lakeside School</td>
-    <td class="govuk-table__cell">01 Sep 2025</td>
-    <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--pink">Recheck</span></td>
-        <!-- <td class="govuk-table__cell"><a href="#" class="govuk-link">Recheck</a></td> -->
-
-
-  </tr>
+  {% endfor %}
 </tbody>
-</table>
-</div>
