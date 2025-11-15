@@ -8,7 +8,7 @@
   <tbody class="govuk-table__body">
     {% for row in noCheck %}
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><a href="../decision/records/pending_{{ row.ref }}.html" class="govuk-link">{{ row.ref }}</a></td>
+      <td class="govuk-table__cell">{{ row.ref }}</a></td>
       <td class="govuk-table__cell">{{ row.parent }}</td>
       <td class="govuk-table__cell govuk-table__cell--date">{{ row.pdob }}</td>
       <td class="govuk-table__cell">{{ row.ni }}</td>
@@ -17,7 +17,8 @@
       <!-- <td class="govuk-table__cell">{{ row.email }}</td> -->
       <td class="govuk-table__cell">{{ row.end }}</td>
       <td class="govuk-table__cell"><span class="govuk-!-color-red">{{ row.reason | safe }}</span></td>
-    </tr>
+     <td class="govuk-table__cell"><a href="">Resolve</td>
+  </tr>
     {% endfor %}
   </tbody>
 </table>

@@ -36,46 +36,6 @@
         </div>
 
 
-<!-- <style>
-  .app-page-header{display:flex;justify-content:space-between;align-items:center;gap:16px}
-  .app-actions{display:flex;align-items:flex-end;gap:10px}
-  .app-actions .govuk-form-group{margin-bottom:0}   /* kill default spacing */
-  .app-actions .govuk-input{margin-bottom:0}        /* ensure bottoms align */
-  @media (max-width:40.0625em){
-    .app-page-header{flex-direction:column;align-items:stretch}
-    .app-actions{justify-content:space-between}
-  }
-</style>
-
-<div class="govuk-grid-row govuk-!-margin-bottom-3">
-  <div class="govuk-grid-column-full">
-    <div class="app-page-header">
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-0">{{ pageName }}</h1>
-
-      <div class="app-actions">
-        <form method="get" action="" style="display:flex;align-items:flex-end;gap:10px;">
-          {{ govukInput({
-            id: "search-input",
-            name: "q",
-            label: { text: "Find an application", classes: "govuk-label--s govuk-!-margin-bottom-1" },
-            classes: "govuk-input--width-one-third",
-            value: data.q
-          }) }}
-          {{ govukButton({ text: "Search", type: "submit" }) }}
-        </form>
-
-        {{ govukButton({
-          text: "Hide filters",
-          classes: "govuk-button--secondary",
-          attributes: { id: "toggle-filters" },
-          type: "button"
-        }) }}
-      </div>
-    </div>
-  </div>
-</div> -->
-
-
       {% include "_includes/la/v8-0/recheck-filter.html" %}
 
       <div class="govuk-!-margin-bottom-3">
@@ -99,7 +59,7 @@
         <!-- <caption class="govuk-table__caption govuk-table__caption--m">Applications due for recheck</caption> -->
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header" aria-sort="ascending" data-sortable="true">Reference number</th>
+            <th scope="col" class="govuk-table__header" aria-sort="descending" data-sortable="true">Reference number</th>
             <th scope="col" class="govuk-table__header" aria-sort="none" data-sortable="true">Parent or guardian</th>
             <th scope="col" class="govuk-table__header" aria-sort="none" data-sortable="true">Parent or guardian date of birth</th>
             <th scope="col" class="govuk-table__header" aria-sort="none" data-sortable="true">National Insurance <br>number</th>
@@ -138,7 +98,7 @@
     rows.forEach(r => r.style.display = 'none');
     if (!rows.length) { updateVisibleRowCount(); return; }
 
-    const perPage = 25;
+    const perPage = 15;
     const start = (page - 1) * perPage;
     const end   = Math.min(start + perPage, rows.length);
     for (let i = start; i < end; i++) rows[i].style.display = 'table-row';
@@ -267,6 +227,36 @@
       init();
     }
   })();
+</script>
+
+<script>
+(function () {
+  const btn  = document.getElementById('toggle-filters-btn');
+  const wrap = document.getElementById('filter-wrapper');
+  if (!btn || !wrap) return;
+
+  function syncUI() {
+    const open = !wrap.hasAttribute('hidden');
+    btn.setAttribute('aria-expanded', String(open));
+    btn.textContent = open ? 'Hide filters' : 'Show filters';
+  }
+
+  btn.addEventListener('click', function () {
+    if (wrap.hasAttribute('hidden')) {
+      wrap.removeAttribute('hidden');
+    } else {
+      wrap.setAttribute('hidden', '');
+    }
+    syncUI();
+  });
+
+  // Initialise label/aria from current DOM state
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', syncUI);
+  } else {
+    syncUI();
+  }
+})();
 </script>
 {% endblock %}
 
