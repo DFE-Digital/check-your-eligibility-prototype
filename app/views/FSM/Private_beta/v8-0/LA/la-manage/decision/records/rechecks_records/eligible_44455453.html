@@ -6,6 +6,8 @@ href: "javascript:window.history.back()"
 }) }}
 {% endblock %}
 {% set childId = "44455453" %}
+{% set appStatus = "Eligible" %}
+
 {% set childDOB = "22 Sep 2012" %}
 {% set schoolName = "Hilltop Elementary" %}
 {% set schoolAddress = "Manchester, M25 1QA" %}
@@ -39,10 +41,11 @@ href: "javascript:window.history.back()"
               text: "Export record as CSV"
               },
               {
-              text: "Export record as PDF"
+              href: "",
+              text: "Recheck eligibility"
               },
               {
-              href: "archive-johnson1.html",
+              href: "../archive-44455453.html",
               text: "Archive record"
               }
               ]
@@ -65,22 +68,22 @@ href: "javascript:window.history.back()"
           <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                  <strong class="govuk-tag govuk-tag--grey" style="margin-left: 0px;">
-                    Ready for review
+                  <strong class="govuk-tag govuk-tag--green" style="margin-left: 0px;">
+                   Eligible
                 </strong>
               </dt>
               <dd class="govuk-summary-list__value">
-              This application is ready for you to review the evidence.
+              This application is eligible for free school meals
               </dd>
             </div>
-            <!-- <div class="govuk-summary-list__row">
+            <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Notes
+                End date
               </dt>
               <dd class="govuk-summary-list__value">
-                This record is currently active and available for review.
+                01 Sep 2027
               </dd>
-            </div> -->
+            </div>
           </dl>
         </div>
       </div>
@@ -245,7 +248,7 @@ href: "javascript:window.history.back()"
   </div>
 
   <!-- <div class="govuk-!-padding-bottom-3"></div> -->
-
+<!--
 <div style="height: 32px;"></div>
 <form method="post" action="/fsm/private_beta/v8-0/appeal-decision/johnson1">
 {{ govukRadios({
@@ -287,7 +290,7 @@ href: "javascript:window.history.back()"
     </button>
     <a class="govuk-link" href="../pending-list.html">Return to review list</a>
   </div>
-</form>
+</form> -->
 
 {% endblock %}
 
