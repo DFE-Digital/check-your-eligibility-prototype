@@ -1,5 +1,5 @@
-Eligibility code,National Insurance number,Child date of birth,Outcome,Eligibility confirmed on,Reconfirm by,Grace period ends,Child forename,Child surname
+Eligibility code,National Insurance number,Child date of birth,Outcome,Validity start date,Validity end date,Grace period ends,Child forename,Child surname
 50012345678,QQ123456A,5/6/2023,Code valid,1/4/2025,1/7/2025,31/12/2025,Jimmy,Smith
 50012345679,NN367364A,3/8/2024,Information does not match records,,,,,
-50012345667,NM367364A,5/6/2023,Code not valid for current term,12/9/2024,1/2/2025,31/03/2025,Jimmy,Smith
+50012345667,NM367364A,5/6/2023,Code expired,12/9/2024,1/2/2025,31/03/2025,Jimmy,Smith
 50012346565,GH367364A,3/8/2025,System error - try again later,,,,,
