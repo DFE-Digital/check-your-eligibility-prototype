@@ -1,0 +1,121 @@
+{% extends "/layouts/support/v2/layout-support.html" %}
+
+{% block pageTitle %}
+ Set up notification banner
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Enter banner content</h1>
+
+
+
+
+       <form class="form" action="/support/v2/banners/preview" method="post" novalidate>
+
+          {% call govukFieldset({
+
+          }) %}
+
+
+          {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
+
+          {{ govukCharacterCount({
+            name: "heading",
+            id: "heading",
+            maxlength: 200,
+            rows: "1",
+            label: {
+              text: "Heading",
+              classes: "govuk-label--m",
+              isPageHeading: false
+            }
+          }) }}
+
+
+          {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
+
+          {{ govukCharacterCount({
+            name: "text",
+            id: "text",
+            maxlength: 1000,
+            rows: "5",
+            label: {
+              text: "Text",
+              classes: "govuk-label--m",
+              isPageHeading: false
+            }
+          }) }}
+
+
+          {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+          {% from "govuk/components/input/macro.njk" import govukInput %}
+
+          {% set yesHtml %}
+          {{ govukInput({
+            id: "link-text",
+            name: "link-text",
+            label: {
+              text: "Link text"
+            }
+          }) }}
+
+          {{ govukInput({
+            id: "link-url",
+            name: "link-url",
+            label: {
+              text: "Link URL"
+            }
+          }) }}
+          {% endset -%}
+
+
+          {{ govukCheckboxes({
+            name: "contact",
+            fieldset: {
+              legend: {
+                text: "Include a link?",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes",
+                conditional: {
+                  html: yesHtml
+                }
+              }
+            ]
+          }) }}
+
+
+          {% endcall %}
+
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+
+        </form>
+
+
+
+  </div>
+</div>
+
+{% endblock %}
