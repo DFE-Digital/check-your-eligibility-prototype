@@ -1,0 +1,61 @@
+{% extends "/layouts/support/v2/layout-support.html" %}
+
+{% block pageTitle %}
+  Support
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+    <h1 class="govuk-heading-l">Childcare for working families</h1>
+
+
+    <div class="dfe-grid-container">
+
+
+       <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/support/v2/event-history/search-code">View eligibility code history</a>
+          </h2>
+          <p>View the event listing for a working families code, showing application and reconfirmation history.</p>
+        </div>
+      </div>
+
+       <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/support/v2/temp-code/temp-code">Import temporary codes</a>
+          </h2>
+          <p>Import childcare for working families temporary code files provided by HMRC and view history.</p>
+        </div>
+      </div>
+
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/support/v2/corrections/search-event">Edit eligibility code data</a>
+          </h2>
+          <p>Correct errors in working families code data.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+
+  </div>
+</div>
+
+{% endblock %}
