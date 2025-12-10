@@ -1,5 +1,11 @@
 {% extends "layouts/FSM/v8-0/basic/layout-dfe-basic-lanav.html" %}
 {% set pageName="Run a batch check" %}
+
+
+{% block beforeContent %}
+{% include "_includes/layouts/back_link.html" %}
+{% endblock %}
+
 {% block content %}
 
 
@@ -15,12 +21,12 @@
 
     <h3 class="govuk-heading-m">Batch check guidance-steps</h3>
 
-    <p>You have 3 steps to complete a batch check:</p>
-    <ul class="govuk-body">
+    <p>You have 3 steps to complete a batch check</p>
+    <ol class="govuk-body">
       <li>Download the CSV file template.</li>
       <li>Fill in the template with the required information for each child.</li>
-      <li>Review any errors in the uploaded file and make any corrections before uploading.</li>
-    </ul>
+      <li>Review any errors in the file and make any corrections before uploading.</li>
+    </ol>
 
     <p>Use a file size smaller than X MB.</p>
 
@@ -29,7 +35,7 @@
     <p><b>Example of the batch check template</b></p>
 
     <p><img src="/public/images/guidance-images/batchcheck-temp-image.png" class="govuk-image"
-        style="max-width: 90%; height: auto;" alt="Descriptive text about the image"></p>
+        style="max-width: 90%; height: auto;" alt="Spreadsheet example"></p>
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
@@ -43,30 +49,34 @@
 
 
     <p><img src="/public/images/guidance-images/batchcheck-screen1.png" class="govuk-image"
-        style="max-width: 90%; height: auto;" alt="Descriptive text about the image"></p>
+        style="max-width: 90%; height: auto;" alt="Batch check screen"></p>
 
 
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
     <h3 class="govuk-heading-m">Errors</h3>
-    <p>If there are issues with your data, you’ll see an error page
-listing the problem rows in the CSV file. For example: “Line 10:
-Issue with date of birth.”
+    <p>If there are issues with your data, you’ll see an error page listing the problem rows in the CSV file.
+      </p>
 
-To fix this:​
 
-Open the CSV file and locate the line mentioned (e.g., “Line 10”).​
+    <p><img src="/public/images/guidance-images/batchcheck-error-rows.jpeg" class="govuk-image"
+          style="max-width: 90%; height: auto;"></p>
 
-Note: “Line 1” refers to the first row where you entered a
-parent’s information.​
+      <div class="govuk-inset-text">
+Example<br>
+Line 9: Issue with date of birth.</div>
 
-Correct the data and save the file.​
 
-Re-upload the updated file and click Run Check again.​</p>
 
+    <p>To fix the errors:</p>
+    <ul class="govuk-body">
+      <li>Open the CSV file and locate the line mentioned e.g., “Line 9”.</li>
+      <li>“Line 1” refers to the first row where you entered a parent’s information not row 1 on the spreadsheet.</li>
+      <li>Correct the data and save the file again.</li>
+      <li>Upload the updated file and click Run a batch check.</li>
+    </ul>
 
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
 
     <h3 class="govuk-heading-m">Results you may see</h3>
     <p><b>Entitled:</b> The children of this parent or guardian are entitled to free school meals.​</p>
@@ -78,9 +88,10 @@ Re-upload the updated file and click Run Check again.​</p>
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 
-    <h3 class="govuk-heading-m">Further assistance</h3>
 
-    <p>Text about further assistance.</p>
+    <h3 class="govuk-heading-m" id="further-assistance">Further assistance</h3>
+
+    <p>If you experience any issues completing the form contact our support team through the <a href="https://customerhelpportal.education.gov.uk/" class="govuk-link">Customer help portal</a>.</p>
 
 
     {% endblock %}
