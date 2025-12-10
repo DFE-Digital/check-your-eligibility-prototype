@@ -1,0 +1,120 @@
+{% extends "layouts/FSM/v8-0/basic/layout-dfe-basic-lanav.html" %}
+{% set pageName="Generate a report" %}
+{% extends "layouts/FSM/v8-0/basic/layout-dfe-basic-lanav.html" %}
+{% set Service="Manage eligibility for free school meals" %}
+{% set address="Oystermouth Road Swansea SA1 3SN" %}
+
+
+{% block beforeContent %}
+{% include "_includes/layouts/back_link.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l">{{pageName}}</h1>
+        <p>Generate a report of checks carried out using this service and the outcome of the query.</p>
+        <!-- <a class="govuk-button" href="#" role="button">Generate report</a> -->
+<!--
+        <table class="govuk-table govuk-table--small-text-until-tablet">
+            <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-4">Showing 3 reports
+                created in the last 7 days</caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Name</th>
+                    <th class="govuk-table__cell">National  <br>Insurance number</th>
+                    <th class="govuk-table__cell">Date of birth</th>
+                    <th scope="col" class="govuk-table__header">Date submitted</th>
+                    <th scope="col" class="govuk-table__header">Check type</th>
+                    <th scope="col" class="govuk-table__header">Check source</th>
+                    <th scope="col" class="govuk-table__header">Checked by</th>
+                    <th scope="col" class="govuk-table__header">Outcome</th>
+
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Johnson</td>
+                    <td class="govuk-table__cell">QQ123456C</td>
+                    <td class="govuk-table__cell">01/01/2000</td>
+                    <td class="govuk-table__cell">01/01/2023</td>
+                    <td class="govuk-table__cell">Individual</td>
+                    <td class="govuk-table__cell">Web service</td>
+                    <td class="govuk-table__cell">LA name</td>
+                    <td class="govuk-table__cell">Eligible</td>
+                    <td class="govuk-table__cell"> </td>
+
+                </tr>
+
+            </tbody>
+        </table> -->
+
+<p>Select a date range for the report:</p>
+
+{{ govukDateInput({
+  id: "start-date",
+  namePrefix: "start-date",
+  fieldset: {
+    legend: {
+      text: "Start date",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "For example, 27 3 2007"
+  }
+}) }}
+
+{{ govukDateInput({
+  id: "end-date",
+  namePrefix: "end-date",
+  fieldset: {
+    legend: {
+      text: "End date",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "For example, 27 3 2007"
+  }
+}) }}
+
+
+{{ govukSelect({
+  id: "checktype",
+  name: "checktype",
+  label: {
+    text: "Check type",
+    classes: "govuk-fieldset__legend--m"
+  },
+  items: [
+    {
+      value: "All",
+      text: "All checks",
+      selected: true
+    },
+    {
+      value: "Individual",
+      text: "Individual checks"
+    },
+    {
+      value: "Batch",
+      text: "Batch checks"
+    }
+  ]
+}) }}
+
+        <a class="govuk-button" href="report-loader.html" role="button">Run report</a>
+
+
+    </div>
+
+
+    {% endblock %}
