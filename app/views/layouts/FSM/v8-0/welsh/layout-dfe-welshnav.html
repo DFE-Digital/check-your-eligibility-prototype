@@ -29,7 +29,7 @@
   </div>
 </header>
 
-
+<!--------https://github.com/alrobboOC/language-toggle--------->
 {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
 
@@ -41,8 +41,22 @@
     { href: ROOT + "/welsh_LA/welsh-manage/welsh-soft-check/checker.html", text: "Run a check" },
     { href: ROOT + "/welsh_LA/welsh-manage/batch-checking/manual-no-ctf.html", text: "Run a batch check" },
     { href: ROOT + "/welsh_LA/guidance.html", text: "Guidance" }
-  ]
+  ],
+
+  classes: "hmrc-service-navigation--with-language-select",
+  slots: {
+    end: hmrcServiceNavigationLanguageSelect({
+      language: 'en',
+      en: {
+        href: '?en'
+      },
+      cy: {
+        href: '?cy'
+      }
+    })
+  }
 }) }}
+
 
 
 <div class="app-phase-banner__wrapper">

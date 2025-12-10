@@ -1,0 +1,103 @@
+{% extends "layouts/FSM/v8-0/basic/layout-dfe-basic-lanav.html" %}
+{% set pageName="Report created on 01 Dec 2025" %}
+{% extends "layouts/FSM/v8-0/basic/layout-dfe-basic-lanav.html" %}
+{% set Service="Manage eligibility for free school meals" %}
+{% set address="Oystermouth Road Swansea SA1 3SN" %}
+{% set startDate="01/01/2025" %}
+{% set endDate="31/01/2025" %}
+
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <!-- <h1 class="govuk-heading-l">{{pageName}}</h1> -->
+   <div class="moj-page-header-actions">
+      <div class="moj-page-header-actions__title">
+        <h1 class="govuk-heading-l">{{pageName}}</h1>
+         <p class="govuk-body"><a class="govuk-link" href="report-checks.html">View all reports</a></p>
+
+      </div>
+      <div class="moj-page-header-actions__actions">
+        <div class="moj-button-group moj-button-group--inline">
+          <a href="" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Download data as CSV
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+        <table class="govuk-table govuk-table--small-text-until-tablet">
+            <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-4">Showing 3 checks
+                completed from {{ startDate }} to {{ endDate }}</caption>
+
+
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Parent name</th>
+                    <th class="govuk-table__cell">National  <br>Insurance number</th>
+                    <th class="govuk-table__cell">Date of birth</th>
+                    <th scope="col" class="govuk-table__header">Date check<br> submitted</th>
+                    <th scope="col" class="govuk-table__header">Check type</th>
+                    <th scope="col" class="govuk-table__header">Check source</th>
+                    <th scope="col" class="govuk-table__header">Checked by</th>
+                    <th scope="col" class="govuk-table__header">Outcome</th>
+                    <!-- <th scope="col" class="govuk-table__header">  </th>
+                    <th scope="col" class="govuk-table__header"></th> -->
+
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Johnson</td>
+                    <td class="govuk-table__cell">QQ123456C</td>
+                    <td class="govuk-table__cell">01/01/2000</td>
+                    <td class="govuk-table__cell">01/01/2025</td>
+                    <td class="govuk-table__cell">Individual</td>
+                    <td class="govuk-table__cell">Web service</td>
+                    <td class="govuk-table__cell">LA user</td>
+                    <td class="govuk-table__cell">Eligible</td>
+                    <td class="govuk-table__cell"> </td>
+                    <!-- <td class="govuk-table__cell"><a href=""> </a></td> -->
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Evans</td>
+                    <td class="govuk-table__cell">PN123456B</td>
+                    <td class="govuk-table__cell">01/01/1995</td>
+                    <td class="govuk-table__cell">01/01/2025</td>
+                    <td class="govuk-table__cell">Individual</td>
+                    <td class="govuk-table__cell">Web service</td>
+                    <td class="govuk-table__cell">LA user</td>
+                    <td class="govuk-table__cell">Not found</td>
+                    <td class="govuk-table__cell"> </td>
+                    <!-- <td class="govuk-table__cell"><a href=""> </a></td> -->
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Mia</td>
+                    <td class="govuk-table__cell">AB873261C</td>
+                    <td class="govuk-table__cell">01/01/1076</td>
+                    <td class="govuk-table__cell">01/01/2025</td>
+                    <td class="govuk-table__cell">Batch</td>
+                    <td class="govuk-table__cell">Vendor service</td>
+                    <td class="govuk-table__cell">LA</td>
+                    <td class="govuk-table__cell">Not eligible</td>
+                    <td class="govuk-table__cell"> </td>
+                    <!-- <td class="govuk-table__cell"><a href=""> </a></td> -->
+                </tr>
+
+            </tbody>
+        </table>
+
+
+ <!-- <p class="govuk-body"><a class="govuk-link" href="report-checks.html">View other reports</a></p> -->
+
+
+    </div>
+
+
+    {% endblock %}

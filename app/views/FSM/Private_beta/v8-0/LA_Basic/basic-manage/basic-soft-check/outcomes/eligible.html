@@ -1,0 +1,46 @@
+{% extends "layouts/FSM/v8-0/basic/layout-dfe-basic-lanav.html" %}
+{% set pageName="Children eligible" %}
+{% set parentName = data["parent-firstname"] or "Sarah" %}
+{% set parentSurname = data["parent-surname"] or "Griffiths" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+      aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Children eligible
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          The children of {{ parentName }} {{ parentSurname }} are eligible
+          for free school meals.
+        </h3>
+      </div>
+    </div>
+
+    <p>This information should be passed on to the parent or school.</p>
+    <p>You can <a href="" class="govuk-link" onclick="printPage()">print this page</a> for the parent or guardian to keep.</p>
+    <script>
+      function printPage() {
+        window.print();
+      }
+    </script>
+
+
+    <div class="govuk-button-group">
+      <a href="../checker" class="govuk-button" role="button" data-module="govuk-button">
+        Do another check
+      </a>
+      <!-- <a class="govuk-link" href="../../apply/outcome-eligible-childs-age.html">Continue to add child details</a> -->
+    </div>
+
+
+    {% endblock %}
+    {% block pageScripts %}
+    <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+
+    {% endblock %}
