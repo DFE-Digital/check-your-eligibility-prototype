@@ -28,9 +28,9 @@
       </div>
       <div class="govuk-notification-banner__content">
         <p class="govuk-notification-banner__heading">
-           {{ data["heading"] or "Service will be unavailable on Wednesday 10th December 2025 6pm-7pm" }}
+           {{ data["banner-heading"] or "Service will be unavailable on Wednesday 10th December 2025 6pm-7pm" }}
         </p>
-        <p class="govuk-body"> {{ data["text"] }} <a href="">  {{ data["link-text"] }}</a></p>
+        <p class="govuk-body"> {{ data["banner-text"] }} <a href="">  {{ data["banner-link-text"] }}</a></p>
       </div>
     </div>
 
@@ -39,13 +39,13 @@
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Portals to display in
+          Services to display in
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["portals"] or "All portals" }}
+          {{ data["portals"] or "All services" }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="/support/v2/banners/select-portals">Change<span class="govuk-visually-hidden"> portals</span></a>
+          <a class="govuk-link" href="/support/v2/banners/select-portals">Change<span class="govuk-visually-hidden"> services</span></a>
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -53,7 +53,7 @@
           Heading
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["heading"] or "Service will be unavailable on Wednesday 10th December 2025 6pm-7pm" }}
+          {{ data["banner-heading"] or "Service will be unavailable on Wednesday 10th December 2025 6pm-7pm" }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="/support/v2/banners/enter-details">Change<span class="govuk-visually-hidden">heading</span></a>
@@ -64,7 +64,7 @@
           Text
         </dt>
         <dd class="govuk-summary-list__value">
-           {{ data["text"] }}
+           {{ data["banner-text"] }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="/support/v2/banners/enter-details">Change<span class="govuk-visually-hidden"> text</span></a>
@@ -75,7 +75,7 @@
           Link text
         </dt>
         <dd class="govuk-summary-list__value">
-           {{ data["link-text"] }}
+           {{ data["banner-link-text"] }}
         </dd>
         <dd class="govuk-summary-list__actions">
            <a class="govuk-link" href="/support/v2/banners/enter-details">Change<span class="govuk-visually-hidden">link text</span></a>
@@ -86,7 +86,7 @@
           Link URL
         </dt>
         <dd class="govuk-summary-list__value">
-           {{ data["link-url"] }}
+           {{ data["banner-link-url"] }}
         </dd>
         <dd class="govuk-summary-list__actions">
            <a class="govuk-link" href="/support/v2/banners/enter-details">Change<span class="govuk-visually-hidden">link url</span></a>
@@ -97,7 +97,7 @@
 
     {{ govukButton({
         text: "Publish banner",
-        href: "/support/v2/banners/manage-banners?create-banner=success"
+        href: "/support/v2/banners/manage-banners-created"
       }) }}
 
 

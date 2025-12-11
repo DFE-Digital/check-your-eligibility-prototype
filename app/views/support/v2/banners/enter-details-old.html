@@ -18,6 +18,9 @@
 
     <h1 class="govuk-heading-l">Enter banner content</h1>
 
+
+
+
        <form class="form" action="/support/v2/banners/preview" method="post" novalidate>
 
           {% call govukFieldset({
@@ -48,14 +51,17 @@
             maxlength: 300,
             rows: "5",
             label: {
-              text: "Text (optional)",
+              text: "Text",
               classes: "govuk-label--m",
               isPageHeading: false
             }
           }) }}
 
-          <h2 class="govuk-heading-m">Link to (optional)... </h2>
 
+          {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+          {% from "govuk/components/input/macro.njk" import govukInput %}
+
+          {% set yesHtml %}
           {{ govukInput({
             id: "banner-link-text",
             name: "banner-link-text",
@@ -71,6 +77,29 @@
               text: "Link URL"
             }
           }) }}
+          {% endset -%}
+
+
+          {{ govukCheckboxes({
+            name: "contact",
+            fieldset: {
+              legend: {
+                text: "Include a link?",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes",
+                conditional: {
+                  html: yesHtml
+                }
+              }
+            ]
+          }) }}
+
 
           {% endcall %}
 

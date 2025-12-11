@@ -18,34 +18,18 @@
   <div class="govuk-grid-column-full">
 
 
-    <h1 class="govuk-heading-l">Search for an eligibility code event</h1>
-
-     <form class="form" action="/support/v2/corrections/event" method="post" novalidate>
+     <form class="form" action="/support/v2/corrections/ii/code" method="post" novalidate>
 
           {% call govukFieldset({
 
           }) %}
 
-            {% from "govuk/components/input/macro.njk" import govukInput %}
-
-             {{ govukInput({
-              classes: "govuk-!-width-one-third",
-              label: {
-                text: "Event ID",
-                classes: "govuk-fieldset__legend--m"
-              },
-              hint: {
-                text: "Something about event listing"
-              },
-              id: "event-id",
-              name: "event-id"
-            }) }}
 
             {{ govukInput({
               label: {
-                text: "Eligibility code",
-                classes: "govuk-label--m",
-                isPageHeading: false
+                text: "Enter an eligibility code",
+                classes: "govuk-label--l",
+                isPageHeading: true
               },
               hint: {
                 text: "Eligibility code must be 11 digits long"
@@ -64,7 +48,7 @@
           {% from "govuk/components/button/macro.njk" import govukButton %}
 
           {{ govukButton({
-            text: "Find eligibility event"
+            text: "View eligibility code"
           }) }}
 
 
