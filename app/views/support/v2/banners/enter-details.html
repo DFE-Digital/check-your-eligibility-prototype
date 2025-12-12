@@ -36,7 +36,8 @@
               text: "Heading",
               classes: "govuk-label--m",
               isPageHeading: false
-            }
+            },
+            value: data['banner-heading']
           }) }}
 
 
@@ -51,17 +52,19 @@
               text: "Text (optional)",
               classes: "govuk-label--m",
               isPageHeading: false
-            }
+            },
+            value: data['banner-text']
           }) }}
 
-          <h2 class="govuk-heading-m">Link to (optional)... </h2>
+          <h2 class="govuk-heading-m">Link (optional) </h2>
 
           {{ govukInput({
             id: "banner-link-text",
             name: "banner-link-text",
             label: {
               text: "Link text"
-            }
+            },
+            value: data['banner-link-text']
           }) }}
 
           {{ govukInput({
@@ -69,7 +72,8 @@
             name: "banner-link-url",
             label: {
               text: "Link URL"
-            }
+            },
+            value: data['banner-link-url']
           }) }}
 
           {% endcall %}
