@@ -1,0 +1,88 @@
+{% extends "/layouts/support/v2/layout-support.html" %}
+
+{% block pageTitle %}
+  Enter reasons
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">Enter reasons</h1>
+
+
+        <form class="form" action="/support/v2/corrections/ii/check-details" method="post" novalidate>
+
+          {% call govukFieldset({
+
+          }) %}
+
+            {% from "govuk/components/input/macro.njk" import govukInput %}
+
+            {{ govukInput({
+              label: {
+                text: "Ticket reference",
+                classes: "govuk-label--m"
+              },
+              id: "ticket",
+              name: "ticket",
+              classes: "govuk-input--width-20"
+
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Requestor",
+                classes: "govuk-label--m"
+              },
+              id: "requestor",
+              name: "requestor",
+              classes: "govuk-input--width-20"
+
+            }) }}
+
+            {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+            {{ govukTextarea({
+              name: "notes",
+              id: "notes",
+              label: {
+                text: "Notes (optional)",
+                classes: "govuk-label--m"
+              }
+            }) }}
+
+
+
+          {% endcall %}
+
+          <div>
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+          </div>
+
+
+
+
+
+        </form>
+
+      </div>
+
+    </div>
+
+
+
+{% endblock %}

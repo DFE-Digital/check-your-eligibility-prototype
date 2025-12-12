@@ -1,0 +1,103 @@
+{% extends "/layouts/childcare/v8/layout-childcare.html" %}
+
+{% block pageTitle %}
+  When was the application submitted
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+    <div class="govuk-grid-row">
+
+
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <form class="form" action="/childcare/v8/foster/create/term-dates" method="post" novalidate>
+
+
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+          {% from "govuk/components/input/macro.njk" import govukInput %}
+
+          {% set otherHtml %}
+           {{ govukDateInput({
+              id: "submitted-date",
+              namePrefix: "submitted-date",
+              fieldset: {
+                legend: {
+                  text: "Application submitted on",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
+              items: [
+                {
+                  name: "day",
+                  classes: "govuk-input--width-2"
+                },
+                {
+                  name: "month",
+                  classes: "govuk-input--width-2"
+                },
+                {
+                  name: "year",
+                  classes: "govuk-input--width-4"
+                }
+              ]
+            }) }}
+          {% endset -%}
+
+          {{ govukRadios({
+            name: "contact",
+            fieldset: {
+              legend: {
+                text: "When was the application submitted?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            hint: {
+              text: "Select one option"
+            },
+            items: [
+              {
+                value: "Today",
+                text: "Today"
+              },
+              {
+                value: "other date",
+                text: "other date",
+                conditional: {
+                  html: otherHtml
+                }
+              }
+            ]
+          }) }}
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+
+
+
+        </form>
+
+      </div>
+
+    </div>
+
+
+
+{% endblock %}
