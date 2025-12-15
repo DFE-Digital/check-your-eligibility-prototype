@@ -31,7 +31,7 @@
 
         <table class="govuk-table govuk-table--small-text-until-tablet">
             <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-4">Showing 3 checks
-                completed from {{ startDate }} to {{ endDate }}</caption>
+                completed from {{ startDate | govukDate("truncate") }} to {{ endDate | govukDate("truncate")}}</caption>
 
 
             <thead class="govuk-table__head">
@@ -41,7 +41,7 @@
                     <th class="govuk-table__cell">Date of birth</th>
                     <th scope="col" class="govuk-table__header">Date check<br> submitted</th>
                     <th scope="col" class="govuk-table__header">Check type</th>
-                    <th scope="col" class="govuk-table__header">Check source</th>
+                    <!-- <th scope="col" class="govuk-table__header">Check source</th> -->
                     <th scope="col" class="govuk-table__header">Checked by</th>
                     <th scope="col" class="govuk-table__header">Outcome</th>
                     <!-- <th scope="col" class="govuk-table__header">  </th>
@@ -57,7 +57,7 @@
                     <td class="govuk-table__cell">{{ "2000-01-01" | govukDate("truncate") }}</td>
                     <td class="govuk-table__cell">{{ "2025-01-01" | govukDate("truncate") }}</td>
                     <td class="govuk-table__cell">Individual</td>
-                    <td class="govuk-table__cell">Web service</td>
+                    <!-- <td class="govuk-table__cell">Web service</td> -->
                     <td class="govuk-table__cell">Jane Smith</td>
                     <td class="govuk-table__cell">Eligible</td>
                     <td class="govuk-table__cell"> </td>
@@ -70,7 +70,7 @@
                     <td class="govuk-table__cell">{{ "1995-01-01" | govukDate("truncate") }}</td>
                     <td class="govuk-table__cell">{{ "2025-01-01" | govukDate("truncate") }}</td>
                     <td class="govuk-table__cell">Individual</td>
-                    <td class="govuk-table__cell">Web service</td>
+                    <!-- <td class="govuk-table__cell">Web service</td> -->
                     <td class="govuk-table__cell">Jane Smith</td>
                     <td class="govuk-table__cell">Not found</td>
                     <td class="govuk-table__cell"> </td>
@@ -83,7 +83,7 @@
                     <td class="govuk-table__cell">{{ "2016-01-01" | govukDate("truncate") }}</td>
                     <td class="govuk-table__cell">{{ "2025-01-01" | govukDate("truncate") }}</td>
                     <td class="govuk-table__cell">Batch</td>
-                    <td class="govuk-table__cell">Web API</td>
+                    <!-- <td class="govuk-table__cell">Web API</td> -->
                     <td class="govuk-table__cell">Cheshire East</td>
                     <td class="govuk-table__cell">Not eligible</td>
                     <td class="govuk-table__cell"> </td>
