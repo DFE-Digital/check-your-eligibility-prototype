@@ -18,7 +18,7 @@
 
 
 
-       <form class="form" action="/support/v2/banners/enter-details" method="post" novalidate>
+       <form class="form" action="/support/v2/banners/create/enter-details" method="post" novalidate>
 
           {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
@@ -32,7 +32,7 @@
               }
             },
             hint: {
-              text: "Select all servicess that apply"
+              text: "Select all services that apply"
             },
             items: [
               {

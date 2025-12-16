@@ -45,34 +45,9 @@
 
     {{ govukButton({
         text: "Create new notification banner",
-        href: "/support/v2/banners/select-portals"
+        href: "/support/v2/banners/create/select-services"
     }) }}
 
-
-    {% if (data['create-banner'] == "success") %}
-
-    <table class="govuk-table govuk-table--small-text-until-tablet govuk-!-margin-top-6">
-      <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-4">Live notification banners</caption>
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Banner content</th>
-           <th scope="col" class="govuk-table__header">Services</th>
-          <th scope="col" class="govuk-table__header">Date and time published</th>
-          <th scope="col" class="govuk-table__header">Actions</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Service will be unavailable on Wednesday 10th December 2025 6pm-7pm <br><a href="">Find out more</a> </td>
-          <td class="govuk-table__cell">All services</td>
-          <td class="govuk-table__cell">{{ "today" | govukDate }} {{ "now" | govukTime }}</td>
-          <td class="govuk-table__cell"><a href="/support/v2/banners/remove">Remove</a></td>
-        </tr>
-      </tbody>
-    </table>
-
-
-    {% endif %}
 
 
   </div>
