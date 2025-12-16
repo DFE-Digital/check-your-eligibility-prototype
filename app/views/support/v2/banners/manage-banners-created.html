@@ -23,11 +23,25 @@
           </h2>
         </div>
         <div class="govuk-notification-banner__content">
-          <h3 class="govuk-notification-banner__heading">
+
+              {% if (data['update-banner'] == "success") %}
+
+            <h3 class="govuk-notification-banner__heading">
+              Notification banner updated
+            </h3>
+
+        {% else %}
+
+            <h3 class="govuk-notification-banner__heading">
             Notification banner published
-          </h3>
+           </h3>
+
+        {% endif %}
+
         </div>
       </div>
+
+
 
 
     <h1 class="govuk-heading-l">Manage notifications</h1>
@@ -60,7 +74,7 @@
           <td class="govuk-table__cell">Service will be unavailable on Wednesday 10th December 2025 6pm-7pm <br><a href="">Find out more</a> </td>
           <td class="govuk-table__cell">All services</td>
           <td class="govuk-table__cell">{{ "today" | govukDate }} {{ "now" | govukTime }}</td>
-          <td class="govuk-table__cell"><a href="/support/v2/banners/edit-details">Edit</a> | <a href="/support/v2/banners/remove">Remove</a></td>
+          <td class="govuk-table__cell"><a href="/support/v2/banners/edit/select-services">Edit</a> | <a href="/support/v2/banners/remove">Remove</a></td>
         </tr>
       </tbody>
     </table>

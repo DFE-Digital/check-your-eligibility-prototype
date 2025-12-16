@@ -1,7 +1,7 @@
 {% extends "/layouts/support/v2/layout-support.html" %}
 
 {% block pageTitle %}
- Set up notification banner
+ Edit banner content
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,9 +16,12 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l">Enter banner content</h1>
+    <h1 class="govuk-heading-l">Edit banner content</h1>
 
-       <form class="form" action="/support/v2/banners/preview" method="post" novalidate>
+
+
+
+       <form class="form" action="/support/v2/banners/edit/preview" method="post" novalidate>
 
           {% call govukFieldset({
 
@@ -28,8 +31,8 @@
           {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
 
           {{ govukCharacterCount({
-            name: "banner-heading",
-            id: "banner-heading",
+            name: "banner-heading-edit",
+            id: "banner-heading-edit",
             maxlength: 100,
             rows: "1",
             label: {
@@ -37,43 +40,42 @@
               classes: "govuk-label--m",
               isPageHeading: false
             },
-            value: data['banner-heading']
+            value: "Service will be unavailable on Wednesday 10th December 2025 6pm-7pm"
           }) }}
 
 
           {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
 
           {{ govukCharacterCount({
-            name: "banner-text",
-            id: "banner-text",
+            name: "banner-text-edit",
+            id: "banner-text-edit",
             maxlength: 300,
             rows: "5",
             label: {
               text: "Text (optional)",
               classes: "govuk-label--m",
               isPageHeading: false
-            },
-            value: data['banner-text']
+            }
           }) }}
 
           <h2 class="govuk-heading-m">Link (optional) </h2>
 
           {{ govukInput({
-            id: "banner-link-text",
-            name: "banner-link-text",
+            id: "banner-link-text-edit",
+            name: "banner-link-text-edit",
             label: {
               text: "Link text"
             },
-            value: data['banner-link-text']
+            value: "Find out more"
           }) }}
 
           {{ govukInput({
-            id: "banner-link-url",
-            name: "banner-link-url",
+            id: "banner-link-url-edit",
+            name: "banner-link-url-edit",
             label: {
               text: "Link URL"
             },
-            value: data['banner-link-url']
+            value: "www.eceknowledgehub.com/maintenance-downtime-dec-25"
           }) }}
 
           {% endcall %}

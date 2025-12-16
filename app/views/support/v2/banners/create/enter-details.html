@@ -18,10 +18,7 @@
 
     <h1 class="govuk-heading-l">Enter banner content</h1>
 
-
-
-
-       <form class="form" action="/support/v2/banners/preview" method="post" novalidate>
+       <form class="form" action="/support/v2/banners/create/preview" method="post" novalidate>
 
           {% call govukFieldset({
 
@@ -39,7 +36,8 @@
               text: "Heading",
               classes: "govuk-label--m",
               isPageHeading: false
-            }
+            },
+            value: data['banner-heading']
           }) }}
 
 
@@ -51,23 +49,22 @@
             maxlength: 300,
             rows: "5",
             label: {
-              text: "Text",
+              text: "Text (optional)",
               classes: "govuk-label--m",
               isPageHeading: false
-            }
+            },
+            value: data['banner-text']
           }) }}
 
+          <h2 class="govuk-heading-m">Link (optional) </h2>
 
-          {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-          {% from "govuk/components/input/macro.njk" import govukInput %}
-
-          {% set yesHtml %}
           {{ govukInput({
             id: "banner-link-text",
             name: "banner-link-text",
             label: {
               text: "Link text"
-            }
+            },
+            value: data['banner-link-text']
           }) }}
 
           {{ govukInput({
@@ -75,31 +72,9 @@
             name: "banner-link-url",
             label: {
               text: "Link URL"
-            }
-          }) }}
-          {% endset -%}
-
-
-          {{ govukCheckboxes({
-            name: "contact",
-            fieldset: {
-              legend: {
-                text: "Include a link?",
-                isPageHeading: false,
-                classes: "govuk-fieldset__legend--m"
-              }
             },
-            items: [
-              {
-                value: "yes",
-                text: "Yes",
-                conditional: {
-                  html: yesHtml
-                }
-              }
-            ]
+            value: data['banner-link-url']
           }) }}
-
 
           {% endcall %}
 
