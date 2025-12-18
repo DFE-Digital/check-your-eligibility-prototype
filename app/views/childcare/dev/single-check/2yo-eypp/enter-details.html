@@ -89,6 +89,18 @@
 
 
 
+             {% if (data['eligibility-type'] == "Early learning for 2-year-olds") %}
+
+              <p class="govuk-body"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="/childcare/dev/guidance/2yo-evidence#nrpf">Parent or guardian is an asylum seeker (opens in new tab)</a></p>
+
+              {% else %}
+
+                <p class="govuk-body"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="/childcare/dev/guidance/eypp-evidence#asylum-seekers">Parent or guardian is an asylum seeker (opens in new tab)</a></p>
+
+              {% endif %}
+
+
+
       </div>
 
     </div>
