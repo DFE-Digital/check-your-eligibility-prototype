@@ -1,0 +1,81 @@
+{% extends "/layouts/support/v3/layout-support.html" %}
+
+{% block pageTitle %}
+ Set up notification banner
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+       <form class="form" action="/support/v3/banners/create/enter-details" method="post" novalidate>
+
+          {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+          {{ govukCheckboxes({
+            name: "portals",
+            fieldset: {
+              legend: {
+                text: "Select services to display banner in",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            hint: {
+              text: "Select all services that apply"
+            },
+            items: [
+              {
+                value: "Childcare - local authorities",
+                text: "Childcare - local authorities"
+              },
+              {
+                value: "Free school meals - local authorities",
+                text: "Free school meals - local authorities"
+              },
+              {
+                value: "Free school meals - parents",
+                text: "Free school meals - parents"
+              },
+              {
+                value: "Free school meals - schools and multi-academy trusts",
+                text: "Free school meals - schools and multi-academy trusts"
+              },
+
+              {
+                divider: "or"
+              },
+              {
+                value: "all",
+                text: "All services",
+                behaviour: "exclusive"
+              }
+            ]
+          }) }}
+
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+
+        </form>
+
+
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "/layouts/support/v3/layout-support.html" %}
+
+{% block pageTitle %}
+ Set up notification banner
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Remove notification banner?</h1>
+
+    <p>This banner will no longer display for users of the service when you remove it. </p>
+
+     <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Important
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+           {{ data["heading"] or "Service will be unavailable on Wednesday 10th December 2025 6pm-7pm" }}
+        </p>
+        <p class="govuk-body"> {{ data["text"] }} <a href="">  {{ data["link-text"] }}</a></p>
+      </div>
+    </div>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Remove banner",
+      classes: "govuk-button--warning",
+      href: "/support/v3/banners/manage-banners?remove-banner=success"
+    }) }}
+
+
+
+  </div>
+</div>
+
+{% endblock %}

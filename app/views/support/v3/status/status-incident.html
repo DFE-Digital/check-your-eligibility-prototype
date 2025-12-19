@@ -1,0 +1,139 @@
+{% extends "/layouts/support/v3/layout-support.html" %}
+
+{% block pageTitle %}
+ System status
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">System status</h1>
+
+
+
+    <div class="govuk-inset-text" style="background-color: #FFE5CC; border-left: 10px solid #FFB266">
+      Incident impacting childcare service
+    </div>
+
+
+
+    <div class="govuk-tabs govuk-!-margin-top-8" data-module="govuk-tabs">
+      <h2 class="govuk-tabs__title">
+        Contents
+      </h2>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#past-day">
+            Live issues (1)
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#past-week">
+            Resolved issues (1)
+          </a>
+        </li>
+      </ul>
+      <div class="govuk-tabs__panel" id="past-day">
+        <h2 class="govuk-heading-m">Live issues</h2>
+        <table class="govuk-table govuk-table--small-text-until-tablet">
+          <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-4">1 live issue</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Issue</th>
+              <th scope="col" class="govuk-table__header">Type</th>
+              <th scope="col" class="govuk-table__header">Services impacted</th>
+              <th scope="col" class="govuk-table__header">Date and time started</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">HMRC working families API not sending codes</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">Incident</strong></td>
+              <td class="govuk-table__cell">Childcare - local authorities</td>
+              <td class="govuk-table__cell">{{ "today" | govukDate }} {{ "now" | govukTime }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+        <h2 class="govuk-heading-m">Resolved issues</h2>
+        <table class="govuk-table govuk-table--small-text-until-tablet">
+          <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-4">1 issue in the last 7 days</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Issue</th>
+              <th scope="col" class="govuk-table__header">Type</th>
+              <th scope="col" class="govuk-table__header">Services impacted</th>
+              <th scope="col" class="govuk-table__header">Date and time started</th>
+              <th scope="col" class="govuk-table__header">Date and time resolved</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Batch processing slower than normal</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Information</strong></td>
+              <td class="govuk-table__cell">All services</td>
+              <td class="govuk-table__cell">18 Dec 2025 9.12pm</td>
+              <td class="govuk-table__cell">19 Dec 2025 5.04am</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+    </div>
+
+
+    <!--
+
+    <h2 class="govuk-heading-m">Status history</h2>
+
+    <table class="govuk-table govuk-table--small-text-until-tablet">
+      <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-4">2 issues in the last 7 days</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Issue</th>
+          <th scope="col" class="govuk-table__header">Type</th>
+          <th scope="col" class="govuk-table__header">Services affected</th>
+          <th scope="col" class="govuk-table__header">Date and time started</th>
+          <th scope="col" class="govuk-table__header">Date and time resolved</th>
+          <th scope="col" class="govuk-table__header">Status</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">HMRC working families API not sending codes</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">Incident</strong></td>
+          <td class="govuk-table__cell">Childcare - local authorities</td>
+          <td class="govuk-table__cell">19 Dec 2025 10.12am</td>
+          <td class="govuk-table__cell">19 Dec 2025 10.34am</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Resolved</strong></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Batch processing slower than normal</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Information</strong></td>
+          <td class="govuk-table__cell">All services</td>
+          <td class="govuk-table__cell">18 Dec 2025 9.12pm</td>
+          <td class="govuk-table__cell">19 Dec 2025 5.04am</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Resolved</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+     -->
+
+
+  </div>
+</div>
+
+{% endblock %}

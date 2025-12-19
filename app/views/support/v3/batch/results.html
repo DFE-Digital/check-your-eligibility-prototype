@@ -1,0 +1,180 @@
+{% extends "/layouts/support/v3/layout-support.html" %}
+
+{% block pageTitle %}
+  Batch checks queue
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+
+     <h1 class="govuk-heading-l">Find a batch check</h1>
+
+      <div class="govuk-form-group govuk-!-width-one-half">
+        <label class="govuk-label govuk-label--s" for="queue-search">
+          Email address
+        </label>
+        <input class="govuk-input" id="queue-search" name="queue-search" type="text">
+      </div>
+
+      {% include "/_includes/childcare/las.html" %}
+
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+      {{ govukCheckboxes({
+        name: "elig-type",
+        classes: "govuk-checkboxes--small",
+        fieldset: {
+          legend: {
+            text: "Eligibility type",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "fsm",
+            text: "Free school meals"
+          },
+          {
+            value: "30h",
+            text: "Childcare for working families"
+          },
+          {
+            value: "2yo",
+            text: "Early learning for 2-year-olds"
+          },
+          {
+            value: "eypp",
+            text: "Early years pupil premium"
+          }
+        ]
+      }) }}
+
+      {{ govukCheckboxes({
+        name: "method",
+        classes: "govuk-checkboxes--small",
+        fieldset: {
+          legend: {
+            text: "Method",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "api",
+            text: "API"
+          },
+          {
+            value: "web",
+            text: "Web"
+          }
+        ]
+      }) }}
+
+
+         {{ govukButton({
+          text: "Search",
+          href: "/support/v3/batch/ii/results"
+        }) }}
+
+
+     <div class="govuk-form-group" id="sort">
+          <label class="govuk-label" for="sort">
+            Sort by
+          </label>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="submitted-old">Date submitted (oldest to newest)</option>
+            <option value="submitted-new" >Date submitted (newest to oldest)</option>
+            <option value="type">Eligibility type</option>
+            <option value="method">Method</option>
+            <option value="rows">Number of rows</option>
+            <option value="org">Organisation</option>
+            <option value="status" selected>Status</option>
+            <option value="user">Uploaded by</option>
+          </select>
+        </div>
+
+
+
+    <table class="govuk-table govuk-table--small-text-until-tablet">
+      <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-4">Showing 4 results for 'Leeds Council' from the last 48 hours</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Filename</th>
+          <th scope="col" class="govuk-table__header">Uploaded by</th>
+          <th scope="col" class="govuk-table__header">Organisation</th>
+          <th scope="col" class="govuk-table__header">Eligibility type</th>
+          <th scope="col" class="govuk-table__header">Method</th>
+          <th scope="col" class="govuk-table__header">Number of rows</th>
+          <th scope="col" class="govuk-table__header">Date submitted</th>
+          <th scope="col" class="govuk-table__header">Date completed</th>
+          <th scope="col" class="govuk-table__header">Status</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">data_001.csv</td>
+          <td class="govuk-table__cell">j.smith@leeds.gov.uk</td>
+          <td class="govuk-table__cell">Leeds Council</td>
+          <td class="govuk-table__cell">Free school meals</td>
+          <td class="govuk-table__cell">API</td>
+          <td class="govuk-table__cell">2456</td>
+          <td class="govuk-table__cell">{{ "today" | govukDate }} {{ "now" | govukTime }}</td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Not started</strong></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">2yosep.csv</td>
+          <td class="govuk-table__cell">amanda.knowles@leeds.gov.uk</td>
+          <td class="govuk-table__cell">Leeds Council</td>
+          <td class="govuk-table__cell">Early learning for 2-year-olds</td>
+          <td class="govuk-table__cell">Web</td>
+          <td class="govuk-table__cell">368</td>
+          <td class="govuk-table__cell">{{ "today" | govukDate }} 11.30am</td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">In progress</strong></td>
+        </tr>
+         <tr class="govuk-table__row">
+          <td class="govuk-table__cell">2yo56.csv</td>
+          <td class="govuk-table__cell">sampson.taylor@leeds.gov.uk</td>
+          <td class="govuk-table__cell">Leeds Council</td>
+          <td class="govuk-table__cell">Childcare for working families</td>
+          <td class="govuk-table__cell">Web</td>
+          <td class="govuk-table__cell">23</td>
+          <td class="govuk-table__cell">{{ "today" | govukDate }} 9.54am</td>
+          <td class="govuk-table__cell">{{ "today" | govukDate }} 10.15am</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Completed</strong></td>
+        </tr>
+         <tr class="govuk-table__row">
+          <td class="govuk-table__cell">2yosep.csv</td>
+          <td class="govuk-table__cell">alex.yates@leeds.gov.uk</td>
+          <td class="govuk-table__cell">Leeds Council</td>
+          <td class="govuk-table__cell">Early years pupil premium</td>
+          <td class="govuk-table__cell">Web</td>
+          <td class="govuk-table__cell">70</td>
+          <td class="govuk-table__cell">{{ "today" | govukDate }} 9.37am</td>
+          <td class="govuk-table__cell">{{ "today" | govukDate }} 9.39am</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Completed</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </div>
+</div>
+
+{% endblock %}

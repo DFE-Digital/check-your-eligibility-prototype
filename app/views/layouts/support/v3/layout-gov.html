@@ -1,0 +1,48 @@
+{# 1 #}
+{% from 'node_modules/dfe-frontend/packages/components/header/macro.njk' import header %}
+
+{# 2 #}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% set govukRebrand = true %}
+
+{# 3 #}
+{% block header %}
+
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+
+{{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+
+
+
+{% endblock %}
+
+
+
+{% block footer %}
+ {{ govukFooter({
+  rebrand: "true",
+   meta: {
+     items: [
+      {
+        href:"/manage-prototype",
+        text:"Manage your prototype"
+      },
+       {
+         href: "/manage-prototype/clear-data",
+         text: "Clear data"
+       }
+     ],
+     visuallyHiddenTitle: "Footer links"
+   }
+ }) }}
+{% endblock %}
+
+{# 4 #}
+{% block scripts %}
+  {{ super() }}
+
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends "/layouts/support/v3/layout-support.html" %}
+
+{% block pageTitle %}
+ Manage notifications
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Success
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+
+              {% if (data['update-banner'] == "success") %}
+
+            <h3 class="govuk-notification-banner__heading">
+              Notification banner updated
+            </h3>
+
+        {% else %}
+
+            <h3 class="govuk-notification-banner__heading">
+            Notification banner published
+           </h3>
+
+        {% endif %}
+
+        </div>
+      </div>
+
+
+
+
+    <h1 class="govuk-heading-l">Manage notifications</h1>
+
+    <p>Set up a notification banner to display to users of the Eligibility checking engine.</p>
+
+    <p>You can select which services the notification banner should display in.</p>
+
+
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Create new notification banner",
+      disabled: true
+    }) }}
+
+    <table class="govuk-table govuk-table--small-text-until-tablet govuk-!-margin-top-6">
+      <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-4">Live notification banners</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Banner content</th>
+           <th scope="col" class="govuk-table__header">Services</th>
+          <th scope="col" class="govuk-table__header">Date and time published</th>
+          <th scope="col" class="govuk-table__header">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+         <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Service will be unavailable on Wednesday 10th December 2025 6pm-7pm <br><a href="">Find out more</a> </td>
+          <td class="govuk-table__cell">All services</td>
+          <td class="govuk-table__cell">{{ "today" | govukDate }} {{ "now" | govukTime }}</td>
+          <td class="govuk-table__cell"><a href="/support/v3/banners/edit/select-services">Edit</a> | <a href="/support/v3/banners/remove">Remove</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </div>
+</div>
+
+{% endblock %}

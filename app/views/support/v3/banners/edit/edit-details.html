@@ -1,0 +1,98 @@
+{% extends "/layouts/support/v3/layout-support.html" %}
+
+{% block pageTitle %}
+ Edit banner content
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Edit banner content</h1>
+
+
+
+
+       <form class="form" action="/support/v3/banners/edit/preview" method="post" novalidate>
+
+          {% call govukFieldset({
+
+          }) %}
+
+
+          {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
+
+          {{ govukCharacterCount({
+            name: "banner-heading-edit",
+            id: "banner-heading-edit",
+            maxlength: 100,
+            rows: "1",
+            label: {
+              text: "Heading",
+              classes: "govuk-label--m",
+              isPageHeading: false
+            },
+            value: "Service will be unavailable on Wednesday 10th December 2025 6pm-7pm"
+          }) }}
+
+
+          {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
+
+          {{ govukCharacterCount({
+            name: "banner-text-edit",
+            id: "banner-text-edit",
+            maxlength: 300,
+            rows: "5",
+            label: {
+              text: "Text (optional)",
+              classes: "govuk-label--m",
+              isPageHeading: false
+            }
+          }) }}
+
+          <h2 class="govuk-heading-m">Link (optional) </h2>
+
+          {{ govukInput({
+            id: "banner-link-text-edit",
+            name: "banner-link-text-edit",
+            label: {
+              text: "Link text"
+            },
+            value: "Find out more"
+          }) }}
+
+          {{ govukInput({
+            id: "banner-link-url-edit",
+            name: "banner-link-url-edit",
+            label: {
+              text: "Link URL"
+            },
+            value: "www.eceknowledgehub.com/maintenance-downtime-dec-25"
+          }) }}
+
+          {% endcall %}
+
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+
+        </form>
+
+
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends "/layouts/support/v3/layout-support.html" %}
+
+{% block pageTitle %}
+ Run a check for one parent or guardian
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">Run a check for one parent or guardian</h1>
+    <p class="govuk-">Choose which eligibility you want to run a check for.</p>
+    <div class="dfe-grid-container">
+
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/support/v3/single-check/fsm-2yo-eypp/enter-details?eligibility-type=Free school meals">Free school meals</a>
+          </h2>
+          <p>Free school meals for children aged 4 to 16 years.</p>
+        </div>
+      </div>
+
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/support/v3/single-check/30h/enter-details">Childcare for working families</a>
+          </h2>
+          <p>30 hours free childcare for children aged 9 months to 4 years.</p>
+
+          </div>
+      </div>
+
+
+        <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/support/v3/single-check/fsm-2yo-eypp/enter-details?eligibility-type=Early learning for 2-year-olds">Early learning for 2-year-olds</a>
+            </h2>
+            <p>15 hours free early learning for children aged 2 years in families receiving additional support.</p>
+
+
+          </div>
+        </div>
+
+        <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/support/v3/single-check/fsm-2yo-eypp/enter-details?eligibility-type=Early years pupil premium">Early years pupil premium</a>
+            </h2>
+            <p>Extra early years provider funding for eligible children age 9 months to 2 years or eligible 3 and 4-year-olds.
+            </p>
+
+          </div>
+        </div>
+
+    </div>
+
+
+
+
+
+  </div>
+</div>
+
+{% endblock %}
