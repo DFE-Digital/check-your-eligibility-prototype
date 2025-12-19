@@ -1,0 +1,127 @@
+{% extends "/layouts/support/v3/layout-support.html" %}
+
+{% block pageTitle %}
+  Edit the child details
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">Edit the child details</h1>
+
+        <form class="form" action="/support/v3/corrections/audit" method="post" novalidate>
+
+          {% call govukFieldset({
+
+          }) %}
+
+            {% from "govuk/components/input/macro.njk" import govukInput %}
+
+            {{ govukInput({
+              label: {
+                text: "First name",
+                classes: "govuk-label--m"
+              },
+              id: "child-first-name",
+              name: "child-first-name",
+              classes: "govuk-input--width-20",
+              value: "Jasper"
+
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Last name",
+                classes: "govuk-label--m"
+              },
+              id: "child-last-name",
+              name: "child-last-name",
+              classes: "govuk-input--width-20",
+              value: "Hayes"
+
+            }) }}
+
+            {{ govukDateInput({
+              id: "child-dob",
+              namePrefix: "child-dob",
+              fieldset: {
+                legend: {
+                  text: "Date of birth",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+                text: "For example, 31 3 2023"
+              },
+              items: [
+                {
+                  name: "day",
+                  classes: "govuk-input--width-2",
+                  value: "10"
+                },
+                {
+                  name: "month",
+                  classes: "govuk-input--width-2",
+                  value: "10"
+                },
+                {
+                  name: "year",
+                  classes: "govuk-input--width-4",
+                  value: "2021"
+                }
+              ]
+            }) }}
+
+             {{ govukInput({
+              label: {
+                text: "Postcode",
+                classes: "govuk-label--m"
+              },
+              id: "child-postcode",
+              name: "child-postcode",
+              classes: "govuk-input--width-10",
+              value: "M20 7GF"
+
+            }) }}
+
+
+
+          {% endcall %}
+
+          <div class="govuk-inset-text">
+            After an eligibility code has been issued, you can correct mistakes to a child’s name, date of birth or postcode. You cannot change or swap the identity of a child to that of a different child.
+          </div>
+
+
+          <div>
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+          </div>
+
+
+
+
+
+        </form>
+
+      </div>
+
+    </div>
+
+
+
+{% endblock %}

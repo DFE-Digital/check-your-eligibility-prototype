@@ -1,0 +1,172 @@
+{% extends "/layouts/support/v3/layout-support.html" %}
+
+{% block pageTitle %}
+  Support
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <!--  <p class="govuk-!-margin-bottom-1"><strong class="govuk-tag govuk-tag--green long-tag">System working normally</strong></p> -->
+    <!--
+
+     <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Important
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+          Processing limit reached
+        </p>
+        <p>Over 50,000 checks are in the queue. Batch checks may take longer to process.</p>
+      </div>
+    </div>
+
+
+
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" style="border: 5px solid #d4351c; background-color: #d4351c;">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Important
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+          Service is unavailable
+        </p>
+        <p>some words. <a href="">View more information</a>.</p>
+      </div>
+    </div>
+
+
+      <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" style="border: 5px solid 	#f47738; background-color: 	#f47738;">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title" style="color:#0b0c0c;">
+          Important
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+          There is a problem with the HMRC API
+        </p>
+        <p>some words. <a href="">View more information</a>.</p>
+      </div>
+    </div>
+
+
+    -->
+
+
+    <h1 class="govuk-heading-l">Eligibility checking engine support</h1>
+
+
+    <div class="dfe-grid-container">
+
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/support/v3/single-check/single">Run a check</a>
+          </h2>
+          <p>Run an eligiblity check for one parent or guardian</p>
+        </div>
+      </div>
+
+
+
+
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/support/v3/banners/manage-banners">Manage notifications</a>
+          </h2>
+          <p>Publish notification banners to update users on service availability and issues</p>
+        </div>
+      </div>
+
+       <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/support/v3/status/status">System status and history</a>
+          </h2>
+          <p>View the status of the service and a history of system issues.</p>
+        </div>
+      </div>
+
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/support/v3/temp-code/temp-code">Import temporary codes</a>
+          </h2>
+          <p>Import childcare for working families temporary code files provided by HMRC and view history.</p>
+        </div>
+      </div>
+
+
+       <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/support/v3/event-history/search-code">View eligibility code history</a>
+          </h2>
+          <p>View the event listing for a working families code, showing application and reconfirmation history.</p>
+        </div>
+      </div>
+
+
+
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/support/v3/corrections/search-code">Edit eligibility code data</a>
+          </h2>
+          <p>Correct errors in working families code data.</p>
+        </div>
+      </div>
+
+
+
+
+    <!--
+
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/support/v3/wf">Manage childcare for working families codes</a>
+          </h2>
+          <p>View code history, import temporary codes and edit code data for working families codes.</p>
+        </div>
+      </div>
+
+
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/support/v3/batch/search">Find a batch check</a>
+          </h2>
+          <p>View the status of batch checks.</p>
+        </div>
+      </div>
+
+
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="">Guidance</a>
+          </h2>
+          <p>TBC</p>
+        </div>
+      </div>
+
+      -->
+
+    </div>
+
+
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,111 @@
+{% extends "/layouts/support/v3/layout-support.html" %}
+
+{% block pageTitle %}
+  Manage temporary codes
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+       {% if (data['temp-code-status'] == "success") %}
+
+     <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          133 temporary codes imported
+        </h3>
+      </div>
+    </div>
+
+    {% else %}
+
+    {% endif %}
+
+    <h1 class="govuk-heading-l">Import temporary codes</h1>
+
+
+      {{ govukButton({
+            text: "Upload new file",
+            href: "/support/v3/temp-code/upload"
+          }) }}
+
+
+    <h2 class="govuk-heading-m">Temporary code import history</h2>
+
+
+    <table class="govuk-table govuk-table--small-text-until-tablet">
+      <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-4">Showing 3 temporary files uploaded in the last 30 days</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Filename</th>
+          <th scope="col" class="govuk-table__header">Number of codes</th>
+          <th scope="col" class="govuk-table__header">Code range</th>
+          <th scope="col" class="govuk-table__header">Date imported</th>
+          <th scope="col" class="govuk-table__header">Imported by</th>
+          <!-- <th scope="col" class="govuk-table__header">Status</th>
+          <th scope="col" class="govuk-table__header">Actions</th>-->
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+         <tr class="govuk-table__row">
+          <td class="govuk-table__cell">290925 manual eligibility events.xlsm</td>
+          <td class="govuk-table__cell">133</td>
+          <td class="govuk-table__cell">11123456300 to 11123456633</td>
+          <td class="govuk-table__cell">{{ "today" | govukDate }} {{ "now" | govukTime }}</td>
+          <td class="govuk-table__cell">Sally Smith</td>
+          <!-- <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Completed</strong></td>
+         <td class="govuk-table__cell"><a href="/support/v3/temp-code/record">View</a></td>-->
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">280925 manual eligibility events.xlsm</td>
+          <td class="govuk-table__cell">67</td>
+          <td class="govuk-table__cell">11123456232 to 11123456299</td>
+          <td class="govuk-table__cell">28 September 2025 9.04am</td>
+          <td class="govuk-table__cell">Jeff Foster</td>
+          <!-- <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Completed</strong></td>
+          <td class="govuk-table__cell"><a href="/support/v3/temp-code/record">View</a></td>-->
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">030925 manual eligibility events.xlsm</td>
+          <td class="govuk-table__cell">34</td>
+          <td class="govuk-table__cell">11123456198 to 11123456232</td>
+          <td class="govuk-table__cell">3 September 2025 4.38pm</td>
+          <td class="govuk-table__cell">Sally Smith</td>
+           <!-- <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Completed</strong></td>
+         <td class="govuk-table__cell"><a href="/support/v3/temp-code/record">View</a></td>-->
+        </tr>
+        <!--
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">010925 manual eligibility events.xlsm</td>
+          <td class="govuk-table__cell">25</td>
+          <td class="govuk-table__cell">11123456173 to 11123456198</td>
+          <td class="govuk-table__cell">1 September 2025 12.21pm</td>
+          <td class="govuk-table__cell">Jeff Foster</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Technical error</strong></td>
+          <td class="govuk-table__cell"><a href="/support/v3/temp-code/record">View</a></td>
+        </tr>
+        -->
+
+
+      </tbody>
+    </table>
+
+
+  </div>
+</div>
+
+{% endblock %}
