@@ -1,0 +1,103 @@
+{% extends "layouts/FSM/v8-0/layout-dfe-schoolnav.html" %}
+{% set Service="Free school meals" %}
+{% set view="dashboard" %}
+{% set pageName="St Mary's Primary School" %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--m">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l">{{pageName}}</span>
+         <h1 class="govuk-heading-l">
+      {{Service}}
+    </h1>
+      </div>
+    </div>
+
+        <div class="dfe-grid-container">
+          <div class="dfe-card">
+            <div class="dfe-card-container">
+              <h3 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                  href="school-manage/school-soft-check/declaration.html">Run a check for one parent or guardian</a>
+                </h2>
+                <p>Run an eligibility check for one parent or guardian.</p>
+            </div>
+          </div>
+          <div class="dfe-card">
+            <div class="dfe-card-container">
+              <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                  href="school-manage/batch-checking/manual">Run a batch check</a>
+              </h2>
+              <p>Run an eligibility check for multiple parents or guardians.</p>
+            </div>
+          </div>
+            <!-- <div class="dfe-card">
+            <div class="dfe-card-container">
+              <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                  href="school-manage/recheck/recheck.html">Recheck eligible applications</a>
+              </h2>
+              <p>Run checks on all previously eligible applications</p>
+            </div>
+          </div> -->
+
+          <!-- <div class="dfe-card">
+            <div class="dfe-card-container">
+              <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                  href="school-manage/decision/process_appeal/process-appeals">Process appeals</a>
+              </h2>
+              <p>Check the status of appealed applications and send for local authority review.</p>
+            </div>
+          </div> -->
+    <div class="dfe-card">
+            <div class="dfe-card-container">
+              <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                  href="school-manage/decision/finalise/applications">Finalise applications</a>
+              </h2>
+              <p>Finalise applications</p>
+            </div>
+          </div>
+
+          <div class="dfe-card">
+            <div class="dfe-card-container">
+              <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                  href="school-manage/decision/review/applications">Review applications</a>
+              </h2>
+              <p>Review applications that are supported with evidence</p>
+            </div>
+          </div>
+
+          <div class="dfe-card">
+            <div class="dfe-card-container">
+
+              <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                  href="school-manage/report/search2">Search all records</a>
+              </h2>
+              <p>Search all records and export results.</p>
+            </div>
+
+          </div>
+          <div class="dfe-card">
+            <div class="dfe-card-container">
+
+              <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                  href="../_offline/fsm-print-version-school.html">Download PDF form</a>
+              </h2>
+              <p>Download an eligibility form for parents to complete.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+ </main>
+</div>
+
+      {% endblock %}

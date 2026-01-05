@@ -1,0 +1,137 @@
+{% extends "layouts/FSM/v8-0/layout-dfe-schoolnav.html" %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l"></span>
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+        aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Submitted
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+            Free school meals application submitted for Eden Tesfay
+          </h3>
+          <p class="govuk-body">You should <a href="" class="govuk-link" onclick="printPage()">print this page</a> for the parents to keep.</p>
+
+        </p>
+        </div>
+      </div>
+
+      <h1 class="govuk-heading-m">Application record for Eden Tesfay</h1>
+    </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header">Child</th>
+          <th class="govuk-table__header">Reference</th>
+          <th class="govuk-table__header"></th>
+
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" style="width: 40%;">Samual Tesfay</td>
+          <td class="govuk-table__cell" style="width: 40%;">44455453</td>
+          <td class="govuk-table__cell" style="width: 20%;"></td>
+
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" style="width: 40%;">Thomas Tesfay</td>
+          <td class="govuk-table__cell" style="width: 40%;">44455454</td>
+          <td class="govuk-table__cell" style="width: 20%;"></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" style="width: 40%;">Rachel Tesfay</td>
+          <td class="govuk-table__cell" style="width: 40%;">44455455</td>
+          <td class="govuk-table__cell" style="width: 20%;"><span></span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" style="width: 40%;">Evidence</th>
+          <th class="govuk-table__header" style="width: 40%;">Filesize</th>
+          <th class="govuk-table__header" style="width: 40%;"></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" style="width: 40%;">0997618234647.png</td>
+          <td class="govuk-table__cell" style="width: 40%;">1.2mb</td>
+          <th class="govuk-table__header" style="width: 40%;"></th>
+        </tr>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" style="width: 40%;">    Scan0123099647.png
+            </td>
+            <td class="govuk-table__cell" style="width: 40%;">586kb</td>
+            <th class="govuk-table__header" style="width: 40%;"></th>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+    <div class="govuk-!-padding-bottom-3"></div>
+    <div class="govuk-width-container">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <h2 class="govuk-heading-m">What to do next</h2>
+
+          <p class="govuk-body">When the local authority has made a decision you'll see it in <a class="govuk-link"
+            href="/FSM/Private_beta/v7-1/school/school-manage/decision/finalise/applications"> Finalise applications</a>.
+        </p>
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+    <!--
+<div class="govuk-!-padding-bottom-3"></div>
+-->
+
+
+
+
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+<script>
+  function printPage() {
+    window.print();  // This will open the print dialog
+  }
+</script>
+
+<script>
+  function printSection() {
+    window.print();
+  }
+</script>
+
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}

@@ -1,0 +1,130 @@
+{% extends "layouts/FSM/v7-4/layout-dfe-schoolnav.html" %}
+{% set pageName="Send supporting evidence" %}
+{% block content %}
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+      <p class="govuk-body">Your local authority will need to see supporting evidence for this application.</p>
+      <p>Upload the evidence here or send copies by email later.</p>
+      <p>
+        View <a href="/evidence-guidance" class="govuk-link">guidance about supporting evidence (opens in a new
+          window)</a>.</p>
+    </div>
+    </div>
+<!--
+    {%- from "govuk/components/file-upload/macro.njk" import govukFileUpload -%}
+    {%- from "govuk/components/button/macro.njk" import govukButton -%}
+    {%- from "govuk/components/error-summary/macro.njk" import govukErrorSummary -%}
+    {%- from "moj/components/multi-file-upload/macro.njk" import mojMultiFileUpload -%} -->
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-section-break--l">
+
+        {% if errorSummary.items.length %}
+        {{ govukErrorSummary({
+        titleText: 'There is a problem',
+        errorList: errorSummary.items
+        }) }}
+        {% endif %}
+
+        <form action="appeal-check-answers-evidence-more.html" method="post" enctype="multipart/form-data">
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="file-upload-1">
+              Upload a file
+            </label>
+            <div
+              class="govuk-drop-zone"
+              data-module="govuk-file-upload">
+              <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+            </div>
+          </div>
+
+<!-- <ul class="govuk-list" style="margin-bottom: 24px;">
+  <li style="border: 1px solid #b1b4b6; padding: 12px 16px; margin-bottom: 12px;">
+    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+      <span class="govuk-body" style="flex-grow: 1;"><strong>UC_statement_2023.pdf</strong></span>
+      <span class="govuk-body-s" style="white-space: nowrap;">512Bytes</span>
+
+      <select class="govuk-select" name="file-action" style="min-width: 200px;">
+        <option value="">Select evidence type</option>
+        <option value="uc">UC Statement</option>
+        <option value="pension">Pension credit</option>
+        <option value="other">Other</option>
+      </select>
+
+      <a href="#" class="govuk-link govuk-!-margin-left-2" style="white-space: nowrap;">Remove</a>
+    </div>
+  </li>
+</ul> -->
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-visually-hidden">Uploaded files</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">File name</th>
+      <th scope="col" class="govuk-table__header">Size</th>
+      <th scope="col" class="govuk-table__header">Status</th>
+      <th scope="col" class="govuk-table__header">Action</th>
+    </tr>
+  </thead>
+  <!-- <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">UC_statement_2023.pdf</td>
+      <td class="govuk-table__cell">2MB</td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--green">Uploaded</strong>
+      </td>
+      <td class="govuk-table__cell">
+        <a href="#" class="govuk-link">Remove</a>
+      </td>
+    </tr> -->
+    <!-- <tr class="govuk-table__row">
+      <td class="govuk-table__cell">UC_statement_2022a.pdf</td>
+      <td class="govuk-table__cell">2MB</td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--red">Failed</strong>
+      </td>
+      <td class="govuk-table__cell">
+        <a href="#" class="govuk-link">Remove</a>
+      </td>
+    </tr> -->
+
+  </tbody>
+</table>
+
+
+<!--
+<ul class="govuk-list" style="margin-bottom: 24px;">
+  <li style="display: flex; align-items: center; border: 1px solid #b1b4b6; padding: 12px 16px; margin-bottom: 12px;">
+    <span style="flex-grow:1;"><strong> 	UC_statement_2023.pdf
+</strong></span>
+    <span style="color: #505a5f; min-width: 80px; text-align: right;">512kb</span>
+    <a href="#" class="govuk-link" style="margin-left: 24px;">Remove</a>
+  </li>
+  <li style="display: flex; align-items: center; border: 1px solid #b1b4b6; padding: 12px 16px;">
+    <span style="flex-grow:1;"><strong>20150904001001.png</strong></span>
+    <span style="color: #505a5f; min-width: 80px; text-align: right;">1.07gb</span>
+    <a href="#" class="govuk-link" style="margin-left: 24px;">Remove</a>
+  </li>
+</ul> -->
+
+<div class="govuk-button-group">
+
+          {{govukButton({
+          text: 'Attach evidence',
+          type: 'submit',
+          href: 'upload-more-evidence-added.html'
+          })}}
+        </form>
+          <p class="govuk-body"><a href="../appeal/appeal-check-answers-email" class="govuk-link">Send by email later</a></p>
+</div>
+      </div>
+
+      </div>
+    </div>
+
+
+    {% endblock %}

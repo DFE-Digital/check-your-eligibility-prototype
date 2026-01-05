@@ -1,0 +1,147 @@
+{% extends "layouts/FSM/v8-0/layout-dfe-schoolnav.html" %}
+{% set pageName="Check your answers before submitting" %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+    </div>
+  </div>
+</div>
+
+<div class="govuk-!-padding-bottom-2"></div>
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Parent or guardian details
+    </h2>
+
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action">
+        <a class="govuk-link" href="../school-soft-check/checker">Edit details<span class="govuk-visually-hidden">
+            Parent details</span></a>
+
+      </li>
+    </ul>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["parent-firstname"] or "Eden" }} {{ data["parent-surname"] or "Tesfay" }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["dob-day"] or "10" }} {{ data["dob-month"] or "04" }} {{ data["dob-year"] or "1984" }}
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["email"] or "tesfay@gmail.com" }}
+        </dd>
+      </div>
+
+      {% if data['ni-number-entered'] == 'yes' %}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">National Insurance number</dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["ni-number-entered"] or "NW123456B" }}
+        </dd>
+      </div>
+      {% else %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Asylum support reference number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["asr-number-entered"] or "98340001A" }}
+        </dd>
+      </div>
+      {% endif %}
+      </dt>
+  </div>
+
+
+  <div>
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Child 1 details
+    </h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action">
+        <a class="govuk-link" href="outcome-eligible-childs-age.html">Edit details<span class="govuk-visually-hidden">
+            Child 1 details</span></a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["ch1-first-name"] or "Mia" }} {{ data["ch1-surname"] or data["parent-surname"] or "Evans" }}
+
+        </dd>
+
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["dob-day"] or "12" }} {{ data["dob-month"] or "06" }} {{ data["dob-year"] or "2020" }}        </dd>
+      </div>
+
+      {% if data['child-2'] == 'Yes' %}
+
+      {% endif %}
+    </dl>
+  </div>
+</div>
+
+<h2 class="govuk-heading-l">Confirm and add children details</h2>
+
+<p class="govuk-body">By submitting this information, you confirm that, to the best of your knowledge, the details are
+  correct.</p>
+
+
+<form action="eligible" method="post" novalidate>
+
+  <input type="hidden" name="answers-checked" value="true">
+
+  <div class="govuk-!-padding-bottom-2"></div>
+
+  {{ govukButton({
+  text: "Save details",
+  classes: "govuk-button--primary",
+  href: '../apply/confirmation-entitled.html'
+  }) }}
+
+
+</form>
+
+</div>
+</div>
+
+{% endblock %}
