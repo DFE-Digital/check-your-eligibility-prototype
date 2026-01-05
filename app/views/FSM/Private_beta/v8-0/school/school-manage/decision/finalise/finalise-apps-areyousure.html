@@ -1,0 +1,42 @@
+{% extends "layouts/FSM/v7-4/layout-dfe-schoolnav.html" %}
+{% set pageName="Finalise these applications?" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-heading-l">{{pageName}}</p>
+
+      {{ govukWarningText({
+        text: "Applications should only be finalised after you've added the details to your own system.",
+        iconFallbackText: "Warning"
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+      <div class="govuk-form-group">
+      </div>
+    </div>
+  </div>
+
+
+<div class="govuk-button-group">
+{{ govukButton({
+  text: "Yes, finalise now",
+  href: 'eligibility-confirmed'
+}) }}
+
+{{ govukButton({
+  text: "No, return to table",
+  classes: "govuk-button--secondary",
+  href: 'applications'
+}) }}
+
+<div class="govuk-!-padding-bottom-3"></div>
+  </div>
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}
