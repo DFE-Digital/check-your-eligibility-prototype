@@ -20,7 +20,7 @@
 
     <h1 class="govuk-heading-l">View eligibility code history</h1>
 
-     <form class="form" action="/childcare/v8/reports/i/event-history/event-history" method="post" novalidate>
+     <form class="form" action="/childcare/v8/reports/event-history/event-history" method="post" novalidate>
 
           {% call govukFieldset({
 
@@ -42,35 +42,7 @@
               name: "30h-code"
             }) }}
 
-            {{ govukInput({
-              classes: "govuk-!-width-one-third",
-              label: {
-                text: "National Insurance number",
-                classes: "govuk-fieldset__legend--m"
-              },
-              hint: {
-                text: "Can be for a parent, guardian or partner. For example, ‘QQ 12 34 56 C’"
-              },
-              id: "ni-number",
-              name: "ni-number"
-            }) }}
-
-            {{ govukDateInput({
-
-              id: "dob",
-              namePrefix: "dob",
-
-              fieldset: {
-                legend: {
-                  text: "Child date of birth",
-                  isPageHeading: false,
-                  classes: "govuk-fieldset__legend--m"
-                }
-              },
-              hint: {
-                text: "For example, 27 3 1980"
-              }
-            }) }}
+            
 
 
 
