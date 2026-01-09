@@ -1,0 +1,75 @@
+{% extends "/layouts/childcare/dev/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Code dates
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+    <div class="govuk-grid-row">
+
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">Eligibility code dates</h1>
+
+        <p>Based on the application submitted on date, we have applied the following dates.</p>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Eligibility confirmed on
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ "today" | govukDate }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Code valid from
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Spring term 2026 (starts 1 January 2026)
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Reconfirm by
+            </dt>
+            <dd class="govuk-summary-list__value">
+              19 February 2026
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Grace period ends
+            </dt>
+            <dd class="govuk-summary-list__value">
+              31 August 2026
+            </dd>
+          </div>
+        </dl>
+
+
+          {{ govukButton({
+            text: "Continue",
+            href: "/childcare/dev/foster/create/check-details"
+          }) }}
+
+
+      </div>
+
+    </div>
+
+
+
+{% endblock %}

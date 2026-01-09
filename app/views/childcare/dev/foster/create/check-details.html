@@ -151,7 +151,7 @@
             </h2>
             <ul class="govuk-summary-card__actions">
               <li class="govuk-summary-card__action">
-                <a class="govuk-link" href="/childcare/dev/foster/create/dates">Change<span class="govuk-visually-hidden">eligibility</span></a>
+                <a class="govuk-link" href="/childcare/dev/foster/create/submitted-date">Change<span class="govuk-visually-hidden">eligibility</span></a>
               </li>
             </ul>
           </div>
@@ -165,12 +165,36 @@
                   {{ "today" | govukDate }}
                 </dd>
               </div>
-              <div class="govuk-summary-list__row">
+               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   Eligibility confirmed on
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ "today" | govukDate }}
+                   {{ "today" | govukDate }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Code valid from
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Spring term 2026 (starts 1 January 2026)
+                </dd>
+              </div>
+               <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Reconfirm by
+                </dt>
+                <dd class="govuk-summary-list__value">
+                   19 February 2026
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Grace period ends
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  31 August 2026
                 </dd>
               </div>
             </dl>
