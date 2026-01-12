@@ -1,12 +1,22 @@
 
 
-<div class="govuk-grid-row govuk-!-margin-bottom-2" style="justify-content: flex-end;">
+<!-- <div class="govuk-grid-row govuk-!-margin-bottom-2" style="justify-content: flex-end;">
   <div class="govuk-grid-column-full" style="display: flex; align-items: center; justify-content: flex-end;">
     <button id="toggle-filters-btn" type="button" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" aria-expanded="true">
       Hide filters
     </button>
   </div>
-</div>
+</div> -->
+
+<button
+  id="toggle-filters-btn"
+  type="button"
+  class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0"
+  aria-expanded="true"
+  aria-controls="filter-wrapper">
+  Hide filters
+</button>
+
 
 
 <div id="filter-wrapper" class="govuk-!-margin-bottom-3 govuk-!-padding-4" style="border: 2px solid #b1b4b6; background: #eaeaea;">
@@ -14,14 +24,13 @@
 
 
 
-
-      <!-- Phase of education -->
+      <!-- Search -->
       <div class="govuk-grid-column-one-quarter" style="padding-left: 5px; padding-right: 5px;">
         <div class="govuk-form-group" style="background: white; padding: 15px; min-height: 260px;">
           <fieldset class="govuk-fieldset">
             <div class="govuk-form-group">
             <label class="govuk-label govuk-label--s" for="application">Find an application</label>
-          <span id="application-hint" class="govuk-hint govuk-hint--s">For example 44455453 or a parent name</span>
+          <span id="application-hint" class="govuk-hint govuk-hint--s">For example 44455453 or child or parent name</span>
 
             <input class="govuk-input" id="application" name="application" type="text">
           </div>
@@ -44,43 +53,28 @@
           </fieldset>
         </div>
       </div>
-          <!-- Search bar -->
-    <div class="govuk-grid-column-one-quarter" style="padding-left: 5px; padding-right: 5px;">
+          <!-- Status -->
+  <div class="govuk-grid-column-one-quarter" style="padding-left: 5px; padding-right: 5px;">
         <div class="govuk-form-group" style="background: white; padding: 15px; min-height: 260px;">
-            <fieldset class="govuk-fieldset" aria-describedby="number-of-records-hint">
-                <div class="govuk-form-group">
-                    <label class="govuk-label govuk-label--s" for="number-of-records">Number of records</label>
-                    <span id="number-of-records-hint" class="govuk-hint govuk-hint--s">Selects the number of records in reference number order</span>
-                    <input class="govuk-input govuk-input--width-5" id="number-of-records" name="number-of-records" type="number" inputmode="numeric" min="0" aria-describedby="number-of-records-hint">
-                </div>
-            </fieldset>
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Status of recheck</legend>
+            <p class="govuk-hint govuk-hint--s">Select option</p>
+            <div class="govuk-checkboxes govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="status-pending" name="status" type="checkbox" value="Pending">
+                <label class="govuk-label govuk-checkboxes__label" for="status-checking">Checking</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="phase-nursery" name="phase" type="checkbox" value="Nursery">
+                <label class="govuk-label govuk-checkboxes__label" for="phase-recheck">Recheck</label>
+              </div>
+              </div>
+              </fieldset>
         </div>
-    </div>
+
+</div>
 
 
-      <!-- Phase of education -->
-   <!-- <div class="govuk-grid-column-one-quarter" style="padding-left: 5px; padding-right: 5px;">
-        <div class="govuk-form-group" style="background: white; padding: 15px; min-height: 260px;">
-   <fieldset class="govuk-fieldset">
-  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Status of application</legend>
-  <p class="govuk-hint govuk-hint--s">Select all that apply</p>
-  <div class="govuk-checkboxes">
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="status-recheck"   name="status" type="checkbox" value="Recheck">
-      <label class="govuk-label govuk-checkboxes__label" for="status-ready">Recheck</label>
-    </div>
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="status-checking" name="status" type="checkbox" value="Checking">
-      <label class="govuk-label govuk-checkboxes__label" for="status-checking">Checking</label>
-    </div> -->
-    <!-- <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="status-noteligible" name="status" type="checkbox" value="Not eligible recheck">
-      <label class="govuk-label govuk-checkboxes__label" for="status-noteligible">Not eligible recheck</label>
-    </div>
-  </div>
-</fieldset>
-        </div>
-      </div>-->
       <!-- Phase of education -->
       <div class="govuk-grid-column-one-quarter" style="padding-left: 5px; padding-right: 5px;">
         <div class="govuk-form-group" style="background: white; padding: 15px; min-height: 260px;">
@@ -97,10 +91,10 @@
                 <input class="govuk-checkboxes__input" id="phase-primary" name="phase" type="checkbox" value="Primary">
                 <label class="govuk-label govuk-checkboxes__label" for="phase-primary">Primary</label>
               </div>
-              <!-- <div class="govuk-checkboxes__item">
+              <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="phase-junior" name="phase" type="checkbox" value="Junior">
-                <label class="govuk-label govuk-checkboxes__label" for="phase-junior">11-14 yrs Junior</label>
-              </div> -->
+                <label class="govuk-label govuk-checkboxes__label" for="phase-junior">Junior/ Middle</label>
+              </div>
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="phase-secondary" name="phase" type="checkbox" value="Secondary">
                 <label class="govuk-label govuk-checkboxes__label" for="phase-secondary">Secondary</label>
@@ -129,3 +123,83 @@
 
   </div>
 </div>
+
+
+<script>
+const toggleBtn = document.getElementById('toggle-filters-btn');
+const filterWrapper = document.getElementById('filter-wrapper');
+
+function updateToggleButton() {
+  const isHidden = filterWrapper.classList.contains('hidden');
+
+  toggleBtn.textContent = isHidden ? 'Show filters' : 'Hide filters';
+  toggleBtn.setAttribute('aria-expanded', String(!isHidden));
+}
+
+toggleBtn.addEventListener('click', function () {
+  filterWrapper.classList.toggle('hidden');
+  updateToggleButton();
+});
+
+// Run once on page load (important)
+updateToggleButton();
+
+const appliedFiltersEl = document.getElementById('applied-filters');
+const appliedFiltersList = document.getElementById('applied-filters-list');
+
+function getAppliedFilters() {
+  const filters = [];
+
+  const application = document.getElementById('application').value.trim();
+  if (application) {
+    filters.push({ key: 'application', label: application });
+  }
+
+  const school = document.getElementById('school').value.trim();
+  if (school) {
+    filters.push({ key: 'school', label: school });
+  }
+
+  document.querySelectorAll('input[name="phase"]:checked').forEach(cb => {
+    // Use the label text (nicer than raw value)
+    const label = document.querySelector(`label[for="${cb.id}"]`)?.textContent?.trim() || cb.value;
+    filters.push({ key: 'phase', id: cb.id, label });
+  });
+
+  return filters;
+}
+
+function clearFilter(filter) {
+  if (filter.key === 'application') document.getElementById('application').value = '';
+  if (filter.key === 'school') document.getElementById('school').value = '';
+  if (filter.key === 'phase' && filter.id) document.getElementById(filter.id).checked = false;
+
+  // Run whatever you already use to re-filter rows:
+  // e.g. applyFilters(); or your existing handler logic
+  document.getElementById('apply-filters').click();
+}
+
+function renderAppliedFilters() {
+  const filters = getAppliedFilters();
+
+  // Hide summary if nothing applied
+  appliedFiltersEl.hidden = filters.length === 0;
+  appliedFiltersList.innerHTML = '';
+
+  filters.forEach(f => {
+    const li = document.createElement('li');
+    li.className = 'govuk-!-margin-right-1';
+
+    li.innerHTML = `
+      <span class="filter-tag">
+        ${f.label}
+        <button type="button" class="filter-tag__remove" aria-label="Remove filter: ${f.label}">×</button>
+      </span>
+    `;
+
+    li.querySelector('button').addEventListener('click', () => clearFilter(f));
+    appliedFiltersList.appendChild(li);
+  });
+}
+
+</script>

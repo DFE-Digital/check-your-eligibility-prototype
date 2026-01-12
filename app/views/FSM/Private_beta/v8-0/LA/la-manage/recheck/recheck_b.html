@@ -38,6 +38,7 @@
 
       {% include "_includes/la/v8-0/recheck-filter.html" %}
 
+
       <div class="govuk-!-margin-bottom-3">
         <div class="govuk-button-group">
           <a href="recheck-checking-loader" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
@@ -208,17 +209,17 @@
     }
 
     // ---------- Init ----------
+    // ---------- Init ----------
     function init() {
+      // start with everything visible to filtering logic
       rows.forEach(r => r.classList.add('matches-filters'));
-      paginate(1);
 
+      // bind buttons
       els.applyBtn?.addEventListener('click', applyFilters);
       els.clearLink?.addEventListener('click', clearFilters);
 
-      // init toggle UI from current DOM and bind click
-      const initiallyOpen = !(els.wrapper && els.wrapper.style.display === 'none');
-      setToggleUI(initiallyOpen);
-      els.toggleBtn?.addEventListener('click', toggleFilters);
+      // first render
+      paginate(1);
     }
 
     if (document.readyState === 'loading') {
@@ -226,6 +227,8 @@
     } else {
       init();
     }
+
+
   })();
 </script>
 
