@@ -1,7 +1,7 @@
-{% extends "/layouts/childcare/v8/layout-childcare.html" %}
+{% extends "/layouts/support/v3/layout-support.html" %}
 
 {% block pageTitle %}
-  Edit the partner details
+  Edit the carer details
 {% endblock %}
 
 {% block beforeContent %}
@@ -19,9 +19,9 @@
 
       <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-l">Edit the partner details</h1>
+        <h1 class="govuk-heading-l">Edit the parent, guardian or carer details</h1>
 
-        <form class="form" action="/childcare/v8/foster/family/saved?edit-type=partner" method="post" novalidate>
+        <form class="form" action="/support/v3/corrections/check-carer-details?edit-type=parent, guardian or carer" method="post" novalidate>
 
           {% call govukFieldset({
 
@@ -34,10 +34,10 @@
                 text: "First name",
                 classes: "govuk-label--m"
               },
-              id: "partner-first-name",
-              name: "partner-first-name",
+              id: "carer-first-name",
+              name: "carer-first-name",
               classes: "govuk-input--width-20",
-              value: "Ajay"
+              value: "Archana"
 
             }) }}
 
@@ -46,15 +46,16 @@
                 text: "Last name",
                 classes: "govuk-label--m"
               },
-              id: "partner-last-name",
-              name: "partner-last-name",
+              id: "carer-last-name",
+              name: "carer-last-name",
               classes: "govuk-input--width-20",
               value: "Mistry"
+
             }) }}
 
             {{ govukDateInput({
-              id: "partner-dob",
-              namePrefix: "partner-dob",
+              id: "carer-dob",
+              namePrefix: "carer-dob",
               fieldset: {
                 legend: {
                   text: "Date of birth",
@@ -69,21 +70,20 @@
                 {
                   name: "day",
                   classes: "govuk-input--width-2",
-                  value: "27"
+                  value: "10"
                 },
                 {
                   name: "month",
                   classes: "govuk-input--width-2",
-                  value: "09"
+                  value: "04"
                 },
                 {
                   name: "year",
                   classes: "govuk-input--width-4",
-                  value: "1982"
+                  value: "1984"
                 }
               ]
             }) }}
-
 
 
             {{ govukInput({
@@ -95,10 +95,13 @@
               hint: {
                 text: "For example, ‘QQ 12 34 56 C’"
               },
-              id: "partner-ni-number",
-              name: "partner-ni-number",
-              value: "PB458673A"
+              id: "carer-ni-number",
+              name: "carer-ni-number",
+              value: "PB123456C"
             }) }}
+
+
+
 
 
 
@@ -107,7 +110,7 @@
           {% endcall %}
 
            <div class="govuk-inset-text">
-           After an eligibility code has been issued, you can correct mistakes to a partner’s name, date of birth or National Insurance number. If the carer’s partner changes, you should remove the partner and add a new one. You cannot swap the identity of a partner to that of the carer.
+            After an eligibility code has been issued, you can correct mistakes to a carer’s name, date of birth or National Insurance number. You cannot change or swap the identity of a carer to that of a different person.
           </div>
 
 
@@ -115,7 +118,7 @@
           {% from "govuk/components/button/macro.njk" import govukButton %}
 
           {{ govukButton({
-            text: "Save"
+            text: "Continue"
           }) }}
 
 

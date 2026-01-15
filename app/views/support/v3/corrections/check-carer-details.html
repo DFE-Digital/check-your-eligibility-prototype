@@ -1,0 +1,80 @@
+{% extends "/layouts/support/v3/layout-support.html" %}
+
+{% block pageTitle %}
+  Check details
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">Check details</h1>
+
+
+
+         <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              Parent, guardian or carer
+            </h2>
+            <ul class="govuk-summary-card__actions">
+              <li class="govuk-summary-card__action">
+                <a class="govuk-link" href="/support/v3/corrections/carer-details">Change<span class="govuk-visually-hidden">Carer details</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Full name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data["carer-first-name"] or "Archana" }} {{ data["carer-last-name"] or "Mistry" }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date of birth
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data["carer-dob-day"] or "10" }} {{ data["carer-dob-month"] or "April" }} {{ data["carer-dob-year"] or "1984" }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  National Insurance number
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data["carer-ni-number"] or "PB123456C" }}
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+
+
+
+          {{ govukButton({
+          text: "Save changes",
+          href: "/support/v3/corrections/code?change=saved"
+        }) }}
+
+      </div>
+    </div>
+
+
+
+{% endblock %}

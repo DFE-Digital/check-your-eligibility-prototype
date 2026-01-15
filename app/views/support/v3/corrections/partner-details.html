@@ -1,4 +1,4 @@
-{% extends "/layouts/childcare/v8/layout-childcare.html" %}
+{% extends "/layouts/support/v3/layout-support.html" %}
 
 {% block pageTitle %}
   Edit the partner details
@@ -21,7 +21,7 @@
 
         <h1 class="govuk-heading-l">Edit the partner details</h1>
 
-        <form class="form" action="/childcare/v8/foster/family/saved?edit-type=partner" method="post" novalidate>
+        <form class="form" action="/support/v3/corrections/check-partner-details?edit-type=partner" method="post" novalidate>
 
           {% call govukFieldset({
 
@@ -115,7 +115,7 @@
           {% from "govuk/components/button/macro.njk" import govukButton %}
 
           {{ govukButton({
-            text: "Save"
+            text: "Continue"
           }) }}
 
 

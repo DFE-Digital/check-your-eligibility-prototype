@@ -1,7 +1,7 @@
 {% extends "/layouts/childcare/v8/layout-childcare.html" %}
 
 {% block pageTitle %}
- Code cannot be used yet
+Code is valid
 {% endblock %}
 
 
@@ -10,15 +10,15 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7" style="background:#1d70b8;">
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
       <h1 class="govuk-panel__title">
-        Code cannot be used yet
+        Temporary code valid
       </h1>
       <div class="govuk-panel__body govuk-!-margin-bottom-5">
-        Valid from summer term 2026
+        Valid for spring term 2026 and summer term 2026
       </div>
-      <!--  <p class="govuk-body-l govuk-!-margin-bottom-0" style="color:white;">Needs reconfirming before 8 December 2025</p>-->
-      </div>
+      <!--  <p class="govuk-body-l govuk-!-margin-bottom-0" style="color:white;">Needs reconfirming before 5 January 2026</p> -->
+    </div>
 
     <h2 class="govuk-heading-m">Details checked</h2>
 
@@ -44,7 +44,7 @@
           Child date of birth
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["dob-day"] or "9" }} {{ data["dob-month"] or "March" }} {{ data["dob-year"] or "2024" }}
+           {{ data["dob-day"] or "26" }} {{ data["dob-month"] or "May" }} {{ data["dob-year"] or "2024" }}
         </dd>
       </div>
 
@@ -59,15 +59,15 @@
           Eligibility confirmed on
         </dt>
         <dd class="govuk-summary-list__value">
-          3 January 2026
+          28 December 2025
         </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Reconfirm between
+          Apply for a new code by
         </dt>
         <dd class="govuk-summary-list__value">
-          7 March 2026 and 4 April 2026
+          3 April 2026
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -75,7 +75,7 @@
           Grace period ends
         </dt>
         <dd class="govuk-summary-list__value">
-          Date will appear here when the code can be used
+          31 August 2026
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -83,8 +83,8 @@
           Reconfirmation status
         </dt>
         <dd class="govuk-summary-list__value">
-          <strong class="govuk-tag govuk-tag--green" style="max-width:100%;">
-            Not due yet
+          <strong class="govuk-tag govuk-tag--grey" style="max-width:100%;">
+            Not applicable
           </strong>
         </dd>
       </div>
@@ -108,7 +108,6 @@
     <h2 class="govuk-heading-m">Guidance</h2>
 
     <p class="govuk-body">View <a href="/childcare/v8/guidance/30h-outcomes">guidance for childcare for working families</a>.</p>
-
 
   </div>
 

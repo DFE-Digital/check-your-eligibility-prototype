@@ -26,7 +26,7 @@
       </div>
       <div class="govuk-notification-banner__content">
             <h3 class="govuk-notification-banner__heading">
-              Changes to child saved
+              Changes to {{ data['edit-type'] }} saved
             </h3>
              <p class="govuk-body">Local authorities will now be able to validate the code against the changed information.</p>
 
@@ -37,7 +37,9 @@
 
     {% endif %}
 
-    <h1 class="govuk-heading-l">Eligibility code 50123456789</h1>
+    <h1 class="govuk-heading-l">Personal details for eligibility code 50123456789</h1>
+
+    <!--
 
       <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
@@ -91,46 +93,9 @@
       </div>
     </div>
 
-      <div class="govuk-summary-card">
-      <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">
-          Child
-        </h2>
-        <ul class="govuk-summary-card__actions">
-          <li class="govuk-summary-card__action">
-            <a class="govuk-link" href="/support/v3/corrections/child-details">Change<span class="govuk-visually-hidden">Carer details</span></a>
-          </li>
-        </ul>
-      </div>
-      <div class="govuk-summary-card__content">
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Full name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Jasper Hayes
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Date of birth
-            </dt>
-            <dd class="govuk-summary-list__value">
-              10 October 2021
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Postcode
-            </dt>
-            <dd class="govuk-summary-list__value">
-              M20 7GF
-            </dd>
-          </div>
-        </dl>
-      </div>
-    </div>
+     -->
+
+
 
 
      <div class="govuk-summary-card">
@@ -140,7 +105,7 @@
         </h2>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action">
-            <a class="govuk-link" href="">Change<span class="govuk-visually-hidden">Carer details</span></a>
+            <a class="govuk-link" href="/support/v3/corrections/carer-details">Change<span class="govuk-visually-hidden">Carer details</span></a>
           </li>
         </ul>
       </div>
@@ -181,7 +146,7 @@
         </h2>
          <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action">
-            <a class="govuk-link" href="">Change<span class="govuk-visually-hidden">Carer details</span></a>
+            <a class="govuk-link" href="/support/v3/corrections/partner-details">Change<span class="govuk-visually-hidden">partner details</span></a>
           </li>
         </ul>
       </div>
@@ -209,6 +174,47 @@
             </dt>
             <dd class="govuk-summary-list__value">
               PB458673A
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">
+          Child
+        </h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action">
+            <a class="govuk-link" href="/support/v3/corrections/child-details">Change<span class="govuk-visually-hidden">Carer details</span></a>
+          </li>
+        </ul>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Full name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Jasper Hayes
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              10 October 2021
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Postcode
+            </dt>
+            <dd class="govuk-summary-list__value">
+              M20 7GF
             </dd>
           </div>
         </dl>
