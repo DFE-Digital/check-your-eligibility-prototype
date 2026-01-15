@@ -19,7 +19,7 @@
 
       <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-l">Enter reasons</h1>
+        <h1 class="govuk-heading-l">Enter reasons for the change</h1>
 
 
         <form class="form" action="/support/v3/corrections/check-details" method="post" novalidate>
@@ -32,8 +32,11 @@
 
             {{ govukInput({
               label: {
-                text: "Ticket reference",
+                text: "Customer Interaction Reference (CI)",
                 classes: "govuk-label--m"
+              },
+              hint: {
+                  text: "The reference number in the CRM"
               },
               id: "ticket",
               name: "ticket",
@@ -43,8 +46,11 @@
 
             {{ govukInput({
               label: {
-                text: "Requestor",
+                text: "Who requested the change?",
                 classes: "govuk-label--m"
+              },
+               hint: {
+                  text: "For example, HMRC or Lewisham Council"
               },
               id: "requestor",
               name: "requestor",

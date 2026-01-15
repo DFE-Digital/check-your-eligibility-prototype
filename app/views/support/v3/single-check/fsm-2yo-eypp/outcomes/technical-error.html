@@ -1,0 +1,60 @@
+{% extends "/layouts/support/v3/layout-support.html" %}
+
+{% block pageTitle %}
+  Check failed
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h1 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Check failed
+        </h1>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">There's been a technical error.</p>
+        <p><a href="/support/v3/single-check/fsm-2yo-eypp/enter-details">Try again later</a>, ensuring you've entered the parent or guardian details accurately.</p>
+      </div>
+    </div>
+
+    <h2 class="govuk-heading-m">Parent or guardian details</h2>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Last name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["last-name"] or "Jenkins" }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["dob-day"] or "10" }} {{ data["dob-month"] or "April" }} {{ data["dob-year"] or "1984" }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          National Insurance number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["ni-number-entered"] or "PB123456C" }}
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-8">If the check keeps failing</h2>
+    <p>Contact the <a href="">??</a>.</p>
+
+  </div>
+</div>
+
+{% endblock %}
