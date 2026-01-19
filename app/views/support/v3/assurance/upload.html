@@ -1,4 +1,4 @@
-{% extends "/layouts/childcare/v8/layout-childcare.html" %}
+{% extends "/layouts/support/v3/layout-internal.html" %}
 
 {% block pageTitle %}
   Run a batch check for multiple eligibility codes
@@ -16,9 +16,8 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <span class="govuk-caption-l">Childcare for working families</span>
 
-    <h1 class="govuk-heading-l">Run a batch check</h1>
+    <h1 class="govuk-heading-l">Run a check on </h1>
 
     <ol class="govuk-list govuk-list--number">
       <li>Download the <a href="/public/csv/childcare/research/30h-batch-template.csv">batch check template (CSV, 0.13KB)</a>.</li>
@@ -58,9 +57,9 @@
     {% from "govuk/components/button/macro.njk" import govukButton %}
 
     {{ govukButton({
-      text: "Run check",
+      text: "Continue",
       classes: "govuk-button--primary",
-      href: '/childcare/v8/batch-check/submitted-not-started'
+      href: '/support/v3/assurance/assurance'
     }) }}
 
   </div>
