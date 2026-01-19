@@ -1,0 +1,74 @@
+{% extends "/layouts/support/v3/layout-internal.html" %}
+
+{% block pageTitle %}
+  Enter the details of the parent or guardian
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" action="/support/v3/assurance/upload" method="post" novalidate>
+
+
+           {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+          {{ govukRadios({
+            classes: "govuk-radios",
+            name: "add-partner",
+            fieldset: {
+              legend: {
+                text: "Select a term to check code validity for",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            hint: {
+              text: "Some sort of hint"
+            },
+            items: [
+              {
+                value: "spring term 2026",
+                text: "Spring term 2026 (1 January 2026 to present)"
+              },
+              {
+                value: "autumn term 2025",
+                text: "Autumn term 2025 (1 September 2025 to 31 December 2025)"
+              },
+              {
+                value: "summer term 2025",
+                text: "Summer term 2025 (1 April 2025 to 31 August 2025)"
+              }
+            ]
+          }) }}
+
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+
+        </form>
+
+
+
+      </div>
+
+    </div>
+
+
+
+{% endblock %}

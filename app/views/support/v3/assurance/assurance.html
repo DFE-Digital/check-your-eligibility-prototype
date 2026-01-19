@@ -1,0 +1,78 @@
+{% extends "/layouts/support/v3/layout-internal.html" %}
+
+{% block pageTitle %}
+  Manage temporary codes
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+
+    <h1 class="govuk-heading-l">Check whether codes were valid in a previous term</h1>
+
+      {{ govukButton({
+            text: "Run new report",
+            href: "/support/v3/assurance/select-term"
+          }) }}
+
+
+     <table class="govuk-table govuk-table--small-text-until-tablet">
+      <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-4">Showing 3 reports in the last 7 days</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Filename</th>
+          <th scope="col" class="govuk-table__header">Term checked</th>
+          <th scope="col" class="govuk-table__header">Date submitted</th>
+          <th scope="col" class="govuk-table__header">Submitted by</th>
+          <th scope="col" class="govuk-table__header">Status</th>
+          <th scope="col" class="govuk-table__header">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+         <tr class="govuk-table__row">
+          <td class="govuk-table__cell">WF-Sep-25.csv</td>
+          <td class="govuk-table__cell">Autumn term 2025</td>
+          <td class="govuk-table__cell">{{ "today" | govukDate }} {{ "now" | govukTime }}</td>
+          <td class="govuk-table__cell">Sally Smith</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Not started</strong></td>
+          <td class="govuk-table__cell"></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">2yearsSep25.csv</td>
+          <td class="govuk-table__cell">Spring term 2026</td>
+          <td class="govuk-table__cell">{{ dateSubmitted | duration(7, 'days') | govukDate }} 4.12pm</td>
+          <td class="govuk-table__cell">Janet Eccles</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">In progress</strong></td>
+          <td class="govuk-table__cell"></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">EYPP.csv</td>
+          <td class="govuk-table__cell">Summer term 2025</td>
+          <td class="govuk-table__cell">{{ dateSubmitted | duration(7, 'days') | govukDate }} 8.03am</td>
+          <td class="govuk-table__cell">Janet Eccles</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Completed</strong></td>
+          <td class="govuk-table__cell"><a href="">Download results</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="govuk-heading-m">Guidance</h2>
+
+    <p><a href="">Get help with check results</a></p>
+
+
+
+  </div>
+</div>
+
+{% endblock %}

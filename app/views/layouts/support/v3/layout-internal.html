@@ -1,0 +1,71 @@
+{# 1 #}
+{% from 'node_modules/dfe-frontend/packages/components/header/macro.njk' import header %}
+
+{# 2 #}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% set govukRebrand = true %}
+
+{# 3 #}
+{% block header %}
+
+<header class="govuk-header" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+      <div class="govuk-header__logo">
+        <a href="/support/index-support" class="govuk-header__link govuk-header__link--homepage">
+            <img src="/public/images/department-for-education_white.png" alt="Department for Education" class="govuk-header__logotype">
+        </a>
+      </div>
+      <div class="dfe-header__content" id="content-header">
+        <ul class="dfe-header__action-links govuk-!-margin-top-3">
+            <li>
+                <a href="#" class="govuk-link govuk-link--inverse ">Sign out</a>
+            </li>
+        </ul>
+      </div>
+  </div>
+</header>
+
+
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{{ govukServiceNavigation({
+   rebrand: "true",
+  serviceName: "Eligibility checking engine internal",
+  navigation: [
+    {
+      href: "/support/v3/dashboard-internal",
+      text: "Home"
+    }
+  ]
+}) }}
+
+
+{% endblock %}
+
+
+
+{% block footer %}
+ {{ govukFooter({
+  rebrand: "true",
+   meta: {
+     items: [
+      {
+        href:"/manage-prototype",
+        text:"Manage your prototype"
+      },
+       {
+         href: "/manage-prototype/clear-data",
+         text: "Clear data"
+       }
+     ],
+     visuallyHiddenTitle: "Footer links"
+   }
+ }) }}
+{% endblock %}
+
+{# 4 #}
+{% block scripts %}
+  {{ super() }}
+
+{% endblock %}
