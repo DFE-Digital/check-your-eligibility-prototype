@@ -1,0 +1,47 @@
+{% extends "/layouts/support/dev/layout-support.html" %}
+
+{% block pageTitle %}
+  Import temporary codes
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-l">Import temporary codes</h1>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Filename
+        </dt>
+        <dd class="govuk-summary-list__value">
+          290925 manual eligibility events.xlsm
+        </dd>
+      </div>
+    </dl>
+
+    <p>Local authority users will be able to validate temporary codes after they have been imported.</p>
+
+
+        {{ govukButton({
+            text: "Import codes",
+            href: "/support/dev/temp-code/import-loader"
+          }) }}
+
+
+
+
+  </div>
+</div>
+
+{% endblock %}
