@@ -8,7 +8,24 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <h1 class="govuk-heading-l govuk-!-margin-top-5">
+     {%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
+
+    {{ mojSubNavigation({
+      label: "Sub navigation",
+      items: [
+      {
+        text: "Design and research",
+        href: "/support/index-support",
+        active: true
+      },
+      {
+        text: "Ready for development",
+        href: "/support/index-support-dev"
+      }
+      ]
+    }) }}
+
+    <h1 class="govuk-heading-l">
       Design and research
     </h1>
 

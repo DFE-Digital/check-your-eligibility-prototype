@@ -1,0 +1,211 @@
+{% extends "layouts/support/layout-index-support.html" %}
+{% block pageTitle %}
+  Support prototype
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    {%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
+
+    {{ mojSubNavigation({
+      label: "Sub navigation",
+      items: [
+      {
+        text: "Design and research",
+        href: "/support/index-support"
+
+      },
+      {
+        text: "Ready for development",
+        href: "/support/index-support-dev",
+        active: true
+      }
+      ]
+    }) }}
+
+    <h1 class="govuk-heading-l govuk-!-margin-top-5">
+      Ready for development
+    </h1>
+
+    <!--contents-->
+
+    <p>Contents</p>
+
+    <ul>
+       <li>
+        <a href="#dashboard">Dashboard</a>
+      </li>
+      <li>
+        <a href="#check">Run a check</a>
+      </li>
+      <li>
+        <a href="#reports">Run reports</a>
+      </li>
+      <li>
+        <a href="#temp-codes">Import temporary codes</a>
+      </li>
+       <li>
+        <a href="#error-messages">Error messaging</a>
+      </li>
+    </ul>
+
+       <!--dashboard-->
+
+      <h2 id="dashboard">Dashboard</h2>
+
+      <table class="govuk-table ">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/dashboard">Dashboard</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!--Run a check-->
+
+      <h2 id="check">Run a check</h2>
+
+      <table class="govuk-table ">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/single-check/single">Run a check - select eligibility type</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>EYPP, 2YO and FSM</h3>
+
+      <table class="govuk-table ">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/single-check/fsm-2yo-eypp/enter-details?eligibility-type=Free school meals">Enter details</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/single-check/fsm-2yo-eypp/checking-loader?eligibility-type=Free school meals">Checking loader</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/single-check/fsm-2yo-eypp/outcomes/eligible?eligibility-type=Free school meals">Eligible outcome</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/single-check/fsm-2yo-eypp/outcomes/not-eligible?eligibility-type=Free school meals">Not eligible outcome</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/single-check/fsm-2yo-eypp/outcomes/could-not-find?eligibility-type=Free school meals">Could not find outcome</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/single-check/fsm-2yo-eypp/outcomes/technical-error?eligibility-type=Free school meals">Technical error outcome</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+       <h3>Working families</h3>
+
+      <table class="govuk-table ">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/single-check/30h/enter-details">Enter details</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/single-check/30h/checking-loader">Checking loader</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/single-check/30h/grace-period">Outcome</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+       <!--Run reports-->
+
+      <h2 id="reports">Run reports</h2>
+
+      <h3>Code code history report</h3>
+
+      <table class="govuk-table ">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/event-history/search-code">Search code</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/event-history/search-code">View eligibility code history</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <!--temp codes-->
+
+      <h2 id="temp-codes">Import temporary codes</h2>
+
+      <table class="govuk-table ">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/temp-code/temp-code">Import temporary codes</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/temp-code/upload">Upload file</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/temp-code/password">Enter password</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/temp-code/import">Confirm import</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/temp-code/import-loader">Import loader</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/temp-code/temp-code?temp-code-status=success">Codes successfully imported</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Import temporary codes errors</h3>
+
+       <table class="govuk-table ">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/temp-code/errors/wrong-format">File type error</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/temp-code/errors/password-incorrect">Password incorrect error</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/temp-code/errors/data-error">Data error</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="error-messages">Error messaging</h2>
+
+      <p>TBC</p>
+
+  </div>
+</div>
+
+
+{% endblock %}

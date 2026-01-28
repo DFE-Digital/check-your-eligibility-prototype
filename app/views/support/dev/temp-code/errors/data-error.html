@@ -1,0 +1,70 @@
+{% extends "/layouts/support/dev/layout-support.html" %}
+
+{% block pageTitle %}
+  Fix data errors
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Fix data errors</h1>
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        We cannot import temporary codes as the file you uploaded contains data errors.
+      </strong>
+    </div>
+    <p class="govuk-body">You must:</p>
+    <ol class="govuk-list govuk-list--number">
+      <li>Ask HMRC to fix the errors listed below for each row.</li>
+      <li>Upload the new file HMRC sends.</li>
+
+    </ol>
+
+    <table class="govuk-table" id="errors">
+      <caption class="govuk-table__caption govuk-table__caption--s"></caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Line</th>
+          <th scope="col" class="govuk-table__header">Eligibilty code</th>
+          <th scope="col" class="govuk-table__header">Error</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">3</td>
+          <td class="govuk-table__cell">11987654321</td>
+          <td class="govuk-table__cell">Enter child's date of birth</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">19</td>
+          <td class="govuk-table__cell">11123456789</td>
+          <td class="govuk-table__cell">Enter parent's last name</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">25</td>
+          <td class="govuk-table__cell">11123456800</td>
+          <td class="govuk-table__cell">Eligibility code has already been imported</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+
+  </div>
+</div>
+
+{% endblock %}
