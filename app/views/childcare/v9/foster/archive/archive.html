@@ -1,0 +1,78 @@
+{% extends "/layouts/childcare/v9/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Manage foster families
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+    <h1 class="govuk-heading-l">Archived eligibility codes </h1>
+
+    <p>Eligibility codes are automatically archived when the child turns compulsory school age.</p>
+
+
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Sort by
+          </label>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="child">Child name</option>
+            <option value="status">Code status</option>
+            <option value="code">Eligibility code</option>
+            <option value="reconfirm" selected>Reconfirmation status</option>
+          </select>
+        </div>
+
+
+        <table class="govuk-table govuk-table--small-text-until-tablet">
+          <caption class="govuk-table__caption govuk-table__caption--m"></caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Child name</th>
+              <th scope="col" class="govuk-table__header">Child date of birth</th>
+              <th scope="col" class="govuk-table__header">Eligibility code</th>
+              <th scope="col" class="govuk-table__header">Eligibility confirmed on</th>
+              <th scope="col" class="govuk-table__header">Reconfirm between</th>
+              <th scope="col" class="govuk-table__header">Grace period ends</th>
+              <th scope="col" class="govuk-table__header">Reconfirmation status</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/childcare/v9/foster/family/archived">Laslo Small</a></td>
+              <td class="govuk-table__cell">23 Apr 2023</td>
+              <td class="govuk-table__cell">40678901234</td>
+              <td class="govuk-table__cell">24 Apr 2024</td>
+              <td class="govuk-table__cell">12 Jul 2024 and 12 Aug 2024</td>
+              <td class="govuk-table__cell">31 Aug 2024</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Overdue</strong></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/childcare/v9/foster/family/too-old">Samuel Hill</a></td>
+              <td class="govuk-table__cell">7 May 2018</td>
+              <td class="govuk-table__cell">40678901234</td>
+              <td class="govuk-table__cell">24 Apr 2024</td>
+              <td class="govuk-table__cell">12 Jul 2024 and 12 Aug 2024</td>
+              <td class="govuk-table__cell">31 Aug 2024</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Child too old</strong></td>
+            </tr>
+          </tbody>
+        </table>
+
+
+  </div>
+</div>
+
+{% endblock %}

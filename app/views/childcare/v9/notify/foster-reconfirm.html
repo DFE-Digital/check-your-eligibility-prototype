@@ -1,0 +1,43 @@
+{% extends "/layouts/childcare/v9/layout-childcare-email.html" %}
+{% set subject = "Reconfirm eligibility code 40012345678" %}
+{% set from = "Manage eligibility for childcare support <example@education.gov.uk>" %}
+{% set to = "Calderdale Council <calderdale.tesfay@gmail.com>" %}
+
+{% block pageTitle %}
+ Reconfirm eligibility code for Asher Ellis
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <p>Dear Julia,</p>
+    <p>The eligibility code 40012345678 is now due for reconfirmation.</p>
+
+    <p>The code must be reconfirmed by 3 March 2026.</p>
+
+    <p>If you do not reconfirm by this deadline, the code will enter its grace period.</p>
+
+    <!--
+    <h2 class="govuk-heading-m">How to reconfirm this code</h2>
+
+     <p class="govuk-body">Confirm with the designated person (for example, a social worker) that:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>the foster carer works outside of their foster role</li>
+          <li>providing an eligibility code is consistent with the child's care plan</li>
+        </ul>
+
+    -->
+
+
+     <p><a href="">Sign in</a> to Manage eligibility for childcare support to reconfirm the code.</p>
+
+    <p>From Department for Education</p>
+
+
+  </div>
+</div>
+
+{% endblock %}

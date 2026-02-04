@@ -1,0 +1,55 @@
+{% extends "/layouts/childcare/v9/layout-childcare-logged-out.html" %}
+
+{% block pageTitle %}
+ Manage eligibility for childcare support
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <h1 class="govuk-heading-xl">Manage eligibility for childcare support</h1>
+
+    <p>Local authorities can use this service to manage and check eligibility for: </p>
+
+    <ul>
+      <li>early learning for 2-year-olds </li>
+      <li>early years pupil premium </li>
+    </ul>
+
+    <p>You can run batch checks and checks for one parent or guardian.</p>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Sign in",
+      href: "/childcare/v9/dashboard",
+      isStartButton: true
+    }) }}
+
+    <h2 class="govuk-heading-m">Before you start</h2>
+
+    <p>You'll need a <a href="">DfE Sign-in account</a> to use this service.  </p>
+
+    <h3>Childcare for working families </h3>
+
+    <p>We will be adding childcare for working families to this new service. Until then, use the Eligibility Checking System (ECS) to check eligibility for childcare for working families. </p>
+
+  </div>
+
+  <div class="govuk-grid-column-one-quarter" style="border-top: 10px solid #1d70b8;">
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-4">Help and support</h2>
+
+      <p>Use the <a href="">Customer Help Portal</a> to contact us and get help. Visit the <a href="">Knowledge Hub</a> to connect with colleagues at organisations using this service. </p>
+
+      <h2 class="govuk-heading-m">Related content </h2>
+
+      <p><a href="/FSM/Private_beta/v9-0/start">Manage eligibility for free school meals</a></p>
+
+
+  </div>
+</div>
+
+{% endblock %}

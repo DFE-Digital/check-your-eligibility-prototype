@@ -1,0 +1,70 @@
+{% extends "/layouts/childcare/v9/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Run a batch check for multiple eligibility codes
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-l">{{ data['eligibility-type'] }}</span>
+
+    <h1 class="govuk-heading-l">Run a batch check</h1>
+
+    <ol class="govuk-list govuk-list--number">
+      <li>Download the <a href="/public/csv/childcare/research/eypp-2yo-batch-template-ref.csv">batch check template (CSV, 0.13KB)</a>.</li>
+      <li>Add the details of the {{ data['check-type'] }} you need to check.</li>
+     <li> Save it as a CSV file.</li>
+    </ol>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        Your saved file must match the template fields and contain fewer than 5000 rows.
+      </strong>
+    </div>
+
+    <p>For each parent or guardian you need to check, you must include their:</p>
+
+    <ul>
+      <li>last name</li>
+      <li>date of birth (format DD/MM/YYYY or YYYY-MM-DD)</li>
+      <li>National Insurance number</li>
+    </ul>
+
+    <p>There is also an optional 'Reference' column where you can add reference numbers from your management system.</p>
+
+    {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+    {{ govukFileUpload({
+      id: "cc-batch-upload",
+      name: "cc-batch-upload",
+      label: {
+        classes: "govuk-label--m",
+        text: "Upload a file"
+      },
+      javascript: true
+    }) }}
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Run check",
+      classes: "govuk-button--primary",
+      href: '/childcare/v9/batch-check/submitted-not-started'
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}

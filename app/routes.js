@@ -281,6 +281,23 @@ else {
 })
 
 
+// Childcare v9
+
+// Route for create foster family add partner details
+
+router.post('/childcare/v9/foster/create/partner-details', function(req, res) {
+
+var carerPartner = req.session.data['add-partner']
+if (carerPartner == "Yes"){
+    res.redirect("/childcare/v9/foster/create/partner-details")
+}
+
+else {
+    res.redirect("/childcare/v9/foster/create/submitted-date")
+}
+})
+
+
 // Childcare dev ready
 
 // Route for create foster family add partner details

@@ -1,0 +1,230 @@
+{% extends "/layouts/childcare/v9/layout-childcare.html" %}
+
+{% block pageTitle %}
+ Cross-local authority checks
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-l">Cross-local authority checks</h1>
+
+    <p class="">Last updated on {{ "today" | govukDate }} {{ "now" | govukTime }}</p>
+
+    <hr class="govuk-section-break govuk-section-break--m">
+
+    <h2 class="govuk-heading-m">Codes in your local authority postcode area checked by other local authorities</h2>
+
+    <dl class="govuk-summary-list govuk-!-width-two-thirds">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Spring term 2026
+        </dt>
+        <dd class="govuk-summary-list__value">
+          39
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Autumn term 2025
+        </dt>
+        <dd class="govuk-summary-list__value">
+          76
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Summer term 2025
+        </dt>
+        <dd class="govuk-summary-list__value">
+          98
+        </dd>
+      </div>
+    </dl>
+
+    <p><a href="/public/csv/childcare/research/other-la-in-your-postcode-area.csv">Download as csv</a></p>
+
+    <hr class="govuk-section-break govuk-section-break--l">
+
+
+    <h2 class="govuk-heading-m">Codes in other local authority postcode areas checked by your local authority</h2>
+
+    <dl class="govuk-summary-list govuk-!-width-two-thirds">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Spring term 2026
+        </dt>
+        <dd class="govuk-summary-list__value">
+          59
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Autumn term 2025
+        </dt>
+        <dd class="govuk-summary-list__value">
+          122
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Summer term 2025
+        </dt>
+        <dd class="govuk-summary-list__value">
+          95
+        </dd>
+      </div>
+    </dl>
+
+    <p><a href="/public/csv/childcare/research/your-la-in-other-postcode-area.csv">Download as csv</a></p>
+
+    <hr class="govuk-section-break govuk-section-break--l">
+
+
+     <h2 class="govuk-heading-m">Codes checked by both your local authority and another local authority</h2>
+
+    <dl class="govuk-summary-list govuk-!-width-two-thirds">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Spring term 2026
+        </dt>
+        <dd class="govuk-summary-list__value">
+          4
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Autumn term 2025
+        </dt>
+        <dd class="govuk-summary-list__value">
+          9
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Summer term 2025
+        </dt>
+        <dd class="govuk-summary-list__value">
+          7
+        </dd>
+      </div>
+    </dl>
+
+    <p><a href="/public/csv/childcare/research/both-your-la-and-another-la.csv">Download as csv</a></p>
+
+
+
+    <!--
+
+    <p>This report shows codes checked in Spring term 2026 (1 January 2026 to 31 March 2026).</p>
+
+    <p>You can also <a href="">view the previous term, Autumn term 2025</a>.</p>
+
+    <table class="govuk-table govuk-!-margin-bottom-7">
+      <caption class="govuk-table__caption govuk-table__caption--m">Spring term 2026 (to date)</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Check type</th>
+          <th scope="col" class="govuk-table__header">Codes</th>
+          <th scope="col" class="govuk-table__header  ">Action</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Codes in your local authority  postcode area checked by other local authorities</th>
+          <td class="govuk-table__cell">98</td>
+          <td class="govuk-table__cell"><a href="">Download as csv</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Codes in other local authority postcode areas checked by your local authority</th>
+          <td class="govuk-table__cell">120</td>
+          <td class="govuk-table__cell"><a href="">Download as csv</a></td>
+        </tr>
+         <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Codes checked by both your local authority and another local authority</th>
+          <td class="govuk-table__cell">2</td>
+          <td class="govuk-table__cell"><a href="">Download as csv</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+     <table class="govuk-table govuk-!-margin-bottom-7">
+      <caption class="govuk-table__caption govuk-table__caption--m">Autumn term 2025</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Check type</th>
+          <th scope="col" class="govuk-table__header">Codes</th>
+          <th scope="col" class="govuk-table__header  ">Action</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Codes in your local authority  postcode area checked by other local authorities</th>
+          <td class="govuk-table__cell">201</td>
+          <td class="govuk-table__cell"><a href="">Download as csv</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Codes in other local authority postcode areas checked by your local authority</th>
+          <td class="govuk-table__cell">87</td>
+          <td class="govuk-table__cell"><a href="">Download as csv</a></td>
+        </tr>
+         <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Codes checked by both your local authority and another local authority</th>
+          <td class="govuk-table__cell">15</td>
+          <td class="govuk-table__cell"><a href="">Download as csv</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <table class="govuk-table govuk-!-margin-bottom-7">
+      <caption class="govuk-table__caption govuk-table__caption--m">Summer term 2025</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Check type</th>
+          <th scope="col" class="govuk-table__header">Codes</th>
+          <th scope="col" class="govuk-table__header  ">Action</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Codes in your local authority  postcode area checked by other local authorities</th>
+          <td class="govuk-table__cell">167</td>
+          <td class="govuk-table__cell"><a href="">Download as csv</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Codes in other local authority postcode areas checked by your local authority</th>
+          <td class="govuk-table__cell">273</td>
+          <td class="govuk-table__cell"><a href="">Download as csv</a></td>
+        </tr>
+         <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Codes checked by both your local authority and another local authority</th>
+          <td class="govuk-table__cell">9</td>
+          <td class="govuk-table__cell"><a href="">Download as csv</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    -->
+
+  </div>
+
+</div>
+
+
+
+
+{% endblock %}

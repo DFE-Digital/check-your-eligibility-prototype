@@ -1,0 +1,93 @@
+{% extends "/layouts/childcare/v9/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Check details
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">Check details</h1>
+
+
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              Eligibility code dates
+            </h2>
+             <ul class="govuk-summary-card__actions">
+              <li class="govuk-summary-card__action">
+                <a class="govuk-link" href="/childcare/v9/foster/reconfirm/reconfirm-date">Change<span class="govuk-visually-hidden">eligibility</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Eligibility reconfirmed on
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ "today" | govukDate }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Code valid for
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Spring term 2026 and summer term 2026
+                </dd>
+              </div>
+               <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Reconfirm between
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    10 April 2026 and 10 May 2026
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Grace period ends
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  31 August 2026
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        <h2 class="govuk-heading-m">Reconfirm this is consistent with a care plan</h2>
+
+        <p class="govuk-body">By submitting this information, you confirm you have worked with the designated person (for example, a social worker) to establish that:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>the foster carer works outside of their foster role</li>
+          <li>providing an eligibility code is consistent with the child's care plan</li>
+        </ul>
+        {{ govukButton({
+          text: "Reconfirm code",
+          href: "/childcare/v9/foster/reconfirm/reconfirmed"
+        }) }}
+
+      </div>
+
+    </div>
+
+
+
+{% endblock %}

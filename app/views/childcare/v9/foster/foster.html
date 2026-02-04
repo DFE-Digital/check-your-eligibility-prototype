@@ -1,0 +1,195 @@
+{% extends "/layouts/childcare/v9/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Manage foster families
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {% if (data['transfer'] == "success") %}
+
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          Code transferred to  {{ data["la-picker"] or "Rochdale Borough Council" }}
+        </h3>
+      </div>
+    </div>
+
+    {% else %}
+
+
+
+    {% endif %}
+
+
+    <h1 class="govuk-heading-l">Manage foster families</h1>
+
+    <p>Manage foster families claiming Childcare for working families.</p>
+
+    {{ govukButton({
+      classes: "govuk-!-margin-bottom-9",
+      text: "Create a code",
+      href: "/childcare/v9/foster/create/child-details"
+    }) }}
+
+
+     <h2 class="govuk-heading-m">Active eligibility codes</h2>
+
+
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Sort by
+          </label>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="carer">Carer name</option>
+            <option value="child">Child name</option>
+            <option value="child">Child date of birth</option>
+            <option value="status">Code status</option>
+            <option value="code">Eligibility code</option>
+            <option value="reconfirm" selected>Reconfirmation status</option>
+          </select>
+        </div>
+
+
+         {% if (data['foster-code'] == "created") %}
+
+         <table class="govuk-table govuk-table--small-text-until-tablet">
+          <caption class="govuk-table__caption govuk-table__caption--m"></caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Child name</th>
+              <th scope="col" class="govuk-table__header">Child date of birth</th>
+              <th scope="col" class="govuk-table__header">Eligibility code</th>
+              <th scope="col" class="govuk-table__header">Eligibility confirmed on</th>
+              <th scope="col" class="govuk-table__header">Reconfirm between</th>
+              <th scope="col" class="govuk-table__header">Grace period ends</th>
+              <th scope="col" class="govuk-table__header govuk-visually-hidden">Code status</th>
+              <th scope="col" class="govuk-table__header">Reconfirmation status</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/childcare/v9/foster/family/expired">Yeong Park</a> </td>
+              <td class="govuk-table__cell">25 June 2023</td>
+              <td class="govuk-table__cell">40019283746</td>
+              <td class="govuk-table__cell">24 Apr 2024</td>
+              <td class="govuk-table__cell">25 Jun 2024 and 25 Jul 2024</td>
+              <td class="govuk-table__cell">31 Dec 2024</td>
+              <td class="govuk-table__cell govuk-visually-hidden">Expired</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Overdue</strong></td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/childcare/v9/foster/family/due">Asher Ellis</a></td>
+              <td class="govuk-table__cell">1 March 2024</td>
+              <td class="govuk-table__cell">40987654321</td>
+              <td class="govuk-table__cell">12 Oct 2025</td>
+              <td class="govuk-table__cell">10 Jan 2026 and 10 Feb 2026</td>
+              <td class="govuk-table__cell">31 Mar 2025</td>
+              <td class="govuk-table__cell govuk-visually-hidden">Valid for spring term 2026</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Due now</strong></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/childcare/v9/foster/family/valid">Jasper Hayes</a></td>
+              <td class="govuk-table__cell">10 October 2023</td>
+              <td class="govuk-table__cell">40019283746</td>
+              <td class="govuk-table__cell">29 Dec 2025</td>
+              <td class="govuk-table__cell">27 Feb 2026 and 27 Mar 2026</td>
+              <td class="govuk-table__cell">31 Aug 2026</td>
+              <td class="govuk-table__cell govuk-visually-hidden">Valid for spring term 2026 and<br>summer term 2026 </td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Not due yet</strong></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/childcare/v9/foster/family/created">Casper Hayes</a></td>
+               <td class="govuk-table__cell">24 December 2023</td>
+              <td class="govuk-table__cell">40019283987</td>
+              <td class="govuk-table__cell">{{ "today" | govukDate }}</td>
+              <td class="govuk-table__cell">25 Mar 2026 and 25 Apr 2026</td>
+              <td class="govuk-table__cell">31 Aug 2026</td>
+              <td class="govuk-table__cell govuk-visually-hidden">Valid for summer term 2026</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Not due yet</strong></td>
+            </tr>
+          </tbody>
+        </table>
+
+        {% else %}
+
+        <table class="govuk-table govuk-table--small-text-until-tablet">
+          <caption class="govuk-table__caption govuk-table__caption--m"></caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Child name</th>
+              <th scope="col" class="govuk-table__header">Child date of birth</th>
+              <th scope="col" class="govuk-table__header">Eligibility code</th>
+              <th scope="col" class="govuk-table__header">Eligibility confirmed on</th>
+              <th scope="col" class="govuk-table__header">Reconfirm between</th>
+              <th scope="col" class="govuk-table__header">Grace period ends</th>
+              <th scope="col" class="govuk-table__header govuk-visually-hidden">Code status</th>
+              <th scope="col" class="govuk-table__header">Reconfirmation status</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/childcare/v9/foster/family/expired">Yeong Park</a> </td>
+              <td class="govuk-table__cell">25 June 2023</td>
+              <td class="govuk-table__cell">40019283746</td>
+              <td class="govuk-table__cell">24 Apr 2024</td>
+              <td class="govuk-table__cell">25 Jun 2024 and 25 Jul 2024</td>
+              <td class="govuk-table__cell">31 Dec 2024</td>
+              <td class="govuk-table__cell govuk-visually-hidden">Expired</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Overdue</strong></td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/childcare/v9/foster/family/due">Asher Ellis</a></td>
+              <td class="govuk-table__cell">1 March 2024</td>
+              <td class="govuk-table__cell">40987654321</td>
+              <td class="govuk-table__cell">12 Oct 2025</td>
+              <td class="govuk-table__cell">10 Jan 2026 and 10 Feb 2026</td>
+              <td class="govuk-table__cell">31 Mar 2025</td>
+              <td class="govuk-table__cell govuk-visually-hidden">Valid for spring term 2026</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Due now</strong></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/childcare/v9/foster/family/valid">Jasper Hayes</a></td>
+              <td class="govuk-table__cell">10 October 2023</td>
+              <td class="govuk-table__cell">40019283746</td>
+              <td class="govuk-table__cell">29 Dec 2025</td>
+              <td class="govuk-table__cell">27 Feb 2026 and 27 Mar 2026</td>
+              <td class="govuk-table__cell">31 Aug 2026</td>
+              <td class="govuk-table__cell govuk-visually-hidden">Valid for spring term 2026 and<br>summer term 2026 </td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Not due yet</strong></td>
+            </tr>
+          </tbody>
+        </table>
+
+        {% endif %}
+
+
+        <p class="govuk-!-margin-bottom-6"><a href="/public/csv/childcare/dev/foster-report.csv">Download as CSV file</a></p>
+
+
+        <h2 class="govuk-heading-m">Archived eligibility codes</h2>
+
+
+        <p class="govuk-!-margin-bottom-1"><a href="/childcare/v9/foster/archive/archive">View archived codes</a></p>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "/layouts/childcare/v9/layout-childcare.html" %}
+
+{% block pageTitle %}
+Select a local authority to transfer to
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/autocomplete.js"></script>
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    selectElement: document.querySelector('#la-picker')
+  })
+
+</script>
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">Select a new local authority</h1>
+
+
+
+        <form class="form" action="/childcare/v9/foster/transfer/transfer-check" method="post" novalidate>
+
+          <div class="govuk-!-width-two-thirds">
+            {% include "../../../../_includes/childcare/las.html" %}
+          </div>
+
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+
+        </form>
+
+      </div>
+
+    </div>
+
+
+
+{% endblock %}
