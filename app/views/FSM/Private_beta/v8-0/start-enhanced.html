@@ -1,0 +1,55 @@
+{% extends "/layouts/FSM/v8-0/layout-dfe-logged-out.html" %}
+
+{% block pageTitle %}
+ Manage eligibility for free school meals
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <h1 class="govuk-heading-xl">Manage eligibility for free school meals</h1>
+
+    <p>Local authorities, schools and multi-academy trusts can use this service to manage and check eligibility for free school meals.</p>
+
+    <p>Sign in to:</p>
+
+    <ul>
+      <li>run eligibility checks</li>
+      <li>download an eligibility form for parents</li>
+      <li>view guidance</li>
+    </ul>
+
+    <p>Depending on your organisation's access, you may also be able to review applications, finalise applications, generate reports or search records.</p>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Sign in",
+      href: "#",
+      isStartButton: true
+    }) }}
+
+    <h2 class="govuk-heading-m">Before you start</h2>
+
+    <p>You'll need a <a href="">DfE Sign-in account</a> to use this service.  </p>
+
+
+  </div>
+
+  <div class="govuk-grid-column-one-quarter" style="border-top: 10px solid #1d70b8;">
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-4">Help and support</h2>
+
+      <p>Use the <a href="">Customer Help Portal</a> to contact us and get help. Visit the <a href="">Knowledge Hub</a> to connect with colleagues at organisations using this service. </p>
+
+      <h2 class="govuk-heading-m">Related content </h2>
+
+      <p><a href="">Manage eligibility for childcare support</a></p>
+
+
+  </div>
+</div>
+
+{% endblock %}

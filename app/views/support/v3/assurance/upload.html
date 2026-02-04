@@ -17,10 +17,10 @@
   <div class="govuk-grid-column-two-thirds">
 
 
-    <h1 class="govuk-heading-l">Run a check on </h1>
+    <h1 class="govuk-heading-l">Run report </h1>
 
     <ol class="govuk-list govuk-list--number">
-      <li>Download the <a href="/public/csv/childcare/research/30h-batch-template.csv">batch check template (CSV, 0.13KB)</a>.</li>
+      <li>Download the <a href="/public/csv/childcare/research/30h-batch-template.csv">report template (CSV, 0.13KB)</a>.</li>
       <li>Add the details of the eligibility codes you need to check.</li>
      <li> Save it as a CSV file.</li>
     </ol>
@@ -57,9 +57,9 @@
     {% from "govuk/components/button/macro.njk" import govukButton %}
 
     {{ govukButton({
-      text: "Continue",
+      text: "Run report",
       classes: "govuk-button--primary",
-      href: '/support/v3/assurance/assurance'
+      href: '/support/v3/assurance/assurance?run-report=success'
     }) }}
 
   </div>

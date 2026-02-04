@@ -1,0 +1,58 @@
+{% extends "/layouts/childcare/v9/layout-childcare.html" %}
+
+{% block pageTitle %}
+ Run reports
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">Run reports</h1>
+
+    <div class="dfe-grid-container">
+
+
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/childcare/v9/reports/event-history/search-code">View eligibility code history</a>
+          </h2>
+          <p>View the event listing for a code, showing application and reconfirmation history.</p>
+
+        </div>
+      </div>
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/childcare/v9/reports/cross-border/cross-border">Cross-local authority checks </a>
+          </h2>
+          <p>View eligibility codes checked by your local authority and other local authorities.</p>
+
+        </div>
+      </div>
+
+
+    </div>
+
+   <!--validation rates -->
+
+    <h3 class="govuk-heading-s">Eligibility code validation rates</h3>
+
+    <!-- - should we match VYED validation language or ECE language of 'Run a check'? -->
+
+    <p class="govuk-!-margin-top-4"> Use the <a href="">View your education data service</a> to view working families eligibility code validation rates.</p>
+
+
+  </div>
+</div>
+
+{% endblock %}
