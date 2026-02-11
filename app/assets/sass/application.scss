@@ -867,6 +867,8 @@ section.dfe {
   display: none;
 }// GOV.UK pattern – do not add a `.visible` class
 
+.hidden { display: none !important; }
+
 .filter-tag {
   display: inline-flex;
   align-items: center;
