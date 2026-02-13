@@ -1,0 +1,74 @@
+{# 1 #}
+{% from 'node_modules/dfe-frontend/packages/components/header/macro.njk' import header %}
+
+{# 2 #}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% set govukRebrand = true %}
+
+{# 3 #}
+{% block header %}
+
+
+
+<header class="govuk-header" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+      <div class="govuk-header__logo">
+        <a href="/childcare/index-childcare" class="govuk-header__link govuk-header__link--homepage">
+            <img src="/public/images/department-for-education_white.png" alt="Department for Education" class="govuk-header__logotype">
+        </a>
+      </div>
+  </div>
+</header>
+
+<div class="app-phase-banner__wrapper govuk-!-margin-top-2">
+
+  <div class="govuk-phase-banner app-phase-banner govuk-width-container">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service - your <a class="govuk-link" href="https://dferesearch.fra1.qualtrics.com/jfe/form/SV_dhzpxXHwNu5zO4u" target="_blank">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+
+</div>
+
+
+
+{% endblock %}
+
+
+
+
+
+{% block footer %}
+ {{ govukFooter({
+  rebrand: "true",
+   meta: {
+     items: [
+      {
+         href: "https://www.gov.uk/government/organisations/department-for-education/about/personal-information-charter",
+         text: "Privacy"
+       },
+       {
+         href: "/childcare/dev/compliance/cookies",
+         text: "Cookies"
+       },
+      {
+        href: "https://forms.office.com.mcas.ms/pages/responsepage.aspx?id=yXfS-grGoU2187O4s0qC-URYbNo1-R1EubHA0gNJis5UNjFaUzRMTEVPTVlaMFNFOVg1Q05PODg3Vi4u&route=shorturl",
+        text: "Contact us"
+      }
+     ],
+     visuallyHiddenTitle: "Footer links"
+   }
+ }) }}
+{% endblock %}
+
+{# 4 #}
+{% block scripts %}
+  {{ super() }}
+
+{% endblock %}
