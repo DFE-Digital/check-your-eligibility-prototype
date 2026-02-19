@@ -1,0 +1,154 @@
+{% extends "/layouts/childcare/v9/layout-childcare.html" %}
+
+{% block pageTitle %}
+ Cross-local authority checks
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <span class="govuk-caption-l">Spring term 2026</span>
+    <h1 class="govuk-heading-l">Codes in other local authority postcode areas checked by your local authority</h1>
+
+    <p class="">Last updated on {{ "today" | govukDate }} {{ "now" | govukTime }}</p>
+
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="sort">
+        Sort by
+      </label>
+      <select class="govuk-select" id="sort" name="sort">
+        <option value="carer">Child postcode</option>
+        <option value="child" selected>Eligibility code</option>
+        <option value="child">Date last checked</option>
+        <option value="reconfirm">Local authority</option>
+      </select>
+    </div>
+
+
+
+    <table class="govuk-table govuk-!-margin-bottom-7">
+      <caption class="govuk-table__caption govuk-table__caption--m"></caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Eligibility code</th>
+          <th scope="col" class="govuk-table__header">Child postcode</th>
+          <th scope="col" class="govuk-table__header">Local authority</th>
+          <th scope="col" class="govuk-table__header">Date last checked by other local authority</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">50012345678</td>
+          <td class="govuk-table__cell">M19 1FH</td>
+          <td class="govuk-table__cell">Stockport</td>
+          <td class="govuk-table__cell">{{ "today" | govukDate }} {{ "now" | govukTime }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">50012345678</td>
+          <td class="govuk-table__cell">M19 1FH</td>
+          <td class="govuk-table__cell">Stockport</td>
+          <td class="govuk-table__cell">{{ "today" | govukDate }} {{ "now" | govukTime }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">50012345678</td>
+          <td class="govuk-table__cell">M19 1FH</td>
+          <td class="govuk-table__cell">Stockport</td>
+          <td class="govuk-table__cell">{{ "today" | govukDate }} {{ "now" | govukTime }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">50012345678</td>
+          <td class="govuk-table__cell">M19 1FH</td>
+          <td class="govuk-table__cell">Stockport</td>
+          <td class="govuk-table__cell">{{ "today" | govukDate }} {{ "now" | govukTime }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">50012345678</td>
+          <td class="govuk-table__cell">M19 1FH</td>
+          <td class="govuk-table__cell">Stockport</td>
+          <td class="govuk-table__cell">{{ "today" | govukDate }} {{ "now" | govukTime }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">50012345678</td>
+          <td class="govuk-table__cell">M19 1FH</td>
+          <td class="govuk-table__cell">Stockport</td>
+          <td class="govuk-table__cell">{{ "today" | govukDate }} {{ "now" | govukTime }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">50012345678</td>
+          <td class="govuk-table__cell">M19 1FH</td>
+          <td class="govuk-table__cell">Stockport</td>
+          <td class="govuk-table__cell">{{ "today" | govukDate }} {{ "now" | govukTime }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">50012345678</td>
+          <td class="govuk-table__cell">M19 1FH</td>
+          <td class="govuk-table__cell">Stockport</td>
+          <td class="govuk-table__cell">{{ "today" | govukDate }} {{ "now" | govukTime }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">50012345678</td>
+          <td class="govuk-table__cell">M19 1FH</td>
+          <td class="govuk-table__cell">Stockport</td>
+          <td class="govuk-table__cell">{{ "today" | govukDate }} {{ "now" | govukTime }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">50012345678</td>
+          <td class="govuk-table__cell">M19 1FH</td>
+          <td class="govuk-table__cell">Stockport</td>
+          <td class="govuk-table__cell">{{ "today" | govukDate }} {{ "now" | govukTime }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+     <nav class="govuk-pagination" aria-label="Pagination">
+      <ul class="govuk-pagination__list">
+        <li class="govuk-pagination__item govuk-pagination__item--current">
+          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+            1
+          </a>
+        </li>
+        <li class="govuk-pagination__item">
+          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+            2
+          </a>
+        </li>
+      </ul>
+      <div class="govuk-pagination__next">
+        <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+          <span class="govuk-pagination__link-title">
+            Next<span class="govuk-visually-hidden"> page</span>
+          </span>
+          <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+            <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v3h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+          </svg>
+        </a>
+      </div>
+    </nav>
+
+
+    <p><a href="">Download as csv</a></p>
+
+
+
+
+
+  </div>
+
+</div>
+
+
+
+
+{% endblock %}

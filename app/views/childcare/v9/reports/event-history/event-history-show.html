@@ -1,0 +1,153 @@
+{% extends "/layouts/childcare/v9/layout-childcare.html" %}
+
+{% block pageTitle %}
+ History for eligibility code: 50012345678
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+    <h1 class="govuk-heading-l">History for eligibility code 50012345678</h1>
+
+
+
+     {{ govukButton({
+            text: "Show personal details",
+            classes: "govuk-button--secondary",
+            href: "/childcare/v9/reports/event-history/event-history-hide"
+      }) }}
+
+
+
+      <div id="hidden">
+
+       <table class="govuk-table govuk-table--small-text-until-tablet">
+          <caption class="govuk-table__caption govuk-table__caption--m">Code history</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header" style="min-width: 160px;">Event</th>
+              <th scope="col" class="govuk-table__header" style="min-width: 120px;">Submitted on</th>
+              <th scope="col" class="govuk-table__header" style="min-width: 120px;">Discretionary start date</th>
+              <th scope="col" class="govuk-table__header" style="min-width: 120px;">Validity start date</th>
+              <th scope="col" class="govuk-table__header" style="min-width: 120px;">Validity end date</th>
+              <th scope="col" class="govuk-table__header" style="min-width: 120px;">Grace period ends</th>
+              <th scope="col" class="govuk-table__header">Event ID</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Application</th>
+              <td class="govuk-table__cell">15 Jul 2023</td>
+              <td class="govuk-table__cell">-</td>
+              <td class="govuk-table__cell">15 Jul 2023</td>
+              <td class="govuk-table__cell">14 Oct 2023</td>
+              <td class="govuk-table__cell">31 Dec 2023</td>
+              <td class="govuk-table__cell">J5W7P9G2H4</td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Reconfirmation 1</th>
+              <td class="govuk-table__cell">5 Oct 2023</td>
+              <td class="govuk-table__cell">-</td>
+              <td class="govuk-table__cell">15 Oct 2023</td>
+              <td class="govuk-table__cell">14 Jan 2024</td>
+              <td class="govuk-table__cell">31 Mar 2024</td>
+              <td class="govuk-table__cell">Q8R4K6M3T9</td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Reconfirmation 2</th>
+              <td class="govuk-table__cell">1 Jan 2024</td>
+              <td class="govuk-table__cell">-</td>
+              <td class="govuk-table__cell">14 Jan 2024</td>
+              <td class="govuk-table__cell">15 Apr 2024</td>
+              <td class="govuk-table__cell">31 Aug 2024</td>
+              <td class="govuk-table__cell">B3Y5F8S6L2</td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Reconfirmation 3</th>
+              <td class="govuk-table__cell">13 Apr 2024</td>
+              <td class="govuk-table__cell">-</td>
+              <td class="govuk-table__cell">15 Apr 2024</td>
+              <td class="govuk-table__cell">14 Jul 2024</td>
+              <td class="govuk-table__cell">31 Dec 2024</td>
+              <td class="govuk-table__cell">V9Z1X4C7N8</td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Reconfirmation 4</th>
+              <td class="govuk-table__cell">2 Jul 2024</td>
+              <td class="govuk-table__cell">-</td>
+              <td class="govuk-table__cell">15 Jul 2024</td>
+              <td class="govuk-table__cell">14 Oct 2024</td>
+              <td class="govuk-table__cell">31 Dec 2024</td>
+              <td class="govuk-table__cell">A7D2E5B9U6</td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Reconfirmation 4</th>
+              <td class="govuk-table__cell">6 Oct 2024</td>
+              <td class="govuk-table__cell">-</td>
+              <td class="govuk-table__cell">15 Oct 2024</td>
+              <td class="govuk-table__cell">14 Jan 2025</td>
+              <td class="govuk-table__cell">31 Mar 2025</td>
+              <td class="govuk-table__cell">H4P6T9J2L8</td>
+
+            </tr>
+             <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Reconfirmation 5</th>
+              <td class="govuk-table__cell">29 Dec 2024</td>
+              <td class="govuk-table__cell">-</td>
+              <td class="govuk-table__cell">15 Jan 2025</td>
+              <td class="govuk-table__cell">14 Apr 2025</td>
+              <td class="govuk-table__cell">31 Aug 2025</td>
+              <td class="govuk-table__cell">M6F3K5R9W7</td>
+
+            </tr>
+             <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Reconfirmation 6</th>
+              <td class="govuk-table__cell">4 Apr 2025</td>
+              <td class="govuk-table__cell">-</td>
+              <td class="govuk-table__cell">15 Apr 2025</td>
+              <td class="govuk-table__cell">14 Jul 2025</td>
+              <td class="govuk-table__cell">31 Dec 2025</td>
+              <td class="govuk-table__cell">Z9X4V2L6K8</td>
+
+            </tr>
+             <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Reconfirmation 7</th>
+              <td class="govuk-table__cell">22 Jun 2025</td>
+              <td class="govuk-table__cell">-</td>
+              <td class="govuk-table__cell">15 Jul 2025</td>
+              <td class="govuk-table__cell">14 Oct 2025</td>
+              <td class="govuk-table__cell">31 Dec 2025</td>
+              <td class="govuk-table__cell">G3J7P5M1B9</td>
+
+            </tr>
+          </tbody>
+          </table>
+
+    </div>
+
+
+
+    <p class="govuk-!-margin-top-7"><a href="/public/csv/childcare/dev/code-history.csv">Download as CSV file</a></p>
+
+  </div>
+
+</div>
+
+
+{% endblock %}
