@@ -1,0 +1,73 @@
+{% extends "/layouts/childcare/v9/layout-childcare.html" %}
+
+{% block pageTitle %}
+ Cross-local authority checks
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+     <span class="govuk-caption-l">Spring term 2026</span>
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-8">Codes checked by both your local authority and another local authority</h1>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Sort by
+          </label>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="carer">Child postcode</option>
+            <option value="child" selected>Eligibility code</option>
+            <option value="child">Date last checked</option>
+            <option value="reconfirm">Code also checked by</option>
+          </select>
+        </div>
+
+        <table class="govuk-table govuk-!-margin-bottom-7">
+          <caption class="govuk-table__caption govuk-table__caption--m"></caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Eligibility code</th>
+              <th scope="col" class="govuk-table__header">Child postcode</th>
+              <th scope="col" class="govuk-table__header">Date last checked by your local authority</th>
+              <th scope="col" class="govuk-table__header">Code also checked by</th>
+
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">50012345678</td>
+              <td class="govuk-table__cell">M19 1FH</td>
+              <td class="govuk-table__cell">{{ "today" | govukDate }} {{ "now" | govukTime }}</td>
+              <td class="govuk-table__cell">Stockport council, Bury council, Bolton council</td>
+
+            </tr>
+
+
+          </tbody>
+        </table>
+
+        <p><a href="">Download as csv</a></p>
+
+
+
+
+    <p class="govuk-!-margin-top-6">Last updated on {{ "today" | govukDate }} {{ "now" | govukTime }}</p>
+
+  </div>
+
+</div>
+
+
+
+
+{% endblock %}
