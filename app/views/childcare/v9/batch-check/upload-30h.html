@@ -21,7 +21,7 @@
     <h1 class="govuk-heading-l">Run a batch check</h1>
 
     <ol class="govuk-list govuk-list--number">
-      <li>Download the <a href="/public/csv/childcare/research/30h-batch-template.csv">batch check template (CSV, 0.13KB)</a>.</li>
+      <li>Download the <a href="/public/csv/childcare/research/30h-batch-template-ref.csv">batch check template (CSV, 0.13KB)</a>.</li>
       <li>Add the details of the eligibility codes you need to check.</li>
      <li> Save it as a CSV file.</li>
     </ol>
@@ -42,6 +42,8 @@
       <li>the child's date of birth (format DD/MM/YYYY or YYYY-MM-DD)</li>
 
     </ul>
+
+    <p>There is also an optional 'Reference' column where you can add reference numbers from your management system.</p>
 
     {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
 
