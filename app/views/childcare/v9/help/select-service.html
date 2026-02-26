@@ -1,7 +1,7 @@
 {% extends "/layouts/childcare/v9/layout-childcare.html" %}
 
 {% block pageTitle %}
- Event history
+ Can you tell us a bit more about what your enquiry relates to?
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,7 +18,7 @@
   <div class="govuk-grid-column-two-thirds">
 
 
-     <form class="form" action="/childcare/v9/reports/cross-border/multiple-las/report" method="post" novalidate>
+     <form class="form" action="/childcare/v9/help/query-type" method="post" novalidate>
 
          {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
@@ -27,26 +27,23 @@
             name: "select-term",
             fieldset: {
               legend: {
-                text: "Select a term",
+                text: "Can you tell us a bit more about what your enquiry relates to?",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--l"
               }
             },
-            hint: {
-              text: "Select the term when the checks were made"
-            },
             items: [
               {
-                value: "spring term 2026",
-                text: "Spring term 2026 (1 January 2026 to present)"
+                value: "ecs",
+                text: "Eligibility checking service"
               },
               {
-                value: "autumn term 2025",
-                text: "Autumn term 2025 (1 September 2025 to 31 December 2025)"
+                value: "fsm",
+                text: "Manage eligibility for free school meals"
               },
               {
-                value: "summer term 2025",
-                text: "Summer term 2025 (1 April 2025 to 31 August 2025)"
+                value: "cc",
+                text: "Manage eligibility for childcare support"
               }
             ]
           }) }}
@@ -58,7 +55,7 @@
           {% from "govuk/components/button/macro.njk" import govukButton %}
 
           {{ govukButton({
-            text: "View report"
+            text: "Continue"
           }) }}
 
 
