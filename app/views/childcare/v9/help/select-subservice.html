@@ -18,7 +18,7 @@
   <div class="govuk-grid-column-two-thirds">
 
 
-     <form class="form" action="/childcare/v9/help/enquiry-details" method="post" novalidate>
+     <form class="form" action="/childcare/v9/help/query-type" method="post" novalidate>
 
          {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
@@ -27,42 +27,41 @@
             name: "select-term",
             fieldset: {
               legend: {
-                text: "What does your enquiry relate to?",
+                text: "What service does your enquiry relate to?",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--l"
               }
             },
             items: [
               {
-                value: "single",
-                text: "Run a check for one parent or guardian"
+                value: "ecs",
+                text: "Eligibility checking service (ECS)",
+                hint: {
+                  text: "Childcare for working families",
+                  classes: "govuk-!-margin-bottom-3"
+                },
+                label: {
+                  classes: "govuk-!-margin-bottom-0"
+                }
               },
               {
-                value: "batch",
-                text: "Run a batch check"
+                value: "cc",
+                text: "Manage eligibility for childcare support",
+                hint: {
+                  text: "Early learning for 2-year-olds and early years pupil premium",
+                  classes: "govuk-!-margin-bottom-3"
+                },
+                label: {
+                  classes: "govuk-!-margin-bottom-0"
+                }
               },
               {
-                value: "error",
-                text: "Technical issues and errors"
-              },
-              {
-                value: "policy",
-                text: "Policy queries"
-              },
-
-              {
-                value: "dfe-signin",
-                text: "Access and login issues"
-              },
-              {
-                value: "other",
-                text: "Other"
+                value: "fsm",
+                text: "Manage eligibility for free school meals"
               }
+
             ]
           }) }}
-
-
-
 
 
           {% from "govuk/components/button/macro.njk" import govukButton %}
