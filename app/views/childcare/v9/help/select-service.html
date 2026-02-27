@@ -1,4 +1,4 @@
-{% extends "/layouts/childcare/v9/layout-childcare.html" %}
+{% extends "/layouts/childcare/v9/layout-chp.html" %}
 
 {% block pageTitle %}
  Can you tell us a bit more about what your enquiry relates to?
@@ -18,7 +18,7 @@
   <div class="govuk-grid-column-two-thirds">
 
 
-     <form class="form" action="/childcare/v9/help/query-type" method="post" novalidate>
+     <form class="form" action="/childcare/v9/help/select-subservice" method="post" novalidate>
 
          {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
@@ -27,23 +27,39 @@
             name: "select-term",
             fieldset: {
               legend: {
-                text: "Can you tell us a bit more about what your enquiry relates to?",
+                text: "Can you tell us which service your enquiry relates to?",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--l"
               }
             },
             items: [
               {
-                value: "ecs",
-                text: "Eligibility checking service"
+                value: "a",
+                text: "Academies Trust Financial Returns"
               },
               {
-                value: "fsm",
-                text: "Manage eligibility for free school meals"
+                value: "b",
+                text: "Check an early years qualification"
               },
               {
-                value: "cc",
-                text: "Manage eligibility for childcare support"
+                value: "c",
+                text: "DfE Connect"
+              },
+              {
+                value: "d",
+                text: "Document exchange"
+              },
+              {
+                value: "e",
+                text: "Eligibility checking service/engine"
+              },
+              {
+                value: "f",
+                text: "Get Information about Schools (GIAS)"
+              },
+              {
+                value: "g",
+                text: "Learning Records Service (LRS)"
               }
             ]
           }) }}
