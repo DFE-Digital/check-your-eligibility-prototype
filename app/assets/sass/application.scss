@@ -889,3 +889,17 @@ section.dfe {
   font-size: 16px;
   line-height: 1;
 }
+
+.contents-list-item {
+  list-style-type: none;
+}
+
+.contents-list-item-number {
+  min-width: 1.5em;
+  display: table-cell;
+}
+
+.contents-list-item-text {
+  padding-left: .3em;
+  display: table-cell;
+}
