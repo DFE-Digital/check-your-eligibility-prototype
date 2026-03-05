@@ -21,6 +21,16 @@
   </div>
 </header>
 
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{{ govukServiceNavigation({
+  rebrand: "true",
+  serviceName: "Manage eligibility for free school meals",
+  serviceUrl: "/FSM/Private_beta/v8-0/start"
+
+}) }}
+
+
 <div class="app-phase-banner__wrapper govuk-!-margin-top-2">
 
   <div class="govuk-phase-banner app-phase-banner govuk-width-container">
