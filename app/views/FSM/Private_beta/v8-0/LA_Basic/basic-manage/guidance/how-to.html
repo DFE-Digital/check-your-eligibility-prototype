@@ -4,6 +4,13 @@
  Manage eligibility for childcare support: using the service
 {% endblock %}
 
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
 
 {% block content %}
 
