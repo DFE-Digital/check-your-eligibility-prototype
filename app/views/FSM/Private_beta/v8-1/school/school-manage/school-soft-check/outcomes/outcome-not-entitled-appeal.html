@@ -1,0 +1,58 @@
+{% extends "/layouts/FSM/v7-1/layout-dfe-schoolnav.html" %}
+{% set pageName="Outcome not entitled" %}
+{% block content %}
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+        data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            May not be eligible
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-notification-banner__heading">
+            The children of this parent or guardian may not be eligible for free school meals.
+          </p>
+          <p class="govuk-body">You can apply on the parent or guardian's behalf anyway, but you’ll need to ask them for supporting
+            evidence.</p>
+          <p class="govuk-body"><a class="govuk-link" rel="noreferrer noopener" target="_blank"
+              href="evidence-guidance">See a complete list of acceptable evidence (opens in new tab)</a>.</p>
+
+        </div>
+      </div>
+
+      <h1 class="govuk-heading-l">How to apply</h1>
+
+      <ol class="govuk-list govuk-list--number">
+        <li>Ask them for supporting evidence.
+        <li>Apply on their behalf and upload the evidence when asked to, or email it later.</li>
+
+      </ol>
+
+      <p class="govuk-body">When the local authority has made a decision you'll see it in <a class="govuk-link"
+          href="/FSM/Private_beta/v7-1/school/school-manage/decision/finalise/applications"> Finalise applications</a>.
+      </p>
+
+      <form action="../../appeal/appeal-new-child-age" method="post" novalidate>
+        <button class="govuk-button">Apply now</button>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<div class="govuk-!-padding-bottom-3"></div>
+</div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}

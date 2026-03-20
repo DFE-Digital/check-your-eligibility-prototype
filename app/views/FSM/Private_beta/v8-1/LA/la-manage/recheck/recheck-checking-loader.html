@@ -1,0 +1,61 @@
+{% extends "layouts/FSM/v8-1/layout-dfe-lanav.html" %}
+{% set pageName="Rechecking eligibility" %}
+
+{% block content %}
+
+{% set title=" " %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+  <h1 class="govuk-heading-l">
+          {{pageName}}
+        </h1>
+        <p class="govuk-body">This usually takes a few minutes. We will email you when the recheck is complete.
+          </p>
+
+        <p class="govuk-body">Rechecks run in the background so you can continue with other tasks while you wait.</p>
+
+        <!-- <div class="govuk-!-text-align-center"> -->
+          <div class="govuk-button-group">
+            <a href="recheck-summary.html" class="govuk-button" role="button" draggable="false" data-module="govuk-button">
+              View recheck summary
+            </a>
+            <a href="recheck_b.html" class="govuk-link govuk-!-margin-left-2">Back to applications</a>
+          </div>
+  </div>
+
+<!--
+        <script>
+          var total_count = Math.floor(Math.random() * 250) + 1; // Ensure at least 1 record
+          document.getElementById("total-count").textContent = total_count;
+
+          const intervalId = setInterval(() => {
+            var countElement = document.getElementById("counter");
+            var progressBar = document.getElementById("progress");
+
+            var currentCount = parseInt(countElement.textContent);
+            var newCount = currentCount + 1;
+
+            if (newCount >= total_count) {
+              clearInterval(intervalId);
+              newCount = total_count; // Stop at total_count
+              document.location = 'recheck-success'; // Redirect when done
+            }
+
+            countElement.textContent = newCount;
+
+            // Update progress bar
+            var percentage = (newCount / total_count) * 100;
+            progressBar.style.width = percentage + "%";
+          }, 100);
+        </script> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}

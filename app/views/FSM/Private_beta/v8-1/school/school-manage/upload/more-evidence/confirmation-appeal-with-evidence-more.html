@@ -1,0 +1,151 @@
+{% extends "layouts/FSM/v7-3/layout-dfe-schoolnav-none.html" %}
+
+{% set childId = "44455453" %}
+{% set childDOB = "22 Sep 2021" %}
+{% set schoolName = "Hilltop Elementary" %}
+{% set schoolAddress = "Manchester, M25 1QA" %}
+{% set parentDOB = "15 Mar 1980" %}
+{% set parentName = "Alex Johnson" %}
+{% set email = "alex.johnson@example.com" %}
+{% set nationalInsurance = "AB123456C" %}
+{% set parentId = "44455454A" %}
+{% set childName = "Emily Johnson" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l"></span>
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+        aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Updated
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+            Free school meals application updated for {{parentName}}
+          </h3>
+          <p class="govuk-body">You should <a href="" class="govuk-link" onclick="printPage()">print this page</a> for the parents to keep.</p>
+        </p>
+        </div>
+      </div>
+      <h1 class="govuk-heading-m">Application record for {{parentName}}</h1>
+    </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header">Child</th>
+          <th class="govuk-table__header">Reference</th>
+          <th class="govuk-table__header"></th>
+
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" style="width: 40%;">{{childName}}</td>
+          <td class="govuk-table__cell" style="width: 40%;">{{childId}}</td>
+          <td class="govuk-table__cell" style="width: 20%;"></td>
+        </tr>
+        <!-- <tr class="govuk-table__row">
+          <td class="govuk-table__cell" style="width: 40%;">Thomas Tesfay</td>
+          <td class="govuk-table__cell" style="width: 40%;">{{parentId}}</td>
+          <td class="govuk-table__cell" style="width: 20%;"></td>
+        </tr> -->
+        <!-- <tr class="govuk-table__row">
+          <td class="govuk-table__cell" style="width: 40%;">Rachel Tesfay</td>
+          <td class="govuk-table__cell" style="width: 40%;">44455455</td>
+          <td class="govuk-table__cell" style="width: 20%;"><span></span></td>
+        </tr> -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" style="width: 40%;">Evidence</th>
+          <th class="govuk-table__header" style="width: 40%;">Filesize</th>
+          <th class="govuk-table__header" style="width: 40%;"></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" style="width: 40%;"> UC_statement_2023.pdf</td>
+          <td class="govuk-table__cell" style="width: 40%;">1.2mb</td>
+          <th class="govuk-table__header" style="width: 40%;"></th>
+        </tr>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" style="width: 40%;">New_UC_statement.pdf
+            </td>
+            <td class="govuk-table__cell" style="width: 40%;">586kb</td>
+            <td class="govuk-table__cell" style="width: 40%;">
+              <div style="width: 100%; display: flex; justify-content: flex-end;">
+                <span class="moj-badge moj-badge--green">New evidence</span>
+              </div>
+            </td>
+            <th class="govuk-table__header" style="width: 40%;"></th>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+    <div class="govuk-!-padding-bottom-3"></div>
+    <div class="govuk-width-container">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <h2 class="govuk-heading-m">What to do next</h2>
+
+          <p class="govuk-body">Wait for the local authority to review the application. You can check the status of the application in <a class="govuk-link"
+            href="/FSM/Private_beta/v7-1/school/school-manage/decision/finalise/applications">review applications</a>.
+        </p>
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+    <!--
+<div class="govuk-!-padding-bottom-3"></div>
+-->
+
+
+
+
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+<script>
+  function printPage() {
+    window.print();  // This will open the print dialog
+  }
+</script>
+
+<script>
+  function printSection() {
+    window.print();
+  }
+</script>
+
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}

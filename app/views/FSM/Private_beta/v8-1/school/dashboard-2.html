@@ -1,0 +1,325 @@
+{% extends "layouts/FSM/v8-0/layout-dfe-schoolnav-noback.html" %}
+
+{% set pageName="Bramhope Primary School" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">
+      {{pageName}}
+    </h1>
+
+    <div class="dashboard-padding-between-headings">
+      <!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> -->
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-l">
+          Free school meals
+        </h2>
+        <p class="govuk-body-l" style="width: 100%;">
+          This service helps you check and manage applications for free school meals across your trust.
+        </p>
+
+        <div class="govuk-grid-row" style="margin-bottom: 30px;">
+
+          <div class="govuk-grid-column-one-third">
+            <a href="school-manage/report/search.html" class="dfe-card-link-wrapper hover-grey"
+              style="text-decoration: none;">
+              <div class="dfe-card" style="background-color: #003a69; color: white;">
+                <div class="dfe-card-container">
+                  <h3 class="govuk-heading-m" style="color: white;">Pupils receiving support</h3>
+                  <p class="govuk-heading-xl" style="color: white;">356</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+            <a href="school-manage/decision/finalise/applications.html" class="dfe-card-link-wrapper hover-grey"
+              style="text-decoration: none;">
+              <div class="dfe-card" style="background-color: #003a69; color: white;">
+                <div class="dfe-card-container">
+                  <h3 class="govuk-heading-m" style="color: white;">
+                    <span class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                      style="color: inherit; text-decoration: none;">
+                      Applications to be finalised
+                    </span>
+                  </h3>
+                  <p class="govuk-heading-xl" style="color: white;">18</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- <style>
+          .hover-grey:hover .dfe-card,
+          .hover-grey:focus .dfe-card {
+            background-color: #f3f2f1 !important; /* GOV.UK footer grey */
+            color: #003a69 !important;
+          }
+          .hover-grey:hover .dfe-card *,
+          .hover-grey:focus .dfe-card * {
+            color: #003a69 !important;
+          }
+        </style> -->
+          {% set recheckDate = "2025-08-30" %}
+          {% set today = "2025-06-21" %}
+          <div class="govuk-grid-column-one-third">
+            <a href="school-manage/decision/recheck" class="dfe-card-link-wrapper hover-grey"
+              style="text-decoration: none;">
+              <div class="dfe-card" style="background-color: #003a69; color: white;">
+                <div class="dfe-card-container">
+                  {% if today > recheckDate %}
+                  <h3 class="govuk-heading-m" style="color: white;">
+                    <span class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                      style="color: inherit; text-decoration: none;">
+                      Rechecks are overdue
+                    </span>
+                  </h3>
+                  <p class="govuk-heading-xl" style="color: white;">Overdue</p>
+                  {% else %}
+                  <h3 class="govuk-heading-m" style="color: white;">
+                    <span class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                      style="color: inherit; text-decoration: none;">
+                      Rechecks due by
+                    </span>
+                  </h3>
+                  <p class="govuk-heading-xl" style="color: white;">30th August</p>
+                  {% endif %}
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div style="margin-bottom: 60px;"></div>
+
+        <!---------search pupil--------->
+
+        <div class="govuk-width-container" style="background-color: #e0f3ff; padding: 1em; margin-top: 1em;">
+          <div class="moj-search">
+            <form action="#" method="post">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label moj-search__label govuk-!-font-weight-bold" for="search">
+                  Find a specific pupil
+                </label>
+
+                <div id="search-hint" class="govuk-hint moj-search__hint ">
+                  Enter the pupil name or the parents details
+                </div>
+
+                <input class="govuk-input moj-search__input " id="search" name="search" type="search"
+                  aria-describedby="search-hint">
+
+              </div>
+
+              <button type="submit" class="govuk-button moj-search__button " data-module="govuk-button">
+                Search
+              </button>
+
+            </form>
+          </div>
+        </div>
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+        <div style="margin-bottom: 40px;"></div>
+        <h2 class="govuk-heading-m">
+          Other ways to manage free school meals
+        </h2>
+
+        <div>
+          <style>
+            .dfe-card-link-wrapper.hover-darkblue:hover .dfe-card,
+            .dfe-card-link-wrapper.hover-darkblue:focus .dfe-card {
+              background-color: #003a69 !important;
+              color: #fff !important;
+            }
+
+            .dfe-card-link-wrapper.hover-darkblue:hover .dfe-card *,
+            .dfe-card-link-wrapper.hover-darkblue:focus .dfe-card * {
+              color: #fff !important;
+            }
+          </style>
+          <a href="school-manage/school-soft-check/checker.html" class="dfe-card-link-wrapper hover-darkblue"
+            style="text-decoration: none;">
+            <div class="dfe-card"
+              style="background: white; border-left: 6px solid #003a69; margin-bottom: 24px; width: 100%; max-width: 100%;">
+              <div class="dfe-card-container" style="padding: 16px 24px;">
+                <h3 class="govuk-heading-m" style="margin-bottom: 4px;">
+                  <span class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                    style="color: inherit; text-decoration: none;">
+                    Run a check for one parent or guardian
+                  </span>
+                </h3>
+                <p style="margin-bottom: 0;">Run an eligibility check for one parent or guardian.</p>
+              </div>
+            </div>
+          </a>
+          <a href="school-manage/batch-checking/manual" class="dfe-card-link-wrapper hover-darkblue"
+            style="text-decoration: none;">
+            <div class="dfe-card"
+              style="background: white; border-left: 6px solid #003a69; margin-bottom: 24px; width: 100%; max-width: 100%;">
+              <div class="dfe-card-container" style="padding: 16px 24px;">
+                <h3 class="govuk-heading-m" style="margin-bottom: 4px;">
+                  <span class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                    style="color: inherit; text-decoration: none;">
+                    Run a batch check
+                  </span>
+                </h3>
+                <p style="margin-bottom: 0;">Run an eligibility check for multiple parents or guardians.</p>
+              </div>
+            </div>
+          </a>
+          <a href="school-manage/recheck/recheck" class="dfe-card-link-wrapper hover-darkblue"
+            style="text-decoration: none;">
+            <div class="dfe-card"
+              style="background: white; border-left: 6px solid #003a69; margin-bottom: 24px; width: 100%; max-width: 100%;">
+              <div class="dfe-card-container" style="padding: 16px 24px;">
+                <h3 class="govuk-heading-m" style="margin-bottom: 4px;">
+                  <span class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                    style="color: inherit; text-decoration: none;">
+                    Recheck eligible pupils
+                  </span>
+                </h3>
+                <p style="margin-bottom: 0;">Recheck eligible pupils in the system</p>
+              </div>
+            </div>
+          </a>
+                  <a href="school-manage/decision/finalise/applications.html" class="dfe-card-link-wrapper hover-darkblue"
+            style="text-decoration: none;">
+            <div class="dfe-card"
+              style="background: white; border-left: 6px solid #003a69; margin-bottom: 24px; width: 100%; max-width: 100%;">
+              <div class="dfe-card-container" style="padding: 16px 24px;">
+                <h3 class="govuk-heading-m" style="margin-bottom: 4px;">
+                  <span class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                    style="color: inherit; text-decoration: none;">
+                    Finalise applications
+                  </span>
+                </h3>
+                <p style="margin-bottom: 0;">Finalise applications</p>
+              </div>
+            </div>
+          </a>
+          <a href="school-manage/report/search.html" class="dfe-card-link-wrapper hover-darkblue"
+            style="text-decoration: none;">
+            <div class="dfe-card"
+              style="background: white; border-left: 6px solid #003a69; margin-bottom: 24px; width: 100%; max-width: 100%;">
+              <div class="dfe-card-container" style="padding: 16px 24px;">
+                <h3 class="govuk-heading-m" style="margin-bottom: 4px;">
+                  <span class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                    style="color: inherit; text-decoration: none;">
+                    Search and report
+                  </span>
+                </h3>
+                <p style="margin-bottom: 0;">Search all pupil free school meal records and export results from the
+                  Trust.</p>
+              </div>
+            </div>
+          </a>
+          <a href="../_offline/fsm-print-version-school.html" class="dfe-card-link-wrapper hover-darkblue"
+            style="text-decoration: none;">
+            <div class="dfe-card"
+              style="background: white; border-left: 6px solid #003a69; margin-bottom: 24px; width: 100%; max-width: 100%;">
+              <div class="dfe-card-container" style="padding: 16px 24px;">
+                <h3 class="govuk-heading-m" style="margin-bottom: 4px;">
+                  <span class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                    style="color: inherit; text-decoration: none;">
+                    Download PDF form
+                  </span>
+                </h3>
+                <p style="margin-bottom: 0;">Download an eligibility form for parents to complete.</p>
+              </div>
+            </div>
+          </a>
+          <a href="school-manage/guidance/guidance-menu.html" class="dfe-card-link-wrapper hover-darkblue" style="text-decoration: none;">
+            <div class="dfe-card"
+              style="background: white; border-left: 6px solid #003a69; margin-bottom: 24px; width: 100%; max-width: 100%;">
+              <div class="dfe-card-container" style="padding: 16px 24px;">
+                <h3 class="govuk-heading-m" style="margin-bottom: 4px;">
+                  <span class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                    style="color: inherit; text-decoration: none;">
+                    Guidance
+                  </span>
+                </h3>
+                <p style="margin-bottom: 0;">Read how to use the system and what evidence can be used to confirm
+                  eligibility</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!--
+        <div class="dfe-grid-container">
+          <div class="dfe-card">
+            <div class="dfe-card-container">
+              <h3 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                  href="school-manage/mat-soft-check/checker.html">Run a check for one parent or guardian</a>
+                </h3>
+                <p>Run an eligibility check for one parent or guardian.</p>
+            </div>
+          </div>
+          <div class="dfe-card">
+            <div class="dfe-card-container">
+              <h3 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                  href="school-manage/batch-checking/manual-no-ctf">Run a batch check</a>
+              </h3>
+              <p>Run an eligibility check for multiple parents or guardians.</p>
+            </div>
+          </div>
+
+          <div class="dfe-card">
+            <div class="dfe-card-container">
+              <h3 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                  href="mat-manage/decision/review-appeals">Review applications</a>
+              </h3>
+              <p>Review evidence and make a decision on applications</p>
+            </div>
+          </div> -->
+        <!--
+           <div class="dfe-card">
+            <div class="dfe-card-container">
+              <h3 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                  href="school-manage/decision/recheck">Recheck eligible pupils</a>
+              </h3>
+              <p>Recheck eligible pupils in the system</p>
+            </div>
+          </div>
+
+          <div class="dfe-card">
+            <div class="dfe-card-container">
+              <h3 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                  href="guidance.html">Guidance</a>
+              </h3>
+              <p>Read how to use the system and what evidence can be used to confirm eligibility</p>
+            </div>
+          </div>
+
+             <div class="dfe-card">
+            <div class="dfe-card-container">
+              <h3 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                  href="school-manage/report/search.html">Search and report</a>
+              </h3>
+              <p>Search all pupil free school meal records and export results from the Trust.</p>
+            </div>
+          </div>
+
+          <div class="dfe-card">
+            <div class="dfe-card-container">
+              <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                  href="../_offline/fsm-print-version-school.html">Download PDF form</a>
+              </h2>
+              <p>Download an eligibility form for parents to complete.</p>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+
+        {% endblock %}
