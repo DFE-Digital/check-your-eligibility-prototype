@@ -1,0 +1,57 @@
+{% extends "layouts/FSM/v8-1/layout-dfe-schoolnav.html" %}
+
+{% set childName = childName or "Lisa Sutton" %}
+{% set recordEndDate = recordEndDate or "31 August 2026" %}
+{% set pageName = childName + " is not eligible for free school meals" %}
+{% set childId = "44455454" %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukNotificationBanner({
+      titleText: "Eligibility check completed",
+      html: '<h2 class="govuk-notification-banner__heading">' + pageName + '</h2>'
+    }) }}
+
+    <h2 class="govuk-heading-m">What this means</h2>
+    <p class="govuk-body">
+      The parent or guardian’s circumstances do not currently meet the eligibility criteria for free school meals.
+    </p>
+
+    <h2 class="govuk-heading-m">If the parent or guardian believes they are eligible</h2>
+    <p class="govuk-body">
+      They can submit a new application and provide supporting evidence.
+    </p>
+
+    <h2 class="govuk-heading-m">Record expiry date</h2>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Record expires on
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ recordEndDate }}
+        </dd>
+      </div>
+    </dl>
+</div>
+</div>
+     <p class="govuk-body">
+   <a href="../../../recheck/recheck_{{ childId }}.html" class="govuk-link">
+  Return to child record
+</a>
+</p>
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}

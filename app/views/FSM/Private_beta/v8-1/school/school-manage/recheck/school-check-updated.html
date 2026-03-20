@@ -1,0 +1,84 @@
+{% extends "layouts/FSM/v8-1/layout-dfe-schoolnav.html" %}
+{% set pageName = "Confirm the school for " + (childName or "Lisa Sutton") %}
+{% set childName = childName or "Lisa Sutton" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+<h1 class="govuk-heading-l">{{ pageName }}</h1>
+
+<p class="govuk-body">Check this child is currently attending the school before running an eligibility check.</p>
+
+
+
+<div class="govuk-inset-text">
+
+<h2 class="govuk-heading-m govuk-!-margin-bottom-2">Child details</h2>
+
+<br>
+<p class="govuk-body govuk-!-margin-bottom-4">
+    <b>Name:</b>  {{ childName }}<br>
+    <b>Date of birth:</b> {{ data["child-dob"] or "22 Sept 2013" }}
+    </p>
+
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-2">School recorded in this service</h2>
+    <p class="govuk-body govuk-!-margin-bottom-0">
+    {{ data["school-name"] or "Greenfield Academy" }},<br>
+    {{ data["school-town"] or "Manchester" }}, {{ data["school-postcode"] or "M25 1QA" }}
+    </p>
+
+  </div>
+
+  <!-- <form method="post" action="../decision/rechecks/application-confirmed"> -->
+<!--
+    {{ govukRadios({
+    name: "confirm-school",
+    fieldset: {
+      legend: {
+      text: "Is this child still at the school recorded?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+      }
+    },
+    value: data["confirm-school"],
+    items: [
+      { value: "yes", text: "Yes" },
+      { value: "no", text: "No, the child has moved schools" }
+    ]
+    }) }}
+
+    {{ govukButton({ text: "Continue", href: "../decision/rechecks/application-confirmed" }) }} -->
+<!--
+  </form> -->
+
+
+
+             <div class="govuk-button-group">
+
+<a href="recheck-loader.html"
+   class="govuk-button govuk-button--primary"
+   data-module="govuk-button">
+   Confirm and run check
+</a>
+
+<a href="update-school.html"
+   class="govuk-button govuk-button--secondary"
+   data-module="govuk-button">
+   Edit child details
+</a>
+
+<p class="govuk-body">
+<a href="#" class="govuk-link">The child no longer attends this school</a>
+</p>
+
+
+</div>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}

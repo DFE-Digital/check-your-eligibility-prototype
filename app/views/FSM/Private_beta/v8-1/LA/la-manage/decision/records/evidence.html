@@ -1,0 +1,63 @@
+{% extends "layouts/FSM/v7-4/layout-dfe-lanav.html" %}
+{% set parentName="Alex Johnson" %}
+{% set parentId="123456789" %}
+{% set reference="44455453" %}
+{% set pageName="Supporting evidence for " ~ parentName%}
+
+{% block pageTitle %}
+{{pageName}}
+{% endblock %}
+
+{% block pageHeader %}
+{{pageName}}
+{% endblock %}
+<!----fudged the code for the back link as it wouldnt work with the zoom function on the evidence-->
+{% block beforeContent %}
+ {{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+    }) }}
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row govuk-!-margin-bottom-5">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">
+      {{pageName}}
+    </h1>
+
+    <h2 class="govuk-caption-l">File 001.jpg</h2>
+
+    <div style="position: relative; display: inline-block;">
+      <img src="/public/images/evidence-examples/UCstatement-single.jpg" alt="Description of the image"
+        class="govuk-!-width-full" style="max-width: 400px; height: auto; cursor: zoom-in;" onclick="openModal();">
+
+      <!-- Modal for zoom -->
+      <div id="zoomModal"
+        style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); text-align: left;">
+        <span
+          style="position: absolute; top: 20px; right: 35px; color: white; font-size: 40px; font-weight: bold; cursor: pointer;"
+          onclick="closeModal();">&times;</span>
+        <style>
+          @media print {
+            #zoomModal {
+              display: none !important;
+            }
+          }
+        </style>
+        <img src="/public/images/evidence-examples/UCstatement-single.jpg" alt="Zoomed image"
+          style="margin: auto ; display: block; max-width: 200%; max-height: 200%;">
+      </div>
+    </div>
+    <script>
+      function openModal() {
+        document.getElementById('zoomModal').style.display = 'block';
+      }
+
+      function closeModal() {
+        document.getElementById('zoomModal').style.display = 'none';
+      }
+    </script>
+  </div>
+
+{% endblock %}

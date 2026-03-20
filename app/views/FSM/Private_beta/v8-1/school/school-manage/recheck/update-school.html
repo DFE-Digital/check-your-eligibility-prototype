@@ -1,0 +1,142 @@
+{% extends "layouts/FSM/v8-1/layout-dfe-schoolnav.html" %}
+
+{% set pageName = "Update pupil details" %}
+{% set childName = data["child-first-name"] or "Lisa" %}
+
+{% block beforeContent %}
+  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">{{ pageName }}</h1>
+
+    <!-- <p class="govuk-body">
+      Update the child’s details before running the recheck.
+    </p> -->
+
+    <!-- <form action="check-pupil-details" method="post"> -->
+
+      <div class="govuk-form-group">
+        <h2 class="govuk-heading-m">Pupil details</h2>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="child-first-name">
+          First name
+        </label>
+        <input class="govuk-input govuk-!-width-two-thirds" id="child-first-name" name="child-first-name" type="text" value="{{ data['child-first-name'] or 'Lisa' }}">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="child-last-name">
+          Last name
+        </label>
+        <input class="govuk-input govuk-!-width-two-thirds" id="child-last-name" name="child-last-name" type="text" value="{{ data['child-last-name'] or 'Sutton' }}">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="child-school">
+          School
+        </label>
+        <div id="child-school-hint" class="govuk-hint">
+          Search for a school
+        </div>
+        <input class="govuk-input govuk-!-width-two-thirds" id="child-school" name="child-school" type="text" aria-describedby="child-school-hint" value="{{ data['child-school'] or 'Greenfield Academy, Manchester, M25 1QA' }}">
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="child-dob-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Date of birth
+          </legend>
+          <div id="child-dob-hint" class="govuk-hint">
+            For example, 22 9 2012
+          </div>
+
+          <div class="govuk-date-input" id="child-dob">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="child-dob-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="child-dob-day" name="child-dob-day" type="text" inputmode="numeric" value="{{ data['child-dob-day'] or '22' }}">
+              </div>
+            </div>
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="child-dob-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="child-dob-month" name="child-dob-month" type="text" inputmode="numeric" value="{{ data['child-dob-month'] or '9' }}">
+              </div>
+            </div>
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="child-dob-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="child-dob-year" name="child-dob-year" type="text" inputmode="numeric" value="{{ data['child-dob-year'] or '2012' }}">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+<div class="govuk-button-group">
+
+  <a href="school-check-updated.html"
+     role="button"
+     draggable="false"
+     class="govuk-button"
+     data-module="govuk-button">
+    Continue
+  </a>
+
+  <a href="school-check.html" class="govuk-link">
+    Cancel
+  </a>
+
+</div>
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/autocomplete.js"></script>
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    selectElement: document.querySelector('#school-picker')
+  })
+  document.addEventListener('DOMContentLoaded', function () {
+
+    var addAnotherButton = document.querySelector('.moj-add-another__add-button');
+    var removeButton = document.querySelectorAll('.moj-add-another__remove-button');
+    removeButton.forEach(function (button) {
+      button.addEventListener('click', updateLegends);
+    });
+    addAnotherButton.addEventListener('click', updateLegends);
+    function updateLegends() {
+      setTimeout(() => {
+        const legends = document.querySelectorAll('.moj-add-another__title');
+        legends.forEach(function (legend, index) {
+          legend.innerHTML = `Child ${index + 1}`;
+        });
+        var removeButton = document.querySelectorAll('.moj-add-another__remove-button');
+        removeButton.forEach(function (button) {
+          button.addEventListener('click', updateLegends);
+        });
+      }, 50);
+    }
+  })
+
+</script>
+{% endblock %}

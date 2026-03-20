@@ -1,0 +1,83 @@
+{% extends "layouts/FSM/v8-1/layout-dfe-schoolnav.html" %}
+{% set childName = childName or "Lisa Sutton" %}
+{% set childId = "44455454" %}
+
+{% set eligibilityType = "expanded" %}
+{% set eligibilityStartDate = eligibilityStartDate or "1 September 2026" %}
+{% set eligibilityEndDate = eligibilityEndDate or "31 August 2027" %}
+
+{% set recheckStartDate = recheckStartDate or "1 September 2027" %}
+
+{% if eligibilityType == "targeted" %}
+  {% set pageName = childName + " is eligible for Targeted free school meals" %}
+  {% set resultText = childName + " qualifies for free school meals and any additional passported benefits." %}
+  {% set nextStepText = ""  %}
+{% else %}
+  {% set pageName = childName + " is eligible for Expanded free school meals" %}
+  {% set resultText = childName + " qualifies for free school meals only." %}
+  {% set nextStepText = ""  %}
+{% endif %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukNotificationBanner({
+      type: "success",
+      titleText: "Success",
+      html: '<h2 class="govuk-notification-banner__heading">' + pageName + '</h2>'
+    }) }}
+    <h2 class="govuk-heading-m">What this means</h2>
+    <p class="govuk-body">
+      {{ resultText }}
+    </p>
+
+    <h2 class="govuk-heading-m">What you need to do</h2>
+    <p class="govuk-body">
+      {{ nextStepText }}
+
+
+<p class="govuk-body">
+  Update your school system to record this outcome.
+  </p>
+  <p class="govuk-body"> Once you have updated your school system,
+  <a href="../finalise-applications" class="govuk-link">
+    finalise this application</a> in this service.</p>
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Eligibility start date
+    </dt>
+    <dd class="govuk-summary-list__value">
+     {{ eligibilityStartDate }}
+
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Eligibility end date
+    </dt>
+    <dd class="govuk-summary-list__value">
+   {{ eligibilityEndDate }}
+    </dd>
+  </div>
+</dl>
+</div>
+</div>
+    <p class="govuk-body">
+   <a href="../../../recheck/recheck_{{ childId }}.html" class="govuk-link">
+  Return to child record
+</a>
+</p>
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}

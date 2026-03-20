@@ -1,0 +1,96 @@
+{% extends "layouts/FSM/v7-4/layout-dfe-schoolnav.html" %}
+{% set pageName="Update supporting evidence" %}
+{% block content %}
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+      <p class="govuk-body">Your LA has requested more evidence to support the application.
+    <br>Upload the evidence here or send copies by email later.</p>
+      <p>
+        You can upload multiple files at once, or you can upload one file at a time.
+      </p>
+
+
+       <div class="govuk-inset-text">
+View <a href="/evidence-guidance" class="govuk-link">guidance about supporting evidence (opens in a new
+          window)</a> and the reason for the request in the notification email that was sent by the LA.</div>
+
+    </div>
+    </div>
+
+    {%- from "govuk/components/file-upload/macro.njk" import govukFileUpload -%}
+    {%- from "govuk/components/button/macro.njk" import govukButton -%}
+    {%- from "govuk/components/error-summary/macro.njk" import govukErrorSummary -%}
+    {%- from "moj/components/multi-file-upload/macro.njk" import mojMultiFileUpload -%}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-section-break--l">
+
+        {% if errorSummary.items.length %}
+        {{ govukErrorSummary({
+        titleText: 'There is a problem',
+        errorList: errorSummary.items
+        }) }}
+        {% endif %}
+
+        <form action="./appeal-check-answers-evidence-more.html" method="post" enctype="multipart/form-data">
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="file-upload-1">
+              Upload a file
+            </label>
+            <div
+              class="govuk-drop-zone"
+              data-module="govuk-file-upload">
+              <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+            </div>
+          </div>
+<!--
+          {% set uploadHtml %}
+          {{ govukFileUpload({
+          id: "documents",
+          name: "documents",
+          classes: 'moj-multi-file-upload__input',
+          label: {
+          text: "Upload a file",
+          classes: 'govuk-label--m'
+          },
+          attributes: { multiple: '' },
+          errorMessage: errorMessage
+          }) }}
+
+          {{govukButton({
+          text: 'Upload file',
+          classes: 'govuk-button--secondary moj-multi-file-upload__button'
+          })}}
+          {% endset %}
+
+          {{ mojMultiFileUpload({
+          uploadedFiles: {
+            heading: { text: 'Files added'},
+
+          items: uploadedFiles
+          },
+          uploadHtml: uploadHtml
+          }) }}
+-->
+<div class="govuk-button-group">
+
+          {{govukButton({
+          text: 'Attach evidence',
+          type: 'submit'
+          })}}
+        </form>
+
+          <p class="govuk-body"><a href="../appeal/appeal-check-answers-email" class="govuk-link">Mark as sent by email</a></p>
+</div>
+
+
+      </div>
+
+      </div>
+    </div>
+
+    {% endblock %}
