@@ -1,0 +1,122 @@
+{% extends "/layouts/childcare/v9/layout-chp.html" %}
+
+{% block pageTitle %}
+ Can you tell us a bit more about what your enquiry relates to?
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+     <form class="form" action="/childcare/v9/help/i/subservice" method="post" novalidate>
+
+         {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+          {{ govukRadios({
+            classes: "govuk-radios",
+            name: "select-term",
+            fieldset: {
+              legend: {
+                text: "Can you tell us which service your enquiry relates to?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: "a",
+                text: "Academies Trust Financial Returns"
+              },
+              {
+                value: "b",
+                text: "Academy significant change process"
+              },
+              {
+                value: "c",
+                text: "Agency social worker data collection"
+              },
+               {
+                value: "d",
+                text: "Check an early years qualification"
+              },
+               {
+                value: "e",
+                text: "Check Your Performance Measures Data (CYPMD)"
+              },
+              {
+                value: "f",
+                text: "DfE Connect"
+              },
+              {
+                value: "g",
+                text: "School attendance dashboard"
+              },
+              {
+                value: "h",
+                text: "Document exchange"
+              },
+              {
+                value: "i",
+                text: "Eligibility checking services (FSM and childcare)"
+              },
+              {
+                value: "j",
+                text: "Get Information about Schools (GIAS)"
+              },
+              {
+                value: "k",
+                text: "Learning Records Service (LRS)"
+              },
+              {
+                value: "l",
+                text: "My Education and Skills Funding (MYESF)"
+              },
+              {
+                value: "m",
+                text: "School attendance reporting / Wonde"
+              },
+              {
+                value: "n",
+                text: "View my financial insights"
+              },
+               {
+                value: "o",
+                text: "View your Education Data (VYED)"
+              }
+
+            ]
+          }) }}
+
+
+
+
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+
+        </form>
+
+
+
+  </div>
+
+</div>
+
+
+
+
+{% endblock %}

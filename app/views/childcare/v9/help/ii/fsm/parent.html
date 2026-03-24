@@ -1,0 +1,39 @@
+{% extends "/layouts/childcare/v9/layout-chp.html" %}
+
+{% block pageTitle %}
+ Contact your local authority for help
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-l">Contact your school or local authority for help</h1>
+
+    <p></p>
+
+    <p>Text goes here</p>
+
+    <p>Use the <a href="https://www.gov.uk/find-local-council">find your local council service</a> if you do not know your local authority is.</p>
+
+    <h2 class="govuk-heading-m">Guidance and further information</h2>
+
+    <p>gov uk links on childcare</p>
+  </div>
+
+</div>
+
+
+
+
+{% endblock %}

@@ -1,7 +1,7 @@
 {% extends "/layouts/childcare/v9/layout-chp.html" %}
 
 {% block pageTitle %}
- Can you tell us a bit more about what your enquiry relates to?
+ What service is your enquiry about?
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,13 +18,13 @@
   <div class="govuk-grid-column-two-thirds">
 
 
-     <form class="form" action="/childcare/v9/help/query-type" method="post" novalidate>
+     <form class="form" action="/childcare/v9/help/ii/cc/query-type" method="post" novalidate>
 
          {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
           {{ govukRadios({
             classes: "govuk-radios",
-            name: "select-term",
+            name: "select-subservice",
             fieldset: {
               legend: {
                 text: "What service is your enquiry about?",
@@ -41,7 +41,7 @@
                 value: "cc",
                 text: "Manage eligibility for childcare support",
                 hint: {
-                  text: "Early learning for 2-year-olds and early years pupil premium",
+                  text: "Early learning for 2-year-olds, early years pupil premium and childcare for working families",
                   classes: "govuk-!-margin-bottom-3"
                 },
                 label: {
@@ -49,10 +49,10 @@
                 }
               },
               {
-                value: "ecs",
-                text: "Eligibility checking service (ECS)",
+                value: "api",
+                text: "Eligibility checking engine API",
                 hint: {
-                  text: "Childcare for working families only",
+                  text: "some hint text",
                   classes: "govuk-!-margin-bottom-3"
                 },
                 label: {
