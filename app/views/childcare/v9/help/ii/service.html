@@ -1,7 +1,7 @@
 {% extends "/layouts/childcare/v9/layout-chp.html" %}
 
 {% block pageTitle %}
- Can you tell us a bit more about what your enquiry relates to?
+ Can you tell us which service your enquiry relates to?
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,13 +18,13 @@
   <div class="govuk-grid-column-two-thirds">
 
 
-     <form class="form" action="/childcare/v9/help/select-subservice" method="post" novalidate>
+     <form class="form" action="/childcare/v9/help/ii/subservice" method="post" novalidate>
 
          {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
           {{ govukRadios({
             classes: "govuk-radios",
-            name: "select-term",
+            name: "select-service",
             fieldset: {
               legend: {
                 text: "Can you tell us which service your enquiry relates to?",
@@ -42,55 +42,55 @@
                 text: "Academy significant change process"
               },
               {
-                value: "b",
+                value: "c",
                 text: "Agency social worker data collection"
               },
                {
-                value: "b",
+                value: "d",
                 text: "Check an early years qualification"
               },
                {
-                value: "b",
+                value: "e",
                 text: "Check Your Performance Measures Data (CYPMD)"
               },
               {
-                value: "c",
+                value: "f",
                 text: "DfE Connect"
               },
               {
-                value: "c",
+                value: "g",
                 text: "School attendance dashboard"
               },
               {
-                value: "d",
+                value: "h",
                 text: "Document exchange"
               },
               {
-                value: "e",
+                value: "i",
                 text: "Eligibility checking services (FSM and childcare)"
               },
               {
-                value: "f",
+                value: "j",
                 text: "Get Information about Schools (GIAS)"
               },
               {
-                value: "g",
+                value: "k",
                 text: "Learning Records Service (LRS)"
               },
               {
-                value: "g",
+                value: "l",
                 text: "My Education and Skills Funding (MYESF)"
               },
               {
-                value: "g",
+                value: "m",
                 text: "School attendance reporting / Wonde"
               },
               {
-                value: "g",
+                value: "n",
                 text: "View my financial insights"
               },
                {
-                value: "g",
+                value: "o",
                 text: "View your Education Data (VYED)"
               }
 

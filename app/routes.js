@@ -297,6 +297,44 @@ else {
 }
 })
 
+// CHP select subservice
+
+router.post('/childcare/v9/help/ii/cc/query-type', function(req, res) {
+
+var subService = req.session.data['select-subservice']
+if (subService == "fsm"){
+    res.redirect("/childcare/v9/help/ii/fsm/user-type")
+}
+
+if (subService == "api"){
+    res.redirect("/childcare/v9/help/ii/api/query-type")
+}
+
+else {
+    res.redirect("/childcare/v9/help/ii/cc/query-type")
+}
+})
+
+// CHP FSM select user type
+
+router.post('/childcare/v9/help/ii/fsm/query-type', function(req, res) {
+
+var fsmUser = req.session.data['fsm-user']
+if (fsmUser == "school"){
+    res.redirect("/childcare/v9/help/ii/fsm/school")
+}
+
+if (fsmUser == "parent"){
+    res.redirect("/childcare/v9/help/ii/fsm/parent")
+}
+
+else {
+    res.redirect("/childcare/v9/help/ii/fsm/query-type")
+}
+})
+
+
+
 
 // Childcare dev ready
 

@@ -1,0 +1,81 @@
+{% extends "/layouts/childcare/v9/layout-chp.html" %}
+
+{% block pageTitle %}
+ Can you tell us a bit more about what your enquiry relates to?
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+     <form class="form" action="" method="post" novalidate>
+
+         {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+          {{ govukRadios({
+            classes: "govuk-radios",
+            name: "select-term",
+            fieldset: {
+              legend: {
+                text: "What is your enquiry about?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: "single",
+                text: "Run a check for one parent or guardian"
+              },
+              {
+                value: "batch",
+                text: "Run a batch check"
+              },
+              {
+                value: "error",
+                text: "Technical issues and errors"
+              },
+              {
+                value: "policy",
+                text: "Policy queries"
+              },
+              {
+                value: "other",
+                text: "Other"
+              }
+            ]
+          }) }}
+
+
+
+
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+
+        </form>
+
+
+
+  </div>
+
+</div>
+
+
+
+
+{% endblock %}

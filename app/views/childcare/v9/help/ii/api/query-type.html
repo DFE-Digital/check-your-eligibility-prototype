@@ -17,14 +17,13 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-
-     <form class="form" action="/childcare/v9/help/enquiry-details" method="post" novalidate>
+     <form class="form" action="/childcare/v9/help/ii/enquiry-details" method="post" novalidate>
 
          {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
           {{ govukRadios({
             classes: "govuk-radios",
-            name: "select-term",
+            name: "api-query-type",
             fieldset: {
               legend: {
                 text: "What is your enquiry about?",
@@ -34,20 +33,16 @@
             },
             items: [
               {
-                value: "single",
-                text: "Run a check for one parent or guardian"
+                value: "accreditation",
+                text: "Accreditation"
               },
               {
-                value: "batch",
-                text: "Run a batch check"
+                value: "integrate",
+                text: "Integrating with the ECE API"
               },
               {
                 value: "error",
                 text: "Technical issues and errors"
-              },
-              {
-                value: "policy",
-                text: "Policy queries"
               },
               {
                 value: "other",
@@ -55,9 +50,6 @@
               }
             ]
           }) }}
-
-
-
 
 
           {% from "govuk/components/button/macro.njk" import govukButton %}

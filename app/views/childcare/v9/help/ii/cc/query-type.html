@@ -1,0 +1,120 @@
+{% extends "/layouts/childcare/v9/layout-chp.html" %}
+
+{% block pageTitle %}
+ Heading
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Heading</h1>
+
+
+     <form class="form" action="/childcare/v9/help/ii/enquiry-details" method="post" novalidate>
+
+         {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+          {{ govukRadios({
+            classes: "govuk-radios",
+            name: "cc-query-type",
+            fieldset: {
+              legend: {
+                text: "What is your enquiry about?",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              {
+                value: "outcomes",
+                text: "Check outcomes"
+              },
+              {
+                value: "policy",
+                text: "Eligibility criteria and policy queries",
+                 hint: {
+                  text: "Includes asylum seeker and NRPF applications",
+                  classes: "govuk-!-margin-bottom-3"
+                },
+                label: {
+                  classes: "govuk-!-margin-bottom-0"
+                }
+              },
+              {
+                value: "how-to",
+                text: "How to use the service"
+              },
+              {
+                value: "error",
+                text: "Technical issues and errors"
+              },
+              {
+                value: "other",
+                text: "Other"
+              }
+            ]
+          }) }}
+
+
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+          {{ govukRadios({
+            classes: "govuk-radios",
+            name: "cc-query-type",
+            fieldset: {
+              legend: {
+                text: "Select an eligibility type (optional)",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              {
+                value: "wf",
+                text: "Childcare for working families"
+              },
+              {
+                value: "2yo",
+                text: "Early learning for 2-year-olds"
+              },
+              {
+                value: "EYPP",
+                text: "Early years pupil premium"
+              }
+            ]
+          }) }}
+
+
+
+
+
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+
+        </form>
+
+
+
+  </div>
+
+</div>
+
+
+
+
+{% endblock %}
