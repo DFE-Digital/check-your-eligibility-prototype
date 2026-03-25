@@ -890,6 +890,18 @@ section.dfe {
   line-height: 1;
 }
 
+.userGuidanceAnchorMenu {
+    position: sticky;
+    top: 10px;
+    max-height: 100vh;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.userGuidanceAnchorMenu a {
+        display: inline-block;
+}
+
 .contents-list-item {
   list-style-type: none;
 }
