@@ -4,25 +4,20 @@
 {# 2 #}
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 
+{% set govukRebrand = true %}
+
 {# 3 #}
 {% block header %}
 
-{{ header({
-    "showNav": "false",
-    "showSearch": "false",
-    "showHeaderActionLinks": "true",
-    "logoPath": "public/images",
-    "searchAction": "/search/",
-    "searchInputName": "q",
-    "logoAltText": "Department for Education",
-    "homeHref": "https://gov.uk",
-    "selectedNav": view,
-    "service": {
-      "name": "",
-      "serviceUrl": ""
-    }
-  })
-}}
+<header class="govuk-header" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+      <div class="govuk-header__logo">
+        <a href="/childcare/index-childcare" class="govuk-header__link govuk-header__link--homepage">
+            <img src="/public/images/department-for-education_white.png" alt="Department for Education" class="govuk-header__logotype">
+        </a>
+      </div>
+  </div>
+</header>
 
 {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
