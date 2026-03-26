@@ -1,7 +1,7 @@
 {% extends "/layouts/childcare/v9/layout-childcare.html" %}
 
 {% block pageTitle %}
-  Eligibility code of Asher Ellis
+  Eligibility code of Yeong Park
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,7 +17,7 @@
   <div class="govuk-grid-column-full">
 
 
-    <h1 class="govuk-heading-l">Eligibility code for Asher Ellis</h1>
+    <h1 class="govuk-heading-l">Eligibility code for Laslo Small</h1>
 
     <div class="govuk-button-group">
       {{ govukButton({
@@ -26,12 +26,6 @@
       }) }}
 
       {{ govukButton({
-        text: "Add a partner",
-        classes: "govuk-button--secondary",
-        href: "/childcare/v9/foster/edit/partner-details?remove-partner=removed"
-      }) }}
-
-       {{ govukButton({
         text: "Transfer this code",
         classes: "govuk-button--secondary",
         href: "/childcare/v9/foster/transfer/transfer"
@@ -45,7 +39,7 @@
         }) }}
     </div>
 
-     <div class="govuk-summary-card" id="code">
+    <div class="govuk-summary-card" id="code">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title">
           Eligibility code details
@@ -68,8 +62,8 @@
               Reconfirmation status
             </dt>
             <dd class="govuk-summary-list__value">
-              <strong class="govuk-tag govuk-tag--yellow">
-                Due now
+               <strong class="govuk-tag govuk-tag--red">
+                Overdue
               </strong>
             </dd>
             <dd class="govuk-summary-list__actions">
@@ -80,7 +74,7 @@
               Code status
             </dt>
             <dd class="govuk-summary-list__value">
-               Valid for spring term 2026
+              Expired
             </dd>
             <dd class="govuk-summary-list__actions">
             </dd>
@@ -90,7 +84,7 @@
               Eligibility confirmed on
             </dt>
             <dd class="govuk-summary-list__value">
-              12 October 2025
+              24 April 2024
             </dd>
             <dd class="govuk-summary-list__actions">
             </dd>
@@ -100,7 +94,7 @@
               Reconfirm between
             </dt>
             <dd class="govuk-summary-list__value">
-              26 March 2026 and 24 April 2026
+              13 June 2025 and 13 July 2025
             </dd>
             <dd class="govuk-summary-list__actions">
             </dd>
@@ -110,7 +104,7 @@
               Grace period ends
             </dt>
             <dd class="govuk-summary-list__value">
-              31 August 2026
+               31 August 2025
             </dd>
             <dd class="govuk-summary-list__actions">
             </dd>
@@ -138,7 +132,7 @@
               Full name
             </dt>
             <dd class="govuk-summary-list__value">
-              Asher Ellis
+              Laslo Small
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -146,7 +140,7 @@
               Date of birth
             </dt>
             <dd class="govuk-summary-list__value">
-              1 March 2024
+              6 September 2023
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -154,7 +148,7 @@
               Postcode
             </dt>
             <dd class="govuk-summary-list__value">
-              M23 7PL
+              M20 7GF
             </dd>
           </div>
         </dl>
@@ -180,7 +174,7 @@
               Full name
             </dt>
             <dd class="govuk-summary-list__value">
-              Matthew Higgins
+              Victoria Price
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -188,7 +182,7 @@
               Date of birth
             </dt>
             <dd class="govuk-summary-list__value">
-              10 September 1988
+              10 April 1984
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -197,6 +191,50 @@
             </dt>
             <dd class="govuk-summary-list__value">
               PB123456C
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">
+          Partner
+        </h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action">
+            <a class="govuk-link" href="/childcare/v9/foster/edit/partner-details">Change<span class="govuk-visually-hidden">partner details</span></a>
+          </li>
+          <li class="govuk-summary-card__action">
+            <a class="govuk-link" href="/childcare/v9/foster/edit/remove-partner">Remove<span class="govuk-visually-hidden">partner details</span></a>
+          </li>
+        </ul>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Full name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Jim Price
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              27 September 1982
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              National Insurance number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              PB458673A
             </dd>
           </div>
         </dl>
