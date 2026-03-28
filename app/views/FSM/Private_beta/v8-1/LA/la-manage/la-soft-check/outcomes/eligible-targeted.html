@@ -1,0 +1,73 @@
+{% extends "layouts/FSM/v8-1/layout-dfe-lanav.html" %}
+
+{% set eligibilityType = data["eligibilityType"] or "targeted" %}
+
+{% if eligibilityType == "targeted" %}
+  {% set pageName = "Children eligible for targeted free school meals" %}
+  {% set outcomeTitle = "Children eligible for targeted support" %}
+  {% set outcomeMessage = "are eligible for free school meals and additional benefits." %}
+  {% set policyLabel = "FSM Targeted" %}
+{% else %}
+  {% set pageName = "Children eligible for expanded free school meals" %}
+  {% set outcomeTitle = "Children eligible for free school meals" %}
+  {% set outcomeMessage = "are eligible for free school meals only." %}
+  {% set policyLabel = "FSM Expanded" %}
+{% endif %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-notification-banner govuk-notification-banner--success"
+         role="alert"
+         aria-labelledby="govuk-notification-banner-title"
+         data-module="govuk-notification-banner">
+
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          {{ outcomeTitle }}
+        </h2>
+      </div>
+
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          The children of {{ data["parent-firstname"] or "Idella" }} {{ data["parent-surname"] or "Nolan" }} {{ outcomeMessage }}
+        </h3>
+
+       <p class="govuk-body">
+  <strong>Support level:</strong>
+
+  <strong class="govuk-tag
+    {% if eligibilityType == 'targeted' %}
+      govuk-tag--purple
+    {% else %}
+      govuk-tag--green
+    {% endif %}
+  ">
+    {{ policyLabel }}
+  </strong>
+</p>
+      </div>
+
+    </div>
+
+    <p>This information should be passed on to their school.</p>
+
+    <div class="govuk-button-group">
+      <a href="../checker" class="govuk-button" role="button" data-module="govuk-button">
+        Do another check
+      </a>
+      <a class="govuk-link" href="../../apply/outcome-eligible-childs-age.html">
+        Continue to add child details
+      </a>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}

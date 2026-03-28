@@ -13,7 +13,7 @@
     <div class="govuk-grid-column-full">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-quarter">
-          {% include "_includes/la/filter-panel-la.html" %}
+          {% include "_includes/la/v8-1/filter-panel-la-exp.html" %}
         </div>
         <div class="govuk-grid-column-three-quarters">
           <!--Export and search results section-->
@@ -60,7 +60,7 @@
                         </tr>
                     </thead>
 
-{% include "_includes/la/la-table-rows.html" %}
+{% include "_includes/la/v8-1/la-table-rows.html" %}
 
 
                 </div>
@@ -112,7 +112,6 @@
 {% endblock %}
 
 {% block scripts %}
-
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const ROWS_PER_PAGE = 15;
@@ -120,12 +119,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const table = document.getElementById('resultsTable');
   const resultCountEl = document.getElementById('resultCount');
   const totalResultsEl = document.getElementById('totalResults');
-
+  const schoolInput = document.getElementById('school');
   const keywordsInput = document.getElementById('keywords');
   const applyBtn = document.getElementById('applyFilter');
   const clearLink = document.querySelector('.govuk-link--no-visited-state');
 
-  // Optional “selected filters” tags
   const tagEls = {
     kwWrap: document.getElementById('selected-keyword-container'),
     kwList: document.getElementById('selected-keyword'),
@@ -135,78 +133,76 @@ document.addEventListener('DOMContentLoaded', () => {
     stList: document.getElementById('selected-status')
   };
 
-  // Map between your checkbox values and the words in your <tr data-status="...">
-  // Checkboxes use codes like "status-Not-Entitled"; rows use words like "Not eligible".
   const statusCodeToWord = {
-    'status-Eligible': 'Eligible',
-    'status-Not-eligible': 'Not eligible',
-    'status-Evidence-needed': 'Evidence needed',
-    'status-Sent-for-review': 'Sent for review',
-    'status-Ready-for-review': 'Ready for review',
-    'status-Reviewed-not-eligible': 'Reviewed not eligible',
-    'status-Reviewed-eligible': 'Reviewed eligible',
-    'status-FSM-confirmed': 'FSM confirmed',
-    'status-Archive': 'Archived',
-    'status-Expired': 'Expired'
+    'status-eligible-expanded': 'FSM eligible expanded',
+    'status-eligible-targeted': 'FSM eligible targeted',
+    'status-not-eligible': 'Not eligible',
+    'status-evidence-needed': 'Evidence needed',
+    'status-in-review': 'In review',
+    'status-fsm-confirmed': 'FSM confirmed',
+    'status-archived': 'Archived'
   };
 
   let currentPage = 1;
 
   function getFilters() {
     const keyword = (keywordsInput?.value || '').trim().toLowerCase();
+    const school = (schoolInput?.value || '').trim().toLowerCase();
     const dateRadio = document.querySelector('input[name="date range"]:checked');
     const dateRange = dateRadio ? dateRadio.value : null;
     const statuses = Array.from(document.querySelectorAll('input[name="status"]:checked')).map(el => el.value);
-    return { keyword, dateRange, statuses };
+
+    return { keyword, school, dateRange, statuses };
   }
 
-  // Accept either data-submitted or data-submission-date
   function getRowISODate(row) {
     return row.getAttribute('data-submitted') || row.getAttribute('data-submission-date') || '';
   }
 
-  // Compare against "last N days"
   function inDateRange(iso, range) {
     if (!range) return true;
     if (!iso) return false;
+
     const days = {
       'Last month': 30,
       'Last 3 months': 90,
       'Last 6 months': 180,
       'Last 12 months': 365
     }[range];
+
     if (!days) return true;
 
     const submitted = new Date(iso + 'T00:00:00');
     const today = new Date();
     const cutoff = new Date(today.getFullYear(), today.getMonth(), today.getDate() - days);
+
     return submitted >= cutoff;
   }
 
-  function rowMatches(row, { keyword, dateRange, statuses }) {
-    // Keyword: search whole row (th + tds)
+  function rowMatches(row, { keyword, school, dateRange, statuses }) {
     if (keyword) {
       const text = row.innerText.toLowerCase();
       if (!text.includes(keyword)) return false;
     }
 
-    // Status: your rows store the human word in data-status
+    if (school) {
+      const rowSchool = (row.getAttribute('data-school') || '').toLowerCase();
+      if (!rowSchool.includes(school)) return false;
+    }
+
     if (statuses.length) {
       const rowWord = (row.getAttribute('data-status') || '').trim();
-      // If any checked status code maps to this row's word, it matches
       const matchStatus = statuses.some(code => statusCodeToWord[code] === rowWord);
       if (!matchStatus) return false;
     }
 
-    // Date
     const iso = getRowISODate(row);
     if (!inDateRange(iso, dateRange)) return false;
 
     return true;
   }
 
-  function updateTags({ keyword, dateRange, statuses }) {
-    // Reset
+  function updateTags({ keyword, school, dateRange, statuses }) {
     if (tagEls.kwList) tagEls.kwList.innerHTML = '';
     if (tagEls.dateList) tagEls.dateList.innerHTML = '';
     if (tagEls.stList) tagEls.stList.innerHTML = '';
@@ -214,94 +210,124 @@ document.addEventListener('DOMContentLoaded', () => {
     if (tagEls.dateWrap) tagEls.dateWrap.style.display = 'none';
     if (tagEls.stWrap) tagEls.stWrap.style.display = 'none';
 
-    // Keyword tag
     if (keyword && tagEls.kwList && tagEls.kwWrap) {
-      tagEls.kwList.innerHTML = `<li><button class="app-filter__tag" type="button" onclick="__clearTag__('keyword')">
-        <span class="govuk-visually-hidden">Remove this filter</span>${keyword}</button></li>`;
+      tagEls.kwList.innerHTML += `
+        <li>
+          <button class="app-filter__tag" type="button" onclick="__clearTag__('keyword')">
+            <span class="govuk-visually-hidden">Remove this filter</span>${keyword}
+          </button>
+        </li>`;
       tagEls.kwWrap.style.display = 'block';
     }
-    // Date tag
+
+    if (school && tagEls.kwList && tagEls.kwWrap) {
+      tagEls.kwList.innerHTML += `
+        <li>
+          <button class="app-filter__tag" type="button" onclick="__clearTag__('school')">
+            <span class="govuk-visually-hidden">Remove this filter</span>${school}
+          </button>
+        </li>`;
+      tagEls.kwWrap.style.display = 'block';
+    }
+
     if (dateRange && tagEls.dateList && tagEls.dateWrap) {
-      tagEls.dateList.innerHTML = `<li><button class="app-filter__tag" type="button" onclick="__clearTag__('date')">
-        <span class="govuk-visually-hidden">Remove this filter</span>${dateRange}</button></li>`;
+      tagEls.dateList.innerHTML = `
+        <li>
+          <button class="app-filter__tag" type="button" onclick="__clearTag__('date')">
+            <span class="govuk-visually-hidden">Remove this filter</span>${dateRange}
+          </button>
+        </li>`;
       tagEls.dateWrap.style.display = 'block';
     }
-    // Status tags (show the human words to match your UI)
+
     if (statuses.length && tagEls.stList && tagEls.stWrap) {
       statuses.forEach(code => {
         const label = statusCodeToWord[code] || code;
-        tagEls.stList.innerHTML += `<li><button class="app-filter__tag" type="button" onclick="__clearTag__('${code}')">
-          <span class="govuk-visually-hidden">Remove this filter</span>${label}</button></li>`;
+        tagEls.stList.innerHTML += `
+          <li>
+            <button class="app-filter__tag" type="button" onclick="__clearTag__('${code}')">
+              <span class="govuk-visually-hidden">Remove this filter</span>${label}
+            </button>
+          </li>`;
       });
       tagEls.stWrap.style.display = 'block';
     }
   }
 
   function render({ page = 1 } = {}) {
+    if (!table) return;
+
     const rows = Array.from(table.querySelectorAll('tbody tr'));
     const filters = getFilters();
+
     updateTags(filters);
 
-    // Filter rows
-    const matched = [];
-    rows.forEach(r => {
-      if (rowMatches(r, filters)) {
-        r.classList.add('matches-filters');
-        matched.push(r);
-      } else {
-        r.classList.remove('matches-filters');
-      }
-    });
+    const matched = rows.filter(row => rowMatches(row, filters));
 
-    // Pagination
     currentPage = page;
     const start = (currentPage - 1) * ROWS_PER_PAGE;
     const end = Math.min(currentPage * ROWS_PER_PAGE, matched.length);
 
-    matched.forEach((row, idx) => {
-      row.style.display = (idx >= start && idx < end) ? '' : 'none';
+    rows.forEach(row => {
+      row.style.display = 'none';
     });
-    rows.filter(r => !matched.includes(r)).forEach(r => r.style.display = 'none');
 
-    // Update blue box: show range
+    matched.forEach((row, idx) => {
+      if (idx >= start && idx < end) {
+        row.style.display = '';
+      }
+    });
+
     if (resultCountEl && totalResultsEl) {
       if (matched.length === 0) {
         resultCountEl.textContent = '0';
-        totalResultsEl.textContent = '0';
+        totalResultsEl.textContent = rows.length;
       } else {
         resultCountEl.textContent = `${start + 1}–${end}`;
         totalResultsEl.textContent = matched.length;
       }
     }
 
-    // Hook GOV.UK pagination buttons (if present)
     document.querySelectorAll('.govuk-pagination__item a').forEach(link => {
       link.onclick = (e) => {
         e.preventDefault();
         const n = parseInt(link.textContent.trim(), 10);
-        if (!Number.isNaN(n)) render({ page: n });
+        if (!Number.isNaN(n)) {
+          render({ page: n });
+        }
       };
     });
   }
 
-  // Expose helper for the little “selected filter” tags
   window.__clearTag__ = (which) => {
     if (which === 'keyword') {
       if (keywordsInput) keywordsInput.value = '';
+    } else if (which === 'school') {
+      if (schoolInput) schoolInput.value = '';
     } else if (which === 'date') {
-      document.querySelectorAll('input[name="date range"]').forEach(r => r.checked = false);
+      document.querySelectorAll('input[name="date range"]').forEach(radio => {
+        radio.checked = false;
+      });
     } else {
-      // it's a status code like "status-Not-Entitled"
       const cb = document.querySelector(`input[name="status"][value="${which}"]`);
       if (cb) cb.checked = false;
     }
+
     render({ page: 1 });
   };
 
   function clearAll() {
     if (keywordsInput) keywordsInput.value = '';
-    document.querySelectorAll('input[name="date range"]').forEach(r => r.checked = false);
-    document.querySelectorAll('input[name="status"]').forEach(c => c.checked = false);
+    if (schoolInput) schoolInput.value = '';
+
+    document.querySelectorAll('input[name="date range"]').forEach(radio => {
+      radio.checked = false;
+    });
+
+    document.querySelectorAll('input[name="status"]').forEach(checkbox => {
+      checkbox.checked = false;
+    });
+
     render({ page: 1 });
   }
 
@@ -315,7 +341,6 @@ document.addEventListener('DOMContentLoaded', () => {
     clearAll();
   });
 
-  // Initial
   render({ page: 1 });
 });
 </script>
