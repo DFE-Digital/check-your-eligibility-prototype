@@ -1,0 +1,118 @@
+{% extends "layouts/FSM/v8-1/basic/layout-dfe-basic-lanav.html" %}
+
+{% set pageName="Report generated on 01 February 2026" %}
+{% extends "layouts/FSM/v8-1/basic/layout-dfe-basic-lanav.html" %}
+
+{% set Service="Manage eligibility for free school meals" %}
+{% set address="Oystermouth Road Swansea SA1 3SN" %}
+{% set startDate = "2026-01-01" %}
+{% set endDate = "2026-01-31" %}
+
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <!-- <h1 class="govuk-heading-l">{{pageName}}</h1> -->
+   <div class="moj-page-header-actions">
+      <div class="moj-page-header-actions__title">
+        <h1 class="govuk-heading-l">{{pageName}}</h1>
+         <p class="govuk-body"><a class="govuk-link" href="report-checks.html">View all reports</a></p>
+
+      </div>
+      <div class="moj-page-header-actions__actions">
+        <div class="moj-button-group moj-button-group--inline">
+          <a href="" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Download data as CSV
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+        <table class="govuk-table govuk-table--small-text-until-tablet">
+            <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-4">Showing 4 checks
+                completed from {{ startDate | govukDate("truncate") }} to {{ endDate | govukDate("truncate")}}</caption>
+
+
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Parent name</th>
+                    <th class="govuk-table__cell">National  <br>Insurance number</th>
+                    <th class="govuk-table__cell">Date of birth</th>
+                    <th scope="col" class="govuk-table__header">Date check<br> submitted</th>
+                    <th scope="col" class="govuk-table__header">Check type</th>
+                    <!-- <th scope="col" class="govuk-table__header">Check source</th> -->
+                    <th scope="col" class="govuk-table__header">Checked by</th>
+                    <th scope="col" class="govuk-table__header">Outcome</th>
+                    <!-- <th scope="col" class="govuk-table__header">  </th>
+                    <th scope="col" class="govuk-table__header"></th> -->
+
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Alex Johnson</td>
+                    <td class="govuk-table__cell">QQ123456C</td>
+                    <td class="govuk-table__cell">{{ "2000-01-01" | govukDate("truncate") }}</td>
+                    <td class="govuk-table__cell">{{ "2026-01-01" | govukDate("truncate") }}</td>
+                    <td class="govuk-table__cell">Batch</td>
+                    <!-- <td class="govuk-table__cell">Web service</td> -->
+                    <td class="govuk-table__cell">Jane Smith</td>
+                    <td class="govuk-table__cell">FSM Eligible Expanded</td>
+                    <td class="govuk-table__cell"> </td>
+                    <!-- <td class="govuk-table__cell"><a href=""> </a></td> -->
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Mia Evans</td>
+                    <td class="govuk-table__cell">QQ123456C</td>
+                    <td class="govuk-table__cell">{{ "1995-01-01" | govukDate("truncate") }}</td>
+                    <td class="govuk-table__cell">{{ "2026-01-01" | govukDate("truncate") }}</td>
+                    <td class="govuk-table__cell">Individual</td>
+                    <!-- <td class="govuk-table__cell">Web service</td> -->
+                    <td class="govuk-table__cell">Jane Smith</td>
+                    <td class="govuk-table__cell">Not found</td>
+                    <td class="govuk-table__cell"> </td>
+                    <!-- <td class="govuk-table__cell"><a href=""> </a></td> -->
+                </tr>
+
+                   <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Sarah Jones</td>
+                    <td class="govuk-table__cell">QQ873261C</td>
+                    <td class="govuk-table__cell">{{ "2016-01-01" | govukDate("truncate") }}</td>
+                    <td class="govuk-table__cell">{{ "2026-01-01" | govukDate("truncate") }}</td>
+                    <td class="govuk-table__cell">Individual</td>
+                    <!-- <td class="govuk-table__cell">Web API</td> -->
+                    <td class="govuk-table__cell">Cheshire East</td>
+                    <td class="govuk-table__cell">FSM eligible targeted</td>
+                    <td class="govuk-table__cell"> </td>
+                    <!-- <td class="govuk-table__cell"><a href=""> </a></td> -->
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Susan Francis</td>
+                    <td class="govuk-table__cell">QQ873261C</td>
+                    <td class="govuk-table__cell">{{ "2016-01-01" | govukDate("truncate") }}</td>
+                    <td class="govuk-table__cell">{{ "2026-01-01" | govukDate("truncate") }}</td>
+                    <td class="govuk-table__cell">Batch</td>
+                    <!-- <td class="govuk-table__cell">Web API</td> -->
+                    <td class="govuk-table__cell">Cheshire East</td>
+                    <td class="govuk-table__cell">Not eligible</td>
+                    <td class="govuk-table__cell"> </td>
+                    <!-- <td class="govuk-table__cell"><a href=""> </a></td> -->
+                </tr>
+
+            </tbody>
+        </table>
+
+
+ <!-- <p class="govuk-body"><a class="govuk-link" href="report-checks.html">View other reports</a></p> -->
+
+
+    </div>
+
+
+    {% endblock %}

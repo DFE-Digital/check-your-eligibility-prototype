@@ -27,10 +27,11 @@
   <div class="govuk-grid-column-two-thirds">
     <h2 class="govuk-heading-m">Upload our CSV template</h2>
     <ol class="govuk-list govuk-list--number">
-      <li>Download the <a href="/public/csv/Batch-check-template.csv" download class="govuk-link">batch check template (185kb)</a>.</li><li>
+      <li>Download the <a href="/public/csv/Batch-check-template.csv" download class="govuk-link">batch check template (CSV, 1KB)</a>.</li><li>
         Add the details of the parents or guardians you need to check.</li>
       <li>Make sure you include:
         <ul class="govuk-list govuk-list--bullet">
+          <li>first name</li>
           <li>last name</li>
           <li>date of birth (format DD/MM/YYYY or YYYY-MM-DD)</li>
           <li>National Insurance number</li>
@@ -41,6 +42,14 @@
       </li>
       <li> Save it as a CSV file.</li>
     </ol>
+
+    <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+Your saved file must match the template fields and contain fewer than 5000 rows.
+  </strong>
+</div>
   <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
 
     <h3 class="govuk-heading-m">Upload a CSV file</h3>
