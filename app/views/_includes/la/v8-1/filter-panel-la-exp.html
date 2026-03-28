@@ -102,6 +102,29 @@
             ]
           }) }}
 
+              <!-- Status -->
+          {{ govukCheckboxes({
+          idPrefix: "status",
+            name: "status",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                text: "Status",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+              {
+                value: "status-finalised",
+                text: "Finalised"
+              },
+              {
+                value: "status-recheck-due",
+                text: "Recheck due"
+              }
+            ]
+          }) }}
+
 
 
           {{ govukRadios({

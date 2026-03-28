@@ -1,15 +1,15 @@
 {% extends "layouts/FSM/v8-1/basic/layout-dfe-basic-lanav.html" %}
 
-{% set eligibilityType = data["eligibilityType"] or "expanded" %}
+{% set eligibilityType = data["eligibilityType"] or "targeted" %}
 
 {% if eligibilityType == "targeted" %}
-  {% set pageName = "Children eligible for targeted support" %}
+  {% set pageName = "Children eligible for targeted free school meals" %}
   {% set outcomeTitle = "Children eligible for targeted support" %}
   {% set outcomeMessage = "are eligible for free school meals and additional benefits." %}
   {% set policyLabel = "FSM Targeted" %}
 {% else %}
-  {% set pageName = "Children eligible for free school meals" %}
-  {% set outcomeTitle = "Children eligible for expanded free school meals" %}
+  {% set pageName = "Children eligible for expanded free school meals" %}
+  {% set outcomeTitle = "Children eligible for free school meals" %}
   {% set outcomeMessage = "are eligible for free school meals only." %}
   {% set policyLabel = "FSM Expanded" %}
 {% endif %}
@@ -32,7 +32,7 @@
 
       <div class="govuk-notification-banner__content">
         <h3 class="govuk-notification-banner__heading">
-          The children of {{ data["parent-firstname"] or "Derrick" }} {{ data["parent-surname"] or "Stark" }} {{ outcomeMessage }}
+          The children of {{ data["parent-firstname"] or "Idella" }} {{ data["parent-surname"] or "Nolan" }} {{ outcomeMessage }}
         </h3>
 
        <p class="govuk-body">
@@ -53,7 +53,7 @@
     </div>
 
     <p>This information should be passed on to their school.</p>
-  <p>You can <a href="" class="govuk-link" onclick="printPage()">print this page</a> for the parent or guardian to keep.</p>
+      <p>You can <a href="" class="govuk-link" onclick="printPage()">print this page</a> for the parent or guardian to keep.</p>
     <script>
       function printPage() {
         window.print();
