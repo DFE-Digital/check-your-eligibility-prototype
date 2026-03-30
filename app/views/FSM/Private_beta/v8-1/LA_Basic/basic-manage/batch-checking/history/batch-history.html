@@ -13,7 +13,8 @@
   { text: "Batch checking", href: "/FSM/Private_beta/v7-5/LA/la-manage/batch-checking/manual-no-ctf.html" },
   { text: "Batch checks history" }
 ] %}
-
+<div>
+<div class="govuk-width-container">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-l">{{pageName}}</h1>
@@ -99,6 +100,20 @@ Select “View results” to review individual records.</div>
           <!-- <td class="govuk-table__cell">75% complete
             <div class="govuk-progress-bar" aria-labelledby="progress-bar-label" aria-valuemin="0" aria-valuemax="100" aria-valuenow="75" role="progressbar" style="height: 20px; background-color: #f3f2f1; margin-top: 10px; width: 75%;"></div>
             </td> -->
+
+                   </td>
+        </tr>
+        <td class="govuk-table__cell">Greenwoodprim25.xml</td>
+        <td class="govuk-table__cell">456</td>
+        <td class="govuk-table__cell">Gallagher</td>
+        <td class="govuk-table__cell">{{ dateSubmitted | duration(6, 'days') | govukDate }} 11.54am</td>
+        <td class="govuk-table__cell">Matthew Smith</td>
+        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Completed</strong></td>
+        <td class="govuk-table__cell"><a href="../results/batch-check-success.html">View results</a>
+          <td class="govuk-table__cell"><a href="">Download results</a></td>
+
+        </td>
+
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">batch-school-Jan25.csv</td>
@@ -108,8 +123,9 @@ Select “View results” to review individual records.</div>
           <td class="govuk-table__cell">Liam Johnson</td>
           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Completed</strong></td>
           <td class="govuk-table__cell">
-            <a href="/public/csv/school-outcomes-v3.csv">View results</a>
-          <td class="govuk-table__cell"><a href=""> </a></td>
+            <a href="../results/batch-check-success.html">View results</a>
+          </td>
+          <td class="govuk-table__cell"><a href="">Download results</a></td>
 
           </td>
         </tr>
@@ -121,7 +137,7 @@ Select “View results” to review individual records.</div>
           <td class="govuk-table__cell">Charlotte Davis</td>
           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Completed</strong></td>
           <td class="govuk-table__cell"><a href="">View results</a></td>
-          <td class="govuk-table__cell"><a href=""> </a></td>
+          <td class="govuk-table__cell"><a href="">Download results</a></td>
 
         </tr>
         <!-- <tr class="govuk-table__row">
@@ -157,18 +173,7 @@ Select “View results” to review individual records.</div>
           <td class="govuk-table__cell"><a href=""> </a>
           </td> -->
 
-          </td>
-        </tr>
-        <td class="govuk-table__cell">Greenwoodprim25.xml</td>
-        <td class="govuk-table__cell">456</td>
-        <td class="govuk-table__cell">Gallagher</td>
-        <td class="govuk-table__cell">{{ dateSubmitted | duration(6, 'days') | govukDate }} 11.54am</td>
-        <td class="govuk-table__cell">Matthew Smith</td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Completed</strong></td>
-        <td class="govuk-table__cell"><a href="./batch-check-success">View results</a>
-        <td class="govuk-table__cell"><a href=""> </a></td>
 
-        </td>
       </tbody>
     </table>
 
