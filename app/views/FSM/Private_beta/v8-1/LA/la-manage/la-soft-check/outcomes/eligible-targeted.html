@@ -35,7 +35,7 @@
         <h3 class="govuk-notification-banner__heading">
           The children of {{ data["parent-firstname"] or "Idella" }} {{ data["parent-surname"] or "Nolan" }} {{ outcomeMessage }}
         </h3>
-
+<!--
        <p class="govuk-body">
   <strong>Support level:</strong>
 
@@ -48,14 +48,49 @@
   ">
     {{ policyLabel }}
   </strong>
-</p>
+</p> -->
       </div>
 
     </div>
 
 
 
-    <p>This information should be passed on to their school.</p>
+
+<h2 class="govuk-heading-m">Eligibility details</h2>
+
+<dl class="govuk-summary-list">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Status</dt>
+    <dd class="govuk-summary-list__value">
+      <strong class="govuk-tag
+        {% if eligibilityType == 'targeted' %}
+          govuk-tag--purple
+        {% else %}
+          govuk-tag--green
+        {% endif %}
+      ">
+        {% if eligibilityType == "targeted" %}
+          Eligible targeted
+        {% else %}
+          Eligible expanded
+        {% endif %}
+      </strong>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Eligibility end date</dt>
+    <dd class="govuk-summary-list__value">31 August 2026</dd>
+  </div>
+
+</dl>
+
+  <!-- <p>This check is valid until the end date shown at which time a recheck will need to be done to confirm if the children are still eligible.</p> -->
+  <p>This information should be passed on to their school.</p>
+
+
+
 
     <div class="govuk-button-group">
       <a href="../checker" class="govuk-button" role="button" data-module="govuk-button">
