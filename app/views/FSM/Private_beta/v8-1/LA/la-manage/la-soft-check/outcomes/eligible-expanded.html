@@ -34,7 +34,7 @@
         <h3 class="govuk-notification-banner__heading">
           The children of {{ data["parent-firstname"] or "Derrick" }} {{ data["parent-surname"] or "Stark" }} {{ outcomeMessage }}
         </h3>
-
+<!--
        <p class="govuk-body">
   <strong>Support level:</strong>
 
@@ -47,10 +47,45 @@
   ">
     {{ policyLabel }}
   </strong>
-</p>
+</p> -->
+
+
       </div>
 
     </div>
+
+
+
+
+<h2 class="govuk-heading-m">Eligibility details</h2>
+
+<dl class="govuk-summary-list">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Status</dt>
+    <dd class="govuk-summary-list__value">
+      <strong class="govuk-tag
+        {% if eligibilityType == 'targeted' %}
+          govuk-tag--purple
+        {% else %}
+          govuk-tag--green
+        {% endif %}
+      ">
+        {% if eligibilityType == "targeted" %}
+          Eligible targeted
+        {% else %}
+          Eligible expanded
+        {% endif %}
+      </strong>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Eligibility end date</dt>
+    <dd class="govuk-summary-list__value">31 August 2026</dd>
+  </div>
+
+</dl>
 
     <p>This information should be passed on to their school.</p>
 
