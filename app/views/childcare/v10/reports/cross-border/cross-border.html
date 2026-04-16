@@ -1,0 +1,157 @@
+{% extends "/layouts/childcare/v10/layout-childcare.html" %}
+
+{% block pageTitle %}
+ Cross-local authority checks
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-l">Cross-local authority checks</h1>
+
+    <p class="">Last updated on {{ "today" | govukDate }} {{ "now" | govukTime }}</p>
+
+    <hr class="govuk-section-break govuk-section-break--m">
+
+
+    <h2 class="govuk-heading-m">Codes in your local authority postcode area checked by other local authorities</h2>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Spring term 2026
+        </dt>
+        <dd class="govuk-summary-list__value">
+          39
+        </dd>
+         <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/childcare/v10/reports/cross-border/other-las">View report</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Autumn term 2025
+        </dt>
+        <dd class="govuk-summary-list__value">
+          76
+        </dd>
+         <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">View report</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Summer term 2025
+        </dt>
+        <dd class="govuk-summary-list__value">
+          98
+        </dd>
+         <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">View report</a>
+        </dd>
+      </div>
+    </dl>
+
+
+    <hr class="govuk-section-break govuk-section-break--l">
+
+
+     <h2 class="govuk-heading-m">Codes in other local authority postcode areas checked by your local authority</h2>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Spring term 2026
+        </dt>
+        <dd class="govuk-summary-list__value">
+          59
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">View report</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Autumn term 2025
+        </dt>
+        <dd class="govuk-summary-list__value">
+          122
+        </dd>
+         <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">View report</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Summer term 2025
+        </dt>
+        <dd class="govuk-summary-list__value">
+          95
+        </dd>
+         <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">View report</a>
+        </dd>
+      </div>
+    </dl>
+
+    <hr class="govuk-section-break govuk-section-break--l">
+
+
+     <h2 class="govuk-heading-m">Codes checked by both your local authority and another local authority</h2>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Spring term 2026
+        </dt>
+        <dd class="govuk-summary-list__value">
+          4
+        </dd>
+         <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="">View report</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Autumn term 2025
+        </dt>
+        <dd class="govuk-summary-list__value">
+          9
+        </dd>
+         <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">View report</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Summer term 2025
+        </dt>
+        <dd class="govuk-summary-list__value">
+          7
+        </dd>
+         <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">View report</a>
+        </dd>
+      </div>
+    </dl>
+
+
+  </div>
+
+</div>
+
+
+
+
+{% endblock %}
