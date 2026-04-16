@@ -1,0 +1,74 @@
+{% extends "/layouts/childcare/v10/layout-chp.html" %}
+
+{% block pageTitle %}
+  What type of user are you?
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+     <form class="form" action="/childcare/v10/help/fsm/query-type" method="post" novalidate>
+
+         {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+          {{ govukRadios({
+            classes: "govuk-radios",
+            name: "fsm-user",
+            fieldset: {
+              legend: {
+                text: "What type of user are you?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: "la",
+                text: "Local authority"
+              },
+              {
+                value: "school",
+                text: "School, academy or multi-academy trust (MAT)"
+              },
+              {
+                value: "parent",
+                text: "Parent or guardian"
+              }
+
+            ]
+          }) }}
+
+
+
+
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+
+        </form>
+
+
+
+  </div>
+
+</div>
+
+
+
+
+{% endblock %}

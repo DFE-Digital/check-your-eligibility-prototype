@@ -1,0 +1,94 @@
+{% extends "/layouts/childcare/v10/layout-chp.html" %}
+
+{% block pageTitle %}
+ Enquiry details
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Enquiry details</h1>
+
+    <p>Tell us what your enquiry is about so we can help you.</p>
+
+
+     <form class="form" action="" method="post" novalidate>
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          label: {
+            text: "Add a short title",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          hint: {
+            text: "If you are logged in you will see this as part of your submitted enquiries."
+          },
+          id: "event-name",
+          name: "eventName"
+        }) }}
+
+
+        {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
+
+        {{ govukCharacterCount({
+          name: "withHint",
+          id: "with-hint",
+          maxlength: 20000,
+          label: {
+            text: "What is your enquiry?",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          hint: {
+            text: "Provide as much detail as you can. If you have any reference numbers from other enquiries that are relevant, include them here. Please do not send us any personal data."
+          }
+        }) }}
+
+        </form>
+
+        <h2 class="govuk-heading-s">Attach documents to your enquiry</h2>
+
+
+        <p>If you have any documents, screenshots or emails that can help us answer your enquiry, please attach them to this form. Each file must be less than 32MB in size.</p>
+
+
+        <p>Please ensure you have removed any sensitive information from the attachment(s).</p>
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Add files",
+            classes: "govuk-button--secondary"
+          }) }}
+
+          <hr class="govuk-section-break govuk-section-break--m">
+
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Submit"
+          }) }}
+
+
+
+  </div>
+
+</div>
+
+
+
+
+{% endblock %}

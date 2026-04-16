@@ -1,0 +1,52 @@
+{% extends "/layouts/childcare/v10/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Archive eligibility code of Jasper Hayes?
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/autocomplete.js"></script>
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    selectElement: document.querySelector('#la-picker')
+  })
+
+</script>
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">Archive eligibility code of Laslo Small?</h1>
+
+        <p>You can still view and restore archived codes.</p>
+
+        {{ govukButton({
+          text: "Archive code",
+          classes: "govuk-button--warning",
+          href: "/childcare/v10/foster/family/archived?archive=success"
+        }) }}
+
+
+
+
+      </div>
+
+    </div>
+
+
+
+{% endblock %}

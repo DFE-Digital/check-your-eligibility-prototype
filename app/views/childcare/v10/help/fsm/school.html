@@ -1,0 +1,32 @@
+{% extends "/layouts/childcare/v10/layout-chp.html" %}
+
+{% block pageTitle %}
+ Contact your local authority for help
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+     <h1 class="govuk-heading-l">Contact your local authority</h1>
+
+
+    <p>Contact your local authority for help and support with this service.</p>
+  </div>
+
+</div>
+
+
+
+
+{% endblock %}

@@ -333,6 +333,57 @@ else {
 }
 })
 
+// Childcare v10
+
+// Route for create foster family add partner details
+
+router.post('/childcare/v10/foster/create/partner-details', function(req, res) {
+
+var carerPartner = req.session.data['add-partner']
+if (carerPartner == "Yes"){
+    res.redirect("/childcare/v10/foster/create/partner-details")
+}
+
+else {
+    res.redirect("/childcare/v10/foster/create/submitted-date")
+}
+})
+
+// CHP select subservice
+
+router.post('/childcare/v10/help/cc/query-type', function(req, res) {
+
+var subService = req.session.data['select-subservice']
+if (subService == "fsm"){
+    res.redirect("/childcare/v10/help/fsm/user-type")
+}
+
+if (subService == "api"){
+    res.redirect("/childcare/v10/help/api/query-type")
+}
+
+else {
+    res.redirect("/childcare/v10/help/cc/query-type")
+}
+})
+
+// CHP FSM select user type
+
+router.post('/childcare/v10/help/fsm/query-type', function(req, res) {
+
+var fsmUser = req.session.data['fsm-user']
+if (fsmUser == "school"){
+    res.redirect("/childcare/v10/help/fsm/school")
+}
+
+if (fsmUser == "parent"){
+    res.redirect("/childcare/v10/help/fsm/parent")
+}
+
+else {
+    res.redirect("/childcare/v10/help/fsm/query-type")
+}
+})
 
 
 

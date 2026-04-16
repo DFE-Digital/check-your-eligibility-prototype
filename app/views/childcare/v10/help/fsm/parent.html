@@ -1,0 +1,38 @@
+{% extends "/layouts/childcare/v10/layout-chp.html" %}
+
+{% block pageTitle %}
+ Contact your local authority for help
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-l">Contact your school or local authority</h1>
+
+    <p>Contact your child's school or your local authority for help and support with this service.</p>
+
+
+    <p>Use the <a href="https://www.gov.uk/find-local-council">find your local council</a> service if you do not know your local authority is.</p>
+
+    <h2 class="govuk-heading-m">Guidance and further information</h2>
+
+    <p><a href="">Apply for free school meals</a></p>
+  </div>
+
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends "/layouts/childcare/v10/layout-chp.html" %}
+
+{% block pageTitle %}
+ What service is your enquiry about?
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+     <form class="form" action="/childcare/v10/help/cc/query-type" method="post" novalidate>
+
+         {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+          {{ govukRadios({
+            classes: "govuk-radios",
+            name: "select-subservice",
+            fieldset: {
+              legend: {
+                text: "What service is your enquiry about?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: "fsm",
+                text: "Manage eligibility for free school meals"
+              },
+              {
+                value: "cc",
+                text: "Manage eligibility for childcare support",
+                hint: {
+                  text: "Early learning for 2-year-olds, early years pupil premium and childcare for working families",
+                  classes: "govuk-!-margin-bottom-3"
+                },
+                label: {
+                  classes: "govuk-!-margin-bottom-0"
+                }
+              },
+              {
+                value: "api",
+                text: "Eligibility checking engine API",
+                hint: {
+                  text: "Accreditation and integrating with ECE",
+                  classes: "govuk-!-margin-bottom-3"
+                },
+                label: {
+                  classes: "govuk-!-margin-bottom-0"
+                }
+              }
+
+
+            ]
+          }) }}
+
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+
+        </form>
+
+
+
+  </div>
+
+</div>
+
+
+
+
+{% endblock %}
