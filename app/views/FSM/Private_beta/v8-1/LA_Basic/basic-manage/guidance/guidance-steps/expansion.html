@@ -1,0 +1,79 @@
+{% extends "layouts/FSM/v8-1/basic/layout-dfe-basic-lanav.html" %}
+
+{% set pageName="Targeted and expanded free school meals" %}
+
+{% block beforeContent %}
+{% include "_includes/layouts/back_link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">{{ pageName }}</h1>
+
+    <p>From the start of the 2026 to 2027 academic year, there will be 2 categories of eligibility for free school meals. </p>
+
+    <h2 class="govuk-heading-m">Targeted free school meals</h2>
+
+    <p>
+      <strong class="govuk-tag govuk-tag--purple">Targeted</strong>
+    </p>
+
+    <p>
+This covers children in households in receipt of Universal Credit with annual household earnings of £7,400 or less.    </p>
+
+    <p>These children:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>will get free school meals</li>
+      <li>will attract pupil premium and other disadvantage funding for their schools </li>
+      <li>may be eligible for additional support, such as the holiday activities and food programme (HAF) and the ‘extended rights’ element of school travel assistance</li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Expanded free school meals</h2>
+
+    <p>
+      <strong class="govuk-tag govuk-tag--green">Expanded</strong>
+    </p>
+
+    <p>
+     This covers children who are in households receiving Universal Credit with annual household earnings exceeding £7,400. Children will be entitled to free school meals only.
+    </p>
+<!--
+    <p>These children:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>get free school meals</li>
+      <li>do not attract pupil premium or additional benefits</li>
+    </ul> -->
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <!-- <h2 class="govuk-heading-m">Why this matters</h2>
+
+    <p>
+      It’s important to record the correct eligibility type so that:
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>schools receive the right funding</li>
+      <li>children get the correct level of support</li>
+      <li>records are accurate for census and audit</li>
+    </ul> -->
+
+    <h2 class="govuk-heading-m">More information</h2>
+
+    <p>
+      For full details, read
+      <a href="https://www.gov.uk/government/publications/free-school-meals-guidance-for-schools-and-local-authorities"
+         class="govuk-link"
+         target="_blank"
+         rel="noopener noreferrer">
+        Free school meals guidance for schools and local authorities.
+      </a>
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,21 +1,23 @@
 {% extends "layouts/FSM/v8-1/basic/layout-dfe-basic-lanav.html" %}
 
 {% set eligibilityType = data["eligibilityType"] or "targeted" %}
+{% set endDate = "31 August 2027" %}
+{% set academicYear = "2026 to 2027" %}
+{% set recheckDate = "Summer term 2027" %}
 
 {% if eligibilityType == "targeted" %}
-  {% set pageName = "Children eligible for targeted free school meals" %}
-  {% set outcomeTitle = "Children eligible for targeted support" %}
-  {% set outcomeMessage = "are eligible for free school meals and additional benefits." %}
-  {% set policyLabel = "Targeted FSM" %}
+  {% set outcomeTitle = "Children eligible for targeted free school meals" %}
+  {% set outcomeMessage = "are eligible for free school meals and additional support." %}
+  {% set policyLabel = "Eligible targeted" %}
+  {% set tagClass = "govuk-tag--purple" %}
 {% else %}
-  {% set pageName = "Children eligible for expanded free school meals" %}
-  {% set outcomeTitle = "Children eligible for free school meals" %}
+  {% set outcomeTitle = "Children eligible for expanded free school meals" %}
   {% set outcomeMessage = "are eligible for free school meals only." %}
-  {% set policyLabel = "Expanded FSM" %}
+  {% set policyLabel = "Eligible expanded" %}
+  {% set tagClass = "govuk-tag--green" %}
 {% endif %}
 
 {% block content %}
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -23,7 +25,6 @@
          role="alert"
          aria-labelledby="govuk-notification-banner-title"
          data-module="govuk-notification-banner">
-
       <div class="govuk-notification-banner__header">
         <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
           {{ outcomeTitle }}
@@ -34,58 +35,70 @@
         <h3 class="govuk-notification-banner__heading">
           The children of {{ data["parent-firstname"] or "Idella" }} {{ data["parent-surname"] or "Nolan" }} {{ outcomeMessage }}
         </h3>
-
-       <!-- <p class="govuk-body">
-  <strong>Support level:</strong>
-
-  <strong class="govuk-tag
-    {% if eligibilityType == 'targeted' %}
-      govuk-tag--purple
-    {% else %}
-      govuk-tag--green
-    {% endif %}
-  ">
-    {{ policyLabel }}
-  </strong>
-</p> -->
       </div>
-
     </div>
 
+    <h2 class="govuk-heading-m">Eligibility details</h2>
 
-<h2 class="govuk-heading-m">Eligibility details</h2>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Status</dt>
+        <dd class="govuk-summary-list__value">
+          <strong class="govuk-tag {{ tagClass }}">
+            {{ policyLabel }}
+          </strong>
+        </dd>
+      </div>
 
-<dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Eligibility end date</dt>
+        <dd class="govuk-summary-list__value">{{ endDate }}</dd>
+      </div>
+    </dl>
 
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">Status</dt>
-    <dd class="govuk-summary-list__value">
-      <strong class="govuk-tag
-        {% if eligibilityType == 'targeted' %}
-          govuk-tag--purple
-        {% else %}
-          govuk-tag--green
-        {% endif %}
-      ">
-        {% if eligibilityType == "targeted" %}
-          Eligible targeted
-        {% else %}
-          Eligible expanded
-        {% endif %}
-      </strong>
-    </dd>
-  </div>
-
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">Eligibility end date</dt>
-    <dd class="govuk-summary-list__value">31 August 2026</dd>
-  </div>
-
-</dl>
+    <p class="govuk-body">
+      This information should be passed on to their school.
+    </p>
 
 
-    <p>This information should be passed on to their school.</p>
-      <p>You can <a href="" class="govuk-link" onclick="printPage()">print this page</a> for the parent or guardian to keep.</p>
+<!-- <h2 class="govuk-heading-m">Result and annual rechecks</h2> -->
+ <p class="govuk-body">The result of this check is valid for the academic year {{ academicYear }}. You must complete annual rechecks to confirm ongoing eligibility. </p>
+    <p class="govuk-body"><a href="../../guidance/recheck-guidance" class="govuk-link">How and when to complete annual rechecks</a></p>
+
+
+
+    <div class="govuk-inset-text">
+      <p><strong>Targeted and expanded free school meals</strong></p>
+
+      <p>
+        From the start of the 2026 to 2027 academic year, there will be 2 categories of eligibility for free school meals:
+      </p>
+
+      <p>
+        <strong class="govuk-tag govuk-tag--purple">Targeted:</strong>
+        this covers children in households in receipt of Universal Credit with annual household earnings of £7,400 or less.
+        These children will attract pupil premium and other disadvantage funding for their schools.
+        Other education entitlements, such as the holiday activities and food programme (HAF) and the ‘extended rights’ element of school travel assistance, will be based on targeted free school meals.
+      </p>
+
+      <p>
+        <strong class="govuk-tag govuk-tag--green">Expanded:</strong>
+        this covers children who are in households receiving Universal Credit with annual household earnings exceeding £7,400.
+        Children will be entitled to free school meals only.
+      </p>
+
+      <p>
+        For more information, read
+        <a href="https://www.gov.uk/government/publications/free-school-meals-guidance-for-schools-and-local-authorities" class="govuk-link" target="_blank" rel="noopener noreferrer">
+          Free school meals: guidance for schools and local authorities
+        </a>.
+      </p>
+    </div>
+
+    <p class="govuk-body">
+      You can <a href="#" class="govuk-link" onclick="printPage(); return false;">print this page</a> for the parent or guardian to keep.
+    </p>
+
     <script>
       function printPage() {
         window.print();
@@ -96,14 +109,10 @@
       <a href="../checker" class="govuk-button" role="button" data-module="govuk-button">
         Do another check
       </a>
-      <!-- <a class="govuk-link" href="../../apply/outcome-eligible-childs-age.html">
-        Continue to add child details
-      </a> -->
     </div>
 
   </div>
 </div>
-
 {% endblock %}
 
 {% block pageScripts %}
