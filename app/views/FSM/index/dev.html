@@ -1,0 +1,94 @@
+{% extends "layouts/FSM/index/layout-dfe-index-fsm.html" %}
+{% block pageTitle %}
+  Ready for development - free school meals
+{% endblock %}
+
+{% block beforeContent %}
+    {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{ govukBreadcrumbs({
+  classes: "govuk-!-margin-top-5",
+  items: [
+    {
+      text: "Free school meals",
+      href: "/fsm/index/index-fsm"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-xl">Ready for development</h1>
+
+    <div class="dfe-grid-container">
+
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/FSM/index/dev-la-lite">Local authorities - basic</a>
+          </h2>
+          <p>Like for like service replacing ECS.</p>
+        </div>
+      </div>
+
+
+        <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="">Local authorities - full</a>
+            </h2>
+            <p>Enhanced service with new features like search all records, review applications.</p>
+          </div>
+        </div>
+
+        <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="">Schools</a>
+            </h2>
+            <p>TBC</p>
+          </div>
+        </div>
+
+
+        <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="">Multi academy trusts</a>
+            </h2>
+            <p>TBC</p>
+          </div>
+        </div>
+
+        <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="">Parents and guardians</a>
+            </h2>
+            <p>TBC</p>
+          </div>
+        </div>
+
+        <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="">General</a>
+            </h2>
+            <p>General pages used across the service like error pages.</p>
+          </div>
+        </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+{% endblock %}

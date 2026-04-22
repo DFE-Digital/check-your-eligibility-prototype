@@ -12,7 +12,7 @@
 <header class="govuk-header" data-module="govuk-header">
   <div class="govuk-header__container govuk-width-container">
       <div class="govuk-header__logo">
-        <a href="/childcare/index-childcare" class="govuk-header__link govuk-header__link--homepage">
+        <a href="/FSM/index/index-fsm" class="govuk-header__link govuk-header__link--homepage">
             <img src="/public/images/department-for-education_white.png" alt="Department for Education" class="govuk-header__logotype">
         </a>
       </div>
@@ -26,13 +26,13 @@
   serviceUrl: "/index",
   navigation: [
     {
-      href: "/FSM/index-fsm",
-      text: "Free school meals"
+      href: "/FSM/index/index-fsm",
+      text: "Free school meals",
+      active: "true"
     },
     {
       href: "/childcare/index-childcare",
-      text: "Childcare",
-      active: "true"
+      text: "Childcare"
     },
     {
       href: "/support/index-support",
@@ -41,24 +41,7 @@
   ]
 }) }}
 
-<section class="dfe-page-header govuk-!-padding-bottom-0" style="background-color:	#eaf5ff;">
-  <div class="govuk-width-container">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl govuk-!-padding-top-5 govuk-!-margin-bottom-3">
-          Childcare
-        </h1>
-
-        <p class="govuk-!-padding-bottom-5">Childcare element of the eligibility checking services including: Childcare for working parents, 2 years old early learning and Early Years Pupil Premium</p>
-
-        </div>
-      </div>
-    </div>
-</section>
-
 {% endblock %}
-
-{% set mainClasses = "govuk-!-padding-top-3" %}
 
 
 {% block footer %}

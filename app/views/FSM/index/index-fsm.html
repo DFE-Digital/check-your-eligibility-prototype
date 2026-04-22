@@ -1,0 +1,99 @@
+{% extends "layouts/FSM/index/layout-dfe-index-fsm-home.html" %}
+{% block pageTitle %}
+  Free school meals prototype
+{% endblock %}
+
+{% block header %}
+
+<header class="govuk-header" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+      <div class="govuk-header__logo">
+        <a href="/FSM/index/index-fsm" class="govuk-header__link govuk-header__link--homepage">
+            <img src="/public/images/department-for-education_white.png" alt="Department for Education" class="govuk-header__logotype">
+        </a>
+      </div>
+  </div>
+</header>
+
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{{ govukServiceNavigation({
+  serviceName: "Eligibility checking services prototypes",
+  serviceUrl: "/index",
+  navigation: [
+    {
+      href: "/FSM/index/index-fsm",
+      text: "Free school meals",
+      active: "true"
+    },
+    {
+      href: "/childcare/index-childcare",
+      text: "Childcare"
+    },
+    {
+      href: "/support/index-support",
+      text: "Support portal"
+    }
+  ]
+}) }}
+
+<section class="dfe-page-header govuk-!-padding-bottom-0" style="background-color:		#d2e2f1;">
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl govuk-!-padding-top-5 govuk-!-margin-bottom-3">
+          Free school meals prototypes
+        </h1>
+
+        <p class="govuk-!-padding-bottom-5">TBC Includes parents, schools and local authorities</p>
+
+        </div>
+      </div>
+    </div>
+</section>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <div class="dfe-grid-container">
+
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+              <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/FSM/index/research">Design and research</a>
+          </h2>
+          <p>TBC</p>
+        </div>
+      </div>
+
+
+        <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/FSM/index/dev">Ready for development</a>
+            </h2>
+            <p></p>
+          </div>
+        </div>
+
+        <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="">Documentation</a>
+            </h2>
+            <p>TBC</p>
+          </div>
+        </div>
+
+
+
+  </div>
+</div>
+
+
+{% endblock %}
