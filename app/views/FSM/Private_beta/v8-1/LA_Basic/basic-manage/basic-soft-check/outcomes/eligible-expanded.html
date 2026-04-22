@@ -105,7 +105,7 @@
 
 <!-- <h2 class="govuk-heading-m">Result and annual rechecks</h2> -->
  <p class="govuk-body">The result of this check is valid for the academic year {{ academicYear }}. You must complete annual rechecks to confirm ongoing eligibility. </p>
-    <p class="govuk-body"><a href="../../guidance/recheck-guidance" class="govuk-link">How and when to complete annual rechecks</a></p>
+    <p class="govuk-body"><a href="../../guidance/guidance-steps/rechecks.html" class="govuk-link">How and when to complete annual rechecks</a></p>
 
 
 
@@ -123,12 +123,19 @@
 </div>
 
 
-      <p class="govuk-body">You can <a href="" class="govuk-link" onclick="printPage()">print this page</a> for the parent or guardian to keep.</p>
-    <script>
-      function printPage() {
-        window.print();
-      }
-    </script>
+<p class="govuk-body">
+  You can
+  <a href="#" class="govuk-link" onclick="printPage(); return false;">
+    print this page
+  </a>
+  for the parent or guardian to keep.
+</p>
+
+<script>
+  function printPage() {
+    window.print();
+  }
+</script>
 
 
     <div class="govuk-button-group">
