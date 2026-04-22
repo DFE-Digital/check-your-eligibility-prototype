@@ -31,21 +31,21 @@
     </div>
 
 
-        <table class="govuk-table govuk-table--small-text-until-tablet">
+        <table class="govuk-table govuk-table--small-text-until-tablet" data-module="moj-sortable-table">
             <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-4">Showing 4 checks
                 completed from {{ startDate | govukDate("truncate") }} to {{ endDate | govukDate("truncate")}}</caption>
 
 
             <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
-                    <th scope="col" class="govuk-table__header">Parent name</th>
-                    <th class="govuk-table__cell">National  <br>Insurance number</th>
-                    <th class="govuk-table__cell">Date of birth</th>
-                    <th scope="col" class="govuk-table__header">Date check<br> submitted</th>
-                    <th scope="col" class="govuk-table__header">Check type</th>
+                    <th scope="col" class="govuk-table__header" aria-sort="ascending">Parent name</th>
+                    <th class="govuk-table__cell" aria-sort="none">National  <br>Insurance number</th>
+                    <th class="govuk-table__cell" aria-sort="none">Date of birth</th>
+                    <th scope="col" class="govuk-table__header" aria-sort="none">Date check<br> submitted</th>
+                    <th scope="col" class="govuk-table__header" aria-sort="none">Check type</th>
                     <!-- <th scope="col" class="govuk-table__header">Check source</th> -->
-                    <th scope="col" class="govuk-table__header">Checked by</th>
-                    <th scope="col" class="govuk-table__header">Outcome</th>
+                    <th scope="col" class="govuk-table__header" aria-sort="none">Checked by</th>
+                    <th scope="col" class="govuk-table__header" aria-sort="none">Outcome</th>
                     <!-- <th scope="col" class="govuk-table__header">  </th>
                     <th scope="col" class="govuk-table__header"></th> -->
 
@@ -61,7 +61,7 @@
                     <td class="govuk-table__cell">Batch</td>
                     <!-- <td class="govuk-table__cell">Web service</td> -->
                     <td class="govuk-table__cell">Jane Smith</td>
-                    <td class="govuk-table__cell">Eligible expanded</td>
+                    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Expanded</strong></td>
                     <td class="govuk-table__cell"> </td>
                     <!-- <td class="govuk-table__cell"><a href=""> </a></td> -->
                 </tr>
@@ -74,7 +74,7 @@
                     <td class="govuk-table__cell">Individual</td>
                     <!-- <td class="govuk-table__cell">Web service</td> -->
                     <td class="govuk-table__cell">Jane Smith</td>
-                    <td class="govuk-table__cell">Not found</td>
+                    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Not found</strong></td>
                     <td class="govuk-table__cell"> </td>
                     <!-- <td class="govuk-table__cell"><a href=""> </a></td> -->
                 </tr>
@@ -87,7 +87,7 @@
                     <td class="govuk-table__cell">Individual</td>
                     <!-- <td class="govuk-table__cell">Web API</td> -->
                     <td class="govuk-table__cell">Cheshire East</td>
-                    <td class="govuk-table__cell">Eligible targeted</td>
+                    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--purple">Targeted</strong></td>
                     <td class="govuk-table__cell"> </td>
                     <!-- <td class="govuk-table__cell"><a href=""> </a></td> -->
                 </tr>
@@ -100,7 +100,20 @@
                     <td class="govuk-table__cell">Batch</td>
                     <!-- <td class="govuk-table__cell">Web API</td> -->
                     <td class="govuk-table__cell">Cheshire East</td>
-                    <td class="govuk-table__cell">Not eligible</td>
+                    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Not eligible</strong></td>
+                    <td class="govuk-table__cell"> </td>
+                    <!-- <td class="govuk-table__cell"><a href=""> </a></td> -->
+                </tr>
+
+                      <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Anthony Thomas</td>
+                    <td class="govuk-table__cell">AB123456C</td>
+                    <td class="govuk-table__cell">{{ "2016-01-01" | govukDate("truncate") }}</td>
+                    <td class="govuk-table__cell">{{ "2026-01-01" | govukDate("truncate") }}</td>
+                    <td class="govuk-table__cell">Batch</td>
+                    <!-- <td class="govuk-table__cell">Web API</td> -->
+                    <td class="govuk-table__cell">Cheshire East</td>
+                    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Not eligible</strong></td>
                     <td class="govuk-table__cell"> </td>
                     <!-- <td class="govuk-table__cell"><a href=""> </a></td> -->
                 </tr>
@@ -108,7 +121,31 @@
             </tbody>
         </table>
 
-
+   <div style="display: flex; justify-content: center; margin-top: 20px;">
+            {{ govukPagination({
+              previous: {
+                href: "#"
+              },
+              next: {
+                href: "#"
+              },
+              items: [
+                {
+                  number: 1,
+                  href: "#"
+                },
+                {
+                  number: 2,
+                  current: true,
+                  href: "#"
+                },
+                {
+                  number: 3,
+                  href: "#"
+                }
+              ]
+            }) }}
+          </div>
  <!-- <p class="govuk-body"><a class="govuk-link" href="report-checks.html">View other reports</a></p> -->
 
 
