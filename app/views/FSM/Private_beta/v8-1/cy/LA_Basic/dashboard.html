@@ -6,6 +6,21 @@
 {% set address="Heol Ystumllwynarth Abertawe SA1 3SN
 " %}
 
+
+{% block beforeContent %}
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle dwp-language-toggle__list">
+        <li class="dwp-language-toggle__list-item" >
+              <a href="/FSM/Private_beta/v8-1/en/LA_Basic/dashboard" hreflang="en" lang="en" rel="alternate" class="govuk-link" aria-label="Newid yr iaith ir Gymraeg">English</a>
+        </li>
+        <li class="dwp-language-toggle__list-item" aria-current="true">
+            Cymraeg
+        </li>
+    </ul>
+  </nav>
+
+{% endblock %}
+
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">

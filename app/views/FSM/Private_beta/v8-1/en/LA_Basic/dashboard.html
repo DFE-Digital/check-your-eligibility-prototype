@@ -6,6 +6,20 @@
 {% set VERSION ="v8-0" %}
 {% set address="Oystermouth Road Swansea SA1 3SN" %}
 
+{% block beforeContent %}
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle dwp-language-toggle__list">
+        <li class="dwp-language-toggle__list-item" aria-current="true">
+                English
+        </li>
+        <li class="dwp-language-toggle__list-item">
+            <a href="/FSM/Private_beta/v8-1/cy/LA_Basic/dashboard" hreflang="cy" lang="cy" rel="alternate" class="govuk-link" aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+        </li>
+    </ul>
+  </nav>
+
+{% endblock %}
+
 
 {% block content %}
 <div class="govuk-grid-row">
