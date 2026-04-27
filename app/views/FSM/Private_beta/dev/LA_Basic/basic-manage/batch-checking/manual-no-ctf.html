@@ -62,7 +62,7 @@ Your saved file must match the template fields and contain fewer than 5000 rows.
 
     </div>
 
-    <a id="upload-button" class="govuk-button govuk-button--primary" role="button">
+    <a id="upload-button" href="../batch-checking/history/batch-history" class="govuk-button govuk-button--primary" role="button">
       Run a batch check
     </a>
 
@@ -74,21 +74,6 @@ Your saved file must match the template fields and contain fewer than 5000 rows.
 
 
     {% block pageScripts %}
-    <script>
-      // Randomly select one of the three links
-      const links = [
-        '../batch-checking/submitted-not-started',
-        '../batch-checking/submitted-in-progress',
-        '../batch-checking/submitted-completed',
-      ];
-      const randomLink = links[Math.floor(Math.random() * links.length)];
-      document.addEventListener("DOMContentLoaded", function () {
-        const uploadButton = document.getElementById("upload-button");
-        if (uploadButton) {
-          uploadButton.setAttribute("href", randomLink);
-        }
-      });
-    </script>
 
       <!-- // Multi file upload script -->
 

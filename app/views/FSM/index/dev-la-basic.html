@@ -1,0 +1,302 @@
+{% extends "layouts/FSM/index/layout-dfe-index-fsm.html" %}
+{% block pageTitle %}
+  Local authorities - basic - ready for development
+{% endblock %}
+
+{% block beforeContent %}
+    {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{ govukBreadcrumbs({
+  classes: "govuk-!-margin-top-5",
+  items: [
+    {
+      text: "Free school meals",
+      href: "/fsm/index/index-fsm"
+    },
+    {
+      text: "Ready for development",
+      href: "/fsm/index/dev"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<div class="govuk-grid-row">
+
+   <div class="govuk-grid-column-one-quarter userGuidanceAnchorMenu">
+
+
+    <h4 class="govuk-body-s govuk-!-margin-top-5">Contents</h4>
+    <ol class="govuk-!-padding-left-0">
+      <li class="govuk-body-s contents-list-item">
+        <a href="#dashboard"><span class="contents-list-item-number" >1.</span><span class="contents-list-item-text">Dashboard</span></a>
+      </li>
+      <li class="govuk-body-s contents-list-item">
+        <a href="#single-check"><span class="contents-list-item-number" >2.</span><span class="contents-list-item-text">Run a single check</span></a>
+      </li>
+       <li class="govuk-body-s contents-list-item">
+        <a href="#batch-check"><span class="contents-list-item-number" >3.</span><span class="contents-list-item-text">Run a batch check</span></a>
+      </li>
+      <li class="govuk-body-s contents-list-item">
+        <a href="#reports"><span class="contents-list-item-number" >5.</span><span class="contents-list-item-text">Run reports</span></a>
+      </li>
+      <li class="govuk-body-s contents-list-item">
+        <a href="#guidance"><span class="contents-list-item-number" >6.</span><span class="contents-list-item-text">Guidance</span></a>
+      </li>
+      <li class="govuk-body-s contents-list-item">
+        <a href="#pdf"><span class="contents-list-item-number" >7.</span><span class="contents-list-item-text">Download PDF form</span></a>
+      </li>
+      <li class="govuk-body-s contents-list-item">
+        <a href="#error-messages"><span class="contents-list-item-number" >9.</span><span class="contents-list-item-text">Error messaging</span></a>
+      </li>
+    </ol>
+
+  </div>
+
+  <div class="govuk-grid-column-three-quarters">
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+      Local authorities - basic service
+    </h1>
+
+
+
+      <!--dashboard-->
+
+      <h2 id="dashboard">Dashboard</h2>
+
+      <table class="govuk-table ">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/LA_Basic/start">Start page</a></td>
+          <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/LA_Basic/dashboard">Dashboard</a></td>
+          <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+        </tr>
+
+        </tbody>
+      </table>
+
+
+       <!--run a single check 2yo eypp-->
+
+      <h2 id="single-check">Run a single check</h2>
+
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/LA_Basic/basic-manage/basic-soft-check/checker">Run a check</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/LA_Basic/basic-manage/basic-soft-check/checking-basic-loader">Checking loader</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+
+        </tbody>
+      </table>
+
+
+      <h3 class=" govuk-!-margin-bottom-2">Outcomes</h3>
+
+      <table class="govuk-table gov-uk-!-margin-top-0">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/LA_Basic/basic-manage/basic-soft-check/outcomes/eligible-expanded">Eligible expanded</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/LA_Basic/basic-manage/basic-soft-check/outcomes/eligible-targeted">Eligible targeted</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/LA_Basic/basic-manage/basic-soft-check/outcomes/eligible">Eligible</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+           <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/LA_Basic/basic-manage/basic-soft-check/outcomes/not-eligible">Not eligible</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/LA_Basic/basic-manage/basic-soft-check/outcomes/could-not-find">Not found</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/LA_Basic/basic-manage/basic-soft-check/outcomes/technical-error">Technical error</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+       <!--batch check-->
+
+      <h2 id="batch-check">Run a batch check</h2>
+
+       <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/LA_Basic/basic-manage/batch-checking/manual-no-ctf">Run a batch check</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/public/csv/fsm/dev/Batch-check-template.csv">Batch check template CSV</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <h3>Batch checks history</h3>
+
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/LA_Basic/basic-manage/batch-checking/history/batch-history">Batch checks history</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/LA_Basic/basic-manage/batch-checking/history/batch-history-empty">Batch checks history - no batch checks run</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/public/csv/fsm/dev/batch-check-outcomes.csv">Batch check results CSV</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">Delete batch check</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--red long-tag">Missing</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">File deleted</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--red long-tag">Missing</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/LA_Basic/basic-manage/batch-checking/results/batch-check-success">View results</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!--reports-->
+
+      <h2 id="reports">Run reports</h2>
+
+
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/LA_Basic/basic-manage/report/report-checks">Run reports</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/LA_Basic/basic-manage/report/create-report-checks">Generate a report</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/LA_Basic/basic-manage/report/report-loader">Report loader</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/LA_Basic/basic-manage/report/view-report-checks">View report</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/public/csv/fsm/dev/fsm-report.csv">Report CSV</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <!--guidance-->
+
+      <h2 id="guidance">Guidance</h2>
+
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/LA_Basic/basic-manage/guidance/guidance">Guidance</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/LA_Basic/basic-manage/guidance/how-to">Using the service</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+           <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/LA_Basic/basic-manage/guidance/expansion">Expansion</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/LA_Basic/basic-manage/guidance/rechecks">Rechecks</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/LA_Basic/basic-manage/guidance/asylum-check">Running batch checks guidance</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/LA_Basic/basic-manage/guidance/evidence-guidance">Reviewing evidence guidance</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/LA_Basic/basic-manage/guidance/asylum-check">Asylum seeker guidance</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+           <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">Asylum seeker form</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--red long-tag">Missing</strong></td>
+          </tr>
+
+        </tbody>
+      </table>
+
+
+      <!--compliance-->
+
+      <h2 id="pdf">Download PDF form</h2>
+
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/_offline/fsm-print-version-la_basic">Download PDF form</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+           <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/public/pdf/fsm/dev/fsm-form-accessible.pdf">PDF form</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <!--error messages-->
+
+      <h2 id="error-messages">Error messages</h2>
+
+      <table class="govuk-table">
+
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a rel="noreferrer noopener" target="_blank" href="https://educationgovuk.sharepoint.com/:x:/r/sites/SolutionsDevelopmentCentre-ECSdiscovery/Shapurple%20Documents/ECE%20Project%20Team/4.%20User-centpurple%20Design/Content%20Design/Content/Error%20scenarios/Error%20scenario%20tracker.xlsx?d=w4fbeca67abaa431d9e339072f7347fb9&csf=1&web=1&e=uGr6xy&nav=MTVfezAwMDAwMDAwLTAwMDEtMDAwMC0wMDAwLTAwMDAwMDAwMDAwMH0">Free school meals error messages spreadsheet (opens in new tab)</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+
+
+        </tbody>
+      </table>
+
+
+  </div>
+</div>
+
+
+{% endblock %}

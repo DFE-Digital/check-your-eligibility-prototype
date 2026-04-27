@@ -1,0 +1,6 @@
+Parent First Name,Parent Last Name,Parent Date of Birth,Parent National Insurance Number,Outcome,End date
+John,Smith,12/3/85,QQ123456C,Eligibile expanded,31/08/2027
+Jane,Smith,9/7/99,QQ123456C,Eligible targeted,31/08/2027
+Helen,Brown,6/4/00,QQ123456C,Not eligible,31/08/2027
+Tim,Thompson,7/12/98,QQ123456C,Technical error,31/08/2027
+Janet,Johnson,12/11/00,QQ123456C,Could not check,31/08/2027
