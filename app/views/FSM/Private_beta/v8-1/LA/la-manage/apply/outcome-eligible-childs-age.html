@@ -1,4 +1,4 @@
-{% extends "layouts/FSM/v8-1/layout-dfe-lanav.html" %}
+{% extends "layouts/FSM/v8-0/layout-dfe-lanav.html" %}
 {% set pageName="Provide details of all children" %}
 {% set saveAndContinueUrl = config.urls.saveAndContinue %}
 
@@ -7,8 +7,8 @@
   <div class="govuk-grid-column-one-half">
     <div data-module="moj-add-another">
       <h1 class="govuk-heading-l" tabindex="-1">{{pageName}}</h1>
-      <form method="post">
-        {% call govukFieldset({
+<form action="/FSM/Private_beta/v8-1/LA/la-manage/apply/check-answers" method="post" novalidate>
+  {% call govukFieldset({
           classes: 'moj-add-another__item',
           legend: {
             text: 'Child 1',
@@ -85,9 +85,6 @@
           ]
         }) }}
         {% include "/_includes/schools.html" %}
-        <!-- The schools.html partial is included here to provide a dropdown or autocomplete functionality
-             for selecting schools. It integrates with the rest of the form by enhancing the school selection
-             process, ensuring users can easily pick a school for each child. -->
 
 
         {% endcall %}
@@ -98,10 +95,9 @@
           }) }}
         </div>
         <div class="moj-button-action">
-          {{ govukButton({
-            text: 'Save and continue',
-            href: '../apply/la-check-answers.html'
-          }) }}
+       {{ govukButton({
+  text: 'Save and continue'
+}) }}
         </div>
       </form>
     </div>
