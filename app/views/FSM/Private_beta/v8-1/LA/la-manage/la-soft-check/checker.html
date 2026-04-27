@@ -1,116 +1,115 @@
 {% extends "layouts/FSM/v8-1/layout-dfe-lanav.html" %}
-{% set pageName="Run a check for one parent or guardian" %}
+{% set pageName = "Run a check for one parent or guardian" %}
 
 {% block beforeContent %}
-{% include "_includes/layouts/back_link.html" %}
+  {% include "_includes/layouts/back_link.html" %}
 {% endblock %}
 
 {% block content %}
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <form action="/checking-la-loader.html" method="post" novalidate>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-          {% call govukFieldset({
-            legend: {
-            text: pageName,
-            classes: "govuk-fieldset__legend--l",
-            isPageHeading: false
-            }
-            }) %}
-            {% call govukFieldset({
-            legend: {
-            text:  "",
-            classes: "govuk-fieldset__legend--l",
-            isPageHeading: true
-            }
-            }) %}
-            <p class="govuk-body">Enter the details of the parent or guardian who applied for free school meals.</p>
+<form action="/FSM/Private_beta/v8-1/LA/la-manage/la-soft-check/run-check" method="post" novalidate>      <h1 class="govuk-heading-l">{{ pageName }}</h1>
 
-            <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
-      <!--{% endcall %} -->
+       <p class="govuk-body">Enter the details of the parent or guardian who applied for free school meals.</p>
 
-            {{ govukInput({
-            label: {
-            text: "First name"
-            },
-            id: "parent-firstname",
-            name: "parent-firstname",
-            autocomplete: "name",
-            classes: "govuk-input--width-20",
-            spellcheck: false
-            }) }}
 
-            {{ govukInput({
-            label: {
-            text: "Last name"
-            },
-            id: "parent-surname",
-            name: "parent-surname",
-            autocomplete: "name",
-            classes: "govuk-input--width-20",
-            spellcheck: false
-            }) }}
+      {{ govukInput({
+        label: {
+          text: "First name"
+        },
+        id: "parent-firstname",
+        name: "parent-firstname",
+        value: data["parent-firstname"],
+        autocomplete: "given-name",
+        classes: "govuk-input--width-20",
+        spellcheck: false
+      }) }}
 
-            {{ govukInput({
-            label: {
-            text: "Email address"
-            },
-            id: "email",
-            name: "email",
-            autocomplete: "name",
-            classes: "govuk-input--width-20",
-            spellcheck: false
-            }) }}
+      {{ govukInput({
+        label: {
+          text: "Last name"
+        },
+        id: "parent-surname",
+        name: "parent-surname",
+        value: data["parent-surname"],
+        autocomplete: "family-name",
+        classes: "govuk-input--width-20",
+        spellcheck: false
+      }) }}
 
-            {{ govukDateInput({
+      {{ govukInput({
+        label: {
+          text: "Email address"
+        },
+        id: "email",
+        name: "email",
+        value: data["email"],
+        autocomplete: "email",
+        classes: "govuk-input--width-20",
+        spellcheck: false
+      }) }}
 
-            id: "dob",
-            namePrefix: "dob",
-            fieldset: {
-            legend: {
+      {{ govukDateInput({
+        id: "dob",
+        namePrefix: "dob",
+        fieldset: {
+          legend: {
             text: "Date of birth",
             isPageHeading: false,
             classes: "govuk-fieldset__legend--m"
-            }
-            },
-            hint: {
-            text: "For example, 31 3 1980"
-            }
-            }) }}
-
-
-      {% from "govuk/components/input/macro.njk" import govukInput %}
-
-      {{ govukInput({
-      label: {
-      text: "National Insurance number",
-
-      classes: "govuk-fieldset__legend--s"
-      },
-      hint: {
-      text: "For example, ‘QQ 12 34 56 C’"
-      },
-      classes: "govuk-input--width-10 govuk-input--extra-letter-spacing",
-      id: "national-insurance-number",
-      name: "nationalInsuranceNumber",
-      spellcheck: false
+          }
+        },
+        hint: {
+          text: "For example, 31 3 1980"
+        },
+        items: [
+          {
+            name: "day",
+            value: data["dob-day"],
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "month",
+            value: data["dob-month"],
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "year",
+            value: data["dob-year"],
+            classes: "govuk-input--width-4"
+          }
+        ]
       }) }}
 
-      <p class="govuk-body"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="../../guidance/guidance.html#accordion-default-content-2">Parent or guardian is an asylum seeker</a></p>
+      {{ govukInput({
+        label: {
+          text: "National Insurance number"
+        },
+        hint: {
+          text: "For example, QQ 12 34 56 C"
+        },
+        classes: "govuk-input--width-10 govuk-input--extra-letter-spacing",
+        id: "nationalInsuranceNumber",
+        name: "nationalInsuranceNumber",
+        value: data["nationalInsuranceNumber"],
+        spellcheck: false
+      }) }}
 
+      <p class="govuk-body">
+        <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="../../guidance/guidance.html#accordion-default-content-2">
+          Parent or guardian is an asylum seeker
+        </a>
+      </p>
 
-            {% endcall %}
+      {{ govukButton({
+        text: "Run check"
+      }) }}
 
-{{ govukButton({
-  text: "Run check",
-  href: "/FSM/Private_beta/v8-1/LA/la-manage/la-soft-check/checking-la-loader.html"
-}) }}
-          <!-- <button type="submit" class="govuk-button">Run check</button> -->
-        </form>
-        </div>
-      </div>
-      </div>
+    </form>
 
+  </div>
+</div>
 
 {% endblock %}

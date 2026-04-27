@@ -1,18 +1,23 @@
 {% extends "layouts/FSM/v8-1/layout-dfe-lanav.html" %}
 
 {% set eligibilityType = data["eligibilityType"] or "expanded" %}
+{% set endDate = "31 August 2027" %}
+{% set academicYear = "2026 to 2027" %}
+{% set recheckDate = "Summer term 2027" %}
 
 {% if eligibilityType == "targeted" %}
-  {% set pageName = "Children eligible for targeted support" %}
+  {% set pageName = "Children eligible for targeted free school meals" %}
   {% set outcomeTitle = "Children eligible for targeted support" %}
-  {% set outcomeMessage = "are eligible for free school meals and additional benefits." %}
-  {% set policyLabel = "Targeted FSM" %}
+  {% set outcomeMessage = "are eligible for free school meals and additional support." %}
+  {% set policyLabel = "Eligible targeted" %}
 {% else %}
   {% set pageName = "Children eligible for free school meals" %}
-  {% set outcomeTitle = "Children eligible for expanded support" %}
+  {% set outcomeTitle = "Children eligible for expanded free school meals" %}
   {% set outcomeMessage = "are eligible for free school meals only." %}
-  {% set policyLabel = "Expanded FSM" %}
+  {% set policyLabel = "Expanded" %}
 {% endif %}
+
+
 
 {% block content %}
 
@@ -34,8 +39,8 @@
         <h3 class="govuk-notification-banner__heading">
           The children of {{ data["parent-firstname"] or "Derrick" }} {{ data["parent-surname"] or "Stark" }} {{ outcomeMessage }}
         </h3>
-<!--
-       <p class="govuk-body">
+
+       <!-- <p class="govuk-body">
   <strong>Support level:</strong>
 
   <strong class="govuk-tag
@@ -48,16 +53,22 @@
     {{ policyLabel }}
   </strong>
 </p> -->
-
-
       </div>
 
     </div>
 
+       <!-- <details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Help with eligibility outcomes
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+   <strong class="govuk-tag govuk-tag--purple">Targeted</strong> eligibility means the child is eligible for free school meals and additional support. <br> <strong class="govuk-tag govuk-tag--green">Expanded</strong> eligibility means the child is eligible for free school meals only.
+  </div>
+</details> -->
 
-
-
-<h2 class="govuk-heading-m">Eligibility details</h2>
+    <h2 class="govuk-heading-m">Eligibility details</h2>
 
 <dl class="govuk-summary-list">
 
@@ -82,13 +93,49 @@
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">Eligibility end date</dt>
-    <dd class="govuk-summary-list__value">31 August 2026</dd>
+    <dd class="govuk-summary-list__value">{{ endDate }}</dd>
   </div>
 
 </dl>
 
-    <p>This information should be passed on to their school.</p>
+    <p class="govuk-body">
+      This information should be passed on to their school.
+    </p>
 
+
+<!-- <h2 class="govuk-heading-m">Result and annual rechecks</h2> -->
+ <p class="govuk-body">The result of this check is valid for the academic year {{ academicYear }}. You must complete annual rechecks to confirm ongoing eligibility. </p>
+    <p class="govuk-body"><a href="../../guidance/guidance-steps/rechecks.html" class="govuk-link">How and when to complete annual rechecks</a></p>
+
+
+
+    <div class="govuk-inset-text">
+<p><strong>Targeted and expanded free school meals</strong></p>
+<p>From the start of the 2026 to 2027 academic year, there will be 2 categories of eligibility for free school meals:<br>
+</p>
+<p><strong class="govuk-tag govuk-tag--purple">Targeted</strong> this covers children in households in receipt of Universal Credit with annual household earnings of £7,400 or less. These children will attract pupil premium and other disadvantage funding for their schools. Other education entitlements, such as the holiday activities and food programme (HAF) and the ‘extended rights’ element of school travel assistance will be based on targeted free school meals.
+</p>
+<p>
+<strong class="govuk-tag govuk-tag--green">Expanded</strong> this covers children who are in households receiving Universal Credit with annual household earnings exceeding £7,400. Children will be entitled to free school meals only.</p>
+
+
+<p class="govuk-body"></p>For more information, read <a href="https://www.gov.uk/government/publications/free-school-meals-guidance-for-schools-and-local-authorities" class="govuk-link" target="_blank" rel="noopener noreferrer">Free school meals: guidance for schools and local authorities</a>.</p>
+</div>
+
+
+<p class="govuk-body">
+  You can
+  <a href="#" class="govuk-link" onclick="printPage(); return false;">
+    print this page
+  </a>
+  for the parent or guardian to keep.
+</p>
+
+<script>
+  function printPage() {
+    window.print();
+  }
+</script>
     <div class="govuk-button-group">
       <a href="../checker" class="govuk-button" role="button" data-module="govuk-button">
         Do another check
