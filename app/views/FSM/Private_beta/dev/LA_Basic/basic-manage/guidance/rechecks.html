@@ -1,0 +1,138 @@
+{% extends "layouts/FSM/dev/basic/layout-dfe-basic-lanav.html" %}
+
+{% set pageName="Guidance for completing annual rechecks" %}
+
+{% block beforeContent %}
+{% include "_includes/layouts/back_link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">{{ pageName }}</h1>
+
+    <p>This guidance explains how and when to carry out annual free school meal rechecks following the end of transitional protection. </p>
+
+        <h2 class="govuk-heading-m">Background</h2>
+
+    <p>Transitional protection for free school meals ends after the 2025 to 2026 academic year. From summer 2026 onwards, you must complete annual rechecks to confirm ongoing eligibility. </p>
+
+
+  <h2 class="govuk-heading-m" id="timing">When to recheck</h2>
+  <p class="govuk-body">You must:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>complete annual rechecks between the last week of the spring term and the end of September in the autumn term</li>
+    <li>start rechecks no earlier than the final week of the spring term</li>
+    <li>finish all rechecks by the end of September</li>
+    </ul>
+     <p class="govuk-body">Applicants confirmed as eligible remain eligible for the full academic year.</p>
+
+
+
+  <div class="govuk-inset-text">
+    <p class="govuk-body govuk-!-margin-bottom-1">Example</p>
+    <p class="govuk-body">
+      If you recheck an application in July 2026 and it is eligible, it remains eligible until  August 2027.
+      Complete the next recheck from the spring term in 2027.
+    </p>
+  </div>
+
+    <!-- <p>You must rechecks in the <strong>summer term</strong> so that eligibility is confirmed before the start of the new academic year in September.</p>
+
+    <p>Completing rechecks at this time ensures outcomes are in place when children start or return to school.</p> -->
+
+     <!-- <div class="govuk-inset-text">
+      If you complete rechecks in the summer term, the outcome will apply for the entirety of the following academic year.
+    </div> -->
+
+
+    <h2 class="govuk-heading-m">How to complete a recheck</h2>
+
+    <p>Use the batch check process to complete rechecks. Before you start, make sure you:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>have up-to-date parent or guardian details</li>
+      <li>only include pupils you need to recheck</li>
+      <li>use the latest CSV template</li>
+    </ul>
+
+         <!-- <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <h2 class="govuk-heading-m">How to complete a recheck</h2> -->
+
+    <p>To complete a batch check follow the <a href="/FSM/Private_beta/dev/LA_Basic/basic-manage/guidance/batch-check" class="govuk-link">
+        guidance for running a batch check.</a></p>
+
+
+    <!-- <ol class="govuk-list govuk-list--number">
+      <li>Download the CSV template</li>
+      <li>Add the parent or guardian details for each pupil you want to recheck</li>
+      <li>Upload the file and select Run a batch check</li>
+    </ol> -->
+<!--
+    <p>
+      Follow the
+      <a href="/FSM/Private_beta/dev/basic/batch-check-guidance" class="govuk-link">
+        guidance for running a batch check
+      </a>
+      if you need step-by-step instructions.
+    </p> -->
+
+
+     <!-- <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"> -->
+<!--
+    <h3 class="govuk-heading-m">Results of batch checks</h3>
+    <p><b>Eligible Targeted:</b> The children of this parent or guardian are eligible to free school meals and additional benefits.​</p>
+    <p><b>Eligible Expanded:</b> The children of this parent or guardian are entitled to free school meals only.​</p>
+    <p><b>Not eligible:</b> The children may not be entitled. Provide supporting evidence for your local
+      authority to review.​</p>
+    <p><b>Could not check:</b> The parent or guardian’s information does not match departmental records.​</p>
+    <p><b>Technical Error:</b> There was an issue accessing the data for this parent or guardian.</p>
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"> -->
+
+<p>The batch check guidance includes an explanation of result types.</p>
+
+    <h2 class="govuk-heading-m">After completing rechecks</h2>
+
+    <p>After running rechecks:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>update your records with the latest eligibility status</li>
+      <li>ensure children are correctly recorded for funding and census returns </li>
+      <li>review any evidence for children with results of not eligible</li>
+    </ul>
+
+    <!-- <div class="govuk-inset-text">
+      Do not remove free school meal entitlement without following your local authority or school policy.
+    </div> -->
+
+     <h2 class="govuk-heading-m">Rechecking non-eligible results </h2>
+
+<p>If an application returns a result of 'not eligible', you should not run another recheck immediately afterwards. Recent changes from data sources may not yet be reflected, so repeating the check straight away is unlikely to change the outcome. </p>
+
+<p>Only recheck again:</p>
+<ul class="govuk-list govuk-list--bullet">
+    <li>in the next term</li>
+    <li>after a known change in the family’s circumstances (for example, a new benefits claim) or the family has corrected the information held about them</li>
+    <li>if the family has requested a recheck</li>
+</ul>
+
+<p>This approach improves accuracy and reduces unnecessary rechecks.</p>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <h2 class="govuk-heading-m">Help and support</h2>
+
+    <p>
+      For further help, contact the support team using the
+      <a href="https://customerhelpportal.education.gov.uk/" class="govuk-link">
+        Customer help portal.
+      </a>
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,5 +1,5 @@
 {% extends "layouts/FSM/dev/basic/layout-dfe-basic-lanav.html" %}
-{% set pageName="Report generated on 01 December 2025" %}
+{% set pageName="Report generated on 27 April 2026" %}
 {% set Service="Manage eligibility for free school meals" %}
 {% set address="Oystermouth Road Swansea SA1 3SN" %}
 {% set startDate="01/01/2025" %}
@@ -20,7 +20,7 @@
       </div>
       <div class="moj-page-header-actions__actions">
         <div class="moj-button-group moj-button-group--inline">
-          <a href="" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          <a href="/public/csv/fsm/dev/fsm-report.csv" class="govuk-button govuk-button--secondary" data-module="govuk-button">
             Download data as CSV
           </a>
         </div>
@@ -30,7 +30,7 @@
 
         <table class="govuk-table govuk-table--small-text-until-tablet">
             <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-4">Showing 3 checks
-                completed from {{ startDate | govukDate("truncate") }} to {{ endDate | govukDate("truncate")}}</caption>
+                completed from 24 Mar 2026 to 27 Apr 2026</caption>
 
 
             <thead class="govuk-table__head">
@@ -50,41 +50,67 @@
             </thead>
             <tbody class="govuk-table__body">
 
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Johnson</td>
+               <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Alex Johnson</td>
                     <td class="govuk-table__cell">QQ123456C</td>
                     <td class="govuk-table__cell">{{ "2000-01-01" | govukDate("truncate") }}</td>
-                    <td class="govuk-table__cell">{{ "2025-01-01" | govukDate("truncate") }}</td>
-                    <td class="govuk-table__cell">Individual</td>
+                    <td class="govuk-table__cell">{{ "2026-01-01" | govukDate("truncate") }}</td>
+                    <td class="govuk-table__cell">Batch</td>
                     <!-- <td class="govuk-table__cell">Web service</td> -->
                     <td class="govuk-table__cell">Jane Smith</td>
-                    <td class="govuk-table__cell">Eligible</td>
+                    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Expanded</strong></td>
                     <td class="govuk-table__cell"> </td>
                     <!-- <td class="govuk-table__cell"><a href=""> </a></td> -->
                 </tr>
 
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Evans</td>
+                    <td class="govuk-table__cell">Mia Evans</td>
                     <td class="govuk-table__cell">QQ123456C</td>
                     <td class="govuk-table__cell">{{ "1995-01-01" | govukDate("truncate") }}</td>
-                    <td class="govuk-table__cell">{{ "2025-01-01" | govukDate("truncate") }}</td>
+                    <td class="govuk-table__cell">{{ "2026-01-01" | govukDate("truncate") }}</td>
                     <td class="govuk-table__cell">Individual</td>
                     <!-- <td class="govuk-table__cell">Web service</td> -->
                     <td class="govuk-table__cell">Jane Smith</td>
-                    <td class="govuk-table__cell">Not found</td>
+                    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Not found</strong></td>
+                    <td class="govuk-table__cell"> </td>
+                    <!-- <td class="govuk-table__cell"><a href=""> </a></td> -->
+                </tr>
+
+                   <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Sarah Jones</td>
+                    <td class="govuk-table__cell">QQ873261C</td>
+                    <td class="govuk-table__cell">{{ "2016-01-01" | govukDate("truncate") }}</td>
+                    <td class="govuk-table__cell">{{ "2026-01-01" | govukDate("truncate") }}</td>
+                    <td class="govuk-table__cell">Individual</td>
+                    <!-- <td class="govuk-table__cell">Web API</td> -->
+                    <td class="govuk-table__cell">Cheshire East</td>
+                    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--purple">Targeted</strong></td>
                     <td class="govuk-table__cell"> </td>
                     <!-- <td class="govuk-table__cell"><a href=""> </a></td> -->
                 </tr>
 
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Mia</td>
+                    <td class="govuk-table__cell">Susan Francis</td>
                     <td class="govuk-table__cell">QQ873261C</td>
                     <td class="govuk-table__cell">{{ "2016-01-01" | govukDate("truncate") }}</td>
-                    <td class="govuk-table__cell">{{ "2025-01-01" | govukDate("truncate") }}</td>
+                    <td class="govuk-table__cell">{{ "2026-01-01" | govukDate("truncate") }}</td>
                     <td class="govuk-table__cell">Batch</td>
                     <!-- <td class="govuk-table__cell">Web API</td> -->
                     <td class="govuk-table__cell">Cheshire East</td>
-                    <td class="govuk-table__cell">Not eligible</td>
+                    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Not eligible</strong></td>
+                    <td class="govuk-table__cell"> </td>
+                    <!-- <td class="govuk-table__cell"><a href=""> </a></td> -->
+                </tr>
+
+                      <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Anthony Thomas</td>
+                    <td class="govuk-table__cell">AB123456C</td>
+                    <td class="govuk-table__cell">{{ "2016-01-01" | govukDate("truncate") }}</td>
+                    <td class="govuk-table__cell">{{ "2026-01-01" | govukDate("truncate") }}</td>
+                    <td class="govuk-table__cell">Batch</td>
+                    <!-- <td class="govuk-table__cell">Web API</td> -->
+                    <td class="govuk-table__cell">Cheshire East</td>
+                    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Not eligible</strong></td>
                     <td class="govuk-table__cell"> </td>
                     <!-- <td class="govuk-table__cell"><a href=""> </a></td> -->
                 </tr>

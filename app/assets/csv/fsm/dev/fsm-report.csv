@@ -1,0 +1,7 @@
+Parent name,National Insurance number,Date of birth,Date check submitted,Check type,Checked by,Outcome
+Alex Johnson,QQ123456C,1/1/00,1/1/26,Batch,Jane Smith,Expanded
+Mia Evans,QQ123456C,1/1/95,1/1/26,Individual,Jane Smith,Not found
+Sarah Jones,QQ873261C,1/1/16,1/1/26,Individual,Chesire East,Targeted
+Susan Francis,QQ873261C,1/1/16,1/1/26,Batch,Chesire East,Not eligible
+Anthony Thomas,AB123456C,1/1/16,1/1/26,Batch,Chesire East,Not eligible
+James Lumley,AB123456C,1/1/16,1/1/26,Batch,Chesire East,Technical error
