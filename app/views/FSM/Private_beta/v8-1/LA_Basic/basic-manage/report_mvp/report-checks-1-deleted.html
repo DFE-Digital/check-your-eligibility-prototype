@@ -14,6 +14,18 @@
 {% block content %}
 
 
+<div role="region" class="moj-alert moj-alert--error" aria-label="error: This case has been assigned to someone else" data-module="moj-alert">
+      <div>
+        <svg class="moj-alert__icon" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" height="30" width="30">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M20.1777 2.5H9.82233L2.5 9.82233V20.1777L9.82233 27.5H20.1777L27.5 20.1777V9.82233L20.1777 2.5ZM10.9155 8.87769L15.0001 12.9623L19.0847 8.87771L21.1224 10.9154L17.0378 15L21.1224 19.0846L19.0847 21.1222L15.0001 17.0376L10.9155 21.1223L8.87782 19.0846L12.9624 15L8.87783 10.9153L10.9155 8.87769Z" fill="currentColor" />
+        </svg>
+      </div>
+      <div class="moj-alert__content">Report <strong>Adam Catterall 29-05-2026 </strong> has been deleted.</div>
+      <div class="moj-alert__action">
+        <button class="moj-alert__dismiss" hidden>Dismiss</button>
+      </div>
+    </div>
+
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -61,21 +73,20 @@
                 </tr>
 
 
-                 <tr class="govuk-table__row">
+                 <!-- <tr class="govuk-table__row"> -->
                     <!-- <td class="govuk-table__cell">Johnson</td>
                     <td class="govuk-table__cell">QQ123456C</td>
                     <td class="govuk-table__cell">01/01/2000</td> -->
-                    <td class="govuk-table__cell">{{ "2026-05-29" | govukDate("truncate") }} </td>
+                    <!-- <td class="govuk-table__cell">{{ "2026-05-29" | govukDate("truncate") }} </td>
                     <td class="govuk-table__cell">{{ "2026-04-29" | govukDate("truncate") }} </td>
                     <td class="govuk-table__cell">{{ "2026-05-29" | govukDate("truncate") }} </td>
                     <td class="govuk-table__cell">Adam Caterall</td>
                     <td class="govuk-table__cell">4</td>
                      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Completed</strong></td>
 
-                    <!-- <td class="govuk-table__cell"></td> -->
                     <td class="govuk-table__cell"><a href="/public/csv/FSM-basic/Report 29-05-2026 Adam Catterall(Sheet1).csv">Download report </a></td>
-<td class="govuk-table__cell"><a href="deleted-are-you-sure.html"> Delete</a></td>
-                </tr>
+<td class="govuk-table__cell"><a href="report-deleted-are-you-sure"> Delete</a></td>
+                </tr> -->
             </tbody>
         </table>
 
