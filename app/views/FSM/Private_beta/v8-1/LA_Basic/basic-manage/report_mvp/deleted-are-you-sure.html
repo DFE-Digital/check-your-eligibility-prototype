@@ -1,0 +1,52 @@
+{% extends "layouts/FSM/v8-1/basic/layout-dfe-basic-lanav.html" %}
+
+{% set pageName="Delete report Adam Catterall 29-05-2026" %}
+{% extends "layouts/FSM/v8-1/basic/layout-dfe-basic-lanav.html" %}
+
+{% set Service="Manage eligibility for free school meals" %}
+{% set address="Oystermouth Road Swansea SA1 3SN" %}
+
+
+{% block beforeContent %}
+{% include "_includes/layouts/back_link.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+
+  <div class="govuk-warning-text">
+    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+    <strong class="govuk-warning-text__text">
+      <span class="govuk-visually-hidden">Warning</span>
+      Your organisation will no longer be able to view this record if you delete it.
+    </strong>
+  </div>
+  <div class="govuk-!-padding-bottom-3"></div>
+
+
+
+  {{ govukButton({
+  text: "Delete now",
+  classes: "govuk-button--warning",
+  href: 'report-checks-1-deleted'
+  }) }}
+
+
+  {{ govukButton({
+  text: "Cancel and return to reports",
+  classes: "govuk-button--secondary",
+  href: 'report-checks-1'
+  }) }}
+
+  <div class="govuk-!-padding-bottom-3"></div>
+
+
+    </div>
+
+
+    {% endblock %}
