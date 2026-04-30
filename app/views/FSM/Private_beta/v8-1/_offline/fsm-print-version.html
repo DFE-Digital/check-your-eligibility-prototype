@@ -1,11 +1,11 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/FSM/v8-1/family/layout-dfe-parent.html" %}
 
 {% set pageName="Free School Meals form" %}
-{% block beforeContent %}
 
-{{ govukBackLink({
-text: "Back",
-href: "/"
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
 }) }}
 {% endblock %}
 
@@ -31,7 +31,7 @@ href: "/"
       </div>
       <div class="govuk-grid-column-three-quarters">
         <h2 class="govuk-heading-m">
-          <a target="_blank" href="/mvp3/pdf/fsm_application.pdf">Free School Meals claim form</a>
+          <a target="_blank" href="/public/pdf/fsm/dev/fsm-form-accessible.pdf">Free School Meals claim form</a>
         </h2>
         <p>Ref: FSM2024</p>
         <p><span><abbr title="Portable Document Format">PDF</abbr></span>, <span>430 KB</span>, <span>4 pages</span></p>
