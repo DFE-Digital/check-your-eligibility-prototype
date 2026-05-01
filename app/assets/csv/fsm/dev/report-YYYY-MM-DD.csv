@@ -1,0 +1,5 @@
+Parent Surname,National Insurance number,Date of birth,Date check submitted,Check type,Checked by,Outcome,End date
+Jones,AB123456C,1-Sep-00,1-Mar-26,Individual,Adam.Catterall@edu.gov.yj,Eligible Expanded,31-Aug-26
+Tester,DS654321B,7-Jan-05,15-Mar-26,Batch,Adam.Catterall@edu.gov.yj,Eligible Targeted,31-Aug-26
+Smith,CM123456D,1-Jun-05,16-Mar-26,Batch,Adam.Catterall@edu.gov.yj,Not eligible,31-Aug-26
+Johnson,DS654321F,1-Jun-05,5-May-26,Individual,Adam.Catterall@edu.gov.yj,Could not check,31-Aug-27
