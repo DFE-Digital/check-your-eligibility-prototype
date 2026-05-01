@@ -15,7 +15,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <h1 class="govuk-heading-l">{{pageName}}</h1>
-        <p>Generate a report showing the checks carried out using this service and the outcome of each check.</p>
+         <p>Generate a report showing the checks carried out using this service and the outcome of each check.</p>
         <!-- <a class="govuk-button" href="#" role="button">Generate report</a> -->
 <!--
         <table class="govuk-table govuk-table--small-text-until-tablet">
@@ -53,8 +53,34 @@
             </tbody>
         </table> -->
 
-<p>Select a date range for the report:</p>
+<p>Select a date range for the report.</p>
 
+
+{{ govukSelect({
+  id: "date-select",
+  name: "date-select",
+  label: {
+    text: "Date range",
+    classes: "govuk-fieldset__legend--m"
+  },
+  items: [
+    {
+      value: "30-days",
+      text: "Last 30 days",
+      selected: true
+    },
+    {
+      value: "60-days",
+      text: "Last 60 days"
+    },
+    {
+      value: "90-days",
+      text: "Last 90 days"
+    }
+  ]
+}) }}
+
+<!--
 {{ govukDateInput({
   id: "start-date",
   namePrefix: "start-date",
@@ -83,7 +109,9 @@
   hint: {
     text: "For example, 27 3 2007"
   }
-}) }}
+}) }} -->
+
+<p>Select the check types you want to include in the report.</p>
 
 
 {{ govukSelect({
@@ -109,8 +137,7 @@
     }
   ]
 }) }}
-
-        <a class="govuk-button" href="report-loader.html" role="button">Generate report</a>
+        <a class="govuk-button" href="report-checks.html" role="button">Generate report</a>
 
 
     </div>
