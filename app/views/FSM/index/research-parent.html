@@ -1,0 +1,124 @@
+{% extends "layouts/FSM/index/layout-dfe-index-fsm.html" %}
+{% block pageTitle %}
+  Free school meals prototype
+{% endblock %}
+
+{% block beforeContent %}
+    {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{ govukBreadcrumbs({
+  classes: "govuk-!-margin-top-5",
+  items: [
+    {
+      text: "Free school meals",
+      href: "/fsm/index/index-fsm"
+    },
+    {
+      text: "Research and design",
+      href: "/fsm/index/research"
+    }
+  ]
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+    <h1 class="govuk-heading-xl">
+      Parents and guardians
+    </h1>
+
+
+
+    <!---Usability testing details-->
+
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Information required for usability tests
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        </ul>
+        <h2 class="govuk-heading-m">Information required for usability tests</h2>
+         <ul class="govuk-list govuk-list--bullet">
+          <li>Parent name - [first name, last name]</li>
+          <li>Parent date of birth </li>
+          <li>email address - [name@gmail.com]</li>
+          <li>password for one gov - [password]</li>
+          <li>6 digit security code - 123456</li>
+          <li>NI number - [KL 123456]</li>
+          <li>Child name</li>
+          <li>Child date of birth</li>
+          <li>School details</li>
+          <li>Appeal evidence (pdf, png, jped)</li>
+        </ul>
+        </h2>
+      </div>
+    </details>
+
+    <h2 class="govuk-heading-m">Versions</h2>
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Version</th>
+          <th scope="col" class="govuk-table__header">Research</th>
+          <th scope="col" class="govuk-table__header">Description</th>
+          <th scope="col" class="govuk-table__header">Links</th>
+          <th scope="col" class="govuk-table__header">Status</th>
+          <th scope="col" class="govuk-table__header">Last updated</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <!--v8-1-->
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="/FSM/Private_beta/v8-1/family/start-now-beta-schools">v8-1</a></th>
+          <td class="govuk-table__cell">
+
+          </td>
+          <td class="govuk-table__cell">
+            <p>Description. TBC.</p>
+
+          </td>
+          <td class="govuk-table__cell">
+            <p class="govuk-!-margin-bottom-2"><a href="/FSM/Private_beta/v8-1/family/start-now-beta-schools">Start page</a></p>
+            <p class="govuk-!-margin-bottom-2"><a href="/FSM/Private_beta/v8-1/family/parent-soft-check/outcomes/eligible">Eligible outcome</a></p>
+            <p class="govuk-!-margin-bottom-2"><a href="/FSM/Private_beta/v8-1/family/parent-soft-check/outcomes/not-eligible-appeal">Not eligible outcome - appeal</a></p>
+          </td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Design</strong></td>
+          <td class="govuk-table__cell">1 May 2026</td>
+        </tr>
+        <!--v7-5-->
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="/FSM/Private_beta/v7-5/family/start-now-beta-schools">v7-5</a></th>
+          <td class="govuk-table__cell">
+
+          </td>
+          <td class="govuk-table__cell">
+            <p>Description. TBC.</p>
+
+          </td>
+          <td class="govuk-table__cell">
+            <p class="govuk-!-margin-bottom-2"><a href="/FSM/Private_beta/v8-1/family/start-now-beta-schools">Start page</a></p>
+            <p class="govuk-!-margin-bottom-2"><a href="/FSM/Private_beta/v8-1/family/parent-soft-check/outcomes/eligible">Eligible outcome</a></p>
+            <p class="govuk-!-margin-bottom-2"><a href="/FSM/Private_beta/v8-1/family/parent-soft-check/outcomes/not-eligible-appeal">Not eligible outcome - appeal</a></p>
+          </td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Research completed</strong></td>
+          <td class="govuk-table__cell">25 October 2025</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+  </div>
+</div>
+
+
+{% endblock %}
