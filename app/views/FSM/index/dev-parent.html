@@ -1,0 +1,288 @@
+{% extends "layouts/FSM/index/layout-dfe-index-fsm.html" %}
+{% block pageTitle %}
+  Parents and guardian - ready for development
+{% endblock %}
+
+{% block beforeContent %}
+    {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{ govukBreadcrumbs({
+  classes: "govuk-!-margin-top-5",
+  items: [
+    {
+      text: "Free school meals",
+      href: "/fsm/index/index-fsm"
+    },
+    {
+      text: "Ready for development",
+      href: "/fsm/index/dev"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<div class="govuk-grid-row">
+
+   <div class="govuk-grid-column-one-quarter userGuidanceAnchorMenu">
+
+
+    <h4 class="govuk-body-s govuk-!-margin-top-5">Contents</h4>
+    <ol class="govuk-!-padding-left-0">
+      <li class="govuk-body-s contents-list-item">
+        <a href="#start"><span class="contents-list-item-number" >1.</span><span class="contents-list-item-text">Start</span></a>
+      </li>
+      <li class="govuk-body-s contents-list-item">
+        <a href="#find-school"><span class="contents-list-item-number" >2.</span><span class="contents-list-item-text">Find a school</span></a>
+      </li>
+       <li class="govuk-body-s contents-list-item">
+        <a href="#check"><span class="contents-list-item-number" >3.</span><span class="contents-list-item-text">Run a check</span></a>
+      </li>
+      <li class="govuk-body-s contents-list-item">
+        <a href="#apply"><span class="contents-list-item-number" >4.</span><span class="contents-list-item-text">Apply</span></a>
+      </li>
+      <li class="govuk-body-s contents-list-item">
+        <a href="#appeal"><span class="contents-list-item-number" >5.</span><span class="contents-list-item-text">Appeal</span></a>
+      </li>
+      <li class="govuk-body-s contents-list-item">
+        <a href="#guidance"><span class="contents-list-item-number" >6.</span><span class="contents-list-item-text">Guidance</span></a>
+      </li>
+      <li class="govuk-body-s contents-list-item">
+        <a href="#error-messages"><span class="contents-list-item-number" >7.</span><span class="contents-list-item-text">Error messages</span></a>
+      </li>
+    </ol>
+
+  </div>
+
+  <div class="govuk-grid-column-three-quarters">
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+      Parents and guardians
+    </h1>
+
+
+
+      <!--start-->
+
+      <h2 id="start">Start</h2>
+
+      <table class="govuk-table ">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/family/start-now-beta-schools">Start page</a></td>
+          <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+        </tr>
+        </tbody>
+      </table>
+
+
+       <!--find a school-->
+
+      <h2 id="find-school">Find a school</h2>
+
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/family/beta-school-check">Find out if a school is included</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/family/beta-school-check-show">School included</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/family/beta-school-check-no">School not included</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+
+
+        </tbody>
+      </table>
+
+       <!--batch check-->
+
+      <h2 id="check">Run a check</h2>
+
+       <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/family/parent-soft-check/check">Enter your details</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/family/parent-soft-check/nass-number">Enter asylum support reference number</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/family/parent-soft-check/checking-loader">Checking loader</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <h3>Outcomes</h3>
+
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/family/parent-soft-check/outcomes/eligible">Eligible</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/family/parent-soft-check/outcomes/not-eligible-appeal">Not eligible - appeal</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+           <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/family/parent-soft-check/outcomes/not-eligible-appeal">Not eligible</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/family/parent-soft-check/outcomes/could-not-find">Could not find</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+           <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/family/parent-soft-check/outcomes/could-not-check">No NINO or ASR</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!--apply-->
+
+      <h2 id="apply">Apply</h2>
+
+
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/family/account/apply/child-details">Add children</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/family/account/apply/check-answers">Check answers</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/family/account/apply/submitted">Application submitted</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+        <!--appeal-->
+
+      <h2 id="appeal">Appeal</h2>
+
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/family/account/appeal/child-details">Add children</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+       <h3>Upload evidence</h3>
+
+       <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/family/account/appeal/evidence/have-evidence">Choose how to send evidence</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/family/account/appeal/evidence/upload-guidance">Guidance for taking photos of evidence</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/family/account/appeal/evidence/upload-guidance-digital">Guidance for uploading evidence</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/family/account/appeal/evidence/upload-evidence">Upload your evidence</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Check your answers</h3>
+
+       <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/family/account/appeal/check-answers/check-answers-evidence">Check your answers - with evidence</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/family/account/appeal/check-answers/check-answers-evidence">Check your answers - no evidence</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Appeal submitted</h3>
+
+       <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/family/account/appeal/submitted/submitted-evidence">Appeal submitted - with evidence</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/family/account/appeal/submitted/submitted-no-evidence">Appeal submitted - no evidence</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+
+      <!--guidance-->
+
+      <h2 id="guidance">Guidance</h2>
+
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/family/guidance/parent-guidance">Parent guidance</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/FSM/Private_beta/dev/_offline/fsm-print-version-parent">Download PDF form</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+
+
+      <!--error messages-->
+
+      <h2 id="error-messages">Error messages</h2>
+
+      <table class="govuk-table">
+
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a rel="noreferrer noopener" target="_blank" href="https://educationgovuk.sharepoint.com/:x:/r/sites/SolutionsDevelopmentCentre-ECSdiscovery/Shapurple%20Documents/ECE%20Project%20Team/4.%20User-centpurple%20Design/Content%20Design/Content/Error%20scenarios/Error%20scenario%20tracker.xlsx?d=w4fbeca67abaa431d9e339072f7347fb9&csf=1&web=1&e=uGr6xy&nav=MTVfezAwMDAwMDAwLTAwMDEtMDAwMC0wMDAwLTAwMDAwMDAwMDAwMH0">Free school meals error messages spreadsheet (opens in new tab)</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--purple long-tag">In review</strong></td>
+          </tr>
+
+
+        </tbody>
+      </table>
+
+
+  </div>
+</div>
+
+
+{% endblock %}
