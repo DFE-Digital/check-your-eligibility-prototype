@@ -1,0 +1,68 @@
+{% extends "layouts/FSM/dev/family/layout-gov.html" %}
+
+
+{% set pageName="Home" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds ">
+    <h1 class="govuk-heading-l govuk-!-margin-top-0 govuk-!-margin-bottom-3">Check your phone</h1>
+    <div class="govuk-inset-text">
+      We have sent a code to *******6975.
+    </div>
+
+    <p class="govuk-body">It might take a few minutes to arrive. The code will expire after 15 minutes.</p>
+
+    <form action="/FSM/Private_beta/dev/family/account/appeal/child-details" method="post">
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="code">
+          Enter the 6 digit security code
+        </label>
+
+        <input class="govuk-input govuk-input--width-10 govuk-!-font-weight-bold" id="code" name="code" type="text"
+          spellcheck="false" autocomplete="one-time-code" inputmode="numeric">
+
+      </div>
+
+      <button type="Submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Problems with the code?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+
+          <p class="govuk-body">
+            We can <a href="" class="govuk-link" rel="noreferrer noopener">send the code again</a> if the code is not working or you did not receive it.
+          </p>
+
+          <p>
+            If you no longer have access to this phone number, <a href="">check if you can change how you get security codes</a>.
+          </p>
+
+        </div>
+      </details>
+
+    </form>
+
+  </div>
+</div>
+
+
+
+{% endblock %}
