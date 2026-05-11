@@ -59,22 +59,30 @@
           classes: "govuk-checkboxes--small",
           fieldset: {
              legend: {
-                text: "Decision",
+                text: "Status",
                 classes: "govuk-fieldset__legend--s"
               }
             },
             items: [
               {
                 value: "status-eligible-targeted",
-                text: "FSM eligible targeted"
+                text: "Eligible targeted"
               },
               {
                 value: "status-eligible-expanded",
-                text: "FSM eligible expanded"
+                text: "Eligible expanded"
               },
               {
                 value: "status-not-eligible",
                 text: "Not eligible"
+              },
+              {
+                value: "status-receiving-targeted",
+                text: "Receiving targeted FSM"
+              },
+              {
+                value: "status-receiving-expanded",
+                text: "Receiving expanded FSM"
               }
             ]
           }) }}
@@ -93,17 +101,17 @@
             items: [
               {
                 value: "status-evidence-needed",
-                text: "Evidence needed"
+                text: "Upload evidence"
               },
               {
                 value: "status-in-review",
-                text: "Application in review"
+                text: "Review application"
               }
             ]
           }) }}
 
               <!-- Status -->
-          {{ govukCheckboxes({
+          <!-- {{ govukCheckboxes({
           idPrefix: "status",
             name: "status",
             classes: "govuk-checkboxes--small",
@@ -116,14 +124,14 @@
             items: [
               {
                 value: "status-finalised",
-                text: "In MIS"
+                text: "Finalised"
               },
               {
                 value: "status-recheck-due",
-                text: "Recheck due"
+                text: "Recheck"
               }
             ]
-          }) }}
+          }) }} -->
 
 
 
@@ -166,7 +174,7 @@
           classes: "govuk-checkboxes--small",
           fieldset: {
           legend: {
-          text: "Include archived applications",
+          text: "View archived applications",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--s"
           }

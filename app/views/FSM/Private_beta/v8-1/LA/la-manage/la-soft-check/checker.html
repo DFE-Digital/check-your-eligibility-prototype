@@ -41,7 +41,7 @@
 
       {{ govukInput({
         label: {
-          text: "Email address"
+          text: "Email address (optional)"
         },
         id: "email",
         name: "email",
@@ -112,4 +112,17 @@
   </div>
 </div>
 
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+  // Check if the page was reloaded
+  if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
+    // Find all text inputs and clear them
+    const inputs = document.querySelectorAll('input[type="text"], input[type="number"], input[type="email"]');
+    inputs.forEach(input => {
+      input.value = '';
+    });
+  }
+</script>
 {% endblock %}
