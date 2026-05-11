@@ -1,95 +1,218 @@
 {% extends "layouts/FSM/v8-1/layout-dfe-schoolnav.html" %}
-{% set pageName="Children's details added" %}
+{% if data["policyLabel"] == "Eligible targeted" %}
+
+<p class="govuk-body">
+  <strong class="govuk-tag govuk-tag--purple">Targeted</strong>
+  this covers children in households in receipt of Universal Credit with annual household earnings of £7,400 or less.
+  These children will attract pupil premium and other disadvantage funding for their schools.
+  Other education entitlements, such as the holiday activities and food programme (HAF) and the ‘extended rights’
+  element of school travel assistance, will be based on targeted free school meals.
+</p>
+
+{% elif data["policyLabel"] == "Eligible expanded" %}
+
+<p class="govuk-body">
+  <strong class="govuk-tag govuk-tag--green">Expanded</strong>
+  this covers children who are in households receiving Universal Credit with annual household earnings exceeding £7,400.
+  Children will be entitled to free school meals only.
+</p>
+
+{% endif %}
+
+
+{% set pageName = "Children's details added" %}
 
 {% block content %}
 
-<div class="govuk-width-container">
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-{% set html %}
-  <h3 class="govuk-notification-banner__heading">
-    {{pageName}}
-  </h3>
-  <p class="govuk-body">You've successfully added details to {{ data["parent-firstname"] or "Eden" }} {{ data["parent-surname"] or "Tesfay" }} free school meals application record.</p>
+    {% set html %}
+      <h3 class="govuk-notification-banner__heading">
+        {{ pageName }}
+      </h3>
 
-{% endset %}
+      <p class="govuk-body">
+        You’ve successfully created a free school meals application for the children of
+        {{ data["parent-firstname"] or "Idella" }} {{ data["parent-surname"] or "Nolan" }}.
+      </p>
+    {% endset %}
 
-{{ govukNotificationBanner({
-  html: html,
-  type: "success"
-}) }}
-        <!--<h1 class="govuk-heading-xl">Children details added</h1>-->
-        <h3>Application record for {{ data["parent-firstname"] or "Rachel" }} {{ data["parent-surname"] or "Evans" }}</h3>
+    {{ govukNotificationBanner({
+      html: html,
+      type: "success"
+    }) }}
 
+    <h2 class="govuk-heading-l">
+      Application record for {{ data["parent-firstname"] or "Idella" }} {{ data["parent-surname"] or "Nolan" }}
+    </h2>
 
-      </div>
-</div>
-
-<div class="govuk-width-container">
-  <div class="govuk-grid-column-full-width">
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th class="govuk-table__header">Child</th>
+          <!-- <th class="govuk-table__header">School</th> -->
+          <th class="govuk-table__header">End date</th>
+          <th class="govuk-table__header">Status</th>
           <th class="govuk-table__header">Reference</th>
         </tr>
       </thead>
+
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell"> {{ data["ch1-first-name"] or "Mia" }} {{ data["ch1-surname"] or data["parent-surname"] }} </td>
-          <td class="govuk-table__cell">44455453</td>
+          <td class="govuk-table__cell">
+            {{ data["child-first-name"] or "Christina" }}
+            {{ data["child-surname"] or data["parent-surname"] or "Nolan" }}
+          </td>
+
+          <!-- <td class="govuk-table__cell">
+            {{ data["school-picker"] or data["ch1-school"] or "Greenwood Primary School" }}<br>
+            Hoddesdon<br>
+            EN11 8JY
+          </td> -->
+
+          <td class="govuk-table__cell">
+            {{ data["endDate"] or "31 August 2027" }}
+          </td>
+
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag {{ data['tagClass'] or 'govuk-tag--purple' }}">
+              {{ data["policyLabel"] or "Eligible targeted" }}
+            </strong>
+          </td>
+
+          <td class="govuk-table__cell">
+            44455453
+          </td>
         </tr>
-
-        <!-- {% if data['child-2'] == 'Yes' %} {% endif %}
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell"> {{ data["ch1-first-name"] or "Samuel" }} {{ data["surname"]or data["parent-surname"] }}</td>
-          <td class="govuk-table__cell">44455454</td>
-        </tr> -->
-
       </tbody>
     </table>
-  </div>
-</div>
+    <!-- <div class="govuk-inset-text"> -->
+    <div class="govuk-inset-text no-print">
+
+      <p class="govuk-body">
+        <strong>Free school meals eligibility</strong>
+      </p>
 
 
 
-        <div class="govuk-width-container">
-          <div class="govuk-grid-row">
-            <div class="govuk-grid-column-full">
-              <h2 class="govuk-heading-m">What to do next</h2>
+      {% if data["policyLabel"] == "Eligible targeted" or data["policyLabel"] == "Eligible expanded" %}
+      <p class="govuk-body">
+        From the start of the 2026 to 2027 academic year, there are 2 categories of eligibility for free school meals.
+      </p>
+      <p class="govuk-body">
+        <strong class="govuk-tag govuk-tag--purple">Eligible targeted</strong>
+        this covers children in households in receipt of Universal Credit with annual household earnings of £7,400 or
+        less.
+        These children will attract pupil premium and other disadvantage funding for your school.
+        Other education entitlements, such as the holiday activities and food programme (HAF) and the 'extended rights'
+        element of school travel assistance, will be based on targeted free school meals.
+      </p>
 
-              <p> <a href="" class="govuk-link" onclick="printPage()"> Print this page</a> and give to the parent or guardian as a record of the reference numbers. </p>
+      <p class="govuk-body">
+        <strong class="govuk-tag govuk-tag--green">Eligible expanded</strong>
+        this covers children who are in households receiving Universal Credit with annual household earnings exceeding
+        £7,400.
+        Children will be entitled to free school meals only.
+      </p>
 
-              <p>Add details of their application to your own system then <a href="../decision/finalise/applications" class="govuk-link">finalise applications</p>
-          </div>
-      </div>
-      </div>
+      {% elif data["policyLabel"] == "Not eligible" %}
+      <p class="govuk-body">
+        <strong class="govuk-tag govuk-tag--red">Not eligible</strong>
+        This means the child is not currently eligible for free school meals based on the information provided.
+      </p>
 
-      <div class="govuk-!-padding-bottom-3"></div>
+      <p class="govuk-body">
+        If the parent or guardian believes this result is wrong, they need to provide evidence so the application can be
+        reviewed.
+      </p>
 
-      <p><a href="../../dashboard" class="govuk-link">Return to dashboard</p>
-      </div>
+
+
+      {% endif %}
+
+      <p class="govuk-body">
+        For more information, read
+        <a href="https://www.gov.uk/government/publications/free-school-meals-guidance-for-schools-and-local-authorities"
+          class="govuk-link" target="_blank" rel="noopener noreferrer">
+          Free school meals: guidance for schools and local authorities
+        </a>.
+      </p>
+
     </div>
-</div>
-</div>
 
-<div class="govuk-!-padding-bottom-3"></div>
+    <h2 class="govuk-heading-m">What to do next</h2>
 
+    <p class="govuk-body">
+      <a href="#" class="govuk-link" onclick="printPage(); return false;">Print the result</a>
+      to give to the parent or guardian as a record of the reference numbers.
+    </p>
 
-</div>
+    <p class="govuk-body">
+      <a href="../school-soft-check/checker.html" onclick="clearAndNavigate(event)" class="govuk-button" role="button" data-module="govuk-button" >
+        Do another check
+      </a>
+    </p>
+
+  </div>
 </div>
 
 {% endblock %}
 
+
 {% block pageScripts %}
-
-
 <script>
   function printPage() {
-      window.print();  // This will open the print dialog
+    window.print()
   }
-  </script>
+</script>
+
+<style>
+  @media screen {
+    .print-logo {
+      display: none;
+    }
+  }
+
+  @media print {
+
+    .govuk-header,
+    .dfe-header,
+    .dfe-header__navigation,
+    .govuk-phase-banner,
+    .no-print {
+      display: none !important;
+    }
+
+    .print-logo {
+      display: block !important;
+      margin-bottom: 20px;
+    }
+  }
+</style>
+
+<style>
+  @media print {
+
+    /* Hide GOV / DfE header + nav */
+    header,
+    .govuk-header,
+    .dfe-header,
+    .dfe-header__navigation,
+    .govuk-phase-banner,
+    .govuk-footer {
+      display: none !important;
+    }
+
+    /* Hide anything marked as no-print */
+    .no-print {
+      display: none !important;
+    }
+
+  }
+</style>
 
 <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+
+
 {% endblock %}

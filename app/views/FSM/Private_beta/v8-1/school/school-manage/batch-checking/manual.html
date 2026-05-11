@@ -1,5 +1,6 @@
-{% extends "layouts/FSM/v7-1/layout-dfe-schoolnav.html" %}
-{% set pageName="Choose how to run a manual batch check" %}
+{% extends "layouts/FSM/v8-1/layout-dfe-schoolnav.html" %}
+
+{% set pageName="Run a manual batch check" %}
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -32,17 +33,28 @@
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
     <h2 class="govuk-heading-s">Uploading our CSV template</h2>
     <ol class="govuk-list govuk-list--number">
-      <li>Download the <a href="/public/csv/Batch-check-template.csv" download class="govuk-link">batch
-          check template (185kb)</a>.</li>
-      <li>Add the name, date of birth and National Insurance number or asylum support reference number for all the
-        people you want to check.</li>
-      <li> Save it as a CSV file.</li>
-    </ol>
+        <li>Download the <a href="/public/csv/Batch-check-template.csv" download class="govuk-link">batch
+            check template (185kb)</a>.</li>
+        <li>
+          Add the details of the {{ data['check-type'] }} you need to check as well as the children who will be added to
+          the application.</li>
+        <li>Make sure you include:
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Parent first name</li>
+            <li>Parent last name</li>
+            <li>Date of birth (format DD/MM/YYYY or YYYY-MM-DD)</li>
+            <li>National Insurance number</li>
+            <li>Childs name</li>
+            <li>Childs date of birth (format DD/MM/YYYY or YYYY-MM-DD)</li>
+          </ul>
+        </li>
+        <li> Save it as a CSV file.</li>
+      </ol>
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
     <!-- <p class="govuk-heading-s">Upload a file</p> -->
 
-    <h3 class="govuk-heading-m">Upload an XML or CSV file</h3>
+    <h3 class="govuk-heading-m">Upload a CSV file</h3>
 
 
     <div class="govuk-form-group">

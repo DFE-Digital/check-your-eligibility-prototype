@@ -85,9 +85,6 @@
           ]
         }) }}
         {% include "/_includes/schools.html" %}
-        <!-- The schools.html partial is included here to provide a dropdown or autocomplete functionality
-             for selecting schools. It integrates with the rest of the form by enhancing the school selection
-             process, ensuring users can easily pick a school for each child. -->
 
 
         {% endcall %}
@@ -99,8 +96,8 @@
         </div>
         <div class="moj-button-action">
           {{ govukButton({
-            text: 'Save and continue',
-            href: '../apply/la-check-answers.html'
+            text: 'Save and continue'
+            <!-- href: '../apply/la-check-answers.html' -->
           }) }}
         </div>
       </form>
