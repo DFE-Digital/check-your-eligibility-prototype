@@ -1,10 +1,9 @@
-{% extends "/layouts/FSM/v7-3/layout-dfe-lanav.html" %}
+{% extends "/layouts/FSM/v8-1/layout-dfe-lanav.html" %}
 {% set pageName="Choose how to run a manual batch check" %}
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-
+    <div class="govuk-grid-column-two-thirds">
     <div class="govuk-error-summary" data-module="govuk-error-summary">
       <div role="alert">
         <h2 class="govuk-error-summary__title">
@@ -15,94 +14,105 @@
               <a href="#">Error – File not accepted </a>
             </li> -->
             <li>
-              <a href="#">There’s an issue with the csv file you uploaded. It doesn't match the template provided. Correct the errors and then upload the file again.</a>
+              <a href="#">There’s an issue with the csv file. It doesn't match the template provided. Correct the errors and upload the file again.</a>
             </li>
           </ul>
         </div>
       </div>
     </div>
 
-    <span class="govuk-caption-l">Run a batch check for multiple parents or guardians</span>
-    <h1 class="govuk-heading-l">{{pageName}}</h1>
+      </div>
 
-    <p class="govuk-body">You can:</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>export and upload a CTF from your LA system in XML format</li>
-      <li>complete and upload our CSV template</li>
-
-    </ul>
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
-
-    <h2 class="govuk-heading-s">
-      Extracting a Common File Transfer (CTF)
-    </h2>
-    </summary>
-    <div class="govuk">
-      <ol class="govuk-list govuk-list--number">
-
-        <li>Open your LA management information system (this could be SIMS or XXX or any other system your
-          school uses) in the admin area of your LA management information system.</li>
-        <li>Select export pupil data.</li>
-        <li>Save the exported file on your computer.</li>
-        <li>Add any information that your system doesn't collect (for example National Insurance numbers).</li>
-        <li>Save it as an XML file.</li>
-      </ol>
-      </ul>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="moj-page-header-actions">
+  <div class="moj-page-header-actions__title">
+        <h1 class="govuk-heading-l">{{pageName}}</h1>
+  </div>
+  <div class="moj-page-header-actions__actions">
+    <div class="moj-button-group moj-button-group--inline">
+       <a href="./history/batch-history.html" class="govuk-button govuk-button--secondary"
+            data-module="govuk-button">
+            Batch checks history
+          </a>
+      <!-- <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Share collection
+      </button> -->
     </div>
-
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
-    <h2 class="govuk-heading-s">Uploading our CSV template</h2>
-    <ol class="govuk-list govuk-list--number">
-      <li>Download the <a href="/public/csv/Batch-check-template.csv" download class="govuk-link">batch
-          check template (185kb)</a>.</li>
-      <li>Add the name, date of birth and National Insurance number or asylum support reference number for all the
-        people you want to check.</li>
-      <li> Save it as a CSV file.</li>
-    </ol>
-
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
-    <!-- <p class="govuk-heading-s">Upload a file</p> -->
-
-    <h3 class="govuk-heading-m">Upload an XML or CSV file</h3>
+  </div>
+</div>
 
 
-    {{ govukFileUpload({
-      id: "file-upload-1",
-      name: "fileUpload1",
-      label: {
-        text: "Upload a file"
-      },
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-m">Download our CSV template</h2>
+      <ol class="govuk-list govuk-list--number">
+        <li>Download the <a href="/public/csv/Batch-check-template.csv" download class="govuk-link">batch
+            check template (185kb)</a>.</li>
+        <li>
+          Add the details of the {{ data['check-type'] }} you need to check as well as the children who will be added to
+          the application.</li>
+        <li>Make sure you include:
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Parent first name</li>
+            <li>Parent last name</li>
+            <li>Date of birth (format DD/MM/YYYY or YYYY-MM-DD)</li>
+            <li>National Insurance number</li>
+            <li>Childs name</li>
+            <li>Childs date of birth (format DD/MM/YYYY or YYYY-MM-DD)</li>
+            <li>School the child attends on a full time basis</li>
+          </ul>
+        </li>
+        <li> Save it as a CSV file.</li>
+      </ol>
 
-  errorMessage: {
-    text: "The CSV must match the template provided"
-  },
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
 
-      javascript: true
-    }) }}
+      <h3 class="govuk-heading-m">Upload a CSV file</h3>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="file-upload-1">
+          Upload a file
+        </label>
+        <div class="govuk-drop-zone" data-module="govuk-file-upload">
+          <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+        </div>
 
+      </div>
 
-    {{ govukButton({
-    text: "Upload and run a manual batch check",
-    classes: "govuk-button--primary",
-    href: '../batch-checking/imported-records'
-    }) }}
-
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
-
-    {% endblock %}
-    {% block pageScripts %}
-    <!-- Add any javascript files here.
-
-Include javascript files only on the pages that need them. Excessive javascript files loaded on other pages may slow down the response times of the prototype. -->
-    <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
-
-    <script type="text/javascript">
-      if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
-        new MOJFrontend.MultiFileUpload({
-          container: $(".moj-multi-file-upload"),
-          uploadUrl: "/ajax-upload",
-          deleteUrl: "/ajax-delete",
+      <script>
+        // Randomly select one of the three links
+        const links = [
+          '../batch-checking/submitted-in-progress',
+          '../batch-checking/submitted-completed',
+        ];
+        const randomLink = links[Math.floor(Math.random() * links.length)];
+        document.addEventListener("DOMContentLoaded", function () {
+          const uploadButton = document.getElementById("upload-button");
+          if (uploadButton) {
+            uploadButton.setAttribute("href", randomLink);
+          }
         });
-      }
-    </script>
-    {% endblock %}
+      </script>
+
+      <a id="upload-button" class="govuk-button govuk-button--primary" role="button">
+        Run a batch check
+      </a>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+
+      {% endblock %}
+      {% block pageScripts %}
+
+      <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+
+      <script type="text/javascript">
+        if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
+          new MOJFrontend.MultiFileUpload({
+            container: $(".moj-multi-file-upload"),
+            uploadUrl: "/ajax-upload",
+            deleteUrl: "/ajax-delete",
+          });
+        }
+      </script>
+      {% endblock %}

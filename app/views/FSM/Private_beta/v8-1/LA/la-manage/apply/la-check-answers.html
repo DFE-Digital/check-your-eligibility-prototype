@@ -33,7 +33,7 @@
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Email address</dt>
             <dd class="govuk-summary-list__value">
-              {{ data["email"] or "idella.nolan@gmail.com" }}
+              {{ data["email"] or  data["parent-firstname"] + "." + data["parent-surname"] + "@gmail.com" }}
             </dd>
           </div>
 

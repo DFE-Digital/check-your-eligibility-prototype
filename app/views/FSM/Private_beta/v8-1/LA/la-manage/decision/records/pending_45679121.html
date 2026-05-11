@@ -5,18 +5,22 @@ text: "Back",
 href: "javascript:window.history.back()"
 }) }}
 {% endblock %}
-{% set childId = "44455453" %}
-{% set childDOB = "22 Sep 2012" %}
-{% set schoolName = "Hilltop Elementary" %}
-{% set schoolAddress = "Manchester, M25 1QA" %}
-{% set parentDOB = "15 Mar 1980" %}
-{% set parentName = "Alex Johnson" %}
-{% set email = "alex.johnson@example.com" %}
+
+{% set childName = "Lisa Sutton" %}
+{% set childId = "45679121" %}
+{% set parentId = "45679121A" %}
+{% set childDOB = "7 Jun 2018" %}
+{% set schoolName = "Oakwood High school" %}
+{% set schoolAddress = "Halifax, H2 1AA" %}
+{% set parentDOB = "21 Jan 1980" %}
+{% set parentName = "Warren Sutton" %}
+{% set email = "w.sutton12@icloud.com" %}
 {% set nationalInsurance = "AB123456C" %}
-{% set parentId = "44455454A" %}
-{% set childName = "Emily Johnson" %}
+
 {% set pageName = "Manage pupil record for " ~ childName %}
-{% set pageDescription %} View and manage the details of this pupil record.
+
+{% set pageDescription %}
+  View and manage the details of this pupil record.
 {% endset %}
 
 
@@ -24,9 +28,10 @@ href: "javascript:window.history.back()"
 
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
   <div class="govuk-grid-column-full">
+
     <div style="display: flex; justify-content: space-between; align-items: center;">
       <div>
-        <span class="govuk-caption-l">44455453</span>
+        <span class="govuk-caption-l">{{childId}}</span>
         <h1 class="govuk-heading-l" style="margin-bottom: 0;">{{childName}}</h1>
           </div>
             <div>
@@ -39,10 +44,6 @@ href: "javascript:window.history.back()"
               text: "Export record as CSV"
               },
               {
-              text: "Export record as PDF"
-              },
-              {
-              href: "archive-44455453.html",
               text: "Archive record"
               }
               ]
@@ -65,8 +66,8 @@ href: "javascript:window.history.back()"
           <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                  <strong class="govuk-tag govuk-tag--grey" style="margin-left: 0px;">
-                    Ready for review
+                  <strong class="govuk-tag govuk-tag--blue" style="margin-left: 0px;">
+                    Review application
                 </strong>
               </dt>
               <dd class="govuk-summary-list__value">
@@ -126,7 +127,7 @@ href: "javascript:window.history.back()"
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          School or Academy
+          School or academy
         </dt>
         <dd class="govuk-summary-list__value">
           {{schoolName}}<br> {{schoolAddress}}
@@ -227,29 +228,28 @@ href: "javascript:window.history.back()"
           Files
         </dt>
         <dd class="govuk-summary-list__value">
-          <a href="evidence.html">UC_statement_2023.pdf</a><br>
-          <a href="#"> </a><br>
+          <a href="#">UC_statement_2023.pdf</a><br>
+          <!-- <a href="#"> </a><br> -->
         </dd>
       </div>
-      <div class="govuk-summary-list__row">
+      <!-- <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Evidence status
         </dt>
         <dd class="govuk-summary-list__value">
-          <strong class="govuk-tag govuk-tag--green" style="margin-left: 0px;">
-            Evidence added
+          <strong class="govuk-tag govuk-tag--blue" style="margin-left: 0px;">
+            Review application
           </strong>
         </dd>
-      </div>
+      </div> -->
   </div>
   </div>
 
   <!-- <div class="govuk-!-padding-bottom-3"></div> -->
 
 <div style="height: 32px;"></div>
-<form method="post" action="/fsm/private_beta/v8-0/appeal-decision/johnson1">
 {{ govukRadios({
-  name: "decision",
+  name: "record decision",
   fieldset: {
     legend: {
       text: "Record a decision",
@@ -262,15 +262,15 @@ href: "javascript:window.history.back()"
   },
   items: [
     {
-      value: "approve",
+      value: "Approve",
       text: "Approve application"
     },
     {
-      value: "decline",
+      value: "Decline",
       text: "Decline application"
     },
     {
-      value: "pending",
+      value: "Request more evidence",
       text: "Request more evidence",
 
       conditional: {
@@ -281,22 +281,15 @@ href: "javascript:window.history.back()"
 }) }}
 
 
-  <div class="govuk-button-group">
-<!--
-    <button type="submit" class="govuk-button" data-module="govuk-button">
-      Save and continue
-    </button> -->
-
-
-    <a href="approve-johnson1.html"
-   class="govuk-button"
-   data-module="govuk-button"
-   role="button">
-   Save and continue
-</a>
-    <a class="govuk-link" href="../pending-list.html">Return to review list</a>
-  </div>
-</form>
+<div class="govuk-button-group">
+<!-- <button type="submit" class="govuk-button" data-module="govuk-button">
+  Save and continue
+</button> -->
+<!-- <button a class="govuk-link" href="/approve-johnson1.html" class="govuk-button" data-module="govuk-button">
+  Save and continue
+</button> -->
+<a class="govuk-link" href="#">Return to review list</a>
+</div>
 
 {% endblock %}
 

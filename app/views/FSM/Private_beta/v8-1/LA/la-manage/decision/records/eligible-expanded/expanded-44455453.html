@@ -15,6 +15,7 @@ href: "javascript:window.history.back()"
 {% set nationalInsurance = "AB123456C" %}
 {% set parentId = "44455454A" %}
 {% set childName = "Emily Johnson" %}
+{% set endDate = "31 Aug 2027" %}
 {% set pageName = "Manage pupil record for " ~ childName %}
 {% set pageDescription %} View and manage the details of this pupil record.
 {% endset %}
@@ -68,17 +69,17 @@ href: "javascript:window.history.back()"
                 </strong>
               </dt>
               <dd class="govuk-summary-list__value">
-              This child is eligible for free school meals only (expanded). The school should update their MIS and finalise the application in their service</a>.
+              This child is eligible for free school meals only. The school should update their MIS and finalise the application in their service</a>.
               </dd>
             </div>
-            <!-- <div class="govuk-summary-list__row">
+            <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Notes
+                End date
               </dt>
               <dd class="govuk-summary-list__value">
-                This record is currently active and available for review.
+                {{ endDate }}
               </dd>
-            </div> -->
+            </div>
           </dl>
         </div>
       </div>

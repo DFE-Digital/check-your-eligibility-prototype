@@ -1,5 +1,17 @@
 module.exports = function(router) {
 
+router.get('/FSM/Private_beta/v8-1/LA/la-manage/la-soft-check/run-check', function (req, res) {
+  req.session.data['parent-firstname'] = ''
+  req.session.data['parent-surname'] = ''
+  req.session.data['email'] = ''
+  req.session.data['dob-day'] = ''
+  req.session.data['dob-month'] = ''
+  req.session.data['dob-year'] = ''
+  req.session.data['nationalInsuranceNumber'] = ''
+
+  res.render('FSM/Private_beta/v8-1/LA/la-manage/la-soft-check/run-check')
+})
+
 router.post('/FSM/Private_beta/v8-1/LA/la-manage/la-soft-check/run-check', function (req, res) {
       var nino = (req.session.data['nationalInsuranceNumber'] || '')
       .toUpperCase()

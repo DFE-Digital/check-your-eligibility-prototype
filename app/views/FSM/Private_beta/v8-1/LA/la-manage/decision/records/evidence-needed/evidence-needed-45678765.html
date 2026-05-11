@@ -5,16 +5,18 @@ text: "Back",
 href: "javascript:window.history.back()"
 }) }}
 {% endblock %}
-{% set childId = "44455453" %}
-{% set childDOB = "22 Sep 2012" %}
-{% set schoolName = "Hilltop Elementary" %}
+{% set childId = "45678765" %}
+{% set childDOB = "10 Jun 2018" %}
+{% set schoolName = "Springfield Primary" %}
 {% set schoolAddress = "Manchester, M25 1QA" %}
 {% set parentDOB = "15 Mar 1980" %}
-{% set parentName = "Alex Johnson" %}
-{% set email = "alex.johnson@example.com" %}
+{% set parentName = "Jessica Brown" %}
+{% set email = "jessica.brown@example.com" %}
 {% set nationalInsurance = "AB123456C" %}
 {% set parentId = "44455454A" %}
-{% set childName = "Emily Johnson" %}
+{% set childName = "Rachel Brown" %}
+{% set endDate = "Added when the application is reviewed" %}
+{% set policyLabel = "Evidence needed" %}
 {% set pageName = "Manage pupil record for " ~ childName %}
 {% set pageDescription %} View and manage the details of this pupil record.
 {% endset %}
@@ -26,7 +28,7 @@ href: "javascript:window.history.back()"
   <div class="govuk-grid-column-full">
     <div style="display: flex; justify-content: space-between; align-items: center;">
       <div>
-        <span class="govuk-caption-l">44455453</span>
+        <span class="govuk-caption-l">{{childId}}</span>
         <h1 class="govuk-heading-l" style="margin-bottom: 0;">{{childName}}</h1>
           </div>
             <div>
@@ -38,11 +40,9 @@ href: "javascript:window.history.back()"
               {
               text: "Export record as CSV"
               },
+
               {
-              text: "Export record as PDF"
-              },
-              {
-              href: "archive-44455453.html",
+              href: "archive-87606576.html",
               text: "Archive record"
               }
               ]
@@ -65,22 +65,22 @@ href: "javascript:window.history.back()"
           <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                  <strong class="govuk-tag govuk-tag--grey" style="margin-left: 0px;">
-                    Ready for review
+                  <strong class="govuk-tag govuk-tag--yellow" style="margin-left: 0px;">
+                    {{ policyLabel }}
                 </strong>
               </dt>
               <dd class="govuk-summary-list__value">
-              This application is ready for you to review the evidence.
+The parent needs to provide additional evidence. The application must be reviewed once the evidence has been received.
               </dd>
             </div>
-            <!-- <div class="govuk-summary-list__row">
+            <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Notes
+                End date
               </dt>
               <dd class="govuk-summary-list__value">
-                This record is currently active and available for review.
+                {{ endDate }}
               </dd>
-            </div> -->
+            </div>
           </dl>
         </div>
       </div>
@@ -193,7 +193,7 @@ href: "javascript:window.history.back()"
     <h2 class="govuk-summary-card__title">
       Supporting evidence
     </h2>
-    <!-- <ul class="govuk-summary-card__actions">
+    <ul class="govuk-summary-card__actions">
       <li class="govuk-summary-card__action">
         <a class="govuk-link" href="#">Add evidence<span class="govuk-visually-hidden"> add supporting
             evidence</span></a>
@@ -201,25 +201,17 @@ href: "javascript:window.history.back()"
       <li class="govuk-summary-card__action">
         <a class="govuk-link" href="#">Remove evidence<span class="govuk-visually-hidden"> </span></a>
       </li>
-    </ul> -->
+    </ul>
   </div>
 
   <div class="govuk-summary-card__content">
     <dl class="govuk-summary-list">
-      <!-- <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Evidence type
-        </dt>
-        <dd class="govuk-summary-list__value">
-          UC statement
-        </dd>
-      </div> -->
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Date uploaded
         </dt>
         <dd class="govuk-summary-list__value">
-          20 Sep 2023
+          <!-- 20 Sep 2023 -->
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -227,7 +219,7 @@ href: "javascript:window.history.back()"
           Files
         </dt>
         <dd class="govuk-summary-list__value">
-          <a href="evidence.html">UC_statement_2023.pdf</a><br>
+          <!-- <a href="evidence.html">UC_statement_2023.pdf</a><br> -->
           <a href="#"> </a><br>
         </dd>
       </div>
@@ -236,18 +228,18 @@ href: "javascript:window.history.back()"
           Evidence status
         </dt>
         <dd class="govuk-summary-list__value">
-          <strong class="govuk-tag govuk-tag--green" style="margin-left: 0px;">
+          <!-- <strong class="govuk-tag govuk-tag--green" style="margin-left: 0px;">
             Evidence added
-          </strong>
+          </strong> -->
         </dd>
       </div>
   </div>
   </div>
 
   <!-- <div class="govuk-!-padding-bottom-3"></div> -->
-
+<!--
 <div style="height: 32px;"></div>
-<form method="post" action="/fsm/private_beta/v8-0/appeal-decision/johnson1">
+<form method="post" action="/fsm/private_beta/v8-1/appeal-decision/johnson1">
 {{ govukRadios({
   name: "decision",
   fieldset: {
@@ -282,21 +274,12 @@ href: "javascript:window.history.back()"
 
 
   <div class="govuk-button-group">
-<!--
     <button type="submit" class="govuk-button" data-module="govuk-button">
       Save and continue
-    </button> -->
-
-
-    <a href="approve-johnson1.html"
-   class="govuk-button"
-   data-module="govuk-button"
-   role="button">
-   Save and continue
-</a>
+    </button>
     <a class="govuk-link" href="../pending-list.html">Return to review list</a>
   </div>
-</form>
+</form> -->
 
 {% endblock %}
 

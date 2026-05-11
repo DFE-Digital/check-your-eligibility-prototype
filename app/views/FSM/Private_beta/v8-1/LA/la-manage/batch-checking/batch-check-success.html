@@ -2,6 +2,7 @@
 {% set pageName="All checks completed" %}
 
 {% block content %}
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     {% set html %}
@@ -80,6 +81,7 @@
             <th scope="col" class="govuk-table__header govuk-table__header--date">Child date of birth</th>
             <th scope="col" class="govuk-table__header">School</th>
             <th scope="col" class="govuk-table__header">FSM outcome</th>
+            <th scope="col" class="govuk-table__header">End date</th>
             <th scope="col" class="govuk-table__header">Email</th>
           </tr>
         </thead>
@@ -93,6 +95,7 @@
             <td class="govuk-table__cell govuk-table__cell--date">20 Sep 2012</td>
             <td class="govuk-table__cell">Hilltop Elementary</td>
                         <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Eligible expanded</strong><br>
+             <td class="govuk-table__cell">{{ govukDate }} 31/08/2027 </td>
 
             <td class="govuk-table__cell">alexjohnson@example.com</td>
           </tr>
@@ -104,7 +107,7 @@
             <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
             <td class="govuk-table__cell">Springfield Primary</td>
                         <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--purple">Eligible targeted</strong><br>
-
+        <td class="govuk-table__cell">{{ govukDate }} 31/08/2027 </td>
             <td class="govuk-table__cell">edentesfay@icloud.com</td>
           </tr>
           <tr class="govuk-table__row">
@@ -115,8 +118,8 @@
             <td class="govuk-table__cell govuk-table__cell--date">15 Feb 2015</td>
             <td class="govuk-table__cell">Greenwood Academy</td>
                         <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Eligible expanded</strong><br>
-
-            <td class="govuk-table__cell">Not supplied</td>
+        <td class="govuk-table__cell">{{ govukDate }} 31/08/2027 </td>
+            <td class="govuk-table__cell"></td>
           </tr>
         </tbody>
       </table>
@@ -144,6 +147,7 @@
             <th scope="col" class="govuk-table__header">Child name</th>
             <th scope="col" class="govuk-table__header govuk-table__header--date">Child date of birth</th>
             <th scope="col" class="govuk-table__header">School</th>
+            <th scope="col" class="govuk-table__header">End date</th>
             <th scope="col" class="govuk-table__header">Email</th>
           </tr>
         </thead>
@@ -156,6 +160,7 @@
             <td class="govuk-table__cell">Rachel Francis</td>
             <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
             <td class="govuk-table__cell">Springfield Primary</td>
+                    <td class="govuk-table__cell">{{ govukDate }} 31/08/2026 </td>
             <td class="govuk-table__cell">susanfrancis@icloud.com</td>
           </tr>
           <tr class="govuk-table__row">
@@ -165,6 +170,7 @@
             <td class="govuk-table__cell">Samuel Hassan</td>
             <td class="govuk-table__cell govuk-table__cell--date">15 Feb 2015</td>
             <td class="govuk-table__cell">Greenwood Academy</td>
+                    <td class="govuk-table__cell">{{ govukDate }} 31/08/2026 </td>
             <td class="govuk-table__cell">ahassan73@icloud.com</td>
           </tr>
           <tr class="govuk-table__row">
@@ -174,6 +180,7 @@
             <td class="govuk-table__cell">Emily Johnson</td>
             <td class="govuk-table__cell govuk-table__cell--date">20 Sep 2012</td>
             <td class="govuk-table__cell">Hilltop Elementary</td>
+                    <td class="govuk-table__cell">{{ govukDate }} 31/08/2026 </td>
             <td class="govuk-table__cell">alanjohnson@icloud.com</td>
           </tr>
         </tbody>
@@ -226,7 +233,7 @@
             <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
             <td class="govuk-table__cell">Greenwood Academy</td>
             <td class="govuk-table__cell">priyapatel@icloud.com</td>
-            <td class="govuk-table__cell"><span class="text-red">Could not check <br>Universal Credit</span></td>
+            <td class="govuk-table__cell"><span class="text-red">Information does not match</span></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">Pauline Hughes</td>
@@ -236,7 +243,7 @@
             <td class="govuk-table__cell govuk-table__cell--date">12 Jan 2017</td>
             <td class="govuk-table__cell">Hilltop Elementary</td>
             <td class="govuk-table__cell">hughesy21@icloud.com</td>
-            <td class="govuk-table__cell"><span class="text-red">Could not check <br>Universal Credit</span></td>
+            <td class="govuk-table__cell"><span class="text-red">Information does not match</span></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">Jessica Brown</td>

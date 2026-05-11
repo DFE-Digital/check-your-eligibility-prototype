@@ -1,20 +1,21 @@
 {% extends "layouts/FSM/v8-1/layout-dfe-lanav.html" %}
 {% if data["policyLabel"] == "Eligible targeted" %}
 
-  <p class="govuk-body">
-    <strong class="govuk-tag govuk-tag--purple">Targeted</strong>
-    this covers children in households in receipt of Universal Credit with annual household earnings of £7,400 or less.
-    These children will attract pupil premium and other disadvantage funding for their schools.
-    Other education entitlements, such as the holiday activities and food programme (HAF) and the ‘extended rights’ element of school travel assistance, will be based on targeted free school meals.
-  </p>
+<p class="govuk-body">
+  <strong class="govuk-tag govuk-tag--purple">Targeted</strong>
+  this covers children in households in receipt of Universal Credit with annual household earnings of £7,400 or less.
+  These children will attract pupil premium and other disadvantage funding for their schools.
+  Other education entitlements, such as the holiday activities and food programme (HAF) and the ‘extended rights’
+  element of school travel assistance, will be based on targeted free school meals.
+</p>
 
 {% elif data["policyLabel"] == "Eligible expanded" %}
 
-  <p class="govuk-body">
-    <strong class="govuk-tag govuk-tag--green">Expanded</strong>
-    this covers children who are in households receiving Universal Credit with annual household earnings exceeding £7,400.
-    Children will be entitled to free school meals only.
-  </p>
+<p class="govuk-body">
+  <strong class="govuk-tag govuk-tag--green">Expanded</strong>
+  this covers children who are in households receiving Universal Credit with annual household earnings exceeding £7,400.
+  Children will be entitled to free school meals only.
+</p>
 
 {% endif %}
 
@@ -33,7 +34,7 @@
 
       <p class="govuk-body">
         You’ve successfully created a free school meals application for the children of
-        {{ data["parent-firstname"] or "Idella" }} {{ data["parent-surname"] or "Nolan" }}.
+        {{ data["parent-firstname"] or "Idella" }} {{ data["parent-surname"] or "Nolan" }}. This school will be able to view this application.
       </p>
     {% endset %}
 
@@ -65,7 +66,7 @@
           </td>
 
           <td class="govuk-table__cell">
-            {{ data["ch1-school"] or "Greenwood Primary School" }}<br>
+            {{ data["school-picker"] or data["ch1-school"] or "Greenwood Primary School" }}<br>
             Hoddesdon<br>
             EN11 8JY
           </td>
@@ -86,85 +87,70 @@
         </tr>
       </tbody>
     </table>
-<!-- <div class="govuk-inset-text"> -->
-  <div class="govuk-inset-text no-print">
+    <!-- <div class="govuk-inset-text"> -->
+    <div class="govuk-inset-text no-print">
 
-  <p class="govuk-body">
-    <strong>Free school meals eligibility</strong>
-  </p>
-
-  <p class="govuk-body">
-    From the start of the 2026 to 2027 academic year, there are 2 categories of eligibility for free school meals.
-  </p>
-
-  {% if data["policyLabel"] == "Eligible targeted" %}
-
-    <p class="govuk-body">
-      <strong class="govuk-tag govuk-tag--purple">Targeted</strong>
-      this covers children in households in receipt of Universal Credit with annual household earnings of £7,400 or less.
-      These children will attract pupil premium and other disadvantage funding for their schools.
-      Other education entitlements, such as the holiday activities and food programme (HAF) and the ‘extended rights’ element of school travel assistance, will be based on targeted free school meals.
-    </p>
-
-  {% elif data["policyLabel"] == "Eligible expanded" %}
-
-    <p class="govuk-body">
-      <strong class="govuk-tag govuk-tag--green">Expanded</strong>
-      this covers children who are in households receiving Universal Credit with annual household earnings exceeding £7,400.
-      Children will be entitled to free school meals only.
-    </p>
-
-  {% endif %}
-
-  <p class="govuk-body">
-    For more information, read
-    <a href="https://www.gov.uk/government/publications/free-school-meals-guidance-for-schools-and-local-authorities"
-       class="govuk-link" target="_blank" rel="noopener noreferrer">
-      Free school meals: guidance for schools and local authorities
-    </a>.
-  </p>
-
-</div>
-
-    <!-- <div class="govuk-inset-text">
       <p class="govuk-body">
-        <strong>Targeted and expanded free school meals</strong>
+        <strong>Free school meals eligibility</strong>
       </p>
 
-      <p class="govuk-body">
-        From the start of the 2026 to 2027 academic year, there will be 2 categories of eligibility for free school meals:
-      </p>
 
+
+      {% if data["policyLabel"] == "Eligible targeted" or data["policyLabel"] == "Eligible expanded" %}
       <p class="govuk-body">
-        <strong class="govuk-tag govuk-tag--purple">Targeted</strong>
-        this covers children in households in receipt of Universal Credit with annual household earnings of £7,400 or less.
+        From the start of the 2026 to 2027 academic year, there are 2 categories of eligibility for free school meals.
+      </p>
+      <p class="govuk-body">
+        <strong class="govuk-tag govuk-tag--purple">Eligible targeted</strong>
+        this covers children in households in receipt of Universal Credit with annual household earnings of £7,400 or
+        less.
         These children will attract pupil premium and other disadvantage funding for their schools.
-        Other education entitlements, such as the holiday activities and food programme (HAF) and the ‘extended rights’ element of school travel assistance, will be based on targeted free school meals.
+        Other education entitlements, such as the holiday activities and food programme (HAF) and the ‘extended rights’
+        element of school travel assistance, will be based on targeted free school meals.
       </p>
 
       <p class="govuk-body">
-        <strong class="govuk-tag govuk-tag--green">Expanded</strong>
-        this covers children who are in households receiving Universal Credit with annual household earnings exceeding £7,400.
+        <strong class="govuk-tag govuk-tag--green">Eligible expanded</strong>
+        this covers children who are in households receiving Universal Credit with annual household earnings exceeding
+        £7,400.
         Children will be entitled to free school meals only.
       </p>
 
+      {% elif data["policyLabel"] == "Not eligible" %}
+      <p class="govuk-body">
+        <strong class="govuk-tag govuk-tag--red">Not eligible</strong>
+        This means the child is not currently eligible for free school meals based on the information provided.
+      </p>
+
+      <p class="govuk-body">
+        If the parent or guardian believes this result is wrong, they need to provide evidence so the application can be
+        reviewed.
+      </p>
+
+
+
+      {% endif %}
+
       <p class="govuk-body">
         For more information, read
-        <a href="https://www.gov.uk/government/publications/free-school-meals-guidance-for-schools-and-local-authorities" class="govuk-link" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.gov.uk/government/publications/free-school-meals-guidance-for-schools-and-local-authorities"
+          class="govuk-link" target="_blank" rel="noopener noreferrer">
           Free school meals: guidance for schools and local authorities
         </a>.
       </p>
-    </div> -->
+
+    </div>
+
 
     <h2 class="govuk-heading-m">What to do next</h2>
 
     <p class="govuk-body">
-      <a href="#" class="govuk-link" onclick="printPage(); return false;">Print this page</a>
+      <a href="#" class="govuk-link" onclick="printPage(); return false;">Print the result</a>
       to give to the parent or guardian as a record of the reference numbers.
     </p>
 
     <p class="govuk-body">
-      <a href="../la-soft-check/checker" class="govuk-button" role="button" data-module="govuk-button">
+      <a href="../la-soft-check/checker" onclick="clearAndNavigate(event)" class="govuk-button" role="button" data-module="govuk-button" >
         Do another check
       </a>
     </p>
@@ -190,6 +176,7 @@
   }
 
   @media print {
+
     .govuk-header,
     .dfe-header,
     .dfe-header__navigation,
@@ -230,3 +217,4 @@
 
 
 {% endblock %}
+
