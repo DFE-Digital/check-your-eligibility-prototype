@@ -68,6 +68,61 @@ var result = eligibilityLookup[nino] || eligibilityLookup['PN123456D']
   });
 
 
+router.post(
+  '/FSM/Private_beta/v8-1/school/school-manage/school-soft-check/run-check',
+  function (req, res) {
+
+    const nino = (req.session.data['nationalInsuranceNumber'] || '')
+      .toUpperCase()
+      .replace(/\s/g, '')
+
+    const eligibilityLookup = {
+      'AB123456A': {
+        eligibilityType: 'targeted',
+        policyLabel: 'Eligible targeted',
+        tagClass: 'govuk-tag--purple',
+        eligibilityMessage:
+          'This parent or guardian is eligible for targeted free school meals.',
+        endDate: '31 August 2027',
+        recheckDate: 'Summer term 2027'
+      },
+      'CD123456C': {
+        eligibilityType: 'expanded',
+        policyLabel: 'Eligible expanded',
+        tagClass: 'govuk-tag--green',
+        eligibilityMessage:
+          'This parent or guardian is eligible for expanded free school meals.',
+        endDate: '31 August 2027',
+        recheckDate: 'Summer term 2027'
+      },
+      'PN123456D': {
+        eligibilityType: 'notEligible',
+        policyLabel: 'Not eligible',
+        tagClass: 'govuk-tag--red',
+        eligibilityMessage:
+          'This parent or guardian is not eligible for free school meals.',
+        endDate: '31 August 2026',
+        recheckDate: ''
+      }
+    }
+
+    // ✅ exact match only, default to not eligible
+    const result = eligibilityLookup[nino] || eligibilityLookup['PN123456D']
+
+    req.session.data['eligibilityType'] = result.eligibilityType
+    req.session.data['policyLabel'] = result.policyLabel
+    req.session.data['tagClass'] = result.tagClass
+    req.session.data['eligibilityMessage'] = result.eligibilityMessage
+    req.session.data['endDate'] = result.endDate
+    req.session.data['recheckDate'] = result.recheckDate
+
+    res.redirect(
+      '/FSM/Private_beta/v8-1/school/school-manage/school-soft-check/school-checking-loader.html'
+    )
+  }
+)
+
+
 
   // Route to start the process
   router.post('/FSM/Private_beta/v8-1/family/start-now', (req, res) => {
@@ -138,3 +193,5 @@ var result = eligibilityLookup[nino] || eligibilityLookup['PN123456D']
   });
 
 };
+
+
