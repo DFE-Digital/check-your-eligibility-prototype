@@ -23,67 +23,80 @@
         </div>
       </div>
 
-      <h1 class="govuk-heading-m">Application record for Eden Tesfay</h1>
-    </div>
-  </div>
-</div>
+    <h2 class="govuk-heading-l">
+      Application record for {{ data["parent-firstname"] or "Idella" }} {{ data["parent-surname"] or "Nolan" }}
+    </h2>
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th class="govuk-table__header">Child</th>
+          <!-- <th class="govuk-table__header">School</th> -->
+          <th class="govuk-table__header">End date</th>
+          <th class="govuk-table__header">Status</th>
           <th class="govuk-table__header">Reference</th>
-          <th class="govuk-table__header"></th>
-
         </tr>
       </thead>
+
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell" style="width: 40%;">Samual Tesfay</td>
-          <td class="govuk-table__cell" style="width: 40%;">44455453</td>
-          <td class="govuk-table__cell" style="width: 20%;"></td>
+          <td class="govuk-table__cell">
+            {{ data["child-first-name"] or "Christina" }}
+            {{ data["child-surname"] or data["parent-surname"] or "Nolan" }}
+          </td>
 
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" style="width: 40%;">Thomas Tesfay</td>
-          <td class="govuk-table__cell" style="width: 40%;">44455454</td>
-          <td class="govuk-table__cell" style="width: 20%;"></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" style="width: 40%;">Rachel Tesfay</td>
-          <td class="govuk-table__cell" style="width: 40%;">44455455</td>
-          <td class="govuk-table__cell" style="width: 20%;"><span></span></td>
+          <!-- <td class="govuk-table__cell">
+            {{ data["school-picker"] or data["ch1-school"] or "Greenwood Primary School" }}<br>
+            Hoddesdon<br>
+            EN11 8JY
+          </td> -->
+
+          <td class="govuk-table__cell">
+            {{ data["endDate"] or "31 August 2027" }}
+          </td>
+
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag {{ data['tagClass'] or 'govuk-tag--purple' }}">
+              {{ data["policyLabel"] or "Eligible targeted" }}
+            </strong>
+          </td>
+
+          <td class="govuk-table__cell">
+            44455453
+          </td>
         </tr>
       </tbody>
     </table>
-  </div>
-</div>
-
-
+<!--
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-two-thirds"> -->
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th class="govuk-table__header" style="width: 40%;">Evidence</th>
-          <th class="govuk-table__header" style="width: 40%;">Filesize</th>
-          <th class="govuk-table__header" style="width: 40%;"></th>
+          <th class="govuk-table__header">Evidence</th>
+           <th class="govuk-table__header"> </th>
+
+           <th class="govuk-table__header"></th>    <th class="govuk-table__header">Filesize</th>
+
         </tr>
       </thead>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell" style="width: 40%;">0997618234647.png</td>
-          <td class="govuk-table__cell" style="width: 40%;">1.2mb</td>
-          <th class="govuk-table__header" style="width: 40%;"></th>
+          <td class="govuk-table__cell">0997618234647.png</td>
+                  <td class="govuk-table__cell"> </th>
+        <td class="govuk-table__cell"> </th>
+          <td class="govuk-table__cell">1.2mb</td>
+          <td class="govuk-table__cell"> </th>
         </tr>
+
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell" style="width: 40%;">    Scan0123099647.png
+            <td class="govuk-table__cell">    Scan0123099647.png
             </td>
-            <td class="govuk-table__cell" style="width: 40%;">586kb</td>
-            <th class="govuk-table__header" style="width: 40%;"></th>
+              <td class="govuk-table__cell"> </th>
+         <td class="govuk-table__cell"> </th>
+                      <td class="govuk-table__cell">586kb</td>
+
           </tr>
       </tbody>
     </table>
@@ -96,8 +109,8 @@
         <div class="govuk-grid-column-full">
           <h2 class="govuk-heading-m">What to do next</h2>
 
-          <p class="govuk-body">When the local authority has made a decision you'll see it in <a class="govuk-link"
-            href="/FSM/Private_beta/v7-1/school/school-manage/decision/finalise/applications"> Finalise applications</a>.
+          <p class="govuk-body">All approved decisions can be found in <a class="govuk-link"
+            href="/FSM/Private_beta/v8-1/school/school-manage/decision/finalise/applications"> Finalise applications</a>.
         </p>
 
 
