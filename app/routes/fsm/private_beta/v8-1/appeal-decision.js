@@ -19,6 +19,47 @@ router.post('/fsm/private_beta/v8-1/appeal-decision/johnson1', function (req, re
   }
 });
 
+//school-johnson
+
+
+router.post('/fsm/private_beta/v8-1/appeal-decision/johnson1', function (req, res) {
+  const decision = req.session.data['decision'];
+
+  if (decision === 'approve') {
+    res.redirect('/fsm/private_beta/v8-1/school/school-manage/decision/review/needs-review/approved/approve-johnson1');
+  } else if (decision === 'decline') {
+    res.redirect('/fsm/private_beta/v8-1/school/school-manage/decision/review/needs-review/declined/decline-johnson1');
+  } else if (decision === 'pending') {
+    res.redirect('/fsm/private_beta/v8-1/LA/la-manage/decision/records/review/needs-review/request-more/requestmore-johnson1');
+  } else {
+    res.redirect('/fsm/private_beta/v8-1/appeal-decision');
+  }
+});
+
+
+// router.get(
+//   '/fsm/private_beta/v8-1/school/school-manage/decision/review/needs-review/approved/approve-johnson1',
+//   function (req, res) {
+//     res.render(
+//       'fsm/private_beta/v8-1/school/school-manage/decision/review/needs-review/approved/approve-johnson1'
+//     );
+//   }
+// );
+// ``
+// router.post('/fsm/private_beta/v8-1/appeal-decision/johnson1', function (req, res) {
+//   const decision = req.session.data['decision'];
+
+//   if (decision === 'approve') {
+//     res.redirect('/fsm/private_beta/v8-1/school/school-manage/decision/review/needs-review/approved/approve-johnson1');
+//   } else if (decision === 'decline') {
+//     res.redirect('/fsm/private_beta/v8-1/school/school-manage/decision/review/needs-review/declined/decline-johnson1');
+//   } else if (decision === 'pending') {
+//     res.redirect('/fsm/private_beta/v8-1/LA/la-manage/decision/records/review/needs-review/request-more/requestmore-johnson1');
+//   } else {
+//     res.redirect('/fsm/private_beta/v8-1/appeal-decision');
+//   }
+// });
+
  //Patel
 
 router.get('/fsm/private_beta/v8-1/test-patel1', function (req, res) {
