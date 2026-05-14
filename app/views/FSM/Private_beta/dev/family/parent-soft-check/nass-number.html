@@ -1,6 +1,13 @@
 {% extends "layouts/FSM/dev/family/layout-dfe-parent.html" %}
 {% set pageName="Enter your Asylum support reference number" %}
 
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
 {% block content %}
 
 

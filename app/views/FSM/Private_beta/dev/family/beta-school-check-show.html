@@ -1,5 +1,12 @@
 {% extends "layouts/FSM/dev/family/layout-dfe-parent.html" %}
-{% set pageName="You can use this test service" %}
+{% set pageName="You can use this new service" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
 
 
 {% block pageScripts %}
@@ -26,7 +33,7 @@
 
     <!-- Add a form tag with the correct action -->
     <form id="schoolForm" action="parent-soft-check/check" method="get">
-      <p class="govuk-body-l">The school you selected is included in the test service.</p>
+      <p class="govuk-body-l">The school you selected is included in the new service.</p>
       <div class="govuk-inset-text">
         All Saints CofE Primary School<br>
         Ilkley<br>

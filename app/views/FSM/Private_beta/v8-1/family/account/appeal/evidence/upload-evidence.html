@@ -1,6 +1,13 @@
 {% extends "layouts/FSM/v8-1/family/layout-dfe-parent.html" %}
 {% set pageName="Upload your evidence" %}
 
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
 {%block content %}
 
 <div class="govuk-grid-row">
