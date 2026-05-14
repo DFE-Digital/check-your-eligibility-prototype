@@ -1,6 +1,13 @@
 {% extends "layouts/FSM/dev/family/layout-dfe-parent.html" %}
 {% set pageName="Before you upload your appeal evidence" %}
 
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
 {%block content %}
 
 <div class="govuk-grid-row">
