@@ -19,7 +19,7 @@
         <div class="moj-button-group moj-button-group--inline">
           <a href="submitted-completed.html" class="govuk-button govuk-button--secondary"
             data-module="govuk-button">
-            Batch checks
+            Batch checks history
           </a>
         </div>
         <!--
@@ -36,25 +36,32 @@
       <h2 class="govuk-heading-m">Download our CSV template</h2>
       <ol class="govuk-list govuk-list--number">
         <li>Download the <a href="/public/csv/Batch-check-template.csv" download class="govuk-link">batch
-            check template (185kb)</a>.</li>
+            check template (CSV, 1KB)</a>.</li>
         <li>
-          Add the details of the {{ data['check-type'] }} you need to check as well as the children who will be added to
-          the application.</li>
+          Add the details of the parents or guardians you need to check, as well as the children who will be added to
+          the application. Add a row for each child.</li>
         <li>Make sure you include:
           <ul class="govuk-list govuk-list--bullet">
-            <li>Parent first name</li>
-            <li>Parent last name</li>
-            <li>Date of birth (format DD/MM/YYYY or YYYY-MM-DD)</li>
-            <li>National Insurance number</li>
-            <li>Childs name</li>
-            <li>Childs date of birth (format DD/MM/YYYY or YYYY-MM-DD)</li>
-            <li>School the child attends on a full time basis</li>
+            <li>parent first name</li>
+            <li>parent last name</li>
+            <li>parent date of birth (format DD/MM/YYYY or YYYY-MM-DD)</li>
+            <li>parent National Insurance number</li>
+            <li>child name</li>
+            <li>child date of birth (format DD/MM/YYYY or YYYY-MM-DD)</li>
+            <li>URN of the school the child attends on a full time basis</li>
           </ul>
         </li>
         <li> Save it as a CSV file.</li>
       </ol>
 
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+      <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+Your saved file must match the template fields and contain fewer than 5000 rows.
+  </strong>
+</div>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
 
       <h3 class="govuk-heading-m">Upload a CSV file</h3>
       <div class="govuk-form-group">
