@@ -1,22 +1,20 @@
-{% extends "layouts/FSM/v8-1/layout-dfe-lanav.html" %}
+{% extends "layouts/FSM/v8-1/layout-dfe-schoolnav.html" %}
 {% block backLink %}
 {{ govukBackLink({
 text: "Back",
 href: "javascript:window.history.back()"
 }) }}
 {% endblock %}
-{% set childId = "45678765" %}
-{% set childDOB = "10 Jun 2018" %}
-{% set schoolName = "Springfield Primary" %}
+{% set childId = "44455453" %}
+{% set childDOB = "22 Sep 2012" %}
+{% set schoolName = "Hilltop Elementary" %}
 {% set schoolAddress = "Manchester, M25 1QA" %}
 {% set parentDOB = "15 Mar 1980" %}
-{% set parentName = "Alan Jones" %}
-{% set email = "alan.jones@example.com" %}
+{% set parentName = "Alex Johnson" %}
+{% set email = "alex.johnson@example.com" %}
 {% set nationalInsurance = "AB123456C" %}
-{% set parentId = "45678765a" %}
-{% set childName = "Jack Jones" %}
-{% set endDate = " " %}
-{% set policyLabel = "Evidence needed" %}
+{% set parentId = "44455454A" %}
+{% set childName = "Emily Johnson" %}
 {% set pageName = "Manage pupil record for " ~ childName %}
 {% set pageDescription %} View and manage the details of this pupil record.
 {% endset %}
@@ -28,7 +26,7 @@ href: "javascript:window.history.back()"
   <div class="govuk-grid-column-full">
     <div style="display: flex; justify-content: space-between; align-items: center;">
       <div>
-        <span class="govuk-caption-l">{{childId}}</span>
+        <span class="govuk-caption-l">44455453</span>
         <h1 class="govuk-heading-l" style="margin-bottom: 0;">{{childName}}</h1>
           </div>
             <div>
@@ -40,9 +38,11 @@ href: "javascript:window.history.back()"
               {
               text: "Export record as CSV"
               },
-
               {
-              href: "archive-87606576.html",
+              text: "Export record as PDF"
+              },
+              {
+              href: "archive-44455453.html",
               text: "Archive record"
               }
               ]
@@ -65,12 +65,12 @@ href: "javascript:window.history.back()"
           <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                  <strong class="govuk-tag govuk-tag--yellow" style="margin-left: 0px;">
-                    {{ policyLabel }}
+                  <strong class="govuk-tag govuk-tag--blue" style="margin-left: 0px;">
+                    Ready for review
                 </strong>
               </dt>
               <dd class="govuk-summary-list__value">
-The parent needs to provide additional evidence. Review the application when the evidence has been received.
+              This application is ready for you to review the evidence.
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -78,7 +78,8 @@ The parent needs to provide additional evidence. Review the application when the
                 End date
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ endDate }}
+                <!-- The end date will updated when a decision is made or more evidence is requested. -->
+                 31 Aug 2026
               </dd>
             </div>
           </dl>
@@ -193,25 +194,33 @@ The parent needs to provide additional evidence. Review the application when the
     <h2 class="govuk-summary-card__title">
       Supporting evidence
     </h2>
-    <ul class="govuk-summary-card__actions">
+    <!-- <ul class="govuk-summary-card__actions">
       <li class="govuk-summary-card__action">
         <a class="govuk-link" href="#">Add evidence<span class="govuk-visually-hidden"> add supporting
             evidence</span></a>
       </li>
-      <!-- <li class="govuk-summary-card__action">
+      <li class="govuk-summary-card__action">
         <a class="govuk-link" href="#">Remove evidence<span class="govuk-visually-hidden"> </span></a>
-      </li> -->
-    </ul>
+      </li>
+    </ul> -->
   </div>
 
   <div class="govuk-summary-card__content">
     <dl class="govuk-summary-list">
+      <!-- <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Evidence type
+        </dt>
+        <dd class="govuk-summary-list__value">
+          UC statement
+        </dd>
+      </div> -->
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Date uploaded
         </dt>
         <dd class="govuk-summary-list__value">
-          <!-- 20 Sep 2023 -->
+          20 Apr 2026
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -219,7 +228,7 @@ The parent needs to provide additional evidence. Review the application when the
           Files
         </dt>
         <dd class="govuk-summary-list__value">
-          <!-- <a href="evidence.html">UC_statement_2023.pdf</a><br> -->
+          <a href="evidence.html">UC_statement_2023.pdf</a><br>
           <a href="#"> </a><br>
         </dd>
       </div>
@@ -228,16 +237,16 @@ The parent needs to provide additional evidence. Review the application when the
           Evidence status
         </dt>
         <dd class="govuk-summary-list__value">
-          <!-- <strong class="govuk-tag govuk-tag--green" style="margin-left: 0px;">
+          <strong class="govuk-tag govuk-tag--green" style="margin-left: 0px;">
             Evidence added
-          </strong> -->
+          </strong>
         </dd>
       </div>
   </div>
   </div>
 
   <!-- <div class="govuk-!-padding-bottom-3"></div> -->
-<!--
+
 <div style="height: 32px;"></div>
 <form method="post" action="/fsm/private_beta/v8-1/appeal-decision/johnson1">
 {{ govukRadios({
@@ -274,12 +283,23 @@ The parent needs to provide additional evidence. Review the application when the
 
 
   <div class="govuk-button-group">
+<!--
     <button type="submit" class="govuk-button" data-module="govuk-button">
       Save and continue
-    </button>
+    </button> -->
+
+<button type="submit" class="govuk-button" data-module="govuk-button">
+  Save and continue
+</button>
+    <!-- <a href="request-more/requestmore-johnson1.html"
+   class="govuk-button"
+   data-module="govuk-button"
+   role="button">
+   Save and continue
+</a> -->
     <a class="govuk-link" href="../pending-list.html">Return to review list</a>
   </div>
-</form> -->
+</form>
 
 {% endblock %}
 
