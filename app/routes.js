@@ -77,11 +77,6 @@ router.get('*', function (req, res, next) {
 require('./routes/fsm/private_beta/v7-3/appeal-decision')(router);
 
 
-
-
-
-
-
   //////////////////////////////
   // LOCAL FUNCTIONS AND DATA //
   // These functions are available on all pages in the prototype.
@@ -941,7 +936,7 @@ else {
 // });
 
 
-// /////////////
+// v8-1/////////////
 
 router.post('/FSM/Private_beta/v8-1/LA/la-manage/apply/check-answers', function (req, res) {
   console.log('CHECK ANSWERS ROUTE HIT')
@@ -957,4 +952,5 @@ router.post('/FSM/Private_beta/v8-1/LA/la-manage/apply/check-answers', function 
 
 require('./routes/fsm/private_beta/v8-1/softcheck.js')(router)
 
-module.exports = router;
+require('./routes/fsm/private_beta/v8-1/appeal-decision-expansion')(router);
+

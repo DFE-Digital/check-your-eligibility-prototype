@@ -5,16 +5,16 @@ text: "Back",
 href: "javascript:window.history.back()"
 }) }}
 {% endblock %}
-{% set childId = "44455453" %}
-{% set childDOB = "22 Sep 2012" %}
-{% set schoolName = "Hilltop Elementary" %}
+{% set childId = "45678765" %}
+{% set childDOB = "10 Jun 2018" %}
+{% set schoolName = "Springfield Primary" %}
 {% set schoolAddress = "Manchester, M25 1QA" %}
 {% set parentDOB = "15 Mar 1980" %}
-{% set parentName = "Alex Johnson" %}
-{% set email = "alex.johnson@example.com" %}
+{% set parentName = "Alan Jones" %}
+{% set email = "alan.jones@example.com" %}
 {% set nationalInsurance = "AB123456C" %}
-{% set parentId = "44455454A" %}
-{% set childName = "Emily Johnson" %}
+{% set parentId = "45678765a" %}
+{% set childName = "Jack Jones" %}
 {% set pageName = "Manage pupil record for " ~ childName %}
 {% set pageDescription %} View and manage the details of this pupil record.
 {% endset %}
@@ -26,7 +26,7 @@ href: "javascript:window.history.back()"
   <div class="govuk-grid-column-full">
     <div style="display: flex; justify-content: space-between; align-items: center;">
       <div>
-        <span class="govuk-caption-l">44455453</span>
+        <span class="govuk-caption-l">45678765</span>
         <h1 class="govuk-heading-l" style="margin-bottom: 0;">{{childName}}</h1>
           </div>
             <div>
@@ -66,7 +66,7 @@ href: "javascript:window.history.back()"
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                   <strong class="govuk-tag govuk-tag--blue" style="margin-left: 0px;">
-                    Ready for review
+                    Needs reviewing
                 </strong>
               </dt>
               <dd class="govuk-summary-list__value">
@@ -77,8 +77,6 @@ You can now review the application as the evidence has been received.           
                 End date
               </dt>
               <dd class="govuk-summary-list__value">
-                <!-- The end date will updated when a decision is made or more evidence is requested. -->
-                 31 Aug 2026
               </dd>
             </div>
           </dl>
@@ -214,12 +212,12 @@ You can now review the application as the evidence has been received.           
           UC statement
         </dd>
       </div> -->
-      <div class="govuk-summary-list__row">
+        <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Date uploaded
         </dt>
         <dd class="govuk-summary-list__value">
-          20 Apr 2026
+          20 Sep 2023
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -227,7 +225,7 @@ You can now review the application as the evidence has been received.           
           Files
         </dt>
         <dd class="govuk-summary-list__value">
-          <a href="evidence.html">UC_statement_2023.pdf</a><br>
+          <a href="../../records/evidence/evidence-45678765.html">UC_statement_2023.pdf</a><br>
           <a href="#"> </a><br>
         </dd>
       </div>
@@ -247,7 +245,7 @@ You can now review the application as the evidence has been received.           
   <!-- <div class="govuk-!-padding-bottom-3"></div> -->
 
 <div style="height: 32px;"></div>
-<form method="post" action="/FSM/private_beta/v8-1/appeal-decision/{{childId}}">
+<form method="post" action="/fsm/private_beta/v8-1/appeal-decision/{{childId}}">
 
 <!-- <form method="post" action="/fsm/private_beta/v8-1/appeal-decision/johnson1"> -->
 {{ govukRadios({
@@ -279,22 +277,12 @@ You can now review the application as the evidence has been received.           
 }) }}
 
 
+
   <div class="govuk-button-group">
-<!--
     <button type="submit" class="govuk-button" data-module="govuk-button">
       Save and continue
-    </button> -->
-
-<button type="submit" class="govuk-button" data-module="govuk-button">
-  Save and continue
-</button>
-    <!-- <a href="request-more/requestmore-johnson1.html"
-   class="govuk-button"
-   data-module="govuk-button"
-   role="button">
-   Save and continue
-</a> -->
-    <a class="govuk-link" href="../applications.html">Return to review list</a>
+    </button>
+    <a class="govuk-link" href="../pending-list.html">Return to review list</a>
   </div>
 </form>
 
