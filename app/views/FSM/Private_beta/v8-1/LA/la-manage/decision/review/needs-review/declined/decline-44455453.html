@@ -1,4 +1,5 @@
 {% extends "layouts/FSM/v8-1/layout-dfe-lanav.html" %}
+{% set childId = "44455453" %}
 {% set pageName="Decline the application?" %}
 {% block content %}
 
@@ -49,9 +50,9 @@ href: 'eligibility-declined'
 }) }}
 
 {{ govukButton({
-text: "Return to record",
+text: "Review later",
 classes: "govuk-button--secondary",
-href: 'pending_johnson1'
+href: '../pending_' + childId
 }) }}
 
 <div class="govuk-!-padding-bottom-3"></div>
