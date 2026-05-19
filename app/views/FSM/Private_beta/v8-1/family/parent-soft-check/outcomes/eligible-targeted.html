@@ -1,10 +1,10 @@
-{% extends "layouts/FSM/dev/family/layout-dfe-parent.html" %}
+{% extends "layouts/FSM/v8-1/family/layout-dfe-parent.html" %}
 {% set pageName="Apply for free school meals for your children" %}
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-
+    <!--
     <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
       aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
       <div class="govuk-notification-banner__header">
@@ -14,26 +14,41 @@
       </div>
       <div class="govuk-notification-banner__content">
         <h3 class="govuk-notification-banner__heading">
-          Your children are eligible for free school meals.
+          Your children are eligible for free school meals for the school year 26-27.
         </h3>
       </div>
     </div>
 
-    <h1 class="govuk-heading-l">Apply for free school meals for your children</h1>
+    -->
+
+    <h1 class="govuk-heading-l">Your children are eligible for free school meals</h1>
+
+
+
+    <p>Your children can get free school meals for the full school year 2026-2027. </p>
+
+       <!-- <p>You will need to recheck each school year to keep getting free school meals.</p> -->
+
+    <div class="govuk-inset-text">
+      You may also be eligible for other education support, such as holiday activities and food programme (HAF) or school travel assistance. Contact your school to find out more.
+    </div>
+
+    <h2 class="govuk-heading-m">Next steps</h2>
+
+    <p>Apply for free school meals using this online service.</p>
 
     <p>This usually takes a few minutes.</p>
 
     <ol>
       <li>Sign in or create a GOV.UK One Login.</li>
       <li>Add the details of all your children and their schools.</li>
-      <li>Send your application to the school.</li>
-      <li>We'll send an application confirmation email to the email address used on your GOV.UK One Login.</li>
+      <li>Send your information to the school.</li>
       <li>Your children's school will arrange the free school meals</li>
     </ol>
 
     {{ govukDetails({
       summaryText: "About GOV.UK One Login",
-      text: "GOV.UK One Login lets you sign in and prove your identity quickly and easily. You can use the same account for some other government services."
+      text: "GOV.UK One Login lets you sign in quickly and easily. You can use the same account for some other government services."
     }) }}
 
     <form action="../../login/signin-or-create" method="post" novalidate>
@@ -43,16 +58,11 @@
     </form>
 
 
-    <hr class="govuk-section-break govuk-section-break govuk-section-break--l">
+   <hr class="govuk-section-break govuk-section-break govuk-section-break--m">
 
-    <h2 class="govuk-heading-m">Further guidance and other ways to apply</h2>
-    <p>If you need further support, <a href="/FSM/Private_beta/dev/family/guidance/parent-guidance">check the more detailed guidance</a>  for parents and guardians.</p>
-    <p>If you cannot apply online, you can fill in <a href="/FSM/Private_beta/dev//_offline//fsm-print-version-parent">the 'Free school meals entitlement checker' form</a> and give it to your children's school. </p>
+    <h2 class="govuk-heading-m">Other ways to apply</h2>
+    <p>If you cannot apply online, you can fill in the <a href="/FSM/Private_beta/v8-1//_offline//fsm-print-version">free school meals claim form</a> and give it to your children's school. </p>
     {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
-
-    {{ govukInsetText({
-      text: "It takes longer to apply through your school than it does online."
-    }) }}
 
   </div>
 </div>

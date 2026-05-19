@@ -12,6 +12,8 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+    <!--
+
     <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
       aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
       <div class="govuk-notification-banner__header">
@@ -28,10 +30,12 @@
       </div>
     </div>
 
+    -->
+
     <h1 class="govuk-heading-l">Enter your details</h1>
-    <p class="govuk-body">The information you provide will be compared with other government departments records to
-      check for your eligibility.</p>
-    <p class="govuk-body">For further information, please check our <a href="https://www.gov.uk/government/organisations/department-for-education/about/personal-information-charter"> privacy statement</a>.</p>
+    <p class="govuk-body">Your information will be compared with other government departments records to
+      check your eligibility.</p>
+
 
     {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 
@@ -100,7 +104,7 @@
       spellcheck: false,
       classes: "govuk-!-width-one-third",
       label: {
-      text:"Parent's National Insurance number"
+      text:"National Insurance number"
       },
       hint: {
       text: "For example, ‘QQ 12 34 56 C’"
@@ -120,7 +124,7 @@
       }
       },
       hint: {
-      text: "It’s on your National Insurance card, payslip, P60 or letters about tax, pension and benefits."
+      text: "It’s on your National Insurance card, benefit letter, payslip or P60"
       },
       items: [
       {
@@ -131,7 +135,7 @@
       }
       },
       {
-      value: "no~/FSM/Private_beta/v8-1/family/parent-soft-check/nass-number",
+      value: "no~/FSM/Private_beta/v8-1/family/parent-soft-check/outcomes/no-nino",
       text: "No, I do not have one"
 
       }
@@ -140,11 +144,12 @@
       }) }}
 
       {{ govukButton({
-      text: "Save and continue",
-      classes:'govuk-!-margin-top-5'
+      text: "Check your eligibility"
       }) }}
 
     </form>
+
+    <p class="govuk-body">For further information about how your data is used, please check our <a href="https://www.gov.uk/government/organisations/department-for-education/about/personal-information-charter"> privacy policy</a>.</p>
   </div>
 </div>
 
