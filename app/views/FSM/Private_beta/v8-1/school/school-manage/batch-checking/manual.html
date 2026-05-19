@@ -1,101 +1,114 @@
-{% extends "layouts/FSM/v8-1/layout-dfe-schoolnav.html" %}
-
+{% extends "/layouts/FSM/v8-1/layout-dfe-schoolnav.html" %}
 {% set pageName="Run a manual batch check" %}
+
+{% block beforeContent %}
+{% include "_includes/layouts/back_link.html" %}
+{% endblock %}
+
+
 {% block content %}
-
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-l">Run a batch check for multiple parents or guardians</span>
-    <h1 class="govuk-heading-l">{{pageName}}</h1>
+  <div class="govuk-grid-column-full">
+    <div class="moj-page-header-actions">
+      <div class="moj-page-header-actions__title">
+        <span class="govuk-caption-l">Run a batch check for multiple parents or guardians</span>
+        <h1 class="govuk-heading-l">{{pageName}}</h1>
+      </div>
 
-    <p class="govuk-body">You can complete and upload our CSV template for batch checks.</p>
+      <div class="moj-page-header-actions__actions">
+        <div class="moj-button-group moj-button-group--inline">
+          <a href="submitted-completed.html" class="govuk-button govuk-button--secondary"
+            data-module="govuk-button">
+            Batch checks history
+          </a>
+        </div>
+        <!--
+          <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Share collection
+          </button> -->
+      </div>
+    </div>
+  </div>
+  </div>
 
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
-
-<!--
-    <h2 class="govuk-heading-s">
-      Extracting a Common Transfer File (CTF)
-    </h2>
-    </summary>
-    <div class="govuk">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-m">Download our CSV template</h2>
       <ol class="govuk-list govuk-list--number">
-
-        <li>Open your school management information system (this could be SIMS or XXX or any other system your
-          school uses) in the admin area of your school management information system.</li>
-        <li>Select export pupil data.</li>
-        <li>Save the exported file on your computer.</li>
-        <li>Add any information that your system doesn't collect (for example National Insurance numbers).</li>
-        <li>Save it as an XML file.</li>
-      </ol>
-      </ul>
-    </div> -->
-
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
-    <h2 class="govuk-heading-s">Uploading our CSV template</h2>
-    <ol class="govuk-list govuk-list--number">
         <li>Download the <a href="/public/csv/Batch-check-template.csv" download class="govuk-link">batch
-            check template (185kb)</a>.</li>
+            check template (CSV, 1KB)</a>.</li>
         <li>
-          Add the details of the {{ data['check-type'] }} you need to check as well as the children who will be added to
-          the application.</li>
+          Add the details of the parents or guardians you need to check, as well as the children who will be added to
+          the application. Add a row for each child.</li>
         <li>Make sure you include:
           <ul class="govuk-list govuk-list--bullet">
-            <li>Parent first name</li>
-            <li>Parent last name</li>
-            <li>Date of birth (format DD/MM/YYYY or YYYY-MM-DD)</li>
-            <li>National Insurance number</li>
-            <li>Childs name</li>
-            <li>Childs date of birth (format DD/MM/YYYY or YYYY-MM-DD)</li>
+            <li>parent first name</li>
+            <li>parent last name</li>
+            <li>parent date of birth (format DD/MM/YYYY or YYYY-MM-DD)</li>
+            <li>parent National Insurance number</li>
+            <li>child name</li>
+            <li>child date of birth (format DD/MM/YYYY or YYYY-MM-DD)</li>
+            <!-- <li>school URN</li> -->
           </ul>
         </li>
         <li> Save it as a CSV file.</li>
       </ol>
 
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
-    <!-- <p class="govuk-heading-s">Upload a file</p> -->
+      <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+Your saved file must match the template fields and contain fewer than 5000 rows.
+  </strong>
+</div>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
 
-    <h3 class="govuk-heading-m">Upload a CSV file</h3>
+      <h3 class="govuk-heading-m">Upload a CSV file</h3>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="file-upload-1">
+          Upload a file
+        </label>
+        <div class="govuk-drop-zone" data-module="govuk-file-upload">
+          <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+        </div>
 
-
-    <div class="govuk-form-group">
-      <label class="govuk-label" for="file-upload-1">
-        Upload a file
-      </label>
-      <div
-        class="govuk-drop-zone"
-        data-module="govuk-file-upload">
-        <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
       </div>
-    </div>
 
-    {{ govukButton({
-    text: "Upload and run a manual batch check",
-    classes: "govuk-button--primary",
-    href: '../batch-checking/submitted-not-started.html'
-    }) }}
+      <script>
+        const links = [
+          'submitted-completed',
+        ];
+        const randomLink = links[Math.floor(Math.random() * links.length)];
+        document.addEventListener("DOMContentLoaded", function () {
+          const uploadButton = document.getElementById("upload-button");
+          if (uploadButton) {
+            uploadButton.setAttribute("href", randomLink);
+          }
+        });
+      </script>
+
+      <a id="upload-button" class="govuk-button govuk-button--primary" role="button">
+        Run a batch check
+      </a>
 
 
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
 
 
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
-
-
-
-
-    {% endblock %}
-    {% block pageScripts %}
-    <!-- Add any javascript files here.
+      {% endblock %}
+      {% block pageScripts %}
+      <!-- Add any javascript files here.
 
 Include javascript files only on the pages that need them. Excessive javascript files loaded on other pages may slow down the response times of the prototype. -->
-    <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+      <script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
 
-    <script type="text/javascript">
-      if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
-        new MOJFrontend.MultiFileUpload({
-          container: $(".moj-multi-file-upload"),
-          uploadUrl: "/ajax-upload",
-          deleteUrl: "/ajax-delete",
-        });
-      }
-    </script>
-    {% endblock %}
+      <script type="text/javascript">
+        if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
+          new MOJFrontend.MultiFileUpload({
+            container: $(".moj-multi-file-upload"),
+            uploadUrl: "/ajax-upload",
+            deleteUrl: "/ajax-delete",
+          });
+        }
+      </script>
+      {% endblock %}
