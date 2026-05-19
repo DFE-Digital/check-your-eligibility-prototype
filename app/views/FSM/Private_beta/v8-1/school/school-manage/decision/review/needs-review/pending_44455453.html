@@ -4,6 +4,7 @@
 text: "Back",
 href: "javascript:window.history.back()"
 }) }}
+
 {% endblock %}
 {% set childId = "44455453" %}
 {% set childDOB = "22 Sep 2012" %}
@@ -248,7 +249,8 @@ href: "javascript:window.history.back()"
   <!-- <div class="govuk-!-padding-bottom-3"></div> -->
 
 <div style="height: 32px;"></div>
-<form method="post" action="/fsm/private_beta/v8-1/appeal-decision/johnson1">
+<form method="post" action="/FSM/private_beta/v8-1/appeal-decision/{{childId}}">
+
 {{ govukRadios({
   name: "decision",
   fieldset: {
@@ -263,20 +265,16 @@ href: "javascript:window.history.back()"
   },
   items: [
     {
-      value: "approve",
-      text: "Approve application"
+      value: "approve-targeted",
+      text: "Approve for targeted free school meals"
+    },
+    {
+      value: "approve-expanded",
+      text: "Approve for expanded free school meals"
     },
     {
       value: "decline",
       text: "Decline application"
-    },
-    {
-      value: "pending",
-      text: "Request more evidence",
-
-      conditional: {
-        html: '<p class="govuk-body"></p>'
-      }
     }
   ]
 }) }}
