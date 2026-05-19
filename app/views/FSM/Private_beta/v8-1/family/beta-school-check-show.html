@@ -1,5 +1,5 @@
 {% extends "layouts/FSM/v8-1/family/layout-dfe-parent.html" %}
-{% set pageName="You can use this new service" %}
+{% set pageName="You can use this service" %}
 
 {% block beforeContent %}
   {{ govukBackLink({
@@ -30,42 +30,28 @@
 
     <h1 class="govuk-heading-l">{{pageName}}</h1>
 
+      <p class="govuk-body"><strong>All Saints CofE Primary school, Ilkley, LS29 8QH</strong>  is included in the service.</p>
 
-    <!-- Add a form tag with the correct action -->
-    <form id="schoolForm" action="parent-soft-check/check" method="get">
-      <p class="govuk-body-l">The school you selected is included in the new service.</p>
+      <p>You can only apply for children at schools included in this service. If you have children at other schools, <a href="">check them</a> as well</p>
+
+
+      <!--
       <div class="govuk-inset-text">
         All Saints CofE Primary School<br>
         Ilkley<br>
         LS29 8QH
       </div>
 
+      -->
+
       <div class="govuk-button-group">
-        <button type="submit" class="govuk-button" data-module="govuk-button">
-          Check your eligibility
-        </button>
-        <a class="govuk-link" href="beta-school-check">Check another school</a>
+        {{ govukButton({
+          text: "Continue",
+          href: "parent-soft-check/check"
+        }) }}
+        <!--<a class="govuk-link" href="beta-school-check">Check another school</a>-->
       </div>
     </form>
-
-    <!-- Remove the JS that overrides the submit event -->
-    <!--
-    <script>
-      const allowedSchools = [
-        "All Saints CofE Primary School",
-        "Abbey Hey Primary Academy",
-        "Burnage Academy for Boys",
-        "Eden Girls' Leadership Academy",
-      ];
-      document.getElementById('schoolForm').adv8-1entListener('submit', function(e) {
-        const selectedSchool = document.getElementById('school-picker').value;
-        if (!allowedSchools.includes(selectedSchool)) {
-          e.preventDefault();
-          window.location.href = 'beta-school-check-no.html';
-        }
-      });
-    </script>
-    -->
 
   </div>
 </div>

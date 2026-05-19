@@ -1,0 +1,66 @@
+{% extends "layouts/FSM/v8-1/family/layout-dfe-parent.html" %}
+{% set pageName="Apply for free school meals with supporting evidence" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-l">Apply for free school meals with supporting evidence</h1>
+
+            <p>You will need one of the following pieces of evidence:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                  <li>up to three of your latest Universal Credit statements </li>
+                  <li>a letter of Entitlement for Income Support</li>
+                  <li>a letter of Entitlement for income-based Jobseeker’s Allowance</li>
+                  <li>a letter of Entitlement for the guaranteed element of Pension Credit</li>
+                  <li>documents showing you are receiving relevant support under part VI of the Immigration
+                  and Asylum Act 1999
+                  </li>
+            </ul>
+
+            <p>You can choose to apply online or in person.</p>
+
+
+            <h2 class="govuk-heading-m">Apply online</h2>
+
+            <ol>
+                  <li>Sign in or create a GOV.UK One Login.</li>
+                  <li>Add the details of all your children and their schools.</li>
+                  <li>Upload your evidence.</li>
+                  <li>Send your application to the school.</li>
+            </ol>
+
+
+             {{ govukButton({
+                  text: "Apply online",
+                  href: "../../account/appeal/login/signin-or-create"
+            }) }}
+
+            <h2 class="govuk-heading-m">Apply in person</h2>
+
+             <ol>
+                  <li>complete the pdf form</li>
+                  <li>gather your evidence</li>
+                  <li>make an appointment to attend your children's school</li>
+                  <li>Your school or local authority will review your application and evidence</li>
+            </ol>
+
+            <p><a href="">Download the Free school meals claim form</a></p>
+
+
+      </div>
+</div>
+
+ {% endblock %}
