@@ -1,0 +1,32 @@
+{% extends "/layouts/FSM/v8-1/family/layout-email.html" %}
+{% set subject = "Free school meals application sent" %}
+{% set from = "Check if your children can get free school meals <example@education.gov.uk>" %}
+{% set to = "Julia <julia@gmail.com>" %}
+
+{% block pageTitle %}
+ Free school meals application sent
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <p>Dear Julia,</p>
+    <p>Your application for free school meals has been sent to your children's schools.</p>
+
+    <h2 class="govuk-heading-m">Application references</h2>
+    <p>44455474</p>
+
+    <h2 class="govuk-heading-m">What happens next</h2>
+
+    <p>We will email you when a decision has been made.</p>
+    <p>This should take about 1 week.</p>
+
+    <p>From Department for Education</p>
+
+
+  </div>
+</div>
+
+{% endblock %}
