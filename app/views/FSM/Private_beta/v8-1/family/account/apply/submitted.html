@@ -1,5 +1,5 @@
 {% extends "layouts/FSM/v8-1/family/layout-dfe-parent.html" %}
-{% set pageName="Application sent" %}
+{% set pageName="Applications sent" %}
 
 {% block content %}
 
@@ -7,15 +7,20 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-panel govuk-panel--confirmation">
-        <h1 class="govuk-panel--m">{{pageName}}</h1>
+        <h1 class="govuk-panel__title">{{pageName}}</h1>
+
         <div class="govuk-panel__body">
-          Submitted on<br><strong>{{ "today" | govukDate }} {{ "now" | govukTime }}</strong>
+          Information submitted to the schools
+          <!-- Submitted on<br><strong>{{ "today" | govukDate }} {{ "now" | govukTime }}</strong>-->
         </div>
+
       </div>
+
+      <p class="govuk-!-margin-top-8">We have sent you a confirmation email.</p>
 
       <table class="govuk-table govuk-!-margin-top-7">
         <caption class="govuk-table__caption govuk-table__caption--m">
-          We have sent details for
+         Children you have applied for
         </caption>
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
@@ -57,24 +62,23 @@
         </tbody>
       </table>
 
-      <p> <a href="" class="govuk-link" onclick="printPage()">Print this page</a> for any queries about your application as you will need a record of the reference numbers. You will need to speak to your School administrator to discuss any issues.</p>
 
 
       <h2 class="govuk-heading-m">What happens next</h2>
 
-      <p>
-        You will receive a notification from us on the progress of your application and when you can expect your children’s free school meals to
-        start.
-      </p>
-      <p>If you do not receive an update, talk to the school administrator.</p>
+      <p>We've sent your children's applications to the schools.</p>
+
+      <p>We will email you when they have been reviewed.</p>
+
+      <p>If you have any issues, contact the school administrator.</p>
+
+      <p> You can <a href="" class="govuk-link" onclick="printPage()">print this page</a> for your records.</p>
+
+      <hr class="govuk-section-break govuk-section-break--l">
 
       <p>
         <a href="">What did you think about this service?</a> (takes 30 seconds)
       </p>
-
-
-      {{govukButton({ text: "Finish and leave service", href: '../../start-now-beta-schools'
-      }) }}
 
 
     </div>

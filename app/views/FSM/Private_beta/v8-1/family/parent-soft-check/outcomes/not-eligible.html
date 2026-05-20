@@ -23,28 +23,35 @@
             </div>
 
             -->
-            <h1 class="govuk-heading-l">Your children are not eligible for free school meals</h1>
-            <p>At the time of the check, you do not match the eligibility criteria for free school meals.</p>
-            <p>This could be because you do not receive the relevant benefit, or your income is over the threshold in the system. IMPROVE CONTENT HERE</p>
+            <h1 class="govuk-heading-l">Your children are not eligible for free school meals at the time of this check</h1>
+            <p>Your information does not currently match the eligibility criteria for free school meals.</p>
+            <p>This could be because:</p>
 
-            <details class="govuk-details">
-                  <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
-                        How eligibility for free school meals is checked
-                  </span>
-                  </summary>
-                  <div class="govuk-details__text">
-                  some words
-                  </div>
-            </details>
+            <ul>
+                  <li>you're not on universal credit or other support like income support</li>
+                  <li>your income is above the £7000 threshold</li>
+                  <li>your universal credit application is new and the system has not updated yet</li>
+            </ul>
+
+            <p><a href="">View full list of eligibility criteria (opens in new tab)</a></p>
+
+            <h2 class="govuk-heading-m">If you think this is incorrect</h2>
+
+            <p>You can provide evidence to your school online or in person to show how you meet the eligibility criteria.</p>
+
+            <p><a href="appeal">Apply with supporting evidence</a></p>
+
+               <!--
+
+            {% from "govuk/components/button/macro.njk" import govukButton %}
+
+            {{ govukButton({
+            text: "Apply with evidence",
+            classes: "govuk-button--secondary",
+            href: "appeal"
+            }) }}
 
 
-            <h2 class="govuk-heading-m">If you think your children are eligible</h2>
-
-            <p>You can provide evidence to your school online or in person to support your application.</p>
-
-            <p><a href="appeal">Find out more about how to apply with evidence</a></p>
-            <!--
             <p>You can still apply but you'll need to:</p>
 
             <ul class="govuk-list govuk-list--bullet">
