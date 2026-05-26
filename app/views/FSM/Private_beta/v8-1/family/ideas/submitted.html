@@ -4,75 +4,6 @@
 {% block content %}
 
 
- <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <div class="govuk-panel govuk-panel--confirmation">
-        <h1 class="govuk-panel--m">{{pageName}}</h1>
-        <div class="govuk-panel__body">
-          Submitted on<br><strong>{{ "today" | govukDate }} {{ "now" | govukTime }}</strong>
-        </div>
-      </div>
-
-      <table class="govuk-table govuk-!-margin-top-7">
-        <caption class="govuk-table__caption govuk-table__caption--m">
-          We have sent details for
-        </caption>
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header app-custom-class">Name</th>
-            <th scope="col" class="govuk-table__header app-custom-class">School</th>
-            <th scope="col" class="govuk-table__header app-custom-class">Reference</th>
-          </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">
-              Samuel Tesfay
-          </th>
-            <td class="govuk-table__cell">
-              St Kings Primary School
-            </td>
-            <td class="govuk-table__cell">
-            44455474
-
-            </td>
-          </tr>
-
-        {% if data['child-2'] == 'Yes' %} {% endif %}
-
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Thomas Tesfay</th>
-            <td class="govuk-table__cell">St Kings Primary School</td>
-            <td class="govuk-table__cell">44455454</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <p> <a href="" class="govuk-link" onclick="printPage()">Print this page</a> for any queries about your application as you will need a record of the reference numbers. You will need to speak to your School administrator to discuss any issues.</p>
-
-
-      <h2 class="govuk-heading-m">What happens next</h2>
-
-      <p>
-        You will receive a notification from us on the progress of your application and when you can expect your children’s free school meals to
-        start.
-      </p>
-      <p>If you do not receive an update, talk to the school administrator.</p>
-
-      <p>
-        <a href="">What did you think about this service?</a> (takes 30 seconds)
-      </p>
-
-
-      {{govukButton({ text: "Finish and leave service", href: '../../start-now-beta-schools'
-      }) }}
-
-
-    </div>
-  </div>
-
-  <!--
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-panel govuk-panel--confirmation">
@@ -80,6 +11,7 @@
 
         <div class="govuk-panel__body">
           Information submitted to the schools
+          <!-- Submitted on<br><strong>{{ "today" | govukDate }} {{ "now" | govukTime }}</strong>-->
         </div>
 
       </div>
@@ -152,12 +84,22 @@
     </div>
   </div>
 
-  -->
-
 
   {% endblock %}
 
   {% block pageScripts %}
+
+  <script>
+    function generateRandomId() {
+      return 'app-' + Math.floor(Math.random() * 1000000);
+    }
+
+    // If application.id is not defined, set a random ID
+    if (!application.id) {
+      application.id = generateRandomId();
+    }
+  </script>
+
 
   <script>
     function printPage() {

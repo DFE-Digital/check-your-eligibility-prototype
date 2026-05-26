@@ -4,8 +4,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <!--
-    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+     <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
       aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
       <div class="govuk-notification-banner__header">
         <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
@@ -14,38 +13,28 @@
       </div>
       <div class="govuk-notification-banner__content">
         <h3 class="govuk-notification-banner__heading">
-          Your children are eligible for free school meals for the school year 26-27.
+          Your children are eligible for free school meals.
         </h3>
+        <p>Your children can get free school meals for the full school year 2026-2027. </p>
+
       </div>
     </div>
 
-    -->
-
-    <h1 class="govuk-heading-l">Your children are eligible for free school meals</h1>
-
-    <p>Your children can get free school meals for the full school year 2026-2027. </p>
-
-    <!-- <p>You will need to recheck each school year to keep getting free school meals.</p> -->
+    <!-- <h1 class="govuk-heading-l">Your children are eligible for free school meals</h1> -->
 
     <h2 class="govuk-heading-m">Next steps</h2>
 
-    <p>Apply for free school meals with your local authority.</p>
-
-    <p>We've matched your school to <strong>Manchester City Council</strong>.</p>
-
-    <p>Get more information on their website.</p>
+    <p>Apply for free school meals using the existing process.</p>
 
     {{ govukButton({
-      text: "Go to Manchester City Council website",
-      href: "https://www.manchester.gov.uk/benefits-and-support/education-benefits/free-school-meals"
+      text: "Go to Apply for free school meals",
+      href: "https://www.gov.uk/apply-free-school-meals"
     }) }}
 
 
-    <hr class="govuk-section-break govuk-section-break govuk-section-break--m">
-
-    <h2 class="govuk-heading-m">Other ways to apply</h2>
+    <h2 class="govuk-heading-m govuk-!-margin-top-5">Other ways to apply</h2>
     <p>If you cannot apply online, you can fill in the <a href="/FSM/Private_beta/v8-1//_offline//fsm-print-version">free school meals claim form</a> and give it to your children's school. </p>
-    {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+    <p>Sentence about getting help with <a href="">guidance link</a>.</p>
 
   </div>
 </div>
