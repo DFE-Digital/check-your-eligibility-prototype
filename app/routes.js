@@ -400,6 +400,28 @@ else {
 })
 
 
+// FSM v8-1 family eligibility results
+
+router.post('/FSM/Private_beta/v8-1/family/parent-soft-check/outcomes/eligible-expanded', function(req, res) {
+
+var NINumber = req.session.data['ni-number-entered']
+if (NINumber == "NA123456A"){
+    res.redirect("/FSM/Private_beta/v8-1/family/parent-soft-check/outcomes/eligible-targeted")
+}
+
+if (NINumber == "NN123456A"){
+    res.redirect("/FSM/Private_beta/v8-1/family/parent-soft-check/outcomes/eligible-la")
+}
+
+if (NINumber == "PN123456A"){
+    res.redirect("/FSM/Private_beta/v8-1/family/parent-soft-check/outcomes/not-eligible")
+}
+
+else {
+    res.redirect("/FSM/Private_beta/v8-1/family/parent-soft-check/outcomes/eligible-expanded")
+}
+})
+
 
 
 // ////////////////////////CURRENT//////////////////////////////////
