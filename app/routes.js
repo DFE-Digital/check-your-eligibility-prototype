@@ -943,6 +943,8 @@ router.post('/FSM/Private_beta/v8-1/LA/la-manage/apply/check-answers', function 
   res.redirect('/FSM/Private_beta/v8-1/LA/la-manage/apply/la-check-answers.html')
 })
 
+
+
 // require('./routes/fsm/private_beta/v8-1/softcheck.js')(router)
 
 // ////pagination/////
@@ -953,4 +955,7 @@ router.post('/FSM/Private_beta/v8-1/LA/la-manage/apply/check-answers', function 
 require('./routes/fsm/private_beta/v8-1/softcheck.js')(router)
 
 require('./routes/fsm/private_beta/v8-1/appeal-decision-expansion')(router);
+
+require('./routes/fsm/private_beta/v8-1/appeal-decision-expansion-school')(router);
+
 
