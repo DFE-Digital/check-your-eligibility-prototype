@@ -1,0 +1,95 @@
+{% extends "layouts/FSM/v8-1/layout-dfe-schoolnav.html" %}
+{% set pageName="Applications created" %}
+
+{% block beforeContent %}
+<!--
+{% block backLink %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %} -->
+<!--
+{% set breadcrumbs = breadcrumbs or [
+  { text: "Home", href: "/FSM/Private_beta/v7-3/LA/dashboard.html" },
+  { text: "Batch checking", href: "/FSM/Private_beta/v7-3/LA/la-manage/batch-checking/manual.html" },
+  { text: "Batch checks history" }
+] %} -->
+
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="region" aria-labelledby="govuk-notification-banner-title">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Applications created on 11 June 2026
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-body">
+310 applications have been created for children based on the batch check results. You can view these applications in the <a href="/FSM/Private_beta/v8-1/LA/la-manage/report/search.html">search all records</a>.
+
+          </p>
+
+        </div>
+      </div>
+
+
+
+    <h1 class="govuk-heading-l">{{ pageName }}</h1>
+
+
+    <table class="govuk-table govuk-table--small-text-until-tablet">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <!-- <th scope="col" class="govuk-table__header">Academic year</th> -->
+          <th scope="col" class="govuk-table__header">Submitted date</th>
+          <th scope="col" class="govuk-table__header">Eligible targeted</th>
+          <th scope="col" class="govuk-table__header">Eligible expanded</th>
+          <th scope="col" class="govuk-table__header">Not eligible</th>
+          <th scope="col" class="govuk-table__header">Could not check</th>
+           <th scope="col" class="govuk-table__header">System error</th>
+          <th scope="col" class="govuk-table__header">Results summary</th>
+          <th scope="col" class="govuk-table__header">End date</th>
+          <th scope="col" class="govuk-table__header">  </th>
+                <th scope="col" class="govuk-table__header">  </th>
+          <th scope="col" class="govuk-table__header">  </th>
+
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+
+
+        <tr class="govuk-table__row">
+          <!-- <td class="govuk-table__cell">batch-school-Jan25.csv</td> -->
+          <td class="govuk-table__cell">{{ "2026-06-11"| govukDate }}</td>
+          <td class="govuk-table__cell">169</td>
+          <td class="govuk-table__cell">141</td>
+          <td class="govuk-table__cell">123</td>
+          <td class="govuk-table__cell">47 </td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Completed</strong></td>
+          <td class="govuk-table__cell">{{ "2027-08-31" | govukDate }}</td>
+          <td class="govuk-table__cell"><a href="">Download all results</a></td>
+          <td class="govuk-table__cell"><a href="batch-confirm-eligible.html">Create applications</a>
+
+          </td>
+        </tr>
+
+
+
+      </tbody>
+    </table>
+
+
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}

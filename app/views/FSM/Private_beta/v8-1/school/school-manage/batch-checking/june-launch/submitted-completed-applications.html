@@ -1,0 +1,159 @@
+{% extends "layouts/FSM/v8-1/layout-dfe-schoolnav.html" %}
+
+{% block pageTitle %}
+File submitted
+{% endblock %}
+
+{% set dateSubmitted = '2026-05-22' %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+      aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Applications successfully created
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          310 Applications created for batchcheck Greenwood25_1.csv on 11 June 2026
+        </h3>
+        <p class="govuk-body"><strong class="govuk-tag govuk-tag--purple">Eligible targeted</strong> <strong>169</strong></p>
+        <p class="govuk-body"><strong class="govuk-tag govuk-tag--green">Eligible expanded</strong> <strong>141</strong></p>
+        <!-- <p class="govuk-body"><strong class="govuk-tag govuk-tag--red">Not eligible</strong> <strong>123</strong></p>
+        <p class="govuk-body"><strong class="govuk-tag govuk-tag--grey">Could not check</strong> <strong>47</strong></p> -->
+
+      </div>
+    </div>
+
+
+  </div>
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">Batch checks</h1>
+
+
+    <table class="govuk-table govuk-table--small-text-until-tablet">
+
+      <table class="govuk-table govuk-table--small-text-until-tablet">
+        <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-4">Showing 2 batch files
+          uploaded in the last 7 days</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Filename</th>
+            <th class="govuk-table__cell">Number of records</th>
+            <th class="govuk-table__cell">Last surname <br> </th>
+            <th scope="col" class="govuk-table__header">Submitted</th>
+            <th scope="col" class="govuk-table__header">Status</th>
+            <th scope="col" class="govuk-table__header"></th>
+            <th scope="col" class="govuk-table__header"></th>
+            <th scope="col" class="govuk-table__header"></th>
+            <th scope="col" class="govuk-table__header"></th>
+
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">MarysPrimFeb25b.csv</td>
+            <td class="govuk-table__cell">3270</td>
+            <td class="govuk-table__cell">Tesfay</td>
+            <td class="govuk-table__cell">{{ dateSubmitted | duration(7, 'days') | govukDate }} </td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Checks completed</strong></td>
+              <td class="govuk-table__cell"><a href="./batchcheck-summary.html">View results</a>
+                    </td>
+                    <td class="govuk-table__cell"><a href="./batchcheck-summary.html">Download check results</a>
+        <td class="govuk-table__cell"><a href="./batchcheck-summary.html"> </a>
+            <td class="govuk-table__cell"><a href=""></a></td>
+            <th scope="col" class="govuk-table__header"></th>
+
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Greenwoodprim25_1.csv</td>
+            <td class="govuk-table__cell">1234</td>
+
+            <td class="govuk-table__cell">Warren</td>
+            <td class="govuk-table__cell">{{ dateSubmitted | duration(7, 'days') | govukDate }} </td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Applications created</strong></td>
+            <td class="govuk-table__cell"><a href="../../report/search.html">Search applications</a>
+            </td>
+            <td class="govuk-table__cell"><a href="./batchcheck-summary.html">Download check results</a>
+            <td class="govuk-table__cell"><a href="./batchcheck-summary.html"> </a>
+          </tr>
+
+
+
+      </table>
+
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<!--
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const navLinks = document.querySelectorAll('.moj-sub-navigation__link');
+      const sections = document.querySelectorAll('.govuk-table-section');
+
+      // Initially hide all sections except the one corresponding to the active link
+      const activeLink = document.querySelector('.moj-sub-navigation__link[aria-current="true"]');
+      const targetId = activeLink ? activeLink.getAttribute('data-section') : 'ready-section';
+
+      sections.forEach(section => {
+        section.style.display = section.id === targetId ? 'block' : 'none';
+      });
+
+      // Add event listeners to handle tab switching
+      navLinks.forEach(link => {
+        link.addEventListener('click', function (event) {
+          event.preventDefault();
+
+          // Update aria-current for navigation links
+          navLinks.forEach(nav => nav.removeAttribute('aria-current'));
+          this.setAttribute('aria-current', 'true');
+
+          // Show only the corresponding section
+          const newTargetId = this.getAttribute('data-section');
+          sections.forEach(section => {
+            section.style.display = section.id === newTargetId ? 'block' : 'none';
+          });
+        });
+      });
+    });
+  </script>
+
+
+  <script>
+    var total_count = Math.floor(Math.random() * 250) + 1; // Ensure at least 1 record
+    document.getElementById("total-count").textContent = total_count;
+    document.getElementById("dynamic-total-count").textContent = total_count;
+
+    const intervalId = setInterval(() => {
+      var countElement = document.getElementById("counter");
+      var progressBar = document.getElementById("progress");
+
+      var currentCount = parseInt(countElement.textContent);
+      var newCount = currentCount + 1;
+
+      if (newCount >= total_count) {
+        clearInterval(intervalId);
+        newCount = total_count; // Stop at total_count
+        // document.location = 'batch-check-success.html';
+      }
+
+      countElement.textContent = newCount;
+
+      // Update progress bar
+      var percentage = (newCount / total_count) * 100;
+      progressBar.style.width = percentage + "%";
+    }, 100);
+  </script> -->
+
+{% endblock %}

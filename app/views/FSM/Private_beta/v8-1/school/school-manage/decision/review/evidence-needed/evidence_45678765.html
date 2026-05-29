@@ -1,25 +1,25 @@
-{% extends "layouts/FSM/v8-1/layout-dfe-lanav.html" %}
+{% extends "layouts/FSM/v8-1/layout-dfe-schoolnav.html" %}
 {% block backLink %}
+
 {{ govukBackLink({
 text: "Back",
 href: "javascript:window.history.back()"
 }) }}
 {% endblock %}
-{% set childId = "87606576" %}
-{% set childDOB = "28 Nov 2020" %}
-{% set schoolName = "Southfield Primary School" %}
+
+{% set childId = "45678765" %}
+{% set childDOB = "22 Sep 2012" %}
+{% set schoolName = "Hilltop Elementary" %}
 {% set schoolAddress = "Manchester, M25 1QA" %}
-{% set parentDOB = "15 Mar 1980" %}
-{% set parentName = "	Idella Nolan" %}
-{% set email = "idella.nolan@example.com" %}
+{% set parentDOB = "15 Sep 1978" %}
+{% set parentName = "Jennifer Langley" %}
+{% set email = "jennifer.langley@example.com" %}
 {% set nationalInsurance = "AB123456C" %}
-{% set parentId = "44455454A" %}
-{% set childName = "Christina Nolan" %}
-{% set endDate = "31 Aug 2027" %}
+{% set parentId = "45678765A" %}
+{% set childName = "Tilly Langley" %}
 {% set pageName = "Manage pupil record for " ~ childName %}
 {% set pageDescription %} View and manage the details of this pupil record.
 {% endset %}
-
 
 {% block content %}
 
@@ -27,8 +27,8 @@ href: "javascript:window.history.back()"
   <div class="govuk-grid-column-full">
     <div style="display: flex; justify-content: space-between; align-items: center;">
       <div>
-        <span class="govuk-caption-l">{{childId}}</span>
-        <h1 class="govuk-heading-l" style="margin-bottom: 0;">{{childName}}</h1>
+        <span class="govuk-caption-l">{{ childId }}</span>
+        <h1 class="govuk-heading-l" style="margin-bottom: 0;">{{ childName }}</h1>
           </div>
             <div>
               {{ mojButtonMenu({
@@ -39,9 +39,8 @@ href: "javascript:window.history.back()"
               {
               text: "Export record as CSV"
               },
-
               {
-              href: "archive-87606576.html",
+              href: "archive-" ~ childId ~ ".html",
               text: "Archive record"
               }
               ]
@@ -64,20 +63,21 @@ href: "javascript:window.history.back()"
           <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                  <strong class="govuk-tag govuk-tag--purple" style="margin-left: 0px;">
-                    Eligible - targeted
+                  <strong class="govuk-tag govuk-tag--yellow" style="margin-left: 0px;">
+                    Evidence needed
                 </strong>
               </dt>
               <dd class="govuk-summary-list__value">
-              This child is eligible for free school meals and additional support. Finalise the application in this service once your MIS is updated</a>.
+              This application needs evidence uploaded.
+              </dd>
             </div>
             <div class="govuk-summary-list__row">
-             <dt class="govuk-summary-list__key">
+              <dt class="govuk-summary-list__key">
                 End date
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ endDate }}
-              </dd>
+                <!-- The end date will updated when a decision is made or more evidence is requested. -->
+               </dd>
             </div>
           </dl>
         </div>
@@ -186,58 +186,67 @@ href: "javascript:window.history.back()"
   </div>
 </div>
 
-<!-- <div class="govuk-summary-card">
+<div class="govuk-summary-card">
   <div class="govuk-summary-card__title-wrapper">
     <h2 class="govuk-summary-card__title">
       Supporting evidence
-    </h2> -->
-    <!-- <ul class="govuk-summary-card__actions">
+    </h2>
+    <ul class="govuk-summary-card__actions">
       <li class="govuk-summary-card__action">
         <a class="govuk-link" href="#">Add evidence<span class="govuk-visually-hidden"> add supporting
             evidence</span></a>
       </li>
-      <li class="govuk-summary-card__action">
+      <!-- <li class="govuk-summary-card__action">
         <a class="govuk-link" href="#">Remove evidence<span class="govuk-visually-hidden"> </span></a>
-      </li>
-    </ul> -->
+      </li> -->
+    </ul>
   </div>
 
-  <!-- <div class="govuk-summary-card__content">
+  <div class="govuk-summary-card__content">
     <dl class="govuk-summary-list">
+      <!-- <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Evidence type
+        </dt>
+        <dd class="govuk-summary-list__value">
+          UC statement
+        </dd>
+      </div> -->
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Date uploaded
         </dt>
-        <dd class="govuk-summary-list__value">
-          20 Sep 2023
-        </dd>
+        <!-- <dd class="govuk-summary-list__value">
+          20 Apr 2026
+        </dd> -->
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Files
         </dt>
-        <dd class="govuk-summary-list__value">
+        <!-- <dd class="govuk-summary-list__value">
           <a href="evidence.html">UC_statement_2023.pdf</a><br>
           <a href="#"> </a><br>
-        </dd>
+        </dd> -->
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Evidence status
         </dt>
         <dd class="govuk-summary-list__value">
-          <strong class="govuk-tag govuk-tag--green" style="margin-left: 0px;">
+          <!-- <strong class="govuk-tag govuk-tag--green" style="margin-left: 0px;">
             Evidence added
-          </strong>
+          </strong> -->
         </dd>
-      </div> -->
+      </div>
   </div>
   </div>
 
   <!-- <div class="govuk-!-padding-bottom-3"></div> -->
-<!--
+
 <div style="height: 32px;"></div>
-<form method="post" action="/fsm/private_beta/v8-1/appeal-decision/johnson1">
+<form method="post" action="/FSM/private_beta/v8-1/appeal-decision/{{childId}}">
+<!--
 {{ govukRadios({
   name: "decision",
   fieldset: {
@@ -252,32 +261,38 @@ href: "javascript:window.history.back()"
   },
   items: [
     {
-      value: "approve",
-      text: "Approve application"
+      value: "approve-targeted",
+      text: "Approve for targeted free school meals"
+    },
+    {
+      value: "approve-expanded",
+      text: "Approve for expanded free school meals"
     },
     {
       value: "decline",
       text: "Decline application"
-    },
-    {
-      value: "pending",
-      text: "Request more evidence",
-
-      conditional: {
-        html: '<p class="govuk-body"></p>'
-      }
     }
   ]
-}) }}
-
+}) }} -->
 
   <div class="govuk-button-group">
+<!--
     <button type="submit" class="govuk-button" data-module="govuk-button">
       Save and continue
-    </button>
-    <a class="govuk-link" href="../pending-list.html">Return to review list</a>
+    </button> -->
+
+<!-- <button type="submit" class="govuk-button" data-module="govuk-button">
+  Save and continue
+</button> -->
+    <!-- <a href="request-more/requestmore-johnson1.html"
+   class="govuk-button"
+   data-module="govuk-button"
+   role="button">
+   Submit evidence
+</a> -->
+    <a class="govuk-link" href="../applications.html">Return to review list</a>
   </div>
-</form> -->
+</form>
 
 {% endblock %}
 

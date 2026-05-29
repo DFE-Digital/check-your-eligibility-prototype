@@ -1,5 +1,6 @@
 {% extends "layouts/FSM/v8-1/layout-dfe-schoolnav.html" %}
 {% block backLink %}
+
 {{ govukBackLink({
 text: "Back",
 href: "javascript:window.history.back()"
@@ -20,7 +21,6 @@ href: "javascript:window.history.back()"
 {% set pageDescription %} View and manage the details of this pupil record.
 {% endset %}
 
-
 {% block content %}
 
 <div class="govuk-grid-row govuk-!-margin-bottom-5">
@@ -30,7 +30,7 @@ href: "javascript:window.history.back()"
         <span class="govuk-caption-l">44455453</span>
         <h1 class="govuk-heading-l" style="margin-bottom: 0;">{{childName}}</h1>
           </div>
-            <div>
+              <div>
               {{ mojButtonMenu({
               button: {
               text: "Manage child record"
@@ -38,9 +38,6 @@ href: "javascript:window.history.back()"
               items: [
               {
               text: "Export record as CSV"
-              },
-              {
-              text: "Export record as PDF"
               },
               {
               href: "archive-44455453.html",
@@ -249,8 +246,7 @@ href: "javascript:window.history.back()"
   <!-- <div class="govuk-!-padding-bottom-3"></div> -->
 
 <div style="height: 32px;"></div>
-<form method="post" action="/FSM/private_beta/v8-1/appeal-decision/{{childId}}">
-
+<form method="post" action="/FSM/Private_beta/v8-1/appeal-decision-school/{{childId}}">
 {{ govukRadios({
   name: "decision",
   fieldset: {
@@ -286,16 +282,16 @@ href: "javascript:window.history.back()"
       Save and continue
     </button> -->
 
-<!-- <button type="submit" class="govuk-button" data-module="govuk-button">
+<button type="submit" class="govuk-button" data-module="govuk-button">
   Save and continue
-</button> -->
-    <a href="request-more/requestmore-johnson1.html"
+</button>
+    <!-- <a href=""
    class="govuk-button"
    data-module="govuk-button"
    role="button">
    Save and continue
-</a>
-    <a class="govuk-link" href="../pending-list.html">Return to review list</a>
+</a> -->
+    <a class="govuk-link" href="../applications.html">Return to review list</a>
   </div>
 </form>
 
