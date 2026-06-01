@@ -1,0 +1,58 @@
+{% extends "layouts/FSM/v8-1/family/layout-dfe-parent.html" %}
+
+{% set pageName="Check if your children can get free school meals" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+
+    <p>Enter a few details to find out if your children can get free school meals.</p>
+
+    <!-- <p class="govuk-body">Here you can:</p>
+    <ul class="govuk-list--bullet">
+      <li> enter a few details to find out if your children can get free school meals</li>
+      <li>apply for free school meals if the check shows your children are eligible</li>
+      <li>provide evidence to support your free school meals application, if asked to</li>
+    </ul>
+
+    <p>Your application will be sent to your children's school or academy.</p>
+
+  -->
+
+    <p class="govuk-body">It should take about 5 minutes to run a check.</p>
+
+    <h2 class="govuk-heading-l">Before you start</h2>
+
+    <p class="govuk-body">You will need:</p>
+
+    <ul class="govuk-list--bullet">
+      <li>a National Insurance number</li>
+      <!--
+      <li>to use or create a GOV.UK One Login</li>
+      <li>details of the children you're applying for, including the name of their school</li>
+      -->
+    </ul>
+
+    <!-- <p class="govuk-body">You may also need supporting evidence for your application.</p> -->
+    <p class="govuk-body">See <a href="../guidance/parent-guidance">more detailed guidance on eligibility for free school meals</a>.</p>
+
+    <h2 class="govuk-heading-l">If you cannot apply online</h2>
+    <p class="govuk-body">Fill in the <a href="../../_offline//fsm-print-version">free school meals claim form</a> and give it to your children's school. </p>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break">
+
+
+    {{ govukButton({
+      text: "Start now",
+      isStartButton: true,
+      href: "check"
+    }) }}
+
+
+  </div>
+ </div>
+
+{% endblock %}
