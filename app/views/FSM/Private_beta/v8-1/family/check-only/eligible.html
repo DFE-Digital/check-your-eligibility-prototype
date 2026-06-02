@@ -9,7 +9,7 @@
      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
       aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
       <div class="govuk-notification-banner__header">
-        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        <h2 class="govuk-notification-banner__title banner-header-print-version" id="govuk-notification-banner-title">
           Children eligible
         </h2>
       </div>
@@ -21,6 +21,7 @@
 
       </div>
     </div>
+
 
 
     <dl class="govuk-summary-list">
@@ -50,7 +51,7 @@
 
     <p>Contact your children's school to apply for free school meals.</p>
 
-    <p>You can <a href="">print this page</a> or <a href="">download it as a pdf</a> to take to your children's school.</p>
+    <p>You can <a href="" onclick="printPage()">print this page</a> or <a href="">download it as a pdf</a> to take to your children's school.</p>
 
     <!--
 
@@ -70,5 +71,15 @@
   </div>
 </div>
 
+
+{% endblock %}
+
+{% block pageScripts %}
+
+  <script>
+    function printPage() {
+        window.print();  // This will open the print dialog
+    }
+  </script>
 
 {% endblock %}
