@@ -1,5 +1,5 @@
 {% extends "layouts/FSM/v8-1/family/layout-dfe-parent.html" %}
-{% set pageName="You cannot use this service" %}
+{% set pageName="You cannot use this new service" %}
 
 {% block beforeContent %}
   {{ govukBackLink({
@@ -18,7 +18,7 @@
 
     <h1 class="govuk-heading-l">{{pageName}}</h1>
 
-    <p>Ths school you selected is not included in this service</p>
+    <p>Ths school you selected is not included in this new service that is being tested in some local authorities.</p>
 
     <!-- <p class="govuk-body"><strong>Parrs Wood High School, Wilmslow Rd, East Didsbury, Manchester M20 5PG</strong>  is not included in the service.</p> -->
 
@@ -30,10 +30,10 @@
 
     <h2 class="govuk-heading-m">Next steps</h2>
 
-    <p><a href=""></a> Apply for free school meals using the existing process.</p>
+    <p><a href=""></a>You can apply for free school meals using the existing process.</p>
 
     {{ govukButton({
-      text: "Go to...",
+      text: "Apply for free school meals",
       href: "https://www.gov.uk/apply-free-school-meals"
     }) }}
    <p> <a class="govuk-link" href="beta-school-check">Check another school</a></p>
