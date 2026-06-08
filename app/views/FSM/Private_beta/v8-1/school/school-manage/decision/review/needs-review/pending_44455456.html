@@ -27,10 +27,10 @@ href: "javascript:window.history.back()"
   <div class="govuk-grid-column-full">
     <div style="display: flex; justify-content: space-between; align-items: center;">
       <div>
-        <span class="govuk-caption-l">44455464</span>
+        <span class="govuk-caption-l">44455453</span>
         <h1 class="govuk-heading-l" style="margin-bottom: 0;">{{childName}}</h1>
           </div>
-            <div>
+              <div>
               {{ mojButtonMenu({
               button: {
               text: "Manage child record"
@@ -63,12 +63,12 @@ href: "javascript:window.history.back()"
           <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                  <strong class="govuk-tag govuk-tag--yellow" style="margin-left: 0px;">
-                    Evidence needed
+                  <strong class="govuk-tag govuk-tag--blue" style="margin-left: 0px;">
+                    Ready for review
                 </strong>
               </dt>
               <dd class="govuk-summary-list__value">
-              This application needs evidence uploaded.
+              This application is ready for you to review the evidence.
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -77,7 +77,8 @@ href: "javascript:window.history.back()"
               </dt>
               <dd class="govuk-summary-list__value">
                 <!-- The end date will updated when a decision is made or more evidence is requested. -->
-               </dd>
+                 31 Aug 2026
+              </dd>
             </div>
           </dl>
         </div>
@@ -191,15 +192,15 @@ href: "javascript:window.history.back()"
     <h2 class="govuk-summary-card__title">
       Supporting evidence
     </h2>
-    <ul class="govuk-summary-card__actions">
+    <!-- <ul class="govuk-summary-card__actions">
       <li class="govuk-summary-card__action">
-        <a class="govuk-link" href="upload-evidence.html">Add supporting evidence<span class="govuk-visually-hidden"> add supporting
+        <a class="govuk-link" href="#">Add evidence<span class="govuk-visually-hidden"> add supporting
             evidence</span></a>
       </li>
-      <!-- <li class="govuk-summary-card__action">
+      <li class="govuk-summary-card__action">
         <a class="govuk-link" href="#">Remove evidence<span class="govuk-visually-hidden"> </span></a>
-      </li> -->
-    </ul>
+      </li>
+    </ul> -->
   </div>
 
   <div class="govuk-summary-card__content">
@@ -216,27 +217,27 @@ href: "javascript:window.history.back()"
         <dt class="govuk-summary-list__key">
           Date uploaded
         </dt>
-        <!-- <dd class="govuk-summary-list__value">
+        <dd class="govuk-summary-list__value">
           20 Apr 2026
-        </dd> -->
+        </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Files
         </dt>
-        <!-- <dd class="govuk-summary-list__value">
+        <dd class="govuk-summary-list__value">
           <a href="evidence.html">UC_statement_2023.pdf</a><br>
           <a href="#"> </a><br>
-        </dd> -->
+        </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Evidence status
         </dt>
         <dd class="govuk-summary-list__value">
-          <!-- <strong class="govuk-tag govuk-tag--green" style="margin-left: 0px;">
+          <strong class="govuk-tag govuk-tag--green" style="margin-left: 0px;">
             Evidence added
-          </strong> -->
+          </strong>
         </dd>
       </div>
   </div>
@@ -245,8 +246,7 @@ href: "javascript:window.history.back()"
   <!-- <div class="govuk-!-padding-bottom-3"></div> -->
 
 <div style="height: 32px;"></div>
-<form method="post" action="/FSM/private_beta/v8-1/appeal-decision/{{childId}}">
-<!--
+<form method="post" action="/FSM/Private_beta/v8-1/appeal-decision-school/{{childId}}">
 {{ govukRadios({
   name: "decision",
   fieldset: {
@@ -273,7 +273,8 @@ href: "javascript:window.history.back()"
       text: "Decline application"
     }
   ]
-}) }} -->
+}) }}
+
 
   <div class="govuk-button-group">
 <!--
@@ -281,14 +282,14 @@ href: "javascript:window.history.back()"
       Save and continue
     </button> -->
 
-<!-- <button type="submit" class="govuk-button" data-module="govuk-button">
+<button type="submit" class="govuk-button" data-module="govuk-button">
   Save and continue
-</button> -->
-    <!-- <a href="request-more/requestmore-johnson1.html"
+</button>
+    <!-- <a href=""
    class="govuk-button"
    data-module="govuk-button"
    role="button">
-   Submit evidence
+   Save and continue
 </a> -->
     <a class="govuk-link" href="../applications.html">Return to review list</a>
   </div>
