@@ -1,0 +1,77 @@
+{% extends "layouts/FSM/v8-2/family/layout-dfe-parent.html" %}
+{% set pageName="You can use this service" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/autocomplete.js"></script>
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    selectElement: document.querySelector('#school-picker')
+  })
+
+</script>
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+    <p>The school you selected is included in the new service</p>
+
+     <!--  <p class="govuk-body"><strong>All Saints CofE Primary school, Ilkley, LS29 8QH</strong>  is included in the service.</p> -->
+
+
+
+
+
+      <!--
+      -->
+      <div class="govuk-inset-text">
+        St Mary's School<br>
+        Cambridgeshire<br>
+        CB2 1LY
+      </div>
+
+       <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            I have children at another school
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+
+          <p>If you have children at another school, you will need to <a href="beta-school-check">check their school</a> to see if that school is included in this service.</p>
+
+          <p>You will only be able to use this service to apply for children whose schools are included.</p>
+
+        </div>
+      </details>
+
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue",
+          href: "parent-soft-check/check"
+        }) }}
+        <!--<a class="govuk-link" href="beta-school-check">Check another school</a>-->
+      </div>
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
