@@ -1,0 +1,26 @@
+{% extends "/layouts/childcare/v11/layout-childcare-email.html" %}
+{% set subject = "Batch check 'WF-Apr-26.csv' completed" %}
+{% set from = "Manage eligibility for childcare support <example@education.gov.uk>" %}
+{% set to = "Calderdale Council <calderdale.tesfay@gmail.com>" %}
+
+{% block pageTitle %}
+ Batch check 'WF-Apr-26.csv' completed
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <p>Dear Julia,</p>
+    <p>Your batch check 'WF-Apr-26.csv' has completed and you can view the results.</p>
+
+    <p>To view the results, <a href="">Sign in to Manage eligibility for childcare support</a>, go to the 'Run a batch check' section and select 'View batch check status'.</p>
+
+    <p>From Department for Education</p>
+
+
+  </div>
+</div>
+
+{% endblock %}
