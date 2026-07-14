@@ -1,97 +1,124 @@
 {% extends "/layouts/childcare/dev/layout-childcare.html" %}
 
 {% block pageTitle %}
-  Foster family: Archana Mistry
+  Eligibility code for Jasper Hayes
 {% endblock %}
 
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "javascript:window.history.back()"
+  href: "/childcare/dev/foster/foster"
 }) }}
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-
-    <h1 class="govuk-heading-l">Foster family of Archana Mistry</h1>
+  <div class="govuk-grid-column-three-quarters">
 
 
-    <div class="govuk-summary-card">
-      <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">
-          Carer
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
         </h2>
-        <ul class="govuk-summary-card__actions">
-        </ul>
       </div>
-      <div class="govuk-summary-card__content">
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Full name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Victoria Price
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Date of birth
-            </dt>
-            <dd class="govuk-summary-list__value">
-              10 April 1984
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              National Insurance number
-            </dt>
-            <dd class="govuk-summary-list__value">
-              PB123456C
-            </dd>
-          </div>
-        </dl>
+      <div class="govuk-notification-banner__content">
+
+            <h3 class="govuk-notification-banner__heading">
+              Changes to child saved
+            </h3>
+
       </div>
     </div>
 
-    <div class="govuk-summary-card">
+      <h1 class="govuk-heading-l">Eligibility code for Jasper Hayes</h1>
+
+
+     <div class="govuk-button-group ">
+
+      <!--
+
+       {{ govukButton({
+          text: "Archive code",
+          classes: "govuk-button--secondary",
+          href: "/childcare/dev/foster/archive/archive-code"
+        }) }}
+
+        -->
+    </div>
+
+    <div class="govuk-summary-card" id="code">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title">
-          Partner
+          Eligibility code details
         </h2>
-        <ul class="govuk-summary-card__actions">
-
-        </ul>
       </div>
       <div class="govuk-summary-card__content">
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Full name
+              Eligibility code
             </dt>
             <dd class="govuk-summary-list__value">
-              Jim Price
+              40019283987
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+           <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Reconfirmation status
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <strong class="govuk-tag govuk-tag--green">
+                Not due yet
+              </strong>
+            </dd>
+            <dd class="govuk-summary-list__actions">
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Date of birth
+              Code status
             </dt>
             <dd class="govuk-summary-list__value">
-              27 September 1982
+              Valid for spring term 2026 and summer term 2026
+            </dd>
+            <dd class="govuk-summary-list__actions">
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              National Insurance number
+              Eligibility confirmed on
             </dt>
             <dd class="govuk-summary-list__value">
-              PB458673A
+              {{ "today" | govukDate }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
             </dd>
           </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Reconfirm between
+            </dt>
+            <dd class="govuk-summary-list__value">
+              10 April 2026 and 13 May 2026
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Grace period ends
+            </dt>
+            <dd class="govuk-summary-list__value">
+              31 August 2026
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+
         </dl>
       </div>
     </div>
@@ -102,7 +129,9 @@
           Child
         </h2>
         <ul class="govuk-summary-card__actions">
-
+          <li class="govuk-summary-card__action">
+            <a class="govuk-link" href="/childcare/dev/foster/edit/child-details">Change<span class="govuk-visually-hidden">child details</span></a>
+          </li>
         </ul>
       </div>
       <div class="govuk-summary-card__content">
@@ -112,7 +141,7 @@
               Full name
             </dt>
             <dd class="govuk-summary-list__value">
-              Samuel Hill
+              Jasper Hayes
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -120,7 +149,7 @@
               Date of birth
             </dt>
             <dd class="govuk-summary-list__value">
-              6 September 2019
+              24 December 2023
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -131,75 +160,43 @@
               M20 7GF
             </dd>
           </div>
+        </dl>
+      </div>
+    </div>
+
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">
+          Foster family
+        </h2>
+         <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action">
+            <a class="govuk-link" href="/childcare/dev/foster/family/live">View<span class="govuk-visually-hidden">family details</span></a>
+          </li>
+        </ul>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Eligibility code
+              Carer
             </dt>
             <dd class="govuk-summary-list__value">
-              40019283746
-            </dd>
-            <dd class="govuk-summary-list__actions">
+              Archana Mistry
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Code status
+              Partner
             </dt>
             <dd class="govuk-summary-list__value">
-              Expired
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Eligibility confirmed on
-            </dt>
-            <dd class="govuk-summary-list__value">
-              24 April 2024
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Reconfirm between
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Not applicable
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Grace period ends
-            </dt>
-            <dd class="govuk-summary-list__value">
-              31 August 2024
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Reconfirmation status
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <strong class="govuk-tag govuk-tag--grey">
-                Child too old
-              </strong>
-            </dd>
-            <dd class="govuk-summary-list__actions">
+              Ajay Mistry
             </dd>
           </div>
         </dl>
       </div>
     </div>
-
-    <h2 class="govuk-heading-m">Adding another child to this family</h2>
-
-    <p>To add another child to this family, <a href="/childcare/dev/foster/create/carer-details">enter the carer details</a> then add the child.</p>
 
 
   </div>
