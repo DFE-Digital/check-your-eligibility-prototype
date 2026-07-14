@@ -19,7 +19,7 @@
 
       <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-l">Check family details</h1>
+        <h1 class="govuk-heading-l">Check details</h1>
 
         <div class="govuk-summary-card">
           <div class="govuk-summary-card__title-wrapper">
@@ -56,6 +56,14 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {{ data["carer-ni-number"] or "PB123456C" }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Postcode
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data["child-postcode"] or "M20 7GF" }}
                 </dd>
               </div>
             </dl>
@@ -121,7 +129,7 @@
                   Full name
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data["child-first-name"] or "Jasper" }} {{ data["child-last-name"] or "Hayes" }}
+                  {{ data["child-first-name"] or "Casper" }} {{ data["child-last-name"] or "Hayes" }}
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -129,17 +137,10 @@
                   Date of birth
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data["child-dob-day"] or "10" }} {{ data["child-dob-month"] or "October" }} {{ data["child-dob-year"] or "2021" }}
+                  {{ data["child-dob-day"] or "24" }} {{ data["child-dob-month"] or "December" }} {{ data["child-dob-year"] or "2023" }}
                 </dd>
               </div>
-               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Postcode
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data["child-postcode"] or "M20 7GF" }}
-                </dd>
-              </div>
+
             </dl>
           </div>
         </div>
@@ -178,15 +179,15 @@
                   Code valid from
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  Spring term 2026 (starts 1 January 2026)
+                  Summer term 2026 (starts 1 April 2026)
                 </dd>
               </div>
                <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Reconfirm by
+                  Reconfirm between
                 </dt>
                 <dd class="govuk-summary-list__value">
-                   19 February 2026
+                   25 April 2026 and 24 May 2026
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -197,6 +198,7 @@
                   31 August 2026
                 </dd>
               </div>
+
             </dl>
           </div>
         </div>
@@ -210,10 +212,9 @@
           <li>providing an eligibility code is consistent with the child's care plan</li>
         </ul>
 
-
         {{ govukButton({
           text: "Add family and create code",
-          href: "/childcare/dev/foster/create/created"
+          href: "/childcare/dev/foster/create/created?foster-code=created"
         }) }}
 
       </div>

@@ -1,7 +1,7 @@
-{% extends "/layouts/childcare/v11/layout-childcare.html" %}
+{% extends "/layouts/childcare/dev/layout-childcare.html" %}
 
 {% block pageTitle %}
-  Family added and codes created
+  Codes reconfirmed
 {% endblock %}
 
 
@@ -13,7 +13,7 @@
 
     <div class="govuk-panel govuk-panel--confirmation">
       <h1 class="govuk-panel__title">
-        Child added and code created
+        Code reconfirmed
       </h1>
       <div class="govuk-panel__body">
         Eligibility code <br> <strong>40019283987</strong>
@@ -29,19 +29,17 @@
             <th scope="col" class="govuk-table__header">Child name</th>
             <th scope="col" class="govuk-table__header">Eligibility code</th>
             <th scope="col" class="govuk-table__header">Code status</th>
-            <th scope="col" class="govuk-table__header">Eligibility confirmed on</th>
             <th scope="col" class="govuk-table__header">Reconfirm between</th>
             <th scope="col" class="govuk-table__header">Grace period ends</th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Casper Hayes</td>
-            <td class="govuk-table__cell">40019283987</td>
-            <td class="govuk-table__cell">Valid from summer term 2026</td>
-            <td class="govuk-table__cell">{{ "today" | govukDate }}</td>
-            <td class="govuk-table__cell">25 Mar 2026 and 25 April 2026</td>
-            <td class="govuk-table__cell">31 August 2026</td>
+            <td class="govuk-table__cell">Asher Ellis</td>
+            <td class="govuk-table__cell">40019283754</td>
+            <td class="govuk-table__cell">Valid for spring term 2026 and summer term 2026</td>
+            <td class="govuk-table__cell">10 June 2026 and 10 July 2026</td>
+            <td class="govuk-table__cell">31 December 2026</td>
           </tr>
         </tbody>
       </table>
@@ -51,7 +49,7 @@
     <div class="govuk-button-group govuk-!-margin-bottom-7">
       {{ govukButton({
         text: "View code",
-        href: "/childcare/v11/foster/code/valid"
+        href: "/childcare/dev/foster/code/valid"
       }) }}
 
     </div>
