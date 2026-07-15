@@ -54,16 +54,30 @@
     <p>Use the school picker to see if your child's school is included in the new service.</p>
     <p>If your child’s school is not included, you will still be able to apply for free school meals.</p>
 
-    {% include "../../../../_includes/family/v8-1/schools-postcode" %}
-    </select>
-    <div>
+    <h2 class="govuk-heading-m">School 1</h2>
 
-        <div style="padding-bottom: 24px;"></div>
-        {{ govukButton({
-          text: "Continue",
-          isStartButton: false
-        }) }}
-    </div>
+    {% include "../../../../../_includes/family/v8-1/schools-postcode" %}
+    </select>
+
+
+      <div class="moj-button-action govuk-!-margin-top-4">
+            {{ govukButton({
+              text: 'Add another school',
+              classes: 'govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4'
+            }) }}
+          </div>
+
+          <div class="moj-button-action">
+            {{ govukButton({
+              text: 'Continue'
+            }) }}
+          </div>
+
+
+
+
+
+
 
   </div>
 </div>
