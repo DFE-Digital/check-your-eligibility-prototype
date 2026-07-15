@@ -1,0 +1,62 @@
+{% extends "layouts/FSM/v8-2/family/layout-dfe-parent.html" %}
+{% set pageName="1 of 2 schools is included in this service" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/autocomplete.js"></script>
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    selectElement: document.querySelector('#school-picker')
+  })
+
+</script>
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+
+
+
+    <h2 class="govuk-heading-m">Schools included</h2>
+     <p class="govuk-body"><strong>All Saints CofE Primary school, Ilkley, LS29 8QH</strong></p>
+
+     <p>Some explanatory text</p>
+
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue",
+          href: "parent-soft-check/check"
+        }) }}
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+     <h2 class="govuk-heading-m">Schools not using this service</h2>
+
+
+      <p class="govuk-body"><strong>Westville House School, Ilkley, LS29 0DQ</strong></p>
+
+      <p>You can still apply for free school meals <a href="">using the existing process</a>.</p>
+
+
+  </div>
+</div>
+
+{% endblock %}
