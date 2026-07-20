@@ -1,0 +1,65 @@
+{% extends "/layouts/childcare/dev/layout-childcare.html" %}
+
+{% block pageTitle %}
+  There is already a foster family with this carer National Insurance (NI) number
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-panel govuk-panel--interruption">
+          <h1 class="govuk-panel__title govuk-panel__title--interruption">
+            There is already a foster family with this carer National Insurance (NI) number
+          </h1>
+          <div class="govuk-panel__body">
+            <p class="govuk-body govuk-panel__body--interruption">You entered <strong>NN123456C</strong>.</p>
+            <p class="govuk-body govuk-panel__body--interruption">If this is correct, you can add another child to the foster family of Archana Mistry.</p>
+          </div>
+          <div class="govuk-panel__actions">
+            <div class="govuk-button-group">
+              <a href="/childcare/dev/foster/family/live" role="button" draggable="false" class="govuk-button govuk-button--inverse" data-module="govuk-button">
+                Add child to family
+              </a>
+              <a class="govuk-link govuk-link--inverse" href="/childcare/dev/foster/create/carer-details">Enter a different NI number</a>
+            </div>
+          </div>
+        </div>
+
+        <!--
+
+          <div class="govuk-panel govuk-panel--interruption">
+          <h1 class="govuk-panel__title govuk-panel__title--interruption">
+            There is already a foster family for Archana Mistry
+          </h1>
+          <div class="govuk-panel__body">
+            <p class="govuk-body govuk-panel__body--interruption">You entered <strong>NN123456C</strong>. This matches the National Insurance (NI) number of the carer Archana Mistry.</p>
+            <p class="govuk-body govuk-panel__body--interruption">If this is correct, you can add another child to the foster family.</p>
+          </div>
+          <div class="govuk-panel__actions">
+            <div class="govuk-button-group">
+              <a href="#" role="button" draggable="false" class="govuk-button govuk-button--inverse" data-module="govuk-button">
+                Add child to family
+              </a>
+              <a class="govuk-link govuk-link--inverse" href="#">Enter a different NI number</a>
+            </div>
+          </div>
+        </div>
+
+        -->
+
+      </div>
+    </div>
+
+
+
+{% endblock %}
