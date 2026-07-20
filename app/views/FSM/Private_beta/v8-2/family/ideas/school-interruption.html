@@ -1,0 +1,42 @@
+{% extends "layouts/FSM/v8-2/family/layout-dfe-parent.html" %}
+{% set pageName="Children eligible" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+     <div class="govuk-panel govuk-panel--interruption">
+          <h1 class="govuk-panel__title govuk-panel__title--interruption">
+            Child 2's school is not included in this service
+          </h1>
+          <div class="govuk-panel__body">
+            <p class="govuk-body govuk-panel__body--interruption">You school you entered for child 2 is <strong>Ilkley Moor primary school</strong>.</p>
+            <p class="govuk-body govuk-panel__body--interruption">This school is not included in the online checking service. You can still apply for free school meals by...</p>
+            <p class="govuk-body govuk-panel__body--interruption">Do you want to remove child 2?</p>
+          </div>
+          <div class="govuk-panel__actions">
+            <div class="govuk-button-group">
+              <a href="#" role="button" draggable="false" class="govuk-button govuk-button--inverse" data-module="govuk-button">
+                Yes, remove child 2
+              </a>
+              <a class="govuk-link govuk-link--inverse" href="#">No, select a different school</a>
+            </div>
+          </div>
+        </div>
+
+
+
+  </div>
+</div>
+
+
+{% endblock %}
