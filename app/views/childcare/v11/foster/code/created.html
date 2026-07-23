@@ -1,7 +1,7 @@
 {% extends "/layouts/childcare/v11/layout-childcare.html" %}
 
 {% block pageTitle %}
-  Eligibility code for Casper Hayes
+  Eligibility code for Hope Kennedy
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,18 +16,19 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
 
-    <h1 class="govuk-heading-l">Eligibility code for Casper Hayes</h1>
+    <h1 class="govuk-heading-l">Eligibility code for {{ data["child-first-name"] or "Hope" }} {{ data["child-last-name"] or "Kennedy" }}</h1>
 
-    <!--
+
 
     <div class="govuk-button-group">
+      <!--
 
       {{ govukButton({
         text: "Transfer this code",
         classes: "govuk-button--secondary",
         href: "/childcare/v11/foster/transfer/transfer"
       }) }}
-
+         -->
 
        {{ govukButton({
           text: "Archive code",
@@ -36,7 +37,7 @@
         }) }}
     </div>
 
-    -->
+
 
     <div class="govuk-summary-card" id="code">
       <div class="govuk-summary-card__title-wrapper">
@@ -73,7 +74,7 @@
               Code status
             </dt>
             <dd class="govuk-summary-list__value">
-              Valid for spring term 2026 and summer term 2026
+              Valid from autumn term 2026
             </dd>
             <dd class="govuk-summary-list__actions">
             </dd>
@@ -93,7 +94,7 @@
               Reconfirm between
             </dt>
             <dd class="govuk-summary-list__value">
-              10 April 2026 and 13 May 2026
+              {{ "today" | duration(3, 'months') | govukDate }} and {{ "today" | duration(4, 'months') | govukDate }}
             </dd>
             <dd class="govuk-summary-list__actions">
             </dd>
@@ -103,7 +104,7 @@
               Grace period ends
             </dt>
             <dd class="govuk-summary-list__value">
-              31 August 2026
+              31 March 2027
             </dd>
             <dd class="govuk-summary-list__actions">
             </dd>
@@ -133,7 +134,7 @@
               Full name
             </dt>
             <dd class="govuk-summary-list__value">
-              Casper Hayes
+              {{ data["child-first-name"] or "Hope" }} {{ data["child-last-name"] or "Kennedy" }}
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -141,7 +142,7 @@
               Date of birth
             </dt>
             <dd class="govuk-summary-list__value">
-              24 December 2023
+              {{ data["child-dob-day"] or "15" }} {{ data["child-dob-month"] or "January" }} {{ data["child-dob-year"] or "2024" }}
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -175,7 +176,7 @@
               Carer
             </dt>
             <dd class="govuk-summary-list__value">
-              Archana Mistry
+              Tina Lofts
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -183,7 +184,7 @@
               Partner
             </dt>
             <dd class="govuk-summary-list__value">
-              Ajay Mistry
+              Sam Lofts
             </dd>
           </div>
         </dl>

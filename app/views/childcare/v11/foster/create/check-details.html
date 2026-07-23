@@ -39,7 +39,7 @@
                   Full name
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data["carer-first-name"] or "Archana" }} {{ data["carer-last-name"] or "Mistry" }}
+                  {{ data["carer-first-name"] or "Tina" }} {{ data["carer-last-name"] or "Lofts" }}
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -88,7 +88,7 @@
                   Full name
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data["partner-first-name"] or "Ajay" }} {{ data["partner-last-name"] or "Mistry" }}
+                  {{ data["partner-first-name"] or "Sam" }} {{ data["partner-last-name"] or "Lofts" }}
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -129,7 +129,7 @@
                   Full name
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data["child-first-name"] or "Casper" }} {{ data["child-last-name"] or "Hayes" }}
+                  {{ data["child-first-name"] or "Hope" }} {{ data["child-last-name"] or "Kennedy" }}
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -137,7 +137,7 @@
                   Date of birth
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data["child-dob-day"] or "24" }} {{ data["child-dob-month"] or "December" }} {{ data["child-dob-year"] or "2023" }}
+                  {{ data["child-dob-day"] or "15" }} {{ data["child-dob-month"] or "January" }} {{ data["child-dob-year"] or "2024" }}
                 </dd>
               </div>
 
@@ -179,7 +179,7 @@
                   Code valid from
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  Summer term 2026 (starts 1 April 2026)
+                  Autumn term 2026 (starts 1 September 2026)
                 </dd>
               </div>
                <div class="govuk-summary-list__row">
@@ -187,7 +187,7 @@
                   Reconfirm between
                 </dt>
                 <dd class="govuk-summary-list__value">
-                   25 April 2026 and 24 May 2026
+                   {{ "today" | duration(3, 'months') | govukDate }} and {{ "today" | duration(4, 'months') | govukDate }}
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -195,7 +195,7 @@
                   Grace period ends
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  31 August 2026
+                  31 March 2027
                 </dd>
               </div>
 
