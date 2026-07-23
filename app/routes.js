@@ -476,25 +476,43 @@ else {
 })
 
 
-// FSM v8-2 family eligibility results
+// FSM v8-2i family eligibility results
 
-router.post('/FSM/Private_beta/v8-2/family/parent-soft-check/outcomes/eligible-expanded', function(req, res) {
+router.post('/FSM/Private_beta/v8-2/family/i/parent-soft-check/outcomes/eligible-expanded', function(req, res) {
 
 var NINumber = req.session.data['ni-number-entered']
 if (NINumber == "NA123456A"){
-    res.redirect("/FSM/Private_beta/v8-2/family/parent-soft-check/outcomes/eligible-targeted")
+    res.redirect("/FSM/Private_beta/v8-2/family/i/parent-soft-check/outcomes/eligible-targeted")
 }
 
 if (NINumber == "NN123456A"){
-    res.redirect("/FSM/Private_beta/v8-2/family/parent-soft-check/outcomes/eligible-la")
+    res.redirect("/FSM/Private_beta/v8-2/family/i/parent-soft-check/outcomes/eligible-la")
 }
 
 if (NINumber == "PN123456A"){
-    res.redirect("/FSM/Private_beta/v8-2/family/parent-soft-check/outcomes/not-eligible")
+    res.redirect("/FSM/Private_beta/v8-2/family/i/parent-soft-check/outcomes/not-eligible")
 }
 
 else {
-    res.redirect("/FSM/Private_beta/v8-2/family/parent-soft-check/outcomes/eligible-expanded")
+    res.redirect("/FSM/Private_beta/v8-2/family/i/parent-soft-check/outcomes/eligible-expanded")
+}
+})
+
+// FSM v8-2ii family eligibility results
+
+router.post('/FSM/Private_beta/v8-2/family/ii/parent-soft-check/outcomes/eligible-expanded', function(req, res) {
+
+var NINumber = req.session.data['ni-number-entered']
+if (NINumber == "NA123456A"){
+    res.redirect("/FSM/Private_beta/v8-2/family/ii/parent-soft-check/outcomes/eligible-targeted")
+}
+
+if (NINumber == "PN123456A"){
+    res.redirect("/FSM/Private_beta/v8-2/family/ii/parent-soft-check/outcomes/not-eligible")
+}
+
+else {
+    res.redirect("/FSM/Private_beta/v8-2/family/ii/parent-soft-check/outcomes/eligible-expanded")
 }
 })
 
