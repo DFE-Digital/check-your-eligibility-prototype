@@ -37,9 +37,9 @@
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">Asher Ellis</td>
             <td class="govuk-table__cell">40019283754</td>
-            <td class="govuk-table__cell">Valid for spring term 2026 and summer term 2026</td>
-            <td class="govuk-table__cell">10 June 2026 and 10 July 2026</td>
-            <td class="govuk-table__cell">31 December 2026</td>
+            <td class="govuk-table__cell">Valid for summer term 2026 and autumn term 2026</td>
+            <td class="govuk-table__cell">{{ "today" | duration(3, 'months') | govukDate }} and {{ "today" | duration(4, 'months') | govukDate }}</td>
+            <td class="govuk-table__cell">31 March 2027</td>
           </tr>
         </tbody>
       </table>
@@ -48,7 +48,7 @@
 
     <div class="govuk-button-group govuk-!-margin-bottom-7">
       {{ govukButton({
-        text: "View code",
+        text: "View code details",
         href: "/childcare/v11/foster/code/valid"
       }) }}
 
