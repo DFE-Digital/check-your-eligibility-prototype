@@ -16,7 +16,7 @@
         Child added and code created
       </h1>
       <div class="govuk-panel__body">
-        Eligibility code <br> <strong>40019283987</strong>
+        Eligibility code <br> <strong>40049608189</strong>
       </div>
     </div>
 
@@ -37,11 +37,11 @@
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">Casper Hayes</td>
-            <td class="govuk-table__cell">40019283987</td>
-            <td class="govuk-table__cell">Valid from summer term 2026</td>
+            <td class="govuk-table__cell">40049608189</td>
+            <td class="govuk-table__cell">Valid from autumn term 2026</td>
             <td class="govuk-table__cell">{{ "today" | govukDate }}</td>
-            <td class="govuk-table__cell">25 Mar 2026 and 25 April 2026</td>
-            <td class="govuk-table__cell">31 August 2026</td>
+            <td class="govuk-table__cell">{{ "today" | duration(3, 'months') | govukDate }} and {{ "today" | duration(4, 'months') | govukDate }}</td>
+            <td class="govuk-table__cell">31 March 2027</td>
           </tr>
         </tbody>
       </table>
@@ -50,7 +50,7 @@
 
     <div class="govuk-button-group govuk-!-margin-bottom-7">
       {{ govukButton({
-        text: "View code",
+        text: "View code details",
         href: "/childcare/v11/foster/code/valid"
       }) }}
 
