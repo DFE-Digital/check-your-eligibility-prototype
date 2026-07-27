@@ -34,9 +34,23 @@
 
       </div>
 
-      <button type="Submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
-        Continue
-      </button>
+      </form>
+
+       {% if (data['appeal'] == "yes") %}
+
+             {{ govukButton({
+              text: "Continue",
+              href: "../account/appeal/child-details"
+            }) }}
+
+        {% else %}
+
+            {{ govukButton({
+              text: "Continue",
+              href: "../account/apply/child-details"
+            }) }}
+
+        {% endif %}
 
 
       <details class="govuk-details" data-module="govuk-details">
@@ -58,7 +72,7 @@
         </div>
       </details>
 
-    </form>
+
 
   </div>
 </div>
