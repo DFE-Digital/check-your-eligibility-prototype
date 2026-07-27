@@ -1,0 +1,50 @@
+{% extends "layouts/FSM/v8-2/family/layout-dfe-parent.html" %}
+{% set pageName="Apply using your local authority website" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+    <p class="govuk-body">You can apply for free school meals at <strong>All Saints CofE Primary school, Ilkley, LS29 8QH</strong> through your local authority website.</p>
+
+    <p>To support your claim for free school meals, you can provide:</p>
+
+            <ul class="govuk-list govuk-list--bullet ">
+                  <li>up to three of your latest Universal Credit statements </li>
+                  <li>a letter of Entitlement for income-related Employment and Support Allowance (ESA)</li>
+                  <li>a letter of Entitlement for the guaranteed element of Pension Credit</li>
+                  <li>documents showing you are receiving relevant support under part VI of the Immigration and Asylum Act 1999</li>
+            </ul>
+
+
+    {{ govukButton({
+      text: "Apply for free school meals",
+      href: "https://www.gov.uk/apply-free-school-meals",
+      classes: "govuk-!-margin-top-4"
+      })
+    }}
+
+    <hr class="govuk-section-break govuk-section-break govuk-section-break--m">
+
+    <h2 class="govuk-heading-m">Further guidance and other ways to apply</h2>
+    <p>If you need further support, <a href="../../guidance/parent-guidance">check the more detailed guidance</a> for parents and guardians.</p>
+    <p>If you cannot apply online, you can fill in the <a href="/FSM/Private_beta/v8-2/_offline//fsm-print-version">free school meals claim form</a> and give it to your children's school. </p>
+
+
+  </div>
+</div>
+
+{% endblock %}
