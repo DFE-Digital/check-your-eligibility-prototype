@@ -174,17 +174,26 @@
               <a class="govuk-link" href="/childcare/v11/foster/code/valid">View<span class="govuk-visually-hidden">child 1</span></a>
             </dd>
           </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Child 2
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Casper Hayes
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">View<span class="govuk-visually-hidden">child 2</span></a>
-            </dd>
-          </div>
+          {% if (data['add-child'] == "added") %}
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Child 2
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Casper Hayes
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">View<span class="govuk-visually-hidden">child 2</span></a>
+              </dd>
+            </div>
+
+            {% else %}
+
+
+
+            {% endif %}
+
         </dl>
       </div>
     </div>

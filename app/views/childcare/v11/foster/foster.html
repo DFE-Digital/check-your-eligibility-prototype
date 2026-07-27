@@ -136,17 +136,27 @@
               <td class="govuk-table__cell govuk-visually-hidden">Valid for spring term 2026 and<br>summer term 2026 </td>
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Not due yet</strong></td>
             </tr>
-            <tr class="govuk-table__row">
+
+            {% if (data['add-child'] == "added") %}
+
+             <tr class="govuk-table__row">
               <td class="govuk-table__cell"><a href="/childcare/v11/foster/code/valid">Casper Hayes</a></td>
               <td class="govuk-table__cell">5 Apr 2024</td>
               <td class="govuk-table__cell">40049608189</td>
               <td class="govuk-table__cell"><a href="/childcare/v11/foster/family/live">Archana Mistry</a> </td>
-              <td class="govuk-table__cell">29 Jan 2026</td>
+              <td class="govuk-table__cell">{{ "today" | govukDate("truncate") }}</td>
               <td class="govuk-table__cell">{{ "today" | duration(2, 'months') | govukDate("truncate") }} and {{ "today" | duration(3 , 'months') | govukDate("truncate") }}</td>
               <td class="govuk-table__cell">31 Mar 2027</td>
               <td class="govuk-table__cell govuk-visually-hidden">Valid for spring term 2026 and<br>summer term 2026 </td>
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Not due yet</strong></td>
             </tr>
+
+            {% else %}
+
+
+
+            {% endif %}
+
 
             {% if (data['foster-code'] == "created") %}
 

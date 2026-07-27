@@ -1,5 +1,5 @@
 {% extends "layouts/FSM/v8-2/family/layout-dfe-parent.html" %}
-{% set pageName="You can use this service" %}
+{% set pageName="Apply online" %}
 
 {% block beforeContent %}
   {{ govukBackLink({
@@ -30,21 +30,37 @@
 
     <h1 class="govuk-heading-l">{{pageName}}</h1>
 
-    <p>The school you selected is included in the new service</p>
-
-     <!--  <p class="govuk-body"><strong>All Saints CofE Primary school, Ilkley, LS29 8QH</strong>  is included in the service.</p> -->
+    <!-- <p>The school you selected is included in the new service</p> -->
 
 
 
+     <p class="govuk-body"><strong>All Saints CofE Primary school, Ilkley, LS29 8QH</strong>  accepts online applications.</p>
 
+     <h2 class="govuk-heading-m">How to apply</h2>
+
+
+    <ol>
+      <li>Sign in or create a GOV.UK One Login.</li>
+      <li>Add your children's details.</li>
+      <li>Your application will be sent to the school.</li>
+      <li>Your children's school will arrange the free school meals</li>
+    </ol>
+
+    {{ govukDetails({
+      summaryText: "About GOV.UK One Login",
+      text: "GOV.UK One Login lets you sign in quickly and easily. You can use the same account for some other government services."
+    }) }}
 
       <!--
-      -->
+
       <div class="govuk-inset-text">
         St Mary's School<br>
         Cambridgeshire<br>
         CB2 1LY
       </div>
+       -->
+
+      <!--
 
        <details class="govuk-details">
         <summary class="govuk-details__summary">
@@ -61,15 +77,23 @@
         </div>
       </details>
 
+      -->
+
 
       <div class="govuk-button-group">
         {{ govukButton({
-          text: "Continue",
-          href: "parent-soft-check/check"
+          text: "Continue to GOV.UK One Login",
+          href: "../login/signin-or-create"
         }) }}
         <!--<a class="govuk-link" href="beta-school-check">Check another school</a>-->
       </div>
     </form>
+
+    <hr class="govuk-section-break govuk-section-break govuk-section-break--m">
+
+    <h2 class="govuk-heading-m">Further guidance and other ways to apply</h2>
+    <p>If you need further support, <a href="../../guidance/parent-guidance">check the more detailed guidance</a> for parents and guardians.</p>
+    <p>If you cannot apply online, you can fill in the <a href="/FSM/Private_beta/v8-2/_offline//fsm-print-version">free school meals claim form</a> and give it to your children's school. </p>
 
   </div>
 </div>
