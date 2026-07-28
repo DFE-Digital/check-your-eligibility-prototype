@@ -40,17 +40,22 @@
       <li class="govuk-body-s contents-list-item">
         <a href="#dashboard"><span class="contents-list-item-number" >1.</span><span class="contents-list-item-text">Dashboard</span></a>
       </li>
+      <!--
       <li class="govuk-body-s contents-list-item">
         <a href="#check"><span class="contents-list-item-number" >2.</span><span class="contents-list-item-text">Run a check</span></a>
       </li>
        <li class="govuk-body-s contents-list-item">
         <a href="#reports"><span class="contents-list-item-number" >3.</span><span class="contents-list-item-text">Run reports</span></a>
       </li>
-       <li class="govuk-body-s contents-list-item">
-        <a href="#temp-codes"><span class="contents-list-item-number" >4.</span><span class="contents-list-item-text">Import temporary codes</span></a>
+      -->
+      <li class="govuk-body-s contents-list-item">
+        <a href="#temp-codes"><span class="contents-list-item-number" >2.</span><span class="contents-list-item-text">Import temporary codes</span></a>
       </li>
       <li class="govuk-body-s contents-list-item">
-        <a href="#error-messages"><span class="contents-list-item-number" >5.</span><span class="contents-list-item-text">Error messaging</span></a>
+        <a href="#corrections"><span class="contents-list-item-number" >3.</span><span class="contents-list-item-text">Make code corrections</span></a>
+      </li>
+      <li class="govuk-body-s contents-list-item">
+        <a href="#error-messages"><span class="contents-list-item-number" >4.</span><span class="contents-list-item-text">Error messaging</span></a>
       </li>
     </ol>
 
@@ -77,7 +82,7 @@
         </tbody>
       </table>
 
-      <!--Run a check-->
+      <!--Run a check
 
       <h2 id="check">Run a check</h2>
 
@@ -140,7 +145,9 @@
         </tbody>
       </table>
 
-       <!--Run reports-->
+      -->
+
+       <!--Run reports
 
       <h2 id="reports">Run reports</h2>
 
@@ -158,6 +165,8 @@
           </tr>
         </tbody>
       </table>
+
+      -->
 
 
       <!--temp codes-->
@@ -209,6 +218,84 @@
             <td class="govuk-table__cell"><a href="/support/dev/temp-code/errors/data-error">Data error</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
           </tr>
+        </tbody>
+      </table>
+
+      <h2 id="corrections">Make code corrections</h2>
+
+      <table class="govuk-table ">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/corrections/search-code">Search for a code</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="">Code not found - TBC</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--red long-tag">Missing</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/corrections/code">Eligibility code record</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Edit child</h3>
+
+      <table class="govuk-table ">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/corrections/child-details">Edit child details</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/corrections/check-child-details">Check child details</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/corrections/code?edit-type=child&change=saved">Child details saved</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Edit carer</h3>
+
+       <table class="govuk-table ">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/corrections/carer-details">Edit carer details</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/corrections/check-carer-details">Check carer details</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/corrections/code?edit-type=parent, guardian or carer&change=saved">Carer details saved</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <h3>Edit partner</h3>
+
+      <table class="govuk-table ">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/corrections/partner-details">Edit partner details</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/corrections/check-partner-details">Check partner details</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/support/dev/corrections/code?edit-type=partner&change=saved">Partner details saved</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--yellow long-tag">Design signed off</strong></td>
+          </tr>
+
         </tbody>
       </table>
 
