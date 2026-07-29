@@ -9,14 +9,14 @@
     defaultValue: '',
     selectElement: document.querySelector('#school-picker')
   })
-document.adv8-1entListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
 
   var addAnotherButton = document.querySelector('.moj-add-another__add-button');
   var removeButton = document.querySelectorAll('.moj-add-another__remove-button');
   removeButton.forEach(function (button){
-    button.adv8-1entListener('click', updateLegends);
+    button.addEventListener('click', updateLegends);
   });
-  addAnotherButton.adv8-1entListener('click', updateLegends);
+  addAnotherButton.addEventListener('click', updateLegends);
   function updateLegends(){
     setTimeout(() => {
       const legends = document.querySelectorAll('.moj-add-another__title');
@@ -25,7 +25,7 @@ document.adv8-1entListener('DOMContentLoaded', function () {
       });
       var removeButton = document.querySelectorAll('.moj-add-another__remove-button');
       removeButton.forEach(function (button){
-        button.adv8-1entListener('click', updateLegends);
+        button.addEventListener('click', updateLegends);
     });
     }, 50);
   }
@@ -43,7 +43,7 @@ document.adv8-1entListener('DOMContentLoaded', function () {
       <div data-module="moj-add-another">
 
         <h1 class="govuk-heading-l" tabindex="-1">{{pageName}}</h1>
-        <p>Include all your children who are in compulsory education.</p>
+        <p>Only add children who attend schools included in this service.</p>
 
         <form method="post">
 
@@ -142,7 +142,7 @@ document.adv8-1entListener('DOMContentLoaded', function () {
 
           <div class="moj-button-action">
             {{ govukButton({
-              text: 'Save and continue'
+              text: 'Continue'
             }) }}
           </div>
 

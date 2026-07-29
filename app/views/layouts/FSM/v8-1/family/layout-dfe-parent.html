@@ -14,7 +14,7 @@
 <header class="govuk-header" data-module="govuk-header">
   <div class="govuk-header__container govuk-width-container">
       <div class="govuk-header__logo">
-        <a href="/fsm/index-fsm" class="govuk-header__link govuk-header__link--homepage">
+        <a href="/fsm/index/research-parent" class="govuk-header__link govuk-header__link--homepage">
             <img src="/public/images/department-for-education_white.png" alt="Department for Education" class="govuk-header__logotype">
         </a>
       </div>
@@ -32,7 +32,7 @@
 
 <div class="app-phase-banner__wrapper govuk-!-margin-top-2">
 
-  <div class="govuk-phase-banner app-phase-banner govuk-width-container">
+  <div class="govuk-phase-banner app-phase-banner govuk-width-container govuk-!-display-none-print">
     <p class="govuk-phase-banner__content">
       <strong class="govuk-tag govuk-phase-banner__content__tag">
         beta
@@ -56,6 +56,7 @@
 {% block footer %}
  {{ govukFooter({
    rebrand: "true",
+   classes: "govuk-!-display-none-print",
    meta: {
      items: [
        {
@@ -69,7 +70,11 @@
        {
         href: "https://accessibility-statements.education.gov.uk/s/71",
         text: "Accessibility statement"
-      }
+      },
+      {
+         href: "/manage-prototype/clear-data",
+         text: "Clear data"
+       }
      ],
      visuallyHiddenTitle: "Footer links"
    }

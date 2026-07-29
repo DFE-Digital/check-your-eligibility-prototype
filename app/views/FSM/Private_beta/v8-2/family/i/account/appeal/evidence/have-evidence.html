@@ -1,0 +1,58 @@
+{% extends "layouts/FSM/v8-2/family/layout-dfe-parent.html" %}
+{% set pageName="Provide supporting evidence" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{%block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds ">
+
+    <form method="post" novalidate>
+
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Provide supporting evidence
+            </h1>
+          </legend>
+          <p>You'll need to provide evidence that shows your are eligible for free school meals. Read the <a href="/FSM/Private_beta/v8-2/family/i/guidance/parent-guidance.html">guidance for parents and guardians</a> for information about providing the right evidence.</p>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="v8digital~/FSM/Private_beta/v8-2/family/i/account/appeal/evidence/upload-guidance-digital" aria-describedby="signIn-item-hint">
+              <label class="govuk-label govuk-radios__label" for="signIn">
+                Upload digital files
+              </label>
+              <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                Upload a document or photo from your device
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="none~/FSM/Private_beta/v8-2/family/i/account/appeal/check-answers/check-answers-no-evidence" aria-describedby="signIn-2-item-hint">
+              <label class="govuk-label govuk-radios__label" for="signIn-2">
+                Take it into school
+              </label>
+              <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
+                Continue without uploading anything and take evidence into your children's schools
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+      text: "Continue",
+      classes:'govuk-!-margin-top-5'
+      }) }}
+    </form>
+
+
+
+    {%endblock %}

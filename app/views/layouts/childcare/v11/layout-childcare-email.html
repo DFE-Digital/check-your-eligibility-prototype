@@ -1,0 +1,47 @@
+{# 1 #}
+{% from 'node_modules/dfe-frontend/packages/components/header/macro.njk' import header %}
+
+{# 2 #}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+
+
+
+{% set govukRebrand = true %}
+
+{% block bodyStart %}
+  <div class="govuk-width-container app-email__metadata-container">
+    <div class="app-email__metadata govuk-!-padding-top-5">
+      <p class="govuk-body-s">Subject: {{ subject }}</p>
+      <p class="govuk-body-s">From: {{ from or "GOV.UK <service@gov.uk>" }}</p>
+      <p class="govuk-body-s govuk-!-margin-bottom-5">To: {{ to or "Name <name@example.com>" }} </p>
+    </div>
+  </div>
+{% endblock %}
+
+{# 3 #}
+{% block header %}
+
+<header class="govuk-header" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+      <div class="govuk-header__logo">
+        <a href="/childcare/index-childcare" class="govuk-header__link govuk-header__link--homepage">
+            <img src="/public/images/department-for-education_white.png" alt="Department for Education" class="govuk-header__logotype">
+        </a>
+      </div>
+  </div>
+</header>
+
+
+{% endblock %}
+
+
+{% block footer %}
+
+{% endblock %}
+
+{# 4 #}
+{% block scripts %}
+  {{ super() }}
+
+{% endblock %}
