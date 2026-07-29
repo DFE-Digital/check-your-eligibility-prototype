@@ -1,8 +1,8 @@
-Parent Last Name,Parent Date of Birth,Parent National Insurance Number,Reference(optional),Outcome
+Parent Last Name,Parent Date of Birth,Parent National Insurance Number,Reference(optional),Outcome,Error code,Correlation ID
 Doe,1/1/1970,QQ123456B,,Not eligible at time of check
 Mann,2/3/1975,QQ522456B,,Information does not match records
 Smith,15/06/1980,QQ383246C,,Eligible
-Brown,22/09/1965,QQ146397D,,System error - try again later
+Brown,22/09/1965,QQ146397D,,System error,TE201,000a2732-f100-4346-99e3-768a29378ee6
 Green,12/4/1988,QQ389105B,,Not eligible at time of check
 Black,7/11/1978,QQ387645B,,Eligible
 Blue,20/12/1966,QQ018274C,,Eligible
