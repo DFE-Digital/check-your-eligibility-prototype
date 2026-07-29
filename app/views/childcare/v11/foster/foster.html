@@ -54,13 +54,14 @@
 
      <!-- <h2 class="govuk-heading-m">Children and eligibility codes</h2> -->
 
-      <!--
+      <!--    -->
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="sort">
             Sort by
           </label>
           <select class="govuk-select" id="sort" name="sort">
+            <option value="child">Carer name</option>
             <option value="child">Child name</option>
             <option value="child">Child date of birth</option>
             <option value="code">Eligibility code</option>
@@ -68,7 +69,7 @@
           </select>
         </div>
 
-         -->
+
 
         <table class="govuk-table govuk-table--small-text-until-tablet">
           <caption class="govuk-table__caption govuk-table__caption--m"></caption>
@@ -87,6 +88,23 @@
             </tr>
           </thead>
           <tbody class="govuk-table__body">
+             {% if (data['code'] == "archived") %}
+
+            {% else %}
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/childcare/v11/foster/code/laslo">Laslo Small</a></td>
+              <td class="govuk-table__cell">6 Sep 2023</td>
+              <td class="govuk-table__cell">40019283987</td>
+              <td class="govuk-table__cell"><a href="">Jim Smith</a></td>
+              <td class="govuk-table__cell">24 Apr 2025</td>
+              <td class="govuk-table__cell">13 Jun 2025 and 13 Jul 2025</td>
+              <td class="govuk-table__cell">31 Aug 2025</td>
+              <td class="govuk-table__cell govuk-visually-hidden">Expired</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Overdue</strong></td>
+            </tr>
+
+            {% endif %}
+
             <tr class="govuk-table__row">
               <td class="govuk-table__cell"><a href="/childcare/v11/foster/code/expired">Yeong Park</a> </td>
               <td class="govuk-table__cell">10 Oct 2022</td>
@@ -99,19 +117,7 @@
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Overdue</strong></td>
 
             </tr>
-            <!--
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="/childcare/v11/foster/code/laslo">Laslo Small</a></td>
-              <td class="govuk-table__cell">6 Sep 2023</td>
-              <td class="govuk-table__cell">40019283987</td>
-              <td class="govuk-table__cell"><a href="/childcare/v11/foster/family/live">Patrick Johnson</a> </td>
-              <td class="govuk-table__cell">24 Apr 2025</td>
-              <td class="govuk-table__cell">13 Jun 2025 and 13 Jul 2025</td>
-              <td class="govuk-table__cell">31 Aug 2025</td>
-              <td class="govuk-table__cell govuk-visually-hidden">Expired</td>
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Overdue</strong></td>
-            </tr>
-            -->
+
              <tr class="govuk-table__row">
               <td class="govuk-table__cell"><a href="/childcare/v11/foster/code/due">Asher Ellis</a></td>
               <td class="govuk-table__cell">1 Mar 2024</td>
