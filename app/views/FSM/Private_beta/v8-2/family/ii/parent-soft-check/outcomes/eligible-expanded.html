@@ -1,0 +1,67 @@
+{% extends "layouts/FSM/v8-2/family/layout-dfe-parent.html" %}
+{% set pageName="Apply for free school meals for your children" %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <!--   -->
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+      aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Children eligible
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          Your children are eligible for free school meals.
+        </h3>
+        <p>Your children can get free school meals for the school year 2026-2027. </p>
+
+      </div>
+    </div>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Full name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["first-name"] or "Angela" }} {{ data["surname"] or "Jenkins" }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of check
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ "today" | govukDate }}
+        </dd>
+      </div>
+    </dl>
+
+    <p>You can <a href="">print this page</a> for your own records.</p>
+
+
+     <h2 class="govuk-heading-m">Next steps</h2>
+
+     <p>You can now apply for free school meals. To apply you will need to:</p>
+
+     <ul>
+      <li>provide details of your child's school</li>
+      <li>apply online using this service, or apply using your local authority website</li>
+     </ul>
+
+
+    <form action="../../school-check/school-check" method="post" novalidate>
+      <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">
+        Continue
+        </button>
+    </form>
+
+
+  </div>
+</div>
+
+
+{% endblock %}

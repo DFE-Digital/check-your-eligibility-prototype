@@ -1,0 +1,48 @@
+{% extends "layouts/FSM/v8-1/family/layout-dfe-parent.html" %}
+
+{% set pageName="You need a National Insurance number to use this service" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">You need a National Insurance number to use this online service</h1>
+
+
+    <p>Use the <a href="https://www.gov.uk/lost-national-insurance-number">Find your National Insurance number service</a> if you have lost your National Insurance number.</p>
+
+    <p>You can also <a href="">apply for a National Insurance number</a> online.</p>
+
+
+    <h2 class="govuk-heading-m">Other ways to check if your children can get free school meals</h2>
+
+    <h3 class="govuk-heading-s">Form</h3>
+
+    <p><a href="">Link to pdf form page</a></p>
+
+    <h3 class="govuk-heading-s">Asylum seekers and NRPF</h3>
+
+
+    <p>Some info</p>
+
+    <h2 class="govuk-heading-m">Get help and support</h2>
+
+    <p>If you need more help, please contact your school administrator.</p>
+
+
+
+  </div>
+</div>
+
+{% endblock %}
+

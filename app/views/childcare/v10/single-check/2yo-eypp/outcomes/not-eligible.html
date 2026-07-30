@@ -1,7 +1,7 @@
 {% extends "/layouts/childcare/v10/layout-childcare.html" %}
 
 {% block pageTitle %}
-  May not be eligible
+  Not eligible at time of check
 {% endblock %}
 
 {% block content %}
@@ -12,18 +12,18 @@
     <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
       <div class="govuk-notification-banner__header">
         <h1 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          May not be eligible
+          Not eligible at time of check
         </h1>
       </div>
       <div class="govuk-notification-banner__content">
         <h3 class="govuk-notification-banner__heading">
-          The children of this parent or guardian may not be eligible for {{ data['eligibility-type'] }}.
+          The children of this parent or guardian are not be eligible for {{ data['eligibility-type'] }} at the time of this check.
         </h3>
-        <p class="govuk-body">They'll need to provide supporting evidence if they think they're eligible.</p>
+        <p class="govuk-body">If the parent or guardian thinks they are eligible, ask them to provide supporting evidence. </p>
       </div>
     </div>
 
-    <h2 class="govuk-heading-m">Parent or guardian details</h2>
+    <h2 class="govuk-heading-m">Parent or guardian details checked</h2>
 
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
@@ -54,13 +54,13 @@
 
     <h2 class="govuk-heading-m govuk-!-margin-top-8">What to do next</h2>
 
-    <p>You can <a href="" class="govuk-link" onclick="printPage()">print this page</a> for the parent or guardian to keep.</p>
+
 
 
     <p class="govuk-body">If the parent or guardian provides supporting evidence, you'll need to review it and decide if they're eligible.</p>
 
 
-    <h2 class="govuk-heading-m">Guidance</h2>
+    <!--  <h2 class="govuk-heading-m">Guidance</h2>-->
 
 
     {% if (data['eligibility-type'] == "Early learning for 2-year-olds") %}
@@ -81,6 +81,9 @@
         href: '/childcare/v10/single-check/single',
         classes: 'govuk-!-margin-top-6'
       }) }}
+
+
+    <p>You can <a href="" class="govuk-link" onclick="printPage()">print this page</a> for the parent or guardian to keep.</p>
 
 
 

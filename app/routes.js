@@ -382,6 +382,59 @@ else {
 })
 
 
+// Childcare v11
+
+// Route for create foster family add partner details
+
+router.post('/childcare/v11/foster/create/partner-details', function(req, res) {
+
+var carerPartner = req.session.data['add-partner']
+if (carerPartner == "Yes"){
+    res.redirect("/childcare/v11/foster/create/partner-details")
+}
+
+else {
+    res.redirect("/childcare/v11/foster/create/child-details")
+}
+})
+
+// CHP select subservice
+
+router.post('/childcare/v11/help/cc/query-type', function(req, res) {
+
+var subService = req.session.data['select-subservice']
+if (subService == "fsm"){
+    res.redirect("/childcare/v11/help/fsm/user-type")
+}
+
+if (subService == "api"){
+    res.redirect("/childcare/v11/help/api/query-type")
+}
+
+else {
+    res.redirect("/childcare/v11/help/cc/query-type")
+}
+})
+
+// CHP FSM select user type
+
+router.post('/childcare/v11/help/fsm/query-type', function(req, res) {
+
+var fsmUser = req.session.data['fsm-user']
+if (fsmUser == "school"){
+    res.redirect("/childcare/v11/help/fsm/school")
+}
+
+if (fsmUser == "parent"){
+    res.redirect("/childcare/v11/help/fsm/parent")
+}
+
+else {
+    res.redirect("/childcare/v11/help/fsm/query-type")
+}
+})
+
+
 
 // Childcare dev ready
 
@@ -396,6 +449,70 @@ if (carerPartner == "Yes"){
 
 else {
     res.redirect("/childcare/dev/foster/create/child-details")
+}
+})
+
+
+// FSM v8-1 family eligibility results
+
+router.post('/FSM/Private_beta/v8-1/family/parent-soft-check/outcomes/eligible-expanded', function(req, res) {
+
+var NINumber = req.session.data['ni-number-entered']
+if (NINumber == "NA123456A"){
+    res.redirect("/FSM/Private_beta/v8-1/family/parent-soft-check/outcomes/eligible-targeted")
+}
+
+if (NINumber == "NN123456A"){
+    res.redirect("/FSM/Private_beta/v8-1/family/parent-soft-check/outcomes/eligible-la")
+}
+
+if (NINumber == "PN123456A"){
+    res.redirect("/FSM/Private_beta/v8-1/family/parent-soft-check/outcomes/not-eligible")
+}
+
+else {
+    res.redirect("/FSM/Private_beta/v8-1/family/parent-soft-check/outcomes/eligible-expanded")
+}
+})
+
+
+// FSM v8-2i family eligibility results
+
+router.post('/FSM/Private_beta/v8-2/family/i/parent-soft-check/outcomes/eligible-expanded', function(req, res) {
+
+var NINumber = req.session.data['ni-number-entered']
+if (NINumber == "NA123456A"){
+    res.redirect("/FSM/Private_beta/v8-2/family/i/parent-soft-check/outcomes/eligible-targeted")
+}
+
+if (NINumber == "NN123456A"){
+    res.redirect("/FSM/Private_beta/v8-2/family/i/parent-soft-check/outcomes/eligible-la")
+}
+
+if (NINumber == "PN123456A"){
+    res.redirect("/FSM/Private_beta/v8-2/family/i/parent-soft-check/outcomes/not-eligible")
+}
+
+else {
+    res.redirect("/FSM/Private_beta/v8-2/family/i/parent-soft-check/outcomes/eligible-expanded")
+}
+})
+
+// FSM v8-2ii family eligibility results
+
+router.post('/FSM/Private_beta/v8-2/family/ii/parent-soft-check/outcomes/eligible-expanded', function(req, res) {
+
+var NINumber = req.session.data['ni-number-entered']
+if (NINumber == "NA123456A"){
+    res.redirect("/FSM/Private_beta/v8-2/family/ii/parent-soft-check/outcomes/eligible-targeted")
+}
+
+if (NINumber == "PN123456A"){
+    res.redirect("/FSM/Private_beta/v8-2/family/ii/parent-soft-check/outcomes/not-eligible")
+}
+
+else {
+    res.redirect("/FSM/Private_beta/v8-2/family/ii/parent-soft-check/outcomes/eligible-expanded")
 }
 })
 

@@ -1,0 +1,65 @@
+{% extends "layouts/FSM/v8-2/family/layout-dfe-parent.html" %}
+{% set pageName="Not eligible at time of check" %}
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+            <!--    -->
+            <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+                  data-module="govuk-notification-banner">
+                  <div class="govuk-notification-banner__header">
+                        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                              {{pageName}}
+                        </h2>
+                  </div>
+                  <div class="govuk-notification-banner__content">
+                        <p class="govuk-notification-banner__heading">
+                              Your children are not eligible for free school meals at the time of the check.
+                        </p>
+                       <p class="govuk-body">From the information you’ve provided, your children
+                              are not eligible for free school meals.</p>
+                  </div>
+            </div>
+
+
+            <dl class="govuk-summary-list">
+                  <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                  Full name
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                  {{ data["first-name"] or "Angela" }} {{ data["surname"] or "Jenkins" }}
+                  </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                  Date of check
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                  {{ "today" | govukDate }}
+                  </dd>
+                  </div>
+
+            </dl>
+
+            <p>You can read <a href="../../guidance/parent-guidance">more detailed guidance on eligibility for free school meals (opens in a new tab)</a>.</p>
+
+            <p>You can <a href="">print this page</a> for your own records.</p>
+
+            <h2 class="govuk-heading-m">If you think your children are eligible</h2>
+
+            <p>You can still apply for free school meals, but you'll need to provide:</p>
+
+            <ul>
+                  <li>details of your child's school</li>
+                  <li>supporting evidence</li>
+            </ul>
+
+            <p><a href="../../school-check/school-check?appeal=yes">Apply with supporting evidence</a></p>
+
+
+      </div>
+</div>
+
+ {% endblock %}

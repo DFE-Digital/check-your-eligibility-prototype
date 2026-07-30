@@ -1,0 +1,59 @@
+{% extends "layouts/FSM/v8-2/family/layout-dfe-parent.html" %}
+{% set pageName="Which evidence do you want to use?" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{%block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds ">
+
+    <form method="post" novalidate>
+
+      {{ govukRadios({
+          name: "evidence-type",
+          id:'evidence-type',
+          fieldset: {
+            legend: {
+              text: "Which evidence do you want to use?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+      items: [
+        {
+          value: "uc~/FSM/Private_beta/v8-2/family/account/appeal/evidence/upload-guidance-digital",
+          text: "Universal Credit statements",
+          hint: {
+            text: "Provide up to 3 of your latest statements"
+            }
+        },
+        {
+          value: "esa~/FSM/Private_beta/v8-2/family/account/appeal/evidence/upload-guidance",
+          text: "Letter of Entitlement for income-related Employment and Support Allowance (ESA)"
+        },
+        {
+          value: "pension~/FSM/Private_beta/v8-2/family/account/appeal/check-answers/check-answers-no-evidence",
+          text: "Letter of Entitlement for the guaranteed element of Pension Credit"
+        },
+        {
+          value: "asylum/FSM/Private_beta/v8-2/family/account/appeal/check-answers/check-answers-no-evidence",
+          text: "Documents showing you are receiving relevant support under part VI of the Immigration and Asylum Act 1999"
+        }
+      ]
+      }) }}
+
+      {{ govukButton({
+      text: "Continue",
+      classes:'govuk-!-margin-top-5'
+      }) }}
+    </form>
+
+
+
+    {%endblock %}

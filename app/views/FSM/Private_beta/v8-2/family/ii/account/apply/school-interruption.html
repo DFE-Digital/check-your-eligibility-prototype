@@ -1,0 +1,41 @@
+{% extends "layouts/FSM/v8-2/family/layout-dfe-parent.html" %}
+{% set pageName="Child 2's school is not included in this online application service" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+     <div class="govuk-panel govuk-panel--interruption">
+          <h1 class="govuk-heading-l govuk-panel__title govuk-panel__title--interruption">
+            Child 2's school is not included in this online application service
+          </h1>
+          <div class="govuk-panel__body">
+            <p class="govuk-body govuk-panel__body--interruption">For child 2 you selected <strong>Ilkley Moor primary school</strong>.</p>
+            <p class="govuk-body govuk-panel__body--interruption">You can remove child 2 and continue your application for child 1 using this service. You will need to apply for child 2 using a <a class="govuk-link govuk-link--inverse"  href="">different process (opens in new tab)</a></p>
+          </div>
+          <div class="govuk-panel__actions">
+            <div class="govuk-button-group">
+              <a href="check-answers" role="button" draggable="false" class="govuk-button govuk-button--inverse" data-module="govuk-button">
+                Remove child 2 and continue
+              </a>
+              <a class="govuk-link govuk-link--inverse" href="child-details">Select a different school for child 2</a>
+            </div>
+          </div>
+        </div>
+
+
+
+  </div>
+</div>
+
+
+{% endblock %}

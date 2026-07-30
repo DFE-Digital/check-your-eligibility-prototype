@@ -17,11 +17,7 @@
   <div class="govuk-grid-column-two-thirds">
 
 
-    <h1 class="govuk-heading-l">Upload temporary code file</h1>
-
-    <p>Upload the .xlsm file you have downloaded from HMRC secure data exchange.</p>
-
-    <!-- <p>Do not edit the file before uploading.</p> -->
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Import temporary codes</h1>
 
 
     {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
@@ -33,15 +29,35 @@
         classes: "govuk-label--m",
         text: "Upload a file"
       },
+      hint: {
+      text: "Upload the .xlsm file you have downloaded from HMRC secure data exchange."
+    },
       javascript: true
     }) }}
+
+    {% from "govuk/components/password-input/macro.njk" import govukPasswordInput %}
+
+    {{ govukPasswordInput({
+      label: {
+        text: "Enter password",
+        classes: "govuk-label--m govuk-!-margin-top-8",
+        isPageHeading: false
+      },
+      hint: {
+      text: "HMRC will provide a password to open the file"
+    },
+      classes: "govuk-!-width-one-half",
+      id: "password-input",
+      name: "password"
+    }) }}
+
 
     {% from "govuk/components/button/macro.njk" import govukButton %}
 
     {{ govukButton({
-      text: "Continue",
+      text: "Import codes",
       classes: "govuk-button--primary",
-      href: '/support/v3/temp-code/password'
+      href: '/support/v3/temp-code/import-loader'
     }) }}
 
   </div>

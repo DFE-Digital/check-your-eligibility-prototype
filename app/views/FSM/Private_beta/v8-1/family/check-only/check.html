@@ -1,0 +1,156 @@
+{% extends "layouts/FSM/v8-1/family/layout-dfe-parent.html" %}
+{% set pageName="Enter your details" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <!--
+
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+      aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          You can use this new service
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          You can apply for all children at schools in this new service.
+        </h3>
+        <p class="govuk-body">You will need to apply separately for children at schools not in this new service <a
+            href="https://www.gov.uk/apply-free-school-meals">using the existing process</a>.</p>
+      </div>
+    </div>
+
+    -->
+
+    <h1 class="govuk-heading-l">Enter your details</h1>
+    <p class="govuk-body">Your information will be compared with other government departments records to
+      check your eligibility.</p>
+
+
+    {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+    {{ govukWarningText({
+    text: "Use the details on your passport, driving licence, birth certificate or Biometric Residence Permit.",
+    iconFallbackText: "Warning"
+    }) }}
+
+    <form action="/FSM/Private_beta/v8-1/family/check-only/checking-loader" method="post" novalidate>
+      {% call govukFieldset({
+      legend: {
+      text: "What is your name?",
+      classes: "govuk-fieldset__legend--m",
+      isPageHeading: false
+      }
+      }) %}
+
+
+
+      {{ govukInput({
+      label: {
+      text: "First name"
+      },
+      classes: "govuk-!-width-two-thirds",
+      id: "first-name",
+      name: "first-name",
+      autocomplete: ""
+      }) }}
+
+      {{ govukInput({
+      label: {
+      text: "Last name"
+      },
+      classes: "govuk-!-width-two-thirds",
+      id: "surname",
+      name: "surname",
+      autocomplete: ""
+      }) }}
+
+      {% endcall %}
+
+
+      {{ govukDateInput({
+
+      id: "dob",
+      namePrefix: "dob",
+
+      fieldset: {
+      legend: {
+      text: "What is your date of birth?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+      }
+      },
+      hint: {
+      text: "For example, 31 3 1980"
+      }
+      }) }}
+
+      {% set yesHtml %}
+      {{ govukInput({
+      id: "ni-number-entered",
+      name: "ni-number-entered",
+      type: "text",
+      autocomplete: "text",
+      spellcheck: false,
+      classes: "govuk-!-width-one-third",
+      label: {
+      text:"National Insurance number"
+      },
+      hint: {
+      text: "For example, ‘QQ 12 34 56 C’"
+      }
+
+      }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+      name: "ni-number",
+      id:'ni-number',
+      fieldset: {
+      legend: {
+      text: "Do you have a National Insurance number?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+      }
+      },
+      hint: {
+      text: "It’s on your National Insurance card, benefit letter, payslip or P60"
+      },
+      items: [
+      {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+      html: yesHtml
+      }
+      },
+      {
+      value: "no~/FSM/Private_beta/v8-1/family/parent-soft-check/outcomes/no-nino",
+      text: "No, I do not have one"
+
+      }
+
+      ]
+      }) }}
+
+      {{ govukButton({
+      text: "Check your eligibility"
+      }) }}
+
+    </form>
+
+    <p class="govuk-body">For further information about how your data is used, please check our <a href="https://www.gov.uk/government/organisations/department-for-education/about/personal-information-charter"> privacy policy</a>.</p>
+  </div>
+</div>
+
+{% endblock %}
