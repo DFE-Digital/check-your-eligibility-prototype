@@ -13,13 +13,13 @@
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title">Parent or guardian details</h2>
         <ul class="govuk-summary-card__actions">
-          <li class="govuk-summary-card__action">
-            <!-- <a class="govuk-link" href="../school-soft-check/checker.html">
-              Change<span class="govuk-visually-hidden"> parent or guardian details</span>
-            </a> -->
-          </li>
+          <!-- <li class="govuk-summary-card__action">
+            <a class="govuk-link" href="#">
+              Change email address<span class="govuk-visually-hidden"> parent or guardian email</span>
+            </a>
+          </li> -->
         </ul>
-      </div>
+      </div>å
 
       <div class="govuk-summary-card__content">
         <dl class="govuk-summary-list">
@@ -30,13 +30,13 @@
               {% if data['parent-firstname'] %}
                 {{ data['parent-firstname'] }}
               {% else %}
-                Eden
+                Irina
               {% endif %}
 
               {% if data['parent-surname'] %}
                 {{ data['parent-surname'] }}
               {% else %}
-                Tesfay
+                Nolan
               {% endif %}
             </dd>
           </div>
@@ -47,7 +47,7 @@
               {% if data['email'] %}
                 {{ data['email'] }}
               {% else %}
-                eden.tesfay@gmail.com
+                irina.nolan@gmail.com
               {% endif %}
             </dd>
           </div>
@@ -58,7 +58,7 @@
               {% if data['dob'] %}
                 {{ data['dob'] }}
               {% else %}
-                06 Dec 1979
+                01 Dec 1979
               {% endif %}
             </dd>
           </div>
@@ -80,18 +80,18 @@
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Status</dt>
             <dd class="govuk-summary-list__value">
-              <strong class="govuk-tag {{ data['tagClass'] or 'govuk-tag--purple' }}">
-                {{ data["policyLabel"] or "Eligible targeted" }}
+              <strong class="govuk-tag {{ 'govuk-tag--blue' }}">
+                {{ "Review needed" }}
               </strong>
             </dd>
           </div>
 
-          <div class="govuk-summary-list__row">
+          <!-- <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Eligibility end date</dt>
             <dd class="govuk-summary-list__value">
               {{ data["endDate"] or "31 August 2027" }}
             </dd>
-          </div>
+          </div> -->
 
         </dl>
       </div>
@@ -104,7 +104,7 @@
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action">
             <a class="govuk-link" href="outcome-eligible-childs-age.html">
-              Edit details<span class="govuk-visually-hidden"> for child 1</span>
+              Change child details<span class="govuk-visually-hidden"> for child 1</span>
             </a>
           </li>
         </ul>
@@ -130,6 +130,12 @@
             </dd>
           </div>
 
+            <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">School</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["person"][0]["school"] or "St Marys primary school, HE12 4TY" }}
+            </dd>
+          </div>
         </dl>
       </div>
     </div>
@@ -141,7 +147,7 @@
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action">
             <a class="govuk-link" href="../upload/upload-evidence.html">
-              Change<span class="govuk-visually-hidden"> evidence</span>
+              Update evidence<span class="govuk-visually-hidden"> </span>
             </a>
           </li>
         </ul>
@@ -161,7 +167,7 @@
             </dd>
           </div>
 
-          <div class="govuk-summary-list__row">
+          <!-- <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">File 2</dt>
             <dd class="govuk-summary-list__value">
               {% if data['filename-2'] %}
@@ -170,7 +176,7 @@
                 Scan0123099647.png
               {% endif %}
             </dd>
-          </div>
+          </div> -->
 
         </dl>
       </div>
