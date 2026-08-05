@@ -14,201 +14,185 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-l"></span>
+
     <h1 class="govuk-heading-l">Check your answers</h1>
 
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title">Parent or guardian details</h2>
         <ul class="govuk-summary-card__actions">
-          <li class="govuk-summary-card__action">
-            <a class="govuk-link" href="../school-soft-check/checker.html"
-              >Change<span class="govuk-visually-hidden">Parent or guardian details</span></a>
-          </li>
+          <!-- <li class="govuk-summary-card__action">
+            <a class="govuk-link" href="#">
+              Change email address<span class="govuk-visually-hidden"> parent or guardian email</span>
+            </a>
+          </li> -->
         </ul>
       </div>
+
       <div class="govuk-summary-card__content">
         <dl class="govuk-summary-list">
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Full name</dt>
             <dd class="govuk-summary-list__value">
-
-
-{% if data["parent-firstname"] %}
-  {{ data["parent-firstname"] }}
-{% else %}
-  {{ parentName }}
-{% endif %}
-
-{% if data["parent-surname"] %}
-  {{ data["parent-surname"] }}
-{% else %}
-  {{ parentName }}
-{% endif %}
-
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Email address
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data ["email"] %}{{data.email}}
+              {% if data['parent-firstname'] %}
+                {{ data['parent-firstname'] }}
               {% else %}
-              	{{email}}
+                Irina
+              {% endif %}
+
+              {% if data['parent-surname'] %}
+                {{ data['parent-surname'] }}
+              {% else %}
+                Nolan
               {% endif %}
             </dd>
           </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Date of birth
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data ["dob"] %}{{ data["dob"] }}
-              {% else %}
-              {{parentDOB}}
-              {% endif %}
 
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Email address</dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['email'] %}
+                {{ data['email'] }}
+              {% else %}
+                irina.nolan@gmail.com
+              {% endif %}
             </dd>
           </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-  National Insurance number
-</dt>
-          <!-- <dt class="govuk-summary-list__key">
-            {% if data['ni-number-entered'] == 'yes' %}
-              National Insurance number
-            {% else %}
-              Asylum support <br>reference number
-            {% endif %}
-          </dt> -->
-          <dd class="govuk-summary-list__value">
-            {% if data['ni-number-entered'] == 'yes' %}
-            {% if data["ni-number"] %}
-              {{ data["ni-number"] }}
-            {% else %}
-              {{nationalInsurance}}
-            {% endif %}
 
-            {% if data["nass-number-entered"] %}
-              {{ data["nass-number-entered"] }}
-            {% else %}
-              {{nationalInsurance}}
-            {% endif %}
-          {% else %}
-            {% if data["nass-number-entered"] %}
-              {{ data["nass-number-entered"] }}
-            {% else %}
-              {{nationalInsurance}}
-            {% endif %}
-          {% endif %}
-          </dd>
-        </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Date of birth</dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['dob'] %}
+                {{ data['dob'] }}
+              {% else %}
+                01 Dec 1979
+              {% endif %}
+            </dd>
+          </div>
+
         </dl>
       </div>
     </div>
 
-<!--eligibility-->
- <div class="govuk-summary-card">
-      <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">Child 1</h2>
-        <ul class="govuk-summary-card__actions">
-          <li class="govuk-summary-card__action">
-            <a class="govuk-link" href="childs-age.html">Change<span class="govuk-visually-hidden">Child details</span></a>
-          </li>
-        </ul>
-      </div>
 
-      <div class="govuk-summary-card__content">
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" >Child's name</dt>
-            <dd class="govuk-summary-list__value" >
-              {% if data ["ch1-first-name"] %}{{ data["ch1-first-name"] }}
-              {% else %}
-              {{childName}}
-              {% endif %}
-              {% if data ["ch1-surname"] %}{{ data["ch1-surname"] }}
-              {% else %}
-              {{childSurname}}
-              {% endif %}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width: 40%;">Child's date of birth</dt>
-            <dd class="govuk-summary-list__value" style="width: 40%;">
-              {% if data ["ch1-day"] %} {{ data["ch1-day"] }}
-              {% else %}
-              22
-              {% endif %}
-              {% if data ["ch1-month"] %} {{ data["ch1-month"] }}
-              {% else %}
-              Sept
-              {% endif %}
-              {% if data ["ch1-year"] %} {{ data["ch1-year"] }}
-              {% else %}
-              2021
-              {% endif %}
-            </dd>
-          </div>
-        </dl>
-      </div>
-    </div>
-    <!-- #region -->
 
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">Child 1</h2>
+        <h2 class="govuk-summary-card__title">Eligibility details</h2>
+      </div>
+
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Status</dt>
+            <dd class="govuk-summary-list__value">
+              <strong class="govuk-tag {{ 'govuk-tag--yellow' }}">
+                {{ "Evidence needed" }}
+              </strong>
+            </dd>
+          </div>
+
+          <!-- <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Eligibility end date</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["endDate"] or "31 August 2027" }}
+            </dd>
+          </div> -->
+
+        </dl>
+      </div>
+    </div>
+
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Child 1 details</h2>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action">
-            <a class="govuk-link" href="childs-age.html">Change<span class="govuk-visually-hidden">Child details</span></a>
+            <a class="govuk-link" href="outcome-eligible-childs-age.html">
+              Change child details<span class="govuk-visually-hidden"> for child 1</span>
+            </a>
           </li>
         </ul>
       </div>
 
       <div class="govuk-summary-card__content">
         <dl class="govuk-summary-list">
+
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" >Child's name</dt>
-            <dd class="govuk-summary-list__value" >
-              {% if data ["ch1-first-name"] %}{{ data["ch1-first-name"] }}
-              {% else %}
-              {{childName}}
-              {% endif %}
-              {% if data ["ch1-surname"] %}{{ data["ch1-surname"] }}
-              {% else %}
-              {{childSurname}}
-              {% endif %}
+            <dt class="govuk-summary-list__key">Name</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["person"][0]["first_name"] or "Christina" }}
+              {{ data["person"][0]["last_name"] or data["parent-surname"] or "Nolan" }}
             </dd>
           </div>
+
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width: 40%;">Child's date of birth</dt>
-            <dd class="govuk-summary-list__value" style="width: 40%;">
-              {% if data ["ch1-day"] %} {{ data["ch1-day"] }}
-              {% else %}
-              22
-              {% endif %}
-              {% if data ["ch1-month"] %} {{ data["ch1-month"] }}
-              {% else %}
-              Sept
-              {% endif %}
-              {% if data ["ch1-year"] %} {{ data["ch1-year"] }}
-              {% else %}
-              2021
-              {% endif %}
+            <dt class="govuk-summary-list__key">Date of birth</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["person"][0]["dob"]["day"] or "12" }}
+              {{ data["person"][0]["dob"]["month"] or "06" }}
+              {{ data["person"][0]["dob"]["year"] or "2020" }}
+            </dd>
+          </div>
+
+            <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">School</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["person"][0]["school"] or "St Marys primary school, HE12 4TY" }}
             </dd>
           </div>
         </dl>
       </div>
     </div>
 
-    {% if data['child-2'] == 'Yes' %} {% endif %}
 
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Evidence</h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action">
+            <a class="govuk-link" href="../upload/upload-evidence.html">
+              Upload evidence<span class="govuk-visually-hidden"> </span>
+            </a>
+          </li>
+        </ul>
+      </div>
 
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
 
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">File 1</dt>
+            <dd class="govuk-summary-list__value">
+             Add evidence
+            </dd>
+          </div>
+
+          <!-- <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">File 2</dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['filename-2'] %}
+                {{ data['filename-2'] }}
+              {% else %}
+                Scan0123099647.png
+              {% endif %}
+            </dd>
+          </div>
+
+        </dl>
+      </div>
+    </div>-->
+</dl>
+      </div>
+    </div>
     <h2 class="govuk-heading-m">Confirm and send application</h2>
 
-    <p class="govuk-body">By sending this information, you confirm that, to the best of your knowledge, the details are correct.</p>
+    <p class="govuk-body">
+      By sending this information, you confirm that, to the best of your knowledge, the details are correct and evidence will be provided.
+    </p>
 
 
     <form action="application-sent" method="post" novalidate>
