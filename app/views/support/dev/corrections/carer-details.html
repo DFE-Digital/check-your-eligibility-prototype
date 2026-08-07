@@ -21,7 +21,7 @@
 
         <h1 class="govuk-heading-l">Edit the parent, guardian or carer details</h1>
 
-        <form class="form" action="/support/dev/corrections/check-carer-details?edit-type=parent, guardian or carer" method="post" novalidate>
+        <form class="form" action="/support/dev/corrections/code?change=saved&edit-type=parent, guardian or carer" method="post" novalidate>
 
           {% call govukFieldset({
 
@@ -118,7 +118,7 @@
           {% from "govuk/components/button/macro.njk" import govukButton %}
 
           {{ govukButton({
-            text: "Continue"
+            text: "Save"
           }) }}
 
 
