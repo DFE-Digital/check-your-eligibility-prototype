@@ -21,7 +21,7 @@
 
         <h1 class="govuk-heading-l">Edit the child details</h1>
 
-        <form class="form" action="/support/dev/corrections/check-child-details?edit-type=child" method="post" novalidate>
+        <form class="form" action="/support/dev/corrections/code?change=saved&edit-type=child" method="post" novalidate>
 
           {% call govukFieldset({
 
@@ -108,7 +108,7 @@
 
           <div>
             {{ govukButton({
-              text: "Continue"
+              text: "Save"
             }) }}
           </div>
 
