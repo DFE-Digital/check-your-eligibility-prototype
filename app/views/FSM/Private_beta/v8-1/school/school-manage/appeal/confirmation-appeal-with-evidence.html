@@ -10,14 +10,14 @@
         aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
         <div class="govuk-notification-banner__header">
           <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-            Submitted
+            Application submitted
           </h2>
         </div>
         <div class="govuk-notification-banner__content">
           <h3 class="govuk-notification-banner__heading">
-            Free school meals application submitted for Eden Tesfay
+            Free school meals application with evidence submitted for Idella Nolan
           </h3>
-          <p class="govuk-body">You should <a href="" class="govuk-link" onclick="printPage()">print this page</a> for the parents to keep.</p>
+          <!-- <p class="govuk-body">You should <a href="" class="govuk-link" onclick="printPage()">print this page</a> for the parents to keep.</p> -->
 
         </p>
         </div>
@@ -52,12 +52,12 @@
           </td> -->
 
           <td class="govuk-table__cell">
-            {{ data["endDate"] or "31 August 2027" }}
+            {{ data[" "] or " " }}
           </td>
 
           <td class="govuk-table__cell">
-            <strong class="govuk-tag {{ 'govuk-tag--yellow' }}">
-              {{ "Evidence needed" }}
+            <strong class="govuk-tag {{ 'govuk-tag--blue' }}">
+              {{ "Review needed" }}
             </strong>
           </td>
 
@@ -111,9 +111,9 @@
 
 <p class="govuk-body">Review the supporting evidence before making a decision on this application.</p>
 
-          <p class="govuk-body">Read the <a href="../../guidance/guidance-steps/policy-guidance.html">guidance for reviewing evidence (opens in new tab)</a>
+          <p class="govuk-body">Read <a href="../../guidance/guidance-steps/policy-guidance.html">guidance for reviewing evidence (opens in new tab)</a>
 
-            <p class="govuk-body">Once you have reviewed the evidence, record your decision in the <a href="">application record</a> or got to <a href="../decision/review/applications.html">Review evidence</a> to view all applications that need a decision.</p>
+            <p class="govuk-body">Once you have reviewed the evidence, record your decision in the <a href="">application record</a> or go to <a href="../decision/review/applications.html">review evidence</a> to view all applications that need a decision.</p>
 
 <div class="govuk-!-padding-top-5">
         <a class="govuk-body govuk-link" href="../checker">
