@@ -1,0 +1,103 @@
+{% extends "layouts/FSM/v8-3/cy/layout-dfe-basic-lanav.html" %}
+{% set pageName="Abertawe" %}
+{% set Service="Rheoli cymhwyster ar gyfer prydau ysgol am ddim" %}
+{% set view="dashboard" %}
+{% set VERSION ="v8-3" %}
+{% set address="Heol Ystumllwynarth Abertawe SA1 3SN
+" %}
+
+
+{% block beforeContent %}
+  <nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle dwp-language-toggle__list">
+        <li class="dwp-language-toggle__list-item" >
+              <a href="/FSM/Private_beta/v8-3/en/LA_Basic/dashboard" hreflang="en" lang="en" rel="alternate" class="govuk-link" aria-label="Newid yr iaith ir Gymraeg">English</a>
+        </li>
+        <li class="dwp-language-toggle__list-item" aria-current="true">
+            Cymraeg
+        </li>
+    </ul>
+  </nav>
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <span class="govuk-caption-l">{{pageName}}</span>
+      <h1 class="govuk-heading-l">{{Service}}</h1>
+    </div>
+</div>
+
+    <div class="dfe-grid-container">
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h3 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+              href="basic-manage/basic-soft-check/checker.html">Rhedeg gwiriad ar gyfer un rhiant neu warcheidwad</a>
+          </h3>
+          <p>
+Cynnal gwiriad cymhwysedd ar gyfer un rhiant neu warcheidwad</p>
+        </div>
+      </div>
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+              href="basic-manage/batch-checking/manual-no-ctf.html">Rhedeg swp-wiriad
+</a>
+          </h2>
+          <p>Cynnal gwiriad cymhwysedd ar gyfer nifer o rieni neu warcheidwaid.</p>
+        </div>
+      </div>
+
+
+
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+              href="basic-manage/report/report-checks.html">Adroddiadau</a>
+          </h2>
+          <p>Cynhyrchu adroddiadau a gweld gwiriadau diweddar a gynhaliwyd gan ddefnyddio'r gwasanaeth hwn.</p>
+        </div>
+      </div>
+
+      <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="basic-manage/guidance/guidance.html">Arweiniad</a>
+          </h2>
+          <p>Darllenwch ganllawiau ar ddefnyddio'r gwasanaeth hwn, adolygu tystiolaeth a chwblhau gwiriadau ar gyfer rhieni sy'n hawlio lloches.
+</p>
+        </div>
+      </div>
+
+      <div class="dfe-card">
+            <div class="dfe-card-container">
+
+              <h2 class="govuk-heading-m">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                  href="../_offline/fsm-print-version-la.html">Lawrlwythwch ffurflen PDF
+</a>
+              </h2>
+              <p>Lawrlwythwch ffurflen gymhwysedd i rieni ei chwblhau.</p>
+            </div>
+          </div>
+
+      <!-- <div class="dfe-card">
+        <div class="dfe-card-container">
+          <h2 class="govuk-heading-m">
+            <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="la-manage/report/archive.html">Archived records</a>
+          </h2>
+          <p>View and restore archived records.</p>
+        </div>
+      </div> -->
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+{% endblock %}

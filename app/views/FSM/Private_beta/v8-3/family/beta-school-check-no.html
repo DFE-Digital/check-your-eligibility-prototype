@@ -1,0 +1,44 @@
+{% extends "layouts/FSM/v8-3/family/layout-dfe-parent.html" %}
+{% set pageName="You cannot use this new service" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+    <p>Ths school you selected is not included in this new service that is being tested in some local authorities.</p>
+
+    <!-- <p class="govuk-body"><strong>Parrs Wood High School, Wilmslow Rd, East Didsbury, Manchester M20 5PG</strong>  is not included in the service.</p> -->
+
+     <div class="govuk-inset-text">
+        Alma Primary School<br>
+        Enfield<br>
+        EN3 4UQ
+      </div>
+
+    <h2 class="govuk-heading-m">Next steps</h2>
+
+    <p><a href=""></a>You can apply for free school meals using the existing process.</p>
+
+    {{ govukButton({
+      text: "Apply for free school meals",
+      href: "https://www.gov.uk/apply-free-school-meals"
+    }) }}
+   <p> <a class="govuk-link" href="beta-school-check">Check another school</a></p>
+
+  </div>
+</div>
+
+{% endblock %}

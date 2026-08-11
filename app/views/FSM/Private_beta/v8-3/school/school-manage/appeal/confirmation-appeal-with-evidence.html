@@ -1,0 +1,150 @@
+{% extends "layouts/FSM/v8-3/layout-dfe-schoolnav.html" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l"></span>
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+        aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Application submitted
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+            Free school meals application with evidence submitted for Idella Nolan
+          </h3>
+          <!-- <p class="govuk-body">You should <a href="" class="govuk-link" onclick="printPage()">print this page</a> for the parents to keep.</p> -->
+
+        </p>
+        </div>
+      </div>
+
+    <h2 class="govuk-heading-l">
+      Application record for {{ data["parent-firstname"] or "Idella" }} {{ data["parent-surname"] or "Nolan" }}
+    </h2>
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header">Child</th>
+          <!-- <th class="govuk-table__header">School</th> -->
+          <th class="govuk-table__header">End date</th>
+          <th class="govuk-table__header">Status</th>
+          <th class="govuk-table__header">Reference</th>
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            {{ data["child-first-name"] or "Christina" }}
+            {{ data["child-surname"] or data["parent-surname"] or "Nolan" }}
+          </td>
+
+          <!-- <td class="govuk-table__cell">
+            {{ data["school-picker"] or data["ch1-school"] or "Greenwood Primary School" }}<br>
+            Hoddesdon<br>
+            EN11 8JY
+          </td> -->
+
+          <td class="govuk-table__cell">
+            {{ data[" "] or " " }}
+          </td>
+
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag {{ 'govuk-tag--blue' }}">
+              {{ "Review needed" }}
+            </strong>
+          </td>
+
+          <td class="govuk-table__cell">
+            44455453
+          </td>
+        </tr>
+      </tbody>
+    </table>
+<!--
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds"> -->
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header">Evidence</th>
+           <th class="govuk-table__header"> </th>
+
+           <th class="govuk-table__header"></th>    <th class="govuk-table__header">Filesize</th>
+
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">0997618234647.png</td>
+                  <td class="govuk-table__cell"> </th>
+        <td class="govuk-table__cell"> </th>
+          <td class="govuk-table__cell">1.2mb</td>
+          <td class="govuk-table__cell"> </th>
+        </tr>
+
+        <!-- <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">    Scan0123099647.png
+            </td>
+              <td class="govuk-table__cell"> </th>
+         <td class="govuk-table__cell"> </th>
+                      <td class="govuk-table__cell">586kb</td>
+
+          </tr>
+      </tbody> -->
+    </table>
+
+
+
+    <div class="govuk-!-padding-bottom-3"></div>
+    <div class="govuk-width-container">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <h2 class="govuk-heading-m">What to do next</h2>
+
+<p class="govuk-body">Review the supporting evidence before making a decision on this application.</p>
+
+          <p class="govuk-body">Read <a href="../../guidance/guidance-steps/policy-guidance.html">guidance for reviewing evidence (opens in new tab)</a>
+
+            <p class="govuk-body">Once you have reviewed the evidence, record your decision in the <a href="">application record</a> or go to <a href="../decision/review/applications.html">review evidence</a> to view all applications that need a decision.</p>
+
+<div class="govuk-!-padding-top-5">
+        <a class="govuk-body govuk-link" href="../checker">
+          Do another check
+        </a></div>
+
+         <!-- <div class="govuk-button-group">
+
+               <a href="../../appeal/appeal-new-child-age.html" class="govuk-button" role="button" data-module="govuk-button">
+Do another check</a></div> -->
+ </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+<script>
+  function printPage() {
+    window.print();  // This will open the print dialog
+  }
+</script>
+
+<script>
+  function printSection() {
+    window.print();
+  }
+</script>
+
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}
