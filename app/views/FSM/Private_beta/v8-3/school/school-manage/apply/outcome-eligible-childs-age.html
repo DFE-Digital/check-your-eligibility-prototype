@@ -1,0 +1,72 @@
+{% extends "layouts/FSM/v8-3/layout-dfe-schoolnav.html" %}
+{% set pageName = "Provide details of all children" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <div data-module="moj-add-another">
+
+      <h1 class="govuk-heading-l">{{ pageName }}</h1>
+
+      <form action="../apply/school-check-answers" method="post" novalidate>
+
+        {% call govukFieldset({
+          classes: "moj-add-another__item",
+          legend: {
+            text: "Child 1",
+            classes: "moj-add-another__title govuk-fieldset__legend--m"
+          }
+        }) %}
+
+          {{ govukInput({
+            id: "child-first-name",
+            name: "child-first-name",
+            value: data["child-first-name"],
+            label: { text: "First name", classes: "govuk-!-font-weight-bold" }
+          }) }}
+
+          {{ govukInput({
+            id: "child-surname",
+            name: "child-surname",
+            value: data["child-surname"],
+            label: { text: "Last name", classes: "govuk-!-font-weight-bold" }
+          }) }}
+
+          {{ govukDateInput({
+            id: "child1-dob",
+            namePrefix: "child1",
+            fieldset: {
+              legend: {
+                text: "Date of birth",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            hint: { text: "For example, 31 3 2015" },
+            items: [
+              { name: "day", value: data["child1-day"], classes: "govuk-input--width-2" },
+              { name: "month", value: data["child1-month"], classes: "govuk-input--width-2" },
+              { name: "year", value: data["child1-year"], classes: "govuk-input--width-4" }
+            ]
+          }) }}
+
+        {% endcall %}
+
+        <div class="moj-button-action">
+          {{ govukButton({
+            text: "Add another child",
+            classes: "govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4",
+            name: "add-child",
+            value: "yes"
+          }) }}
+        </div>
+
+        <div class="moj-button-action">
+          {{ govukButton({ text: "Save and continue" }) }}
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

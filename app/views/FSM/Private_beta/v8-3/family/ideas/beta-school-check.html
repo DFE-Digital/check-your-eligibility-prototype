@@ -1,0 +1,73 @@
+{% extends "layouts/FSM/v8-3/family/layout-dfe-parent.html" %}
+{% set pageName="Check if you can use this service" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/autocomplete.js"></script>
+<script type="text/javascript">
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    selectElement: document.querySelector('#school-picker')
+  })
+</script>
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+    <p>Not all schools are included in this online service.</p>
+
+    <!--
+
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+      data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Important
+        </h2>
+      </div>
+
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+          Not all schools are included in this new service.
+        </p>
+        <p class="govuk-body">This is a new service that is being tested in some local authorities.</p>
+
+      </div>
+    </div>
+
+
+
+
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+      -->
+
+    {% include "../../../../_includes/family/v8-3/schools-beta" %}
+    </select>
+    <div>
+
+        <div style="padding-bottom: 24px;"></div>
+        {{ govukButton({
+          text: "Continue",
+          isStartButton: false
+        }) }}
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

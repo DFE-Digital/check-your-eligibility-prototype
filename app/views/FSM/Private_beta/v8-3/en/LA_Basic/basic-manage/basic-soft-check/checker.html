@@ -1,0 +1,108 @@
+{% extends "layouts/FSM/v8-3/basic/layout-dfe-basic-lanav.html" %}
+
+{% set t = {
+  pageName: "Run a check for one parent or guardian",
+  intro: "Enter the details of the parent or guardian who applied for free school meals.",
+  firstName: "First name",
+  lastName: "Last name",
+  dateOfBirth: "Date of birth",
+  dobHint: "For example, 31 3 1980",
+  niNumber: "National Insurance number",
+  niHint: "For example, QQ 12 34 56 C",
+  asylumLink: "Parent or guardian is an asylum seeker",
+  button: "Run check"
+} %}
+
+{% set pageName = t.pageName %}
+
+{% block beforeContent %}
+<nav class="dwp-language-toggle" aria-label="Language toggle">
+    <ul class="dwp-language-toggle dwp-language-toggle__list">
+        <li class="dwp-language-toggle__list-item" aria-current="true">
+                English
+        </li>
+        <li class="dwp-language-toggle__list-item">
+            <a href="/FSM/Private_beta/v8-3/cy/LA_Basic/dashboard" hreflang="cy" lang="cy" rel="alternate" class="govuk-link" aria-label="Newid yr iaith ir Gymraeg">Cymraeg</a>
+        </li>
+    </ul>
+  </nav>
+  {% include "_includes/layouts/back_link.html" %}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="checking-basic-loader.html" method="post" novalidate>
+
+      <h1 class="govuk-heading-l">{{ t.pageName }}</h1>
+
+      <p class="govuk-body">{{ t.intro }}</p>
+
+      {{ govukInput({
+        label: {
+          text: t.firstName
+        },
+        id: "parent-firstname",
+        name: "parent-firstname",
+        autocomplete: "given-name",
+        classes: "govuk-input--width-20",
+        spellcheck: false
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: t.lastName
+        },
+        id: "parent-surname",
+        name: "parent-surname",
+        autocomplete: "family-name",
+        classes: "govuk-input--width-20",
+        spellcheck: false
+      }) }}
+
+      {{ govukDateInput({
+        id: "dob",
+        namePrefix: "dob",
+        fieldset: {
+          legend: {
+            text: t.dateOfBirth,
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: t.dobHint
+        }
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: t.niNumber,
+          classes: "govuk-fieldset__legend--s"
+        },
+        hint: {
+          text: t.niHint
+        },
+        classes: "govuk-input--width-10 govuk-input--extra-letter-spacing",
+        id: "national-insurance-number",
+        name: "nationalInsuranceNumber",
+        spellcheck: false
+      }) }}
+
+      <p class="govuk-body">
+        <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="../guidance/evidence-guidance.html#accordion-default-content-2">
+          {{ t.asylumLink }}
+        </a>
+      </p>
+
+      {{ govukButton({
+        text: t.button
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}
