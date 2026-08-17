@@ -1,5 +1,11 @@
-<div class="moj-filter-layout">
-  <div class="moj-filter-layout__filter">
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+
     <div class="moj-filter">
       <div class="moj-filter__header">
         <h2 class="govuk-heading-m">Filter</h2>
@@ -20,13 +26,13 @@
           </div>
 
           <div id="selected-keyword-container" style="display: none;">
-            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Keyword</h3>
+            <h4 class="govuk-heading-s govuk-!-margin-bottom-0">Keyword</h4>
             <ul class="moj-filter-tags" id="selected-keyword">
             </ul>
           </div>
 
           <div id="selected-submission-date-range-container" style="display: none;">
-            <h3 class="vuk-heading-s govuk-!-margin-bottom-0">Submission date range</h3>
+            <h4 class="vuk-heading-s govuk-!-margin-bottom-0">Submission date range</h4>
             <ul class="moj-filter-tags" id="selected-submission-date-range">
             </ul>
           </div>
@@ -43,149 +49,197 @@
 
           <div class="govuk-form-group">
             <label class="govuk-label govuk-label--m" for="keywords">Keyword</label>
+            <div id="event-name-hint" class="govuk-hint">
+    You can search by reference number, school, name or date of birth
+  </div>
             <input class="govuk-input" id="keywords" name="keywords" type="text">
           </div>
 
-          <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--m" for="school">School</label>
-            <input class="govuk-input" id="school" name="school" type="text">
-          </div>
 
+{# ---------------------------------------------------
+   Submission date
+---------------------------------------------------- #}
 
-          <!-- Decision -->
-          {{ govukCheckboxes({
-          idPrefix: "decision",
-          name: "status",
-          classes: "govuk-checkboxes--small",
-          fieldset: {
-             legend: {
-                text: "Status",
-                classes: "govuk-fieldset__legend--s"
-              }
-            },
-            items: [
-              {
-                value: "status-eligible-targeted",
-                text: "Eligible targeted"
-              },
-              {
-                value: "status-eligible-expanded",
-                text: "Eligible expanded"
-              },
-              {
-                value: "status-not-eligible",
-                text: "Not eligible"
-              },
-              {
-                value: "status-receiving-targeted",
-                text: "Receiving targeted FSM"
-              },
-              {
-                value: "status-receiving-expanded",
-                text: "Receiving expanded FSM"
-              }
-            ]
-          }) }}
+{% set dateHtml %}
+<div class="govuk-form-group">
+  {{ govukDateInput({
+    id: "submission-date-from",
+    name: "submissionDateFrom",
+    fieldset: {
+      legend: {
+        text: "From",
+        classes: "govuk-fieldset__legend--s"
+      }
+    }
+  }) }}
+</div>
+<div class="govuk-form-group">
+  {{ govukDateInput({
+    id: "submission-date-to",
+    name: "submissionDateTo",
+    fieldset: {
+      legend: {
+        text: "To",
+        classes: "govuk-fieldset__legend--s"
+      }
+    }
+  }) }}
+</div>
 
-          <!-- Action -->
-          {{ govukCheckboxes({
-          idPrefix: "action",
-            name: "status",
-            classes: "govuk-checkboxes--small",
-            fieldset: {
-              legend: {
-                text: "Action",
-                classes: "govuk-fieldset__legend--s"
-              }
-            },
-            items: [
-              {
-                value: "status-evidence-needed",
-                text: "Upload evidence"
-              },
-              {
-                value: "status-in-review",
-                text: "Review application"
-              }
-            ]
-          }) }}
+{% endset -%}
 
-              <!-- Status -->
-          <!-- {{ govukCheckboxes({
-          idPrefix: "status",
-            name: "status",
-            classes: "govuk-checkboxes--small",
-            fieldset: {
-              legend: {
-                text: "Status",
-                classes: "govuk-fieldset__legend--s"
-              }
-            },
-            items: [
-              {
-                value: "status-finalised",
-                text: "Finalised"
-              },
-              {
-                value: "status-recheck-due",
-                text: "Recheck"
-              }
-            ]
-          }) }} -->
+{{ govukRadios({
+  name: "custom-date-range",
+  fieldset: {
+    legend: {
+      text: "Submission date range",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "Select one option"
+  },
+  items: [
+    {
+      value: "date-range",
+      text: "Custom date range",
+      conditional: {
+        html: dateHtml
+      }
+    },
+    {
+      value: "current",
+      text: "Current academic year"
+    },
+    {
+      value: "previous",
+      text: "Previous academic year"
+    }
+  ]
+}) }}
+
+{# ---------------------------------------------------
+   Application type
+---------------------------------------------------- #}
 
 
 
-          {{ govukRadios({
-          classes: "govuk-radios--small",
-          name: "date range",
-          fieldset: {
-          legend: {
-          text: "Submission date range",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--s"
-          }
-          },
-          items: [
-          {
-          value: "Last month",
-          text: "Last month"
-          },
-          {
-          value: "Last 3 months",
-          text: "Last 3 months"
-          },
-          {
-          value: "Last 6 months",
-          text: "Last 6 months"
-          },
-          {
-          value: "Last 12 months",
-          text: "Last 12 months"
-          }
-          ]
-          }) }}
+{% set fundingStatusHtml %}
+{{ govukCheckboxes({
+  idPrefix: "custom-status-funding",
+  name: "customStatus",
+  classes: "govuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "Funding status",
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "Select one or more options"
+  },
+  items: [
+  {
+      value: "not-entitled",
+      text: "Not entitled"
+    },
+    {
+      value: "eligible-targeted",
+      text: "Eligible targeted"
+    },
+    {
+      value: "eligible-expanded",
+      text: "Eligible expanded"
+    },
+      {
+      value: "eligible-2025-2026",
+      text: "Eligible (2025-2026)"
+    },
+    {
+      value: "receiving-expanded-fsm",
+      text: "Receiving expanded FSM"
+    },
+     {
+      value: "receiving-targeted-fsm",
+      text: "Receiving targeted FSM"
+    },
+    {
+      value: "receiving-entitlement-2025-2026",
+      text: "Receiving entitlement (2025-2026)"
+    }
+
+    ]
+  })}}
+{% endset -%}
+
+{% set actionStatusHtml %}
+{{ govukCheckboxes({
+  idPrefix: "custom-status-action",
+  name: "customStatus",
+  classes: "govuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "Review status",
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "Select one or more options"
+  },
+  items: [
+
+    {
+      value: "evidence-needed",
+      text: "Upload evidence"
+    },
+    {
+      value: "sent-for-review",
+      text: "Review application"
+    },
+    {
+      value: "reviewed-not-entitled",
+      text: "Not entitled after review"
+    }
+
+  ]
+}) }}
+
+{% endset -%}
+
+{{ govukRadios({
+  name: "custom-application-type",
+  fieldset: {
+    legend: {
+      text: "Application type",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "Select one option"
+  },
+  items: [
+     {
+      value: "active",
+      text: "Active applications"
+    },
+    {
+      value: "archived",
+      text: "Archived applications"
+    },
+    {
+      value: "custom-search",
+      text: "Custom search",
+      conditional: {
+        html: (fundingStatusHtml ~ actionStatusHtml) | safe
+      }
+    }
+
+  ]
+}) }}
 
 
-
-
-          {{ govukCheckboxes({
-          idPrefix: "archived",
-          name: "status",
-          classes: "govuk-checkboxes--small",
-          fieldset: {
-          legend: {
-          text: "View archived applications",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--s"
-          }
-          },
-          items: [
-          {
-          value: "status-archived",
-          text: "Archived"
-          }
-          ]
-          }) }}
 
 
           <div style="padding-bottom: 0px;">
@@ -198,7 +252,6 @@
       </div>
     </div>
   </div>
-  <div class="moj-filter-layout__content">
     <div class="moj-action-bar">
       <div class="moj-action-bar__filter"></div>
       <div class="moj-button-menu">
@@ -206,3 +259,4 @@
         </div>
       </div>
     </div>
+
