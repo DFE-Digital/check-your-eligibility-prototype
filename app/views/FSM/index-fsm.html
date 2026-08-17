@@ -3,50 +3,10 @@
 {% set selectedNav = "Design and research" %}
 
 {% block content %}
-<style>
-  /* Target all govuk tables */
-  table.govuk-table {
-    table-layout: fixed !important;
-    width: 100% !important;
-  }
-
-  table.govuk-table th,
-  table.govuk-table td {
-    word-wrap: break-word;
-    vertical-align: top;
-  }
-
-  table.govuk-table th:nth-child(1),
-  table.govuk-table td:nth-child(1) {
-    width: 10% !important;
-  }
-
-  table.govuk-table th:nth-child(2),
-  table.govuk-table td:nth-child(2) {
-    width: 35% !important;
-  }
-
-  table.govuk-table th:nth-child(3),
-  table.govuk-table td:nth-child(3) {
-    width: 10% !important;
-  }
-
-  table.govuk-table th:nth-child(4),
-  table.govuk-table td:nth-child(4) {
-    width: 30% !important;
-  }
-
-  table.govuk-table th:nth-child(5),
-  table.govuk-table td:nth-child(5) {
-    width: 15% !important;
-  }
-</style>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <span class="govuk-hint">
-
-    </span>
+    <span class="govuk-hint"> </span>
     <h1 class="govuk-heading-l">
       <span class="govuk-tag--light-blue">Design and research</span>
     </h1>
@@ -89,9 +49,13 @@
             General pages
           </a>
         </li>
+ <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#lite">LA Lite</a>
+        </li>
+
         <li class="govuk-tabs__list-item">
           <a class="govuk-tabs__tab" href="#parent">
-            Parents
+            Families
           </a>
         </li>
         <li class="govuk-tabs__list-item">
@@ -100,1129 +64,257 @@
           </a>
         </li>
         <li class="govuk-tabs__list-item">
-          <a class="govuk-tabs__tab" href="#MAT">
-            MAT
-          </a>
-        </li>
-        <li class="govuk-tabs__list-item">
           <a class="govuk-tabs__tab" href="#LA">
-            Local Authority Enhanced
+            Local Authorities
           </a>
         </li>
+
         <li class="govuk-tabs__list-item">
-          <a class="govuk-tabs__tab" href="#LAbasic">
-            Local Authority Basic
+          <a class="govuk-tabs__tab" href="#MAT">
+            Trusts
           </a>
         </li>
-        <!-- <li class="govuk-tabs__list-item">
-          <a class="govuk-tabs__tab" href="#notifications">
-            Notifications
-          </a>
-        </li> -->
+
 
       </ul>
 
+      <!--General Table-->
       <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="general">
-        <h2 class="govuk-heading-l">General pages</h2>
-
-        <!-- Latest versions table -->
-
+        <h2 class="govuk-heading-l">General</h2>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+          </div>
+        </div>
         <table class="govuk-table">
-          <h3 class="govuk-heading-m">Latest versions</h3>
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
               <th scope="col" class="govuk-table__header">Version</th>
-              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header">Whats new</th>
               <th scope="col" class="govuk-table__header">Status</th>
-              <th scope="col" class="govuk-table__header">Links</th>
-              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date last updated</th>
+              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date</th>
             </tr>
           </thead>
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <td class="govuk-table__header"><a href="/General/v4/cookies-parents" class="govuk-link">v4.0</a></td>
-              <td class="govuk-table__cell">Update to cookie pages to add missing cookie .AspNetCore.Cookies</td>
-              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--pink">Signed off</span></td>
-              <td class="govuk-table__cell"><a href="/General/v4/cookies-parents" class="govuk-link">Parents cookies
-                  page</a><br>
-                <a href="/General/v4/cookies-parents-no-js" class="govuk-link">Parents cookies page - no JavaScript</a>
-              </td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">27 March 2025</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__header"><a href="#" class="govuk-link">v8.0</a></td>
-              <td class="govuk-table__cell">Rebrand Update</td>
-              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Rollout</span></td>
-              <td class="govuk-table__cell"><a href="/General/v4/cookies-parents" class="govuk-link">Rebrand
-                  page</a>
-              </td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">15 Jan 25</td>
-            </tr>
-          </tbody>
-        </table>
-        <!-- Previous versions table -->
-        <table class="govuk-table">
-          <h3 class="govuk-heading-m">Previous versions</h3>
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header">Version</th>
-              <th scope="col" class="govuk-table__header">Description</th>
-              <th scope="col" class="govuk-table__header">Status</th>
-              <th scope="col" class="govuk-table__header">Links</th>
-              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date last updated</th>
-            </tr>
-          </thead>
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <td class="govuk-table__header"><a href="#" class="govuk-link">v2.0</a></td>
-              <td class="govuk-table__cell">Initial version of this journey</td>
+              <td class="govuk-table__header"><a href="#" class="govuk-link">v6.2</a></td>
+              <td class="govuk-table__cell">Updated content </td>
               <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">Design</span></td>
-              <td class="govuk-table__cell">Link here</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">10 Jan 25</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">31 Jan 25</td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__header"><a href="#" class="govuk-link">v1.0</a></td>
-              <td class="govuk-table__cell">Initial version of this journey</td>
-              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">Design</span></td>
-              <td class="govuk-table__cell">Link here</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">10 Jan 25</td>
+              <td class="govuk-table__header"><a href="#" class="govuk-link">v6.2</a></td>
+              <td class="govuk-table__cell">Updated content </td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--orange">Research</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">31 Jan 25</td>
             </tr>
-
-          </tbody>
-        </table>
-      </div>
-
-      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="parent">
-        <span class="govuk-hint">Working version v8-0</span>
-
-        <h2 class="govuk-heading-l">Parent user journeys</h2>
-        <table class="govuk-table">
-
-          <!-- Latest versions table -->
-          <table class="govuk-table">
-            <h3 class="govuk-heading-m">Latest versions</h3>
-            <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header">Version</th>
-                <th scope="col" class="govuk-table__header">Description</th>
-                <th scope="col" class="govuk-table__header">Status</th>
-                <th scope="col" class="govuk-table__header">Links</th>
-                <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date last updated</th>
-              </tr>
-            </thead>
-            <tbody class="govuk-table__body">
-
-              </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell"><b>v7.5</b></a></td>
-                <td class="govuk-table__cell">
-                  <a href="/FSM/Private_beta/v7-5/family/start-now-beta-schools.html" class="govuk-link"><b>Start now -
-                      Beta schools</b></a><br>
-                  Beta school changes<br>
-                  <ul>
-                    <li>Updated approach to finding a school</li>
-                    <li>Added ability to select a school - All Saints Primary School, Ilkley, LS29 8QH</li>
-                    <li>Added ability to search again if school not found</li>
-                  </ul>
-                </td>
-                <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--pink">Signed off</span></td>
-                <td class="govuk-table__cell">
-                  <a href="/FSM/Private_beta/v7-5/family/start-now-beta-schools.html">Start page</a>
-                  <br>
-                  <a href="/FSM/Private_beta/v7-5/family/beta-school-check.html">Find out if your school is in our
-                    test</a>
-                  <br>
-                  <a href="/FSM/Private_beta/v7-5/family/beta-school-check-show.html">Your school is in our test</a>
-                  <br>
-                  <a href="/FSM/Private_beta/v7-5/family/beta-school-check-no.html">School not found</a>
-                <td class="govuk-table__cell govuk-table__cell--numeric">24 October 25</td>
-
-
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell"><b>v7.1</b></a></td>
-                <td class="govuk-table__cell">
-                  <a href="https://check-your-eligibility-prototype.azurewebsites.net/FSM/Private_beta/v7-1/family/parent-soft-check/outcomes/outcome-not-entitled-appeals.html"
-                    class="govuk-link"><b>Release 3 - Herts | Appeals journey - updated</b></a><br>
-                  Changes to reduce development time and align to LAs existing processes inc:<br>
-                  <ul>
-                    <li>Terminology changed from appeal to apply with evidence</li>
-                    <li>Parents complete child details first before uploading evidence</li>
-                    <li>Parents can upload evidence via photo,scanning or sending to school</li>
-                    <li>Waiting on childcare research on new upload feature - next iteration</li>
-                  </ul>
-                </td>
-                <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Review</span></td>
-                <td class="govuk-table__cell">
-                  <a href="./Private_beta/v7-1/family/parent-soft-check/outcomes/outcome-not-entitled-appeals.html">Not
-                    eligible outcome</a>
-                  <br><a href="./Private_beta/v7-1/family/account/appeal/add-child/child-details-0.html">Add
-                    children</a>
-                  <br><a href="./Private_beta/v7-1/family/account/appeal/evidence/have-evidence.html">Have
-                    evidence</a>
-                  <br><a href="./Private_beta/v7-1/family/account/appeal/evidence/upload-guidance-digital.html">Add
-                    evidence - email guidance</a>
-                  <br><a href="./Private_beta/v7-1/family/account/appeal/evidence/upload-guidance.html">Add
-                    evidence - mobile guidance</a>
-                  <br><a href="./Private_beta/v7-1/family/account/appeal/evidence/upload-evidence.html">Upload
-                    evidence</a>
-                  <br><a
-                    href="./Private_beta/v7-1/family/account/appeal/add-child/child-details-complete-0-none.html">Check
-                    answers - no evidence</a>
-                  <br><a href="./Private_beta/v7-1/family/account/appeal/add-child/child-details-complete-0.html">Check
-                    answers - with evidence</a>
-                  <br><a href="./Private_beta/v7-1/family/account/appeal/add-child/children-added-0-none.html">Success
-                    - no evidence</a>
-                  <br><a href="./Private_beta/v7-1/family/account/appeal/add-child/children-added-0.html">Success
-                    - with evidence</a><br><br>
-                  <h2 class="govuk-heading-s">Error scenarios</h2>
-                  <p class="govuk-body"><a
-                      href="https://educationgovuk.sharepoint.com/:x:/r/sites/SolutionsDevelopmentCentre-ECSdiscovery/Shared%20Documents/ECS%20UCD%20Team/4.%20User-centred%20Design/Content%20Design/Content/Error%20scenarios/v7.1%20error%20scenarios.xlsx?d=w1cc19c6c5dcb441cab22882a1fa35a7d&csf=1&web=1&e=kFy0UA&nav=MTVfezAwMDAwMDAwLTAwMDEtMDAwMC0wMDAwLTAwMDAwMDAwMDAwMH0"
-                      class="govuk-link" rel="noreferrer noopener" target="_blank">v7.1 error scenarios</a></p>
-                </td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">21 March 25</td>
-              </tr>
-            </tbody>
-          </table>
-          <!-- Previous versions table -->
-          <table class="govuk-table">
-            <h3 class="govuk-heading-m">Previous versions</h3>
-            <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header">Version</th>
-                <th scope="col" class="govuk-table__header">Description</th>
-                <th scope="col" class="govuk-table__header">Status</th>
-                <th scope="col" class="govuk-table__header">Links</th>
-                <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date last updated</th>
-              </tr>
-            </thead>
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell"><b>v6.0</b></a></td>
-                <td class="govuk-table__cell">
-                  <a href="https://check-your-eligibility-prototype.azurewebsites.net/FSM/Private_beta/v6-0/family/account/apply/check-answers.html"
-                    class="govuk-link"><b>Acknowledgement of notification</b></a><br>
-                  Notification content on summary page<br>
-                  Removed permission content and added a paragraph to <br>explain use of data for updates. Follows GDS
-                  guidance.
-                  <!-- <ul>
-                   <li>Terminology changed from appeal to apply with evidence</li>
-                  </ul> -->
-                </td>
-                <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Review</span></td>
-                <td class="govuk-table__cell">
-                  <a href="./Private_beta/v6-0/family/account/apply/check-answers.html">Check
-                    your answers</a>
-                </td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">2 Oct 24</td>
-              </tr>
-              <td class="govuk-table__cell"><b>v6.0</b></a></td>
-              <td class="govuk-table__cell">
-                <a href="./Private_beta/V6/family/parent-soft-check/outcomes/outcome-not-entitled-appeal.html"
-                  class="govuk-link"><b>Appeals journey - revisited</b></a><br>
-                Redesigned based on DWP add another flow to ensure <br>non -javascript users have same experience
-                <ul>
-                  <li>MoJ Add another removed</li>
-                  <li>Find address flow from DWP added</li>
-                  <li>Evidence upload first to prevent <br>redoing multiple times</li>
-                </ul>
-              </td>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="#" class="govuk-link">v6.2</a></td>
+              <td class="govuk-table__cell">Updated content </td>
               <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Review</span></td>
-              <td class="govuk-table__cell">
-                <a href="./Private_beta/v6/family/parent-soft-check/outcomes/outcome-not-entitled-appeal.html">Not
-                  eligible outcome</a>
-                <br><a href="./Private_beta/v6/family/account/appeal/evidence/have-evidence.html">Have
-                  evidence</a>
-                <br><a href="./Private_beta/v6/family/account/appeal/evidence/upload-guidance-digital.html">Add
-                  evidence - email guidance</a>
-                <br><a href="./Private_beta/v6/family/account/appeal/evidence/upload-guidance.html">Add
-                  evidence - mobile guidance</a>
-                <br><a href="./Private_beta/v6/family/account/appeal/evidence/upload-evidence.html">Upload
-                  evidence</a>
-                <br><a href="./Private_beta/v6/family/account/appeal/add-child/child-details-blank">Add
-                  child - info</a>
-                <br><a href="./Private_beta/v6/family/account/appeal/add-child/child-details-1">Add
-                  child - details</a>
-                <br><a href="./Private_beta/v6/family/account/appeal/find-school/find-school-1">Find
-                  school</a>
-                <br><a href="./Private_beta/v6/family/account/appeal/find-school/confirm-school">Confirm
-                  school</a>
-                <br><a href="./Private_beta/v6/family/account/appeal/find-school/confirm-school-multiple">Confirm
-                  school - multiple</a>
-                <br><a href="./Private_beta/v6/family/account/appeal/find-school/no-schools">No
-                  schools found</a>
-                <br><a href="./Private_beta/v6/family/account/appeal/find-school/manual-add-school">Add
-                  school manually</a>
-                <br><a href="./Private_beta/v6/family/account/appeal/add-child/child-details-complete-1">Check
-                  answers</a>
-                <br><a href="./Private_beta/v6/family/account/appeal/add-child/children-added">Success</a>
-              </td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">15 Nov 24 </td>
-              </tr>
-            </tbody>
-          </table>
-      </div>
-      <!------------------------School USERS--------------------------->
-
-      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="school">
-        <span class="govuk-hint">Working version v8-0</span>
-
-        <h2 class="govuk-heading-l">School user journeys</h2>
-        <table class="govuk-table">
-
-          <!-- Latest versions table -->
-          <table class="govuk-table">
-            <h3 class="govuk-heading-m">Latest versions</h3>
-            <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header">Version</th>
-                <th scope="col" class="govuk-table__header">Description</th>
-                <th scope="col" class="govuk-table__header">Status</th>
-                <th scope="col" class="govuk-table__header">Links</th>
-                <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date last updated</th>
-              </tr>
-            </thead>
-            <tbody class="govuk-table__body">
-
-              <tr class="govuk-table__row">
-
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell"><a href="/FSM/Private_beta/v7-3/school/dashboard.html"
-                    class="govuk-link"><b>v7.3</b></a></td>
-                <td class="govuk-table__cell">
-                  <a href="/FSM/Private_beta/v7-3/school/dashboard.html" class="govuk-link"><b> Batch check - v4
-                      [latest]</b></a><br>
-                  <br> Updated the following pages:
-                  <ul>
-                    <li>Batch check not started</li>
-                    <li>Link to batch check process</li>
-                    <li>Compeleted checks</li>
-                    <li>Create applications</li>
-                  </ul>
-                </td>
-                <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--pink">Review</span></td>
-                <td class="govuk-table__cell"><a href="/FSM/Private_beta/v7-3/school/dashboard.html "
-                    class="govuk-link">Dashboard</a><br>
-                  <a href="/FSM/Private_beta/v7-3/school/school-manage/batch-checking/manual.html"
-                    class="govuk-link">Run a batch check</a><br>
-                  <a href="/FSM/Private_beta/v7-3/school/school-manage/batch-checking/submitted-not-started.html"
-                    class="govuk-link">Batch check not started</a><br>
-                  <a href="/FSM/Private_beta/v7-3/school/school-manage/batch-checking/in-progress.html"
-                    class="govuk-link">Batch check in progress</a><br>
-                  <a href="/FSM/Private_beta/v7-3/school/school-manage/batch-checking/completed.html"
-                    class="govuk-link">Batch check completed</a><br>
-                  <a href="/FSM/Private_beta/v7-3/school/school-manage/batch-checking/batch-check-success.html"
-                    class="govuk-link">Batch check success</a><br>
-                  <a href="/FSM/Private_beta/v7-3/school/school-manage/records/batch-records/eligible/batch-confirm-eligible.html"
-                    class="govuk-link">Batch confirm eligible</a><br>
-                  <!-- <a href="/FSM/Private_beta/v7-3/school/school-manage/records/batch-records/not-eligible/batch-confirm-appeal.html" class="govuk-link">Batch confirm appeal</a><br> -->
-                  <!-- <a href="/FSM/Private_beta/v7-3/school/school-manage/batch-checking/batch-check-notify.html" class="govuk-link">Batch notify parents</a><br> -->
-                </td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">30 June 2025</td>
-              </tr>
-
-
-
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell"><a href="#" class="govuk-link"><b>v7.2</b></a></td>
-                <td class="govuk-table__cell">
-                  <a href="/FSM/Private_beta/v7-2/school/school-manage/batch-checking/upload"
-                    class="govuk-link"><b>Batch checks v3</b></a><br>
-                  <ul>Updated the batch check flow to mimic the childcare check flow<br>
-                    <li>Batch check start includes history button</li>
-                    <li>Removed the option to connect to MIS for now - technically not feaible at moment</li>
-                    <li>Added in not queuing status </li>
-                    <li>In progress page - showing progress bar as part of list</li>
-                    <li>In progress updates to completed allowing user to view results</li>
-                    <li>Added in Completed page</li>
-                    <li>Export results as csv</li>
-                    <li>Added unhappy paths - documented on Lucid board</li>
-                  </ul>
-                </td>
-                <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--grey">Iterated - view 7.3</span></td>
-                <td class="govuk-table__cell">
-                  <a href="./Private_beta/v7-2/school/school-manage/batch-checking/manual">Manual check </a><br>
-                  <a href="./Private_beta/v7-2/school/school-manage/batch-checking/batch-not-started.html">Submitted
-                    - not started</a><br>
-                  <a href="./Private_beta/7-3/school/school-manage/batch-checking/batch-not-started.html">In
-                    progress</a><br>
-                  <a href="./Private_beta/7-2/school/school-manage/batch-checking/completed.html">Completed</a><br>
-                  <a href="./Private_beta/7-2/school/school-manage/batch-checking/batch-check-success">Checks
-                    successful</a><br>
-                  <a
-                    href="./Private_beta/v7-2/school/school-manage/records/batch-records/eligible/batch-confirm-eligible">Applications
-                    created</a><br>
-                  <!-- <a href="./Private_beta/v7-2/school/school-manage/records/batch-records/not-eligible/batch-confirm-appeal.html">Appeals created [get more evidence - leave]</a><br> -->
-                  <a href="./Private_beta/v7-2/school/school-manage/batch-checking/batch-check-notify">Parents notified
-                    of eligibility</a><br>
-                  <a href="./Private_beta/v7-2/school/school-manage/batch-checking/batch-error-not-accepted">Error –
-                    File not accepted</a><br>
-                <td class="govuk-table__cell govuk-table__cell--numeric">12 May 2025</td>
-              </tr>
-
-
-
-
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell"><a href="/FSM/Private_beta/v7-3/school/dashboard.html"
-                    class="govuk-link"><b>v7.3</b></a></td>
-                <td class="govuk-table__cell">
-                  <a href="/FSM/Private_beta/v7-3/school/dashboard.html" class="govuk-link"><b> Request more evidence
-                      journey **folder structure needs organising</b></a><br>
-                  <br> Added the following pages:
-                  <ul>
-                    <li>Notification content received from the LA</li>
-                    <li>Opens directly to child record</li>
-                    <li>Navigates into existing upload evidence</li>
-                    <li>Review answers</li>
-                    <li>Notification to LA</li>
-                  </ul>
-                </td>
-                <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">Design</span></td>
-                <td class="govuk-table__cell"><a
-                    href="/FSM/Private_beta/v7-3/_emails/notify_school/notify-school-requestmore.html"
-                    class="govuk-link">Notification</a><br>
-                  <a href="/FSM/Private_beta/v7-3/school/school-manage/decision/review/applications.html"
-                    class="govuk-link">Review
-                    applications</a><br>
-                  <a href="/FSM/Private_beta/v7-3/school/school-manage/decision/more-johnson1.html"
-                    class="govuk-link">Child
-                    page</a><br>
-                  <a href="/FSM/Private_beta/v7-3/school/school-manage/upload/more-evidence/upload-more-evidence.html"
-                    class="govuk-link">Upload
-                    evidence</a><br>
-                  <a href="/FSM/Private_beta/v7-3/school/school-manage/upload/more-evidence/upload-more-evidence-ready.html"
-                    class="govuk-link">Uploaded
-                    evidence shown</a><br>
-                  <a href=/FSM/Private_beta/v7-3/school/school-manage/upload/more-evidence/appeal-check-answers-evidence-more.html
-                    class="govuk-link">Check answers</a><br>
-
-                  <a href="/FSM/Private_beta/v7-3/school/school-manage/upload/more-evidence/confirmation-appeal-with-evidence-more"
-                    class="govuk-link">Confirmation page</a>
-                </td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">30 June 2025</td>
-              </tr>
-
-
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell"><a href="/FSM/Private_beta/v7-4/school/dashboard.html"
-                    class="govuk-link"><b>v7.4</b></a></td>
-                <td class="govuk-table__cell">
-                  <a href="/FSM/Private_beta/v7-4/school/dashboard.html" class="govuk-link"><b>Recheck eligible
-                      applications</b></a>
-                  <br>
-                  <br> Added the following pages:
-                  <ul>
-                    <li>Recheck eligible applications</li>
-                    <li>Recheck in progress</li>
-                    <li>Recheck completed</li>
-                    <li>Recheck success</li>
-                    <li>Recheck error</li>
-                  </ul>
-                </td>
-                <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">Design</span></td>
-                <td class="govuk-table__cell"><a href="/FSM/Private_beta/v7-4/school/dashboard.html"
-                    class="govuk-link">Dashboard</a><br>
-                <td class="govuk-table__cell govuk-table__cell--numeric">30 June 2025</td>
-                </td>
-
-
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell"><a href="/FSM/Private_beta/v7-4/school/dashboard.html"
-                    class="govuk-link"><b>v7.4</b></a></td>
-                <td class="govuk-table__cell">
-                  <a href="/FSM/Private_beta/v7-4/school/dashboard.html" class="govuk-link"><b>Archive
-                      applications</b></a>
-                  <br>
-                  <p>Archive individual records for all users in the organisation.</p>
-                </td>
-                <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">Design</span></td>
-                <td class="govuk-table__cell"><a href="/FSM/Private_beta/v7-4/school/dashboard.html"
-                    class="govuk-link">Dashboard</a><br>
-                <td class="govuk-table__cell govuk-table__cell--numeric">30 June 2025</td>
-                </td>
-
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell"><a href="/FSM/Private_beta/v8-1/school/dashboard.html"
-                    class="govuk-link"><b>v8-1</b></a></td>
-                <td class="govuk-table__cell">
-                  <a href="/FSM/Private_beta/v8-1/school/school-manage/recheck/recheck_44455454.html"
-                    class="govuk-link"><b>Recheck individual child </b></a>
-                  <br>
-                  <p>Recheck individual child records.</p>
-                </td>
-                <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">Design</span></td>
-                <td class="govuk-table__cell"><a
-                    href="/FSM/Private_beta/v8-1/school/school-manage/recheck/recheck_44455454.html"
-                    class="govuk-link">Sutton record</a><br>
-                <td class="govuk-table__cell govuk-table__cell--numeric">30 June 2025</td>
-                </td>
-                </td>
-            </tbody>
-          </table>
-          <!-- Previous versions table -->
-
-          <table class="govuk-table">
-
-            <!-- <h3 class="govuk-heading-m">Previous versions</h3> -->
-
-            {% include "_includes/design-school-index.html" %}
-
-
-            </tbody>
-          </table>
-      </div>
-
-      <!------------------------MAT USERS--------------------------->
-
-      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="MAT">
-        <span class="govuk-hint">Working version v8-0</span>
-
-        <h2 class="govuk-heading-l">MATs</h2>
-
-        <!-- Latest versions table -->
-
-        <table class="govuk-table">
-          <h3 class="govuk-heading-m">Latest versions</h3>
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header">Version</th>
-              <th scope="col" class="govuk-table__header">Description</th>
-              <th scope="col" class="govuk-table__header">Status</th>
-              <th scope="col" class="govuk-table__header">Links</th>
-              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date last updated</th>
-            </tr>
-          </thead>
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <td class="govuk-table__header"><a href="./Private_beta/v7-3/MAT/dashboard " class="govuk-link">v7-3</a>
-              </td>
-              <td class="govuk-table__cell">MVP MAT portal
-                <!-- <ul>
-                  <li>MATs can see all schools in their MAT</li>
-                  <li>MATs can view guidance </li>
-                  <li>MATs can create a single check</li>
-                  <li>MATs can create a batch check</li>
-                  <li>MATs can view all decisions in their MAT</li>
-                  <li>MATs can review evidence in their MAT academies</li>
-                </ul> -->
-              </td>
-              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--pink">Signed off</span></td>
-              <td class="govuk-table__cell"><a href="./Private_beta/v7-3/MAT/dashboard" class="govuk-link">Dashboard</a>
-                <!-- <br>
-                <a href="./Private_beta/v7-3/MAT/mat-manage/mat-soft-check/checker" class="govuk-link">Single
-                  check</a><br>
-                <a href="./Private_beta/v7-3/MAT/mat-manage/batch-checking/manual-no-ctf" class="govuk-link">Batch
-                  check</a><br>
-                <a href="./Private_beta/v7-3/MAT/mat-manage/decision/pending-list" class="govuk-link">Review
-                  evidence</a><br>
-                <a href="./Private_beta/v7-3/MAT/mat-manage/report/search" class="govuk-link">View all records</a><br>
-                <a href="./Private_beta/v7-3/MAT/guidance" class="govuk-link">View guidance</a><br>
-                <a href="./Private_beta/v7-3/_offline/fsm-print-version-mat" class="govuk-link">Download form</a><br> -->
-
-              <td class="govuk-table__cell govuk-table__cell--numeric">12 May 2025</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__header"><a href="./Private_beta/v8-0/MAT/dashboard " class="govuk-link">v8-0</a>
-              </td>
-              <td class="govuk-table__cell">MVP MAT portal updated with brand
-                <!-- <ul>
-                  <li>MATs can see all schools in their MAT</li>
-                  <li>MATs can view guidance </li>
-                  <li>MATs can create a single check</li>
-                  <li>MATs can create a batch check</li>
-                  <li>MATs can view all decisions in their MAT</li>
-                  <li>MATs can review evidence in their MAT academies</li>
-                </ul> -->
-              </td>
-              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">No changes</span></td>
-              <td class="govuk-table__cell"><a href="./Private_beta/v8-0/MAT/dashboard" class="govuk-link">Dashboard</a>
-              <td class="govuk-table__cell govuk-table__cell--numeric">24 Oct 2025</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">31 Jan 25</td>
             </tr>
           </tbody>
         </table>
-        <!-- Previous versions table -->
+      </div>
+
+      <!--Parent Table-->
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="parent">
+        <h2 class="govuk-heading-l">Parents</h2>
         <table class="govuk-table">
-          <h3 class="govuk-heading-m">Previous versions</h3>
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
               <th scope="col" class="govuk-table__header">Version</th>
-              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header">Whats new</th>
               <th scope="col" class="govuk-table__header">Status</th>
-              <th scope="col" class="govuk-table__header">Links</th>
-              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date last updated</th>
+              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date</th>
             </tr>
           </thead>
           <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="#" class="govuk-link">v6.2</a></td>
+              <td class="govuk-table__cell">Updated content </td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">Design</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">31 Jan 25</td>
+            </tr>
             <!-- <tr class="govuk-table__row">
-              <td class="govuk-table__header"><a href="#" class="govuk-link">v2.0</a></td>
-              <td class="govuk-table__cell">Initial version of this journey</td>
+              <td class="govuk-table__header"><a href="#" class="govuk-link">v6.2</a></td>
+              <td class="govuk-table__cell">Updated content </td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--orange">Research</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">31 Jan 25</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="#" class="govuk-link">v6.2</a></td>
+              <td class="govuk-table__cell">Updated content </td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Review</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">31 Jan 25</td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+
+
+      <!--School Table-->
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="school">
+        <h2 class="govuk-heading-l">School</h2>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Version</th>
+              <th scope="col" class="govuk-table__header">Whats new</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="#" class="govuk-link">v6.2</a></td>
+              <td class="govuk-table__cell">Updated content </td>
               <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">Design</span></td>
-              <td class="govuk-table__cell">Link here</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">10 Jan 25</td>
-            </tr>  -->
+              <td class="govuk-table__cell govuk-table__cell--numeric">31 Jan 25</td>
+            </tr>
 
           </tbody>
         </table>
       </div>
-      <!------------------------LA USERS--------------------------->
+
+      <!--LA Table-->
+
       <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="LA">
-        <span class="govuk-hint">Working version v8-0</span>
-
-        <h2 class="govuk-heading-l">Local Authority enhanced</h2>
+        <h2 class="govuk-heading-l">LA</h2>
         <table class="govuk-table">
-
-
-          <!-- Latest versions table -->
-          <table class="govuk-table">
-            <h3 class="govuk-heading-m">Latest versions</h3>
-            <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header">Version</th>
-                <th scope="col" class="govuk-table__header">Description</th>
-                <th scope="col" class="govuk-table__header">Status</th>
-                <th scope="col" class="govuk-table__header">Links</th>
-                <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date last updated</th>
-              </tr>
-            </thead>
-            <tbody class="govuk-table__body">
-
-              <tr class="govuk-table__row"></tr>
-              <td class="govuk-table__header"><a href="./Private_beta/v7-2/LA/dashboard.html"
-                  class="govuk-link">v7.2</a></td>
-              <td class="govuk-table__cell"><b>Batch checking v3</b>
-
-                <details class="govuk-details">
-                  <summary class="govuk-details__summary">
-                    <span class="govuk-details__summary-text">
-                      LA can perform a batch check and create application/appeal from results.
-                    </span>
-                  </summary>
-                  <div class="govuk-details__text">
-                    <ul>
-                      <li>Aligned to childcare batch check based on research collected and queuing timeframes</li>
-                      <li>Not started page </li>
-                      <li>In progress page - showing progress bar as part of list </li>
-                      <li>In progress updates to completed allowing user to view results</li>
-                      <li>Added in Completed page </li>
-                      <li>View results/download link</li>
-                      <li>LA version of application created - school to complete the records</li>
-                      <li>Show imported records in CTF</li>
-                    </ul>
-                  </div>
-                </details>
-
-              </td>
-              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--pink">Signed off</span></td>
-              <td class="govuk-table__cell">
-                <a href="./Private_beta/v7-2/LA/dashboard.html" class="govuk-link">LA Dashboard</a><br>
-                <a href="./Private_beta/v7-2/LA/la-manage/batch-checking/manual.html" class="govuk-link">Upload
-                  file</a><br>
-                <a href="./Private_beta/v7-2/LA/la-manage/batch-checking/manual-error.html" class="govuk-link">Error on
-                  loading file</a><br>
-                <a href="./Private_beta/v7-2/LA/la-manage/batch-checking/submitted-not-started.html"
-                  class="govuk-link">File submitted - Not started</a><br>
-                <a href="./Private_beta/v7-2/LA/la-manage/batch-checking/submitted-in-progress" class="govuk-link">File
-                  submitted - In progress</a><br>
-                <a href="./Private_beta/v7-2/LA/la-manage/batch-checking/submitted-completed.html"
-                  class="govuk-link">File submitted - Completed check</a><br>
-                <a href="./Private_beta/v7-2/LA/la-manage/batch-checking/batch-check-success.html"
-                  class="govuk-link">Results</a><br>
-                <a href="./Private_beta/v7-2/LA/la-manage/records/batch-records/eligible/batch-confirm-eligible"
-                  class="govuk-link">Eligible applications created</a><br>
-
-                <a href="./Private_beta/v7-2/LA/la-manage/batch-checking/batch-checking-loader-technical-error.html"
-                  class="govuk-link">Something went wrong page</a><br>
-              </td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">12 May 25</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__header"><a href="./Private_beta/v7-3/LA/dashboard.html"
-                    class="govuk-link">v7.3</a></td>
-                <td class="govuk-table__cell"><b>Request more evidence</b></a><br> LA can request more evidence from the
-                  school to support the application.</td>
-                <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--pink">Signed off</span></td>
-                <td class="govuk-table__cell"><a href="./Private_beta/v7-3/LA/dashboard.html"
-                    class="govuk-link">Dashboard</a><br>
-                  <a href="./Private_beta/v7-3/LA/la-manage/decision/pending-list.html" class="govuk-link">Pending
-                    applications</a><br>
-                  <a href="./Private_beta/v7-3/LA/la-manage/decision/records/pending.html" class="govuk-link">Child
-                    record</a><br>
-                  <a href="./Private_beta/v7-3/LA/la-manage/decision/records/approve-johnson1.html"
-                    class="govuk-link">Approve application</a><br>
-                  <a href="./Private_beta/v7-3/LA/la-manage/decision/records/eligibility-confirmed.html"
-                    class="govuk-link">Success - eligibility confirmed</a><br>
-                  <a href="./Private_beta/v7-3/LA/la-manage/decision/records/decline-johnson1.html"
-                    class="govuk-link">Decline application</a><br>
-                  <a href="./Private_beta/v7-3/LA/la-manage/decision/records/eligibility-confirmed.html"
-                    class="govuk-link">Success - eligibility declined</a><br>
-
-                  <a href="./Private_beta/v7-3/LA/la-manage/decision/records/requestmore-johnson1.html"
-                    class="govuk-link">Request more evidence</a><br>
-                </td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">30 Jun 25</td>
-              </tr>
-
-              <tr class="govuk-table__row">
-                <td class="govuk-table__header"><a href="./Private_beta/v7-5/LA/dashboard.html"
-                    class="govuk-link">v7-5</a>
-                </td>
-                <td class="govuk-table__cell"><b>Archive records</b></a><br> LA can archive a record for all users in
-                  the organisation.</td>
-                <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--pink">Signed off</span></td>
-                <td class="govuk-table__cell">
-                  <a href="./Private_beta/v7-5/LA/dashboard.html" class="govuk-link">LA Dashboard</a><br>
-                  <a href="./Private_beta/v7-5/LA/la-manage/decision/records/pending_johnson1.html"
-                    class="govuk-link">Individual record</a><br>
-                  <a href="./Private_beta/v7-5/LA/la-manage/decision/records/archive-johnson1.html"
-                    class="govuk-link">Archive this record?</a><br>
-                  <a href="./Private_beta/v7-5/LA/la-manage/decision/records/archive-confirmed-johnson1.html"
-                    class="govuk-link">Confirmed archived record</a><br>
-                  <a href="./Private_beta/v7-5/LA/la-manage/report/archive.html" class="govuk-link">Archive
-                    history</a><br>
-                </td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">20 Sept 25</td>
-              </tr>
-
-              <tr class="govuk-table__row">
-                <td class="govuk-table__header"><a href="./Private_beta/v7-5/LA/dashboard.html"
-                    class="govuk-link">v7-5</a>
-                </td>
-                <td class="govuk-table__cell"><b>Welsh checking service</b></a><br> Welsh LA can check
-                  eligibility<br>Can run batch check</td>
-                <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--orange">Research</span></td>
-                <td class="govuk-table__cell">
-                  <a href="./Private_beta/v7-5/welsh_LA/dashboard.html" class="govuk-link">LA Dashboard</a><br>
-                  <a href="./Private_beta/v7-5/welsh_LA/welsh-manage/batch-checking/manual-no-ctf.html"
-                    class="govuk-link">Batch check</a><br>
-                  <a href="./Private_beta/v7-5/welsh_LA/welsh-manage/welsh-soft-check/checker.html"
-                    class="govuk-link">Single check</a><br>
-                  <a href="./Private_beta/v7-5/welsh_LA/welsh-manage/guidance.html" class="govuk-link">Guidance</a><br>
-                  <a href="./Private_beta/v7-5/_offline/fsm-print-version-welsh.html" class="govuk-link">Download PDF
-                    history</a><br>
-                <td class="govuk-table__cell govuk-table__cell--numeric">25 Sept 25</td>
-                </td>
-              </tr>
-              <!--
-              <tr class="govuk-table__row">
-                <td class="govuk-table__header"><a href="./Private_beta/v8-0/LA/dashboard.html"
-                    class="govuk-link">v8-0</a>
-                </td>
-                <td class="govuk-table__cell"><b>Release 3 - Full LA service</b></a><br> Full LA service with single
-                  and batch checking, application management, evidence review, reporting and guidance.</td>
-                <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">Design</span></td>
-                <td class="govuk-table__cell">
-                  <a href="./Private_beta/v8-0/LA/dashboard.html" class="govuk-link">LA Dashboard</a><br> -->
-              <!-- <a href="./Private_beta/v8-0/LA/la-manage/la-soft-check/checker.html" class="govuk-link">Single
-                    check</a><br>
-                  <a href="./Private_beta/v8-0/LA/la-manage/batch-checking/manual-no-ctf.html" class="govuk-link">Batch
-                    check</a><br>
-                  <a href="./Private_beta/v8-0/LA/la-manage/decision/pending-list.html" class="govuk-link">Review
-                    evidence</a><br>
-                  <a href="./Private_beta/v8-0/LA/la-manage/report/search.html" class="govuk-link">View all records</a><br>
-                  <a href="./Private_beta/v8-0/LA/guidance.html" class="govuk-link">View guidance</a><br>
-                  <a href="./Private_beta/v8-0/_offline/fsm-print-version-la.html" class="govuk-link">Download form</a><br> -->
-              <!--
-                <td class="govuk-table__cell govuk-table__cell--numeric">10 Oct 25</td>
-</td> -->
-
-              <tr class="govuk-table__row">
-                <td class="govuk-table__header"><a href="./Private_beta/v8-0/LA/dashboard.html"
-                    class="govuk-link">v8-0</a>
-                </td>
-                <td class="govuk-table__cell"><b>LA archive</b></a><br> Archive feature - reduced MVP1</td>
-                <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--pink">Signed off</span></td>
-                <td class="govuk-table__cell">
-                  <a href="./Private_beta/v8-0/LA/dashboard.html" class="govuk-link">LA Dashboard</a><br>
-                  <a href="./Private_beta/v8-0/LA/la-manage/decision/records/pending_johnson1.html"
-                    class="govuk-link">Individual record</a><br>
-                  <a href="./Private_beta/v8-0/LA/la-manage/decision/records/archive-johnson1.html"
-                    class="govuk-link">Archive this record?</a><br>
-                  <a href="./Private_beta/v8-0/LA/la-manage/decision/records/archive-confirmed-johnson1.html"
-                    class="govuk-link">Confirmed archived record</a><br>
-                  <a href="./Private_beta/v8-0/LA/la-manage/report/archive.html" class="govuk-link">Archive
-                    history</a><br>
-                </td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">20 Sept 25</td>
-
-              <tr class="govuk-table__row">
-                <td class="govuk-table__header"><a href="./Private_beta/v8-0/LA/dashboard.html"
-                    class="govuk-link">v8-0</a>
-                </td>
-                <td class="govuk-table__cell"><b>LA recheck</b></a><br> Full LA service with single
-                  and batch checking, application management, evidence review, reporting and guidance.</td>
-                <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--grey">Iterate</span></td>
-                <td class="govuk-table__cell">
-                  <a href="./Private_beta/v8-0/LA/dashboard.html" class="govuk-link">LA Dashboard</a><br>
-                  <a href="./Private_beta/v8-0/_emails/notify_la/notify-la-recheck.html" class="govuk-link">Recheck
-                    notification email</a>
-                <td class="govuk-table__cell govuk-table__cell--numeric">10 Oct 25</td>
-
-              <tr class="govuk-table__row">
-                <td class="govuk-table__header"><a href="./Private_beta/v8-1/LA/dashboard.html"
-                    class="govuk-link">v8-1</a>
-                </td>
-                <td class="govuk-table__cell"><b>LA recheck - updated</b></a>Iterations from design crit<br></td>
-                <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">In review</span></td>
-                <td class="govuk-table__cell">
-                  <a href="./Private_beta/v8-1/LA/dashboard.html" class="govuk-link">LA Dashboard</a><br>
-                  <a href="./Private_beta/v8-1/LA/la-manage/recheck/recheck-summary.html" class="govuk-link">Recheck
-                    summary</a><br>
-                  <a href="./Private_beta/v8-1/_emails/notify_la/notify-la-recheck.html" class="govuk-link">Recheck
-                    notification email</a>
-                <td class="govuk-table__cell govuk-table__cell--numeric">20 Jan 26</td>
-
-
-              <tr class="govuk-table__row">
-                <td class="govuk-table__header"><a href="./Private_beta/v8-1/LA/dashboard.html"
-                    class="govuk-link">v8-1</a>
-                </td>
-                <td class="govuk-table__cell"><b>Policy Expansion</b></a><br> </td>
-                <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--orange">Research</span></td>
-                <td class="govuk-table__cell">
-                  <a href="./Private_beta/v8-1/LA/dashboard.html" class="govuk-link">LA Dashboard</a><br>
-                  <!-- <a href="./Private_beta/v8-1/LA/la-manage/la-soft-check/outcomes/eligible-targeted.html"
-                    class="govuk-link">Outcome - targeted</a><br>
-                  <a href="./Private_beta/v8-1/LA/la-manage/la-soft-check/outcomes/eligible-expanded.html"
-                    class="govuk-link">Outcome - expanded</a><br>
-                  <a href="./Private_beta/v8-1/LA/la-manage/la-soft-check/outcomes/not-eligible.html"
-                    class="govuk-link">Outcome - not eligible</a><br> -->
-
-                  <!--
-                  <a href="./Private_beta/v8-1/_emails/notify_la/notify-la-recheck.html" class="govuk-link">Recheck
-                    notification email</a> -->
-                <td class="govuk-table__cell govuk-table__cell--numeric">10 Oct 25</td>
-
-            </tbody>
-          </table>
-      </div>
-      <!------------------------la basic USERS--------------------------->
-
-      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="LAbasic">
-        <span class="govuk-hint">Latest version v8-1</span>
-
-        <h2 class="govuk-heading-l">LA Basic</h2>
-
-        <!-- Latest versions table -->
-
-        <table class="govuk-table">
-          <h3 class="govuk-heading-m">Latest versions</h3>
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
               <th scope="col" class="govuk-table__header">Version</th>
-              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header">Whats new</th>
               <th scope="col" class="govuk-table__header">Status</th>
-              <th scope="col" class="govuk-table__header">Links</th>
-              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date last updated</th>
+              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date</th>
             </tr>
           </thead>
           <tbody class="govuk-table__body">
 
 
+            <!-- <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="/FSM/Private_beta/v9-0/la/dashboard.html"
+                  class="govuk-link">v9.0</a></td>
+              <td class="govuk-table__cell">Transfer pupils</td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">Design phase</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">12 Aug 26</td>
+            </tr> -->
             <tr class="govuk-table__row">
-              <td class="govuk-table__header"><a href="./Private_beta/v8-0/LA_Basic/dashboard.html"
-                  class="govuk-link">v8-0</a>
-              </td>
-              <td class="govuk-table__cell"><b>Release 1 - LA Basic checks</b></a><br> Basic version<br>MVP - Download
-                results only <br> V2 to include view screens</td>
-              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Live</span></td>
-              <td class="govuk-table__cell"><a href="./Private_beta/v8-0/LA_Basic/dashboard.html"
-                  class="govuk-link">Dashboard</a>
-                <br><a href="./Private_beta/v8-0/LA_Basic/basic-manage/basic-soft-check/checker.html"
-                  class="govuk-link">Individual check</a>
-                <br><a href="./Private_beta/v8-0/LA_Basic/basic-manage/batch-checking/manual-no-ctf.html"
-                  class="govuk-link">Batch check</a>
-                <br><a href="./Private_beta/v8-0/LA_Basic/basic-manage/guidance/guidance.html"
-                  class="govuk-link">Guidance</a>
-                <br><a href="./Private_beta/v8-0/LA_Basic/basic-manage/report/report-checks.html"
-                  class="govuk-link">Reports</a>
-              <td class="govuk-table__cell govuk-table__cell--numeric">20 December 25</td>
-
-
+              <td class="govuk-table__header"><a href="/FSM/Private_beta/v8-3/la/dashboard.html"
+                  class="govuk-link">v8.3</a></td>
+              <td class="govuk-table__cell">Search all records iteration - filter update</td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">Design phase</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">12 Aug 26</td>
+            </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__header"><a href="./Private_beta/v8-1/en/LA_Basic/dashboard.html"
-                  class="govuk-link">v8-1</a>
-              </td>
-              <td class="govuk-table__cell"><b> Welsh LA Basic </b></a><br> Basic version with welsh toggle<br> Policy
-                expansion v1-0 <br></td>
-              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">Design</span></td>
-              <td class="govuk-table__cell"><a href="./Private_beta/v8-1/en/LA_Basic/dashboard.html"
-                  class="govuk-link">Dashboard</a><br>
-                <a href="./Private_beta/v8-1/en/LA_Basic/basic-manage/basic-soft-check/checker.html"
-                  class="govuk-link">Individual check</a>
-                <br><a href="./Private_beta/v8-1/en/LA_Basic/basic-manage/batch-checking/manual-no-ctf.html"
-                  class="govuk-link">Batch check</a>
-                <br><a href="./Private_beta/v8-1/en/LA_Basic/basic-manage/guidance/guidance.html"
-                  class="govuk-link">Guidance</a>
-                <br><a href="./Private_beta/v8-1/en/LA_Basic/basic-manage/report/report-checks.html"
-                  class="govuk-link">Reports</a><br><br>
-                Welsh version links:<br>
-                <a href="./Private_beta/v8-1/cy/LA_Basic/dashboard.html" class="govuk-link">Welsh Dashboard</a><br>
-              </td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">27 March 26</td>
-
-            <tr class="govuk-table__row">
-              <td class="govuk-table__header"><a href="./Private_beta/v8-0/LA_Basic/dashboard.html"
-                  class="govuk-link">v8-1</a>
-              </td>
-              <td class="govuk-table__cell"><b>LA Basic Expansion</b></a><br>Policy expansion v1-0<br>Update outcomes
-              </td>
-              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--pink">Signed off</span></td>
-              <td class="govuk-table__cell"><a href="./Private_beta/v8-1/LA_Basic/dashboard.html"
-                  class="govuk-link">Dashboard</a>
-                <br><a href="./Private_beta/v8-1/LA_Basic/basic-manage/basic-soft-check/checker.html"
-                  class="govuk-link">Individual check</a>
-                <br><a href="./Private_beta/v8-1/LA_Basic/basic-manage/basic-soft-check/outcomes/eligible-targeted.html"
-                  class="govuk-link">Targeted outcome</a>
-                <br><a href="./Private_beta/v8-1/LA_Basic/basic-manage/basic-soft-check/outcomes/eligible-expanded.html"
-                  class="govuk-link">Expanded outcome</a>
-                <br><a href="./Private_beta/v8-1/LA_Basic/basic-manage/batch-checking/manual-no-ctf.html"
-                  class="govuk-link">Batch check</a>
-                <br><a href="./Private_beta/v8-1/LA_Basic/basic-manage/guidance/guidance.html"
-                  class="govuk-link">Guidance</a>
-                 <br><a href="./Private_beta/v8-1/LA_Basic/basic-manage/guidance/guidance-steps/rechecks.html"
-                  class="govuk-link">Recheck guidance</a>
-                    <br><a href="./Private_beta/v8-1/LA_Basic/basic-manage/guidance/guidance-steps/expansion.html"
-                  class="govuk-link">Expansion guidance</a>
-                <!-- <br><a href="./Private_beta/v8-1/LA_Basic/basic-manage/report/report-checks.html"
-                  class="govuk-link">Reports</a> -->
-              <td class="govuk-table__cell govuk-table__cell--numeric">16 April 26</td>
-
-
-
-            <tr class="govuk-table__row">
-              <td class="govuk-table__header"><a href="./Private_beta/v8-0/LA_Basic/dashboard.html"
-                  class="govuk-link">v8-1</a>
-              </td>
-              <td class="govuk-table__cell"><b>LA Basic Expansion - reporting change</b></a><br>Policy expansion v1-0<br>Updated reporting based on tech feasibility
-              </td>
-              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Ready for tickets</span></td>
-              <td class="govuk-table__cell"><a href="./Private_beta/v8-1/LA_Basic/basic-manage/report_mvp/report-checks.html"
-                  class="govuk-link">Reports-MVP</a>
-              <td class="govuk-table__cell govuk-table__cell--numeric">29 April 26</td>
-
+              <td class="govuk-table__header"><a href="/FSM/Private_beta/v8-1/la/dashboard.html"
+                  class="govuk-link">v8.1</a></td>
+              <td class="govuk-table__cell">Policy expansion</td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Signed off</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">20 Dec 25</td>
+            </tr>
+    <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="/FSM/Private_beta/v8-0/la/dashboard.html"
+                  class="govuk-link">v8.0</a></td>
+              <td class="govuk-table__cell">Recheck</td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--red">Superseded</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">10 Oct 26</td>
+            </tr>
+ <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="/FSM/Private_beta/v8-0/la/dashboard.html"
+                  class="govuk-link">v8.0</a></td>
+              <td class="govuk-table__cell">Archive records</td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Signed off</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">20 Sept 25</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="/FSM/Private_beta/v7-2/la/dashboard.html"
+                  class="govuk-link">v7-2</a></td>
+              <td class="govuk-table__cell">Batch check records and create applications</td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Signed off</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">20 Sept 25</td>
+            </tr>
 
           </tbody>
         </table>
-        <!-- ---Previous version table
+      </div>
+
+
+
+      <!--Basic Table-->
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="lite">
+        <h2 class="govuk-heading-l">LA LITE</h2>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Version</th>
+              <th scope="col" class="govuk-table__header">Whats new</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="#" class="govuk-link">v8-1</a></td>
+              <td class="govuk-table__cell">Reporting</td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">Design</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">29 April 26</td>
+            </tr>
+               <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="#" class="govuk-link">v8-1</a></td>
+              <td class="govuk-table__cell">Policy Expansion outcomes</td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Signed off</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">16 April 26</td>
+            </tr>
+             </tr>
+               <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="#" class="govuk-link">v8-0</a></td>
+              <td class="govuk-table__cell">Lite MVP</td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Signed off</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">20 Dec 25</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+
+        <!--MAT Table-->
+
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="MAT">
+          <h2 class="govuk-heading-l">Trusts</h2>
           <table class="govuk-table">
-            <h3 class="govuk-heading-m">Previous versions</h3>
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
                 <th scope="col" class="govuk-table__header">Version</th>
-                <th scope="col" class="govuk-table__header">Description</th>
+                <th scope="col" class="govuk-table__header">Whats new</th>
                 <th scope="col" class="govuk-table__header">Status</th>
-                <th scope="col" class="govuk-table__header">Links</th>
-                <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date last updated</th>
+                <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date</th>
               </tr>
             </thead>
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
-                <td class="govuk-table__header"><a href="#" class="govuk-link">v6</a></td>
-                <td class="govuk-table__cell">Search all results</td>
-                <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--pink">Signed off</span></td>
-                <td class="govuk-table__cell">Link here</td>
-
-                <td class="govuk-table__cell govuk-table__cell--numeric">10 Jan 25</td>
-              </tr>
-
-              <tr class="govuk-table__row">
-                <td class="govuk-table__header"><a href="#" class="govuk-link">v1.0</a></td>
-                <td class="govuk-table__cell">Check your answers screen - uploaded evidence</td>
+                <td class="govuk-table__header"><a href="#" class="govuk-link">v6.2</a></td>
+                <td class="govuk-table__cell">Updated content </td>
                 <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">Design</span></td>
-                <td class="govuk-table__cell">Link here</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">10 Jan 25</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">31 Jan 25</td>
               </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__header"><a href="./Private_beta/v7-1/LA/dashboard.html"
-                    class="govuk-link">v7.1</a></td>
-                <td class="govuk-table__cell"><b>Release 2 - Herts school upload version</b></a><br> View or download
-                  evidence from pupil record. </td>
-                <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--pink">Signed off</span></td>
-                <td class="govuk-table__cell">
-                  <a href="./Private_beta/v7-1/LA/dashboard.html" class="govuk-link">LA dashboard</a><br>
-                  <a href="./Private_beta/v7-1/LA/la-manage/decision/pending-list.html" class="govuk-link">Pending
-                    applications</a><br>
-                  <a href="./Private_beta/v7-1/LA/la-manage/decision/records/pending.html" class="govuk-link">Child
-                    record</a><br>
-                  <a href="./Private_beta/v7-1/LA/la-manage/decision/records/evidence.html" class="govuk-link">View
-                    evidence</a><br> -->
-        <!-- <a href="./Private_beta/v7-1LA/la-manage/decision/.html"class="govuk-link">Download evidence</a><br> -->
-        <!-- <td class="govuk-table__cell govuk-table__cell--numeric">28 Mar 25</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__header"><a href="./Private_beta/v7/LA/dashboard.html"
-                    class="govuk-link">v7-1</a>
-                </td>
-                <td class="govuk-table__cell"><b>Individual check</b></a><br> LA can perform an individual check and
-                  continue to add details.</td>
-                <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--pink">Signed off</span></td>
-                <td class="govuk-table__cell">
-                  <a href="./Private_beta/v7/LA/la-manage/la-soft-check/outcomes/eligible.html"
-                    class="govuk-link">Eligible outcome</a><br>
-                  <a href="./Private_beta/v7/LA/la-manage/apply/outcome-eligible-childs-age.html" class="govuk-link">Add
-                    details</a><br>
-
-                <td class="govuk-table__cell govuk-table__cell--numeric">31 Mar 25</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__header"><a href="./Private_beta/v7-1/LA/dashboard.html"
-                    class="govuk-link">v7-1</a>
-                </td>
-                <td class="govuk-table__cell"><b>Batch checking v1</b></a><br> LA can perform a batch check and view
-                  results in the service not a csv. No actions online</td>
-                <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--grey">Rework</span></td>
-                <td class="govuk-table__cell">
-                  <a href="./Private_beta/v7-1/LA/dashboard.html" class="govuk-link">LA Dashboard</a><br>
-                  <a href="./Private_beta/v7-1/LA/la-manage/batch-checking/manual.html" class="govuk-link">Choose how to
-                    batch check</a><br>
-                  <a href="./Private_beta/v7-1/LA/la-manage/batch-checking/imported-records.html"
-                    class="govuk-link">Imported records</a><br>
-                  <a href="./Private_beta/v7-1/LA/la-manage/batch-checking/batch-checking-loader.html"
-                    class="govuk-link">Batch check loader -progress bar</a><br>
-                  <a href="./Private_beta/v7-1/LA/la-manage/batch-checking/batch-check-success.html"
-                    class="govuk-link">Results</a><br>
-                  <a href="./Private_beta/v7-1/LA/la-manage/batch-checking/batch-check-unsuccessful.html"
-                    class="govuk-link">Something went wrong page</a><br>
-
-                <td class="govuk-table__cell govuk-table__cell--numeric">31 Mar 25</td>
-              </tr>
-
-              <tr class="govuk-table__row">
-                <td class="govuk-table__header"><a href="./Private_beta/v7-1/LA/dashboard.html"
-                    class="govuk-link">v7.1</a></td>
-                <td class="govuk-table__cell"><b>Batch checking v2</b></a><br> LA can perform a batch check and view
-                  results and create application/appeal from results</td>
-                <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--grey">Rework</span></td>
-                <td class="govuk-table__cell">
-                  <a href="./Private_beta/v7-1/LA/dashboard.html" class="govuk-link">LA Dashboard</a><br>
-                  <a href="./Private_beta/v7-1/LA/la-manage/batch-checking/manual.html" class="govuk-link">Choose how to
-                    batch check</a><br>
-                  <a href="./Private_beta/v7-1/LA/la-manage/batch-checking/imported-records.html"
-                    class="govuk-link">Imported records</a><br>
-                  <a href="./Private_beta/v7-1/LA/la-manage/batch-checking/batch-checking-loader.html"
-                    class="govuk-link">Batch check loader - progess bar</a><br>
-                  <a href="./Private_beta/v7-1/LA/la-manage/batch-checking/batch-check-success.html"
-                    class="govuk-link">Results</a><br>
-                  <a href="./Private_beta/v7-1/LA/la-manage/batch-checking/batch-checking-loader-technical-error.html"
-                    class="govuk-link">Something went wrong page</a><br>
-                </td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">31 Mar 25</td>
-              </tr>
+              <!-- <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="#" class="govuk-link">v6.2</a></td>
+              <td class="govuk-table__cell">Updated content </td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--orange">Research</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">31 Jan 25</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><a href="#" class="govuk-link">v6.2</a></td>
+              <td class="govuk-table__cell">Updated content </td>
+              <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--green">Review</span></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">31 Jan 25</td>
+            </tr> -->
             </tbody>
           </table>
-      </div> -->
+        </div>
 
 
-        <!------------------------Notifications--------------------------->
-        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="notifications">
-          <h2 class="govuk-heading-l">Notifications</h2>
-          <table class="govuk-table">
-
-
-            <!-- Parents table -->
-            <table class="govuk-table">
-              <h3 class="govuk-heading-m">Parents</h3>
-              <thead class="govuk-table__head">
-                <tr class="govuk-table__row">
-                  <th scope="col" class="govuk-table__header">Version</th>
-                  <th scope="col" class="govuk-table__header">Description</th>
-                  <th scope="col" class="govuk-table__header">Status</th>
-                  <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date last updated</th>
-                </tr>
-              </thead>
-              <tbody class="govuk-table__body">
-
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__header">v7.2</td>
-                  <td class="govuk-table__cell"><a
-                      href="/FSM/Private_beta/v7-2/_emails/notify_family/notify-parent-new-application.html"
-                      class="govuk-link">Application sent</a></td>
-                  <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">Design</span></td>
-                  <td class="govuk-table__cell govuk-table__cell--numeric">20 June 2025</td>
-                </tr>
-
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__header">v7.2</td>
-                  <td class="govuk-table__cell"><a
-                      href="/FSM/Private_beta/v7-2/_emails/notify_family/notify-parent-app-successful.html"
-                      class="govuk-link">Application successful</a></td>
-                  <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">Design</span></td>
-                  <td class="govuk-table__cell govuk-table__cell--numeric">20 June 2025</td>
-                </tr>
-
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__header">v7.2</td>
-                  <td class="govuk-table__cell"><a
-                      href="/FSM/Private_beta/v7-2/_emails/notify_family/notify-parent-evidence.html"
-                      class="govuk-link">Evidence needed</a></td>
-                  <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">Design</span></td>
-                  <td class="govuk-table__cell govuk-table__cell--numeric">20 June 2025</td>
-                </tr>
-
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__header">v7.2</td>
-                  <td class="govuk-table__cell"><a
-                      href="/FSM/Private_beta/v7-2/_emails/notify_family/notify-parent-evidence-rcvd.html"
-                      class="govuk-link">Evidence sent</a></td>
-                  <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">Design</span></td>
-                  <td class="govuk-table__cell govuk-table__cell--numeric">20 June 2025</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <!-- Schools table -->
-            <table class="govuk-table">
-              <h3 class="govuk-heading-m">Schools</h3>
-              <thead class="govuk-table__head">
-                <tr class="govuk-table__row">
-                  <th scope="col" class="govuk-table__header">Version</th>
-                  <th scope="col" class="govuk-table__header">Description</th>
-                  <th scope="col" class="govuk-table__header">Status</th>
-                  <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date last updated</th>
-                </tr>
-              </thead>
-              <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__header">v7.2</td>
-                  <td class="govuk-table__cell"><a
-                      href="/FSM/Private_beta/v7-2/_emails/notify_school/notify-school-new.html" class="govuk-link">New
-                      eligible applications to process</a></td>
-                  <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--orange">Research</span></td>
-                  <td class="govuk-table__cell govuk-table__cell--numeric">16 June 2025</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__header">v7.2</td>
-                  <td class="govuk-table__cell"><a
-                      href="/FSM/Private_beta/v7-2/_emails/notify_school/notify-school-approved.html"
-                      class="govuk-link">Reviewed applications to process</a></td>
-                  <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--orange">Research</span></td>
-                  <td class="govuk-table__cell govuk-table__cell--numeric">16 June 2025</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <!-- Local authority table -->
-            <!-- <table class="govuk-table">
-            <h3 class="govuk-heading-m">Local authorities</h3>
-            <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header">Version</th>
-                <th scope="col" class="govuk-table__header">Description</th>
-                <th scope="col" class="govuk-table__header">Status</th>
-                <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date last updated</th>
-              </tr>
-            </thead>
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <td class="govuk-table__header">v7.2</td>
-                <td class="govuk-table__cell"><a href="app/views/FSM/Private_beta/v7-2/_emails/notify_la/notify-la.html"
-                    class="govuk-link">New applications to review</a></td>
-                <td class="govuk-table__cell"><span class="govuk-tag govuk-tag--blue">Design</span></td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">16 June 2025</td>
-              </tr>
-            </tbody>
-          </table>
-      </div> -->
-
-            {% endblock %}
+        {% endblock %}
