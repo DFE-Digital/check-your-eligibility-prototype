@@ -279,3 +279,30 @@ function clearFilters() {
   return false; // stop the onclick="clearFilters()" anchor from navigating to "#"
 }
 window.clearFilters = clearFilters; // needs to be global — called from inline onclick in Filter.txt
+
+// ---------------------------------------------------------------
+// Toggle filters visibility
+// ---------------------------------------------------------------
+
+// document.addEventListener('DOMContentLoaded', function () {
+//   var toggleBtn = document.getElementById('toggle-filters-btn');
+//   var filterContent = document.querySelector('.moj-filter__content');
+
+//   if (toggleBtn && filterContent) {
+//     toggleBtn.addEventListener('click', function () {
+//       var isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+
+//       if (isExpanded) {
+//         // Hide filters
+//         filterContent.style.display = 'none';
+//         toggleBtn.setAttribute('aria-expanded', 'false');
+//         toggleBtn.textContent = 'Show filters';
+//       } else {
+//         // Show filters
+//         filterContent.style.display = 'block';
+//         toggleBtn.setAttribute('aria-expanded', 'true');
+//         toggleBtn.textContent = 'Hide filters';
+//       }
+//     });
+//   }
+// });
