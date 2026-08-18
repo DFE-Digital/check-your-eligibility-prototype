@@ -1,0 +1,339 @@
+
+
+<!-- <div class="govuk-grid-row govuk-!-margin-bottom-2" style="justify-content: flex-end;">
+  <div class="govuk-grid-column-full" style="display: flex; align-items: center; justify-content: flex-end;">
+    <button id="toggle-filters-btn" type="button" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" aria-expanded="true">
+      Hide filters
+    </button>
+  </div>
+</div> -->
+
+<button
+  id="toggle-filters-btn"
+  type="button"
+  class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0"
+  aria-expanded="true"
+  aria-controls="filter-wrapper"
+  style="margin-bottom: 20px;">
+  Hide filters
+</button>
+
+
+
+<div id="filter-wrapper"
+  class="hidden govuk-!-margin-bottom-3 govuk-!-padding-4"
+  style="border: 2px solid #b1b4b6; background: #eaeaea; margin-top: 0;">
+  <div class="govuk-form-group" id="filter-container">
+    <div class="govuk-grid-row govuk-!-margin-bottom-3" style="margin: 0;">
+      <div class="govuk-grid-column-full" style="padding-left: 5px; padding-right: 5px; box-sizing: border-box;">
+        <div class="govuk-form-group" style="background: white; padding: 15px; min-height: 160px; height: 100%;">
+          <fieldset class="govuk-fieldset">
+            <div class="govuk-form-group govuk-!-margin-bottom-0">
+              <label class="govuk-label govuk-label--s" for="application">Find an application</label>
+              <span id="application-hint" class="govuk-hint govuk-hint--s">For example, 44455453 or child or parent name</span>
+              <input class="govuk-input" id="application" name="application" type="text">
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+
+    <div class="govuk-grid-row" style="margin: 0;">
+      <div class="govuk-grid-column-one-half" style="padding-left: 5px; padding-right: 5px; box-sizing: border-box;">
+        <div class="govuk-form-group" style="background: white; padding: 15px; min-height: 360px; height: 100%;">
+          <fieldset class="govuk-fieldset">
+            {# ---------------------------------------------------
+               Submission date
+            ---------------------------------------------------- #}
+
+            {% set dateHtml %}
+            <div class="govuk-form-group govuk-!-margin-bottom-0">
+              {{ govukDateInput({
+                id: "submission-date-from",
+                name: "submissionDateFrom",
+                fieldset: {
+                  legend: {
+                    text: "From",
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                }
+              }) }}
+            </div>
+            <div class="govuk-form-group govuk-!-margin-bottom-0">
+              {{ govukDateInput({
+                id: "submission-date-to",
+                name: "submissionDateTo",
+                fieldset: {
+                  legend: {
+                    text: "To",
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                }
+              }) }}
+            </div>
+            {% endset -%}
+
+            {{ govukRadios({
+              name: "custom-date-range",
+              fieldset: {
+                legend: {
+                  text: "Submission date range",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
+              hint: {
+                text: "Select one option"
+              },
+              items: [
+                {
+                  value: "date-range",
+                  text: "Custom date range",
+                  conditional: {
+                    html: ('<div style="border-left: 4px solid #b1b4b6; background: #f3f2f1; padding: 15px; margin-top: 12px; margin-bottom: 0; display: block;">' ~ dateHtml ~ '</div>') | safe
+                  }
+                },
+                {
+                  value: "current",
+                  text: "Current academic year"
+                },
+                {
+                  value: "previous",
+                  text: "Previous academic year"
+                }
+              ]
+            }) }}
+          </fieldset>
+        </div>
+      </div>
+
+      <div class="govuk-grid-column-one-half" style="padding-left: 5px; padding-right: 5px; box-sizing: border-box;">
+        <div class="govuk-form-group" style="background: white; padding: 15px; min-height: 360px; height: 100%;">
+          <fieldset class="govuk-fieldset">
+            {# ---------------------------------------------------
+               Application type
+            ---------------------------------------------------- #}
+
+            {% set fundingStatusHtml %}
+            {{ govukCheckboxes({
+              idPrefix: "custom-status-funding",
+              name: "customStatus",
+              classes: "govuk-checkboxes--small",
+              fieldset: {
+                legend: {
+                  text: "Funding status",
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
+              hint: {
+                text: "Select one or more options"
+              },
+              items: [
+                { value: "not-entitled", text: "Not entitled" },
+                { value: "eligible-targeted", text: "Eligible targeted" },
+                { value: "eligible-expanded", text: "Eligible expanded" },
+                { value: "eligible-2025-2026", text: "Eligible (2025-2026)" },
+                { value: "receiving-expanded-fsm", text: "Receiving expanded FSM" },
+                { value: "receiving-targeted-fsm", text: "Receiving targeted FSM" },
+                { value: "receiving-entitlement-2025-2026", text: "Receiving entitlement (2025-2026)" }
+              ]
+            }) }}
+            {% endset -%}
+
+            {% set actionStatusHtml %}
+            {{ govukCheckboxes({
+              idPrefix: "custom-status-action",
+              name: "customStatus",
+              classes: "govuk-checkboxes--small",
+              fieldset: {
+                legend: {
+                  text: "Review status",
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
+              hint: {
+                text: "Select one or more options"
+              },
+              items: [
+                { value: "evidence-needed", text: "Upload evidence" },
+                { value: "sent-for-review", text: "Review application" },
+                { value: "reviewed-not-entitled", text: "Not entitled after review" }
+              ]
+            }) }}
+            {% endset -%}
+
+            {{ govukRadios({
+              name: "custom-application-type",
+              fieldset: {
+                legend: {
+                  text: "Application type",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
+              hint: {
+                text: "Select one option"
+              },
+              items: [
+                { value: "active", text: "Active applications" },
+                { value: "archived", text: "Archived applications" },
+                {
+                  value: "custom-search",
+                  text: "Custom search",
+                  conditional: {
+                    html: ('<div style="border-left: 4px solid #b1b4b6; background: #f3f2f1; padding: 15px; margin-top: 12px; margin-bottom: 0; display: block;">' ~ (fundingStatusHtml ~ actionStatusHtml) ~ '</div>') | safe
+                  }
+                }
+              ]
+            }) }}
+          </fieldset>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase of education -->
+    <!-- <div class="govuk-grid-column-one-quarter" style="padding-left: 5px; padding-right: 5px;">
+      <div class="govuk-form-group" style="background: white; padding: 10px; min-height: 400px;">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Phase of education</legend>
+          <p class="govuk-hint govuk-hint--s">Select all that apply</p>
+          <div class="govuk-checkboxes govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="phase-nursery" name="phase" type="checkbox" value="Nursery">
+              <label class="govuk-label govuk-checkboxes__label" for="phase-nursery">Nursery</label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="phase-primary" name="phase" type="checkbox" value="Primary">
+              <label class="govuk-label govuk-checkboxes__label" for="phase-primary">Primary</label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="phase-junior" name="phase" type="checkbox" value="Junior">
+              <label class="govuk-label govuk-checkboxes__label" for="phase-junior">Junior</label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="phase-secondary" name="phase" type="checkbox" value="Secondary">
+              <label class="govuk-label govuk-checkboxes__label" for="phase-secondary">Secondary</label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="phase-further" name="phase" type="checkbox" value="Further">
+              <label class="govuk-label govuk-checkboxes__label" for="phase-further">16+ education</label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="phase-allthrough" name="phase" type="checkbox" value="Allthrough">
+              <label class="govuk-label govuk-checkboxes__label" for="phase-allthrough">All-through</label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div> -->
+  </div>
+
+  <!-- Filter actions -->
+    <div class="govuk-button-group govuk-!-margin-top-3 govuk-!-margin-bottom-0" style="margin-bottom: 0;">
+      <button class="govuk-button" id="apply-filters" type="button">Apply filters</button>
+      <a href="#" class="govuk-link" id="clear-filters">Clear filters</a>
+    </div>
+
+  </div>
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const toggleBtn = document.getElementById('toggle-filters-btn');
+  const filterWrapper = document.getElementById('filter-wrapper');
+
+  // If this page doesn't have filters, don't error
+  if (!toggleBtn || !filterWrapper) return;
+
+  function updateToggleButton() {
+    const isHidden = filterWrapper.classList.contains('hidden');
+    toggleBtn.textContent = isHidden ? 'Show filters' : 'Hide filters';
+    toggleBtn.setAttribute('aria-expanded', String(!isHidden));
+  }
+
+  toggleBtn.addEventListener('click', function () {
+    filterWrapper.classList.toggle('hidden');
+    updateToggleButton();
+  });
+
+  updateToggleButton();
+});
+</script>
+
+
+<script>
+
+// Run once on page load (important)
+// updateToggleButton();
+
+const appliedFiltersEl = document.getElementById('applied-filters');
+const appliedFiltersList = document.getElementById('applied-filters-list');
+
+function getAppliedFilters() {
+  const filters = [];
+
+  const application = document.getElementById('application');
+  if (application && application.value.trim()) {
+    filters.push({ key: 'application', label: application.value.trim() });
+  }
+
+  const school = document.getElementById('school');
+  if (school && school.value.trim()) {
+    filters.push({ key: 'school', label: school.value.trim() });
+  }
+
+  document.querySelectorAll('input[name="phase"]:checked').forEach(cb => {
+    const label = document.querySelector(`label[for="${cb.id}"]`)?.textContent?.trim() || cb.value;
+    filters.push({ key: 'phase', id: cb.id, label });
+  });
+
+  return filters;
+}
+
+function clearFilter(filter) {
+  if (filter.key === 'application') {
+    const application = document.getElementById('application');
+    if (application) application.value = '';
+  }
+
+  if (filter.key === 'school') {
+    const school = document.getElementById('school');
+    if (school) school.value = '';
+  }
+
+  if (filter.key === 'phase' && filter.id) {
+    const phaseInput = document.getElementById(filter.id);
+    if (phaseInput) phaseInput.checked = false;
+  }
+
+  const applyFiltersBtn = document.getElementById('apply-filters');
+  if (applyFiltersBtn) applyFiltersBtn.click();
+}
+
+function renderAppliedFilters() {
+  if (!appliedFiltersEl || !appliedFiltersList) return;
+
+  const filters = getAppliedFilters();
+
+  // Hide summary if nothing applied
+  appliedFiltersEl.hidden = filters.length === 0;
+  appliedFiltersList.innerHTML = '';
+
+  filters.forEach(f => {
+    const li = document.createElement('li');
+    li.className = 'govuk-!-margin-right-1';
+
+    li.innerHTML = `
+      <span class="filter-tag">
+        ${f.label}
+        <button type="button" class="filter-tag__remove" aria-label="Remove filter: ${f.label}">×</button>
+      </span>
+    `;
+
+    li.querySelector('button').addEventListener('click', () => clearFilter(f));
+    appliedFiltersList.appendChild(li);
+  });
+}
+
+</script>

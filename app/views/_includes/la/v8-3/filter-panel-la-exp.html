@@ -6,6 +6,8 @@
 
 
 
+
+
     <div class="moj-filter">
       <div class="moj-filter__header">
         <h2 class="govuk-heading-m">Filter</h2>
@@ -48,7 +50,7 @@
 
 
           <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--m" for="keywords">Keyword</label>
+            <label class="govuk-label govuk-label--s" for="keywords">Find an application</label>
             <div id="event-name-hint" class="govuk-hint">
     You can search by reference number, school, name or date of birth
   </div>
@@ -98,7 +100,7 @@
     }
   },
   hint: {
-    text: "Select one option"
+    text: "Enter a date range"
   },
   items: [
     {
@@ -142,7 +144,7 @@
   items: [
   {
       value: "not-entitled",
-      text: "Not entitled"
+      text: "Not eligible"
     },
     {
       value: "eligible-targeted",
@@ -199,7 +201,7 @@
     },
     {
       value: "reviewed-not-entitled",
-      text: "Not entitled after review"
+      text: "Not eligible after review"
     }
 
   ]
@@ -230,7 +232,7 @@
     },
     {
       value: "custom-search",
-      text: "Custom search",
+      text: "Search by status",
       conditional: {
         html: (fundingStatusHtml ~ actionStatusHtml) | safe
       }
