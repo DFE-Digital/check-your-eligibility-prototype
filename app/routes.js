@@ -6,6 +6,27 @@ const express = require('express');
 const router = govukPrototypeKit.requests.setupRouter(); // Create a router from the prototype kit
 const path = require('path');
 
+// Azure decodes slashes in scoped npm package names before the
+// requests reach the GOV.UK Prototype Kit plugin asset routes.
+router.use(
+  '/plugin-assets/@ministryofjustice/frontend/moj',
+  express.static(
+    path.join(
+      __dirname,
+      '../node_modules/@ministryofjustice/frontend/moj'
+    )
+  )
+);
+
+router.use(
+  '/plugin-assets/@govuk-prototype-kit/step-by-step/javascripts',
+  express.static(
+    path.join(
+      __dirname,
+      '../node_modules/@govuk-prototype-kit/step-by-step/javascripts'
+    )
+  )
+);
 // Add your routes here - above the module.exports line
 
 const _ = require('lodash')
