@@ -67,7 +67,7 @@ const batchCheckRouteV7 = require('./routes/fsm/private_beta/v7/batch-check');
 // Use the batch-check route
 router.use(batchCheckRouteV7);
 
-const softCheckRoutesV7_1_new = require('./routes/fsm/private_beta/v7-1/softCheck');
+const softCheckRoutesV7_1_new = require('./routes/fsm/private_beta/v7-1/softcheck');
 softCheckRoutesV7_1_new(router);
 
 // const appealRoutes = require('./routes/mvp3/appeal');
