@@ -1,8 +1,9 @@
 {
   "scripts": {
+    "build": "node -e \"require('govuk-prototype-kit/lib/build').generateAssetsSync()\"",
     "dev": "govuk-prototype-kit dev",
     "serve": "govuk-prototype-kit serve",
-    "start": "./node_modules/govuk-prototype-kit/bin/cli start",
+    "start": "node app/start.js",
     "generate-data": "node ./scripts/generate-applications.js",
     "generate-batch": "node ./scripts/generateBatchCheckSchool.js"
   },
