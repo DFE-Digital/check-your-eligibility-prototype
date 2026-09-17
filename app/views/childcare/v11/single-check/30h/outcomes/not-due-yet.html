@@ -1,7 +1,7 @@
 {% extends "/layouts/childcare/v11/layout-childcare.html" %}
 
 {% block pageTitle %}
-Code expired
+Code is valid
 {% endblock %}
 
 
@@ -10,16 +10,14 @@ Code expired
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7" style="background: 	#f47738;">
-      <h1 class="govuk-panel__title" style="color:#0b0c0c;">
-        Code expired
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
+      <h1 class="govuk-panel__title">
+        Code valid
       </h1>
-      <div class="govuk-panel__body">
-        <div class="govuk-panel__body govuk-!-margin-bottom-5" style="color:#0b0c0c;">
-          Expired on 31 August 2025
-        </div>
-        <p class="govuk-body-l govuk-!-margin-bottom-0">Child has reached compulsory school age</p>
+      <div class="govuk-panel__body govuk-!-margin-bottom-5">
+        Valid for autumn term 2026
       </div>
+      <p class="govuk-body-l govuk-!-margin-bottom-0" style="color:white;">In grace period in spring term 2027</p>
     </div>
 
     <h2 class="govuk-heading-m">Details checked</h2>
@@ -46,11 +44,9 @@ Code expired
           Child date of birth
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["dob-day"] or "22" }} {{ data["dob-month"] or "August" }} {{ data["dob-year"] or "2020" }}
+          {{ data["dob-day"] or "10" }} {{ data["dob-month"] or "October" }} {{ data["dob-year"] or "2021" }}
         </dd>
       </div>
-
-
     </dl>
 
     <h2 class="govuk-heading-m govuk-!-margin-top-8">Code details</h2>
@@ -61,7 +57,7 @@ Code expired
           Eligibility confirmed on
         </dt>
         <dd class="govuk-summary-list__value">
-          15 July 2023
+          21 June 2025
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -69,15 +65,15 @@ Code expired
           Reconfirm between
         </dt>
         <dd class="govuk-summary-list__value">
-          Not applicable
+          12 October 2026 and 10 November 2026
         </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Grace period ended
+          Grace period ends
         </dt>
         <dd class="govuk-summary-list__value">
-          31 August 2025
+          31 March 2027
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -85,8 +81,8 @@ Code expired
           Reconfirmation status
         </dt>
         <dd class="govuk-summary-list__value">
-          <strong class="govuk-tag govuk-tag--grey" style="max-width:100%;">
-            Child too old
+          <strong class="govuk-tag govuk-tag--green" style="max-width:100%;">
+            Not due yet
           </strong>
         </dd>
       </div>
@@ -97,17 +93,27 @@ Code expired
 
 
 
-    {{ govukButton({
+    <div class="govuk-button-group govuk-!-margin-top-7">
+
+      {{ govukButton({
+        text: "Run another check",
+        classes: "govuk-button",
+        href: "/childcare/v11/single-check/single"
+      }) }}
+
+      {{ govukButton({
       text: "View code history",
-      classes: "govuk-!-margin-top-4",
-      href: "/childcare/v11/reports/i/event-history/event-history"
-    }) }}
+      classes: "govuk-button--secondary",
+      href: "/childcare/v11/reports/event-history/event-history-hide"
+      }) }}
+
+    </div>
 
 
 
     <p>You can <a href="" class="govuk-link" onclick="printPage()">print this page</a> for the parent or guardian to keep.</p>
 
-     <h2 class="govuk-heading-m">Guidance</h2>
+    <h2 class="govuk-heading-m">Guidance</h2>
 
     <p class="govuk-body">View <a href="/childcare/v11/guidance/30h-outcomes">guidance for childcare for working families</a>.</p>
 

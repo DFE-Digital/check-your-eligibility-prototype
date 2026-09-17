@@ -1,7 +1,7 @@
 {% extends "/layouts/childcare/v11/layout-childcare.html" %}
 
 {% block pageTitle %}
- Code cannot be used yet
+Code is valid
 {% endblock %}
 
 
@@ -10,15 +10,15 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7" style="background:#1d70b8;">
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7">
       <h1 class="govuk-panel__title">
-        Code cannot be used yet
+        Code valid
       </h1>
       <div class="govuk-panel__body govuk-!-margin-bottom-5">
-        Valid from summer term 2026
+        Valid for autumn term 2026
       </div>
-      <!--  <p class="govuk-body-l govuk-!-margin-bottom-0" style="color:white;">Needs reconfirming before 8 December 2025</p>-->
-      </div>
+      <p class="govuk-body-l govuk-!-margin-bottom-0" style="color:white;">In grace period in spring term 2027 and will need reconfirming between 10 October 2026 and 8 November 2026.</p>
+    </div>
 
     <h2 class="govuk-heading-m">Details checked</h2>
 
@@ -44,11 +44,9 @@
           Child date of birth
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["dob-day"] or "9" }} {{ data["dob-month"] or "March" }} {{ data["dob-year"] or "2024" }}
+          {{ data["dob-day"] or "10" }} {{ data["dob-month"] or "October" }} {{ data["dob-year"] or "2021" }}
         </dd>
       </div>
-
-
     </dl>
 
     <h2 class="govuk-heading-m govuk-!-margin-top-8">Code details</h2>
@@ -59,7 +57,7 @@
           Eligibility confirmed on
         </dt>
         <dd class="govuk-summary-list__value">
-          3 January 2026
+          21 June 2025
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -67,7 +65,7 @@
           Reconfirm between
         </dt>
         <dd class="govuk-summary-list__value">
-          7 March 2026 and 4 April 2026
+          22 August 2025 and 22 September 2025
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -75,7 +73,7 @@
           Grace period ends
         </dt>
         <dd class="govuk-summary-list__value">
-          Date will appear here when the code can be used
+          31 December 2025
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -95,11 +93,21 @@
 
 
 
-    {{ govukButton({
+    <div class="govuk-button-group govuk-!-margin-top-7">
+
+      {{ govukButton({
+        text: "Run another check",
+        classes: "govuk-button",
+        href: "/childcare/v11/single-check/single"
+      }) }}
+
+      {{ govukButton({
       text: "View code history",
-      classes: "govuk-!-margin-top-4",
-      href: "/childcare/v11/reports/i/event-history/event-history"
-    }) }}
+      classes: "govuk-button--secondary",
+      href: "/childcare/v11/reports/event-history/event-history-hide"
+      }) }}
+
+    </div>
 
 
 
@@ -108,7 +116,6 @@
     <h2 class="govuk-heading-m">Guidance</h2>
 
     <p class="govuk-body">View <a href="/childcare/v11/guidance/30h-outcomes">guidance for childcare for working families</a>.</p>
-
 
   </div>
 
