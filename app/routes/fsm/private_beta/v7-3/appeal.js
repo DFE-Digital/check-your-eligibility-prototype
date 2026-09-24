@@ -1,34 +1,34 @@
 module.exports = function (router) {
-////v7-1///
+////v7-3///
   ///have-evidence///
-  router.post('/v7-1-evidence', function (req, res) {
+  router.post('/v7-3-evidence', function (req, res) {
     var evidence = req.session.data['evidence'];
     if (evidence === "v7digital") {
-      res.redirect('/FSM/Private_beta/v7-1/family/account/appeal/evidence/upload-guidance-digital');
+      res.redirect('/FSM/Private_beta/v7-3/family/account/appeal/evidence/upload-guidance-digital');
     } else if (evidence === "v7paper") {
-      res.redirect('/FSM/Private_beta/v7-1/family/account/appeal/evidence/upload-guidance');
+      res.redirect('/FSM/Private_beta/v7-3/family/account/appeal/evidence/upload-guidance');
     } else {
-      res.redirect('/FSM/Private_beta/v7-1/family/account/appeal/add-child/child-details-complete-0-none.html');
+      res.redirect('/FSM/Private_beta/v7-3/family/account/appeal/add-child/child-details-complete-0-none.html');
     }
   });
 
-  /// gov routes///
-  // router.post('/v7-1-gov', function (req, res) {
-  //   res.redirect('/FSM/Private_beta/v7-1/family/account/appeal/evidence/have-evidence.html');
-  // });
-
-  router.post('/v7-1-gov-2', function (req, res) {
-    res.redirect('/FSM/Private_beta/v7-1/family/account/appeal/add-child/child-details-0.html');
+  router.post('/v7-1-evidence', function (req, res) {
+    req.session.data['evidence'] = req.session.data['evidence'] || 'v7digital';
+    res.redirect('/FSM/Private_beta/v7-3/family/account/appeal/evidence/upload-guidance-digital');
   });
 
-  router.get('/FSM/Private_beta/v7-1/family/parent-soft-check/outcomes/outcome-not-entitled-appeal', (req, res) => {
+  router.post('/v7-3-gov-2', function (req, res) {
+    res.redirect('/FSM/Private_beta/v7-3/family/account/appeal/add-child/child-details-0.html');
+  });
+
+  router.get('/FSM/Private_beta/v7-3/family/parent-soft-check/outcomes/outcome-not-entitled-appeal', (req, res) => {
     req.session.data.startingPage = 'appeal-process';
-    res.render('/FSM/Private_beta/v7-1/parent-soft-check/outcomes/outcome-not-entitled-appeal');
+    res.render('/FSM/Private_beta/v7-3/family/parent-soft-check/outcomes/outcome-not-entitled-appeal');
   });
 
-  router.get('/v7-1/family/parent-soft-check/outcomes/eligible', (req, res) => {
+  router.get('/v7-3/family/parent-soft-check/outcomes/eligible', (req, res) => {
     req.session.data.startingPage = 'eligible';
-    res.render('v7-1/family/parent-soft-check/outcomes/eligible');
+    res.render('v7-3/family/parent-soft-check/outcomes/eligible');
   });
 
   router.get('/account/signin-or-create', (req, res) => {
@@ -36,7 +36,7 @@ module.exports = function (router) {
     res.render('account/signin-or-create');
   });
 
-  router.post('/v7-1/family/account/onegov-signin', (req, res) => {
+  router.post('/v7-3/family/account/onegov-signin', (req, res) => {
     req.session.data.user = {};
     res.redirect('/account/enter-password');
   });
@@ -48,77 +48,55 @@ module.exports = function (router) {
 
   router.post('/account/enter-password', (req, res) => {
     if (req.session.data.startingPage === 'appeal-process') {
-      res.redirect('/v7-1/family/account/appeal/evidence/have-evidence');
+      res.redirect('/v7-3/family/account/appeal/evidence/have-evidence');
     } else if (req.session.data.startingPage === 'eligible') {
-      res.redirect('/v7-1/family/account/apply/childs-age');
+      res.redirect('/v7-3/family/account/apply/childs-age');
     }
   });
 
-  /// children-added///
   router.post('/check-answers2', function (req, res) {
-    res.redirect('/FSM/Private_beta/v7-1/family/account/appeal/evidence/have-evidence.html');
+    res.redirect('/FSM/Private_beta/v7-3/family/account/appeal/evidence/have-evidence.html');
   });
 
-  ///paper-evidence///
-  router.post('/v7-1-paper', function (req, res) {
-    res.redirect('/v7-1/family/account/appeal/evidence/upload-guidance');
+  router.post('/v7-3-paper', function (req, res) {
+    res.redirect('/v7-3/family/account/appeal/evidence/upload-guidance');
   });
 
-  ///digital-evidence///
-  router.post('/v7-1-digital', function (req, res) {
-    res.redirect('/v7-1/family/account/appeal/evidence/upload-guidance');
+  router.post('/v7-3-digital', function (req, res) {
+    res.redirect('/v7-3/family/account/appeal/evidence/upload-guidance');
   });
 
-  ///school-evidence///
-
-
-
-
-  ///child-details///
-  router.post('/v7-1-child', function (req, res) {
-    res.redirect('/v7-1/family/account/appeal/add-child/child-details-1');
+  router.post('/v7-3-child', function (req, res) {
+    res.redirect('/v7-3/family/account/appeal/add-child/child-details-1');
   });
 
-  ///child-1///
-  router.post('/v7-1-child-1', function (req, res) {
-    res.redirect('/v7-1/family/account/appeal/find-school/find-school-1.html');
+  router.post('/v7-3-child-1', function (req, res) {
+    res.redirect('/v7-3/family/account/appeal/find-school/find-school-1.html');
   });
 
-  ///school///
-  router.post('/v7-1-school', function (req, res) {
-    res.redirect('/v7-1/family/account/appeal/find-school/confirm-school.html');
+  router.post('/v7-3-school', function (req, res) {
+    res.redirect('/v7-3/family/account/appeal/find-school/confirm-school.html');
   });
 
-  ///manual-school///
-  router.post('/v7-1-manual', function (req, res) {
-    res.redirect('/v7-1/family/account/appeal/find-school/confirm-school.html');
+  router.post('/v7-3-manual', function (req, res) {
+    res.redirect('/v7-3/family/account/appeal/find-school/confirm-school.html');
   });
 
-  ///confirm///
-  router.post('/v7-1-added', function (req, res) {
-    res.redirect('/v7-1/family/account/appeal/add-child/child-details-complete-1.html');
+  router.post('/v7-3-added', function (req, res) {
+    res.redirect('/v7-3/family/account/appeal/add-child/child-details-complete-1.html');
   });
 
-  ///success///
-  router.post('/v7-1-success', function (req, res) {
-    res.redirect('/v7-1/family/account/appeal/add-child/children-added.html');
+  router.post('/v7-3-success', function (req, res) {
+    res.redirect('/v7-3/family/account/appeal/add-child/children-added.html');
   });
 
-    // ///success///
-    // router.post('/v7-1-success-b', function (req, res) {
-    //   res.redirect('/v7-1/family/account/appeal/add-child/children-added.html');
-    // });
-
-
-      ///success///
-  router.post('/v7-1-success-0', function (req, res) {
-    res.redirect('/FSM/Private_beta/v7-1/family/account/appeal/add-child/children-added-0.html');
+  router.post('/v7-3-success-0', function (req, res) {
+    res.redirect('/FSM/Private_beta/v7-3/family/account/appeal/add-child/children-added-0.html');
   });
 
-      ///success///
-      router.post('/v7-1-success-none', function (req, res) {
-        res.redirect('/FSM/Private_beta/v7-1/family/account/appeal/add-child/children-added-0-none.html');
-      });
+  router.post('/v7-3-success-none', function (req, res) {
+    res.redirect('/FSM/Private_beta/v7-3/family/account/appeal/add-child/children-added-0-none.html');
+  });
 };
 
 
