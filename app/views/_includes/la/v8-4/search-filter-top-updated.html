@@ -1,0 +1,214 @@
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+<div class="govuk-!-margin-bottom-4" style="max-width: 100%;">
+  <button
+    id="toggle-filters-btn"
+    type="button"
+    class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0"
+    style="background-color: #ffdd00; color: #0b0c0c; border: 0; box-shadow: none; margin-left: 0;"
+    aria-expanded="true"
+    aria-controls="filter-wrapper">
+    Hide filters
+  </button>
+
+  <div id="filter-wrapper" class="govuk-!-padding-4" style="border: 2px solid #b1b4b6; background: #d9d9d9; display: block;">
+    <div class="govuk-grid-row" style="margin: 0;">
+      <div class="govuk-grid-column-one-third" style="padding: 0 10px 0 0; border-right: 1px solid #b1b4b6; min-height: 190px;">
+        <div class="govuk-form-group govuk-!-margin-bottom-0">
+          <label class="govuk-label govuk-label--s" for="keywords" style="font-size: 24px; margin-bottom: 10px;">Find an application</label>
+          <div id="keywords-hint" class="govuk-hint" style="font-size: 18px; line-height: 1.3; margin-bottom: 12px;">
+            For example, 44455453 or child or parent name
+          </div>
+          <input class="govuk-input" id="keywords" name="keywords" type="text" style="background: white; border: 2px solid #0b0c0c; height: 40px; width: 100%;">
+        </div>
+      </div>
+
+      <div class="govuk-grid-column-one-third" style="padding: 0 10px; border-right: 1px solid #b1b4b6; min-height: 190px;">
+        <div class="govuk-form-group govuk-!-margin-bottom-0">
+          <label class="govuk-label govuk-label--s" for="school" style="font-size: 24px; margin-bottom: 10px;">School</label>
+          <div id="school-hint" class="govuk-hint" style="font-size: 18px; line-height: 1.3; margin-bottom: 12px;">
+            For example, St George's Primary School
+          </div>
+          <input class="govuk-input" id="school" name="school" type="text" style="background: white; border: 2px solid #0b0c0c; height: 40px; width: 100%;">
+        </div>
+      </div>
+
+      <div class="govuk-grid-column-one-third" style="padding: 0 0 0 10px; min-height: 190px;">
+        <fieldset class="govuk-fieldset govuk-!-margin-bottom-0">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s" style="font-size: 24px; margin-bottom: 10px;">Recheck status</legend>
+          <p class="govuk-hint" style="font-size: 18px; margin-bottom: 10px;">Select all that apply</p>
+
+          <div class="govuk-checkboxes govuk-checkboxes--small">
+            <div class="govuk-checkboxes__item" style="margin-bottom: 12px;">
+              <input class="govuk-checkboxes__input" id="status-recheck" name="status" type="checkbox" value="Recheck">
+              <label class="govuk-label govuk-checkboxes__label" for="status-recheck" style="font-size: 18px;">Recheck</label>
+            </div>
+            <div class="govuk-checkboxes__item" style="margin-bottom: 12px;">
+              <input class="govuk-checkboxes__input" id="status-retry" name="status" type="checkbox" value="Retry">
+              <label class="govuk-label govuk-checkboxes__label" for="status-retry" style="font-size: 18px;">Retry now</label>
+            </div>
+            <div class="govuk-checkboxes__item" style="margin-bottom: 12px;">
+              <input class="govuk-checkboxes__input" id="status-not-eligible" name="status" type="checkbox" value="Not eligible">
+              <label class="govuk-label govuk-checkboxes__label" for="status-not-eligible" style="font-size: 18px;">Not eligible</label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="status-expanded" name="status" type="checkbox" value="Expanded">
+              <label class="govuk-label govuk-checkboxes__label" for="status-expanded" style="font-size: 18px;">Expanded only</label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+
+    <div class="govuk-!-margin-top-4">
+      {% set dateHtml %}
+      <div class="govuk-form-group govuk-!-margin-bottom-0">
+        {{ govukDateInput({
+          id: "submission-date-from",
+          name: "submissionDateFrom",
+          fieldset: {
+            legend: {
+              text: "From",
+              classes: "govuk-fieldset__legend--s"
+            }
+          }
+        }) }}
+      </div>
+      <div class="govuk-form-group govuk-!-margin-bottom-0">
+        {{ govukDateInput({
+          id: "submission-date-to",
+          name: "submissionDateTo",
+          fieldset: {
+            legend: {
+              text: "To",
+              classes: "govuk-fieldset__legend--s"
+            }
+          }
+        }) }}
+      </div>
+      {% endset -%}
+
+      {% set fundingStatusHtml %}
+      {{ govukCheckboxes({
+        idPrefix: "custom-status-funding",
+        name: "customStatus",
+        classes: "govuk-checkboxes--small",
+        fieldset: {
+          legend: {
+            text: "Funding status",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "Select one or more options"
+        },
+        items: [
+          { value: "not-entitled", text: "Not entitled" },
+          { value: "eligible-targeted", text: "Eligible targeted" },
+          { value: "eligible-expanded", text: "Eligible expanded" },
+          { value: "eligible-2025-2026", text: "Eligible (2025-2026)" },
+          { value: "receiving-expanded-fsm", text: "Receiving expanded FSM" },
+          { value: "receiving-targeted-fsm", text: "Receiving targeted FSM" },
+          { value: "receiving-entitlement-2025-2026", text: "Receiving entitlement (2025-2026)" }
+        ]
+      }) }}
+      {% endset -%}
+
+      {% set actionStatusHtml %}
+      {{ govukCheckboxes({
+        idPrefix: "custom-status-action",
+        name: "customStatus",
+        classes: "govuk-checkboxes--small",
+        fieldset: {
+          legend: {
+            text: "Review status",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "Select one or more options"
+        },
+        items: [
+          { value: "evidence-needed", text: "Upload evidence" },
+          { value: "sent-for-review", text: "Review application" },
+          { value: "reviewed-not-entitled", text: "Not entitled after review" }
+        ]
+      }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        name: "custom-date-range",
+        fieldset: {
+          legend: {
+            text: "Submission date range",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "date-range",
+            text: "Custom date range",
+            conditional: {
+              html: dateHtml
+            }
+          },
+          { value: "current", text: "Current academic year" },
+          { value: "previous", text: "Previous academic year" }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        name: "custom-application-type",
+        fieldset: {
+          legend: {
+            text: "Application type",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          { value: "active", text: "Active applications" },
+          { value: "archived", text: "Archived applications" },
+          {
+            value: "custom-search",
+            text: "Custom search",
+            conditional: {
+              html: (fundingStatusHtml ~ actionStatusHtml) | safe
+            }
+          }
+        ]
+      }) }}
+    </div>
+
+    <div class="govuk-button-group govuk-!-margin-top-4 govuk-!-margin-bottom-0">
+      <button type="button" class="govuk-button" id="apply-filters" style="background-color: #00703c; border: 0; box-shadow: none; margin-right: 15px;">Apply filters</button>
+      <a href="#" class="govuk-link" id="clear-filters" style="color: #1d70b8; text-decoration: underline;">Clear filters</a>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const toggleBtn = document.getElementById('toggle-filters-btn');
+  const filterWrapper = document.getElementById('filter-wrapper');
+
+  if (!toggleBtn || !filterWrapper) return;
+
+  function updateToggleButton() {
+    const isHidden = filterWrapper.style.display === 'none';
+    toggleBtn.textContent = isHidden ? 'Show filters' : 'Hide filters';
+    toggleBtn.setAttribute('aria-expanded', String(!isHidden));
+  }
+
+  toggleBtn.addEventListener('click', function () {
+    const isHidden = filterWrapper.style.display === 'none';
+    filterWrapper.style.display = isHidden ? 'block' : 'none';
+    updateToggleButton();
+  });
+
+  updateToggleButton();
+});
+</script>
