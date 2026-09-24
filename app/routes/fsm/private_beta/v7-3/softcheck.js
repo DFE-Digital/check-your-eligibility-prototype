@@ -1,9 +1,9 @@
 module.exports = function(router) {
 
   // Route to start the process
-  router.post('/FSM/Private_beta/v7-2/family/start-now', (req, res) => {
+  router.post('/FSM/Private_beta/v7-3/family/start-now', (req, res) => {
       req.session.data.user = {};
-      res.redirect('/FSM/Private_beta/v7-2/family/parent-soft-check/check');
+      res.redirect('/FSM/Private_beta/v7-3/family/parent-soft-check/check');
   });
 
   // Route for soft check NI answer
@@ -13,12 +13,12 @@ module.exports = function(router) {
 
     if (niNumber === "yes") {
       if (enteredNiNumber) {
-        res.redirect('/FSM/Private_beta/v7-2/family/parent-soft-check/checking-loader');
+        res.redirect('/FSM/Private_beta/v7-3/family/parent-soft-check/checking-loader');
       } else {
-        res.redirect('/FSM/Private_beta/v7-2/family/parent-soft-check/error-ni');
+        res.redirect('/FSM/Private_beta/v7-3/family/parent-soft-check/error-ni');
       }
     } else {
-      res.redirect('/FSM/Private_beta/v7-2/family/parent-soft-check/nass-number');
+      res.redirect('/FSM/Private_beta/v7-3/family/parent-soft-check/nass-number');
     }
   });
 
@@ -27,9 +27,9 @@ module.exports = function(router) {
     var nassNumber = req.session.data['nass-number'];
 
     if (nassNumber === "yes") {
-      res.redirect('/FSM/Private_beta/v7-2/checker-parent/childs-age');
+      res.redirect('/FSM/Private_beta/v7-3/checker-parent/childs-age');
     } else {
-      res.redirect('/FSM/Private_beta/v7-2/checker-parent/more-info-required-asylum');
+      res.redirect('/FSM/Private_beta/v7-3/checker-parent/more-info-required-asylum');
     }
   });
 
@@ -43,12 +43,12 @@ module.exports = function(router) {
 
     if (niNumber === "yes") {
       if (enteredNiNumber) {
-        res.redirect('/FSM/Private_beta/v7-2/family/parent-soft-check/checking-loader');
+        res.redirect('/FSM/Private_beta/v7-3/family/parent-soft-check/checking-loader');
       } else {
-        res.redirect('/FSM/Private_beta/v7-2/family/parent-soft-check/error-ni');
+        res.redirect('/FSM/Private_beta/v7-3/family/parent-soft-check/error-ni');
       }
     } else {
-      res.redirect('/FSM/Private_beta/v7-2/family/parent-soft-check/nass-number');
+      res.redirect('/FSM/Private_beta/v7-3/family/parent-soft-check/nass-number');
     }
   });
 
@@ -59,12 +59,12 @@ module.exports = function(router) {
 
     if (niNumber === "yes") {
       if (enteredNiNumber) {
-        res.redirect('/FSM/Private_beta/v7-2/family/parent-soft-check/checking-loader');
+        res.redirect('/FSM/Private_beta/v7-3/family/parent-soft-check/checking-loader');
       } else {
-        res.redirect('/FSM/Private_beta/v7-2/family/parent-soft-check/error-ni');
+        res.redirect('/FSM/Private_beta/v7-3/family/parent-soft-check/error-ni');
       }
     } else {
-      res.redirect('/FSM/Private_beta/v7-2/family/parent-soft-check/nass-number');
+      res.redirect('/FSM/Private_beta/v7-3/family/parent-soft-check/nass-number');
     }
   });
 

@@ -1,7 +1,7 @@
 module.exports = function(router) {
 
     // POST route FSM/Private_beta/v7-2
-    router.post('/FSM/Private_beta/v7-2/family/account/onegov-signin', (req, res) => {
+    router.post('/FSM/Private_beta/v8-0/family/account/onegov-signin', (req, res) => {
         req.session.data.user = {};
         res.redirect('/account/enter-password');
     });
@@ -12,7 +12,7 @@ module.exports = function(router) {
     });
 
      // POST route v7-2
-     router.post('/FSM/Private_beta/v7-2/family/account/onegov-signin', (req, res) => {
+     router.post('/FSM/Private_beta/v8-0/family/account/onegov-signin', (req, res) => {
         req.session.data.user = {};
         res.redirect('/account/enter-password');
     });
@@ -22,7 +22,7 @@ module.exports = function(router) {
     });
 
     //ready for account
-    //router.get('/FSM/Private_beta/v7-2/family/account/signout', (req, res) => {
+    //router.get('/FSM/Private_beta/v8-0/family/account/signout', (req, res) => {
       //  req.session.data.user = null
         //res.redirect('/signin-or-create')
     //})

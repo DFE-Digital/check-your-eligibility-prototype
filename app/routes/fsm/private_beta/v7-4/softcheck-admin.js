@@ -6,12 +6,12 @@ module.exports = function (router) {
   //   var enteredNiNumber = req.session.data['ni-number-entered'];
   //   if (niNumber === "yes") {
   //     if (enteredNiNumber) {
-  //       res.redirect('/FSM/Private_beta/v7-1/LA/la-manage/la-soft-check/checking-loader');
+  //       res.redirect('/FSM/Private_beta/v7-4/LA/la-manage/la-soft-check/checking-loader');
   //     } else {
-  //       res.redirect('/FSM/Private_beta/v7-1/LA/la-manage/la-soft-check/error-ni');
+  //       res.redirect('/FSM/Private_beta/v7-4/LA/la-manage/la-soft-check/error-ni');
   //     }
   //   } else {
-  //     res.redirect('/FSM/Private_beta/v7-1/LA/la-manage/la-soft-check/nass-number');
+  //     res.redirect('/FSM/Private_beta/v7-4/LA/la-manage/la-soft-check/nass-number');
   //   }
   // });
 
@@ -24,16 +24,16 @@ module.exports = function (router) {
     if (niNumber === "yes") {
       if (enteredNiNumber) {
         res.redirect(
-          "/FSM/Private_beta/v7-2/MAT/mat-manage/mat-soft-check/checking-loader"
+          "/FSM/Private_beta/v7-4/MAT/mat-manage/mat-soft-check/checking-loader"
         );
       } else {
         res.redirect(
-          "/FSM/Private_beta/v7-2/MAT/mat-manage/mat-soft-check/error-ni"
+          "/FSM/Private_beta/v7-4/MAT/mat-manage/mat-soft-check/error-ni"
         );
       }
     } else {
       res.redirect(
-        "/FSM/Private_beta/v7-2/MAT/mat-manage/mat-soft-check/nass-number"
+        "/FSM/Private_beta/v7-4/MAT/mat-manage/mat-soft-check/nass-number"
       );
     }
   });

@@ -14,7 +14,7 @@ module.exports = function (router) {
 
   /// gov routes///
   // router.post('/v7-1-gov', function (req, res) {
-  //   res.redirect('/FSM/Private_beta/v7-1/family/account/appeal/evidence/have-evidence.html');
+  //   res.redirect('/FSM/Private_beta/v7-4/family/account/appeal/evidence/have-evidence.html');
   // });
 
   router.post('/v7-4-gov-2', function (req, res) {
@@ -56,7 +56,7 @@ module.exports = function (router) {
 
   /// children-added///
   router.post('/check-answers2', function (req, res) {
-    res.redirect('/FSM/Private_beta/v7-1/family/account/appeal/evidence/have-evidence.html');
+    res.redirect('/FSM/Private_beta/v7-4/family/account/appeal/evidence/have-evidence.html');
   });
 
   ///paper-evidence///
@@ -112,12 +112,12 @@ module.exports = function (router) {
 
       ///success///
   router.post('/v7-1-success-0', function (req, res) {
-    res.redirect('/FSM/Private_beta/v7-1/family/account/appeal/add-child/children-added-0.html');
+    res.redirect('/FSM/Private_beta/v7-4/family/account/appeal/add-child/children-added-0.html');
   });
 
       ///success///
       router.post('/v7-1-success-none', function (req, res) {
-        res.redirect('/FSM/Private_beta/v7-1/family/account/appeal/add-child/children-added-0-none.html');
+        res.redirect('/FSM/Private_beta/v7-4/family/account/appeal/add-child/children-added-0-none.html');
       });
 };
 
