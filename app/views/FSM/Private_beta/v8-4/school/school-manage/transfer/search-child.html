@@ -1,0 +1,39 @@
+{% extends "layouts/FSM/v8-4/layout-dfe-schoolnav.html" %}
+{% set Service="Manage eligibility for free school meals" %}
+{% set pageName="Search for a child" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--m">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l"></span>
+         <h1 class="govuk-heading-l">{{pageName}}</h1>
+      </div>
+    </div>
+
+    <!--Search-->
+            <form action="#" method="post">
+              <div class="govuk-form-group">
+                <div id="search-hint" class="govuk-hint moj-search__hint">
+                  Enter the reference number, pupil name or the parents details
+                </div>
+                <input class="govuk-input moj-search__input" id="search" name="search" type="search"
+                  aria-describedby="search-hint">
+              </div>
+              <button type="submit" class="govuk-button moj-search__button " data-module="govuk-button">
+                Search
+              </button>
+            </form>
+
+</main>
+</div>
+
+
+
+
+
+
+
+    {% endblock %}
