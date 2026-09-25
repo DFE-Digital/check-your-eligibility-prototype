@@ -1,0 +1,108 @@
+{% extends "layouts/FSM/v8-4/layout-dfe-schoolnav.html" %}
+{% set Service="Manage eligibility for free school meals" %}
+{% set pageName="Child found" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--m">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l"></span>
+         <h1 class="govuk-heading-l">{{pageName}}</h1>
+      </div>
+    </div>
+
+
+<div class="govuk-!-padding-bottom-2"></div>
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Child details
+    </h2>
+
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action">
+        <!-- <a class="govuk-link" href="../school-soft-check/checker">Edit details<span class="govuk-visually-hidden">
+            Child details</span></a> -->
+
+      </li>
+    </ul>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["parent-firstname"] or "Sarah" }} {{ data["parent-surname"] or "Jones" }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["dob-day"] or "01" }} {{ data["dob-month"] or "01" }} {{ data["dob-year"] or "2022" }}
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Application reference number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["applicationReference"] or "APP123456" }}
+        </dd>
+      </div>
+
+<!--
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">School</dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["school"] or "Telford Park School" }}
+        </dd>
+      </div> -->
+
+      </dl>
+      </div>
+      </div>
+   <div class="govuk-inset-text govuk-!-margin-top-5 govuk-!-padding-top-3 govuk-!-padding-bottom-3 govuk-body-l">
+      <p class="govuk-!-margin-top-0 govuk-!-margin-bottom-2">
+        <strong class="govuk-tag govuk-tag--blue govuk-!-font-weight-bold govuk-tag--large">Linked to school</strong>
+      </p>
+      <p class="govuk-!-margin-bottom-1 govuk-!-margin-top-0">This child has an existing record in our system and is linked to:</p>
+      <p class="govuk-!-font-weight-bold govuk-!-margin-bottom-0">Telford Park School</p>
+   </div>
+
+   <div class="govuk-checkboxes govuk-!-margin-top-6" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="childrecord1" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="childrecord1">
+         Claim child record and transfer to your school
+        </label>
+      </div>
+      </div>
+
+
+
+
+ <!--quick redirect-->
+          <div class="govuk-button-group govuk-!-margin-top-6">
+            <a href="child-found-linked.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+              Continue with transfer request
+            </a>
+            <a href="child-found-linked.html" class="govuk-link">Cancel transfer request</a>
+          </div>
+
+    </main>
+</div>
+
+
+
+
+
+
+
+    {% endblock %}

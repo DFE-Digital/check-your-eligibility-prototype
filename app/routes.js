@@ -69,6 +69,11 @@ require('./routes/fsm/private_beta/v7-1/appeal')(router);
 require('./routes/fsm/private_beta/v7-1/betacheck')(router);
 require('./routes/fsm/private_beta/v7-1/softcheck-admin')(router);
 
+// v8-4 LA / school route modules
+require('./routes/fsm/private_beta/v8-4/softcheck')(router);
+require('./routes/fsm/private_beta/v8-4/account')(router);
+require('./routes/fsm/private_beta/v8-4/appeal')(router);
+
 
 router.get('*', function (req, res, next) {
 

@@ -1,6 +1,6 @@
 {% extends "layouts/FSM/v8-4/layout-dfe-schoolnav.html" %}
 {% set Service="Manage eligibility for free school meals" %}
-{% set pageName="Search for a child" %}
+{% set pageName="Find a record from another school" %}
 
 {% block content %}
 
@@ -13,20 +13,44 @@
       </div>
     </div>
 
-    <!--Search-->
-            <form action="#" method="post">
-              <div class="govuk-form-group">
-                <div id="search-hint" class="govuk-hint moj-search__hint">
-                  Enter the reference number, pupil name or the parents details
-                </div>
-                <input class="govuk-input moj-search__input" id="search" name="search" type="search"
-                  aria-describedby="search-hint">
-              </div>
-              <button type="submit" class="govuk-button moj-search__button " data-module="govuk-button">
-                Search
-              </button>
-            </form>
+<!--
+<search class="moj-search moj-search moj-search--stacked">
+  <form action="#" method="get">
+    <div class="govuk-form-group">
+      <label class="govuk-label moj-search__label " for="search">
+        Find a person
+      </label>
+      <div id="search-hint" class="govuk-hint moj-search__hint ">
+        You can search by name, date of birth or National Insurance number.
+      </div>
+      <input class="govuk-input moj-search__input " id="search" name="search" type="search" aria-describedby="search-hint">
+    </div>
+    <button type="submit" class="govuk-button moj-search__button" data-module="govuk-button">
+      Search
+    </button>
+  </form>
+</search> -->
 
+
+    <!--Search-->
+    <form action="#" method="post">
+      <div class="govuk-form-group">
+        <div id="search-hint" class="govuk-hint moj-search__hint">
+           Enter the reference number, pupil name or the parents details
+        </div>
+        <input class="govuk-input govuk-!-width-two-thirds moj-search__input" id="search" name="search" type="search"aria-describedby="search-hint">
+        </div>
+
+        <!--add in form later-->
+          <!-- <button type="submit" class="govuk-button moj-search__button " data-module="govuk-button">
+             Search
+          </button> -->
+
+          <!--quick redirect-->
+          <a href="claim-child/child-found-multiple.html" role="button" draggable="false" class="govuk-button govuk-button" data-module="govuk-button">
+  Search
+</a>
+    </form>
 </main>
 </div>
 

@@ -13,11 +13,20 @@ router.get('/FSM/Private_beta/v8-4/LA/la-manage/la-soft-check/run-check', functi
 })
 
 router.post('/FSM/Private_beta/v8-4/LA/la-manage/la-soft-check/run-check', function (req, res) {
-      var nino = (req.session.data['nationalInsuranceNumber'] || '')
+      var identifierType = (req.body && req.body.identifierType) || req.session.data['identifierType'] || 'ni'
+      var candidateValue = identifierType === 'asr'
+        ? ((req.body && (req.body['asr-number-entered'] || req.body.asrNumber)) || req.session.data['asr-number-entered'] || '')
+        : ((req.body && req.body.nationalInsuranceNumber) || req.session.data['nationalInsuranceNumber'] || '')
+
+      req.session.data['identifierType'] = identifierType
+      req.session.data['nationalInsuranceNumber'] = identifierType === 'ni' ? candidateValue : (req.session.data['nationalInsuranceNumber'] || '')
+      req.session.data['asr-number-entered'] = identifierType === 'asr' ? candidateValue : (req.session.data['asr-number-entered'] || '')
+
+      var nino = (candidateValue || '')
       .toUpperCase()
       .replace(/\s/g, '')
 
-    var eligibilityLookup = {
+    var niEligibilityLookup = {
       'AB123456A': {
         eligibilityType: 'targeted',
         policyLabel: 'Eligible targeted',
@@ -44,18 +53,36 @@ router.post('/FSM/Private_beta/v8-4/LA/la-manage/la-soft-check/run-check', funct
       }
     }
 
+    var asrEligibilityLookup = {
+      '98340001A': {
+        eligibilityType: 'targeted',
+        policyLabel: 'Eligible targeted',
+        tagClass: 'govuk-tag--purple',
+        eligibilityMessage: 'This parent or guardian is eligible for targeted free school meals.',
+        endDate: '31 August 2027',
+        recheckDate: 'Summer term 2027'
+      },
+      '98340002A': {
+        eligibilityType: 'expanded',
+        policyLabel: 'Eligible expanded',
+        tagClass: 'govuk-tag--green',
+        eligibilityMessage: 'This parent or guardian is eligible for expanded free school meals.',
+        endDate: '31 August 2027',
+        recheckDate: 'Summer term 2027'
+      },
+      '98340003A': {
+        eligibilityType: 'notEligible',
+        policyLabel: 'Not eligible',
+        tagClass: 'govuk-tag--red',
+        eligibilityMessage: 'This parent or guardian is not eligible for free school meals.',
+        endDate: '31 August 2026',
+        recheckDate: ''
+      }
+    }
 
-// router.post('/FSM/Private_beta/v8-4/LA/la-manage/apply/check-answers', function (req, res) {
-//   console.log('CHECK ANSWERS ROUTE HIT (SOFTCHECK)')
-//   res.redirect('/FSM/Private_beta/v8-4/LA/la-manage/apply/la-check-answers.html')
-// })
-
-
-//     console.log('Raw NINo:', req.session.data['nationalInsuranceNumber'])
-// console.log('Clean NINo:', nino)
-
-var result = eligibilityLookup[nino] || eligibilityLookup['PN123456D']
-    // console.log('Matched result:', result.eligibilityType)
+    var lookup = identifierType === 'asr' ? asrEligibilityLookup : niEligibilityLookup
+    var defaultNotEligibleValue = identifierType === 'asr' ? '98340003A' : 'PN123456D'
+    var result = lookup[nino] || lookup[defaultNotEligibleValue]
 
     req.session.data['eligibilityType'] = result.eligibilityType
     req.session.data['policyLabel'] = result.policyLabel

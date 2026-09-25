@@ -1,9 +1,9 @@
-# FSM v8-4 School User Journey Documentation
+# FSM v5-2 School User Journey Documentation
 
-**Version:** v8-4  
+**Version:** v5-2  
 **User Type:** School  
-**Journey:** School management flow  
-**Scope:** Historical snapshot based on the files present under `app/views/FSM/Private_beta/v8-4` and `app/routes/fsm/private_beta/v8-4`.  
+**Journey:** School appeal and record decision flow  
+**Scope:** Historical snapshot based on the files present under `app/views/FSM/Private_beta/v5-2` and `app/routes/fsm/private_beta/v5-2`.  
 **Documentation standard:** based on the newer v8 user-journey documents but read against the actual historical route structure for this version.
 
 ---
@@ -12,8 +12,8 @@
 
 This version represents a historical snapshot of the prototype. The flow, wording, navigation, and decision logic should be read from the files for this version only rather than assumed to match the latest design.
 
-**Entry point:** /FSM/Private_beta/v8-4/school/dashboard.html  
-**Main route prefix:** `/v8-4`
+**Entry point:** /FSM/Private_beta/v5-2/school_appeal  
+**Main route prefix:** `/v5-2`
 
 ---
 
@@ -23,11 +23,11 @@ This version represents a historical snapshot of the prototype. The flow, wordin
 
 | Step | Screen/Page | Route | Key user action | Next screen | Decision/condition |
 |---|---|---|---|---|---|
-| 1 | Landing page | /FSM/Private_beta/v8-4/school/dashboard.html | User starts from the service home or dashboard | /FSM/Private_beta/v8-4/school/school-manage/school-soft-check/checker.html | Entry point |
-| 2 | Main check form | /FSM/Private_beta/v8-4/school/school-manage/school-soft-check/checker.html | Enter parent or guardian details and choose the relevant option | Validation or loader | Submit form |
-| 3 | Alternative branch or NASS guidance | /FSM/Private_beta/v8-4/school/school-manage/decision/process_appeal/new-appeal.html | User chooses an asylum-seeker, NASS, or alternate support route | Follow-up page or result | Branch condition |
-| 4 | Outcome or follow-up result | /FSM/Private_beta/v8-4/school/school-manage/records/entitled-records/entitled-eden1.html | Review the outcome, eligibility status, or request for more evidence | Return path | Result branch |
-| 5 | Exit | /FSM/Private_beta/v8-4/school/dashboard.html | Return to dashboard or another management area | Dashboard | End of flow |
+| 1 | Landing page | /FSM/Private_beta/v5-2/school_appeal | User starts from the service home or dashboard | /FSM/Private_beta/v5-2/school_appeal | Entry point |
+| 2 | Main check form | /FSM/Private_beta/v5-2/school_appeal | Enter parent or guardian details and choose the relevant option | Validation or loader | Submit form |
+| 3 | Alternative branch or NASS guidance | /FSM/Private_beta/v5-2/school_appeal/add_evidence | User chooses an asylum-seeker, NASS, or alternate support route | Follow-up page or result | Branch condition |
+| 4 | Outcome or follow-up result | /FSM/Private_beta/v5-2/records | Review the outcome, eligibility status, or request for more evidence | Return path | Result branch |
+| 5 | Exit | /FSM/Private_beta/v5-2/school_appeal | Return to dashboard or another management area | Dashboard | End of flow |
 
 ### Main branching decisions
 - The user may take the standard NI route or the alternate support route depending on the version’s question set.
@@ -64,7 +64,7 @@ This flow varies by version and may be more fully formed in later versions. The 
 ## Dependencies and route evidence
 
 The route logic and screens for this version are stored under:
-- `app/routes/fsm/private_beta/v8-4`
-- `app/views/FSM/Private_beta/v8-4`
+- `app/routes/fsm/private_beta/v5-2`
+- `app/views/FSM/Private_beta/v5-2`
 
 The docs in this folder provide the historical summary, while the route files remain the source of truth.

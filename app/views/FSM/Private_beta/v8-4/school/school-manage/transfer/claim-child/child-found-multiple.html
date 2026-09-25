@@ -1,0 +1,60 @@
+{% extends "layouts/FSM/v8-4/layout-dfe-schoolnav.html" %}
+{% set Service="Manage eligibility for free school meals" %}
+{% set pageName="2 children found" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--m">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+    <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        {{pageName}}
+      </h1>
+    </legend>
+    <div id="child-hint" class="govuk-hint">
+      We found 2 children with the same details. Please select the correct child to continue.
+    </div>
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="childrecord1" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+          Sarah Jones | 01/01/2022 | Telford Park School
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="childrecord2" name="waste" type="checkbox" value="mines">
+        <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+          Sarah Jones | 02/02/2021 | St Mary's CofE Primary School
+        </label>
+      </div>
+      <!-- <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="childrecord3" name="waste" type="checkbox" value="farm">
+        <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+          Sarah Jones - DOB: 03/03/2010 - UPN: 1122334455
+        </label>
+      </div> -->
+    </div>
+  </fieldset>
+</div>
+
+ <!--quick redirect-->
+          <a href="child-found-linked.html" role="button" draggable="false" class="govuk-button govuk-button" data-module="govuk-button">
+  Search
+</a>
+
+    </main>
+</div>
+
+
+
+
+
+
+
+    {% endblock %}
