@@ -1,5 +1,8 @@
 {% extends "layouts/FSM/v8-4/layout-dfe-lanav.html" %}
 {% set pageName = "Check your answers before submitting" %}
+{% set selectedIdentifierType = data["identifierType"] or "ni" %}
+{% set selectedIdentifierLabel = "Asylum support reference number" if selectedIdentifierType == "asr" else "National Insurance number" %}
+{% set selectedIdentifierValue = (data["asr-number-entered"] or "98340001A") if selectedIdentifierType == "asr" else (data["nationalInsuranceNumber"] or "NW123456B") %}
 
 {% block content %}
 
@@ -38,9 +41,9 @@
           </div>
 
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">National Insurance number</dt>
+            <dt class="govuk-summary-list__key">{{ selectedIdentifierLabel }}</dt>
             <dd class="govuk-summary-list__value">
-              {{ data["nationalInsuranceNumber"] or "NW123456B" }}
+              {{ selectedIdentifierValue }}
             </dd>
           </div>
 

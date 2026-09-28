@@ -1,5 +1,29 @@
 module.exports = function(router) {
 
+router.get('/FSM/Private_beta/v8-4/LA/la-manage/apply/outcome-eligible-childs-age', function (req, res) {
+  res.render('FSM/Private_beta/v8-4/LA/la-manage/apply/outcome-eligible-childs-age')
+})
+
+router.get('/FSM/Private_beta/v8-4/LA/la-manage/apply/outcome-eligible-childs-age.html', function (req, res) {
+  res.render('FSM/Private_beta/v8-4/LA/la-manage/apply/outcome-eligible-childs-age')
+})
+
+router.get('/FSM/Private_beta/v8-4/LA/la-manage/apply/la-check-answers', function (req, res) {
+  res.render('FSM/Private_beta/v8-4/LA/la-manage/apply/la-check-answers')
+})
+
+router.get('/FSM/Private_beta/v8-4/LA/la-manage/apply/la-check-answers.html', function (req, res) {
+  res.render('FSM/Private_beta/v8-4/LA/la-manage/apply/la-check-answers')
+})
+
+router.get('/FSM/Private_beta/v8-4/LA/la-manage/apply/confirmation-entitled', function (req, res) {
+  res.render('FSM/Private_beta/v8-4/LA/la-manage/apply/confirmation-entitled')
+})
+
+router.get('/FSM/Private_beta/v8-4/LA/la-manage/apply/confirmation-entitled.html', function (req, res) {
+  res.render('FSM/Private_beta/v8-4/LA/la-manage/apply/confirmation-entitled')
+})
+
 router.get('/FSM/Private_beta/v8-4/LA/la-manage/la-soft-check/run-check', function (req, res) {
   req.session.data['parent-firstname'] = ''
   req.session.data['parent-surname'] = ''
