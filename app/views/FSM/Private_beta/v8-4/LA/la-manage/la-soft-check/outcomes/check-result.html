@@ -4,6 +4,9 @@
 {% set endDate = data["endDate"] or "31 August 2027" %}
 {% set academicYear = data["academicYear"] or "2026 to 2027" %}
 {% set recheckDate = data["recheckDate"] or "Summer term 2027" %}
+{% set selectedIdentifierType = data["identifierType"] or "ni" %}
+{% set selectedIdentifierLabel = "Asylum support reference number" if selectedIdentifierType == "asr" else "National Insurance number" %}
+{% set selectedIdentifierValue = (data["asr-number-entered"] or "98340001A") if selectedIdentifierType == "asr" else (data["nationalInsuranceNumber"] or "NW123456B") %}
 
 {% if eligibilityType == "targeted" %}
   {% set pageName = "Children eligible for targeted free school meals" %}
@@ -153,7 +156,7 @@
           Last name
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["last-name"] or "Jenkins" }}
+            {{ data["parent-surname"] or "Nolan" }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -166,10 +169,10 @@
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          National Insurance number
+          {{ selectedIdentifierLabel }}
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["ni-number-entered"] or "PB123456C" }}
+          {{ selectedIdentifierValue }}
         </dd>
       </div>
     </dl>

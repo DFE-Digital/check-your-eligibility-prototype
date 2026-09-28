@@ -1,0 +1,66 @@
+{% extends "layouts/FSM/v8-4/layout-dfe-schoolnav.html" %}
+{% set Service="Manage eligibility for free school meals" %}
+{% set pageName="There is a problem" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--m">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l"></span>
+         <h1 class="govuk-heading-l">{{pageName}}</h1>
+      </div>
+    </div>
+
+<div class="govuk-form-group govuk-form-group--error">
+  <fieldset class="govuk-fieldset" aria-describedby="countries-error">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Will you be travelling to any of these countries?
+      </h1>
+    </legend>
+    <p id="countries-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> Select countries you will be travelling to, or select ‘No, I will not be travelling to any of these countries’
+    </p>
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="countries" name="countries" type="checkbox" value="france" checked>
+        <label class="govuk-label govuk-checkboxes__label" for="countries">
+          France
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="countries-2" name="countries" type="checkbox" value="portugal">
+        <label class="govuk-label govuk-checkboxes__label" for="countries-2">
+          Portugal
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="countries-3" name="countries" type="checkbox" value="spain">
+        <label class="govuk-label govuk-checkboxes__label" for="countries-3">
+          Spain
+        </label>
+      </div>
+      <div class="govuk-checkboxes__divider">or</div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="countries-5" name="countries" type="checkbox" value="none" checked data-behaviour="exclusive">
+        <label class="govuk-label govuk-checkboxes__label" for="countries-5">
+          No, I will not be travelling to any of these countries
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+
+    </main>
+</div>
+
+
+
+
+
+
+
+    {% endblock %}

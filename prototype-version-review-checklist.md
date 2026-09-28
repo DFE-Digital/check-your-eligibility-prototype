@@ -72,6 +72,9 @@ These changes were intentionally narrow and limited to obvious stale target mism
 - [ ] Review remaining stale links in the older route files and templates.
 - [ ] Check whether compatibility fallbacks are still required or should be removed.
 - [ ] Revalidate all LA batch-check and decision pages resolve to actual v8-0 content.
+- [ ] Recheck the LA recheck pages: update the v8-0 pagination include in recheck copy and recheck-refined.
+- [ ] Recheck any v8-0 search pages that still reference older include files, especially Welsh LA and legacy school search variants.
+- [ ] Review the remaining v8-0 route and template copies for archived/research files that should be categorised as manual-only follow-up instead of live flow issues.
 
 ### v8-1
 - [x] Completed: cleaned and re-audited to zero stale cross-version links.
