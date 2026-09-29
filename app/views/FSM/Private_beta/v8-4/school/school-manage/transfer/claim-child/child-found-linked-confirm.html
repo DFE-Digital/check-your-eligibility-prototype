@@ -1,0 +1,51 @@
+{% extends "layouts/FSM/v8-4/layout-dfe-schoolnav.html" %}
+{% set Service="Manage eligibility for free school meals" %}
+{% set pageName="Child record found" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--m">
+    <div class="govuk-grid-row govuk-!-align-items-center">
+   <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-panel govuk-panel--confirmation">
+  <h1 class="govuk-panel__title">
+
+Record of {{ data["child-firstname"] or "Sarah" }} {{ data["child-surname"] or "Jones" }} added to your school
+  </h1>
+  <div class="govuk-panel__body">
+    They are eligible for targeted free school meals until <br>
+    <strong>HDJ2123F</strong>
+  </div>
+</div>
+
+
+<p class="govuk-body-l">Adding this record to your school:</p>
+  <ul class="govuk-list govuk-body-m govuk-list--bullet">
+    <li>transfers their free school meals eligibility</li>
+  <li>notifies the local authority of the transfer</li>
+<li>creates a record of the transfer in this service</li>
+  </ul>
+
+
+  <p class="govuk-body-l"><strong>What to do next</strong></p>
+  <p class="govuk-body-m">You can now add the record to your management information system (MIS) and <a href="/decision/finalise/applications.html">finalise the application</a>.</p>
+
+        <div class="govuk-button-group govuk-!-margin-top-6">
+            <a href="child-found-linked.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+              Confirm transfer
+            </a>
+            <a href="child-found-linked.html" class="govuk-link">Cancel transfer</a>
+          </div>
+
+    </main>
+</div>
+
+
+
+
+
+
+
+    {% endblock %}

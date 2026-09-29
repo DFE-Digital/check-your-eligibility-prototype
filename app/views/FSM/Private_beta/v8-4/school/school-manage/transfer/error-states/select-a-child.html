@@ -23,6 +23,41 @@
     <p id="countries-error" class="govuk-error-message">
       <span class="govuk-visually-hidden">Error:</span> Select countries you will be travelling to, or select ‘No, I will not be travelling to any of these countries’
     </p>
+
+
+    <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        {{pageName}}
+      </h1>
+    </legend>
+    <div id="child-hint" class="govuk-hint">
+      We found 2 children with the same details. Please select the correct child to continue.
+    </div>
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="childrecord1" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+          Sarah Jones | 01/01/2022 | Telford Park School
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="childrecord2" name="waste" type="checkbox" value="mines">
+        <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+          Sarah Jones | 02/02/2021 | St Mary's CofE Primary School
+        </label>
+      </div>
+      <!-- <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="childrecord3" name="waste" type="checkbox" value="farm">
+        <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+          Sarah Jones - DOB: 03/03/2010 - UPN: 1122334455
+        </label>
+      </div> -->
+    </div>
+  </fieldset>
+</div>
+
     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
         <input class="govuk-checkboxes__input" id="countries" name="countries" type="checkbox" value="france" checked>

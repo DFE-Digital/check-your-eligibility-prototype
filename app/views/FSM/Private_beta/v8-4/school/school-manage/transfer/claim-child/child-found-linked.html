@@ -1,15 +1,17 @@
 {% extends "layouts/FSM/v8-4/layout-dfe-schoolnav.html" %}
 {% set Service="Manage eligibility for free school meals" %}
-{% set pageName="Child found" %}
+{% set pageName="Child record found" %}
 
 {% block content %}
 
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper govuk-main-wrapper--m">
-    <div class="govuk-grid-row">
+    <div class="govuk-grid-row govuk-!-align-items-center">
       <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-l"></span>
-         <h1 class="govuk-heading-l">{{pageName}}</h1>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-">{{pageName}}</h1>
+      </div>
+      <div class="govuk-grid-column-one-third govuk-!-text-align-right">
+        <a class="govuk-link" href="search-child.html">Search for another child</a>
       </div>
     </div>
 
@@ -53,7 +55,7 @@
           Application reference number
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["applicationReference"] or "APP123456" }}
+          {{ data["applicationReference"] or "41287342" }}
         </dd>
       </div>
 
@@ -68,11 +70,14 @@
       </dl>
       </div>
       </div>
+
+  <h2 class="govuk-heading-m">Status</h2>
+
    <div class="govuk-inset-text govuk-!-margin-top-5 govuk-!-padding-top-3 govuk-!-padding-bottom-3 govuk-body-l">
       <p class="govuk-!-margin-top-0 govuk-!-margin-bottom-2">
         <strong class="govuk-tag govuk-tag--blue govuk-!-font-weight-bold govuk-tag--large">Linked to school</strong>
       </p>
-      <p class="govuk-!-margin-bottom-1 govuk-!-margin-top-0">This child has an existing record in our system and is linked to:</p>
+      <p class="govuk-!-margin-bottom-1 govuk-!-margin-top-0">This child has a free school meal record in our system and it is linked to:</p>
       <p class="govuk-!-font-weight-bold govuk-!-margin-bottom-0">Telford Park School</p>
    </div>
 
@@ -80,8 +85,7 @@
       <div class="govuk-checkboxes__item">
         <input class="govuk-checkboxes__input" id="childrecord1" name="waste" type="checkbox" value="carcasses">
         <label class="govuk-label govuk-checkboxes__label" for="childrecord1">
-         Claim child record and transfer to your school
-        </label>
+Add child record to your school        </label>
       </div>
       </div>
 
@@ -91,9 +95,9 @@
  <!--quick redirect-->
           <div class="govuk-button-group govuk-!-margin-top-6">
             <a href="child-found-linked.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
-              Continue with transfer request
+              Confirm transfer
             </a>
-            <a href="child-found-linked.html" class="govuk-link">Cancel transfer request</a>
+            <a href="child-found-linked.html" class="govuk-link">Cancel transfer</a>
           </div>
 
     </main>

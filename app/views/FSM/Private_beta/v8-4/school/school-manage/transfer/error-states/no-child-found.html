@@ -1,6 +1,6 @@
 {% extends "layouts/FSM/v8-4/layout-dfe-schoolnav.html" %}
 {% set Service="Manage eligibility for free school meals" %}
-{% set pageName="2 children found" %}
+{% set pageName="0 children found" %}
 
 {% block content %}
 
@@ -8,10 +8,58 @@
   <main class="govuk-main-wrapper govuk-main-wrapper--m">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-l"></span>
-         <h1 class="govuk-heading-l">{{pageName}}</h1>
-      </div>
+
+
+
+
+
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#search">No child found. Search again.</a>
+        </li>
+      </ul>
     </div>
+  </div>
+</div>
+<h1 class="govuk-heading-l">{{pageName}}</h1>
+<div class="govuk-form-group govuk-form-group--error">
+   <div id="search-hint" class="govuk-hint moj-search__hint">
+Enter the child name, reference number or parent details        </div>
+  <p id="full-name-input-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> Enter the reference number, pupil name or the parents details
+  </p>
+  <input class="govuk-input govuk-input--error" id="full-name-input" name="name" type="text" aria-describedby="full-name-input-error" autocomplete="name">
+</div>
+
+
+
+    <!--Search-->
+    <form action="#" method="post">
+      <div class="govuk-form-group">
+        <!-- <div id="search-hint" class="govuk-hint moj-search__hint">
+Enter the child name, reference number or parent details        </div>
+        <input class="govuk-input govuk-!-width-two-thirds moj-search__input" id="search" name="search" type="search"aria-describedby="search-hint">
+        </div> -->
+
+        <!--add in form later-->
+          <!-- <button type="submit" class="govuk-button moj-search__button " data-module="govuk-button">
+             Search
+          </button> -->
+
+          <!--quick redirect-->
+          <a href="claim-child/child-found-multiple.html" role="button" draggable="false" class="govuk-button govuk-button" data-module="govuk-button">
+  Search
+</a>
+    </form>
+</main>
+</div>
+
 
 
 
