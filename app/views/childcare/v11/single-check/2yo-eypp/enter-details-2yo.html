@@ -18,13 +18,13 @@
 
 
       <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-l">{{ data['eligibility-type'] }}</span>
+        <span class="govuk-caption-l">Early learning for 2-year-olds</span>
         <h1 class="govuk-heading-l">Run a check for one parent or guardian</h1>
 
 
         <form class="form" action="/childcare/v11/single-check/2yo-eypp/checking-loader" method="post" novalidate>
 
-          <p class="govuk-body">Enter the details of the parent or guardian to check eligibility for {{ data['eligibility-type'] }}.</p>
+          <p class="govuk-body">Enter the details of the parent or guardian to check eligibility for early learning for 2-year-olds.</p>
 
 
 
@@ -75,15 +75,9 @@
             }) }}
 
 
-             {% if (data['eligibility-type'] == "Early learning for 2-year-olds") %}
+              <p class="govuk-body"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="/childcare/v11/guidance/2yo-evidence#nrpf">UPDATE Parent or guardian has no recourse to public funds (opens in new tab)</a></p>
 
-              <p class="govuk-body"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="/childcare/v11/guidance/2yo-evidence#nrpf">Parent or guardian is an asylum seeker (opens in new tab)</a></p>
 
-              {% else %}
-
-                <p class="govuk-body"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="/childcare/v11/guidance/eypp-evidence#asylum-seekers">Parent or guardian is an asylum seeker (opens in new tab)</a></p>
-
-              {% endif %}
 
 
           {% from "govuk/components/button/macro.njk" import govukButton %}
