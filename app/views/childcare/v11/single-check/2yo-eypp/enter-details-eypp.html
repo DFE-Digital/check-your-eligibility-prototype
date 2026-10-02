@@ -1,0 +1,143 @@
+{% extends "/layouts/childcare/v11/layout-childcare.html" %}
+
+{% block pageTitle %}
+  Enter the details of the parent or guardian
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+
+
+      <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l">Early years pupil premium</span>
+        <h1 class="govuk-heading-l">Run a check for one parent or guardian</h1>
+
+
+        <form class="form" action="/childcare/v11/single-check/2yo-eypp/checking-loader" method="post" novalidate>
+
+          <p class="govuk-body">Enter the details of the parent or guardian to check eligibility for early years pupil premium.</p>
+
+
+
+            {% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+            {{ govukInput({
+              label: {
+                text: "Last name in full",
+                classes: "govuk-label--m"
+              },
+              id: "last-name",
+              name: "last-name",
+              classes: "govuk-input--width-20"
+
+            }) }}
+
+            {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+            {{ govukDateInput({
+
+              id: "dob",
+              namePrefix: "dob",
+
+              fieldset: {
+                legend: {
+                  text: "Date of birth",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+                text: "For example, 27 3 1980"
+              }
+            }) }}
+
+
+              {% set ninoHtml %}
+              {{ govukInput({
+                id: "ni-number-entered",
+                name: "ni-number-entered",
+                classes: "govuk-!-width-one-third",
+                hint: {
+                  text: "For example, ‘QQ 12 34 56 C’"
+                },
+                label: {
+                  text: "National Insurance number"
+                }
+              }) }}
+              {% endset -%}
+
+              {% set asrHtml %}
+              {{ govukInput({
+                id: "asr-entered",
+                name: "asr-entered",
+                classes: "govuk-!-width-one-third",
+                label: {
+                  text: "Asylum support reference"
+                }
+              }) }}
+              {% endset -%}
+
+
+
+              {{ govukRadios({
+                name: "nino-or-asr",
+                fieldset: {
+                  legend: {
+                    text: "National Insurance number or asylum support reference",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                hint: {
+                  text: "Select one option"
+                },
+                items: [
+                  {
+                    value: "nino",
+                    text: "National Insurance number",
+                    conditional: {
+                      html: ninoHtml
+                    }
+                  },
+                  {
+                    value: "asr",
+                    text: "Asylum support reference",
+                    conditional: {
+                      html: asrHtml
+                    }
+                  }
+                ]
+              }) }}
+
+            <p class="govuk-body"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="/childcare/v11/guidance/eypp-evidence#asylum-seekers">UPDATE Parent or guardian is an asylum seeker (opens in new tab)</a></p>
+
+
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Run check"
+          }) }}
+
+
+        </form>
+
+
+
+      </div>
+
+    </div>
+
+
+
+{% endblock %}
