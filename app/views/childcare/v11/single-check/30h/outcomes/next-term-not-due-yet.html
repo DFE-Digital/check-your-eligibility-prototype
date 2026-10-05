@@ -17,7 +17,7 @@ Code is valid
       <div class="govuk-panel__body govuk-!-margin-bottom-5">
         Valid for autumn term 2026
       </div>
-      <p class="govuk-body-l govuk-!-margin-bottom-0" style="color:white;">In grace period in spring term 2027 and needs reconfirming before 22 October 2026</p>
+      <p class="govuk-body-l govuk-!-margin-bottom-0" style="color:white;">(In grace period next term)</p>
     </div>
 
     <h2 class="govuk-heading-m">Details checked</h2>
@@ -44,11 +44,9 @@ Code is valid
           Child date of birth
         </dt>
         <dd class="govuk-summary-list__value">
-           {{ data["dob-day"] or "26" }} {{ data["dob-month"] or "May" }} {{ data["dob-year"] or "2024" }}
+          {{ data["dob-day"] or "10" }} {{ data["dob-month"] or "October" }} {{ data["dob-year"] or "2021" }}
         </dd>
       </div>
-
-
     </dl>
 
     <h2 class="govuk-heading-m govuk-!-margin-top-8">Code details</h2>
@@ -59,7 +57,7 @@ Code is valid
           Eligibility confirmed on
         </dt>
         <dd class="govuk-summary-list__value">
-          14 February 2026
+          21 June 2025
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -67,7 +65,7 @@ Code is valid
           Reconfirm between
         </dt>
         <dd class="govuk-summary-list__value">
-          15 September 2026 and 22 October 2026
+          12 October 2026 and 10 November 2026
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -83,8 +81,8 @@ Code is valid
           Reconfirmation status
         </dt>
         <dd class="govuk-summary-list__value">
-          <strong class="govuk-tag govuk-tag--yellow" style="max-width:100%;">
-            Due now
+          <strong class="govuk-tag govuk-tag--green" style="max-width:100%;">
+            Not due yet
           </strong>
         </dd>
       </div>
@@ -92,6 +90,8 @@ Code is valid
 
 
     </dl>
+
+
 
     <div class="govuk-button-group govuk-!-margin-top-7">
 
@@ -111,10 +111,9 @@ Code is valid
 
 
 
-
     <p>You can <a href="" class="govuk-link" onclick="printPage()">print this page</a> for the parent or guardian to keep.</p>
 
-     <h2 class="govuk-heading-m">Guidance</h2>
+    <h2 class="govuk-heading-m">Guidance</h2>
 
     <p class="govuk-body">View <a href="/childcare/v11/guidance/30h-outcomes">guidance for childcare for working families</a>.</p>
 
