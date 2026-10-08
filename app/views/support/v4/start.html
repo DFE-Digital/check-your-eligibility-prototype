@@ -1,0 +1,46 @@
+{% extends "/layouts/support/v4/layout-support-logged-out.html" %}
+
+{% block pageTitle %}
+ Manage eligibility for childcare support
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <h1 class="govuk-heading-xl">Eligibility checking engine support</h1>
+
+    <p>Department for education staff can use this service to manage the Eligibility checking engine service.</p>
+
+    <h2 class="govuk-heading-m">Customer support:</h2>
+
+    <ul>
+      <li>Import childcare for working families temporary codes from HMRC</li>
+      <li>Make corrections to childcare for working families codes</li>
+      <li>Upload data files from the Home Office</li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Technical team</h2>
+
+    <ul>
+      <li>private beta lists?</li>
+    </ul>
+
+    <p>You'll need to use your Microsoft devops/azure account to access this service.</p>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Sign in",
+      href: "/support/v4/dashboard",
+      isStartButton: true
+    }) }}
+
+
+  </div>
+
+
+</div>
+
+{% endblock %}
