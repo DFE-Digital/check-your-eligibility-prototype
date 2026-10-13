@@ -15016,6 +15016,17 @@ p,
     outline: 3px solid #fd0;
 }
 
+.dfe-card--non-interactive,
+.dfe-card--non-interactive:hover,
+.dfe-card--non-interactive:focus-within {
+    background-color: #f3f2f1;
+    cursor: default;
+}
+
+.dfe-card--non-interactive:focus-within {
+    outline: none;
+}
+
 .dfe-card-container .dfe-card-link--header:focus,
 .dfe-card-container .dfe-card-link--retake:focus {
     color: #0b0c0c;

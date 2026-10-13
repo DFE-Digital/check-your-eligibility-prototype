@@ -65,35 +65,107 @@
         </dd>
       </div> -->
 
+
+
       </dl>
       </div>
       </div>
+
+
+  <h2 class="govuk-heading-m">Status</h2>
    <div class="govuk-inset-text govuk-!-margin-top-5 govuk-!-padding-top-3 govuk-!-padding-bottom-3 govuk-body-l">
       <p class="govuk-!-margin-top-0 govuk-!-margin-bottom-2">
-        <strong class="govuk-tag govuk-tag--orange govuk-!-font-weight-bold govuk-tag--large">Linked to school</strong>
+        <strong class="govuk-tag govuk-tag--orange govuk-!-font-weight-bold govuk-tag--large">Not linked to school</strong>
       </p>
-      <p class="govuk-!-margin-bottom-1 govuk-!-margin-top-0">This child has an existing record in our system and is not linked to a school </p>
+      <p class="govuk-!-margin-bottom-1 govuk-!-margin-top-0">This child has a free school meals record in our system and is not linked to any school.</p>
       <!-- <p class="govuk-!-font-weight-bold govuk-!-margin-bottom-0">Telford Park School</p> -->
    </div>
 
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break">
+
+{% set alreadyHtml %}
+{{ govukDateInput({
+  id: "date-of-transfer",
+  namePrefix: "dateOfTransfer",
+  fieldset: {
+    legend: {
+      text: "Date of transfer",
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "For example, 27 3 2025"
+  }
+}) }}
+{% endset -%}
+
+{% set dueToMoveHtml %}
+{{ govukDateInput({
+  id: "date-child-due-to-start",
+  namePrefix: "dateChildDueToStart",
+  fieldset: {
+    legend: {
+      text: "Date child is due to start",
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "For example, 27 3 2025"
+  }
+}) }}
+{% endset -%}
+
+{{ govukRadios({
+  name: "transfer-reason",
+  fieldset: {
+    legend: {
+      text: "Reason for transfer?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Select one option"
+  },
+  items: [
+    {
+      value: "started",
+      text: "Child has already started at your school",
+      conditional: {
+        html: alreadyHtml
+      }
+    },
+    {
+      value: "due-to-move",
+      text: "Child is due to move to your school",
+      conditional: {
+        html: dueToMoveHtml
+      }
+    }
+  ]
+}) }}
+
+
+<!--
    <div class="govuk-checkboxes govuk-!-margin-top-6" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
         <input class="govuk-checkboxes__input" id="childrecord1" name="waste" type="checkbox" value="carcasses">
         <label class="govuk-label govuk-checkboxes__label" for="childrecord1">
-         Claim child record and transfer to your school
+         Request child record to be added to your school
         </label>
       </div>
-      </div>
+      </div> -->
 
 
 
 
  <!--quick redirect-->
           <div class="govuk-button-group govuk-!-margin-top-6">
-            <a href="child-found-linked.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+            <a href="child-found-not-linked-confirm.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
               Continue with transfer request
             </a>
-            <a href="child-found-linked.html" class="govuk-link">Cancel transfer request</a>
+            <a href="../search-child-transfers.html" class="govuk-link">Cancel transfer request</a>
           </div>
 
     </main>

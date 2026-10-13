@@ -1,0 +1,96 @@
+{% extends "layouts/FSM/v8-4/layout-dfe-schoolnav.html" %}
+{% set Service="Manage eligibility for free school meals" %}
+{% set pageName="Child record found" %}
+{% set PreviousSchool="None" %}
+{% set ChildFirstName="Sarah" %}
+{% set ChildSurname="Jones" %}
+{% set TransferDate="8 October 2026" %}
+{% set pageName="Child record found" %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--m">
+    <div class="govuk-grid-row govuk-!-align-items-center">
+   <div class="govuk-grid-column-two-thirds">
+<div class="govuk-panel govuk-panel--confirmation">
+  <h1 class="govuk-panel__title">
+
+
+ {{ data["child-firstname"] or "Sarah" }} {{ data["child-surname"] or "Jones" }} has been added to your school
+  </h1>
+  <!-- <div class="govuk-panel__body">
+   We've sent a request to {{ PreviousSchool }}<br>
+    <strong>{{ TransferDate }}</strong>
+  </div> -->
+<br>
+   <div class="govuk-panel__body">
+    {{ChildFirstName}} {{ChildSurname}} remains eligible for targeted free school meals until <br>
+    <strong>30 July 2027</strong>
+  </div>
+</div>
+
+
+
+ <h2 class="govuk-heading-m govuk-!-margin-top-8">Record details</h2>
+   <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Status
+        </dt>
+        <strong class="govuk-tag govuk-tag--green"> Completed   </strong>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Added to your school on
+        </dt>
+        <dd class="govuk-summary-list__value">
+          8 October 2026
+        </dd>
+      </div>
+      <!-- <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Linked school
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ PreviousSchool }}
+        </dd>
+      </div> -->
+      <!-- <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Expected response by
+        </dt>
+        <dd class="govuk-summary-list__value">
+            15th October 2026
+        </dd>
+      </div> -->
+       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Reference
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["transfer-ref"] or "4338672" }}
+        </dd>
+      </div>
+</dl>
+
+  <p class="govuk-body-l"><strong>What happens next</strong></p>
+
+
+<p class="govuk-body-m">Sarah Jones is now linked to your school.</p>
+<p class="govuk-body-m">You can:</p>
+  <ul class="govuk-list govuk-body-m govuk-list--bullet">
+  <li><a class="govuk-link" href="/FSM/Private_beta/v8-4/school/school-manage/decision/finalise/applications.html">finalise applications</a> and add Sarah Jones to your MIS</li>
+  <li>view the record in <a class="govuk-link" href="/FSM/Private_beta/v8-4/school/school-manage/report/search.html">search all records</a></li>
+  <li>provide free school meals to Sarah Jones</li>
+  </ul>
+
+  <p class="govuk-body-m">We'll keep a record of this change in the service.</p>
+<br>
+
+
+                      <p><a href="../search-child-transfers.html" class="govuk-link">Search another record</a></p>
+
+    </main>
+</div>
+{% endblock %}

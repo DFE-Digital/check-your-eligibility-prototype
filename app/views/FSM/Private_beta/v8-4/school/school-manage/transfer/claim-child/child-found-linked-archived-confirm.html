@@ -1,0 +1,106 @@
+{% extends "layouts/FSM/v8-4/layout-dfe-schoolnav.html" %}
+{% set Service="Manage eligibility for free school meals" %}
+{% set PreviousSchool="Telford Park school" %}
+{% set ChildFirstName="Sarah" %}
+{% set ChildSurname="Jones" %}
+{% set TransferDate="8 October 2026" %}
+{% set pageName="Child record found" %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--m">
+    <div class="govuk-grid-row govuk-!-align-items-center">
+   <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-7" style="background:#1d70b8;">
+  <h1 class="govuk-panel__title">
+
+
+Transfer requested submitted for {{ data["child-firstname"] or "Sarah" }} {{ data["child-surname"] or "Jones" }}
+  </h1>
+  <div class="govuk-panel__body">
+   We've sent a request to {{ PreviousSchool }}<br>
+   <br>
+  </div>
+
+<div class="govuk-panel__body">
+    <strong>Status:</strong> Awaiting approval.
+    <br><br>
+    <div class="govuk-panel__body">
+    {{ChildFirstName}} {{ChildSurname}} remains eligible for targeted free school meals until <br>
+    <strong>30 July 2027</strong>
+  </div>
+</div>
+</div>
+
+
+ <h2 class="govuk-heading-m govuk-!-margin-top-8">Transfer details</h2>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Status
+        </dt>
+        <strong class="govuk-tag govuk-tag--blue"> Awaiting approval   </strong>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Requested on
+        </dt>
+        <dd class="govuk-summary-list__value">
+          8 October 2026
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Linked school
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ PreviousSchool }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Expected response by
+        </dt>
+        <dd class="govuk-summary-list__value">
+            15th October 2026
+        </dd>
+      </div>
+       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Reference
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["transfer-ref"] or "FSM456789" }}
+        </dd>
+      </div>
+</dl>
+<br>
+  <p class="govuk-body-l"><strong>What happens next</strong></p>
+
+
+<p class="govuk-body-m">We've sent a transfer request to<strong> {{ PreviousSchool }}</strong></p>
+<p class="govuk-body-m">They must review and restore the record before they can approve or reject the transfer. </p>
+<p class="govuk-body-m">We'll notify you when they have made a decision.</p>
+  <!-- <ul class="govuk-list govuk-body-m govuk-list--bullet">
+    <li>approve the request</li>
+  <li>reject the request</li>
+  </ul> -->
+
+  <!-- <p class="govuk-body-m">We'll update the status of this request when a decision has been made.</p> -->
+<br>
+
+
+                      <p><a href="../search-child-transfers.html" class="govuk-link">Return to Manage child transfers</a></p>
+
+    </main>
+</div>
+
+
+
+
+
+
+
+    {% endblock %}

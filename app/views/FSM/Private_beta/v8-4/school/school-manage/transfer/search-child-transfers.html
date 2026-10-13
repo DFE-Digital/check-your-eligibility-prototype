@@ -1,0 +1,196 @@
+{% extends "layouts/FSM/v8-4/layout-dfe-schoolnav.html" %}
+{% set Service="Manage eligibility for free school meals" %}
+{% set pageName="Manage child transfers" %}
+{% set dateSubmitted = '2026-05-22' %}
+
+
+{% block content %}
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--m">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+          {{ pageName }}
+        </h1>
+      </div>
+    </div>
+
+    <!-- Action required -->
+
+    <div
+      class="govuk-notification-banner"
+      role="region"
+      aria-labelledby="transfer-requests-title"
+      data-module="govuk-notification-banner">
+
+      <div class="govuk-notification-banner__header">
+        <h2
+          class="govuk-notification-banner__title"
+          id="transfer-requests-title">
+          Action required
+        </h2>
+      </div>
+
+      <div class="govuk-notification-banner__content">
+
+        <h3 class="govuk-notification-banner__heading">
+          You have 3 incoming transfer requests awaiting review
+        </h3>
+
+        <p class="govuk-body">
+          Review requests from other schools and decide whether to approve or reject them.
+        </p>
+
+        <a
+          href="incoming-request/pending_transfers.html"
+          class="govuk-button govuk-!-margin-bottom-0"
+          data-module="govuk-button">
+          Review incoming requests
+        </a>
+
+      </div>
+      </div>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-7">Transfer tasks</h2>
+
+    <ul class="govuk-task-list">
+
+  <li class="govuk-task-list__item">
+
+    <span class="govuk-task-list__name-and-hint">
+
+      <a
+        href="claim-child/verify-child"
+        class="govuk-link govuk-task-list__link">
+
+        <strong>Request a child record transfer</strong>
+
+      </a>
+
+      <div class="govuk-task-list__hint">
+Verify a child's details using information from the
+parent's FSM application before requesting a transfer.        </div>
+</span>
+<!-- <button type="submit" class="govuk-button govuk-button" data-module="govuk-button">  Start a transfer request
+</button> -->
+
+</li>
+  <li class="govuk-task-list__item">
+
+    <span class="govuk-task-list__name-and-hint">
+
+      <a
+        href="bulk-transfer/start"
+        class="govuk-link govuk-task-list__link">
+
+        <strong>Create a batch transfer</strong>
+
+      </a>
+
+      <div class="govuk-task-list__hint">
+        Transfer multiple children at the same time for example a Year 6 year group transferring to secondary school.
+      </div>
+      </span>
+    </li>
+  </ul>
+
+  <h2 class="govuk-heading-s govuk-!-margin-top-7">Recent transfer requests</h2>
+
+  <table class="govuk-table">
+
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">
+        Reference
+      </th>
+      <th scope="col" class="govuk-table__header">
+        Child
+      </th>
+      <th scope="col" class="govuk-table__header">
+        Current school
+      </th>
+      <th scope="col" class="govuk-table__header">
+        Status
+      </th>
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">43110481</td>
+      <td class="govuk-table__cell">
+        Sophia Turner
+      </td>
+      <td class="govuk-table__cell">
+        St James School
+      </td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--grey">
+          Awaiting review
+        </strong>
+      </td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">43110479</td>
+      <td class="govuk-table__cell">
+        Amelia Reed
+      </td>
+      <td class="govuk-table__cell">
+        Kingsway Secondary
+      </td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--grey">
+          Awaiting review
+        </strong>
+      </td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">43110475</td>
+      <td class="govuk-table__cell">
+        Noah Wilson
+      </td>
+      <td class="govuk-table__cell">
+        Greenfield Academy
+      </td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--green">
+          Accepted
+        </strong>
+      </td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">43110474</td>
+      <td class="govuk-table__cell">
+        Isla Clark
+      </td>
+      <td class="govuk-table__cell">
+        Northfield Primary
+      </td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--green">
+          Accepted
+        </strong>
+      </td>
+    </tr>
+
+  </tbody>
+  </table>
+
+  <p class="govuk-body">
+    <a class="govuk-link" href="school-manage/transfer/view-transfer-requests">
+      View all transfer requests
+    </a>
+  </p>
+
+  </main>
+</div>
+
+
+
+{% endblock %}

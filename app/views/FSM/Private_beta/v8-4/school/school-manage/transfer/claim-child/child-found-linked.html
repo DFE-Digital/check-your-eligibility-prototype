@@ -10,9 +10,9 @@
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l govuk-!-margin-bottom-">{{pageName}}</h1>
       </div>
-      <div class="govuk-grid-column-one-third govuk-!-text-align-right">
+      <!-- <div class="govuk-grid-column-one-third govuk-!-text-align-right">
         <a class="govuk-link" href="search-child.html">Search for another child</a>
-      </div>
+      </div> -->
     </div>
 
 
@@ -81,20 +81,133 @@
       <p class="govuk-!-font-weight-bold govuk-!-margin-bottom-0">Telford Park School</p>
    </div>
 
+
+<form method="post" action="/FSM/Private_beta/v8-4/appeal-decision-school/{{childId}}">
+<!-- {{ govukRadios({
+  name: "why-transfer",
+  fieldset: {
+    legend: {
+      text: "Reason for transfer",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Why are you requesting a transfer for this child?"
+  },
+  items: [
+    {
+      value: "child-moved",
+      text: "Child has already started at your school"
+    },
+    {
+      value: "child-due-to-move",
+      text: "Child is due to move to your school"
+    },
+    {
+      value: "child-incorrectly-linked",
+      text: "Child is incorrectly linked to this school"
+    }
+  ]
+}) }} -->
+
+<!------->
+
+<!-- {% set incorrectHtml %}
+{{ govukInput({
+  id: "contact-by-email",
+  name: "contactByEmail",
+  type: "email",
+  autocomplete: "email",
+  spellcheck: false,
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Email address"
+  }
+}) }}
+{% endset -%} -->
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break">
+
+{% set alreadyHtml %}
+{{ govukDateInput({
+  id: "date-of-transfer",
+  namePrefix: "dateOfTransfer",
+  fieldset: {
+    legend: {
+      text: "Date of transfer",
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "For example, 27 3 2025"
+  }
+}) }}
+{% endset -%}
+
+{% set dueToMoveHtml %}
+{{ govukDateInput({
+  id: "date-child-due-to-start",
+  namePrefix: "dateChildDueToStart",
+  fieldset: {
+    legend: {
+      text: "Date child is due to start",
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "For example, 27 3 2025"
+  }
+}) }}
+{% endset -%}
+
+{{ govukRadios({
+  name: "transfer-reason",
+  fieldset: {
+    legend: {
+      text: "Reason for transfer?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Select one option"
+  },
+  items: [
+    {
+      value: "started",
+      text: "Child has already started at your school",
+      conditional: {
+        html: alreadyHtml
+      }
+    },
+    {
+      value: "due-to-move",
+      text: "Child is due to move to your school",
+      conditional: {
+        html: dueToMoveHtml
+      }
+    },
+    {
+      value: "incorrectly-linked",
+      text: "Child is incorrectly linked to this school"
+    }
+  ]
+}) }}
+<!--
    <div class="govuk-checkboxes govuk-!-margin-top-6" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
         <input class="govuk-checkboxes__input" id="childrecord1" name="waste" type="checkbox" value="carcasses">
         <label class="govuk-label govuk-checkboxes__label" for="childrecord1">
 Add child record to your school        </label>
       </div>
-      </div>
+      </div> -->
 
 
 
 
  <!--quick redirect-->
           <div class="govuk-button-group govuk-!-margin-top-6">
-            <a href="child-found-linked.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+            <a href="child-found-linked-confirm.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
               Confirm transfer
             </a>
             <a href="child-found-linked.html" class="govuk-link">Cancel transfer</a>

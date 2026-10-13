@@ -1,0 +1,253 @@
+{% extends "layouts/FSM/v8-4/layout-dfe-schoolnav.html" %}
+{% set applications = 3 %}
+{% set pageName = "Review " ~ applications ~ " incoming transfer requests" %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+   <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l" id="pending-applications-heading">
+      <span id="row-count"></span> {{ pageName }}
+    </h1>
+    <p class="govuk-body">
+  Review transfer requests received from other schools.
+</p>
+    <!-- <script>
+      document.addEventListener('DOMContentLoaded', function() {
+      var table = document.querySelector('.govuk-table tbody');
+      var rowCount = table ? table.querySelectorAll('tr').length : 0;
+      document.getElementById('row-count').textContent = rowCount + 15;
+      });
+    </script> -->
+
+      <!-- <span id="notifications" class="moj-notification-badge" style="white-space: nowrap; margin-left: 15px;">36</span> -->
+
+      <!-- <div class="moj-search">
+
+        <form action="#" method="post">
+
+          <div class="govuk-form-group">
+            <label class="govuk-label moj-search__label govuk-!-font-weight-bold" for="search">
+              Find a child
+            </label>
+
+            <div id="search-hint" class="govuk-hint moj-search__hint ">
+              You can search by name, date of birth or National Insurance number
+            </div>
+            <input class="govuk-input moj-search__input " id="search" name="search" type="search" aria-describedby="search-hint">
+          </div>
+          <button type="submit" class="govuk-button moj-search__button " data-module="govuk-button">
+            Search
+          </button>
+        </form>
+      </div>
+    </div> -->
+
+  </div>
+     <div class="govuk-grid-column-full">
+
+  <div style="padding-bottom: 2em;"></div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+<hr class="govuk-section-break govuk-section-break--s govuk-section-break">
+    <div class="govuk-grid-column-full govuk-!-padding-0 padding: 1em; margin-top: 1em;">
+
+
+<table class="govuk-table" data-module="moj-sortable-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header" scope="col" aria-sort="none">Child name</th>
+            <th class="govuk-table__header" scope="col" aria-sort="ascending">Reference number</th>
+
+      <th class="govuk-table__header" scope="col" aria-sort="none">Requesting school</th>
+      <th class="govuk-table__header" scope="col" aria-sort="none">Date received</th>
+      <!-- <th class="govuk-table__header" scope="col" aria-sort="none">School</th> -->
+      <th class="govuk-table__header" scope="col" aria-sort="none">Status</th>
+       <th class="govuk-table__header" scope="col">Action required</th>
+        <th class="govuk-table__header" scope="col"></th>
+
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Emily Johnson <br></td>
+            <td class="govuk-table__cell"></a>44455453</a></td>
+
+      <td class="govuk-table__cell">Hilltop Elementary</td>
+      <td class="govuk-table__cell">13 Sep 2026</td>
+      <!-- <td class="govuk-table__cell">Hilltop Elementary</td> -->
+             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Needs reviewing</strong></td>
+      <td class="govuk-table__cell">
+        <a href="transfer_44455453.html" class="govuk-link">Review request</a>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Oliver Brown <br></td>
+            <td class="govuk-table__cell">44455257</a></td>
+
+      <td class="govuk-table__cell">St. Mary's Primary</td>
+      <td class="govuk-table__cell">02 Sep 2026</td>
+             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Needs reviewing</strong></td>
+      <td class="govuk-table__cell">
+        <a href="transfer_44455257.html" class="govuk-link">Review request</a>
+      </td>
+    </tr>
+
+    <tr class="govuk-table__row">
+<td class="govuk-table__cell">
+Sophia Turner
+</td>
+<td class="govuk-table__cell">
+43110481
+</td>
+<td class="govuk-table__cell">
+Kingsway Secondary
+</td>
+<td class="govuk-table__cell">
+4 Oct 2026
+</td>
+<td class="govuk-table__cell">
+<strong class="govuk-tag govuk-tag--blue">
+Needs reviewing
+</strong>
+</td>
+ <td class="govuk-table__cell">
+        <a href="../transfer/review-transfer-request/transfer_43110481.html" class="govuk-link">Review request</a>
+      </td>
+</tr>
+    <!-- <h1 class="govuk-heading-l">
+  Incoming transfer requests
+</h1> -->
+
+
+<!--
+<table class="govuk-table govuk-table--small-text-until-tablet">
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">
+        Child
+      </th>
+      <th scope="col" class="govuk-table__header">
+        Reference number
+      </th>
+      <th scope="col" class="govuk-table__header">
+        Requesting school
+      </th>
+      <th scope="col" class="govuk-table__header">
+        Received
+      </th>
+      <th scope="col" class="govuk-table__header">
+        Status
+      </th>
+      <th scope="col" class="govuk-table__header">
+        Action
+      </th>
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        Emily Johnson
+      </td>
+      <td class="govuk-table__cell">
+        44455453
+      </td>
+      <td class="govuk-table__cell">
+        Greenfield Academy
+      </td>
+      <td class="govuk-table__cell">
+        6 October 2026
+      </td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--blue">
+          Awaiting review
+        </strong>
+      </td>
+      <td class="govuk-table__cell">
+        review-transfer-request/44455453
+          Review request
+        </a>
+      </td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        Oliver Brown
+      </td>
+      <td class="govuk-table__cell">
+        43110482
+      </td>
+      <td class="govuk-table__cell">
+        Northfield Primary
+      </td>
+      <td class="govuk-table__cell">
+        5 October 2026
+      </td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--blue">
+          Awaiting review
+        </strong>
+      </td>
+      <td class="govuk-table__cell">
+        review-transfer-request/43110482
+          Review request
+        </a>
+      </td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        Sophia Turner
+      </td>
+      <td class="govuk-table__cell">
+        43110481
+      </td>
+      <td class="govuk-table__cell">
+        Kingsway Secondary
+      </td>
+      <td class="govuk-table__cell">
+        4 October 2026
+      </td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--blue">
+          Awaiting review
+        </strong>
+      </td>
+      <td class="govuk-table__cell">
+        review-transfer-request/43110481
+          Review request
+        </a>
+      </td>
+    </tr> -->
+
+  </tbody>
+
+</table>
+
+<p class="govuk-body">
+  <a href="../search-child-transfers.html">
+    Return to manage child transfers
+  </a>
+</p>
+
+<!--
+<div class="govuk-form-group govuk-!-margin-bottom-6">
+  <label class="govuk-label" for="request-status">
+    Filter by status
+  </label>
+
+  <select class="govuk-select" id="request-status" name="request-status">
+    <option value="all">All requests</option>
+    <option value="awaiting-review">Awaiting review</option>
+    <option value="approved">Approved</option>
+    <option value="rejected">Rejected</option>
+  </select>
+</div> -->
+</tbody>
+</table>
+
+{% endblock %}
