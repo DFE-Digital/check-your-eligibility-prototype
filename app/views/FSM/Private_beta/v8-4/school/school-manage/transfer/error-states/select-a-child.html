@@ -1,27 +1,43 @@
 {% extends "layouts/FSM/v8-4/layout-dfe-schoolnav.html" %}
 {% set Service="Manage eligibility for free school meals" %}
-{% set pageName="There is a problem" %}
+{% set pageName="2 children found" %}
 
 {% block content %}
 
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper govuk-main-wrapper--m">
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+      <!-- <div class="govuk-grid-column-two-thirds">
         <span class="govuk-caption-l"></span>
-         <h1 class="govuk-heading-l">{{pageName}}</h1>
-      </div>
+         <h1 class="govuk-heading-l">          {{pageName}}
+</h1>
+      </div> -->
     </div>
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+<h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+
+        <li>
+          <a href="#">Select the child you want to add to your school</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 <div class="govuk-form-group govuk-form-group--error">
   <fieldset class="govuk-fieldset" aria-describedby="countries-error">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
-        Will you be travelling to any of these countries?
+          {{pageName}}
       </h1>
     </legend>
     <p id="countries-error" class="govuk-error-message">
-      <span class="govuk-visually-hidden">Error:</span> Select countries you will be travelling to, or select ‘No, I will not be travelling to any of these countries’
+      <span class="govuk-visually-hidden">Error:</span> Select the childyou want to add to your school.
     </p>
 
 
@@ -29,7 +45,7 @@
   <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
-        {{pageName}}
+
       </h1>
     </legend>
     <div id="child-hint" class="govuk-hint">
@@ -48,42 +64,7 @@
           Sarah Jones | 02/02/2021 | St Mary's CofE Primary School
         </label>
       </div>
-      <!-- <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="childrecord3" name="waste" type="checkbox" value="farm">
-        <label class="govuk-label govuk-checkboxes__label" for="waste-3">
-          Sarah Jones - DOB: 03/03/2010 - UPN: 1122334455
-        </label>
-      </div> -->
-    </div>
-  </fieldset>
-</div>
 
-    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="countries" name="countries" type="checkbox" value="france" checked>
-        <label class="govuk-label govuk-checkboxes__label" for="countries">
-          France
-        </label>
-      </div>
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="countries-2" name="countries" type="checkbox" value="portugal">
-        <label class="govuk-label govuk-checkboxes__label" for="countries-2">
-          Portugal
-        </label>
-      </div>
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="countries-3" name="countries" type="checkbox" value="spain">
-        <label class="govuk-label govuk-checkboxes__label" for="countries-3">
-          Spain
-        </label>
-      </div>
-      <div class="govuk-checkboxes__divider">or</div>
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="countries-5" name="countries" type="checkbox" value="none" checked data-behaviour="exclusive">
-        <label class="govuk-label govuk-checkboxes__label" for="countries-5">
-          No, I will not be travelling to any of these countries
-        </label>
-      </div>
     </div>
   </fieldset>
 </div>
@@ -92,7 +73,59 @@
     </main>
 </div>
 
-
+<!--
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#nationality">Select if you are British, Irish or a citizen of a different country</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="govuk-form-group govuk-form-group--error">
+  <fieldset class="govuk-fieldset" aria-describedby="nationality-hint nationality-error">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        What is your nationality?
+      </h1>
+    </legend>
+    <div id="nationality-hint" class="govuk-hint">
+      If you have dual nationality, select all options that are relevant to you
+    </div>
+    <p id="nationality-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> Select if you are British, Irish or a citizen of a different country
+    </p>
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="british" aria-describedby="nationality-item-hint">
+        <label class="govuk-label govuk-checkboxes__label" for="nationality">
+          British
+        </label>
+        <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+          including English, Scottish, Welsh and Northern Irish
+        </div>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="nationality-2" name="nationality" type="checkbox" value="irish">
+        <label class="govuk-label govuk-checkboxes__label" for="nationality-2">
+          Irish
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="nationality-3" name="nationality" type="checkbox" value="other">
+        <label class="govuk-label govuk-checkboxes__label" for="nationality-3">
+          Citizen of another country
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div> -->
 
 
 

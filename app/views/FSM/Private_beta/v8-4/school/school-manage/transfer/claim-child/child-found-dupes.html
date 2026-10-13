@@ -1,0 +1,33 @@
+{% extends "layouts/FSM/v8-4/layout-dfe-schoolnav.html" %}
+{% set Service="Manage eligibility for free school meals" %}
+{% set pageName="We cannot identify a single pupil record" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--m">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">{{ pageName }}</h1>
+
+        <p class="govuk-body">We found multiple records for this child and could not determine which record should be used.</p>
+        <p class="govuk-body">To help us find the correct record, check the child's details and try again.</p>
+
+
+        <h2 class="govuk-heading-m">What happens next</h2>
+        <p class="govuk-body">If you still cannot find the correct child record, contact support.</p>
+        <p class="govuk-body">We'll review the duplicate records and contact you if we need more information.</p>
+
+        <p class="govuk-body">
+          <strong>Reference number:</strong> FSM223344
+        </p>
+
+        <p class="govuk-body">
+          <a class="govuk-link" href="/FSM/Private_beta/v8-4/school/school-manage/transfer/search-child-transfer.html">Try again</a>
+        </p>
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

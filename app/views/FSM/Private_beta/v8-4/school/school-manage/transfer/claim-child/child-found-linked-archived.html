@@ -1,0 +1,226 @@
+{% extends "layouts/FSM/v8-4/layout-dfe-schoolnav.html" %}
+{% set Service="Manage eligibility for free school meals" %}
+{% set pageName="Child record found" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--m">
+    <div class="govuk-grid-row govuk-!-align-items-center">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-">{{pageName}}</h1>
+      </div>
+      <!-- <div class="govuk-grid-column-one-third govuk-!-text-align-right">
+        <a class="govuk-link" href="search-child.html">Search for another child</a>
+      </div> -->
+    </div>
+
+
+<div class="govuk-!-padding-bottom-2"></div>
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Child details
+    </h2>
+
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action">
+        <!-- <a class="govuk-link" href="../school-soft-check/checker">Edit details<span class="govuk-visually-hidden">
+            Child details</span></a> -->
+
+      </li>
+    </ul>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["parent-firstname"] or "Sarah" }} {{ data["parent-surname"] or "Jones" }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["dob-day"] or "01" }} {{ data["dob-month"] or "01" }} {{ data["dob-year"] or "2022" }}
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Application reference number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["applicationReference"] or "41287342" }}
+        </dd>
+      </div>
+
+<!--
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">School</dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["school"] or "Telford Park School" }}
+        </dd>
+      </div> -->
+
+      </dl>
+      </div>
+      </div>
+
+  <h2 class="govuk-heading-m">Status</h2>
+
+   <div class="govuk-inset-text govuk-!-margin-top-5 govuk-!-padding-top-3 govuk-!-padding-bottom-3 govuk-body-l">
+      <p class="govuk-!-margin-top-0 govuk-!-margin-bottom-2">
+        <strong class="govuk-tag govuk-tag--blue govuk-!-font-weight-bold govuk-tag--large">Archived by school</strong>
+      </p>
+      <p class="govuk-!-margin-bottom-1 govuk-!-margin-top-0">This child has a free school meal record in our system, but it has been archived by:</p>
+      <p class="govuk-!-font-weight-bold govuk-!-margin-bottom-0">Telford Park School</p>
+   </div>
+
+<p class="govuk-body-m">You can request a transfer for this child to your school, but the school that archived the record will need to restore and approve it first.</p>
+
+<form method="post" action="/FSM/Private_beta/v8-4/appeal-decision-school/{{childId}}">
+<!-- {{ govukRadios({
+  name: "why-transfer",
+  fieldset: {
+    legend: {
+      text: "Reason for transfer",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Why are you requesting a transfer for this child?"
+  },
+  items: [
+    {
+      value: "child-moved",
+      text: "Child has already started at your school"
+    },
+    {
+      value: "child-due-to-move",
+      text: "Child is due to move to your school"
+    },
+    {
+      value: "child-incorrectly-linked",
+      text: "Child is incorrectly linked to this school"
+    }
+  ]
+}) }} -->
+
+<!------->
+
+<!-- {% set incorrectHtml %}
+{{ govukInput({
+  id: "contact-by-email",
+  name: "contactByEmail",
+  type: "email",
+  autocomplete: "email",
+  spellcheck: false,
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Email address"
+  }
+}) }}
+{% endset -%} -->
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break">
+
+{% set alreadyHtml %}
+{{ govukDateInput({
+  id: "date-of-transfer",
+  namePrefix: "dateOfTransfer",
+  fieldset: {
+    legend: {
+      text: "Date of transfer",
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "For example, 27 3 2025"
+  }
+}) }}
+{% endset -%}
+
+{% set dueToMoveHtml %}
+{{ govukDateInput({
+  id: "date-child-due-to-start",
+  namePrefix: "dateChildDueToStart",
+  fieldset: {
+    legend: {
+      text: "Date child is due to start",
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "For example, 27 3 2025"
+  }
+}) }}
+{% endset -%}
+
+{{ govukRadios({
+  name: "transfer-reason",
+  fieldset: {
+    legend: {
+      text: "Reason for transfer?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Select one option"
+  },
+  items: [
+    {
+      value: "started",
+      text: "Child has already started at your school",
+      conditional: {
+        html: alreadyHtml
+      }
+    },
+    {
+      value: "due-to-move",
+      text: "Child is due to move to your school",
+      conditional: {
+        html: dueToMoveHtml
+      }
+    },
+    {
+      value: "incorrectly-linked",
+      text: "Child is incorrectly linked to this school"
+    }
+  ]
+}) }}
+<!--
+   <div class="govuk-checkboxes govuk-!-margin-top-6" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="childrecord1" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="childrecord1">
+Add child record to your school        </label>
+      </div>
+      </div> -->
+
+
+
+
+ <!--quick redirect-->
+          <div class="govuk-button-group govuk-!-margin-top-6">
+            <a href="child-found-linked-confirm.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+              Confirm transfer
+            </a>
+            <a href="child-found-linked.html" class="govuk-link">Cancel transfer</a>
+          </div>
+
+    </main>
+</div>
+
+
+
+
+
+
+
+    {% endblock %}

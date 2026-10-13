@@ -1,0 +1,76 @@
+{% extends "layouts/FSM/v8-4/layout-dfe-lanav.html" %}
+{% set childId = "44455453" %}
+{% set pageName="Reject transfer request for Emily Johnson" %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+       <!-- <p class="govuk-body">
+          The school will not receive the child record if you reject this application. </p>
+          <p class="govuk-body">
+          You can reject the application if you do not recognise the child or if you have concerns about the transfer. </p>
+      </div>
+    </div> -->
+
+
+            <div class="govuk-form-group">
+                <h2 class="govuk-label-wrapper">
+                    <label class="govuk-label govuk-label--m" for="more-detail">
+                        Give a reason for rejecting the transfer request
+                    </label>
+                </h2>
+                <div id="more-detail-hint" class="govuk-hint">
+                    Do not include personal or financial information like the child's name, parent's National Insurance
+                    number or statement details.
+                </div>
+                <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"
+                    aria-describedby="more-detail-hint"></textarea>
+            </div>
+            <!-- <p class="govuk-body">
+Parent and guardians can request access to the reasons for declining the application, for example as a Freedom of Information request.
+</p> -->
+
+            <div class="govuk-warning-text">
+                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                <strong class="govuk-warning-text__text">
+                    <span class="govuk-visually-hidden">Warning</span>
+                    If you reject a transfer request you may be contacted by the requesting school to discuss the transfer.
+                </strong>
+            </div>
+
+<!-- <div class="govuk-inset-text">
+  Contact the requesting school to discuss the transfer if you need more information or if you have concerns about the transfer.
+</div> -->
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+
+<div class="govuk-!-padding-bottom-3"></div>
+{{ govukButton({
+text: "Reject transfer",
+href: 'transfer-rejected'
+}) }}
+
+{{ govukButton({
+text: "Review later",
+classes: "govuk-button--secondary",
+href: 'transfer_' + childId
+}) }}
+<!--
+<p class="govuk-body">
+  <a href="../pending-list" class="govuk-link">Review another application</a>
+</p> -->
+
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+</div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}

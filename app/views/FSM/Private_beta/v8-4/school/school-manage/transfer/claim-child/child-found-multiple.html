@@ -1,6 +1,6 @@
 {% extends "layouts/FSM/v8-4/layout-dfe-schoolnav.html" %}
 {% set Service="Manage eligibility for free school meals" %}
-{% set pageName="2 children found" %}
+{% set pageName="We found more than one matching pupil record " %}
 
 {% block content %}
 
@@ -17,36 +17,58 @@
         {{pageName}}
       </h1>
     </legend>
-    <div id="child-hint" class="govuk-hint">
-      We found 2 children with the same details. Please select the correct child to continue.
+</fieldset>
+
+
+<p class="govuk-body">We found multiple pupil records that match the details you entered. We need to identify a single record to continue.</p>
+<p class="govuk-body">To help identify the correct record add in the child's date of birth. </p></div>
+
+<form action="/FSM/Private_beta/v8-4/school/school-manage/transfer/claim-child/verify-multiple" method="post">
+<br>
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      What is the child's date of birth?
+    </legend>
+    <div id="passport-issued-hint" class="govuk-hint">
+      For example, 27 3 2007
     </div>
-    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="childrecord1" name="waste" type="checkbox" value="carcasses">
-        <label class="govuk-label govuk-checkboxes__label" for="waste">
-          Sarah Jones | 01/01/2022 | Telford Park School
-        </label>
+    <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+            Day
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+        </div>
       </div>
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="childrecord2" name="waste" type="checkbox" value="mines">
-        <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-          Sarah Jones | 02/02/2021 | St Mary's CofE Primary School
-        </label>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+            Month
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+        </div>
       </div>
-      <!-- <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="childrecord3" name="waste" type="checkbox" value="farm">
-        <label class="govuk-label govuk-checkboxes__label" for="waste-3">
-          Sarah Jones - DOB: 03/03/2010 - UPN: 1122334455
-        </label>
-      </div> -->
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+            Year
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+        </div>
+      </div>
     </div>
   </fieldset>
 </div>
+</div>
 
+</div>
  <!--quick redirect-->
-          <a href="child-found-linked.html" role="button" draggable="false" class="govuk-button govuk-button" data-module="govuk-button">
-  Search
-</a>
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
 
     </main>
 </div>
