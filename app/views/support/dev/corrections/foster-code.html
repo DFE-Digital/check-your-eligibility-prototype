@@ -1,0 +1,55 @@
+{% extends "/layouts/support/dev/layout-support.html" %}
+
+{% block pageTitle %}
+  Foster code found
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h1 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Foster code found
+        </h1>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">Foster codes cannot be edited by customer support</p>
+        <p>Local authorities can update the carer, partner and child details themselves.</p>
+      </div>
+    </div>
+
+    <h2 class="govuk-heading-m">Code details you entered</h2>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Eligibility code
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["30h-code"] or "40879487381" }}
+        </dd>
+      </div>
+
+    </dl>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-8">What to do next</h2>
+
+
+    <p>Instruct the local authority to make the correction using the Manage eligibility for childcare support portal. </p>
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}
