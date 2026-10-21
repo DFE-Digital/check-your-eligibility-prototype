@@ -1,6 +1,13 @@
 {% extends "layouts/FSM/v8-4/layout-dfe-schoolnav.html" %}
 {% set pageName="Application approved" %}
 {% set Date = "22 Sep 2025" %}
+{% set childId = "44455453" %}
+{% set childName = "Emily Johnson" %}
+{% set childDOB = "22 Sep 2012" %}
+{% set schoolName = "Hilltop Elementary" %}
+{% set schoolAddress = "Manchester, M25 1QA" %}
+{% set parentDOB = "15 Mar 1980" %}
+{% set parentName = "Alex Johnson" %}
 
 {% block content %}
 
@@ -14,15 +21,15 @@
           <div class="govuk-grid-column-two-thirds">
             <div class="govuk-panel govuk-panel--confirmation">
               <h1 class="govuk-panel__title">
-                Transfer approved for Emily Johnson
+                Transfer approved for record of {{childName}}
               </h1>
 
               <div class="govuk-panel__body">
-                Application reference number<br><strong>44455453</strong>
+                Application reference number<br><strong>{{childId}}</strong>
               </div>
               <br>
                <div class="govuk-panel__body">
-                End date<br><strong>31 July 2027</strong>
+                Eligibility end date<br><strong>31 July 2027</strong>
               </div>
               <br>
                 <div class="govuk-panel__body">
@@ -47,7 +54,7 @@
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
               <p class="govuk-body">
-              <a class="govuk-link" href="../../../applications.html"> Review more transfers.</a>
+              <a class="govuk-link" href="pending_transfers.html"> Review more transfers.</a>
             </p>
 <!--
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break">

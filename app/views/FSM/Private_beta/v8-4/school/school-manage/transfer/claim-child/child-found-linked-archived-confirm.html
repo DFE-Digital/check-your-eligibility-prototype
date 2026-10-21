@@ -22,14 +22,14 @@ Transfer requested submitted for {{ data["child-firstname"] or "Sarah" }} {{ dat
    <br>
   </div>
 
-<div class="govuk-panel__body">
+<!-- <div class="govuk-panel__body">
     <strong>Status:</strong> Awaiting approval.
     <br><br>
     <div class="govuk-panel__body">
     {{ChildFirstName}} {{ChildSurname}} remains eligible for targeted free school meals until <br>
     <strong>30 July 2027</strong>
-  </div>
-</div>
+  </div> -->
+<!-- </div> -->
 </div>
 
 
@@ -53,10 +53,18 @@ Transfer requested submitted for {{ data["child-firstname"] or "Sarah" }} {{ dat
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Linked school
+          Request sent to
         </dt>
         <dd class="govuk-summary-list__value">
           {{ PreviousSchool }}
+        </dd>
+      </div>
+       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Reason for transfer
+        </dt>
+        <dd class="govuk-summary-list__value">
+            {{ data["transfer-reason"] or "Child has moved to Telford Park school on 8 October 2026" }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
