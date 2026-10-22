@@ -1,4 +1,4 @@
-Parent Last Name,Parent Date of Birth,Parent National Insurance Number,Reference(optional),Outcome
+Parent Last Name,Parent Date of Birth,Parent National Insurance Number,Reference (optional),Outcome
 Doe,1/1/1970,QQ123456B,,Not eligible at time of check
 Mann,2/3/1975,QQ522456B,,Information does not match records
 Smith,15/06/1980,QQ383246C,,Eligible
