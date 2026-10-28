@@ -86,12 +86,15 @@
       {% set niHtml %}
         {{ govukInput({
           label: {
-            text: "Parent or guardian National Insurance number"
+            text: "National Insurance number"
           },
           id: "nationalInsuranceNumber",
           name: "nationalInsuranceNumber",
           value: data["nationalInsuranceNumber"],
           classes: "govuk-!-width-one-third govuk-input--extra-letter-spacing",
+          hint: {
+                  text: "For example, ‘QQ 12 34 56 C’"
+                },
           spellcheck: false
         }) }}
       {% endset -%}
@@ -99,12 +102,15 @@
       {% set asrHtml %}
         {{ govukInput({
           label: {
-            text: "Parent or guardian asylum support reference number"
+            text: "Asylum support reference number"
           },
           id: "asr-number-entered",
           name: "asr-number-entered",
           value: data["asr-number-entered"],
           classes: "govuk-!-width-one-third",
+          hint: {
+                  text: "For example, 123456789 or 12/34/56789"
+                },
           spellcheck: false
         }) }}
       {% endset -%}
