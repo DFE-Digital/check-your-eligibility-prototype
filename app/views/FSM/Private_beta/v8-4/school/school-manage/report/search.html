@@ -124,6 +124,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const keywordsInput = document.getElementById('keywords');
   const applyBtn = document.getElementById('applyFilter');
   const clearLink = document.querySelector('.govuk-link--no-visited-state');
+  const searchParams = new URLSearchParams(window.location.search);
+
+  if (keywordsInput) {
+    keywordsInput.value = searchParams.get('keywords') || '';
+  }
 
   const tagEls = {
     kwWrap: document.getElementById('selected-keyword-container'),
@@ -214,12 +219,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (tagEls.stWrap) tagEls.stWrap.style.display = 'none';
 
     if (keyword && tagEls.kwList && tagEls.kwWrap) {
-      tagEls.kwList.innerHTML += `
-        <li>
-          <button class="app-filter__tag" type="button" onclick="__clearTag__('keyword')">
-            <span class="govuk-visually-hidden">Remove this filter</span>${keyword}
-          </button>
-        </li>`;
+      const item = document.createElement('li');
+      const button = document.createElement('button');
+      const visuallyHidden = document.createElement('span');
+
+      button.className = 'app-filter__tag';
+      button.type = 'button';
+      button.addEventListener('click', () => window.__clearTag__('keyword'));
+      visuallyHidden.className = 'govuk-visually-hidden';
+      visuallyHidden.textContent = 'Remove this filter';
+      button.append(visuallyHidden, document.createTextNode(keyword));
+      item.append(button);
+      tagEls.kwList.append(item);
       tagEls.kwWrap.style.display = 'block';
     }
 

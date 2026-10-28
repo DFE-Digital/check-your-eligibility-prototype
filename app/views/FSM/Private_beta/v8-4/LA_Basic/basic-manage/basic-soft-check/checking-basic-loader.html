@@ -29,16 +29,13 @@
         </div>
 <script>
   setTimeout(function() {
-
-    // Random number between 0 and 1
-    var random = Math.floor(Math.random() * 2);
-
-    if (random === 0) {
+    {% if data["eligibilityType"] == "expanded" %}
+      document.location = 'outcomes/eligible-expanded';
+    {% elif data["eligibilityType"] == "notEligible" %}
+      document.location = 'outcomes/outcome-not-entitled';
+    {% else %}
       document.location = 'outcomes/eligible-targeted';
-    } else {
-      document.location = 'outcomes/eligible-targeted';
-    }
-
+    {% endif %}
   }, Math.random() * 2000);
 </script>
 
