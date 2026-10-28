@@ -1,4 +1,4 @@
-{% extends "/layouts/childcare/dev/layout-childcare.html" %}
+{% extends "/layouts/childcare/v11/layout-childcare.html" %}
 
 {% block pageTitle %}
   Run a batch check - {{ data['eligibility-type'] }}
@@ -21,7 +21,7 @@
     <h1 class="govuk-heading-l">Run a batch check</h1>
 
     <ol class="govuk-list govuk-list--number">
-      <li>Download the <a href="/public/csv/childcare/dev/eypp-2yo-batch-template.csv">batch check template (0.13kb)</a>.</li>
+      <li>Download the <a href="/public/csv/childcare/research/eypp-batch-template.csv">batch check template (CSV, 0.13KB)</a>.</li>
       <li>Add the details of the {{ data['check-type'] }} you need to check.</li>
      <li> Save it as a CSV file.</li>
     </ol>
@@ -34,15 +34,15 @@
       </strong>
     </div>
 
-    <p>You must include:</p>
+    <p>For each parent or guardian you need to check, you must include their:</p>
 
     <ul>
       <li>last name</li>
       <li>date of birth (format DD/MM/YYYY or YYYY-MM-DD)</li>
-      <li>National Insurance number</li>
+      <li>National Insurance number or asylum support reference number</li>
     </ul>
 
-     <p>There is also an optional 'Reference' column where you can add reference numbers from your management system.</p>
+    <p>There is also an optional 'Reference' column where you can add reference numbers from your management system.</p>
 
     {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
 
@@ -61,7 +61,7 @@
     {{ govukButton({
       text: "Run check",
       classes: "govuk-button--primary",
-      href: '/childcare/dev/batch-check/submitted-not-started'
+      href: '/childcare/v11/batch-check/history/batch-history'
     }) }}
 
   </div>
