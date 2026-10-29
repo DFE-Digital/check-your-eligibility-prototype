@@ -1,6 +1,6 @@
 {% extends "layouts/FSM/v8-4/layout-dfe-schoolnav.html" %}
 {% set Service="Manage eligibility for free school meals" %}
-{% set pageName="We found more than one matching pupil record " %}
+{% set pageName="We found more than one matching child record " %}
 
 {% block content %}
 
@@ -20,8 +20,8 @@
 </fieldset>
 
 
-<p class="govuk-body">We found multiple pupil records that match the details you entered. We need to identify a single record to continue.</p>
-<p class="govuk-body">To help identify the correct record add in the child's date of birth. </p></div>
+<p class="govuk-body">We found more than one record that matches the details you entered. Enter the child's date of birth to help identify the correct record.</p>
+<!-- <p class="govuk-body">To help identify the correct record add in the child's date of birth. </p>--></div>
 
 <form action="/FSM/Private_beta/v8-4/school/school-manage/transfer/claim-child/verify-multiple" method="post">
 <br>

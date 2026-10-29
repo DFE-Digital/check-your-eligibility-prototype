@@ -118,6 +118,41 @@ router.post('/FSM/Private_beta/v8-4/LA/la-manage/la-soft-check/run-check', funct
     res.redirect('/FSM/Private_beta/v8-4/LA/la-manage/la-soft-check/checking-la-loader.html')
   });
 
+router.post('/FSM/Private_beta/v8-4/LA_Basic/basic-manage/basic-soft-check/run-check', function (req, res) {
+  var identifierType = (req.body && req.body.identifierType) || req.session.data['identifierType'] || 'ni'
+  var candidateValue = identifierType === 'asr'
+    ? ((req.body && (req.body['asr-number-entered'] || req.body.asrNumber)) || req.session.data['asr-number-entered'] || '')
+    : ((req.body && req.body.nationalInsuranceNumber) || req.session.data['nationalInsuranceNumber'] || '')
+
+  req.session.data['identifierType'] = identifierType
+  req.session.data['nationalInsuranceNumber'] = identifierType === 'ni' ? candidateValue : (req.session.data['nationalInsuranceNumber'] || '')
+  req.session.data['asr-number-entered'] = identifierType === 'asr' ? candidateValue : (req.session.data['asr-number-entered'] || '')
+
+  var identifier = (candidateValue || '')
+    .toUpperCase()
+    .replace(/\s/g, '')
+
+  var niEligibilityLookup = {
+    'AB123456A': 'targeted',
+    'CD123456C': 'expanded',
+    'PN123456D': 'notEligible'
+  }
+
+  var asrEligibilityLookup = {
+    '98340001A': 'targeted',
+    '98340002A': 'expanded',
+    '98340003A': 'notEligible'
+  }
+
+  var lookup = identifierType === 'asr' ? asrEligibilityLookup : niEligibilityLookup
+  var defaultNotEligibleValue = identifierType === 'asr' ? '98340003A' : 'PN123456D'
+  var eligibilityType = lookup[identifier] || lookup[defaultNotEligibleValue]
+
+  req.session.data['eligibilityType'] = eligibilityType
+
+  res.redirect('/FSM/Private_beta/v8-4/LA_Basic/basic-manage/basic-soft-check/checking-basic-loader.html')
+})
+
 
 router.post(
   '/FSM/Private_beta/v8-4/school/school-manage/school-soft-check/run-check',
@@ -244,5 +279,4 @@ router.post(
   });
 
 };
-
 

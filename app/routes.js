@@ -95,6 +95,7 @@ require('./routes/fsm/private_beta/v8-4/softcheck')(router);
 require('./routes/fsm/private_beta/v8-4/account')(router);
 require('./routes/fsm/private_beta/v8-4/appeal')(router);
 require('./routes/fsm/private_beta/v8-4/verify')(router);
+require('./routes/fsm/private_beta/v8-4/school-record-search')(router);
 
 
 router.get('*', function (req, res, next) {
@@ -1119,4 +1120,3 @@ require('./routes/fsm/private_beta/v8-1/softcheck.js')(router)
 require('./routes/fsm/private_beta/v8-1/appeal-decision-expansion')(router);
 
 require('./routes/fsm/private_beta/v8-1/appeal-decision-expansion-school')(router);
-

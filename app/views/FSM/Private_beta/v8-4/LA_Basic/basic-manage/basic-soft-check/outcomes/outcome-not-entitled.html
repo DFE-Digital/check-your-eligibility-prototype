@@ -42,10 +42,14 @@
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          National Insurance number
+          {% if data["identifierType"] == "asr" %}Asylum support reference{% else %}National Insurance number{% endif %}
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data["ni-number-entered"] or "PB123456C" }}
+          {% if data["identifierType"] == "asr" %}
+            {{ data["asr-number-entered"] }}
+          {% else %}
+            {{ data["nationalInsuranceNumber"] or "PB123456C" }}
+          {% endif %}
         </dd>
       </div>
     </dl>

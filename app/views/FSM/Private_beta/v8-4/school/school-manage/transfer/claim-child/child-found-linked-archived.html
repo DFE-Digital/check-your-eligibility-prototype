@@ -1,6 +1,10 @@
 {% extends "layouts/FSM/v8-4/layout-dfe-schoolnav.html" %}
 {% set Service="Manage eligibility for free school meals" %}
 {% set pageName="Child record found" %}
+{% set PreviousSchool="Telford Park School" %}
+{% set ChildFirstName="Sarah" %}
+{% set ChildSurname="Jones" %}
+{% set TransferDate="8 October 2026" %}
 
 {% block content %}
 
@@ -77,11 +81,11 @@
       <p class="govuk-!-margin-top-0 govuk-!-margin-bottom-2">
         <strong class="govuk-tag govuk-tag--blue govuk-!-font-weight-bold govuk-tag--large">Archived by school</strong>
       </p>
-      <p class="govuk-!-margin-bottom-1 govuk-!-margin-top-0">This child has a free school meal record in our system, but it has been archived by:</p>
+      <p class="govuk-!-margin-bottom-1 govuk-!-margin-top-0">This child has a free school meals record and it has been archived by:</p>
       <p class="govuk-!-font-weight-bold govuk-!-margin-bottom-0">Telford Park School</p>
    </div>
 
-<p class="govuk-body-m">You can request a transfer for this child to your school, but the school that archived the record will need to restore and approve it first.</p>
+<p class="govuk-body-m">You can request the transfer of this child record to your school, but the school that archived the record will need to restore and approve it first.</p>
 
 <form method="post" action="/FSM/Private_beta/v8-4/appeal-decision-school/{{childId}}">
 <!-- {{ govukRadios({
@@ -190,7 +194,7 @@
     },
     {
       value: "incorrectly-linked",
-      text: "Child is incorrectly linked to this school"
+      text: "Child is incorrectly linked to " + PreviousSchool
     }
   ]
 }) }}

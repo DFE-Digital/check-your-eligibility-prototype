@@ -37,7 +37,9 @@ module.exports = function (router) {
       .toUpperCase()
 
     let outcome
-    if (identifier === 'AB123456A' || identifier === '98340002A') {
+    if (!identifier) {
+      outcome = 'child-found-your-school.html'
+    } else if (identifier === 'AB123456A' || identifier === '98340002A') {
       outcome = 'child-found-linked.html'
     } else if (identifier === '98331122M') {
       outcome = 'child-found-multiple.html'

@@ -1,6 +1,11 @@
 {% extends "layouts/FSM/v8-4/layout-dfe-schoolnav.html" %}
 {% set Service="Manage eligibility for free school meals" %}
 {% set pageName="Child record found" %}
+{% set PreviousSchool="Telford Park school" %}
+{% set ChildFirstName="Sarah" %}
+{% set ChildSurname="Jones" %}
+{% set TransferDate="8 October 2026" %}
+{% set pageName="Child record found" %}
 
 {% block content %}
 
@@ -77,8 +82,8 @@
       <p class="govuk-!-margin-top-0 govuk-!-margin-bottom-2">
         <strong class="govuk-tag govuk-tag--blue govuk-!-font-weight-bold govuk-tag--large">Linked to school</strong>
       </p>
-      <p class="govuk-!-margin-bottom-1 govuk-!-margin-top-0">This child has a free school meal record in our system and it is linked to:</p>
-      <p class="govuk-!-font-weight-bold govuk-!-margin-bottom-0">Telford Park School</p>
+      <p class="govuk-!-margin-bottom-1 govuk-!-margin-top-0">This child has a free school meals record and it is linked to:</p>
+      <p class="govuk-!-font-weight-bold govuk-!-margin-bottom-0">{{ PreviousSchool }}</p>
    </div>
 
 
@@ -189,7 +194,7 @@
     },
     {
       value: "incorrectly-linked",
-      text: "Child is incorrectly linked to this school"
+      text: "Child is incorrectly linked to " + PreviousSchool
     }
   ]
 }) }}

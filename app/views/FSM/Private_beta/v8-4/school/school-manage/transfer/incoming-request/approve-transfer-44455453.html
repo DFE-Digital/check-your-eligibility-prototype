@@ -1,21 +1,27 @@
 {% extends "layouts/FSM/v8-4/layout-dfe-lanav.html" %}
 {% set childId = "44455453" %}
+{% set childName = "Emily Johnson" %}
+{% set childDOB = "22 Sep 2012" %}
+{% set schoolName = "Hilltop Elementary" %}
+{% set schoolAddress = "Manchester, M25 1QA" %}
+{% set parentDOB = "15 Mar 1980" %}
+{% set parentName = "Alex Johnson" %}
 {% set pageName="Approve transfer request for Emily Johnson" %}
 {% block content %}
 
 <div class="govuk-width-container">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Approve this application?</h1>
-        <p class="govuk-body">
-          The school will receive the child record if you approve this application. </p>
+      <h1 class="govuk-heading-l">Approve transfer of record for {{ childName }}</h1>
+            <p class="govuk-body">
+              By approving, you are confirming that the child is leaving or has left your school and their record will be transferred to {{ schoolName }}. </p>
       </div>
     </div>
 
 
 <div class="govuk-!-padding-bottom-3"></div>
 {{ govukButton({
-text: "Approve now",
+text: "Approve transfer",
 href: 'transfer-confirmed'
 }) }}
 

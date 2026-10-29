@@ -10,7 +10,7 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="checking-basic-loader.html" method="post" novalidate>
+    <form action="/FSM/Private_beta/v8-4/LA_Basic/basic-manage/basic-soft-check/run-check" method="post" novalidate>
 
       {% call govukFieldset({
       legend: {
@@ -83,89 +83,73 @@
 
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
-      {{ govukInput({
-      label: {
-      text: "National Insurance number",
+      {% set niHtml %}
+        {{ govukInput({
+          label: {
+            text: "Parent or guardian National Insurance number"
+          },
+          id: "nationalInsuranceNumber",
+          name: "nationalInsuranceNumber",
+          value: data["nationalInsuranceNumber"],
+          classes: "govuk-!-width-one-third govuk-input--extra-letter-spacing",
+          spellcheck: false
+        }) }}
+      {% endset -%}
 
-      classes: "govuk-fieldset__legend--s"
-      },
-      hint: {
-      text: "For example, ‘QQ 12 34 56 C’"
-      },
-      classes: "govuk-input--width-10 govuk-input--extra-letter-spacing",
-      id: "national-insurance-number",
-      name: "nationalInsuranceNumber",
-      spellcheck: false
-      }) }}
+      {% set asrHtml %}
+        {{ govukInput({
+          label: {
+            text: "Parent or guardian asylum support reference number"
+          },
+          id: "asr-number-entered",
+          name: "asr-number-entered",
+          value: data["asr-number-entered"],
+          classes: "govuk-!-width-one-third",
+          spellcheck: false
+        }) }}
+      {% endset -%}
 
-      <p class="govuk-body"><a class="govuk-link" rel="noreferrer noopener" target="_blank" href="../guidance/guidance-steps/asylum-check.html">Parent or guardian is an asylum seeker</a></p>
-
-      <!--
-            {% set niHtml %}
-            {{ govukInput({
-            id: "ni-number-entered",
-            name: "ni-number-entered",
-            type: "text",
-            autocomplete: "text",
-            spellcheck: false,
-            classes: "govuk-!-width-one-third",
-            label: {
-            text:"Parent or guardian National Insurance number"
-            }
-
-            }) }}
-            {% endset -%}
-
-            {% set asrHtml %}
-            {{ govukInput({
-            id: "asr-number-entered",
-            name: "asr-number-entered",
-            type: "text",
-            autocomplete: "text",
-            spellcheck: false,
-            classes: "govuk-!-width-one-third",
-            label: {
-            text:"Parent or guardian asylum support reference number"
-            }
-
-
-            }) }}
-            {% endset -%}
-            {{ govukRadios({
-            name: "ni-number",
-            id:'ni-number',
-            fieldset: {
-            legend: {
-            text: "National Insurance number",
+      {{ govukRadios({
+        name: "identifierType",
+        id: "identifierType",
+        fieldset: {
+          legend: {
+            text: "National Insurance number or asylum support reference",
             isPageHeading: false,
             classes: "govuk-fieldset__legend--m"
-            }
-
-            },
-
-            hint: {
-            text: ""
-            },
-
-            items: [
-            {
-            value: "ni-number",
+          }
+        },
+        hint: {
+          text: "Select one option."
+        },
+        items: [
+          {
+            value: "ni",
             text: "National Insurance number",
+            checked: data["identifierType"] == "ni",
             conditional: {
-            html: niHtml
+              html: niHtml
             }
-            },
-            {
+          },
+          {
+            value: "asr",
+            text: "Asylum support reference",
+            checked: data["identifierType"] == "asr",
+            conditional: {
+              html: asrHtml
             }
+          }
+        ]
+      }) }}
 
-            ]
-            }) }} -->
+      <p class="govuk-body">
+        <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="/FSM/Private_beta/v8-4/LA_Basic/basic-manage/guidance/guidance-steps/asylum-check.html">Parent or guardian has no recourse to public funds (NRPF)</a>
+      </p>
 
       {% endcall %}
 
       {{ govukButton({
-      text: "Run check",
-      href: "checking-basic-loader.html"
+      text: "Run check"
       }) }}
       <!-- <button type="submit" class="govuk-button">Run check</button> -->
     </form>
