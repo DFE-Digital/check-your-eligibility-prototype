@@ -97,11 +97,21 @@ Code in grace period
 
 
 
-    {{ govukButton({
+    <div class="govuk-button-group govuk-!-margin-top-7">
+
+      {{ govukButton({
+        text: "Run another check",
+        classes: "govuk-button",
+        href: "/childcare/v11/single-check/single"
+      }) }}
+
+      {{ govukButton({
       text: "View code history",
-      classes: "govuk-!-margin-top-4",
-      href: "/childcare/v11/reports/i/event-history/event-history"
-    }) }}
+      classes: "govuk-button--secondary",
+      href: "/childcare/v11/reports/event-history/event-history-hide"
+      }) }}
+
+    </div>
 
 
 

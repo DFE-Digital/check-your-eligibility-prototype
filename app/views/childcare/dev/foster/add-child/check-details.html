@@ -78,6 +78,14 @@
                   {{ data["child-dob-day"] or "24" }} {{ data["child-dob-month"] or "December" }} {{ data["child-dob-year"] or "2023" }}
                 </dd>
               </div>
+                <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Postcode
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data["child-postcode"] or "M20 7GF" }}
+                </dd>
+              </div>
 
             </dl>
           </div>
@@ -114,10 +122,10 @@
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Code valid from
+                  Code status
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  Summer term 2026 (starts 1 April 2026)
+                  Cannot be used yet
                 </dd>
               </div>
                <div class="govuk-summary-list__row">
@@ -133,7 +141,7 @@
                   Grace period ends
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  31 August 2026
+                  Date will appear when the code can be used
                 </dd>
               </div>
             </dl>

@@ -6,6 +6,27 @@ const express = require('express');
 const router = govukPrototypeKit.requests.setupRouter(); // Create a router from the prototype kit
 const path = require('path');
 
+// Azure decodes slashes in scoped npm package names before the
+// requests reach the GOV.UK Prototype Kit plugin asset routes.
+router.use(
+  '/plugin-assets/@ministryofjustice/frontend/moj',
+  express.static(
+    path.join(
+      __dirname,
+      '../node_modules/@ministryofjustice/frontend/moj'
+    )
+  )
+);
+
+router.use(
+  '/plugin-assets/@govuk-prototype-kit/step-by-step/javascripts',
+  express.static(
+    path.join(
+      __dirname,
+      '../node_modules/@govuk-prototype-kit/step-by-step/javascripts'
+    )
+  )
+);
 // Add your routes here - above the module.exports line
 
 const _ = require('lodash')
@@ -46,7 +67,7 @@ const batchCheckRouteV7 = require('./routes/fsm/private_beta/v7/batch-check');
 // Use the batch-check route
 router.use(batchCheckRouteV7);
 
-const softCheckRoutesV7_1_new = require('./routes/fsm/private_beta/v7-1/softCheck');
+const softCheckRoutesV7_1_new = require('./routes/fsm/private_beta/v7-1/softcheck');
 softCheckRoutesV7_1_new(router);
 
 // const appealRoutes = require('./routes/mvp3/appeal');
@@ -520,6 +541,24 @@ if (NINumber == "PN123456A"){
 
 else {
     res.redirect("/FSM/Private_beta/v8-2/family/ii/parent-soft-check/outcomes/eligible-expanded")
+}
+})
+
+// FSM v8-3 family eligibility results
+
+router.post('/FSM/Private_beta/v8-3/family/parent-soft-check/outcomes/eligible-expanded', function(req, res) {
+
+var NINumber = req.session.data['ni-number-entered']
+if (NINumber == "NA123456A"){
+    res.redirect("/FSM/Private_beta/v8-3/family/parent-soft-check/outcomes/eligible-targeted")
+}
+
+if (NINumber == "PN123456A"){
+    res.redirect("/FSM/Private_beta/v8-3/family/parent-soft-check/outcomes/not-eligible")
+}
+
+else {
+    res.redirect("/FSM/Private_beta/v8-3/family/parent-soft-check/outcomes/eligible-expanded")
 }
 })
 

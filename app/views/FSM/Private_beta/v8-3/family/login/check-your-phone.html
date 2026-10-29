@@ -22,7 +22,7 @@
 
     <p class="govuk-body">It might take a few minutes to arrive. The code will expire after 15 minutes.</p>
 
-    <form action="../account/apply/child-details" method="post">
+    <form action="../account/apply/ii/child-details" method="post">
 
       <div class="govuk-form-group">
         <label class="govuk-label" for="code">
@@ -34,9 +34,23 @@
 
       </div>
 
-      <button type="Submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
-        Continue
-      </button>
+      </form>
+
+       {% if (data['appeal'] == "yes") %}
+
+             {{ govukButton({
+              text: "Continue",
+              href: "../account/appeal/child-details"
+            }) }}
+
+        {% else %}
+
+            {{ govukButton({
+              text: "Continue",
+              href: "../account/apply/child-details"
+            }) }}
+
+        {% endif %}
 
 
       <details class="govuk-details" data-module="govuk-details">
@@ -58,7 +72,7 @@
         </div>
       </details>
 
-    </form>
+
 
   </div>
 </div>

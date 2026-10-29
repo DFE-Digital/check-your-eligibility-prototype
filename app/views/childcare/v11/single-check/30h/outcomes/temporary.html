@@ -89,13 +89,18 @@ Code is valid
       </div>
     </dl>
 
-    {% from "govuk/components/button/macro.njk" import govukButton %}
+    <div class="govuk-button-group govuk-!-margin-top-7">
 
-    <div class="govuk-button-group">
       {{ govukButton({
-        text: "View code history",
-        classes: "govuk-!-margin-top-4",
-        href: "/childcare/v11/reports/i/event-history/event-history"
+        text: "Run another check",
+        classes: "govuk-button",
+        href: "/childcare/v11/single-check/single"
+      }) }}
+
+      {{ govukButton({
+      text: "View code history",
+      classes: "govuk-button--secondary",
+      href: "/childcare/v11/reports/event-history/event-history-hide"
       }) }}
 
     </div>

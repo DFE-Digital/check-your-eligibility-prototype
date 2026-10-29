@@ -119,11 +119,11 @@
       <table class="govuk-table">
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/single-check/2yo-eypp/enter-details?eligibility-type=Early years pupil premium">Enter parent details (EYPP)</a></td>
+            <td class="govuk-table__cell"><a href="/childcare/dev/single-check/2yo-eypp/enter-details-eypp?eligibility-type=Early years pupil premium">Enter parent details (EYPP)</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--green long-tag">Live</strong></td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/single-check/2yo-eypp/enter-details?eligibility-type=Early learning for 2-year-olds">Enter parent details (2YO)</a></td>
+            <td class="govuk-table__cell"><a href="/childcare/dev/single-check/2yo-eypp/enter-details-2yo?eligibility-type=Early learning for 2-year-olds">Enter parent details (2YO)</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--green long-tag">Live</strong></td>
           </tr>
           <tr class="govuk-table__row">
@@ -271,15 +271,19 @@
       <table class="govuk-table">
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/batch-check/upload?check-type=parents or guardians&eligibility-type=Early years pupil premium">Upload file (EYPP)</a></td>
+            <td class="govuk-table__cell"><a href="/childcare/dev/batch-check/upload-eypp?check-type=parents or guardians&eligibility-type=Early years pupil premium">Upload file (EYPP)</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--green long-tag">Live</strong></td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/batch-check/upload?check-type=parents or guardians&eligibility-type=Early learning for 2-year-olds">Upload file (2YO)</a></td>
+            <td class="govuk-table__cell"><a href="/childcare/dev/batch-check/upload-el2?check-type=parents or guardians&eligibility-type=Early learning for 2-year-olds">Upload file (2YO)</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--green long-tag">Live</strong></td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/public/csv/childcare/dev/eypp-2yo-batch-template.csv">Batch template csv (EYPP and 2YO)</a></td>
+            <td class="govuk-table__cell"><a href="/public/csv/childcare/dev/eypp-batch-template.csv">Batch template csv (EYPP)</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--green long-tag">Live</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/public/csv/childcare/dev/2yo-batch-template.csv">Batch template csv (2YO)</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--green long-tag">Live</strong></td>
           </tr>
           <tr class="govuk-table__row">
@@ -295,7 +299,11 @@
             <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--green long-tag">Live</strong></td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/public/csv/childcare/dev/eypp-2yo-batch-outcomes-YYYY-MM-DD.csv">Batch check outcomes csv (EYPP and 2YO)</a></td>
+            <td class="govuk-table__cell"><a href="/public/csv/childcare/dev/eypp-batch-outcomes-YYYY-MM-DD.csv">Batch check outcomes csv (EYPP)</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--green long-tag">Live</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/public/csv/childcare/dev/2yo-batch-outcomes-YYYY-MM-DD.csv">Batch check outcomes csv (2YO)</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--green long-tag">Live</strong></td>
           </tr>
         </tbody>
@@ -462,11 +470,23 @@
         <table class="govuk-table">
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/foster/code/valid">Valid</a></td>
+            <td class="govuk-table__cell"><a href="/childcare/dev/foster/code/too-young">Child too young</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--blue long-tag">Ready for development</strong></td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/foster/code/due">Due for reconfirmation</a></td>
+            <td class="govuk-table__cell"><a href="/childcare/dev/foster/code/cannot-be-used-yet">Cannot be used yet</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--blue long-tag">Ready for development</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/childcare/dev/foster/code/valid-not-due">Valid - not due yet</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--blue long-tag">Ready for development</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/childcare/dev/foster/code/valid-due">Valid - due for reconfirmation</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--blue long-tag">Ready for development</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/childcare/dev/foster/code/grace-period">In grace period</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--blue long-tag">Ready for development</strong></td>
           </tr>
           <tr class="govuk-table__row">
@@ -527,7 +547,7 @@
             <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--blue long-tag">Ready for development</strong></td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/foster/code/no-parter">Foster family without partner</a></td>
+            <td class="govuk-table__cell"><a href="/childcare/dev/foster/family/no-partner">Foster family without partner</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--blue long-tag">Ready for development</strong></td>
           </tr>
         </tbody>
@@ -735,7 +755,11 @@
             <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--green long-tag">Live</strong></td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="/childcare/dev/errors/access-permissions">Access denied - permissions</a></td>
+            <td class="govuk-table__cell"><a href="/childcare/dev/errors/access-permissions">Access denied - role</a></td>
+            <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--green long-tag">Live</strong></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="/childcare/dev/errors/access-org">Access denied - organisation</a></td>
             <td class="govuk-table__cell govuk-!-text-align-right"><strong class="govuk-tag govuk-tag--green long-tag">Live</strong></td>
           </tr>
           <tr class="govuk-table__row">

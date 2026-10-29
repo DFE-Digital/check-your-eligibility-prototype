@@ -1,0 +1,56 @@
+{% extends "/layouts/support/dev/layout-support.html" %}
+
+{% block pageTitle %}
+  Foster code found
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h1 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          This code is for a foster family
+        </h1>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">You cannot edit details for foster family codes</p>
+        <p>Local authorities can edit the details and correct errors themselves.</p>
+      </div>
+    </div>
+
+    <h2 class="govuk-heading-m">Code details you entered</h2>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Eligibility code
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data["30h-code"] or "40879487381" }}
+        </dd>
+      </div>
+
+    </dl>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-8">What to do next</h2>
+
+
+    <p>Contact the local authority to let them know that they can edit carer, partner and child details within the service.
+        They can do this using the <strong>Change</strong> and <strong>Remove</strong> links within carer and child pages.  </p>
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}
