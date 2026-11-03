@@ -1,0 +1,48 @@
+{% extends "layouts/FSM/v8-4/layout-dfe-lanav.html" %}
+{% set childId = "44455453" %}
+{% set childName = "Emily Johnson" %}
+{% set childDOB = "22 Sep 2012" %}
+{% set schoolName = "Hilltop Elementary" %}
+{% set schoolAddress = "Manchester, M25 1QA" %}
+{% set parentDOB = "15 Mar 1980" %}
+{% set parentName = "Alex Johnson" %}
+{% set pageName="Approve transfer request for Emily Johnson" %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Approve transfer of record for {{ childName }}</h1>
+            <p class="govuk-body">
+              By approving, you are confirming that the child is leaving or has left your school and their record will be transferred to {{ schoolName }}. </p>
+      </div>
+    </div>
+
+
+<div class="govuk-!-padding-bottom-3"></div>
+{{ govukButton({
+text: "Approve transfer",
+href: 'transfer-confirmed'
+}) }}
+
+{{ govukButton({
+text: "Review later",
+classes: "govuk-button--secondary",
+href: 'transfer_' + childId
+}) }}
+<!--
+<p class="govuk-body">
+  <a href="../pending-list" class="govuk-link">Review another application</a>
+</p> -->
+
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+</div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}

@@ -1,0 +1,122 @@
+{% extends "layouts/FSM/v8-4/layout-dfe-schoolnav.html" %}
+{% set Service="Manage eligibility for free school meals" %}
+{% set pageName="Find a child record using their details" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--m">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">{{ pageName }}</h1>
+
+        <p class="govuk-body">
+          Enter the child's name and date of birth to find their record.
+        </p>
+
+        <form id="child-search-form">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="child-first-name">First name</label>
+            <input
+              class="govuk-input govuk-input--width-20"
+              id="child-first-name"
+              name="childFirstName"
+              type="text"
+              autocomplete="given-name"
+              required>
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="child-last-name">Last name</label>
+            <input
+              class="govuk-input govuk-input--width-20"
+              id="child-last-name"
+              name="childLastName"
+              type="text"
+              autocomplete="family-name"
+              required>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="child-dob-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                Date of birth
+              </legend>
+              <div id="child-dob-hint" class="govuk-hint">For example, 1 1 2022</div>
+
+              <div class="govuk-date-input" id="child-dob">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="child-dob-day">Day</label>
+                    <input
+                      class="govuk-input govuk-date-input__input govuk-input--width-2"
+                      id="child-dob-day"
+                      name="childDobDay"
+                      type="text"
+                      inputmode="numeric"
+                      required>
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="child-dob-month">Month</label>
+                    <input
+                      class="govuk-input govuk-date-input__input govuk-input--width-2"
+                      id="child-dob-month"
+                      name="childDobMonth"
+                      type="text"
+                      inputmode="numeric"
+                      required>
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="child-dob-year">Year</label>
+                    <input
+                      class="govuk-input govuk-date-input__input govuk-input--width-4"
+                      id="child-dob-year"
+                      name="childDobYear"
+                      type="text"
+                      inputmode="numeric"
+                      required>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="govuk-button-group govuk-!-margin-top-6">
+            <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+          </div>
+        </form>
+
+        <script>
+          document.getElementById('child-search-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const firstName = document.getElementById('child-first-name').value.trim().toLowerCase();
+            const lastName = document.getElementById('child-last-name').value.trim().toLowerCase();
+            const day = document.getElementById('child-dob-day').value.trim();
+            const month = document.getElementById('child-dob-month').value.trim();
+            const year = document.getElementById('child-dob-year').value.trim();
+
+            if (
+              firstName === 'sarah' &&
+              lastName === 'jones' &&
+              Number(day) === 1 &&
+              Number(month) === 1 &&
+              Number(year) === 2022
+            ) {
+              window.location.href = 'child-found-multiple.html';
+              return;
+            }
+
+            window.location.href = 'child-not-found.html';
+          });
+        </script>
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

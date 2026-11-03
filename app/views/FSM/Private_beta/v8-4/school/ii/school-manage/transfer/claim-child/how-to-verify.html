@@ -1,0 +1,186 @@
+{% extends "layouts/FSM/v8-4/layout-dfe-schoolnav.html" %}
+{% set Service="Manage eligibility for free school meals" %}
+{% set pageName="How do you want to find a record?" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--m">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <!-- <h1 class="govuk-heading-l">{{ pageName }}</h1> -->
+
+
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+{{ pageName }}
+      </h1>
+    </legend>
+    <p class="govuk-body">
+Select how you want to find the child's record.
+        </p>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="verify-upn" name="howToVerify" type="radio" value="verify-upn">
+        <label class="govuk-label govuk-radios__label" for="verify-upn">
+          UPN
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="verify-child" name="howToVerify" type="radio" value="verify-child">
+        <label class="govuk-label govuk-radios__label" for="verify-child">
+          Child details
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="verify-parent" name="howToVerify" type="radio" value="verify-parent">
+        <label class="govuk-label govuk-radios__label" for="verify-parent">
+          Parent details
+        </label>
+      </div>
+      <!-- <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="whereDoYouLive-4" name="whereDoYouLive" type="radio" value="northern-ireland">
+        <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+          Northern Ireland
+        </label>
+      </div> -->
+
+
+    <div class="govuk-button-group govuk-!-margin-top-6">
+      <button id="continue-button" class="govuk-button" type="button" data-module="govuk-button">
+        Continue
+      </button>
+    </div>
+  </fieldset>
+</div>
+
+<script>
+  document.getElementById('continue-button').addEventListener('click', function (event) {
+    const selectedOption = document.querySelector('input[name="howToVerify"]:checked');
+
+    if (!selectedOption) {
+      event.preventDefault();
+      return;
+    }
+
+    window.location.href = selectedOption.value;
+  });
+</script>
+<!--
+
+        <form action="/FSM/Private_beta/v8-4/school/school-manage/transfer/claim-child/verified" method="post">
+          <h2 class="govuk-heading-m">Parent details</h2>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="parent-surname">Last name</label>
+            <input
+              class="govuk-input govuk-input--width-20"
+              id="parent-surname"
+              name="parentSurname"
+              type="text">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="parent-identifier">National Insurance number or Asylum seeker reference number</label>
+            <div id="parent-identifier-hint" class="govuk-hint">For example, QC123456D or 98340002A</div>
+            <input
+              class="govuk-input govuk-input--width-20"
+              id="parent-identifier"
+              name="parentIdentifier"
+              type="text"
+              spellcheck="false"
+              autocomplete="off"
+              aria-describedby="parent-identifier-hint">
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="parent-dob-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Date of birth</legend>
+              <div id="parent-dob-hint" class="govuk-hint">For example, 27 03 1985</div>
+
+              <div class="govuk-date-input" id="parent-dob">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="parent-dob-day">Day</label>
+                    <input
+                      class="govuk-input govuk-date-input__input govuk-input--width-2"
+                      id="parent-dob-day"
+                      name="parentDobDay"
+                      type="text"
+                      inputmode="numeric">
+                  </div>
+                </div>
+
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="parent-dob-month">Month</label>
+                    <input
+                      class="govuk-input govuk-date-input__input govuk-input--width-2"
+                      id="parent-dob-month"
+                      name="parentDobMonth"
+                      type="text"
+                      inputmode="numeric">
+                  </div>
+                </div>
+
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="parent-dob-year">Year</label>
+                    <input
+                      class="govuk-input govuk-date-input__input govuk-input--width-4"
+                      id="parent-dob-year"
+                      name="parentDobYear"
+                      type="text"
+                      inputmode="numeric">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+          </div>
+
+          <hr class="govuk-section-break govuk-section-break--m">
+
+          <h2 class="govuk-heading-m">Child details</h2>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="child-first-name">First name</label>
+            <input
+              class="govuk-input govuk-input--width-20"
+              id="child-first-name"
+              name="childFirstName"
+              type="text">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="child-last-name">Last name</label>
+            <input
+              class="govuk-input govuk-input--width-20"
+              id="child-last-name"
+              name="childLastName"
+              type="text">
+          </div>
+
+          <div class="govuk-button-group">
+            <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+          </div>
+        </form>
+
+      </div>
+
+    </div> -->
+
+
+</main>
+</div>
+
+
+
+
+
+
+
+    {% endblock %}

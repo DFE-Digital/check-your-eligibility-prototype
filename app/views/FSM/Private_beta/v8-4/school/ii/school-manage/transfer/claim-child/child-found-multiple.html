@@ -1,0 +1,85 @@
+{% extends "layouts/FSM/v8-4/layout-dfe-schoolnav.html" %}
+{% set Service="Manage eligibility for free school meals" %}
+{% set childName="Sarah Jones" %}
+{% set pageName="We found more than one matching child record " %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--m">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">{{ pageName }}</h1>
+
+        <p class="govuk-body">
+          We found more than one record that matches the details you entered. Enter the child's date of birth to help identify the correct record. You can also enter their last school if you know it.
+        </p>
+
+        <form id="child-record-search" action="/FSM/Private_beta/v8-4/school/school-manage/transfer/claim-child/verify-multiple" method="post">
+          <!-- <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="child-dob-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                What is the child's date of birth?
+              </legend>
+              <div id="child-dob-hint" class="govuk-hint">For example, 27 3 2007</div>
+              <div class="govuk-date-input" id="child-dob">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="child-dob-day">Day</label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="child-dob-day" name="childDobDay" type="text" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="child-dob-month">Month</label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="child-dob-month" name="childDobMonth" type="text" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="child-dob-year">Year</label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="child-dob-year" name="childDobYear" type="text" inputmode="numeric">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div> -->
+
+          <div class="govuk-form-group">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                What was {{ childName }}'s last school?
+              </legend>
+            <label class="govuk-label" for="last-school">Last school (optional)</label>
+            <!-- <div id="last-school-hint" class="govuk-hint">Optional</div> -->
+            <input
+              class="govuk-input govuk-!-width-two-thirds"
+              id="last-school"
+              name="lastSchool"
+              type="text"
+              aria-describedby="last-school-hint"
+              autocomplete="organization">
+          </div>
+
+          <div class="govuk-button-group govuk-!-margin-top-6">
+            <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+          </div>
+        </form>
+
+        <script>
+          document.getElementById('child-record-search').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const lastSchool = document.getElementById('last-school').value.trim().toLowerCase();
+            const destination = lastSchool === 'co-op academy'
+              ? 'child-found-not-linked.html'
+              : 'child-found-dupes.html';
+
+            window.location.href = destination;
+          });
+        </script>
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
