@@ -1,0 +1,38 @@
+{% extends "layouts/FSM/v8-4/layout-dfe-schoolnav.html" %}
+{% set Service="Manage eligibility for free school meals" %}
+{% set pageName="No child found" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--m">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l"></span>
+         <h1 class="govuk-heading-l">{{pageName}}</h1>
+      </div>
+    </div>
+
+<p class="govuk-body">We could not find a free school meal record for this child.</p>
+<p class="govuk-body">This may be because the child's current school does not use this service or uses a different system.</p>
+<p class="govuk-body">You should run a new eligibility check for the parent.</p>
+<p class="govuk-body">If the result shows the child is not eligible, ask the current school for evidence that the child receives free school meals and upload it with the application.</p>
+
+ <!--quick redirect-->
+          <div class="govuk-button-group govuk-!-margin-top-6">
+            <a href="../../school-soft-check/checker" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+              Run a check for this child
+            </a>
+            <a href="../search-child-transfers.html" class="govuk-link">Return to Manage child transfers</a>
+          </div>
+
+    </main>
+</div>
+
+
+
+
+
+
+
+    {% endblock %}
