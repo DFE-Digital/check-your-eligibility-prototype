@@ -2217,6 +2217,10 @@ p + .govuk-heading-s,
     clear: both;
     color: #d4351c;
 }
+.govuk-error-message[hidden],
+.govuk-error-summary[hidden] {
+    display: none !important;
+}
 @media print {
     .govuk-error-message {
         font-family: sans-serif;

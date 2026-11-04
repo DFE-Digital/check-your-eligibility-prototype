@@ -24,38 +24,70 @@
           </ul>
         </div> -->
 
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--m" for="upn">
-            UPN
-          </label>
-          <div id="upn-hint" class="govuk-hint">
-            For example, A123456789012
+        <div id="upn-error-summary" class="govuk-error-summary" aria-labelledby="upn-error-summary-title" role="alert" tabindex="-1" hidden>
+          <h2 class="govuk-error-summary__title" id="upn-error-summary-title">There is a problem</h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list" id="upn-error-list"></ul>
           </div>
-          <input
-            class="govuk-input govuk-input--width-20"
-            id="upn"
-            name="upn"
-            type="text"
-            spellcheck="false"
-            autocomplete="off"
-            aria-describedby="upn-hint"
-            maxlength="13">
         </div>
 
-        <div class="govuk-button-group govuk-!-margin-top-6">
-          <button id="continue-button" class="govuk-button" type="button" data-module="govuk-button">
-            Continue
-          </button>
-        </div>
+        <form id="upn-search-form" novalidate>
+          <div class="govuk-form-group" id="upn-group">
+            <label class="govuk-label govuk-label--m" for="upn">
+              UPN
+            </label>
+            <p class="govuk-error-message" id="upn-error" hidden><span class="govuk-visually-hidden">Error:</span> Enter the child's UPN</p>
+            <div id="upn-hint" class="govuk-hint">
+              For example, A123456789012
+            </div>
+            <input
+              class="govuk-input govuk-input--width-20"
+              id="upn"
+              name="upn"
+              type="text"
+              spellcheck="false"
+              autocomplete="off"
+              aria-describedby="upn-hint upn-error"
+              maxlength="13">
+          </div>
+
+          <div class="govuk-button-group govuk-!-margin-top-6">
+            <button id="continue-button" class="govuk-button" type="submit" data-module="govuk-button">
+              Continue
+            </button>
+          </div>
+        </form>
 
         <script>
-          document.getElementById('continue-button').addEventListener('click', function () {
+          document.getElementById('upn-search-form').addEventListener('submit', function (event) {
+            event.preventDefault();
             const upnInput = document.getElementById('upn');
             const enteredUpn = (upnInput.value || '').trim().toUpperCase();
 
             if (!enteredUpn) {
+              const errorSummary = document.getElementById('upn-error-summary');
+              const errorList = document.getElementById('upn-error-list');
+              const listItem = document.createElement('li');
+              const link = document.createElement('a');
+              link.href = '#upn';
+              link.textContent = "Enter the child's UPN";
+              listItem.appendChild(link);
+              errorList.replaceChildren(listItem);
+
+              document.getElementById('upn-error').hidden = false;
+              document.getElementById('upn-group').classList.add('govuk-form-group--error');
+              upnInput.classList.add('govuk-input--error');
+              upnInput.setAttribute('aria-invalid', 'true');
+              errorSummary.hidden = false;
+              errorSummary.focus();
               return;
             }
+
+            document.getElementById('upn-error').hidden = true;
+            document.getElementById('upn-group').classList.remove('govuk-form-group--error');
+            upnInput.classList.remove('govuk-input--error');
+            upnInput.removeAttribute('aria-invalid');
+            document.getElementById('upn-error-summary').hidden = true;
 
             if (enteredUpn === 'A123456789012') {
               window.location.href = 'child-found-linked.html';

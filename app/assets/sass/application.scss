@@ -30,6 +30,12 @@
 @import url('https://rsms.me/inter/inter.css');
 $govuk-font-family: 'Inter', sans-serif;
 
+// GOV.UK error styles set display: block, so keep hidden errors hidden until validation runs.
+.govuk-error-message[hidden],
+.govuk-error-summary[hidden] {
+  display: none !important;
+}
+
 .govuk-width-container { @include govuk-width-container; }
 
 

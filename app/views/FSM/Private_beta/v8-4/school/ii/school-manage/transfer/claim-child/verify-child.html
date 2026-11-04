@@ -14,35 +14,45 @@
           Enter the child's name and date of birth to find their record.
         </p>
 
-        <form id="child-search-form">
-          <div class="govuk-form-group">
+        <div id="child-search-error-summary" class="govuk-error-summary" aria-labelledby="child-search-error-summary-title" role="alert" tabindex="-1" hidden>
+          <h2 class="govuk-error-summary__title" id="child-search-error-summary-title">There is a problem</h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list" id="child-search-error-list"></ul>
+          </div>
+        </div>
+
+        <form id="child-search-form" novalidate>
+          <div class="govuk-form-group" id="child-first-name-group">
             <label class="govuk-label" for="child-first-name">First name</label>
+            <p class="govuk-error-message" id="child-first-name-error" hidden><span class="govuk-visually-hidden">Error:</span> Enter the child's first name</p>
             <input
               class="govuk-input govuk-input--width-20"
               id="child-first-name"
               name="childFirstName"
               type="text"
               autocomplete="given-name"
-              required>
+              aria-describedby="child-first-name-error">
           </div>
 
-          <div class="govuk-form-group">
+          <div class="govuk-form-group" id="child-last-name-group">
             <label class="govuk-label" for="child-last-name">Last name</label>
+            <p class="govuk-error-message" id="child-last-name-error" hidden><span class="govuk-visually-hidden">Error:</span> Enter the child's last name</p>
             <input
               class="govuk-input govuk-input--width-20"
               id="child-last-name"
               name="childLastName"
               type="text"
               autocomplete="family-name"
-              required>
+              aria-describedby="child-last-name-error">
           </div>
 
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" role="group" aria-describedby="child-dob-hint">
+          <div class="govuk-form-group" id="child-dob-group">
+            <fieldset class="govuk-fieldset" id="child-dob-fieldset" role="group" aria-describedby="child-dob-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                 Date of birth
               </legend>
               <div id="child-dob-hint" class="govuk-hint">For example, 1 1 2022</div>
+              <p class="govuk-error-message" id="child-dob-error" hidden><span class="govuk-visually-hidden">Error:</span> Enter the child's date of birth</p>
 
               <div class="govuk-date-input" id="child-dob">
                 <div class="govuk-date-input__item">
@@ -54,7 +64,7 @@
                       name="childDobDay"
                       type="text"
                       inputmode="numeric"
-                      required>
+                      aria-describedby="child-dob-hint child-dob-error">
                   </div>
                 </div>
                 <div class="govuk-date-input__item">
@@ -66,7 +76,7 @@
                       name="childDobMonth"
                       type="text"
                       inputmode="numeric"
-                      required>
+                      aria-describedby="child-dob-hint child-dob-error">
                   </div>
                 </div>
                 <div class="govuk-date-input__item">
@@ -78,7 +88,7 @@
                       name="childDobYear"
                       type="text"
                       inputmode="numeric"
-                      required>
+                      aria-describedby="child-dob-hint child-dob-error">
                   </div>
                 </div>
               </div>
@@ -94,6 +104,84 @@
           document.getElementById('child-search-form').addEventListener('submit', function (event) {
             event.preventDefault();
 
+            const fields = [
+              {
+                id: 'child-first-name',
+                groupId: 'child-first-name-group',
+                errorId: 'child-first-name-error',
+                message: "Enter the child's first name"
+              },
+              {
+                id: 'child-last-name',
+                groupId: 'child-last-name-group',
+                errorId: 'child-last-name-error',
+                message: "Enter the child's last name"
+              }
+            ];
+            const dateOfBirthIds = ['child-dob-day', 'child-dob-month', 'child-dob-year'];
+            const errors = [];
+            const errorList = document.getElementById('child-search-error-list');
+            errorList.replaceChildren();
+
+            fields.forEach(function (field) {
+              const input = document.getElementById(field.id);
+              const error = document.getElementById(field.errorId);
+              const group = document.getElementById(field.groupId);
+              const isEmpty = !input.value.trim();
+
+              error.hidden = !isEmpty;
+              group.classList.toggle('govuk-form-group--error', isEmpty);
+              input.classList.toggle('govuk-input--error', isEmpty);
+              input.toggleAttribute('aria-invalid', isEmpty);
+
+              if (isEmpty) {
+                errors.push({ id: field.id, message: field.message });
+              }
+            });
+
+            const dateOfBirthIsEmpty = dateOfBirthIds.some(function (id) {
+              return !document.getElementById(id).value.trim();
+            });
+            const dateOfBirthError = document.getElementById('child-dob-error');
+            const dateOfBirthGroup = document.getElementById('child-dob-group');
+            const dateOfBirthFieldset = document.getElementById('child-dob-fieldset');
+
+            dateOfBirthError.hidden = !dateOfBirthIsEmpty;
+            dateOfBirthGroup.classList.toggle('govuk-form-group--error', dateOfBirthIsEmpty);
+            dateOfBirthIds.forEach(function (id) {
+              const input = document.getElementById(id);
+              input.classList.toggle('govuk-input--error', dateOfBirthIsEmpty);
+              input.toggleAttribute('aria-invalid', dateOfBirthIsEmpty);
+            });
+            dateOfBirthFieldset.setAttribute(
+              'aria-describedby',
+              dateOfBirthIsEmpty ? 'child-dob-hint child-dob-error' : 'child-dob-hint'
+            );
+
+            if (dateOfBirthIsEmpty) {
+              errors.push({
+                id: 'child-dob-day',
+                message: "Enter the child's date of birth"
+              });
+            }
+
+            if (errors.length) {
+              errors.forEach(function (error) {
+                const listItem = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = `#${error.id}`;
+                link.textContent = error.message;
+                listItem.appendChild(link);
+                errorList.appendChild(listItem);
+              });
+
+              const errorSummary = document.getElementById('child-search-error-summary');
+              errorSummary.hidden = false;
+              errorSummary.focus();
+              return;
+            }
+
+            document.getElementById('child-search-error-summary').hidden = true;
             const firstName = document.getElementById('child-first-name').value.trim().toLowerCase();
             const lastName = document.getElementById('child-last-name').value.trim().toLowerCase();
             const day = document.getElementById('child-dob-day').value.trim();
