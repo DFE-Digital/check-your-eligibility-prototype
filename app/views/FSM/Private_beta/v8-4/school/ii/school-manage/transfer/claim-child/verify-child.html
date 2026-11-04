@@ -51,7 +51,7 @@
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                 Date of birth
               </legend>
-              <div id="child-dob-hint" class="govuk-hint">For example, 1 1 2022</div>
+              <div id="child-dob-hint" class="govuk-hint">For example, 1 1 2018</div>
               <p class="govuk-error-message" id="child-dob-error" hidden><span class="govuk-visually-hidden">Error:</span> Enter the child's date of birth</p>
 
               <div class="govuk-date-input" id="child-dob">
@@ -189,11 +189,11 @@
             const year = document.getElementById('child-dob-year').value.trim();
 
             if (
-              firstName === 'sarah' &&
-              lastName === 'jones' &&
+              firstName === 'Emily' &&
+              lastName === 'Johnson' &&
               Number(day) === 1 &&
               Number(month) === 1 &&
-              Number(year) === 2022
+              Number(year) === 2018
             ) {
               window.location.href = 'child-found-multiple.html';
               return;
