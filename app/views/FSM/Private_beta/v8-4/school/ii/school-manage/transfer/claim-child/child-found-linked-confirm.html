@@ -15,7 +15,7 @@
   <h1 class="govuk-panel__title">
 
 
-Transfer of record for {{ data["child-firstname"] or "Sarah" }} {{ data["child-surname"] or "Jones" }} has been requested
+Transfer of record for {{ data["child-firstname"] or "Sarah" }} {{ data["child-surname"] or "Jones" }} has been confirmed
   </h1>
   <!-- <div class="govuk-panel__body">
    We've sent a request to {{ PreviousSchool }}<br>
@@ -40,7 +40,7 @@ Transfer of record for {{ data["child-firstname"] or "Sarah" }} {{ data["child-s
         <dt class="govuk-summary-list__key">
           Status
         </dt>
-        <strong class="govuk-tag govuk-tag--blue"> Awaiting approval   </strong>
+        <strong class="govuk-tag govuk-tag--blue"> Confirmed   </strong>
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -88,14 +88,11 @@ Transfer of record for {{ data["child-firstname"] or "Sarah" }} {{ data["child-s
   <p class="govuk-body-l"><strong>What happens next</strong></p>
 
 
-<p class="govuk-body-m">We've sent a transfer request to<strong> {{ PreviousSchool }}</strong></p>
-<p class="govuk-body-m">The school can:</p>
-  <ul class="govuk-list govuk-body-m govuk-list--bullet">
-    <li>approve the request</li>
-  <li>reject the request</li>
-  </ul>
+<p class="govuk-body-m">We've sent the transfer details to<strong> {{ PreviousSchool }}</strong>.</p>
+<p class="govuk-body-m">The school can report a problem with the transfer if they think it is incorrect.</p>
 
-  <p class="govuk-body-m">We'll update the status of this request when they have made a decision.</p>
+
+
 <br>
 
 
