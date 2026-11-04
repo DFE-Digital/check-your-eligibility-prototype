@@ -1,0 +1,94 @@
+{% extends "layouts/FSM/v8-4/layout-dfe-schoolnav.html" %}
+{% set pageName="Application approved" %}
+{% set Date = "22 Sep 2025" %}
+{% set childId = "44455453" %}
+{% set childName = "Emily Johnson" %}
+{% set childDOB = "22 Sep 2012" %}
+{% set schoolName = "Hilltop Elementary" %}
+{% set schoolAddress = "Manchester, M25 1QA" %}
+{% set parentDOB = "15 Mar 1980" %}
+{% set parentName = "Alex Johnson" %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <div class="govuk-width-container">
+      <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-panel govuk-panel--confirmation">
+              <h1 class="govuk-panel__title">
+                Transfer concern recorded
+              </h1>
+
+              <div class="govuk-panel__body">
+                Reference number<br><strong>T1234567</strong>
+              </div>
+              <br>
+                            <!-- <div class="govuk-panel__body">
+Transfer has been made for the wrong child.</div><br> -->
+                <div class="govuk-panel__body">
+                Reported on {{Date}}
+            </div>
+            </div>
+
+
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+            <h2 class="govuk-heading-m">What happens next</h2>
+            <p class="govuk-body">
+             We have recorded your concern about this transfer.
+
+If you need support with this transfer, contact support and provide the reference number above.
+            </p>
+            <p class="govuk-body">
+              Do not include names, dates of birth or other personal information about the child in your support enquiry.
+            </p>
+            <!-- <p class="govuk-body">
+               If you need to find the application again, you can <a href="search">search all records</a>. -->
+
+                              <h2 class="govuk-heading-m">Summary of your concern</h2>
+
+            <p class="govuk-body">Reference number</p>
+            <p class="govuk-body">
+              <strong>T1234567</strong>
+
+                          <p class="govuk-body">Reason</p>
+<!-- <h2 class="govuk-heading-s">Reason</h2> -->
+
+              <p class="govuk-body">The transfer has been made for the wrong child record. We have two children of the same name.</p>
+
+
+ <p class="govuk-body">
+            Copy this reference number and the reason before contacting support:</p>
+          </div>
+        </div>
+        <br>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+              <p class="govuk-body">
+              <a class="govuk-link" href="pending_transfers.html"> Review more transfers.</a>
+            </p>
+<!--
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break">
+         <h2 class="govuk-heading-s">We want to get your feedback</h2>
+
+            <p class="govuk-body">
+              <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+            </p> -->
+            </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- <div class="govuk-button-group"> -->
+  <!-- <a class="govuk-link" href="../pending-list">Review another application</a> -->
+  <!-- <a class="govuk-link" href="../../../dashboard">Return to dashboard</a> -->
+</div>
+
+
+{% endblock %}

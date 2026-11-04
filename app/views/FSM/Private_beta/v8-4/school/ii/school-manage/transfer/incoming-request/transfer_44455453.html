@@ -87,7 +87,7 @@ href: "javascript:window.history.back()"
 <div class="govuk-summary-card">
   <div class="govuk-summary-card__title-wrapper">
     <h2 class="govuk-summary-card__title">
-      Transfer details
+      Transfer information
     </h2>
     <!-- <ul class="govuk-summary-card__actions">
       <li class="govuk-summary-card__action">
@@ -113,7 +113,7 @@ href: "javascript:window.history.back()"
       <div class="govuk-summary-list__row">
 
         <dt class="govuk-summary-list__key">
-          Requesting school
+          New school
         </dt>
         <dd class="govuk-summary-list__value">
                  St James School <br> Liverpool, LS1 2AB
@@ -122,10 +122,10 @@ href: "javascript:window.history.back()"
       <div class="govuk-summary-list__row">
 
         <dt class="govuk-summary-list__key">
-          Date requested
+          Date transferred
         </dt>
         <dd class="govuk-summary-list__value">
-          20 Apr 2026
+          20 Sept 2026
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -142,8 +142,7 @@ href: "javascript:window.history.back()"
           Status
         </dt>
         <dd class="govuk-summary-list__value">
-        There is a request to transfer this record to another school. You can review the details and either accept or decline the transfer request.
-<!--
+This record was transferred from your school to St James School on 20 Sept 2026.<!--
           <a href="evidence.html">UC_statement_2023.pdf</a><br> -->
           <a href="#"> </a><br>
         </dd>
@@ -160,6 +159,11 @@ href: "javascript:window.history.back()"
       </div> -->
   </div>
   </div>
+
+
+<div class="govuk-inset-text">
+Transfers have already been completed. Review the details if you think a record has been transferred in error.
+</div>
 
 
 <div class="govuk-summary-card">
@@ -202,7 +206,7 @@ href: "javascript:window.history.back()"
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Current School or Academy
+          Previous School or Academy
         </dt>
         <dd class="govuk-summary-list__value">
           {{schoolName}}<br> {{schoolAddress}}
@@ -264,8 +268,9 @@ href: "javascript:window.history.back()"
   </div>
 </div> -->
 
-  <!-- <div class="govuk-!-padding-bottom-3"></div> -->
 
+  <!-- <div class="govuk-!-padding-bottom-3"></div> -->
+<!--
 <div style="height: 32px;"></div>
 <form method="post" action="/FSM/Private_beta/v8-4/verify/{{childId}}">
 {{ govukRadios({
@@ -290,7 +295,7 @@ href: "javascript:window.history.back()"
       text: "Reject transfer request"
     }
   ]
-}) }}
+}) }} -->
 
 
   <div class="govuk-button-group">
@@ -299,9 +304,13 @@ href: "javascript:window.history.back()"
       Save and continue
     </button> -->
 
-<button type="submit" class="govuk-button" data-module="govuk-button">
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Report a problem with this transfer
+    </button>
+
+<!-- <button type="submit" class="govuk-button" data-module="govuk-button">
   Save and continue
-</button>
+</button> -->
     <!-- <a href=""
    class="govuk-button"
    data-module="govuk-button"
