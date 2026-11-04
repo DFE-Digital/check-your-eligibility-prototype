@@ -1,0 +1,50 @@
+{% extends "/layouts/support/v4/layout-support.html" %}
+
+{% block pageTitle %}
+  Import Home Office data
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-7">Import Home Office data</h1>
+
+
+    {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+    {{ govukFileUpload({
+      id: "home-office-upload",
+      name: "home-office-upload",
+      label: {
+        classes: "govuk-label--m",
+        text: "Upload a file"
+      },
+      hint: {
+      text: "Upload the .csv file you have downloaded from Home Office MOVEit."
+    },
+      javascript: true
+    }) }}
+
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Import data",
+      classes: "govuk-button--primary",
+      href: '/support/v4/home-office/import-loader'
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
