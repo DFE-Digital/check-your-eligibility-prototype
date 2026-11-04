@@ -1,0 +1,150 @@
+{% extends "/layouts/support/v4/layout-support.html" %}
+
+{% block pageTitle %}
+  Telford Park School
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    {% if (data['includeSchool'] == "added") %}
+
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+            <h3 class="govuk-notification-banner__heading">
+              Establishment added to private beta
+            </h3>
+
+      </div>
+    </div>
+
+    {% else %}
+
+    {% endif %}
+    <span class="govuk-caption-xl">Included in private beta</span>
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Telford Park School</h1>
+
+
+    <div class="govuk-button-group govuk-!-margin-top-6 govuk-!-margin-bottom-6">
+
+        {{ govukButton({
+        text: "Remove from private beta",
+        classes: "govuk-button govuk-button--warning",
+        href: "/support/v4/establishments/not-included?excludeSchool=removed"
+      }) }}
+    </div>
+
+
+
+      <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">
+          Establishment details
+        </h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Telford Park School
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              URN
+            </dt>
+            <dd class="govuk-summary-list__value">
+              12345
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              School
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Status
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Open
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              64 Redcross Way, Telford TE1 1EY
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+
+        </dl>
+      </div>
+    </div>
+
+
+
+      <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">
+          Parent organisation
+        </h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Telford and Wrekin Council
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Local authority
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+{% endblock %}

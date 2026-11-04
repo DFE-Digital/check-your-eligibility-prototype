@@ -1,0 +1,189 @@
+{% extends "/layouts/support/v4/layout-support.html" %}
+
+{% block pageTitle %}
+ Manage free school meal establisments
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+    <h1 class="govuk-heading-l">Manage free school meal establisments</h1>
+
+    <p>Search for a school or academy and manage their access to the free school meals private beta.</p>
+
+    <div class="govuk-grid-row govuk-!-margin-top-8">
+      <div class="govuk-grid-column-one-third">
+
+      <div class="moj-filter">
+        <div class="moj-filter__header">
+          <h2 class="govuk-heading-m">Filter</h2>
+        </div>
+
+        <div class="moj-filter__content">
+          <div class="moj-filter__selected">
+            <div class="moj-filter__selected-heading">
+
+              <div class="moj-filter__heading-title">
+                <h2 class="govuk-heading-m">Selected filters</h2>
+              </div>
+
+              <div class="moj-filter__heading-action">
+                <p><a class="govuk-link govuk-link--no-visited-state" href="#" onclick="clearFilters()">Clear filters</a>
+                </p>
+              </div>
+            </div>
+
+            <div id="selected-keyword-container" style="display: none;">
+              <h4 class="govuk-heading-s govuk-!-margin-bottom-0">Establiment name or URN</h4>
+              <ul class="moj-filter-tags" id="selected-name">
+              </ul>
+            </div>
+
+            <div id="selected-status-container" style="display: none;">
+              <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Establishment type</h3>
+              <ul class="moj-filter-tags" id="selected-type">
+              </ul>
+            </div>
+          </div>
+
+          <div class="moj-filter__options">
+
+             <button type="button" class="govuk-button" data-module="govuk-button" id="applyFilter">
+                Apply filters
+              </button>
+
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--s" for="keywords">Establishment name or URN</label>
+              <input class="govuk-input" id="name" name="name" type="text">
+            </div>
+
+
+            {# ---------------------------------------------------
+              Establishment type
+            ---------------------------------------------------- #}
+
+            {% set dateHtml %}
+            <div class="govuk-form-group">
+              {{ govukDateInput({
+                id: "submission-date-from",
+                name: "submissionDateFrom",
+                fieldset: {
+                  legend: {
+                    text: "From",
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                }
+              }) }}
+            </div>
+            <div class="govuk-form-group">
+              {{ govukDateInput({
+                id: "submission-date-to",
+                name: "submissionDateTo",
+                fieldset: {
+                  legend: {
+                    text: "To",
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                }
+              }) }}
+            </div>
+
+            {% endset -%}
+
+            {{ govukRadios({
+              name: "custom-date-range",
+              classes: "govuk-radios--small",
+              fieldset: {
+                legend: {
+                  text: "Establishment type",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
+              items: [
+                {
+                  value: "date-range",
+                  text: "All types"
+                },
+                {
+                  value: "current",
+                  text: "Academy"
+                },
+                {
+                  value: "previous",
+                  text: "School"
+                }
+              ]
+            }) }}
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+
+
+
+      </div>
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <table class="govuk-table govuk-table--small-text-until-tablet">
+          <caption class="govuk-table__caption govuk-table__caption--m"></caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header" style="min-width: 120px;">URN</th>
+              <th scope="col" class="govuk-table__header" style="min-width: 160px;">Name</th>
+              <th scope="col" class="govuk-table__header" style="min-width: 120px;">Type</th>
+              <th scope="col" class="govuk-table__header" style="min-width: 120px;">Included in private beta?</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/support/v4/establishments/not-included">12345</a></td>
+              <td class="govuk-table__cell">Telford Park School</td>
+              <td class="govuk-table__cell">School</td>
+              <td class="govuk-table__cell">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="/support/v4/establishments/included">54321</a></td>
+              <td class="govuk-table__cell">Telford Park School</td>
+              <td class="govuk-table__cell">School</td>
+              <td class="govuk-table__cell">Yes</td>
+            </tr>
+
+          </tbody>
+        </table>
+
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+  </div>
+
+</div>
+
+
+
+
+{% endblock %}

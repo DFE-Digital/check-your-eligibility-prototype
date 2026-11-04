@@ -1,7 +1,7 @@
 {% extends "/layouts/support/v4/layout-internal.html" %}
 
 {% block pageTitle %}
- Event history
+  Enter the details of the parent or guardian
 {% endblock %}
 
 {% block beforeContent %}
@@ -11,23 +11,25 @@
 }) }}
 {% endblock %}
 
-
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-grid-row">
 
 
-     <form class="form" action="/support/v4/cross-border/report" method="post" novalidate>
+      <div class="govuk-grid-column-two-thirds">
 
-         {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        <form class="form" action="/support/v4/internal/assurance/upload" method="post" novalidate>
+
+
+           {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
           {{ govukRadios({
             classes: "govuk-radios",
-            name: "select-term",
+            name: "add-partner",
             fieldset: {
               legend: {
-                text: "Select a term",
+                text: "Select a term to check code validity for",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--l"
               }
@@ -52,13 +54,10 @@
           }) }}
 
 
-
-
-
           {% from "govuk/components/button/macro.njk" import govukButton %}
 
           {{ govukButton({
-            text: "View report"
+            text: "Continue"
           }) }}
 
 
@@ -66,10 +65,9 @@
 
 
 
-  </div>
+      </div>
 
-</div>
-
+    </div>
 
 
 

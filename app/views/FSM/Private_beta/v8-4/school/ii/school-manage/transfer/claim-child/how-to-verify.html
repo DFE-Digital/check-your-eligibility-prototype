@@ -1,6 +1,6 @@
 {% extends "layouts/FSM/v8-4/layout-dfe-schoolnav.html" %}
 {% set Service="Manage eligibility for free school meals" %}
-{% set pageName="How do you want to find a record?" %}
+{% set pageName="How do you want to find a child record?" %}
 
 {% block content %}
 
@@ -20,13 +20,13 @@
       </h1>
     </legend>
     <p class="govuk-body">
-Select how you want to find the child's record.
+Select the details you will enter to find the child's record.
         </p>
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="verify-upn" name="howToVerify" type="radio" value="verify-upn">
         <label class="govuk-label govuk-radios__label" for="verify-upn">
-          UPN
+          Unique pupil number (UPN)
         </label>
       </div>
       <div class="govuk-radios__item">
