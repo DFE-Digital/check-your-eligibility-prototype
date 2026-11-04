@@ -1,6 +1,6 @@
 {% extends "layouts/FSM/v8-4/layout-dfe-schoolnav.html" %}
 {% set applications = 3 %}
-{% set pageName = "Review " ~ applications ~ " transfer requests" %}
+{% set pageName = "Review " ~ applications ~ " transferred records" %}
 
 
 {% block content %}
@@ -10,48 +10,20 @@
     <h1 class="govuk-heading-l" id="pending-applications-heading">
       <span id="row-count"></span> {{ pageName }}
     </h1>
-    <p class="govuk-body">
-  Review transfer requests received from other schools and decide whether to approve or reject the transfer of child records from your school to theirs.
+    <p class="govuk-body">Review records that have been transferred from your school to another school.
 </p>
-    <!-- <script>
-      document.addEventListener('DOMContentLoaded', function() {
-      var table = document.querySelector('.govuk-table tbody');
-      var rowCount = table ? table.querySelectorAll('tr').length : 0;
-      document.getElementById('row-count').textContent = rowCount + 15;
-      });
-    </script> -->
 
-      <!-- <span id="notifications" class="moj-notification-badge" style="white-space: nowrap; margin-left: 15px;">36</span> -->
 
-      <!-- <div class="moj-search">
-
-        <form action="#" method="post">
-
-          <div class="govuk-form-group">
-            <label class="govuk-label moj-search__label govuk-!-font-weight-bold" for="search">
-              Find a child
-            </label>
-
-            <div id="search-hint" class="govuk-hint moj-search__hint ">
-              You can search by name, date of birth or National Insurance number
-            </div>
-            <input class="govuk-input moj-search__input " id="search" name="search" type="search" aria-describedby="search-hint">
-          </div>
-          <button type="submit" class="govuk-button moj-search__button " data-module="govuk-button">
-            Search
-          </button>
-        </form>
-      </div>
-    </div> -->
-
-  </div>
-     <div class="govuk-grid-column-full">
-
-  <div style="padding-bottom: 2em;"></div>
+  <!-- <div style="padding-bottom: 2em;"></div> -->
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
-<hr class="govuk-section-break govuk-section-break--s govuk-section-break">
+<!-- <hr class="govuk-section-break govuk-section-break--s govuk-section-break"> -->
     <div class="govuk-grid-column-full govuk-!-padding-0 padding: 1em; margin-top: 1em;">
+
+
+<div class="govuk-inset-text">
+Transfers have already been completed. Review the details if you think a record has been transferred in error.
+</div>
 
 
 <table class="govuk-table" data-module="moj-sortable-table">
@@ -60,11 +32,11 @@
       <th class="govuk-table__header" scope="col" aria-sort="none">Child name</th>
             <th class="govuk-table__header" scope="col" aria-sort="ascending">Reference number</th>
 
-      <th class="govuk-table__header" scope="col" aria-sort="none">Requesting school</th>
-      <th class="govuk-table__header" scope="col" aria-sort="none">Date received</th>
+      <th class="govuk-table__header" scope="col" aria-sort="none">New school</th>
+      <th class="govuk-table__header" scope="col" aria-sort="none">Date transferred</th>
       <!-- <th class="govuk-table__header" scope="col" aria-sort="none">School</th> -->
-      <th class="govuk-table__header" scope="col" aria-sort="none">Status</th>
-       <th class="govuk-table__header" scope="col">Action required</th>
+      <!-- <th class="govuk-table__header" scope="col" aria-sort="none">Status</th> -->
+       <th class="govuk-table__header" scope="col">Details</th>
         <th class="govuk-table__header" scope="col"></th>
 
     </tr>
@@ -77,9 +49,9 @@
       <td class="govuk-table__cell">St James School</td>
       <td class="govuk-table__cell">13 Sep 2026</td>
       <!-- <td class="govuk-table__cell">Hilltop Elementary</td> -->
-             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Needs reviewing</strong></td>
+             <!-- <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Completed</strong></td> -->
       <td class="govuk-table__cell">
-        <a href="transfer_44455453.html" class="govuk-link">Review request</a>
+        <a href="transfer_44455453.html" class="govuk-link">View transfer details</a>
       </td>
     </tr>
     <tr class="govuk-table__row">
@@ -88,9 +60,9 @@
 
       <td class="govuk-table__cell">St. Mary's Primary</td>
       <td class="govuk-table__cell">02 Sep 2026</td>
-             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Needs reviewing</strong></td>
+             <!-- <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Completed</strong></td> -->
       <td class="govuk-table__cell">
-        <a href="transfer_44455257.html" class="govuk-link">Review request</a>
+        <a href="transfer_44455257.html" class="govuk-link">View transfer details</a>
       </td>
     </tr>
 
@@ -107,13 +79,13 @@ Kingsway Secondary
 <td class="govuk-table__cell">
 4 Oct 2026
 </td>
-<td class="govuk-table__cell">
-<strong class="govuk-tag govuk-tag--blue">
-Needs reviewing
+<!-- <td class="govuk-table__cell">
+<strong class="govuk-tag govuk-tag--green">
+Completed
 </strong>
-</td>
+</td> -->
  <td class="govuk-table__cell">
-        <a href="../transfer/review-transfer-request/transfer_43110481.html" class="govuk-link">Review request</a>
+        <a href="../transfer/review-transfer-request/transfer_43110481.html" class="govuk-link">View transfer details</a>
       </td>
 </tr>
     <!-- <h1 class="govuk-heading-l">
@@ -227,6 +199,14 @@ Needs reviewing
   </tbody>
 
 </table>
+<!-- <hr class="govuk-section-break govuk-section-break--s govuk-section-break"> -->
+
+<p class="govuk-body">Contact our support team using the
+  <a href="https://customerhelpportal.education.gov.uk/" target="_blank">
+    Customer help portal
+  </a> if you think a transfer has been made in error.
+</p>
+
 
 <p class="govuk-body">
   <a href="../search-child-transfers.html">

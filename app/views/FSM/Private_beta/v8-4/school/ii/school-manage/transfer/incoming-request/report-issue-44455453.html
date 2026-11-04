@@ -1,0 +1,70 @@
+{% extends "layouts/FSM/v8-4/layout-dfe-lanav.html" %}
+{% set childId = "44455453" %}
+{% set childName = "Emily Johnson" %}
+{% set childDOB = "22 Sep 2012" %}
+{% set schoolName = "Hilltop Elementary" %}
+{% set schoolAddress = "Manchester, M25 1QA" %}
+{% set parentDOB = "15 Mar 1980" %}
+{% set parentName = "Alex Johnson" %}
+{% set pageName="Report a problem with this transfer" %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">{{pageName}} for {{ childName }}</h1>
+            <p class="govuk-body">
+            Tell us why you think this transfer may be incorrect.
+
+Do not include names, dates of birth or any other personal information.</p>
+
+  <div style="padding-bottom: 2em;"></div>
+
+<div class="govuk-form-group">
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--m" for="report-issue">
+     Why do you think this transfer is incorrect?
+    </label>
+  </h1>
+  <div id="report-issue-hint" class="govuk-hint">
+  For example, the transfer was made to the wrong school or the transfer reference does not match your records.
+  </div>
+  <textarea class="govuk-textarea" id="report-issue" name="reportIssue" rows="5" aria-describedby="report-issue-hint"></textarea>
+</div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+<div class="govuk-!-padding-bottom-3"></div>
+{{ govukButton({
+text: "Continue",
+href: 'transfer-confirmed'
+}) }}
+
+<!-- {{ govukButton({
+text: "Review later",
+classes: "govuk-button--secondary",
+href: 'transfer_' + childId
+}) }} -->
+
+<p class="govuk-body">
+  <a href="../pending-list" class="govuk-link">Return to child record</a>
+</p>
+
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+</div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+{% endblock %}
