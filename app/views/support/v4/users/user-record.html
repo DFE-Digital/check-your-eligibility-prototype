@@ -14,73 +14,45 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
+  <div class="govuk-grid-column-three-quarters">
 
 
-    <h1 class="govuk-heading-l">Manage support users</h1>
-
-    <p>Add users to eligibility checking engine support and edit permissions</p>
-
-
-      {{ govukButton({
-            text: "Add new user",
-            href: ""
-          }) }}
+    <h1 class="govuk-heading-l">Record for jeff.smith@education.gov.uk</h1>
 
 
 
-    <table class="govuk-table govuk-table--small-text-until-tablet">
-      <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-4">Support users</caption>
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Email address</th>
-          <!-- <th scope="col" class="govuk-table__header">Status</th> -->
-          <th scope="col" class="govuk-table__header">Permissions</th>
-          <th scope="col" class="govuk-table__header">Actions</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">jeff.smith@education.gov.uk</td>
-           <!--
-          <td class="govuk-table__cell">
-             <strong class="govuk-tag govuk-tag--red">
-              Deactivated
-            </strong>
-          </td>
-          -->
-          <td class="govuk-table__cell">All</td>
-          <td class="govuk-table__cell"><a href="">View</a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">sally.lewis@education.gov.uk</td>
-          <!--
-          <td class="govuk-table__cell">
-             <strong class="govuk-tag govuk-tag--green">
-              Active
-            </strong>
-          </td>
-          -->
-          <td class="govuk-table__cell">Manage Home Office data, Manage temporary codes</td>
-          <td class="govuk-table__cell"><a href="">View</a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">tina.taylor@education.gov.uk</td>
-           <!--
-          <td class="govuk-table__cell">
-             <strong class="govuk-tag govuk-tag--green">
-              Active
-            </strong>
-          </td>
-          -->
-          <td class="govuk-table__cell">All</td>
-          <td class="govuk-table__cell"><a href="">View</a></td>
-        </tr>
-
-
-
-      </tbody>
-    </table>
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            User details
+          </h2>
+          <ul class="govuk-summary-card__actions">
+            <li class="govuk-summary-card__action">
+              <a class="govuk-link" href="/childcare/v11/foster/edit/carer-details">Change<span class="govuk-visually-hidden">User details</span></a>
+            </li>
+          </ul>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Email address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                jeff.smith@education.gov.uk
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Permissions
+              </dt>
+              <dd class="govuk-summary-list__value">
+                All
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
 
 
   </div>
