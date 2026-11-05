@@ -1,7 +1,7 @@
 {% extends "/layouts/childcare/dev/layout-childcare.html" %}
 
 {% block pageTitle %}
-  Eligibility code for Samuel Hill
+  Eligibility code for Laslo Small
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,7 +16,42 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
 
-    <h1 class="govuk-heading-l">Eligibility code for Samuel Hill</h1>
+
+    {% if (data['archive'] == "success") %}
+
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          Code archived
+        </h3>
+      </div>
+    </div>
+
+    {% else %}
+
+
+
+    {% endif %}
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Eligibility code for Laslo Small</h1>
+
+    <p class="govuk-caption-l govuk-!-margin-bottom-6">Archived</p>
+
+
+    <div class="govuk-button-group">
+
+      {{ govukButton({
+        text: "Restore code",
+        classes: "govuk-button--primary",
+        href: "/childcare/dev/foster/archive/restore-code"
+      }) }}
+
+    </div>
 
 
      <div class="govuk-summary-card" id="code">
@@ -42,8 +77,8 @@
               Reconfirmation status
             </dt>
             <dd class="govuk-summary-list__value">
-              <strong class="govuk-tag govuk-tag--grey">
-                Child too old
+              <strong class="govuk-tag govuk-tag--red">
+                Overdue
               </strong>
             </dd>
             <dd class="govuk-summary-list__actions">
@@ -64,7 +99,7 @@
               Eligibility confirmed on
             </dt>
             <dd class="govuk-summary-list__value">
-              24 April 2024
+              24 April 2025
             </dd>
             <dd class="govuk-summary-list__actions">
             </dd>
@@ -74,7 +109,7 @@
               Reconfirm between
             </dt>
             <dd class="govuk-summary-list__value">
-              Not applicable
+              13 June 2025 and 13 July 2025
             </dd>
             <dd class="govuk-summary-list__actions">
             </dd>
@@ -84,7 +119,7 @@
               Grace period ends
             </dt>
             <dd class="govuk-summary-list__value">
-              	31 August 2024
+              	31 August 2025
             </dd>
             <dd class="govuk-summary-list__actions">
             </dd>
@@ -110,7 +145,7 @@
               Full name
             </dt>
             <dd class="govuk-summary-list__value">
-              Samuel Hill
+              Laslo Small
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -118,7 +153,7 @@
               Date of birth
             </dt>
             <dd class="govuk-summary-list__value">
-              6 September 2019
+              6 September 2023
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -133,7 +168,7 @@
       </div>
     </div>
 
-     <div class="govuk-summary-card">
+   <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title">
           Foster family
@@ -151,7 +186,7 @@
               Carer
             </dt>
             <dd class="govuk-summary-list__value">
-              Archana Mistry
+              Jim Smith
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -159,7 +194,7 @@
               Partner
             </dt>
             <dd class="govuk-summary-list__value">
-              Ajay Mistry
+              Emily Smith
             </dd>
           </div>
         </dl>

@@ -11,23 +11,15 @@
 
     <h1 class="govuk-heading-xl">Eligibility checking engine support</h1>
 
-    <p>Department for education staff can use this service to manage the Eligibility checking engine service.</p>
+    <p>The Department for Education customer support team can use this service to manage the eligibility checking engine service.</p>
 
-    <h2 class="govuk-heading-m">Customer support:</h2>
-
-    <ul>
-      <li>Import childcare for working families temporary codes from HMRC</li>
-      <li>Make corrections to childcare for working families codes</li>
-      <li>Upload data files from the Home Office</li>
-    </ul>
-
-    <h2 class="govuk-heading-m">Technical team</h2>
+    <p>This includes admin tasks for:</p>
 
     <ul>
-      <li>private beta lists?</li>
+      <li>Manage eligibility for free school meals</li>
+      <li>Manage eligibility for childcare support</li>
     </ul>
 
-    <p>You'll need to use your Microsoft devops/azure account to access this service.</p>
 
     {% from "govuk/components/button/macro.njk" import govukButton %}
 
@@ -37,10 +29,31 @@
       isStartButton: true
     }) }}
 
+    <h2 class="govuk-heading-m">Before you start</h2>
+
+
+    <p>You'll need to use your Department for Education Microsoft account to access this service.</p>
+
+
 
   </div>
 
+  <div class="govuk-grid-column-one-quarter" style="border-top: 10px solid #1d70b8;">
 
+      <h2 class="govuk-heading-m govuk-!-margin-top-4">Related services</h2>
+
+      <p>Use the live ECE services to run checks and troubleshoot issues.</p>
+
+      <p><a href="">Manage eligibility for free school meals</a></p>
+
+      <p><a href="">Manage eligibility for childcare support</a></p>
+
+
+      <p>Use <a href="">DfE Sign In Manage</a> to view user accounts with access to the services.</p>
+
+
+
+  </div>
 </div>
 
 {% endblock %}
