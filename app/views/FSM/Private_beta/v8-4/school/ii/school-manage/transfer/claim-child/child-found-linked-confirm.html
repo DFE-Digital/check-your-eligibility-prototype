@@ -1,8 +1,8 @@
 {% extends "layouts/FSM/v8-4/layout-dfe-schoolnav-ii.html" %}
 {% set Service="Manage eligibility for free school meals" %}
-{% set PreviousSchool="St Mary's School" %}
-{% set ChildFirstName="Sarah" %}
-{% set ChildSurname="Jones" %}
+{% set PreviousSchool="Co-op Academy" %}
+{% set ChildFirstName="Emily" %}
+{% set ChildSurname="Johnson" %}
 {% set TransferDate="8 October 2026" %}
 {% set pageName="Child record found" %}
 {% block content %}
@@ -15,7 +15,7 @@
   <h1 class="govuk-panel__title">
 
 
-Transfer of record for {{ data["child-firstname"] or "Sarah" }} {{ data["child-surname"] or "Jones" }} has been confirmed
+Transfer of record for {{ data["child-firstname"] or "Emily" }} {{ data["child-surname"] or "Johnson" }} has been confirmed
   </h1>
   <!-- <div class="govuk-panel__body">
    We've sent a request to {{ PreviousSchool }}<br>
