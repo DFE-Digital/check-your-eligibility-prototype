@@ -182,24 +182,7 @@
             }
 
             document.getElementById('child-search-error-summary').hidden = true;
-            const firstName = document.getElementById('child-first-name').value.trim().toLowerCase();
-            const lastName = document.getElementById('child-last-name').value.trim().toLowerCase();
-            const day = document.getElementById('child-dob-day').value.trim();
-            const month = document.getElementById('child-dob-month').value.trim();
-            const year = document.getElementById('child-dob-year').value.trim();
-
-            if (
-              firstName === 'Emily' &&
-              lastName === 'Johnson' &&
-              Number(day) === 1 &&
-              Number(month) === 1 &&
-              Number(year) === 2018
-            ) {
-              window.location.href = 'child-found-multiple.html';
-              return;
-            }
-
-            window.location.href = 'child-not-found.html';
+            window.location.href = 'child-found-multiple.html';
           });
         </script>
       </div>
