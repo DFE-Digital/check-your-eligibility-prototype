@@ -1,5 +1,6 @@
 module.exports = function (router) {
   const claimChildPath = '/FSM/Private_beta/v8-4/school/school-manage/transfer/claim-child'
+  const iiClaimChildPath = '/FSM/Private_beta/v8-4/school/ii/school-manage/transfer/claim-child'
 
   router.post(`${claimChildPath}/verify-multiple`, function (req, res) {
     const body = req.body || {}
@@ -31,26 +32,31 @@ module.exports = function (router) {
     )
   })
 
-  router.post(`${claimChildPath}/verified`, function (req, res) {
-    const identifier = String((req.body && (req.body.parentIdentifier || req.body.parentNino)) || '')
-      .trim()
-      .toUpperCase()
+  function verifyParentAtPath (path) {
+    return function (req, res) {
+      const identifier = String((req.body && (req.body.parentIdentifier || req.body.parentNino)) || '')
+        .trim()
+        .toUpperCase()
 
-    let outcome
-    if (!identifier) {
-      outcome = 'child-found-your-school.html'
-    } else if (identifier === 'AB123456A' || identifier === '98340002A') {
-      outcome = 'child-found-linked.html'
-    } else if (identifier === '98331122M') {
-      outcome = 'child-found-multiple.html'
-    } else if (identifier === '98345678A') {
-      outcome = 'child-found-linked-archived.html'
-    } else if (identifier === 'NL123456A') {
-      outcome = 'child-found-not-linked.html'
-    } else {
-      outcome = 'child-not-found.html'
+      let outcome
+      if (!identifier) {
+        outcome = 'child-found-your-school.html'
+      } else if (identifier === 'AB123456A' || identifier === '98340002A') {
+        outcome = 'child-found-linked.html'
+      } else if (identifier === '98331122M') {
+        outcome = 'child-found-multiple.html'
+      } else if (identifier === '98345678A') {
+        outcome = 'child-found-linked-archived.html'
+      } else if (identifier === 'NL123456A') {
+        outcome = 'child-found-not-linked.html'
+      } else {
+        outcome = 'child-not-found.html'
+      }
+
+      return res.redirect(`${path}/${outcome}`)
     }
+  }
 
-    return res.redirect(`${claimChildPath}/${outcome}`)
-  })
+  router.post(`${claimChildPath}/verified`, verifyParentAtPath(claimChildPath))
+  router.post(`${iiClaimChildPath}/verified`, verifyParentAtPath(iiClaimChildPath))
 }
