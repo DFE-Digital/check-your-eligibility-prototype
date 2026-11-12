@@ -1,0 +1,147 @@
+{% extends "/layouts/support/v4/layout-support.html" %}
+
+{% block pageTitle %}
+  Support portal user jeff.smith@education.gov.uk
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+
+    <h1 class="govuk-heading-l">Support portal user jeff.smith@education.gov.uk</h1>
+
+
+    <div class="govuk-button-group">
+
+
+      {{ govukButton({
+        text: "Add roles",
+        href: ""
+      }) }}
+
+
+       {{ govukButton({
+          text: "Deactivate user",
+          classes: "govuk-button--secondary",
+          href: ""
+        }) }}
+
+
+    </div>
+
+
+
+
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            User details
+          </h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Status
+              </dt>
+              <dd class="govuk-summary-list__value">
+                 <strong class="govuk-tag govuk-tag--green">
+                    Active
+                  </strong>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Email address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                jeff.smith@education.gov.uk
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!--
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Roles</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Role</th>
+            <th scope="col" class="govuk-table__header">Description</th>
+            <th scope="col" class="govuk-table__header">Action</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Manage FSM establishments</th>
+            <td class="govuk-table__cell">Manage schools and academies who can access the FSM private beta</td>
+            <td class="govuk-table__cell"><a href="">Remove</a></td>
+          </tr>
+           <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Manage Home Office data</th>
+            <td class="govuk-table__cell">Upload Home Office asylum seeker data for FSM and EYPP checks</td>
+            <td class="govuk-table__cell"><a href="">Remove</a></td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      -->
+
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            Roles
+          </h2>
+          <!--
+          <ul class="govuk-summary-card__actions">
+            <li class="govuk-summary-card__action">
+              <a class="govuk-link" href="/support/v4/users/select-roles">Manage<span class="govuk-visually-hidden">roles</span></a>
+            </li>
+          </ul>
+          -->
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Role 1
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Manage FSM establishments
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> name</span></a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Role 2
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Manage Home Office data
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> name</span></a>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+
+  </div>
+</div>
+
+{% endblock %}

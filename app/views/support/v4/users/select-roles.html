@@ -1,0 +1,97 @@
+{% extends "/layouts/support/v4/layout-support.html" %}
+
+{% block pageTitle %}
+  Support portal user jeff.smith@education.gov.uk
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+
+    <h1 class="govuk-heading-l">Support portal user jeff.smith@education.gov.uk</h1>
+
+    
+
+    {{ govukButton({
+            classes: "govuk-button--secondary",
+            text: "Deactivate user",
+            href: ""
+          }) }}
+
+
+
+
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            User details
+          </h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Status
+              </dt>
+              <dd class="govuk-summary-list__value">
+                 <strong class="govuk-tag govuk-tag--green">
+                    Active
+                  </strong>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Email address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                jeff.smith@education.gov.uk
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            Roles
+          </h2>
+          <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action">
+            <a class="govuk-link" href="">Manage<span class="govuk-visually-hidden">roles</span></a>
+          </li>
+        </ul>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Roles
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Manage FSM establishments,
+                Manage Home Office data,
+                Manage support users,
+                Manage working families codes
+
+
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+
+  </div>
+</div>
+
+{% endblock %}

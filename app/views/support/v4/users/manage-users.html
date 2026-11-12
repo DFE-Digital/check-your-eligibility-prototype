@@ -19,15 +19,15 @@
 
     <h1 class="govuk-heading-l">Manage support users</h1>
 
-    <p>Add users to eligibility checking engine support and edit permissions</p>
+    <p>Manage permissions for eligibility checking engine support features.</p>
 
-
+    <!--
       {{ govukButton({
             text: "Add new user",
             href: ""
           }) }}
 
-
+    -->
 
     <table class="govuk-table govuk-table--small-text-until-tablet">
       <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-4">Support users</caption>
@@ -35,7 +35,7 @@
         <tr class="govuk-table__row">
           <th scope="col" class="govuk-table__header">Email address</th>
           <!-- <th scope="col" class="govuk-table__header">Status</th> -->
-          <th scope="col" class="govuk-table__header">Permissions</th>
+          <th scope="col" class="govuk-table__header">Roles</th>
           <th scope="col" class="govuk-table__header">Actions</th>
         </tr>
       </thead>
@@ -49,8 +49,8 @@
             </strong>
           </td>
           -->
-          <td class="govuk-table__cell">All</td>
-          <td class="govuk-table__cell"><a href="/support/v4/users/user-record">View</a></td>
+          <td class="govuk-table__cell">Manage Home Office data, manage working families codes, manage users, manage FSM establishments</td>
+          <td class="govuk-table__cell"><a href="/support/v4/users/user">View</a></td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">sally.lewis@education.gov.uk</td>
@@ -61,24 +61,21 @@
             </strong>
           </td>
           -->
-          <td class="govuk-table__cell">Manage Home Office data, Manage temporary codes</td>
+          <td class="govuk-table__cell">Manage Home Office data, Manage working families codes</td>
           <td class="govuk-table__cell"><a href="">View</a></td>
         </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">tina.taylor@education.gov.uk</td>
-           <!--
+         <tr class="govuk-table__row">
+          <td class="govuk-table__cell">timothy.richards@education.gov.uk</td>
+          <!--
           <td class="govuk-table__cell">
              <strong class="govuk-tag govuk-tag--green">
               Active
             </strong>
           </td>
           -->
-          <td class="govuk-table__cell">All</td>
+          <td class="govuk-table__cell">No roles assigned</td>
           <td class="govuk-table__cell"><a href="">View</a></td>
         </tr>
-
-
-
       </tbody>
     </table>
 
