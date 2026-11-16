@@ -34,11 +34,20 @@
 
         <p>You can view and restore archived codes.</p>
 
-        {{ govukButton({
+        <div class="govuk-button-group">
+          {{ govukButton({
           text: "Archive code",
-          classes: "govuk-button--warning",
           href: "/childcare/dev/foster/code/archived?archive=success&code=archived"
-        }) }}
+          }) }}
+
+          {{ govukButton({
+            text: "Cancel",
+            classes: "govuk-button--secondary",
+          href: "javascript:window.history.back()"
+          }) }}
+        </div>
+
+
 
 
 

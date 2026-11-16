@@ -35,16 +35,20 @@
 
         <p>You will be able to reconfirm this code and edit child, carer, and partner details when the code is restored.</p>
 
-
-        {{ govukButton({
+         <div class="govuk-button-group">
+          {{ govukButton({
           text: "Restore code",
-          classes: "govuk-button--primary",
           href: "/childcare/dev/foster/code/restored"
-        }) }}
+          }) }}
 
+          {{ govukButton({
+            text: "Cancel",
+            classes: "govuk-button--secondary",
+          href: "javascript:window.history.back()"
+          }) }}
+        </div>
 
-
-
+    
       </div>
 
     </div>
