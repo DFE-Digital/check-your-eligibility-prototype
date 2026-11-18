@@ -8,14 +8,15 @@
 
       <div class="govuk-panel govuk-panel--confirmation">
         <h1 class="govuk-panel__title">Application sent</h1>
-        <div class="govuk-panel__body">
-          Submitted on<br /><strong>{{ "today" | govukDate }} {{ "now" | govukTime }}</strong>
+         <div class="govuk-panel__body">
+          Sent to All Saints CofE Primary school, Ilkley
+          <!-- Submitted on<br><strong>{{ "today" | govukDate }} {{ "now" | govukTime }}</strong>-->
         </div>
       </div>
 
       <table class="govuk-table govuk-!-margin-top-7">
         <caption class="govuk-table__caption govuk-table__caption--m">
-          We have sent appeal details for:
+          Children you have applied for
         </caption>
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
@@ -36,11 +37,6 @@
             <th scope="row" class="govuk-table__header">Thomas Tesfay</th>
             <td class="govuk-table__cell">St Kings Primary School</td>
             <td class="govuk-table__cell">44455454</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Rachel Tesfay</th>
-            <td class="govuk-table__cell">Bramhope Primary School</td>
-            <td class="govuk-table__cell">44455455</td>
           </tr>
         </tbody>
       </table>
@@ -74,19 +70,18 @@
         </div>
       </details>
 
-      <h2 class="govuk-heading-m">What happens next</h2>
-      <p>The school or local authority will review the evidence after they have received it and contact you to confirm the final decision.</p>
-      <p>If you have children at different schools each school will contact you with a decision when your evidence has been reviewed.</p>
-      <p>
+      <p> You can <a href="" class="govuk-link" onclick="printPage()">print this page</a> for your records.</p>
+
+      <h2 class="govuk-heading-m">Apply for children at another school</h2>
+
+      <p>If you have children at another school, you can ADD INFO.</p>
+
+
+    <p>
         <a href="">What did you think about this service?</a> (takes 30 seconds)
       </p>
 
 
-
-      {{ govukButton({
-      text: "Finish and leave service",
-      href: '../../../start-now-beta-schools'
-      }) }}
 
 
 

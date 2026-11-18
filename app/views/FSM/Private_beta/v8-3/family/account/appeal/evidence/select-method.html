@@ -1,0 +1,57 @@
+{% extends "layouts/FSM/v8-3/family/layout-dfe-parent.html" %}
+{% set pageName="Provide supporting evidence" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{%block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds ">
+
+    <form method="post" novalidate>
+
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              How do you want to provide your evidence?
+            </h1>
+          </legend>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="v8digital~/FSM/Private_beta/v8-3/family/account/appeal/evidence/upload-guidance-digital" aria-describedby="signIn-item-hint">
+              <label class="govuk-label govuk-radios__label govuk-!-margin-bottom-1" for="signIn">
+                Upload files
+              </label>
+              <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                Upload a document or photo from your device
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="none~/FSM/Private_beta/v8-3/family/account/appeal/check-answers/check-answers-no-evidence" aria-describedby="signIn-2-item-hint">
+              <label class="govuk-label govuk-radios__label govuk-!-margin-bottom-1" for="signIn-2">
+                Take it into school
+              </label>
+              <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
+                Continue without uploading anything and take evidence into your children's schools
+              </div>
+            </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+      text: "Continue",
+      classes:'govuk-!-margin-top-5'
+      }) }}
+    </form>
+
+  </div>
+</div>
+
+    {%endblock %}
