@@ -1,0 +1,279 @@
+{% extends "layouts/FSM/index/layout-dfe-index-fsm-2.html" %}
+{% block pageTitle %}
+  Free school meals prototype
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+     {%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
+
+    {{ mojSubNavigation({
+      label: "Sub navigation",
+      items: [
+      {
+        text: "Design and research",
+        href: "/FSM/index/research-2",
+        active: true
+      },
+      {
+        text: "Ready for development",
+        href: "/fsm/index/dev-2"
+      },
+      {
+        text: "Documentation",
+        href: ""
+      }
+      ]
+    }) }}
+
+
+    <h1 class="govuk-heading-l">
+      Design and research
+    </h1>
+
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <h2 class="govuk-tabs__title">
+        Contents
+      </h2>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#parent">
+            Parents
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#school">
+            Schools
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#la">
+            Local authorities and MATs
+          </a>
+        </li>
+      </ul>
+      <!-- Parents-->
+      <div class="govuk-tabs__panel" id="parent">
+        <h2 class="govuk-heading-l">Parents</h2>
+         <!---Usability testing details-->
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Information required for usability tests
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            </ul>
+            <h2 class="govuk-heading-m">Information required for usability tests</h2>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Parent name - [first name, last name]</li>
+              <li>Parent date of birth </li>
+              <li>email address - [name@gmail.com]</li>
+              <li>password for one gov - [password]</li>
+              <li>6 digit security code - 123456</li>
+              <li>NI number - [KL 123456]</li>
+              <li>Child name</li>
+              <li>Child date of birth</li>
+              <li>School details</li>
+              <li>Appeal evidence (pdf, png, jped)</li>
+            </ul>
+            </h2>
+          </div>
+        </details>
+
+        <h2 class="govuk-heading-m">Versions</h2>
+
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Version</th>
+              <th scope="col" class="govuk-table__header">Research</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header">Links</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+              <th scope="col" class="govuk-table__header">Last updated</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <!--v8-3-->
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header"><a href="/FSM/Private_beta/v8-3/family/start-now">v8-3</a></th>
+              <td class="govuk-table__cell">
+
+              </td>
+              <td class="govuk-table__cell">
+                <p>Check first, then apply 1 school at a time. Includes updates to appeal journey.</p>
+                <ul>
+                  <li>NE123456A - Eligible expanded</li>
+                  <li>NA123456A - Eligible targeted</li>
+                  <li>PN123456A - Not eligible</li>
+                </ul>
+
+              </td>
+              <td class="govuk-table__cell">
+                <p class="govuk-!-margin-bottom-2"><a href="/FSM/Private_beta/v8-3/family/start-now">Start page</a></p>
+              </td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Design</strong></td>
+              <td class="govuk-table__cell">20 November 2026</td>
+            </tr>
+            <!--v8-2ii-->
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header"><a href="/FSM/Private_beta/v8-2/family/ii/start-now">v8-2ii</a></th>
+              <td class="govuk-table__cell">
+
+              </td>
+              <td class="govuk-table__cell">
+                <p>Reordered journey - check first, find school after.</p>
+                <ul>
+                  <li>NE123456A - Eligible expanded</li>
+                  <li>NA123456A - Eligible targeted</li>
+                  <li>PN123456A - Not eligible</li>
+                </ul>
+
+              </td>
+              <td class="govuk-table__cell">
+                <p class="govuk-!-margin-bottom-2"><a href="/FSM/Private_beta/v8-2/family/ii/start-now">Start page</a></p>
+              </td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Superseded</strong></td>
+              <td class="govuk-table__cell">18 June 2026</td>
+            </tr>
+            <!--v8-2i-->
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header"><a href="/FSM/Private_beta/v8-2/family/i/start-now-beta-schools">v8-2i</a></th>
+              <td class="govuk-table__cell">
+
+              </td>
+              <td class="govuk-table__cell">
+                <p>Minor content amends. Added postcode to school picker. Prepopulated school field on child details page.</p>
+                <ul>
+                  <li>NE123456A - Eligible expanded</li>
+                  <li>NA123456A - Eligible targeted</li>
+                  <li>NN123456A - Eligible expanded - apply using existing process</li>
+                  <li>PN123456A - Not eligible</li>
+                </ul>
+
+              </td>
+              <td class="govuk-table__cell">
+                <p class="govuk-!-margin-bottom-2"><a href="/FSM/Private_beta/v8-2/family/i/start-now-beta-schools">Start page</a></p>
+                <p class="govuk-!-margin-bottom-2"><a href="/FSM/Private_beta/v8-2/family/i/beta-school-check-no">School not included</a></p>
+                <p class="govuk-!-margin-bottom-2"><a href="/FSM/Private_beta/v8-2/family/i/parent-soft-check/outcomes/eligible-expanded">Eligible expanded outcome</a></p>
+                <p class="govuk-!-margin-bottom-2"><a href="/FSM/Private_beta/v8-2/family/i/parent-soft-check/outcomes/eligible-targeted">Eligible targeted outcome</a></p>
+                <p class="govuk-!-margin-bottom-2"><a href="/FSM/Private_beta/v8-2/family/i/parent-soft-check/outcomes/not-eligible">Not eligible outcome</a></p>
+              </td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Research completed</strong></td>
+              <td class="govuk-table__cell">18 June 2026</td>
+            </tr>
+            <!--v8-1-->
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header"><a href="/FSM/Private_beta/v8-1/family/start-now-beta-schools">v8-1</a></th>
+              <td class="govuk-table__cell">
+
+              </td>
+              <td class="govuk-table__cell">
+                <p>Added expanded outcomes. Updated Not eligible display and added new apply page. Updated school picker content and search options.</p>
+                <p>Use the following NI numbers to get different outcomes.</p>
+                <ul>
+                  <li>NE123456A - Eligible expanded</li>
+                  <li>NA123456A - Eligible targeted</li>
+                  <li>NN123456A - Eligible expanded - apply using existing process</li>
+                  <li>PN123456A - Not eligible</li>
+                </ul>
+
+              </td>
+              <td class="govuk-table__cell">
+                <p class="govuk-!-margin-bottom-2"><a href="/FSM/Private_beta/v8-1/family/start-now-beta-schools">Start page</a></p>
+                <p class="govuk-!-margin-bottom-2"><a href="/FSM/Private_beta/v8-1/family/beta-school-check-no">School not included</a></p>
+                <p class="govuk-!-margin-bottom-2"><a href="/FSM/Private_beta/v8-1/family/parent-soft-check/outcomes/eligible-expanded">Eligible expanded outcome</a></p>
+                <p class="govuk-!-margin-bottom-2"><a href="/FSM/Private_beta/v8-1/family/parent-soft-check/outcomes/eligible-targeted">Eligible targeted outcome</a></p>
+                <p class="govuk-!-margin-bottom-2"><a href="/FSM/Private_beta/v8-1/family/parent-soft-check/outcomes/not-eligible">Not eligible outcome</a></p>
+                <p class="govuk-!-margin-bottom-2"><a href="/FSM/Private_beta/v8-1/family/check-only/start-now">Check only journey</a></p>
+              </td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Research completed</strong></td>
+              <td class="govuk-table__cell">5 June 2026</td>
+            </tr>
+            <!--v7-5-->
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header"><a href="/FSM/Private_beta/v7-5/family/start-now-beta-schools">v7-5</a></th>
+              <td class="govuk-table__cell">
+
+              </td>
+              <td class="govuk-table__cell">
+                <p>Updated approach to finding a school: added ability to select a school (All Saints Primary School), added ability to search again if school not found.</p>
+              </td>
+              <td class="govuk-table__cell">
+                <p class="govuk-!-margin-bottom-2"><a href="/FSM/Private_beta/v7-5/family/start-now-beta-schools">Start page</a></p>
+                <p class="govuk-!-margin-bottom-2"><a href="/FSM/Private_beta/v7-5/family/beta-school-check">Find out if school is included</a></p>
+                <p class="govuk-!-margin-bottom-2"><a href="/FSM/Private_beta/v7-5/family/beta-school-check-show">School included</a></p>
+                <p class="govuk-!-margin-bottom-2"><a href="/FSM/Private_beta/v7-5/family/beta-school-check-no">School not included</a></p>
+              </td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Research completed</strong></td>
+              <td class="govuk-table__cell">25 October 2025</td>
+            </tr>
+            <!--v7-1-->
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header"><a href="/FSM/Private_beta/v7-1/family/start-now-beta-schools">v7-1</a></th>
+              <td class="govuk-table__cell">
+
+              </td>
+              <td class="govuk-table__cell">
+                <p>Changes to reduce development time and align to LAs existing processes including:</p>
+                <p>Terminology changed from appeal to apply with evidence.</p>
+                <p>Parents complete child details first before uploading evidence.</p>
+                <p>Parents can upload evidence via photo,scanning or sending to school.</p>
+
+              </td>
+              <td class="govuk-table__cell">
+                <p class="govuk-!-margin-bottom-2"><a href="/FSM/Private_beta/v7-1/family/parent-soft-check/outcomes/outcome-not-entitled-appeals">Not eligible outcome</a></p>
+              </td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Research completed</strong></td>
+              <td class="govuk-table__cell">21 March 2025</td>
+            </tr>
+            <!--v6-->
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header"><a href="/FSM/Private_beta/v6/family/start-now-beta-schools">v6</a></th>
+              <td class="govuk-table__cell">
+
+              </td>
+              <td class="govuk-table__cell">
+                <p>Added notification content on summary page.</p>
+                <p>Removed permission content and added a paragraph to explain use of data for updates. Follows GDS guidance.</p>
+                <p> Redesigned based on DWP add another flow to ensure non -javascript users have same experience.</p>
+                <p>MoJ Add another removed, Find address flow from DWP added, Evidence upload first to prevent redoing multiple times.</p>
+
+              </td>
+              <td class="govuk-table__cell">
+                <p class="govuk-!-margin-bottom-2"><a href="/FSM/Private_beta/v6-0/family/account/apply/check-answers">Check your answers</a></p>
+                <p class="govuk-!-margin-bottom-2"><a href="/FSM/Private_beta/V6/family/parent-soft-check/outcomes/outcome-not-entitled-appeal">Not eligible outcome - appeal</a></p>
+              </td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Research completed</strong></td>
+              <td class="govuk-table__cell">15 November 2024</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <!-- schools-->
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="school">
+        <h2 class="govuk-heading-l">Schools and academies</h2>
+
+      </div>
+
+      <!-- LAs-->
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="la">
+        <h2 class="govuk-heading-l">Local authorities and MATs</h2>
+
+      </div>
+
+
+    </div>
+
+  </div>
+</div>
+
+
+{% endblock %}
