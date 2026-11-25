@@ -188,12 +188,16 @@
 
     {% from "govuk/components/button/macro.njk" import govukButton %}
 
+    <div class="govuk-button-group">
       {{ govukButton({
-        text: "Run another check",
-        href: '/FSM/Private_beta/v8-4/LA/la-manage/la-soft-check/checker',
+        text: "Continue to add child details",
+         href: '',
         classes: 'govuk-!-margin-top-6'
       }) }}
 
+      <a class="govuk-link" href="#">Run another check</a>
+    </div>
+  
 
     <p>You can <a href="" class="govuk-link" onclick="printPage()">print this page</a> for the parent or guardian to keep.</p>
 
