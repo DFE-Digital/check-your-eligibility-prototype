@@ -4,7 +4,12 @@
   Foster code found
 {% endblock %}
 
-
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
 
 {% block content %}
 
